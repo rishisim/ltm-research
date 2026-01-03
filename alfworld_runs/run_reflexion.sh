@@ -1,6 +1,6 @@
 python main.py \
-        --num_trials 10 \
-        --num_envs 134 \
-        --run_name "reflexion_run_logs" \
+        --num_trials 5 \
+        --num_envs 10 \
+        --run_name "reflexion_run_logs_gemini" \
         --use_memory \
-        --model "gpt-3.5-turbo"
+        --model "gemini-2.5-flash"

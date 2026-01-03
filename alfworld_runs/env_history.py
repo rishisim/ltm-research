@@ -26,13 +26,16 @@ class EnvironmentHistory:
     def reset(self) -> None:
         self._history = []
 
+    def to_json(self) -> List[Dict[str, str]]:
+        return self._history
+
     def __str__(self) -> str:
         s: str = self._cur_query + '\n'
         for i, item in enumerate(self._history):
             if item['label'] == 'action':
-                s += f'> {item["value"]}'
+                s += f'Action: {item["value"]}'
             elif item['label'] == 'observation':
-                s += item['value']
+                s += f'Obs: {item["value"]}'
             # NOT CURRENTLY SUPPORTED
             elif item['label'] == 'human_edit':
                 s += f'[human edit]: {item["value"]}'

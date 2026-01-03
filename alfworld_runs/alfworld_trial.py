@@ -13,7 +13,7 @@ from env_history import EnvironmentHistory
 
 from typing import List, Dict, Any, Tuple
  
-openai.api_key = os.environ["OPENAI_API_KEY"]
+openai.api_key = os.getenv("OPENAI_API_KEY")
 FOLDER = './prompts'
 PROMPT_FILE = 'alfworld_3prompts.json'
 with open(os.path.join(FOLDER, PROMPT_FILE), 'r') as f:
@@ -27,8 +27,7 @@ def llm(prompt: str, model: Model, stop: List[str] = ["\n"]):
                 text = get_completion(prompt=prompt, temperature=cur_try * 0.2, stop_strs=stop)
             else:
                 text = get_chat(prompt=prompt, model=model, temperature=cur_try * 0.2, stop_strs=stop)
-            # dumb way to do this
-            if len(text.strip()) >= 5:
+            if text is not None and len(text.strip()) >= 5:
                 return text
             cur_try += 1
         return ""
@@ -54,7 +53,12 @@ def alfworld_run(env, base_prompt, memory: List[str], to_print=True, ob='', mode
         sys.stdout.flush()
     cur_step = 0
     while cur_step < 49:
-        action = llm(str(env_history) + ">", stop=['\n'], model=model).strip()
+        action = llm(str(env_history) + "Action:", stop=['\n'], model=model).strip()
+        # Strip any prefix the model might have added
+        if action.startswith('Action:'):
+            action = action[7:].strip()
+        if action.startswith('>'):
+            action = action[1:].strip()
         env_history.add("action", action)
         observation, reward, done, info = env.step([action])
         observation, reward, done = process_ob(observation[0]), info['won'][0], done[0]
@@ -62,7 +66,7 @@ def alfworld_run(env, base_prompt, memory: List[str], to_print=True, ob='', mode
             observation = 'OK.'
         env_history.add("observation", observation)
         if to_print:
-            print(f'> {action}\n{observation}')
+            print(f'Action: {action}\nObs: {observation}')
             sys.stdout.flush()
         if done:
             return env_history, True
@@ -95,18 +99,32 @@ def run_trial(
         config = yaml.safe_load(reader)
     split = "eval_out_of_distribution"
 
-    env = getattr(alfworld.agents.environment, config["env"]["type"])(config, train_eval=split)
+    env = alfworld.agents.environment.get_environment(config["env"]["type"])(config, train_eval=split)
     env = env.init_env(batch_size=1)
 
     num_successes: int = 0
     num_additional_successes: int = 0
     num_envs: int = len(env_configs)
 
+    task_counts = {k: 0 for k in PREFIXES.keys()}
+    
     for z, env_config in enumerate(env_configs):
-        ob, info = env.reset()
-        ob = '\n'.join(ob[0].split('\n\n')[1:])
-        name = '/'.join(info['extra.gamefile'][0].split('/')[-3:-1])
+        while True:
+            ob, info = env.reset()
+            ob = '\n'.join(ob[0].split('\n\n')[1:])
+            name = '/'.join(info['extra.gamefile'][0].split('/')[-3:-1])
 
+            # Check if this task is one of the types we support
+            found_type = None
+            for k in PREFIXES.keys():
+                if name.startswith(k):
+                    found_type = k
+                    break
+            
+            if found_type:
+                task_counts[found_type] += 1
+                break
+        
         print(f"using {name}")
 
         if env_config["is_success"]:
@@ -140,6 +158,13 @@ def run_trial(
                 # log env results to trial log
                 with open(trial_log_path, 'a') as wf:
                     wf.write(f'\n#####\n\nEnvironment #{z}:\n{str(final_env_history)}\n\nSTATUS: {"OK" if is_success else "FAIL"}\n\n#####\n')
+
+                # save trajectory to json
+                traj_dir = os.path.join(os.path.dirname(trial_log_path), 'trajectories')
+                os.makedirs(traj_dir, exist_ok=True)
+                traj_path = os.path.join(traj_dir, f'env_{z}_trial_{trial_idx}.json')
+                with open(traj_path, 'w') as f:
+                    json.dump(final_env_history.to_json(), f, indent=4)
 
     # close environment object
     env.close()

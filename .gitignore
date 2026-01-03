@@ -133,4 +133,16 @@ scratch/
 scratch/
 .vscode/
 
-.DS_Store/
+.DS_Store
+.agent/rules/project-documentation.md
+
+# Application/Research Runs and Data
+alfworld_runs/runs/
+alfworld_runs/smoke_test/
+alfworld_runs/run_20tasks_4trials/
+alfworld_runs/.alfworld_venv/
+programming_runs/root/
+webshop_runs/base_run_logs_*/
+webshop_runs/reflexion_run_logs_*/
+experiment_reports/
+alfworld_mini/

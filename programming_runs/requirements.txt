@@ -7,3 +7,4 @@ torch
 xformers
 transformers
 accelerate
+python-dotenv

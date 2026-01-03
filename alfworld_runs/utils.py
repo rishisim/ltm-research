@@ -1,11 +1,21 @@
 import os
 import sys
 import openai
+from dotenv import load_dotenv
+
+from pathlib import Path
+
+# Load .env from parent directory (ltm-research/.env)
+env_path = Path(__file__).resolve().parent.parent / '.env'
+load_dotenv(env_path)
+
 from tenacity import (
     retry,
     stop_after_attempt, # type: ignore
     wait_random_exponential, # type: ignore
 )
+from google import genai
+from google.genai import types
 
 from typing import Optional, List
 if sys.version_info >= (3, 8):
@@ -14,7 +24,45 @@ else:
     from typing_extensions import Literal
 
 
-Model = Literal["gpt-4", "gpt-3.5-turbo", "text-davinci-003"]
+
+Model = Literal["gpt-4", "gpt-3.5-turbo", "text-davinci-003", "gemini-2.5-flash"]
+
+# Initialize new Google GenAI client
+genai_client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+
+@retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
+def get_gemini_chat(prompt: str, model: str, temperature: float = 0.0, stop_strs: Optional[List[str]] = None) -> str:
+    config = types.GenerateContentConfig(
+        temperature=temperature,
+        max_output_tokens=1024,
+        stop_sequences=stop_strs if stop_strs else [],
+    )
+    response = genai_client.models.generate_content(
+        model=model,
+        contents=prompt,
+        config=config,
+    )
+    
+    # Debug: check response structure
+    if not response.candidates:
+        print(f"DEBUG: No candidates in response. prompt_feedback: {response.prompt_feedback}")
+        raise ValueError("No candidates in response - content may be blocked")
+    
+    # Check if response was blocked
+    candidate = response.candidates[0]
+    if candidate.finish_reason and candidate.finish_reason.name == 'SAFETY':
+        print(f"DEBUG: Response blocked by safety filter")
+        raise ValueError("Response blocked by safety filter")
+    
+    # Try to get text
+    try:
+        return response.text
+    except AttributeError as e:
+        print(f"DEBUG: AttributeError accessing response.text: {e}")
+        print(f"DEBUG: response: {response}")
+        print(f"DEBUG: candidates: {response.candidates}")
+        raise
+
 
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
@@ -35,6 +83,9 @@ def get_completion(prompt: str, temperature: float = 0.0, max_tokens: int = 256,
 @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
 def get_chat(prompt: str, model: Model, temperature: float = 0.0, max_tokens: int = 256, stop_strs: Optional[List[str]] = None, is_batched: bool = False) -> str:
     assert model != "text-davinci-003"
+    if model.startswith("gemini"):
+        return get_gemini_chat(prompt, model, temperature, stop_strs)
+
     messages = [
         {
             "role": "user",
