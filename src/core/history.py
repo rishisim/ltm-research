@@ -1,0 +1,51 @@
+from typing import List, Dict, Any
+
+class EnvironmentHistory:
+    def __init__(self, base_query: str, start_info: str, memory: List[str], history: List[Dict[str, str]] = None) -> None:
+        self._cur_query: str = self._get_base_query(base_query, start_info, memory)
+        self._history: List[Dict[str, str]] = history if history is not None else []
+        self._last_action: str = ''
+        self._is_exhausted: bool = False
+
+    def add(self, label: str, value: str) -> None:
+        assert label in ['action', 'observation', 'human_edit']
+        self._history.append({
+            'label': label,
+            'value': value,
+        })
+        if label == 'action':
+            if value == self._last_action:
+                self._is_exhausted = True
+            else:
+                self._last_action = value
+
+    def check_is_exhausted(self) -> bool:
+        return self._is_exhausted
+
+    def reset(self) -> None:
+        self._history = []
+
+    def to_json(self) -> List[Dict[str, str]]:
+        return self._history
+
+    def __str__(self) -> str:
+        s: str = self._cur_query + '\n'
+        for i, item in enumerate(self._history):
+            if item['label'] == 'action':
+                s += f'Action: {item["value"]}'
+            elif item['label'] == 'observation':
+                s += f'Obs: {item["value"]}'
+            elif item['label'] == 'human_edit':
+                s += f'[human edit]: {item["value"]}'
+            if i != len(self._history) - 1:
+                s += '\n'
+        return s
+
+    def _get_base_query(self, base_query: str, start_info: str, memory: List[str]) -> str:
+        query = base_query
+        if memory and len(memory) > 0:
+            query += '\n\nYour memory for the task below:'
+            for i, m in enumerate(memory):
+                query += f'\nTrial {i}:\n{m.strip()}'
+        query += f"\nHere is the task:\n{start_info}"
+        return query
