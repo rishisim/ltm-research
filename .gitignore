@@ -146,3 +146,4 @@ webshop_runs/base_run_logs_*/
 webshop_runs/reflexion_run_logs_*/
 experiment_reports/
 alfworld_mini/
+alfworld_runs/memory_allocation_test/

@@ -11,6 +11,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'
 from src.envs.alfworld_env import AlfworldEnv
 from src.frameworks.react import ReAct
 from src.frameworks.reflexion import Reflexion
+from src.frameworks.memory_allocation import MemoryAllocationReflexion
 
 # Task types mapping
 PREFIXES = {
@@ -27,7 +28,9 @@ def get_args():
     parser.add_argument("--num_trials", type=int, default=1)
     parser.add_argument("--num_envs", type=int, default=1)
     parser.add_argument("--run_name", type=str, required=True)
-    parser.add_argument("--use_memory", action='store_true')
+    parser.add_argument("--use_memory", action='store_true', help="Use standard Reflexion (memory across trials)")
+    parser.add_argument("--framework", type=str, choices=['react', 'reflexion', 'in-trajectory'], default='react')
+    parser.add_argument("--dataset", type=str, choices=['official', 'mini'], default='official')
     parser.add_argument("--model", type=str, default="gemini-2.5-flash")
     return parser.parse_args()
 
@@ -45,6 +48,11 @@ def main(args):
     with open(config_path, 'r') as f:
         config = yaml.safe_load(f)
     
+    if args.dataset == 'mini':
+        config['dataset']['data_path'] = 'alfworld_mini/train'
+        config['dataset']['eval_id_data_path'] = 'alfworld_mini/valid_seen'
+        config['dataset']['eval_ood_data_path'] = 'alfworld_mini/valid_unseen'
+
     prompts_path = "data/alfworld/prompts/alfworld_3prompts.json"
     with open(prompts_path, 'r') as f:
         prompts = json.load(f)
@@ -55,7 +63,9 @@ def main(args):
         env_configs.append({'name': f'env_{i}', 'memory': [], 'is_success': False})
 
     # Selection logic for frameworks
-    if args.use_memory:
+    if args.framework == 'in-trajectory':
+        agent = MemoryAllocationReflexion(model=args.model)
+    elif args.framework == 'reflexion' or args.use_memory:
         agent = Reflexion(model=args.model)
     else:
         agent = ReAct(model=args.model)
@@ -90,7 +100,21 @@ def main(args):
             base_prompt = 'Interact with a household to solve a task. Here are two examples.\n' + prompts[f'react_{v}_1'] + prompts[f'react_{v}_0']
             
             print(f"Executing Env #{z}: {name}")
-            history, is_success = agent.run(env, base_prompt, env_config["memory"], start_ob=ob)
+            run_kwargs = {
+                "env": env,
+                "base_prompt": base_prompt,
+                "memory": env_config["memory"],
+                "start_ob": ob
+            }
+            if isinstance(agent, MemoryAllocationReflexion):
+                run_kwargs.update({
+                    "task_id": name,
+                    "task_type": found_type,
+                    "env_id": env_config["name"],
+                    "log_dir": run_dir
+                })
+            
+            history, is_success = agent.run(**run_kwargs)
             
             # Update results
             if is_success:

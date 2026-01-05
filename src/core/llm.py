@@ -28,10 +28,10 @@ genai_client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
 @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
-def get_gemini_chat(prompt: str, model: str, temperature: float = 0.0, stop_strs: Optional[List[str]] = None) -> str:
+def get_gemini_chat(prompt: str, model: str, temperature: float = 0.0, stop_strs: Optional[List[str]] = None, max_tokens: int = 2048) -> str:
     config = types.GenerateContentConfig(
         temperature=temperature,
-        max_output_tokens=1024,
+        max_output_tokens=max_tokens,
         stop_sequences=stop_strs if stop_strs else [],
     )
     response = genai_client.models.generate_content(
@@ -67,9 +67,9 @@ def get_completion(prompt: str, temperature: float = 0.0, max_tokens: int = 256,
     return response.choices[0].text
 
 @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
-def get_chat(prompt: str, model: Model, temperature: float = 0.0, max_tokens: int = 256, stop_strs: Optional[List[str]] = None) -> str:
+def get_chat(prompt: str, model: Model, temperature: float = 0.0, max_tokens: int = 2048, stop_strs: Optional[List[str]] = None) -> str:
     if model.startswith("gemini"):
-        return get_gemini_chat(prompt, model, temperature, stop_strs)
+        return get_gemini_chat(prompt, model, temperature, stop_strs, max_tokens)
 
     messages = [{"role": "user", "content": prompt}]
     response = openai.ChatCompletion.create(
