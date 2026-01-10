@@ -1,0 +1,252 @@
+Task Type,Task ID,Task Desc,Trial Num,Num Steps,Result
+look_at_obj_in_light,look_at_obj_in_light-AlarmClock-None-DeskLamp-314/trial_T20190908_042454_725701,look at alarmclock under the desklamp.,1,19,Success
+look_at_obj_in_light,look_at_obj_in_light-Book-None-DeskLamp-316/trial_T20190908_101923_519368,look at book under the desklamp.,1,5,Success
+look_at_obj_in_light,look_at_obj_in_light-Book-None-DeskLamp-320/trial_T20190909_152445_177541,examine the book with the desklamp.,1,14,Success
+look_at_obj_in_light,look_at_obj_in_light-CellPhone-None-DeskLamp-316/trial_T20190907_075452_465579,examine the cellphone with the desklamp.,1,7,Success
+look_at_obj_in_light,look_at_obj_in_light-Laptop-None-DeskLamp-323/trial_T20190908_014226_839563,look at laptop under the desklamp.,1,21,Failure
+look_at_obj_in_light,look_at_obj_in_light-Mug-None-DeskLamp-301/trial_T20190908_155916_103990,examine the mug with the desklamp.,1,15,Success
+look_at_obj_in_light,look_at_obj_in_light-Newspaper-None-DeskLamp-216/trial_T20190908_143004_004127,examine the newspaper with the desklamp.,1,13,Failure
+look_at_obj_in_light,look_at_obj_in_light-Newspaper-None-DeskLamp-225/trial_T20190909_085334_452202,examine the newspaper with the desklamp.,1,15,Success
+look_at_obj_in_light,look_at_obj_in_light-Pen-None-DeskLamp-305/trial_T20190907_115849_734053,examine the pen with the desklamp.,1,17,Success
+look_at_obj_in_light,look_at_obj_in_light-Pen-None-DeskLamp-319/trial_T20190908_222409_540184,examine the pen with the desklamp.,1,40,Success
+look_at_obj_in_light,look_at_obj_in_light-Pencil-None-DeskLamp-306/trial_T20190907_235840_204311,look at pencil under the desklamp.,1,4,Success
+look_at_obj_in_light,look_at_obj_in_light-Pencil-None-DeskLamp-319/trial_T20190908_135102_644449,look at pencil under the desklamp.,1,39,Success
+look_at_obj_in_light,look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974,examine the pencil with the desklamp.,1,31,Failure
+look_at_obj_in_light,look_at_obj_in_light-Pillow-None-DeskLamp-216/trial_T20190907_220638_188496,examine the pillow with the desklamp.,1,11,Success
+look_at_obj_in_light,look_at_obj_in_light-Pillow-None-DeskLamp-306/trial_T20190909_075045_578840,examine the pillow with the desklamp.,1,10,Success
+look_at_obj_in_light,look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964,examine the pillow with the desklamp.,1,34,Failure
+look_at_obj_in_light,look_at_obj_in_light-Pillow-None-DeskLamp-320/trial_T20190906_225859_247598,look at pillow under the desklamp.,1,10,Success
+look_at_obj_in_light,look_at_obj_in_light-Statue-None-DeskLamp-304/trial_T20190909_011906_700145,look at statue under the desklamp.,1,28,Failure
+look_at_obj_in_light,look_at_obj_in_light-TissueBox-None-DeskLamp-328/trial_T20190907_201322_516201,examine the tissuebox with the desklamp.,1,18,Success
+look_at_obj_in_light,look_at_obj_in_light-Watch-None-DeskLamp-205/trial_T20190907_001948_509721,examine the watch with the desklamp.,1,19,Success
+pick_and_place_simple,pick_and_place_simple-Book-None-Bed-306/trial_T20190907_125249_700188,put a book in bed.,1,6,Success
+pick_and_place_simple,pick_and_place_simple-Book-None-Desk-304/trial_T20190908_141325_880062,put some book on desk.,1,25,Success
+pick_and_place_simple,pick_and_place_simple-Book-None-Desk-313/trial_T20190909_140547_719284,put some book on desk.,1,20,Success
+pick_and_place_simple,pick_and_place_simple-Book-None-Sofa-202/trial_T20190907_043652_096323,put some book on sofa.,1,9,Success
+pick_and_place_simple,pick_and_place_simple-Candle-None-Toilet-409/trial_T20190908_142251_407168,put a candle in toilet.,1,13,Success
+pick_and_place_simple,pick_and_place_simple-CellPhone-None-ArmChair-318/trial_T20190909_120136_895030,put a cellphone in armchair.,1,6,Success
+pick_and_place_simple,pick_and_place_simple-CellPhone-None-Bed-313/trial_T20190907_092308_442494,put a cellphone in bed.,1,7,Success
+pick_and_place_simple,pick_and_place_simple-Laptop-None-Ottoman-203/trial_T20190908_110713_350931,put some laptop on ottoman.,1,27,Success
+pick_and_place_simple,pick_and_place_simple-Pencil-None-Shelf-313/trial_T20190908_182722_927182,put some pencil on shelf.,1,11,Success
+pick_and_place_simple,pick_and_place_simple-Pencil-None-SideTable-309/trial_T20190909_040329_875526,put a pencil in sidetable.,1,10,Success
+pick_and_place_simple,pick_and_place_simple-PepperShaker-None-Drawer-5/trial_T20190908_195236_701456,put a peppershaker in drawer.,1,7,Success
+pick_and_place_simple,pick_and_place_simple-Statue-None-CoffeeTable-230/trial_T20190909_145138_877153,put a statue in coffeetable.,1,7,Success
+pick_and_place_simple,pick_and_place_simple-TissueBox-None-Toilet-402/trial_T20190908_060020_023543,put some tissuebox on toilet.,1,19,Success
+pick_and_place_simple,pick_and_place_simple-TissueBox-None-Toilet-426/trial_T20190909_043641_389014,put a tissuebox in toilet.,1,7,Success
+pick_and_place_simple,pick_and_place_simple-ToiletPaper-None-GarbageCan-403/trial_T20190907_034528_884833,put a toiletpaper in garbagecan.,1,7,Success
+pick_and_place_simple,pick_and_place_simple-ToiletPaper-None-ToiletPaperHanger-401/trial_T20190908_215242_151083,put some toiletpaper on toiletpaperhanger.,1,8,Success
+pick_and_place_simple,pick_and_place_simple-ToiletPaper-None-ToiletPaperHanger-409/trial_T20190907_152834_016179,put some toiletpaper on toiletpaperhanger.,1,12,Success
+pick_and_place_simple,pick_and_place_simple-Tomato-None-Microwave-5/trial_T20190918_171755_707602,put a tomato in microwave.,1,7,Success
+pick_and_place_simple,pick_and_place_simple-WineBottle-None-DiningTable-15/trial_T20190906_184025_017468,put some winebottle on diningtable.,1,35,Success
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Apple-None-Fridge-27/trial_T20190906_220837_406682,clean some apple and put it in fridge.,1,11,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-ButterKnife-None-CounterTop-25/trial_T20190907_212003_625417,put a clean butterknife in countertop.,1,8,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-ButterKnife-None-Drawer-8/trial_T20190909_124509_288754,clean some butterknife and put it in drawer.,1,18,Success
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-DishSponge-None-Toilet-427/trial_T20190908_234203_467365,clean some dishsponge and put it in toilet.,1,11,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Egg-None-SideTable-21/trial_T20190908_033957_288599,put a clean egg in sidetable.,1,15,Success
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Kettle-None-StoveBurner-1/trial_T20190908_172105_948396,put a clean kettle in stoveburner.,1,49,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Ladle-None-CounterTop-20/trial_T20190907_130836_804995,put a clean ladle in countertop.,1,11,Success
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Ladle-None-CounterTop-8/trial_T20190909_121931_494324,put a clean ladle in countertop.,1,12,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Lettuce-None-CounterTop-13/trial_T20190909_035118_268695,clean some lettuce and put it in countertop.,1,17,Success
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Lettuce-None-DiningTable-20/trial_T20190906_191212_598810,clean some lettuce and put it in diningtable.,1,13,Success
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Mug-None-CoffeeMachine-1/trial_T20190909_134710_542972,clean some mug and put it in coffeemachine.,1,15,Success
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Mug-None-CoffeeMachine-13/trial_T20190907_172113_249829,put a clean mug in coffeemachine.,1,14,Success
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Mug-None-CoffeeMachine-18/trial_T20190909_101110_748348,clean some mug and put it in coffeemachine.,1,10,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Pan-None-Fridge-13/trial_T20190908_083734_836923,clean some pan and put it in fridge.,1,49,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Plate-None-Shelf-7/trial_T20190908_230022_030239,clean some plate and put it in shelf.,1,12,Success
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Potato-None-GarbageCan-19/trial_T20190908_074136_618715,clean some potato and put it in garbagecan.,1,49,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958,put a clean soapbar in cabinet.,1,33,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-SoapBar-None-Cart-430/trial_T20190907_075716_990340,put a clean soapbar in cart.,1,10,Success
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429/trial_T20190909_015333_203352,clean some soapbar and put it in garbagecan.,1,18,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Spatula-None-DiningTable-24/trial_T20190909_021050_633083,clean some spatula and put it in diningtable.,1,13,Success
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484,put a cool apple in garbagecan.,1,49,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Bowl-None-Cabinet-19/trial_T20190908_022130_590876,cool some bowl and put it in cabinet.,1,22,Success
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Bowl-None-Microwave-7/trial_T20190908_231310_981246,put a cool bowl in microwave.,1,8,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Bread-None-CounterTop-17/trial_T20190907_150853_448489,cool some bread and put it in countertop.,1,6,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Bread-None-DiningTable-15/trial_T20190908_195722_260654,put a cool bread in diningtable.,1,15,Success
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Bread-None-Microwave-15/trial_T20190907_132900_527945,put a cool bread in microwave.,1,8,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Lettuce-None-CounterTop-24/trial_T20190908_015250_257517,put a cool lettuce in countertop.,1,28,Success
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Lettuce-None-DiningTable-21/trial_T20190909_045142_232083,cool some lettuce and put it in diningtable.,1,18,Success
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Mug-None-Shelf-20/trial_T20190908_121332_701155,put a cool mug in shelf.,1,34,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Pan-None-DiningTable-11/trial_T20190908_204315_625279,cool some pan and put it in diningtable.,1,49,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Pan-None-StoveBurner-18/trial_T20190906_181154_262087,put a cool pan in stoveburner.,1,6,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Plate-None-Cabinet-27/trial_T20190906_173250_466409,cool some plate and put it in cabinet.,1,27,Success
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Plate-None-Cabinet-7/trial_T20190907_231242_525267,cool some plate and put it in cabinet.,1,4,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Pot-None-DiningTable-24/trial_T20190908_111415_336140,cool some pot and put it in diningtable.,1,11,Success
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Tomato-None-DiningTable-11/trial_T20190908_220012_692282,cool some tomato and put it in diningtable.,1,17,Success
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Tomato-None-GarbageCan-15/trial_T20190907_082803_736076,put a cool tomato in garbagecan.,1,19,Success
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Tomato-None-GarbageCan-5/trial_T20190909_153636_286202,cool some tomato and put it in garbagecan.,1,6,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-WineBottle-None-Cabinet-16/trial_T20190907_084106_624638,put a cool winebottle in cabinet.,1,15,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-WineBottle-None-CounterTop-17/trial_T20190907_002730_199024,put a cool winebottle in countertop.,1,15,Success
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Apple-None-Fridge-30/trial_T20190908_114847_958679,heat some apple and put it in fridge.,1,39,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298,put a hot apple in fridge.,1,5,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Bread-None-DiningTable-15/trial_T20190907_030751_816698,put a hot bread in diningtable.,1,8,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Cup-None-Cabinet-28/trial_T20190909_062858_196741,heat some cup and put it in cabinet.,1,29,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Egg-None-GarbageCan-12/trial_T20190910_151939_914332,heat some egg and put it in garbagecan.,1,49,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-Cabinet-11/trial_T20190908_074036_014884,heat some mug and put it in cabinet.,1,4,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-Cabinet-12/trial_T20190909_032940_018377,heat some mug and put it in cabinet.,1,16,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-16/trial_T20190908_181242_051846,heat some mug and put it in coffeemachine.,1,13,Success
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-30/trial_T20190908_044350_359469,heat some mug and put it in coffeemachine.,1,5,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242,put a hot mug in shelf.,1,18,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Plate-None-Cabinet-28/trial_T20190907_035752_332060,put a hot plate in cabinet.,1,9,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Plate-None-CounterTop-1/trial_T20190909_115633_911483,heat some plate and put it in countertop.,1,36,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Plate-None-CounterTop-28/trial_T20190907_180330_211175,put a hot plate in countertop.,1,45,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Plate-None-CounterTop-7/trial_T20190909_100702_050461,heat some plate and put it in countertop.,1,7,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Potato-None-GarbageCan-3/trial_T20190908_121849_346541,heat some potato and put it in garbagecan.,1,2,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Tomato-None-GarbageCan-16/trial_T20190906_171701_034036,put a hot tomato in garbagecan.,1,3,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Tomato-None-SideTable-3/trial_T20190907_140859_097831,put a hot tomato in sidetable.,1,3,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-AlarmClock-None-Desk-307/trial_T20190907_013752_725369,put two alarmclock in desk.,1,14,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-AlarmClock-None-Dresser-305/trial_T20190907_165758_902037,put two alarmclock in dresser.,1,36,Success
+pick_two_obj_and_place,pick_two_obj_and_place-AlarmClock-None-Shelf-316/trial_T20190909_010429_853588,put two alarmclock in shelf.,1,16,Success
+pick_two_obj_and_place,pick_two_obj_and_place-Book-None-Drawer-307/trial_T20190909_111435_540631,find two book and put them in drawer.,1,25,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-Bowl-None-Dresser-327/trial_T20190907_195918_167799,find two bowl and put them in dresser.,1,18,Success
+pick_two_obj_and_place,pick_two_obj_and_place-CD-None-Dresser-303/trial_T20190908_085703_053950,put two cd in dresser.,1,21,Success
+pick_two_obj_and_place,pick_two_obj_and_place-Candle-None-Cabinet-403/trial_T20190909_065841_838469,find two candle and put them in cabinet.,1,14,Success
+pick_two_obj_and_place,pick_two_obj_and_place-Candle-None-Drawer-427/trial_T20190909_043940_867553,put two candle in drawer.,1,31,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-CellPhone-None-Drawer-329/trial_T20190909_030006_191201,find two cellphone and put them in drawer.,1,28,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-CreditCard-None-Sofa-216/trial_T20190909_150017_974673,find two creditcard and put them in sofa.,1,28,Success
+pick_two_obj_and_place,pick_two_obj_and_place-Egg-None-Microwave-30/trial_T20190907_163255_256147,find two egg and put them in microwave.,1,18,Success
+pick_two_obj_and_place,pick_two_obj_and_place-KeyChain-None-Drawer-317/trial_T20190912_073129_052747,put two keychain in drawer.,1,10,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-Newspaper-None-Sofa-212/trial_T20190908_003932_911911,find two newspaper and put them in sofa.,1,22,Success
+pick_two_obj_and_place,pick_two_obj_and_place-Pillow-None-Ottoman-208/trial_T20190908_091434_545645,find two pillow and put them in ottoman.,1,9,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-SaltShaker-None-Drawer-12/trial_T20190907_175233_453383,find two saltshaker and put them in drawer.,1,19,Success
+pick_two_obj_and_place,pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714,put two soapbar in cabinet.,1,30,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-SoapBottle-None-Cart-401/trial_T20190908_215205_561346,find two soapbottle and put them in cart.,1,34,Success
+pick_two_obj_and_place,pick_two_obj_and_place-SoapBottle-None-GarbageCan-428/trial_T20190909_105731_241727,put two soapbottle in garbagecan.,1,14,Success
+pick_two_obj_and_place,pick_two_obj_and_place-SprayBottle-None-Toilet-422/trial_T20190908_164720_891084,put two spraybottle in toilet.,1,32,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-ToiletPaper-None-Shelf-422/trial_T20190908_065858_170962,put two toiletpaper in shelf.,1,24,Success
+look_at_obj_in_light,look_at_obj_in_light-Laptop-None-DeskLamp-323/trial_T20190908_014226_839563,look at laptop under the desklamp.,2,49,Failure
+look_at_obj_in_light,look_at_obj_in_light-Newspaper-None-DeskLamp-216/trial_T20190908_143004_004127,examine the newspaper with the desklamp.,2,13,Success
+look_at_obj_in_light,look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974,examine the pencil with the desklamp.,2,25,Failure
+look_at_obj_in_light,look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964,examine the pillow with the desklamp.,2,16,Success
+look_at_obj_in_light,look_at_obj_in_light-Statue-None-DeskLamp-304/trial_T20190909_011906_700145,look at statue under the desklamp.,2,37,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Apple-None-Fridge-27/trial_T20190906_220837_406682,clean some apple and put it in fridge.,2,40,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-ButterKnife-None-CounterTop-25/trial_T20190907_212003_625417,put a clean butterknife in countertop.,2,49,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-DishSponge-None-Toilet-427/trial_T20190908_234203_467365,clean some dishsponge and put it in toilet.,2,33,Success
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Kettle-None-StoveBurner-1/trial_T20190908_172105_948396,put a clean kettle in stoveburner.,2,11,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Ladle-None-CounterTop-8/trial_T20190909_121931_494324,put a clean ladle in countertop.,2,49,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Mug-None-CoffeeMachine-18/trial_T20190909_101110_748348,clean some mug and put it in coffeemachine.,2,9,Success
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Pan-None-Fridge-13/trial_T20190908_083734_836923,clean some pan and put it in fridge.,2,49,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Potato-None-GarbageCan-19/trial_T20190908_074136_618715,clean some potato and put it in garbagecan.,2,11,Success
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958,put a clean soapbar in cabinet.,2,42,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429/trial_T20190909_015333_203352,clean some soapbar and put it in garbagecan.,2,19,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484,put a cool apple in garbagecan.,2,21,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Bowl-None-Microwave-7/trial_T20190908_231310_981246,put a cool bowl in microwave.,2,31,Success
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Bread-None-CounterTop-17/trial_T20190907_150853_448489,cool some bread and put it in countertop.,2,14,Success
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Bread-None-Microwave-15/trial_T20190907_132900_527945,put a cool bread in microwave.,2,16,Success
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Mug-None-Shelf-20/trial_T20190908_121332_701155,put a cool mug in shelf.,2,17,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Pan-None-DiningTable-11/trial_T20190908_204315_625279,cool some pan and put it in diningtable.,2,16,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Pan-None-StoveBurner-18/trial_T20190906_181154_262087,put a cool pan in stoveburner.,2,28,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Plate-None-Cabinet-7/trial_T20190907_231242_525267,cool some plate and put it in cabinet.,2,42,Success
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Tomato-None-GarbageCan-5/trial_T20190909_153636_286202,cool some tomato and put it in garbagecan.,2,49,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-WineBottle-None-Cabinet-16/trial_T20190907_084106_624638,put a cool winebottle in cabinet.,2,49,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Apple-None-Fridge-30/trial_T20190908_114847_958679,heat some apple and put it in fridge.,2,14,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298,put a hot apple in fridge.,2,25,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Bread-None-DiningTable-15/trial_T20190907_030751_816698,put a hot bread in diningtable.,2,22,Success
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Cup-None-Cabinet-28/trial_T20190909_062858_196741,heat some cup and put it in cabinet.,2,14,Success
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Egg-None-GarbageCan-12/trial_T20190910_151939_914332,heat some egg and put it in garbagecan.,2,8,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-Cabinet-11/trial_T20190908_074036_014884,heat some mug and put it in cabinet.,2,32,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-Cabinet-12/trial_T20190909_032940_018377,heat some mug and put it in cabinet.,2,23,Success
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-30/trial_T20190908_044350_359469,heat some mug and put it in coffeemachine.,2,29,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242,put a hot mug in shelf.,2,13,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Plate-None-Cabinet-28/trial_T20190907_035752_332060,put a hot plate in cabinet.,2,33,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Plate-None-CounterTop-1/trial_T20190909_115633_911483,heat some plate and put it in countertop.,2,49,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Plate-None-CounterTop-28/trial_T20190907_180330_211175,put a hot plate in countertop.,2,49,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Plate-None-CounterTop-7/trial_T20190909_100702_050461,heat some plate and put it in countertop.,2,30,Success
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Potato-None-GarbageCan-3/trial_T20190908_121849_346541,heat some potato and put it in garbagecan.,2,21,Success
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Tomato-None-GarbageCan-16/trial_T20190906_171701_034036,put a hot tomato in garbagecan.,2,34,Success
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Tomato-None-SideTable-3/trial_T20190907_140859_097831,put a hot tomato in sidetable.,2,16,Success
+pick_two_obj_and_place,pick_two_obj_and_place-AlarmClock-None-Desk-307/trial_T20190907_013752_725369,put two alarmclock in desk.,2,15,Success
+pick_two_obj_and_place,pick_two_obj_and_place-Book-None-Drawer-307/trial_T20190909_111435_540631,find two book and put them in drawer.,2,49,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-Candle-None-Drawer-427/trial_T20190909_043940_867553,put two candle in drawer.,2,9,Success
+pick_two_obj_and_place,pick_two_obj_and_place-CellPhone-None-Drawer-329/trial_T20190909_030006_191201,find two cellphone and put them in drawer.,2,23,Success
+pick_two_obj_and_place,pick_two_obj_and_place-KeyChain-None-Drawer-317/trial_T20190912_073129_052747,put two keychain in drawer.,2,36,Success
+pick_two_obj_and_place,pick_two_obj_and_place-Pillow-None-Ottoman-208/trial_T20190908_091434_545645,find two pillow and put them in ottoman.,2,12,Success
+pick_two_obj_and_place,pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714,put two soapbar in cabinet.,2,39,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-SprayBottle-None-Toilet-422/trial_T20190908_164720_891084,put two spraybottle in toilet.,2,49,Failure
+look_at_obj_in_light,look_at_obj_in_light-Laptop-None-DeskLamp-323/trial_T20190908_014226_839563,look at laptop under the desklamp.,3,49,Failure
+look_at_obj_in_light,look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974,examine the pencil with the desklamp.,3,30,Failure
+look_at_obj_in_light,look_at_obj_in_light-Statue-None-DeskLamp-304/trial_T20190909_011906_700145,look at statue under the desklamp.,3,9,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Apple-None-Fridge-27/trial_T20190906_220837_406682,clean some apple and put it in fridge.,3,19,Success
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-ButterKnife-None-CounterTop-25/trial_T20190907_212003_625417,put a clean butterknife in countertop.,3,49,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Kettle-None-StoveBurner-1/trial_T20190908_172105_948396,put a clean kettle in stoveburner.,3,49,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Ladle-None-CounterTop-8/trial_T20190909_121931_494324,put a clean ladle in countertop.,3,8,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Pan-None-Fridge-13/trial_T20190908_083734_836923,clean some pan and put it in fridge.,3,49,Success
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958,put a clean soapbar in cabinet.,3,13,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429/trial_T20190909_015333_203352,clean some soapbar and put it in garbagecan.,3,27,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484,put a cool apple in garbagecan.,3,49,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Mug-None-Shelf-20/trial_T20190908_121332_701155,put a cool mug in shelf.,3,45,Success
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Pan-None-DiningTable-11/trial_T20190908_204315_625279,cool some pan and put it in diningtable.,3,15,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Pan-None-StoveBurner-18/trial_T20190906_181154_262087,put a cool pan in stoveburner.,3,21,Success
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Tomato-None-GarbageCan-5/trial_T20190909_153636_286202,cool some tomato and put it in garbagecan.,3,17,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-WineBottle-None-Cabinet-16/trial_T20190907_084106_624638,put a cool winebottle in cabinet.,3,43,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Apple-None-Fridge-30/trial_T20190908_114847_958679,heat some apple and put it in fridge.,3,36,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298,put a hot apple in fridge.,3,45,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Egg-None-GarbageCan-12/trial_T20190910_151939_914332,heat some egg and put it in garbagecan.,3,16,Success
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-Cabinet-11/trial_T20190908_074036_014884,heat some mug and put it in cabinet.,3,33,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-30/trial_T20190908_044350_359469,heat some mug and put it in coffeemachine.,3,10,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242,put a hot mug in shelf.,3,29,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Plate-None-Cabinet-28/trial_T20190907_035752_332060,put a hot plate in cabinet.,3,45,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Plate-None-CounterTop-1/trial_T20190909_115633_911483,heat some plate and put it in countertop.,3,11,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Plate-None-CounterTop-28/trial_T20190907_180330_211175,put a hot plate in countertop.,3,41,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-Book-None-Drawer-307/trial_T20190909_111435_540631,find two book and put them in drawer.,3,35,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714,put two soapbar in cabinet.,3,40,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-SprayBottle-None-Toilet-422/trial_T20190908_164720_891084,put two spraybottle in toilet.,3,18,Failure
+look_at_obj_in_light,look_at_obj_in_light-Laptop-None-DeskLamp-323/trial_T20190908_014226_839563,look at laptop under the desklamp.,4,22,Failure
+look_at_obj_in_light,look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974,examine the pencil with the desklamp.,4,11,Success
+look_at_obj_in_light,look_at_obj_in_light-Statue-None-DeskLamp-304/trial_T20190909_011906_700145,look at statue under the desklamp.,4,35,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-ButterKnife-None-CounterTop-25/trial_T20190907_212003_625417,put a clean butterknife in countertop.,4,33,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Kettle-None-StoveBurner-1/trial_T20190908_172105_948396,put a clean kettle in stoveburner.,4,8,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Ladle-None-CounterTop-8/trial_T20190909_121931_494324,put a clean ladle in countertop.,4,13,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958,put a clean soapbar in cabinet.,4,11,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429/trial_T20190909_015333_203352,clean some soapbar and put it in garbagecan.,4,26,Success
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484,put a cool apple in garbagecan.,4,29,Success
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Pan-None-DiningTable-11/trial_T20190908_204315_625279,cool some pan and put it in diningtable.,4,4,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Tomato-None-GarbageCan-5/trial_T20190909_153636_286202,cool some tomato and put it in garbagecan.,4,49,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-WineBottle-None-Cabinet-16/trial_T20190907_084106_624638,put a cool winebottle in cabinet.,4,16,Success
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Apple-None-Fridge-30/trial_T20190908_114847_958679,heat some apple and put it in fridge.,4,25,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298,put a hot apple in fridge.,4,11,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-Cabinet-11/trial_T20190908_074036_014884,heat some mug and put it in cabinet.,4,19,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-30/trial_T20190908_044350_359469,heat some mug and put it in coffeemachine.,4,37,Success
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242,put a hot mug in shelf.,4,37,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Plate-None-Cabinet-28/trial_T20190907_035752_332060,put a hot plate in cabinet.,4,39,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Plate-None-CounterTop-1/trial_T20190909_115633_911483,heat some plate and put it in countertop.,4,32,Success
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Plate-None-CounterTop-28/trial_T20190907_180330_211175,put a hot plate in countertop.,4,35,Success
+pick_two_obj_and_place,pick_two_obj_and_place-Book-None-Drawer-307/trial_T20190909_111435_540631,find two book and put them in drawer.,4,44,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714,put two soapbar in cabinet.,4,43,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-SprayBottle-None-Toilet-422/trial_T20190908_164720_891084,put two spraybottle in toilet.,4,14,Success
+look_at_obj_in_light,look_at_obj_in_light-Laptop-None-DeskLamp-323/trial_T20190908_014226_839563,look at laptop under the desklamp.,5,14,Failure
+look_at_obj_in_light,look_at_obj_in_light-Statue-None-DeskLamp-304/trial_T20190909_011906_700145,look at statue under the desklamp.,5,49,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-ButterKnife-None-CounterTop-25/trial_T20190907_212003_625417,put a clean butterknife in countertop.,5,49,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Kettle-None-StoveBurner-1/trial_T20190908_172105_948396,put a clean kettle in stoveburner.,5,40,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Ladle-None-CounterTop-8/trial_T20190909_121931_494324,put a clean ladle in countertop.,5,28,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958,put a clean soapbar in cabinet.,5,42,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Pan-None-DiningTable-11/trial_T20190908_204315_625279,cool some pan and put it in diningtable.,5,49,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Tomato-None-GarbageCan-5/trial_T20190909_153636_286202,cool some tomato and put it in garbagecan.,5,49,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Apple-None-Fridge-30/trial_T20190908_114847_958679,heat some apple and put it in fridge.,5,16,Success
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298,put a hot apple in fridge.,5,49,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-Cabinet-11/trial_T20190908_074036_014884,heat some mug and put it in cabinet.,5,18,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242,put a hot mug in shelf.,5,33,Success
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Plate-None-Cabinet-28/trial_T20190907_035752_332060,put a hot plate in cabinet.,5,44,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-Book-None-Drawer-307/trial_T20190909_111435_540631,find two book and put them in drawer.,5,37,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714,put two soapbar in cabinet.,5,19,Success
+look_at_obj_in_light,look_at_obj_in_light-Laptop-None-DeskLamp-323/trial_T20190908_014226_839563,look at laptop under the desklamp.,6,33,Success
+look_at_obj_in_light,look_at_obj_in_light-Statue-None-DeskLamp-304/trial_T20190909_011906_700145,look at statue under the desklamp.,6,11,Success
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-ButterKnife-None-CounterTop-25/trial_T20190907_212003_625417,put a clean butterknife in countertop.,6,49,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Kettle-None-StoveBurner-1/trial_T20190908_172105_948396,put a clean kettle in stoveburner.,6,15,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Ladle-None-CounterTop-8/trial_T20190909_121931_494324,put a clean ladle in countertop.,6,49,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958,put a clean soapbar in cabinet.,6,12,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Pan-None-DiningTable-11/trial_T20190908_204315_625279,cool some pan and put it in diningtable.,6,14,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Tomato-None-GarbageCan-5/trial_T20190909_153636_286202,cool some tomato and put it in garbagecan.,6,33,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298,put a hot apple in fridge.,6,49,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-Cabinet-11/trial_T20190908_074036_014884,heat some mug and put it in cabinet.,6,23,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Plate-None-Cabinet-28/trial_T20190907_035752_332060,put a hot plate in cabinet.,6,19,Failure
+pick_two_obj_and_place,pick_two_obj_and_place-Book-None-Drawer-307/trial_T20190909_111435_540631,find two book and put them in drawer.,6,20,Success
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-ButterKnife-None-CounterTop-25/trial_T20190907_212003_625417,put a clean butterknife in countertop.,7,38,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Kettle-None-StoveBurner-1/trial_T20190908_172105_948396,put a clean kettle in stoveburner.,7,49,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-Ladle-None-CounterTop-8/trial_T20190909_121931_494324,put a clean ladle in countertop.,7,2,Failure
+pick_clean_then_place_in_recep,pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958,put a clean soapbar in cabinet.,7,48,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Pan-None-DiningTable-11/trial_T20190908_204315_625279,cool some pan and put it in diningtable.,7,49,Failure
+pick_cool_then_place_in_recep,pick_cool_then_place_in_recep-Tomato-None-GarbageCan-5/trial_T20190909_153636_286202,cool some tomato and put it in garbagecan.,7,49,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298,put a hot apple in fridge.,7,45,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Mug-None-Cabinet-11/trial_T20190908_074036_014884,heat some mug and put it in cabinet.,7,17,Failure
+pick_heat_then_place_in_recep,pick_heat_then_place_in_recep-Plate-None-Cabinet-28/trial_T20190907_035752_332060,put a hot plate in cabinet.,7,5,Failure

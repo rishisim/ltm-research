@@ -1,0 +1,1129 @@
+[
+  {
+    "task_desc": "put a mug in desk.",
+    "obj_type": "mug",
+    "verbs": "open",
+    "goal_phase": "SEARCH",
+    "issue_text": "Failed to open drawer 2, the action had no effect.",
+    "learning_text": "If a container cannot be opened, continue searching for the target object in other locations.",
+    "trigger": {
+      "key": "NO_EFFECT",
+      "verb": "open",
+      "target_type": "drawer",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Mug-None-Desk-308/trial_T20190908_125200_737896",
+      "trial_num": 1,
+      "step_range": [
+        8,
+        8
+      ]
+    }
+  },
+  {
+    "task_desc": "put a mug in desk.",
+    "obj_type": "mug",
+    "verbs": "go to",
+    "goal_phase": "SEARCH",
+    "issue_text": "Failed to go to drawer 3, the action had no effect.",
+    "learning_text": "If an object cannot be reached, try alternative search locations for the target object.",
+    "trigger": {
+      "key": "NO_EFFECT",
+      "verb": "go to",
+      "target_type": "drawer",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Mug-None-Desk-308/trial_T20190908_125200_737896",
+      "trial_num": 1,
+      "step_range": [
+        12,
+        12
+      ]
+    }
+  },
+  {
+    "task_desc": "put a mug in desk.",
+    "obj_type": "mug",
+    "verbs": "open",
+    "goal_phase": "SEARCH",
+    "issue_text": "Failed to open drawer 3, the action had no effect.",
+    "learning_text": "If a container cannot be opened, continue searching for the target object in other locations.",
+    "trigger": {
+      "key": "NO_EFFECT",
+      "verb": "open",
+      "target_type": "drawer",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Mug-None-Desk-308/trial_T20190908_125200_737896",
+      "trial_num": 1,
+      "step_range": [
+        13,
+        13
+      ]
+    }
+  },
+  {
+    "task_desc": "put a mug in desk.",
+    "obj_type": "mug",
+    "verbs": "open",
+    "goal_phase": "SEARCH",
+    "issue_text": "Failed to open drawer 5, the action had no effect.",
+    "learning_text": "If a container cannot be opened, continue searching for the target object in other locations.",
+    "trigger": {
+      "key": "NO_EFFECT",
+      "verb": "open",
+      "target_type": "drawer",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Mug-None-Desk-308/trial_T20190908_125200_737896",
+      "trial_num": 1,
+      "step_range": [
+        19,
+        19
+      ]
+    }
+  },
+  {
+    "task_desc": "put a pencil in shelf.",
+    "obj_type": "pencil",
+    "verbs": "put",
+    "goal_phase": "PLACE",
+    "issue_text": "Agent tried to put object in a location without being at that location.",
+    "learning_text": "Go to the target location before attempting to place an object there.",
+    "trigger": {
+      "key": "PRECONDITION",
+      "verb": "put",
+      "target_type": "shelf",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Pencil-None-Shelf-308/trial_T20190908_121952_610012",
+      "trial_num": 1,
+      "step_range": [
+        5,
+        5
+      ]
+    }
+  },
+  {
+    "task_desc": "put a pencil in shelf.",
+    "obj_type": "pencil",
+    "verbs": "put",
+    "goal_phase": "PLACE",
+    "issue_text": "Used 'put' verb instead of 'move' to place an object.",
+    "learning_text": "Use the 'move' verb to place objects into containers or locations.",
+    "trigger": {
+      "key": "WRONG_VERB",
+      "verb": "put",
+      "target_type": "shelf",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Pencil-None-Shelf-308/trial_T20190908_121952_610012",
+      "trial_num": 1,
+      "step_range": [
+        5,
+        5
+      ]
+    }
+  },
+  {
+    "task_desc": "put some peppershaker on drawer.",
+    "obj_type": "peppershaker",
+    "verbs": "put",
+    "goal_phase": "PLACE",
+    "issue_text": "The 'put' command had no effect when trying to place the peppershaker into the drawer.",
+    "learning_text": "Use the 'move' command instead of 'put' to place an object into a drawer.",
+    "trigger": {
+      "key": "WRONG_VERB",
+      "verb": "put",
+      "target_type": "drawer",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-PepperShaker-None-Drawer-10/trial_T20190906_184021_215264",
+      "trial_num": 1,
+      "step_range": [
+        12,
+        13
+      ]
+    }
+  },
+  {
+    "task_desc": "put some saltshaker on cabinet.",
+    "obj_type": "saltshaker",
+    "verbs": "go to",
+    "goal_phase": "SEARCH",
+    "issue_text": "Saltshaker not found in common locations like cabinets, countertops, or drawers.",
+    "learning_text": "Expand search to less common locations like shelves to find the saltshaker.",
+    "trigger": {
+      "key": "NOT_FOUND",
+      "verb": "go to",
+      "target_type": "saltshaker",
+      "obs": "You open the drawer 3. The drawer 3 is open. In it, you see a dishsponge 1."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-SaltShaker-None-Cabinet-10/trial_T20190906_191429_743650",
+      "trial_num": 1,
+      "step_range": [
+        2,
+        26
+      ]
+    }
+  },
+  {
+    "task_desc": "put some saltshaker on cabinet.",
+    "obj_type": "cabinet",
+    "verbs": "go to",
+    "goal_phase": "SEARCH",
+    "issue_text": "Cabinet is closed, preventing access to its contents.",
+    "learning_text": "Open the cabinet to access its contents and continue searching.",
+    "trigger": {
+      "key": "CONTAINER_STATE",
+      "verb": "go to",
+      "target_type": "cabinet",
+      "obs": "You arrive at cabinet 2. The cabinet 2 is closed."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-SaltShaker-None-Cabinet-10/trial_T20190906_191429_743650",
+      "trial_num": 1,
+      "step_range": [
+        3,
+        3
+      ]
+    }
+  },
+  {
+    "task_desc": "put some saltshaker on cabinet.",
+    "obj_type": "cabinet",
+    "verbs": "go to",
+    "goal_phase": "SEARCH",
+    "issue_text": "Cabinet is closed, preventing access to its contents.",
+    "learning_text": "Open the cabinet to access its contents and continue searching.",
+    "trigger": {
+      "key": "CONTAINER_STATE",
+      "verb": "go to",
+      "target_type": "cabinet",
+      "obs": "You arrive at cabinet 5. The cabinet 5 is closed."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-SaltShaker-None-Cabinet-10/trial_T20190906_191429_743650",
+      "trial_num": 1,
+      "step_range": [
+        7,
+        7
+      ]
+    }
+  },
+  {
+    "task_desc": "put some saltshaker on cabinet.",
+    "obj_type": "cabinet",
+    "verbs": "go to",
+    "goal_phase": "SEARCH",
+    "issue_text": "Cabinet is closed, preventing access to its contents.",
+    "learning_text": "Open the cabinet to access its contents and continue searching.",
+    "trigger": {
+      "key": "CONTAINER_STATE",
+      "verb": "go to",
+      "target_type": "cabinet",
+      "obs": "You arrive at cabinet 6. The cabinet 6 is closed."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-SaltShaker-None-Cabinet-10/trial_T20190906_191429_743650",
+      "trial_num": 1,
+      "step_range": [
+        9,
+        9
+      ]
+    }
+  },
+  {
+    "task_desc": "put some saltshaker on cabinet.",
+    "obj_type": "drawer",
+    "verbs": "go to",
+    "goal_phase": "SEARCH",
+    "issue_text": "Drawer is closed, preventing access to its contents.",
+    "learning_text": "Open the drawer to access its contents and continue searching.",
+    "trigger": {
+      "key": "CONTAINER_STATE",
+      "verb": "go to",
+      "target_type": "drawer",
+      "obs": "You arrive at drawer 1. The drawer 1 is closed."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-SaltShaker-None-Cabinet-10/trial_T20190906_191429_743650",
+      "trial_num": 1,
+      "step_range": [
+        16,
+        16
+      ]
+    }
+  },
+  {
+    "task_desc": "put some saltshaker on cabinet.",
+    "obj_type": "drawer",
+    "verbs": "go to",
+    "goal_phase": "SEARCH",
+    "issue_text": "Drawer is closed, preventing access to its contents.",
+    "learning_text": "Open the drawer to access its contents and continue searching.",
+    "trigger": {
+      "key": "CONTAINER_STATE",
+      "verb": "go to",
+      "target_type": "drawer",
+      "obs": "You arrive at drawer 2. The drawer 2 is closed."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-SaltShaker-None-Cabinet-10/trial_T20190906_191429_743650",
+      "trial_num": 1,
+      "step_range": [
+        18,
+        18
+      ]
+    }
+  },
+  {
+    "task_desc": "put some saltshaker on cabinet.",
+    "obj_type": "drawer",
+    "verbs": "go to",
+    "goal_phase": "SEARCH",
+    "issue_text": "Drawer is closed, preventing access to its contents.",
+    "learning_text": "Open the drawer to access its contents and continue searching.",
+    "trigger": {
+      "key": "CONTAINER_STATE",
+      "verb": "go to",
+      "target_type": "drawer",
+      "obs": "You arrive at drawer 3. The drawer 3 is closed."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-SaltShaker-None-Cabinet-10/trial_T20190906_191429_743650",
+      "trial_num": 1,
+      "step_range": [
+        20,
+        20
+      ]
+    }
+  },
+  {
+    "task_desc": "put some saltshaker on cabinet.",
+    "obj_type": "fridge",
+    "verbs": "go to",
+    "goal_phase": "SEARCH",
+    "issue_text": "Fridge is closed, preventing access to its contents.",
+    "learning_text": "Open the fridge to access its contents and continue searching.",
+    "trigger": {
+      "key": "CONTAINER_STATE",
+      "verb": "go to",
+      "target_type": "fridge",
+      "obs": "You arrive at fridge 1. The fridge 1 is closed."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-SaltShaker-None-Cabinet-10/trial_T20190906_191429_743650",
+      "trial_num": 1,
+      "step_range": [
+        23,
+        23
+      ]
+    }
+  },
+  {
+    "task_desc": "put a saltshaker in drawer.",
+    "obj_type": "cabinet",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempted to acquire an object from a closed cabinet.",
+    "learning_text": "Open the cabinet before attempting to take items from it.",
+    "trigger": {
+      "key": "CONTAINER_STATE",
+      "verb": "take",
+      "target_type": "cabinet",
+      "obs": "The cabinet 2 is closed."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-SaltShaker-None-Drawer-10",
+      "trial_num": 1,
+      "step_range": [
+        12,
+        13
+      ]
+    }
+  },
+  {
+    "task_desc": "put a saltshaker in drawer.",
+    "obj_type": "drawer",
+    "verbs": "put",
+    "goal_phase": "PLACE",
+    "issue_text": "Attempted to place an object into a closed drawer.",
+    "learning_text": "Open the drawer before attempting to place an object inside it.",
+    "trigger": {
+      "key": "CONTAINER_STATE",
+      "verb": "put",
+      "target_type": "drawer",
+      "obs": "The drawer 1 is closed."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-SaltShaker-None-Drawer-10",
+      "trial_num": 1,
+      "step_range": [
+        17,
+        18
+      ]
+    }
+  },
+  {
+    "task_desc": "put some soapbottle on toilet.",
+    "obj_type": "soapbottle",
+    "verbs": "open",
+    "goal_phase": "SEARCH",
+    "issue_text": "Target object 'soapbottle' not found in cabinet 1.",
+    "learning_text": "Continue searching for the 'soapbottle' in other locations.",
+    "trigger": {
+      "key": "NOT_FOUND",
+      "verb": "open",
+      "target_type": "cabinet",
+      "obs": "In it, you see a spraybottle 2."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-SoapBottle-None-Toilet-424/trial_T20190907_004321_405868",
+      "trial_num": 1,
+      "step_range": [
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "task_desc": "put some soapbottle on toilet.",
+    "obj_type": "soapbottle",
+    "verbs": "open",
+    "goal_phase": "SEARCH",
+    "issue_text": "Target object 'soapbottle' not found in cabinet 2.",
+    "learning_text": "Continue searching for the 'soapbottle' in other locations.",
+    "trigger": {
+      "key": "NOT_FOUND",
+      "verb": "open",
+      "target_type": "cabinet",
+      "obs": "In it, you see a candle 1, and a toiletpaper 1."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-SoapBottle-None-Toilet-424/trial_T20190907_004321_405868",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "task_desc": "put a vase in safe.",
+    "obj_type": "vase",
+    "verbs": "go",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent failed to go to cabinet 2.",
+    "learning_text": "The agent was never able to successfully go to cabinet 2 in any trial.",
+    "trigger": {
+      "key": "NO_EFFECT",
+      "verb": "go",
+      "target_type": "cabinet",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "CANDIDATE",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Vase-None-Safe-219/trial_T20190908_205204_244321",
+      "trial_num": 1,
+      "step_range": [
+        5,
+        5
+      ]
+    }
+  },
+  {
+    "task_desc": "put a vase in safe.",
+    "obj_type": "vase",
+    "verbs": "go",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent repeatedly failed to go to cabinet 2.",
+    "learning_text": "The agent was never able to successfully go to cabinet 2 in any trial.",
+    "trigger": {
+      "key": "LOOP",
+      "verb": "go",
+      "target_type": "cabinet",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "CANDIDATE",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Vase-None-Safe-219/trial_T20190908_205204_244321",
+      "trial_num": 1,
+      "step_range": [
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "task_desc": "put a vase in safe.",
+    "obj_type": "vase",
+    "verbs": "open",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent tried to open box 1, but it's not an openable container.",
+    "learning_text": "Do not attempt to open objects that are not containers or are not designed to be opened.",
+    "trigger": {
+      "key": "WRONG_VERB",
+      "verb": "open",
+      "target_type": "box",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "CANDIDATE",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Vase-None-Safe-219/trial_T20190908_205204_244321",
+      "trial_num": 2,
+      "step_range": [
+        4,
+        4
+      ]
+    }
+  },
+  {
+    "task_desc": "put a vase in safe.",
+    "obj_type": "vase",
+    "verbs": "look",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent tried to look in box 1, but it's not a container.",
+    "learning_text": "Do not attempt to look inside objects that are not containers or cannot be inspected.",
+    "trigger": {
+      "key": "WRONG_VERB",
+      "verb": "look",
+      "target_type": "box",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "CANDIDATE",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Vase-None-Safe-219/trial_T20190908_205204_244321",
+      "trial_num": 2,
+      "step_range": [
+        8,
+        8
+      ]
+    }
+  },
+  {
+    "task_desc": "put a vase in safe.",
+    "obj_type": "vase",
+    "verbs": "go",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent failed to go to dresser 1.",
+    "learning_text": "The agent successfully navigated to dresser 1 in a later trial.",
+    "trigger": {
+      "key": "NO_EFFECT",
+      "verb": "go",
+      "target_type": "dresser",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Vase-None-Safe-219/trial_T20190908_205204_244321",
+      "trial_num": 2,
+      "step_range": [
+        12,
+        12
+      ]
+    }
+  },
+  {
+    "task_desc": "put a vase in safe.",
+    "obj_type": "vase",
+    "verbs": "go",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent failed to go to cabinet 4.",
+    "learning_text": "The agent was never able to successfully go to cabinet 4 in any trial.",
+    "trigger": {
+      "key": "NO_EFFECT",
+      "verb": "go",
+      "target_type": "cabinet",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "CANDIDATE",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Vase-None-Safe-219/trial_T20190908_205204_244321",
+      "trial_num": 2,
+      "step_range": [
+        33,
+        33
+      ]
+    }
+  },
+  {
+    "task_desc": "put a vase in safe.",
+    "obj_type": "vase",
+    "verbs": "go",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent failed to go to shelf 3.",
+    "learning_text": "The agent was never able to successfully go to shelf 3 in any trial.",
+    "trigger": {
+      "key": "NO_EFFECT",
+      "verb": "go",
+      "target_type": "shelf",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "CANDIDATE",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Vase-None-Safe-219/trial_T20190908_205204_244321",
+      "trial_num": 2,
+      "step_range": [
+        40,
+        40
+      ]
+    }
+  },
+  {
+    "task_desc": "put a vase in safe.",
+    "obj_type": "vase",
+    "verbs": "look",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent tried to look on shelf 6, but nothing happened.",
+    "learning_text": "The agent never successfully looked on shelf 6.",
+    "trigger": {
+      "key": "NO_EFFECT",
+      "verb": "look",
+      "target_type": "shelf",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "CANDIDATE",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Vase-None-Safe-219/trial_T20190908_205204_244321",
+      "trial_num": 2,
+      "step_range": [
+        46,
+        46
+      ]
+    }
+  },
+  {
+    "task_desc": "put a vase in safe.",
+    "obj_type": "vase",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent failed to take vase 1 from shelf 10.",
+    "learning_text": "The agent was never able to successfully take the vase from shelf 10.",
+    "trigger": {
+      "key": "NO_EFFECT",
+      "verb": "take",
+      "target_type": "vase",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "CANDIDATE",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Vase-None-Safe-219/trial_T20190908_205204_244321",
+      "trial_num": 2,
+      "step_range": [
+        49,
+        49
+      ]
+    }
+  },
+  {
+    "task_desc": "put a vase in safe.",
+    "obj_type": "vase",
+    "verbs": "put",
+    "goal_phase": "PLACE",
+    "issue_text": "Agent tried to put box 1 in safe 1, but box 1 is not the target vase.",
+    "learning_text": "Only attempt to place the correct target object into the destination.",
+    "trigger": {
+      "key": "WRONG_VERB",
+      "verb": "put",
+      "target_type": "box",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "CANDIDATE",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Vase-None-Safe-219/trial_T20190908_205204_244321",
+      "trial_num": 5,
+      "step_range": [
+        5,
+        5
+      ]
+    }
+  },
+  {
+    "task_desc": "put a vase in safe.",
+    "obj_type": "vase",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent failed to take vase 1 without specifying its location.",
+    "learning_text": "Always specify the object's location when attempting to take it.",
+    "trigger": {
+      "key": "PRECONDITION",
+      "verb": "take",
+      "target_type": "vase",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Vase-None-Safe-219/trial_T20190908_205204_244321",
+      "trial_num": 7,
+      "step_range": [
+        45,
+        45
+      ]
+    }
+  },
+  {
+    "task_desc": "put a vase in safe.",
+    "obj_type": "vase",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly failed to take vase 1 from shelf 10.",
+    "learning_text": "The agent was never able to successfully take the vase from shelf 10.",
+    "trigger": {
+      "key": "LOOP",
+      "verb": "take",
+      "target_type": "vase",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "CANDIDATE",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Vase-None-Safe-219/trial_T20190908_205204_244321",
+      "trial_num": 7,
+      "step_range": [
+        47,
+        49
+      ]
+    }
+  },
+  {
+    "task_desc": "put some watch on safe.",
+    "obj_type": "watch",
+    "verbs": "move",
+    "goal_phase": "PLACE",
+    "issue_text": "Failed to place watch into safe because the safe was closed.",
+    "learning_text": "Open the safe before attempting to place the watch inside.",
+    "trigger": {
+      "key": "PRECONDITION",
+      "verb": "move",
+      "target_type": "safe",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Watch-None-Safe-219/trial_T20190907_074524_006355",
+      "trial_num": 1,
+      "step_range": [
+        23,
+        25
+      ]
+    }
+  },
+  {
+    "task_desc": "put some book on sidetable.",
+    "obj_type": "drawer",
+    "verbs": "open",
+    "goal_phase": "SEARCH",
+    "issue_text": "Attempted to open drawer 3, but it was a surface, not a container.",
+    "learning_text": "Verify if an object is a container before attempting to open it.",
+    "trigger": {
+      "key": "NO_EFFECT",
+      "verb": "open",
+      "target_type": "drawer",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Book-None-SideTable-329/trial_T20190908_050633_745514",
+      "trial_num": 1,
+      "step_range": [
+        8,
+        8
+      ]
+    }
+  },
+  {
+    "task_desc": "put some book on sidetable.",
+    "obj_type": "drawer",
+    "verbs": "open",
+    "goal_phase": "SEARCH",
+    "issue_text": "Attempted to open drawer 4, but it was a surface, not a container.",
+    "learning_text": "Verify if an object is a container before attempting to open it.",
+    "trigger": {
+      "key": "NO_EFFECT",
+      "verb": "open",
+      "target_type": "drawer",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Book-None-SideTable-329/trial_T20190908_050633_745514",
+      "trial_num": 1,
+      "step_range": [
+        11,
+        11
+      ]
+    }
+  },
+  {
+    "task_desc": "put a book in sofa.",
+    "obj_type": "book",
+    "verbs": "go to",
+    "goal_phase": "SEARCH",
+    "issue_text": "Book not found in initial search locations like drawers, coffeetable, or sidetables 1 and 2.",
+    "learning_text": "Expand search to other common locations for books, such as sidetable 3, to acquire the object.",
+    "trigger": {
+      "key": "NOT_FOUND",
+      "verb": "go to",
+      "target_type": "book",
+      "obs": "On the coffeetable 1, you see a box 1, a keychain 1, a pencil 2, a statue 2, and a tissuebox 1."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Book-None-Sofa-229/trial_T20190907_042856_259139",
+      "trial_num": 1,
+      "step_range": [
+        2,
+        17
+      ]
+    }
+  },
+  {
+    "task_desc": "put some box on dresser.",
+    "obj_type": "box",
+    "verbs": "open",
+    "goal_phase": "SEARCH",
+    "issue_text": "Box not found after opening multiple drawers.",
+    "learning_text": "Search other locations like sidetables to find the box.",
+    "trigger": {
+      "key": "NOT_FOUND",
+      "verb": "open",
+      "target_type": "drawer",
+      "obs": "In it, you see nothing."
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Box-None-Dresser-224/trial_T20190907_164104_229696",
+      "trial_num": 1,
+      "step_range": [
+        4,
+        14
+      ]
+    }
+  },
+  {
+    "task_desc": "put some box on dresser.",
+    "obj_type": "drawer",
+    "verbs": "go to",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent repeatedly tried to go to drawer 8 with no effect.",
+    "learning_text": "If 'go to' has no effect, try a different location or re-evaluate search strategy.",
+    "trigger": {
+      "key": "LOOP",
+      "verb": "go to",
+      "target_type": "drawer",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Box-None-Dresser-224/trial_T20190907_164104_229696",
+      "trial_num": 1,
+      "step_range": [
+        15,
+        16
+      ]
+    }
+  },
+  {
+    "task_desc": "put some box on dresser.",
+    "obj_type": "box",
+    "verbs": "put",
+    "goal_phase": "PLACE",
+    "issue_text": "Using 'put' verb to place box on dresser had no effect.",
+    "learning_text": "Use 'move' instead of 'put' to place the box on the dresser.",
+    "trigger": {
+      "key": "WRONG_VERB",
+      "verb": "put",
+      "target_type": "dresser",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Box-None-Dresser-224/trial_T20190907_164104_229696",
+      "trial_num": 2,
+      "step_range": [
+        6,
+        6
+      ]
+    }
+  },
+  {
+    "task_desc": "put a candle in cart.",
+    "obj_type": "candle",
+    "verbs": "go",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent failed to locate the candle after checking multiple common locations.",
+    "learning_text": "The candle was eventually found in the toilet, which was checked in a later trial.",
+    "trigger": {
+      "key": "NOT_FOUND",
+      "verb": "go",
+      "target_type": "candle",
+      "obs": "I haven't found a candle yet."
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Candle-None-Cart-401",
+      "trial_num": 1,
+      "step_range": [
+        3,
+        11
+      ]
+    }
+  },
+  {
+    "task_desc": "put a candle in cart.",
+    "obj_type": "candle",
+    "verbs": "put",
+    "goal_phase": "PLACE",
+    "issue_text": "Used 'put' verb to place candle in cart, but it had no effect.",
+    "learning_text": "The correct verb to place the candle in the cart was 'move'.",
+    "trigger": {
+      "key": "WRONG_VERB",
+      "verb": "put",
+      "target_type": "cart",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Candle-None-Cart-401",
+      "trial_num": 2,
+      "step_range": [
+        6,
+        6
+      ]
+    }
+  },
+  {
+    "task_desc": "put a candle in toilet.",
+    "obj_type": "candle",
+    "verbs": "find",
+    "goal_phase": "SEARCH",
+    "issue_text": "Candle not found in cabinets 1-4 after opening them.",
+    "learning_text": "Search other locations like countertop 1 where the candle was found.",
+    "trigger": {
+      "key": "NOT_FOUND",
+      "verb": "open",
+      "target_type": "cabinet",
+      "obs": "In it, you see nothing."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Candle-None-Toilet-407/trial_T20190909_055248_059513",
+      "trial_num": 1,
+      "step_range": [
+        3,
+        10
+      ]
+    }
+  },
+  {
+    "task_desc": "put some candle on toilet.",
+    "obj_type": "candle",
+    "verbs": "put",
+    "goal_phase": "PLACE",
+    "issue_text": "Agent's initial plan or task description used 'put', but 'move' was the successful verb for placing the object.",
+    "learning_text": "Use 'move' instead of 'put' when placing an object on a surface.",
+    "trigger": {
+      "key": "WRONG_VERB",
+      "verb": "put",
+      "target_type": "toilet",
+      "obs": "You move the candle 1 to the toilet 1."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Candle-None-Toilet-429/trial_T20190908_052232_887934",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        6
+      ]
+    }
+  },
+  {
+    "task_desc": "put a cellphone in armchair.",
+    "obj_type": "cellphone",
+    "verbs": "find",
+    "goal_phase": "SEARCH",
+    "issue_text": "Cellphone not found at desk 1.",
+    "learning_text": "The cellphone was found on bed 2; check bed 2 for the cellphone.",
+    "trigger": {
+      "key": "NOT_FOUND",
+      "verb": "find",
+      "target_type": "cellphone",
+      "obs": "On the desk 1, you see a book 2, a book 1, a desklamp 1, and a pencil 1."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-CellPhone-None-ArmChair-318/trial_T20190909_120047_968274",
+      "trial_num": 1,
+      "step_range": [
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "task_desc": "put a cellphone in armchair.",
+    "obj_type": "cellphone",
+    "verbs": "find",
+    "goal_phase": "SEARCH",
+    "issue_text": "Cellphone not found at desk 2.",
+    "learning_text": "The cellphone was found on bed 2; check bed 2 for the cellphone.",
+    "trigger": {
+      "key": "NOT_FOUND",
+      "verb": "find",
+      "target_type": "cellphone",
+      "obs": "On the desk 2, you see a laptop 2, and a mug 2."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-CellPhone-None-ArmChair-318/trial_T20190909_120047_968274",
+      "trial_num": 1,
+      "step_range": [
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "task_desc": "put a cellphone in armchair.",
+    "obj_type": "cellphone",
+    "verbs": "find",
+    "goal_phase": "SEARCH",
+    "issue_text": "Cellphone not found at bed 1.",
+    "learning_text": "The cellphone was found on bed 2; check bed 2 for the cellphone.",
+    "trigger": {
+      "key": "NOT_FOUND",
+      "verb": "find",
+      "target_type": "cellphone",
+      "obs": "On the bed 1, you see a pillow 2."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-CellPhone-None-ArmChair-318/trial_T20190909_120047_968274",
+      "trial_num": 1,
+      "step_range": [
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "task_desc": "put some cellphone on bed.",
+    "obj_type": "cellphone",
+    "verbs": "open",
+    "goal_phase": "SEARCH",
+    "issue_text": "Cellphone not found in initial search locations, requiring extensive exploration.",
+    "learning_text": "Continue searching all possible container locations until the target object is found.",
+    "trigger": {
+      "key": "NOT_FOUND",
+      "verb": "open",
+      "target_type": "drawer",
+      "obs": "In it, you see nothing."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-CellPhone-None-Bed-324/trial_T20190907_233817_198528",
+      "trial_num": 1,
+      "step_range": [
+        3,
+        22
+      ]
+    }
+  },
+  {
+    "task_desc": "put some creditcard on drawer.",
+    "obj_type": "creditcard",
+    "verbs": "move",
+    "goal_phase": "PLACE",
+    "issue_text": "Attempted to move creditcard to drawer without being at the target location.",
+    "learning_text": "Go to the target drawer first before attempting to move the object into it.",
+    "trigger": {
+      "key": "PRECONDITION",
+      "verb": "move",
+      "target_type": "drawer",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-CreditCard-None-Drawer-227/trial_T20190909_010644_297017",
+      "trial_num": 1,
+      "step_range": [
+        39,
+        43
+      ]
+    }
+  },
+  {
+    "task_desc": "put some creditcard on drawer.",
+    "obj_type": "creditcard",
+    "verbs": "put",
+    "goal_phase": "PLACE",
+    "issue_text": "Used 'put' verb to place creditcard in drawer, but it had no effect.",
+    "learning_text": "Use 'move' verb instead of 'put' to place the creditcard in the drawer.",
+    "trigger": {
+      "key": "WRONG_VERB",
+      "verb": "put",
+      "target_type": "drawer",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-CreditCard-None-Drawer-227/trial_T20190909_010644_297017",
+      "trial_num": 1,
+      "step_range": [
+        42,
+        43
+      ]
+    }
+  },
+  {
+    "task_desc": "put some egg on microwave.",
+    "obj_type": "egg",
+    "verbs": "go",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent tried to go to cabinet 2, but the action had no effect.",
+    "learning_text": "When 'go' action has no effect, try the intended next action directly, such as 'open' if at the target container.",
+    "trigger": {
+      "key": "NO_EFFECT",
+      "verb": "go",
+      "target_type": "cabinet",
+      "obs": "Nothing happens."
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "evidence_ref": {
+      "task_id": "pick_and_place_simple-Egg-None-Microwave-4",
+      "trial_num": 1,
+      "step_range": [
+        9,
+        9
+      ]
+    }
+  }
+]

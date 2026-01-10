@@ -1,0 +1,49 @@
+{
+  "query_issue": "cannot find the mug anywhere",
+  "goal_phase": "SEARCH",
+  "inferred_phase": false,
+  "results": [
+    {
+      "similarity_score": 0.5390903816695876,
+      "issue": "Book not found in initial search locations like drawers, coffeetable, or sidetables 1 and 2.",
+      "learning": "Expand search to other common locations for books, such as sidetable 3, to acquire the object.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "trigger": {
+        "key": "NOT_FOUND",
+        "verb": "go to",
+        "target_type": "book",
+        "obs": "On the coffeetable 1, you see a box 1, a keychain 1, a pencil 2, a statue 2, and a tissuebox 1."
+      },
+      "obj_type": "book",
+      "verbs": "go to"
+    },
+    {
+      "similarity_score": 0.5066869480736108,
+      "issue": "Agent failed to locate the candle after checking multiple common locations.",
+      "learning": "The candle was eventually found in the toilet, which was checked in a later trial.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "trigger": {
+        "key": "NOT_FOUND",
+        "verb": "go",
+        "target_type": "candle",
+        "obs": "I haven't found a candle yet."
+      },
+      "obj_type": "candle",
+      "verbs": "go"
+    },
+    {
+      "similarity_score": 0.4791806072675634,
+      "issue": "Target object 'soapbottle' not found in cabinet 1.",
+      "learning": "Continue searching for the 'soapbottle' in other locations.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "trigger": {
+        "key": "NOT_FOUND",
+        "verb": "open",
+        "target_type": "cabinet",
+        "obs": "In it, you see a spraybottle 2."
+      },
+      "obj_type": "soapbottle",
+      "verbs": "open"
+    }
+  ]
+}

@@ -1,0 +1,476 @@
+[
+  {
+    "task_id": "pick_and_place_simple-Newspaper-None-Sofa-224/trial_T20190909_111324_949106",
+    "trial_num": 1,
+    "is_success": false,
+    "reflexion": "Plan: Systematically search all remaining drawers (8-21), opening each if closed and checking its contents. If the newspaper is not found there, proceed to search dresser 1, garbagecan 1, and then sidetables 1 through 5. Once the newspaper is located, take it, go to sofa 1, and put the newspaper in sofa 1."
+  },
+  {
+    "task_id": "look_at_obj_in_light-CD-None-DeskLamp-320/trial_T20190907_224451_655673",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_clean_then_place_in_recep-SoapBar-None-Toilet-410/trial_T20190906_201106_979461",
+    "trial_num": 1,
+    "is_success": false,
+    "reflexion": "Plan: My mistake was attempting to `put soapbar 1 in toilet 1` before going to `toilet 1`. After taking the soapbar, I should first `go to toilet 1`, and then `put soapbar 1 in toilet 1`."
+  },
+  {
+    "task_id": "pick_clean_then_place_in_recep-Ladle-None-DiningTable-4/trial_T20190909_164840_568811",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_clean_then_place_in_recep-Fork-None-Drawer-8/trial_T20190908_132152_999725",
+    "trial_num": 1,
+    "is_success": false,
+    "reflexion": "Plan: Continue searching for a fork by checking `countertop 3`, then `countertop 4`. If no fork is found, systematically check `drawer 1` through `drawer 7`, then `cabinet 1` through `cabinet 18`. Once a fork is found, `take` it, `go to sinkbasin 1` to `clean` it, and then `go to drawer 1` to `put` it away."
+  },
+  {
+    "task_id": "pick_and_place_simple-SoapBottle-None-CounterTop-417/trial_T20190910_112922_368384",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_and_place_simple-Mug-None-Dresser-311/trial_T20190909_152837_739016",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_and_place_simple-CreditCard-None-ArmChair-201/trial_T20190908_124340_258012",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_heat_then_place_in_recep-Potato-None-Fridge-11/trial_T20190909_011341_436523",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-328/trial_T20190908_201550_622420",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-Box-None-DeskLamp-205/trial_T20190907_074425_330493",
+    "trial_num": 1,
+    "is_success": false,
+    "reflexion": "Plan: My mistake was attempting to `take` items that were fixed and then trying to `look at` the box when it was not in the required spatial relationship with the desklamp. Since I cannot move `box 1` or `desklamp 1` to create the \"box under the desklamp\" configuration, and I have thoroughly searched all furniture without finding another such"
+  },
+  {
+    "task_id": "look_at_obj_in_light-Statue-None-DeskLamp-216/trial_T20190909_193045_208933",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_and_place_simple-Mug-None-SideTable-329/trial_T20190909_032318_169393",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_and_place_simple-Pencil-None-Desk-310/trial_T20190909_113054_894334",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_clean_then_place_in_recep-Lettuce-None-Fridge-19/trial_T20190908_100138_446072",
+    "trial_num": 1,
+    "is_success": false,
+    "reflexion": "Plan: After cleaning the lettuce, go to fridge 1. If `put lettuce 1 in fridge 1` fails, take bowl 1 from fridge 1, put lettuce 1 in bowl 1, then put bowl 1 in fridge 1."
+  },
+  {
+    "task_id": "pick_cool_then_place_in_recep-Apple-None-Microwave-5/trial_T20190908_150807_823817",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_two_obj_and_place-SoapBar-None-GarbageCan-418/trial_T20190909_055538_380023",
+    "trial_num": 1,
+    "is_success": false,
+    "reflexion": "Plan: Since cabinet 1 was empty, I will proceed to search cabinet 2. I will execute `go to cabinet 2` to move to the next location, then `open cabinet 2`. If a soapbar is found, I will `take soapbar from cabinet 2`, then `go to garbagecan 1` and `put soapbar in garbagecan 1`. After depositing the first soapbar, I will continue this systematic search for the second soapbar, checking `cabinet 3`, `countertop 1`, and other likely locations in order."
+  },
+  {
+    "task_id": "pick_clean_then_place_in_recep-SoapBar-None-Toilet-428/trial_T20190907_041436_588106",
+    "trial_num": 1,
+    "is_success": false,
+    "reflexion": "Plan:\n1. Go to toilet 1.\n2. Flush toilet 1.\n3. Put soapbar 3 in toilet 1."
+  },
+  {
+    "task_id": "pick_and_place_simple-Knife-None-SideTable-3/trial_T20190918_184236_557252",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_cool_then_place_in_recep-Plate-None-CounterTop-1/trial_T20190906_205324_559361",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_cool_then_place_in_recep-Lettuce-None-CounterTop-1/trial_T20190908_042713_075616",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_cool_then_place_in_recep-Plate-None-Cabinet-27/trial_T20190906_173120_350651",
+    "trial_num": 1,
+    "is_success": false,
+    "reflexion": "Plan: My attempt to `put plate 1 in cabinet 1` failed because `cabinet 1` was closed, and subsequent attempts to `open cabinet 1` also resulted in \"Nothing happens,\" indicating `cabinet 1` may not be an openable container. I should have tried a different cabinet. I will now go to `cabinet 2`, attempt to `open cabinet 2`, and if successful, `put plate 1 in cabinet 2`. If `cabinet 2` also cannot be opened, I will proceed to try other cabinets until I find one that can be opened."
+  },
+  {
+    "task_id": "pick_clean_then_place_in_recep-SoapBar-None-Drawer-423/trial_T20190906_202340_749336",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_clean_then_place_in_recep-Cloth-None-Drawer-423/trial_T20190908_140701_251653",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_two_obj_and_place-Watch-None-Dresser-205/trial_T20190907_182211_592010",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_two_obj_and_place-TissueBox-None-Toilet-426/trial_T20190909_044602_338962",
+    "trial_num": 1,
+    "is_success": false,
+    "reflexion": "Plan:\n1.  Locate and take the two tissueboxes (e.g., `take tissuebox 1 from countertop 1`, `take tissuebox 2 from countertop 1`).\n2.  Before attempting to place items, explicitly verify `toilet 1`'s functionality as a receptacle. First, try `open toilet 1`. If this fails, attempt `move tissuebox 1 to toilet 1` to confirm it's not a valid placement surface.\n3.  If both `open toilet 1` and `move tissuebox 1 to toilet 1` result in \"Nothing happens\", conclude that `toilet 1` cannot accept items \"in\" or \"on\" it, rendering the task impossible as stated.\n4.  Attempt to `report` the task's impossibility. If `report` fails, attempt `finish`.\n5.  If the environment becomes unresponsive to all subsequent physical actions (e.g., `go to`, `take`) and task completion commands, attempt `finish` one final time. If this also fails, conclude the environment is unrecoverable."
+  },
+  {
+    "task_id": "pick_cool_then_place_in_recep-Apple-None-GarbageCan-2/trial_T20190906_195943_081289",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_two_obj_and_place-SprayBottle-None-Toilet-429/trial_T20190907_033843_707544",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_heat_then_place_in_recep-Mug-None-Cabinet-3/trial_T20190909_014639_335717",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-323/trial_T20190909_044715_250790",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_cool_then_place_in_recep-WineBottle-None-DiningTable-17/trial_T20190908_024426_412044",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_two_obj_and_place-SprayBottle-None-Cabinet-407/trial_T20190907_144556_144188",
+    "trial_num": 1,
+    "is_success": false,
+    "reflexion": "Plan: After placing the first spraybottle in a cabinet, I will systematically search all remaining containers for the second spraybottle. My previous search missed checking `garbagecan 1`. I will go to `garbagecan 1`, open it if closed, and then check its contents for the second spraybottle. If still unsuccessful, I will re-evaluate the environment for any other overlooked containers or interactive objects."
+  },
+  {
+    "task_id": "pick_and_place_simple-CellPhone-None-ArmChair-318/trial_T20190909_120047_968274",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_two_obj_and_place-Book-None-Desk-302/trial_T20190906_181233_363875",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_clean_then_place_in_recep-DishSponge-None-Cart-401/trial_T20190907_024634_972453",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_and_place_simple-Tomato-None-Microwave-13/trial_T20190908_124829_632660",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_heat_then_place_in_recep-Potato-None-Fridge-12/trial_T20190908_014451_271080",
+    "trial_num": 1,
+    "is_success": false,
+    "reflexion": "Plan: My mistake was that `put potato 1 in microwave 1` failed, likely due to other items being inside. I should have cleared the microwave first.\n1. Go to microwave 1.\n2. Open microwave 1.\n3. Take apple 1 from microwave 1.\n4. Take egg 1 from microwave 1.\n5. Put potato 1"
+  },
+  {
+    "task_id": "pick_and_place_simple-Candle-None-Toilet-429/trial_T20190908_052232_887934",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_two_obj_and_place-Pan-None-CounterTop-14/trial_T20190907_012519_974044",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_heat_then_place_in_recep-Plate-None-Cabinet-1/trial_T20190908_070946_578973",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_heat_then_place_in_recep-Egg-None-Fridge-14/trial_T20190909_091314_636733",
+    "trial_num": 1,
+    "is_success": false,
+    "reflexion": "Plan:\n1.  **Heating:** Before attempting to `heat` the egg with any appliance, first attempt to `turn on` the specific appliance (e.g., `turn on stoveburner 1`, `turn on microwave 1`). If `turn on` consistently yields \"Nothing happens\" for all heating options, conclude that heating is impossible.\n2.  **Fridge Placement:** Attempt to `open fridge 1`. If `open fridge 1` yields \"Nothing happens\", conclude that the fridge is inaccessible and the task cannot be completed. Do not proceed with `put egg 2 in fridge 1` if opening fails."
+  },
+  {
+    "task_id": "pick_and_place_simple-Book-None-SideTable-329/trial_T20190908_050633_745514",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_two_obj_and_place-RemoteControl-None-Ottoman-203/trial_T20190906_182952_858723",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_clean_then_place_in_recep-ButterKnife-None-DiningTable-16/trial_T20190909_114508_617301",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-Vase-None-DeskLamp-303/trial_T20190907_150418_457594",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_and_place_simple-Watch-None-SideTable-222/trial_T20190909_051813_197569",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_and_place_simple-Vase-None-CoffeeTable-207/trial_T20190909_091246_807206",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_two_obj_and_place-Glassbottle-None-Shelf-1/trial_T20190907_122204_941737",
+    "trial_num": 1,
+    "is_success": false,
+    "reflexion": "Plan: My mistake was getting stuck on drawer 8 and failing to complete the systematic search for the glassbottles. I will resume by going to drawer 9, opening it, and looking inside. Following this, I will systematically check all countertops (1, 2, 3), then open and check fridge 1, then check all shelves (1, 2, 3). If the glassbottles are still not found, I will check the coffeemachine 1, microwave 1, and toaster 1. For each glassbottle found, I will take it and place it in a shelf."
+  },
+  {
+    "task_id": "pick_and_place_simple-SoapBar-None-Cart-401/trial_T20190907_054906_608944",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-CD-None-DeskLamp-314/trial_T20190907_114323_767231",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_and_place_simple-Newspaper-None-Sofa-224/trial_T20190909_111324_949106",
+    "trial_num": 2,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_clean_then_place_in_recep-SoapBar-None-Toilet-410/trial_T20190906_201106_979461",
+    "trial_num": 2,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_clean_then_place_in_recep-Fork-None-Drawer-8/trial_T20190908_132152_999725",
+    "trial_num": 2,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-Box-None-DeskLamp-205/trial_T20190907_074425_330493",
+    "trial_num": 2,
+    "is_success": false,
+    "reflexion": "Plan: My mistake was concluding that the target object did not exist after finding a desklamp and a box separately. The task requires me to \"look at box under the desklamp,\" implying a pre-existing configuration. My new plan is to:\n1. Systematically search for a `desklamp`.\n2. Once a `desklamp` is located (e.g"
+  },
+  {
+    "task_id": "pick_clean_then_place_in_recep-Lettuce-None-Fridge-19/trial_T20190908_100138_446072",
+    "trial_num": 2,
+    "is_success": false,
+    "reflexion": "Plan: After cleaning the lettuce, if `put lettuce 1 in fridge 1` fails, first `move lettuce 1 to countertop 1`. Then, `take bowl 1 from fridge 1`. While holding the bowl, `go to countertop 1`. Then, `put lettuce 1 in bowl 1` (this action should now succeed as the bowl is held)."
+  },
+  {
+    "task_id": "pick_two_obj_and_place-SoapBar-None-GarbageCan-418/trial_T20190909_055538_380023",
+    "trial_num": 2,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_clean_then_place_in_recep-SoapBar-None-Toilet-428/trial_T20190907_041436_588106",
+    "trial_num": 2,
+    "is_success": false,
+    "reflexion": "Plan:\n1. Continue searching for a soapbar by checking `cabinet 2`, `cabinet 3`, `cabinet 4`, `countertop 1`, and `garbagecan 1` in that order.\n2. Once a soapbar is found, pick it up.\n3. Go to `sinkbasin 1` and clean the soapbar.\n4. Go to `toilet 1` and put the clean soapbar in it."
+  },
+  {
+    "task_id": "pick_cool_then_place_in_recep-Plate-None-Cabinet-27/trial_T20190906_173120_350651",
+    "trial_num": 2,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_two_obj_and_place-TissueBox-None-Toilet-426/trial_T20190909_044602_338962",
+    "trial_num": 2,
+    "is_success": false,
+    "reflexion": "Plan:\n1.  Confirm the task's impossibility by verifying that `toilet 1` cannot accept items (as previously determined by `open toilet 1` and `move tissuebox 1 to toilet 1` resulting in \"Nothing happens\").\n2.  If holding an item (e.g., `tissuebox 1`), return to its original location (`countertop 1`)."
+  },
+  {
+    "task_id": "pick_two_obj_and_place-SprayBottle-None-Cabinet-407/trial_T20190907_144556_144188",
+    "trial_num": 2,
+    "is_success": false,
+    "reflexion": "Plan: My mistake was attempting to `move spraybottle 1 to cabinet 1` while `cabinet 1` was closed. I should have opened the cabinet first. My new plan is to first `open cabinet 1`. After successfully opening `cabinet 1`, I will then `move spraybottle 1 to cabinet 1`. If `cabinet 1` cannot be opened, I will systematically attempt to `open` and then `move spraybottle 1` into `cabinet 2`, `cabinet 3`, and `cabinet 4` in that order until I find an openable cabinet. After placing the first spraybottle, I will then search for the second spraybottle."
+  },
+  {
+    "task_id": "pick_heat_then_place_in_recep-Potato-None-Fridge-12/trial_T20190908_014451_271080",
+    "trial_num": 2,
+    "is_success": false,
+    "reflexion": "Plan: My mistake was attempting to place the potato on a countertop while not being at that countertop, and then getting stuck when trying to move. I should have prioritized moving to a suitable location to place the potato before trying to clear the microwave.\n\n1.  **After taking potato 1 from countertop 1:** I am holding potato 1 and am at countertop 1.\n2"
+  },
+  {
+    "task_id": "pick_heat_then_place_in_recep-Egg-None-Fridge-14/trial_T20190909_091314_636733",
+    "trial_num": 2,
+    "is_success": false,
+    "reflexion": "Plan:\nWhen `open fridge 1` yields \"Nothing happens\", do not immediately conclude the fridge is inaccessible. Instead, attempt to `look inside fridge 1`. If `look inside fridge 1` reveals contents, proceed with finding and heating an egg, then `put hot egg in fridge 1`. If `look inside fridge 1` also fails or confirms inaccessibility,"
+  },
+  {
+    "task_id": "pick_two_obj_and_place-Glassbottle-None-Shelf-1/trial_T20190907_122204_941737",
+    "trial_num": 2,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-Box-None-DeskLamp-205/trial_T20190907_074425_330493",
+    "trial_num": 3,
+    "is_success": false,
+    "reflexion": "Plan: My core mistake was concluding that the target object, \"box under the desklamp,\" did not exist after an exhaustive search, despite the explicit instruction from previous trials that it *must* exist. My search strategy was too literal in interpreting \"under\" and too quick to dismiss locations where a desklamp was found without an immediately obvious box.\n\nMy new plan is to:\n1."
+  },
+  {
+    "task_id": "pick_clean_then_place_in_recep-Lettuce-None-Fridge-19/trial_T20190908_100138_446072",
+    "trial_num": 3,
+    "is_success": false,
+    "reflexion": "Plan: The previous attempts to `put lettuce 1 in bowl 1` failed both when holding the lettuce (bowl on surface) and when holding the bowl (lettuce on surface). This indicates that `put X in Y` is not the correct action for placing an item from a surface into a held container. Instead, I should have used `move lettuce 1 to bowl 1"
+  },
+  {
+    "task_id": "pick_clean_then_place_in_recep-SoapBar-None-Toilet-428/trial_T20190907_041436_588106",
+    "trial_num": 3,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_two_obj_and_place-TissueBox-None-Toilet-426/trial_T20190909_044602_338962",
+    "trial_num": 3,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_two_obj_and_place-SprayBottle-None-Cabinet-407/trial_T20190907_144556_144188",
+    "trial_num": 3,
+    "is_success": false,
+    "reflexion": "Plan: After placing the first spraybottle, I will resume the systematic search for the second spraybottle. My previous attempt failed to thoroughly check all potential containers. I will specifically go to `sinkbasin 1` and `examine sinkbasin 1` for the spraybottle. Next, I will go to `sinkbasin 2` and `examine sinkbasin 2`. Finally, I will go to `bathtubbasin 1` and `examine bathtubbasin 1`. If the second spraybottle is found in any of these locations, I will `take` it and `move` it into an open cabinet."
+  },
+  {
+    "task_id": "pick_heat_then_place_in_recep-Potato-None-Fridge-12/trial_T20190908_014451_271080",
+    "trial_num": 3,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_heat_then_place_in_recep-Egg-None-Fridge-14/trial_T20190909_091314_636733",
+    "trial_num": 3,
+    "is_success": false,
+    "reflexion": "Plan:\n1.  **Microwave Operation:** After taking an egg, first `open microwave 1`. Then, `put egg 4 in microwave 1` and `close microwave 1`. Only then attempt to `turn on microwave 1` and subsequently `heat egg 4 with microwave 1`.\n2.  **Fridge Placement:** Once the egg is hot, `open fridge"
+  },
+  {
+    "task_id": "look_at_obj_in_light-Box-None-DeskLamp-205/trial_T20190907_074425_330493",
+    "trial_num": 4,
+    "is_success": false,
+    "reflexion": "Plan: My mistake was failing to thoroughly investigate the furniture item where the desklamp was found for hidden compartments or contents, after direct \"under\" actions failed. My new plan is to:\n1.  Upon locating a desklamp on a piece of furniture (e.g., `desklamp 1` on `sidetable 3`), `examine sidetable 3` to identify any drawers or compartments.\n2.  If drawers are present, `open` each drawer (e.g., `open sidetable 3 drawer 1`) and then `look in` the opened drawer for a box.\n3.  If a box is found within a drawer, perform the task-specific action (e.g., `look at box 1`)."
+  },
+  {
+    "task_id": "pick_clean_then_place_in_recep-Lettuce-None-Fridge-19/trial_T20190908_100138_446072",
+    "trial_num": 4,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_two_obj_and_place-SprayBottle-None-Cabinet-407/trial_T20190907_144556_144188",
+    "trial_num": 4,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_heat_then_place_in_recep-Egg-None-Fridge-14/trial_T20190909_091314_636733",
+    "trial_num": 4,
+    "is_success": false,
+    "reflexion": "Plan:\n1.  **Comprehensive Object Examination for Egg:** My mistake was concluding an egg was unfound after only checking countertops and attempting to open inaccessible cabinets. I should have systematically `go to` and `examine` *every* accessible object in the room, including `coffeemachine 1`, `microwave 1`, `sinkbasin 1`, `stoveburner 1` ("
+  },
+  {
+    "task_id": "look_at_obj_in_light-Box-None-DeskLamp-205/trial_T20190907_074425_330493",
+    "trial_num": 5,
+    "is_success": false,
+    "reflexion": "Plan: My mistake was getting stuck on `desklamp 1` on `sidetable 3` after exhausting all direct and indirect methods to find a box under it (e.g., `look under desklamp 1`, `take desklamp 1`, `examine desklamp 1`, `examine sidetable 3`, `open sidetable 3 drawer"
+  },
+  {
+    "task_id": "pick_heat_then_place_in_recep-Egg-None-Fridge-14/trial_T20190909_091314_636733",
+    "trial_num": 5,
+    "is_success": false,
+    "reflexion": "Plan:\n1.  **Locate Egg Systematically:** Begin by systematically searching all accessible objects in the environment. Prioritize `countertop 1`, `countertop 2`, and all `cabinet` objects (1-8). For any closed cabinet, `open` it before examining its contents. If no egg is found, expand the search to include `coffeemachine 1`, `garbagecan 1`, `microwave 1`, `sinkbasin 1`, `stoveburner 1` through `stoveburner 4`, and `toaster 1`. `take` any `egg` found.\n2.  **Heat Egg Robustly:** Once an egg (e.g., `egg 2`) is obtained, `go to microwave 1`. First, `open microwave 1`, then `put egg 2 in microwave 1`, and `close microwave 1`. Finally, `heat egg 2 with microwave 1`.\n3.  **Verify Fridge Accessibility and Place Egg:** `go to fridge 1`. Attempt to `open fridge 1`. If this action yields \"Nothing happens\", then attempt to `look inside fridge 1`. If both `open fridge 1` and `look inside fridge 1` result in \"Nothing happens\", conclude that the fridge is inaccessible and the task cannot be completed. Otherwise, if the fridge is open or becomes accessible, `put egg 2 in fridge 1`."
+  },
+  {
+    "task_id": "look_at_obj_in_light-Box-None-DeskLamp-205/trial_T20190907_074425_330493",
+    "trial_num": 6,
+    "is_success": false,
+    "reflexion": "Plan: My mistake was attempting to open a non-existent drawer on `sidetable 3` after `examine sidetable 3` did not list any, indicating a misinterpretation of available interactable components. My new plan is to:\n1.  Discontinue attempts to open drawers on `sidetable 3`.\n2.  Continue the systematic search for a `box` object by opening and looking inside all remaining closed drawers and other containers in the room (e.g., `dresser 1`, `ottoman 1`, `garbagecan 1`).\n3.  Once a `box` is located, `go to` its location and perform the task action: `look at box X`. The \"under the desklamp\" condition will be satisfied by the box's inherent location or by the desklamp being turned on."
+  },
+  {
+    "task_id": "pick_heat_then_place_in_recep-Egg-None-Fridge-14/trial_T20190909_091314_636733",
+    "trial_num": 6,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-Box-None-DeskLamp-205/trial_T20190907_074425_330493",
+    "trial_num": 7,
+    "is_success": true,
+    "reflexion": ""
+  }
+]

@@ -1,3 +1,14 @@
+#!/usr/bin/env python3
+"""
+Run vanilla Reflexion on valid_seen split of alfworld-mini dataset.
+Uses MemoryAllocationReflexion framework (no LTM/memory retrieval).
+
+Output files:
+  - trajectories_valid_seen.json
+  - reflexions.json
+  - world.log
+"""
+
 import os
 import sys
 import yaml
@@ -12,69 +23,62 @@ from src.frameworks.memory_allocation import MemoryAllocationReflexion
 
 # Configuration
 NUM_TRIALS = 7
-NUM_TASKS = 120  # Number of tasks to run
-TASK_TYPE_FILTER = None  # Filter for specific task type (None for all)
-SPLIT_FILTER = "train"  # Filter for specific split (None for all, or 'train', 'valid_seen', 'valid_unseen')
+TASKS_CONFIG_PATH = "alfworld_runs/memory_agent_test/vanilla reflexion run/valid_seen_tasks.json"
+
 
 def load_config(config_path):
     with open(config_path, 'r') as f:
         return yaml.safe_load(f)
 
-def discover_tasks(base_dir, task_type_filter=None, num_tasks=20, split_filter=None):
+
+def load_tasks(base_dir, config_path):
     """
-    Dynamically discover tasks from alfworld_mini dataset.
-    
-    Args:
-        base_dir: Project root directory
-        task_type_filter: Filter tasks by type (e.g., 'pick_and_place', 'pick_heat', etc.)
-        num_tasks: Maximum number of tasks to return
-        split_filter: Filter tasks by split (e.g., 'train', 'valid_seen', 'valid_unseen')
+    Load task IDs from the config JSON file.
     
     Returns:
-        List of task names
+        List of task info dicts with path, id, file, and split
     """
-    tasks = []
-    if split_filter:
-        splits = [split_filter]
-    else:
-        splits = ['train', 'valid_seen', 'valid_unseen']
+    full_path = os.path.join(base_dir, config_path)
+    with open(full_path, 'r') as f:
+        config = json.load(f)
     
-    for split in splits:
-        split_dir = os.path.join(base_dir, 'alfworld_mini', split)
-        if not os.path.exists(split_dir):
-            continue
-            
-        for task_name in sorted(os.listdir(split_dir)):
-            task_path = os.path.join(split_dir, task_name)
-            if not os.path.isdir(task_path):
-                continue
-                
-            # Apply task type filter
-            if task_type_filter and not task_name.startswith(task_type_filter):
-                continue
-            
-            # Check if there's a valid trial directory with game.tw-pddl
-            trial_dirs = [d for d in os.listdir(task_path) if os.path.isdir(os.path.join(task_path, d))]
-            if trial_dirs:
-                tasks.append((split, task_name))
-                
-            if len(tasks) >= num_tasks:
-                break
+    task_files = []
+    
+    for task_entry in config['tasks']:
+        # Parse task entry format: "valid_seen:task_name/trial_name"
+        split, task_path = task_entry.split(':', 1)
+        task_name, trial_name = task_path.rsplit('/', 1)
         
-        if len(tasks) >= num_tasks:
-            break
+        # Build full path
+        trial_dir = os.path.join(base_dir, 'alfworld_mini', split, task_name, trial_name)
+        game_file = os.path.join(trial_dir, 'game.tw-pddl')
+        
+        if os.path.exists(game_file):
+            task_files.append({
+                "path": trial_dir,
+                "id": f"{task_name}/{trial_name}",
+                "file": game_file,
+                "split": split
+            })
+        else:
+            print(f"Warning: Could not find game.tw-pddl in {trial_dir}")
     
-    return tasks[:num_tasks]
+    return task_files
 
-def run_memory_allocation_test():
+
+def run_vanilla_reflexion():
     # Setup paths - base_dir should be project root
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     config_path = os.path.join(base_dir, 'data', 'alfworld', 'base_config.yaml')
-    log_dir = os.path.join(base_dir, 'alfworld_runs', 'memory_allocation_test')
+    log_dir = os.path.join(base_dir, 'alfworld_runs', 'memory_agent_test', 'vanilla reflexion run')
     os.makedirs(log_dir, exist_ok=True)
     
+    # Set output filename to match naming convention
+    trajectories_filename = "trajectories_valid_seen.json"
+    
     # Clean up old log files for a fresh run
-    for old_file in ['trajectories.json', 'reflexions.json', 'world.log', 'trajectories.jsonl', 'reflexions.jsonl']:
+    # Note: trajectories_valid_unseen.json is already renamed, so we don't delete it
+    for old_file in ['trajectories.json', 'reflexions.json', 'world.log']:
         old_path = os.path.join(log_dir, old_file)
         if os.path.exists(old_path):
             os.remove(old_path)
@@ -85,41 +89,9 @@ def run_memory_allocation_test():
     # Set ALFWORLD_DATA environment variable
     os.environ['ALFWORLD_DATA'] = os.path.join(base_dir, 'data')
 
-    # Discover tasks dynamically
-    discovered_tasks = discover_tasks(base_dir, task_type_filter=TASK_TYPE_FILTER, num_tasks=NUM_TASKS, split_filter=SPLIT_FILTER)
-    print(f"Discovered {len(discovered_tasks)} tasks of type '{TASK_TYPE_FILTER}'")
-    
-    # Search for the task json files
-    task_files = []
-    
-    for split, task_name in discovered_tasks:
-        task_dir = os.path.join(base_dir, 'alfworld_mini', split, task_name)
-        
-        # Check if task dir exists
-        if not os.path.exists(task_dir):
-            print(f"Warning: Task directory not found: {task_dir}")
-            continue
-
-        # Find the first trial directory
-        trial_dirs = [d for d in os.listdir(task_dir) if os.path.isdir(os.path.join(task_dir, d))]
-        if not trial_dirs:
-            print(f"Warning: No trial directories found in {task_dir}")
-            continue
-            
-        # Sort to ensure reproducibility if needed, though picking first is fine
-        trial_dirs.sort()
-        trial_dir = os.path.join(task_dir, trial_dirs[0])
-        game_file = os.path.join(trial_dir, 'game.tw-pddl')
-        
-        if os.path.exists(game_file):
-            task_files.append({
-                "path": trial_dir, # Alfworld expects the directory containing the .tw-pddl file
-                "id": f"{task_name}/{trial_dirs[0]}",
-                "file": game_file,
-                "split": split
-            })
-        else:
-            print(f"Warning: Could not find game.tw-pddl in {trial_dir}")
+    # Load tasks from config file
+    task_files = load_tasks(base_dir, TASKS_CONFIG_PATH)
+    print(f"Loaded {len(task_files)} tasks from {TASKS_CONFIG_PATH}")
 
     if not task_files:
         print("No tasks found. Exiting.")
@@ -133,7 +105,7 @@ def run_memory_allocation_test():
     with open(prompts_path, 'r') as f:
         prompts = json.load(f)
 
-    # Initialize env configs (following legacy/alfworld_old/main.py structure)
+    # Initialize env configs
     env_configs = []
     for i, task_info in enumerate(task_files):
         env_configs.append({
@@ -147,14 +119,15 @@ def run_memory_allocation_test():
 
     print(f"""
     -----
-    Starting Memory Allocation Reflexion Run:
+    Starting Vanilla Reflexion Run (valid_seen):
     Number of trials: {NUM_TRIALS}
     Number of tasks: {len(task_files)}
     Log directory: {log_dir}
+    Output file: {trajectories_filename}
     -----
     """)
 
-    # Trial loop (following legacy/alfworld_old/main.py structure)
+    # Trial loop
     for trial_idx in range(NUM_TRIALS):
         # Log trial start
         with open(world_log_path, 'a') as wf:
@@ -193,13 +166,11 @@ def run_memory_allocation_test():
                 env_configs[i]['skip'] = True
                 continue
             
-            # Extract task description from the first line of observation
-            # Format: "Your task is to: <task description>"
+            # Extract task description
             task_desc = ""
             if "Your task is to:" in ob:
                 task_desc = ob.split("Your task is to:")[-1].strip().split("\n")[0].strip()
             elif ob.strip():
-                # Fallback: use first non-empty line as task desc
                 for line in ob.split("\n"):
                     if line.strip():
                         task_desc = line.strip()
@@ -227,7 +198,7 @@ def run_memory_allocation_test():
                 print(f"Warning: Prompt not found for key {prompt_key}. Using default.")
                 prompt = prompts.get("react_put_0", "")
 
-            # Get memory for this task (use last 3 reflexions as in original)
+            # Get memory for this task
             memory = env_configs[i]['memory']
             
             try:
@@ -269,8 +240,6 @@ def run_memory_allocation_test():
         # Generate reflexions for failed tasks (after all tasks in trial)
         for i, task_info in enumerate(task_files):
             if not env_configs[i]['is_success'] and not env_configs[i]['skip']:
-                # Reflexion is already generated in framework.run() and logged
-                # We just need to add it to memory for next trial
                 # Read the latest reflexion from the file
                 reflexions_path = os.path.join(log_dir, 'reflexions.json')
                 if os.path.exists(reflexions_path):
@@ -304,10 +273,18 @@ def run_memory_allocation_test():
             print(f"\nAll tasks completed successfully after {trial_idx + 1} trials!")
             break
 
+    # Rename trajectories.json to trajectories_valid_seen.json
+    old_traj_path = os.path.join(log_dir, 'trajectories.json')
+    new_traj_path = os.path.join(log_dir, trajectories_filename)
+    if os.path.exists(old_traj_path):
+        os.rename(old_traj_path, new_traj_path)
+        print(f"\nRenamed trajectories.json to {trajectories_filename}")
+
     print(f"\n{'='*60}")
     print("RUN COMPLETE")
     print(f"{'='*60}")
     print(f"Final results saved to: {log_dir}")
 
+
 if __name__ == "__main__":
-    run_memory_allocation_test()
+    run_vanilla_reflexion()

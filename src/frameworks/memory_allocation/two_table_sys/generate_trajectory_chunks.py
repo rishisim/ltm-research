@@ -6,7 +6,7 @@ from typing import List, Dict, Any
 from src.core.llm import get_chat
 
 # Constants
-MODEL_NAME = "gemini-2.0-flash"
+MODEL_NAME = "gemini-2.5-flash"
 
 SYSTEM_PROMPT_TEMPLATE = """You are given one task trajectory (steps with action, observation).
 Convert it into TrajectoryChunks.

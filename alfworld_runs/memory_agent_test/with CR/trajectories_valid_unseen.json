@@ -1,0 +1,773 @@
+[
+  {
+    "task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-308/trial_T20190908_222917_366542",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the alarmclock with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "goal_phase": "SEARCH",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "issue": "Box not found after opening multiple drawers.",
+        "learning": "Search other locations like sidetables to find the box.",
+        "task_desc": "put some box on dresser.",
+        "similarity_score": 0.42546743132355663
+      },
+      {
+        "goal_phase": "SEARCH",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "issue": "Agent repeatedly tried to go to drawer 8 with no effect.",
+        "learning": "If 'go to' has no effect, try a different location or re-evaluate search strategy.",
+        "task_desc": "put some box on dresser.",
+        "similarity_score": 0.42546743132355663
+      },
+      {
+        "goal_phase": "ACQUIRE",
+        "valid_level": "VALID_SAME_TRIAL",
+        "issue": "Attempted to acquire an object from a closed cabinet.",
+        "learning": "Open the cabinet before attempting to take items from it.",
+        "task_desc": "put a saltshaker in drawer.",
+        "similarity_score": 0.39705806565973817
+      },
+      {
+        "goal_phase": "PLACE",
+        "valid_level": "VALID_SAME_TRIAL",
+        "issue": "Agent's initial plan or task description used 'put', but 'move' was the successful verb for placing the object.",
+        "learning": "Use 'move' instead of 'put' when placing an object on a surface.",
+        "task_desc": "put some candle on toilet.",
+        "similarity_score": 0.4432167152445087
+      },
+      {
+        "goal_phase": "PLACE",
+        "valid_level": "VALID_SAME_TRIAL",
+        "issue": "Failed to place watch into safe because the safe was closed.",
+        "learning": "Open the safe before attempting to place the watch inside.",
+        "task_desc": "put some watch on safe.",
+        "similarity_score": 0.4299823264361007
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I need to examine an alarmclock with a desklamp. This means I need to find an alarmclock, find a desklamp, and then use the desklamp on the alarmclock.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a bowl 1, a desklamp 1, a mug 1, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "think: I am at desk 1 and I see a desklamp 1. I need to find an alarmclock. I will check desk 2 first.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "take desklamp 1 from desk 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "think: I am currently at desk 2, but the desklamp 1 is on desk 1. I need to go to desk 1 to pick up the desklamp.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a bowl 1, a desklamp 1, a mug 1, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "take desklamp 1 from desk 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "think: My previous attempt to take the desklamp failed with \"Nothing happens.\" This suggests the desklamp might be fixed to the desk or cannot be picked up. If I cannot pick up the desklamp, I must bring the alarmclock to the desklamp. The alarmclock is on desk 2, and the desklamp is on desk 1. I am currently at desk 1. So, I need to go to desk 2, take the alarmclock, then return to desk 1 and use the desklamp on the alarmclock.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 10,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 11,
+        "action": "take alarmclock 1 from desk 2",
+        "observation": "You pick up the alarmclock 1 from the desk 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 12,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a bowl 1, a desklamp 1, a mug 1, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 13,
+        "action": "You are carrying the alarmclock 1.",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 14,
+        "action": "use desklamp 1 on alarmclock 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 15,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0
+  },
+  {
+    "task_id": "look_at_obj_in_light-Book-None-DeskLamp-308/trial_T20190908_020029_636862",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the book with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "goal_phase": "SEARCH",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "issue": "Box not found after opening multiple drawers.",
+        "learning": "Search other locations like sidetables to find the box.",
+        "task_desc": "put some box on dresser.",
+        "similarity_score": 0.406901910757978
+      },
+      {
+        "goal_phase": "SEARCH",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "issue": "Agent repeatedly tried to go to drawer 8 with no effect.",
+        "learning": "If 'go to' has no effect, try a different location or re-evaluate search strategy.",
+        "task_desc": "put some box on dresser.",
+        "similarity_score": 0.406901910757978
+      },
+      {
+        "goal_phase": "PLACE",
+        "valid_level": "VALID_SAME_TRIAL",
+        "issue": "Agent's initial plan or task description used 'put', but 'move' was the successful verb for placing the object.",
+        "learning": "Use 'move' instead of 'put' when placing an object on a surface.",
+        "task_desc": "put some candle on toilet.",
+        "similarity_score": 0.46304828295148287
+      },
+      {
+        "goal_phase": "PLACE",
+        "valid_level": "VALID_SAME_TRIAL",
+        "issue": "Agent tried to put object in a location without being at that location.",
+        "learning": "Go to the target location before attempting to place an object there.",
+        "task_desc": "put a pencil in shelf.",
+        "similarity_score": 0.42566392586733354
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I need to find a book and a desklamp. Then I need to take the book, go to the desklamp, and examine the book with the desklamp. I will start by looking for a book. Books are commonly found on desks or shelves. I will check desk 1 first.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 2, a cd 1, a cellphone 3, a desklamp 1, a mug 1, a pen 1, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 3, a bowl 3, a cd 3, a mug 2, and a pencil 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "think: I have checked desk 1 and desk 2, and neither contained a book. My next step is to check the shelves for a book. I will start with shelf 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "go to shelf 1",
+        "observation": "You arrive at shelf 1. On the shelf 1, you see a bowl 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "go to shelf 2",
+        "observation": "You arrive at shelf 2. On the shelf 2, you see a creditcard 1, and a pencil 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "go to shelf 3",
+        "observation": "You arrive at shelf 3. On the shelf 3, you see a alarmclock 1, a bowl 2, and a desklamp 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "go to shelf 4",
+        "observation": "You arrive at shelf 4. On the shelf 4, you see a alarmclock 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "go to shelf 5",
+        "observation": "You arrive at shelf 5. On the shelf 5, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 10,
+        "action": "go to shelf 6",
+        "observation": "You arrive at shelf 6. On the shelf 6, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 11,
+        "action": "think: I have checked all desks and shelves and have not found a book. I will now check the drawers for a book. I will start with drawer 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 12,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 13,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 14,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. On the drawer 2, you see a cellphone 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 15,
+        "action": "open drawer 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 16,
+        "action": "think: I tried to open drawer 2, but \"Nothing happens.\" Looking at the previous observation, \"On the drawer 2, you see a cellphone 2,\" it seems drawer 2 is a surface, not a container that can be opened. I should continue my search for a book in the remaining drawers. I will go to drawer 3 next.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 17,
+        "action": "go to drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 18,
+        "action": "think: My attempt to go to drawer 3 resulted in \"Nothing happens,\" which indicates an issue with that location or command. According to learning 2, if 'go to' has no effect, I should try a different location or re-evaluate my search strategy. I will try to go to drawer 4 next to continue my search for a book.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 19,
+        "action": "go to drawer 4",
+        "observation": "You arrive at drawer 4. The drawer 4 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 20,
+        "action": "open drawer 4",
+        "observation": "You open the drawer 4. The drawer 4 is open. In it, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 21,
+        "action": "go to drawer 5",
+        "observation": "You arrive at drawer 5. On the drawer 5, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 22,
+        "action": "think: I have checked drawer 1 (opened, empty), drawer 2 (surface, no book), drawer 4 (opened, empty), and drawer 5 (surface, no book). I still need to check drawer 6 for a book.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 23,
+        "action": "go to drawer 6",
+        "observation": "You arrive at drawer 6. The drawer 6 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 24,
+        "action": "open drawer 6",
+        "observation": "You open the drawer 6. The drawer 6 is open. In it, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 25,
+        "action": "think: I have thoroughly searched desks, shelves, and most drawers for a book, but have not found one. I previously encountered an issue trying to go to drawer 3. According to learning 2, if 'go to' has no effect, I should try a different location or re-evaluate my search strategy. I have now checked all other likely locations. I will re-attempt to go to drawer 3. If that fails again, I will expand my search to other less common locations like the bed, garbagecan, laundryhamper, and safe.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 26,
+        "action": "go to drawer 3",
+        "observation": "You arrive at drawer 3. On the drawer 3, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 27,
+        "action": "think: I have now checked all desks, shelves, and drawers for a book and have not found one. I need to expand my search to other locations. I will check the bed 1 next.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 28,
+        "action": "go to bed 1",
+        "observation": "You arrive at bed 1. On the bed 1, you see a book 1, a cellphone 1, a laptop 2, a laptop 1, a pillow 2, and a pillow 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 29,
+        "action": "take book 1 from bed 1",
+        "observation": "You pick up the book 1 from the bed 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 30,
+        "action": "think: I have found the book 1 and picked it up. Now I need to find a desklamp. I recall seeing a desklamp on desk 1 and shelf 3 during my previous search. I will go to desk 1, as it's a convenient location.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 31,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 2, a cd 1, a cellphone 3, a desklamp 1, a mug 1, a pen 1, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 32,
+        "action": "examine book 1 with desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 33,
+        "action": "think: My previous attempt to `examine book 1 with desklamp 1` failed with \"Nothing happens.\" Based on the previous task's example, a desklamp often needs to be \"used\" or \"turned on\" before it can be effective. I am currently at desk 1, where desklamp 1 is located. I will first turn on the desklamp and then attempt to examine the book with it.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 34,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0
+  },
+  {
+    "task_id": "look_at_obj_in_light-Bowl-None-DeskLamp-308/trial_T20190907_133919_856963",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at bowl under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "goal_phase": "SEARCH",
+        "valid_level": "VALID_SAME_TRIAL",
+        "issue": "Failed to open drawer 2, the action had no effect.",
+        "learning": "If a container cannot be opened, continue searching for the target object in other locations.",
+        "task_desc": "put a mug in desk.",
+        "similarity_score": 0.5850338580954029
+      },
+      {
+        "goal_phase": "SEARCH",
+        "valid_level": "VALID_SAME_TRIAL",
+        "issue": "Failed to go to drawer 3, the action had no effect.",
+        "learning": "If an object cannot be reached, try alternative search locations for the target object.",
+        "task_desc": "put a mug in desk.",
+        "similarity_score": 0.5850338580954029
+      },
+      {
+        "goal_phase": "PLACE",
+        "valid_level": "VALID_SAME_TRIAL",
+        "issue": "Agent's initial plan or task description used 'put', but 'move' was the successful verb for placing the object.",
+        "learning": "Use 'move' instead of 'put' when placing an object on a surface.",
+        "task_desc": "put some candle on toilet.",
+        "similarity_score": 0.5190939686655947
+      },
+      {
+        "goal_phase": "PLACE",
+        "valid_level": "VALID_SAME_TRIAL",
+        "issue": "The 'put' command had no effect when trying to place the peppershaker into the drawer.",
+        "learning": "Use the 'move' command instead of 'put' to place an object into a drawer.",
+        "task_desc": "put some peppershaker on drawer.",
+        "similarity_score": 0.4771775186287719
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I have already taken bowl 1 and found desklamp 1 on sidetable 2. I have also turned on the desklamp. The task is to \"look at bowl under the desklamp\". This means I need to place the bowl under the desklamp, which is on sidetable 2. According to the learnings, I should use the 'move' command to place an object. After placing it, I will look at the bowl.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to sidetable 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "move bowl 1 to sidetable 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "think: My previous actions failed because the environment has changed. `sidetable 2` and `desklamp 1` are no longer present in the room, as indicated by the current room description. I still have `bowl 1` in my inventory. I need to find a new desklamp in the current room. I will search the desks and shelves.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "think: I need to find a desklamp in the current room. I will start by checking desk 1, then desk 2, and then the shelves.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a desklamp 1, a keychain 3, a mug 2, a pen 2, a pen 1, and a pencil 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "move bowl 1 to desk 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "move bowl 1 under desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "think: I have `bowl 1` in my inventory and I am at `desk 1`, where `desklamp 1` is located. The task is to \"look at bowl under the desklamp\". This means I need to place the bowl on the desk, conceptually \"under\" the desklamp. My previous attempts `move bowl 1 to desk 1` and `",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 10,
+        "action": "I have `bowl 1` in my inventory. I am at `desk 1`, and `desklamp 1` is on `desk 1`. The task is to \"look at bowl under the desklamp\". This means I need to place the bowl on the desk, conceptually \"under\" the desklamp. My previous attempts `move bowl 1 to desk",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 11,
+        "action": "I have `bowl 1` in my inventory. I am at `desk 1`, and `desklamp 1` is on `desk 1`. The task is to \"look at bowl under the desklamp\". This means I need to place the bowl on the desk, conceptually \"under\" the desklamp. My previous attempts `move bowl 1 to desk 1`",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 12,
+        "action": "I have `bowl 1` in my inventory. I am at `desk 1`, and `desklamp 1` is on `desk 1`. The task is to \"look at bowl under the desklamp\". This means I need to place the bowl on the desk, conceptually \"under\" the desklamp. My previous attempts `move bowl 1 to desk 1`",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      }
+    ],
+    "success": false,
+    "help_calls": [],
+    "help_call_count": 0
+  },
+  {
+    "task_id": "look_at_obj_in_light-CD-None-DeskLamp-308/trial_T20190908_141942_810052",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at cd under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "goal_phase": "SEARCH",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "issue": "Box not found after opening multiple drawers.",
+        "learning": "Search other locations like sidetables to find the box.",
+        "task_desc": "put some box on dresser.",
+        "similarity_score": 0.44520383379643164
+      },
+      {
+        "goal_phase": "SEARCH",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "issue": "Agent repeatedly tried to go to drawer 8 with no effect.",
+        "learning": "If 'go to' has no effect, try a different location or re-evaluate search strategy.",
+        "task_desc": "put some box on dresser.",
+        "similarity_score": 0.44520383379643164
+      },
+      {
+        "goal_phase": "PLACE",
+        "valid_level": "VALID_SAME_TRIAL",
+        "issue": "Agent's initial plan or task description used 'put', but 'move' was the successful verb for placing the object.",
+        "learning": "Use 'move' instead of 'put' when placing an object on a surface.",
+        "task_desc": "put some candle on toilet.",
+        "similarity_score": 0.47367399813745903
+      },
+      {
+        "goal_phase": "PLACE",
+        "valid_level": "VALID_SAME_TRIAL",
+        "issue": "Using 'put' verb to place box on dresser had no effect.",
+        "learning": "Use 'move' instead of 'put' to place the box on the dresser.",
+        "task_desc": "put some box on dresser.",
+        "similarity_score": 0.44520383379643164
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I need to find a cd and a desklamp. Then I need to look at the cd under the desklamp. I will start by searching for a cd. CDs are often found on desks or shelves. I will check desk 1 first.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 1, a desklamp 1, and a mug 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "think: I have found a desklamp 1 on desk 1. Now I need to find a cd. I don't see a cd on desk 1. I will check desk 2 next.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 3, a bowl 3, a bowl 2, a cd 1, a creditcard 1, a laptop 2, and a mug 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "take cd 1 from desk 2",
+        "observation": "You pick up the cd 1 from the desk 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 1, a desklamp 1, and a mug 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "move cd 1 to desk 1",
+        "observation": "You move the cd 1 to the desk 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "look at cd 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "think: I have moved the cd 1 to desk 1, where the desklamp 1 is located. The task is to \"look at cd under the desklamp\". Based on the previous similar task, the final step was to \"use\" the desklamp, which turned it on. This implies that turning on the desklamp might be the action that fulfills the \"look at X under Y\" task. I will try to use the desklamp 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 10,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 11,
+        "action": "look at cd 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 12,
+        "action": "use desklamp 1 on cd 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 13,
+        "action": "think: I have moved the cd 1 to desk 1, where the desklamp 1 is. I have also turned on the desklamp 1. The task is to \"look at cd under the desklamp\". I have tried `look at cd 1` and `use desklamp 1 on cd 1` without success. The previous similar task ended with `",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 14,
+        "action": "The previous similar task ended with `use desklamp 1`, which turned it on, and the task was completed. In that task, the bowl was in the agent's inventory, not explicitly placed under the desklamp.",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 15,
+        "action": "The previous similar task ended with `use desklamp 1`, which turned it on, and the task was completed. In that task, the bowl was in the agent's inventory, not explicitly placed under the desklamp. This suggests that the item needs to be in my inventory when I `use desklamp 1`. I will try to pick up the cd 1 and then use the desklamp.",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 16,
+        "action": "take cd 1 from desk 1",
+        "observation": "You pick up the cd 1 from the desk 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0
+  },
+  {
+    "task_id": "look_at_obj_in_light-Mug-None-DeskLamp-308/trial_T20190908_161733_213242",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at mug under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "goal_phase": "SEARCH",
+        "valid_level": "VALID_SAME_TRIAL",
+        "issue": "Failed to open drawer 2, the action had no effect.",
+        "learning": "If a container cannot be opened, continue searching for the target object in other locations.",
+        "task_desc": "put a mug in desk.",
+        "similarity_score": 0.7675529574776571
+      },
+      {
+        "goal_phase": "SEARCH",
+        "valid_level": "VALID_SAME_TRIAL",
+        "issue": "Failed to go to drawer 3, the action had no effect.",
+        "learning": "If an object cannot be reached, try alternative search locations for the target object.",
+        "task_desc": "put a mug in desk.",
+        "similarity_score": 0.7675529574776571
+      },
+      {
+        "goal_phase": "PLACE",
+        "valid_level": "VALID_SAME_TRIAL",
+        "issue": "Agent's initial plan or task description used 'put', but 'move' was the successful verb for placing the object.",
+        "learning": "Use 'move' instead of 'put' when placing an object on a surface.",
+        "task_desc": "put some candle on toilet.",
+        "similarity_score": 0.5017790441405335
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find and take a mug, then find a desklamp, and finally look at the mug under the desklamp.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "think: First, I need to find a mug. A mug is likely to be on a desk, shelf, or sidetable, or possibly in a drawer. I will start by checking desk 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a creditcard 1, a desklamp 1, a laptop 1, a pencil 2, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 1, a book 2, a bowl 1, a cd 2, and a mug 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "take mug 3 from desk 2",
+        "observation": "You pick up the mug 3 from the desk 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a creditcard 1, a desklamp 1, a laptop 1, a pencil 2, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "move mug 3 to desk 1",
+        "observation": "You move the mug 3 to the desk 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "look at mug 3 under desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 10,
+        "action": "look at mug 3 under desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 11,
+        "action": "think: The command `look at mug 3 under desklamp 1` failed, suggesting this is not the correct syntax. The task is to \"look at mug under the desklamp\". I have already placed the mug on desk 1, where desklamp 1 is also located and turned on. This means the mug is now \"under the desklamp\". Therefore, I should simply `look at mug 3`.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 12,
+        "action": "look at mug 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 13,
+        "action": "use desklamp 1 on mug 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 14,
+        "action": "take mug 3 from desk 1",
+        "observation": "You pick up the mug 3 from the desk 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0
+  }
+]

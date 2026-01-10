@@ -24,7 +24,7 @@ class MemoryAllocationReflexion(ReAct):
             print(f"Warning: Few-shot examples not found at {few_shot_path}")
 
     def run(self, env: BaseEnv, base_prompt: str, memory: List[str], start_ob: str = "", 
-            task_id: str = "", trial_num: int = 1, log_dir: str = "") -> Tuple[EnvironmentHistory, bool]:
+            task_id: str = "", trial_num: int = 1, log_dir: str = "", task_desc: str = "") -> Tuple[EnvironmentHistory, bool]:
         """
         Run the agent on the environment and log the trajectory.
         
@@ -36,6 +36,7 @@ class MemoryAllocationReflexion(ReAct):
             task_id: Unique identifier for the task
             trial_num: Trial number for this task
             log_dir: Directory to save logs
+            task_desc: The task description text
             
         Returns:
             Tuple of (environment history, success boolean)
@@ -97,7 +98,7 @@ class MemoryAllocationReflexion(ReAct):
         
         # Log trajectory and reflexion
         if log_dir:
-            self._log_trajectory(log_dir, task_id, trial_num, steps, is_success)
+            self._log_trajectory(log_dir, task_id, trial_num, steps, is_success, task_desc)
             
             # Generate reflexion if task failed, otherwise use empty string
             reflexion = ""
@@ -113,10 +114,15 @@ class MemoryAllocationReflexion(ReAct):
         return env_history, is_success
 
     def _log_trajectory(self, log_dir: str, task_id: str, trial_num: int, 
-                        steps: List[Dict[str, str]], success: bool) -> None:
+                        steps: List[Dict[str, str]], success: bool, task_desc: str = "") -> None:
         """Log the complete trajectory to trajectories.json"""
+        # Extract task_type from task_id (e.g., 'pick_and_place_simple' from 'pick_and_place_simple-Mug-None-Desk-308/...')
+        task_type = task_id.split('-')[0] if task_id else ""
+        
         trajectory = {
             "task_id": task_id,
+            "task_type": task_type,
+            "task_desc": task_desc,
             "trial_num": trial_num,
             "steps": steps,
             "success": success

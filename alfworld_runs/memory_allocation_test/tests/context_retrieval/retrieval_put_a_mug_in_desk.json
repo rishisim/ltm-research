@@ -1,0 +1,187 @@
+{
+  "query": "put a mug in desk.",
+  "retrieved_entries": [
+    {
+      "task_desc": "put a vase in safe.",
+      "obj_type": "vase",
+      "verbs": "go",
+      "goal_phase": "SEARCH",
+      "issue_text": "Agent failed to go to dresser 1.",
+      "learning_text": "The agent successfully navigated to dresser 1 in a later trial.",
+      "trigger": {
+        "key": "NO_EFFECT",
+        "verb": "go",
+        "target_type": "dresser",
+        "obs": "Nothing happens."
+      },
+      "valid_level": "VALID_NEXT_TRIAL",
+      "evidence_ref": {
+        "task_id": "pick_and_place_simple-Vase-None-Safe-219/trial_T20190908_205204_244321",
+        "trial_num": 2,
+        "step_range": [
+          12,
+          12
+        ]
+      },
+      "_similarity_score": 0.6110924571273264
+    },
+    {
+      "task_desc": "put a mug in desk.",
+      "obj_type": "mug",
+      "verbs": "open",
+      "goal_phase": "SEARCH",
+      "issue_text": "Failed to open drawer 2, the action had no effect.",
+      "learning_text": "If a container cannot be opened, continue searching for the target object in other locations.",
+      "trigger": {
+        "key": "NO_EFFECT",
+        "verb": "open",
+        "target_type": "drawer",
+        "obs": "Nothing happens."
+      },
+      "valid_level": "VALID_SAME_TRIAL",
+      "evidence_ref": {
+        "task_id": "pick_and_place_simple-Mug-None-Desk-308/trial_T20190908_125200_737896",
+        "trial_num": 1,
+        "step_range": [
+          8,
+          8
+        ]
+      },
+      "_similarity_score": 1.0000000000000002
+    },
+    {
+      "task_desc": "put a saltshaker in drawer.",
+      "obj_type": "cabinet",
+      "verbs": "take",
+      "goal_phase": "ACQUIRE",
+      "issue_text": "Attempted to acquire an object from a closed cabinet.",
+      "learning_text": "Open the cabinet before attempting to take items from it.",
+      "trigger": {
+        "key": "CONTAINER_STATE",
+        "verb": "take",
+        "target_type": "cabinet",
+        "obs": "The cabinet 2 is closed."
+      },
+      "valid_level": "VALID_SAME_TRIAL",
+      "evidence_ref": {
+        "task_id": "pick_and_place_simple-SaltShaker-None-Drawer-10",
+        "trial_num": 1,
+        "step_range": [
+          12,
+          13
+        ]
+      },
+      "_similarity_score": 0.6173502209441529
+    },
+    {
+      "task_desc": "put a vase in safe.",
+      "obj_type": "vase",
+      "verbs": "take",
+      "goal_phase": "ACQUIRE",
+      "issue_text": "Agent failed to take vase 1 without specifying its location.",
+      "learning_text": "Always specify the object's location when attempting to take it.",
+      "trigger": {
+        "key": "PRECONDITION",
+        "verb": "take",
+        "target_type": "vase",
+        "obs": "Nothing happens."
+      },
+      "valid_level": "VALID_SAME_TRIAL",
+      "evidence_ref": {
+        "task_id": "pick_and_place_simple-Vase-None-Safe-219/trial_T20190908_205204_244321",
+        "trial_num": 7,
+        "step_range": [
+          45,
+          45
+        ]
+      },
+      "_similarity_score": 0.6110924571273264
+    },
+    {
+      "task_desc": "put a pencil in shelf.",
+      "obj_type": "pencil",
+      "verbs": "put",
+      "goal_phase": "PLACE",
+      "issue_text": "Agent tried to put object in a location without being at that location.",
+      "learning_text": "Go to the target location before attempting to place an object there.",
+      "trigger": {
+        "key": "PRECONDITION",
+        "verb": "put",
+        "target_type": "shelf",
+        "obs": "Nothing happens."
+      },
+      "valid_level": "VALID_SAME_TRIAL",
+      "evidence_ref": {
+        "task_id": "pick_and_place_simple-Pencil-None-Shelf-308/trial_T20190908_121952_610012",
+        "trial_num": 1,
+        "step_range": [
+          5,
+          5
+        ]
+      },
+      "_similarity_score": 0.6391070195465838
+    },
+    {
+      "task_desc": "put a pencil in shelf.",
+      "obj_type": "pencil",
+      "verbs": "put",
+      "goal_phase": "PLACE",
+      "issue_text": "Used 'put' verb instead of 'move' to place an object.",
+      "learning_text": "Use the 'move' verb to place objects into containers or locations.",
+      "trigger": {
+        "key": "WRONG_VERB",
+        "verb": "put",
+        "target_type": "shelf",
+        "obs": "Nothing happens."
+      },
+      "valid_level": "VALID_SAME_TRIAL",
+      "evidence_ref": {
+        "task_id": "pick_and_place_simple-Pencil-None-Shelf-308/trial_T20190908_121952_610012",
+        "trial_num": 1,
+        "step_range": [
+          5,
+          5
+        ]
+      },
+      "_similarity_score": 0.6391070195465838
+    }
+  ],
+  "learnings": [
+    {
+      "goal_phase": "SEARCH",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "issue": "Agent failed to go to dresser 1.",
+      "learning": "The agent successfully navigated to dresser 1 in a later trial."
+    },
+    {
+      "goal_phase": "SEARCH",
+      "valid_level": "VALID_SAME_TRIAL",
+      "issue": "Failed to open drawer 2, the action had no effect.",
+      "learning": "If a container cannot be opened, continue searching for the target object in other locations."
+    },
+    {
+      "goal_phase": "ACQUIRE",
+      "valid_level": "VALID_SAME_TRIAL",
+      "issue": "Attempted to acquire an object from a closed cabinet.",
+      "learning": "Open the cabinet before attempting to take items from it."
+    },
+    {
+      "goal_phase": "ACQUIRE",
+      "valid_level": "VALID_SAME_TRIAL",
+      "issue": "Agent failed to take vase 1 without specifying its location.",
+      "learning": "Always specify the object's location when attempting to take it."
+    },
+    {
+      "goal_phase": "PLACE",
+      "valid_level": "VALID_SAME_TRIAL",
+      "issue": "Agent tried to put object in a location without being at that location.",
+      "learning": "Go to the target location before attempting to place an object there."
+    },
+    {
+      "goal_phase": "PLACE",
+      "valid_level": "VALID_SAME_TRIAL",
+      "issue": "Used 'put' verb instead of 'move' to place an object.",
+      "learning": "Use the 'move' verb to place objects into containers or locations."
+    }
+  ]
+}
