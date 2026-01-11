@@ -47,7 +47,8 @@ class ContextOnlyAgent(ReAct):
         trial_num: int = 1,
         log_dir: str = "",
         task_desc: str = "",
-        memory_bank_path: str = ""
+        memory_bank_path: str = "",
+        trajectory_file: str = "trajectories_valid_unseen.json"
     ) -> Tuple[EnvironmentHistory, bool]:
         """
         Run the context-only agent on the environment.
@@ -176,7 +177,7 @@ The following learnings are from previous tasks similar to yours. Use them to av
         if log_dir:
             self._log_trajectory(
                 log_dir, task_id, trial_num, steps, 
-                is_success, task_desc, retrieved_learnings
+                is_success, task_desc, retrieved_learnings, trajectory_file
             )
 
         return env_history, is_success
@@ -189,7 +190,8 @@ The following learnings are from previous tasks similar to yours. Use them to av
         steps: List[Dict[str, Any]], 
         success: bool, 
         task_desc: str = "",
-        context_learnings: List[Dict[str, str]] = None
+        context_learnings: List[Dict[str, str]] = None,
+        trajectory_file: str = "trajectories_valid_unseen.json"
     ) -> None:
         """Log the complete trajectory to trajectories.json"""
         # Extract task_type from task_id (e.g., 'pick_and_place_simple' from 'pick_and_place_simple-Mug-None-Desk-308/...')
@@ -207,7 +209,7 @@ The following learnings are from previous tasks similar to yours. Use them to av
             "help_call_count": 0  # Always zero for context-only agent
         }
         
-        trajectories_path = os.path.join(log_dir, "trajectories_valid_unseen.json")
+        trajectories_path = os.path.join(log_dir, trajectory_file)
         
         # Read existing trajectories, append new one, write back
         trajectories = []
