@@ -1,12 +1,12 @@
 """
-Trajectory Context Agent - Ablation using raw trajectory text instead of knowledge base
+Context-Only Agent - Memory agent with context retrieval only (no help tool)
 
-This agent is an ablation of the ContextOnlyAgent that:
-1. Does NOT use the knowledge base (processed issue + learning pairs)
-2. Instead, retrieves the most similar training trajectory (by task_desc similarity)
-3. Provides raw trajectory text cut at a word count limit
+This agent is an ablation of the full MemoryAgent that:
+1. Context retrieval at task start - Uses context_retrieval to provide relevant 
+   learnings from previous similar tasks
+2. NO help tool during execution - Agent cannot call help["query"]
 
-This tests whether the knowledge base's structured format provides value over raw trajectories.
+This is used for ablation studies to measure the impact of context retrieval alone.
 """
 
 import sys
@@ -19,23 +19,23 @@ from src.core.history import EnvironmentHistory
 from src.core.llm import get_chat, Model
 from src.frameworks.react import ReAct
 
-# Import trajectory-based retrieval module
-from src.frameworks.memory_allocation.trajectory_context_retrieval import (
-    retrieve_trajectory_context
+# Import retrieval modules (only context retrieval, no tool retrieval)
+from src.frameworks.memory_allocation.retrieval.context_retrieval import (
+    retrieve_learnings_only,
+    format_learnings_for_prompt
 )
 
 
-class TrajectoryContextAgent(ReAct):
+class ContextOnlyAgent(ReAct):
     """
-    A trajectory-based context agent that:
-    1. Retrieves the most similar training trajectory at task start
-    2. Provides raw trajectory text (cut at word limit) as context
-    3. Does NOT provide a help tool during execution
+    A context-retrieval-only agent that:
+    1. Retrieves relevant context at task start using context_retrieval
+    2. Does NOT provide a help tool during execution (ablation)
     """
     
     def __init__(self, model: Model = "gemini-2.5-flash", to_print: bool = True):
         super().__init__(model, to_print)
-        self.training_trajectories_path: Optional[str] = None
+        self.memory_bank_path: Optional[str] = None
 
     def run(
         self, 
@@ -47,12 +47,11 @@ class TrajectoryContextAgent(ReAct):
         trial_num: int = 1,
         log_dir: str = "",
         task_desc: str = "",
-        training_trajectories_path: str = "",
-        word_count_limit: int = 135,  # Default based on analysis (avg context length)
-        trajectory_file: str = "trajectories.json"
+        memory_bank_path: str = "",
+        trajectory_file: str = "trajectories_valid_unseen.json"
     ) -> Tuple[EnvironmentHistory, bool]:
         """
-        Run the trajectory context agent on the environment.
+        Run the context-only agent on the environment.
         
         Args:
             env: The environment to run on
@@ -63,54 +62,55 @@ class TrajectoryContextAgent(ReAct):
             trial_num: Trial number for this task
             log_dir: Directory to save logs
             task_desc: The task description text
-            training_trajectories_path: Path to the training trajectories.json file
-            word_count_limit: Maximum word count for trajectory context (default: 135)
-            trajectory_file: Name of output trajectory file
+            memory_bank_path: Path to the knowledge_base.json file
             
         Returns:
             Tuple of (environment history, success boolean)
         """
-        self.training_trajectories_path = training_trajectories_path
+        self.memory_bank_path = memory_bank_path
         
         # Collect steps as (action, observation) pairs
         steps: List[Dict[str, Any]] = []
-        retrieval_metadata: Dict[str, Any] = {}  # Store retrieval info for logging
+        retrieved_learnings: List[Dict[str, str]] = []  # Store raw learnings for logging
         
-        # Step 1: Retrieve trajectory context from training trajectories
-        trajectory_context = ""
-        if training_trajectories_path and task_desc:
+        # Step 1: Retrieve context from memory bank at task start
+        context_learnings = ""
+        if memory_bank_path and task_desc:
             try:
-                trajectory_context, retrieval_metadata = retrieve_trajectory_context(
+                learnings = retrieve_learnings_only(
                     new_task_desc=task_desc,
-                    trajectories_path=training_trajectories_path,
-                    word_count_limit=word_count_limit
+                    memory_bank_path=memory_bank_path,
+                    top_k_similar=20,
+                    top_per_phase=2
                 )
-                if self.to_print and trajectory_context:
-                    print("\n" + "="*60)
-                    print("CONTEXT FROM SIMILAR TRAJECTORY:")
-                    print("="*60)
-                    print(f"Source: {retrieval_metadata.get('source_task_id', 'Unknown')}")
-                    print(f"Similarity: {retrieval_metadata.get('similarity_score', 0):.4f}")
-                    print("-"*60)
-                    print(trajectory_context)
-                    print("="*60 + "\n")
+                if learnings:
+                    retrieved_learnings = learnings  # Store for trajectory logging
+                    context_learnings = format_learnings_for_prompt(learnings)
+                    if self.to_print:
+                        print("\n" + "="*60)
+                        print("CONTEXT FROM PREVIOUS EXPERIENCES:")
+                        print("="*60)
+                        print(context_learnings)
+                        print("="*60 + "\n")
             except Exception as e:
                 if self.to_print:
-                    print(f"Warning: Could not retrieve trajectory context: {e}")
+                    print(f"Warning: Could not retrieve context: {e}")
         
-        # Step 2: Build enhanced prompt with trajectory context
+        # Step 2: Build enhanced prompt with context (NO help instructions - ablation)
         enhanced_prompt = base_prompt
         
-        # Add trajectory context if available
-        if trajectory_context:
-            enhanced_prompt = f"""[CONTEXT FROM A SIMILAR TASK]
-Below is a partial trajectory from a similar task. Use this as a reference for how to approach your current task:
+        # Add context learnings if available
+        if context_learnings:
+            enhanced_prompt = f"""[CONTEXT FROM PREVIOUS SIMILAR TASKS]
+The following learnings are from previous tasks similar to yours. Use them to avoid common mistakes:
 
-{trajectory_context}
+{context_learnings}
 
 [END CONTEXT]
 
 {base_prompt}"""
+        
+        # NO help tool instructions added (this is the ablation difference)
         
         # Initialize environment history with enhanced prompt
         env_history = EnvironmentHistory(
@@ -138,7 +138,9 @@ Below is a partial trajectory from a similar task. Use this as a reference for h
 
             env_history.add("action", action)
             
-            # Normal environment interaction (no help tool)
+            # NO help action parsing (this is the ablation difference)
+            
+            # Normal environment interaction
             observation, reward, done, info = env.step(action)
             
             if action.startswith('think:'):
@@ -175,8 +177,7 @@ Below is a partial trajectory from a similar task. Use this as a reference for h
         if log_dir:
             self._log_trajectory(
                 log_dir, task_id, trial_num, steps, 
-                is_success, task_desc, retrieval_metadata, 
-                trajectory_context, trajectory_file
+                is_success, task_desc, retrieved_learnings, trajectory_file
             )
 
         return env_history, is_success
@@ -189,12 +190,11 @@ Below is a partial trajectory from a similar task. Use this as a reference for h
         steps: List[Dict[str, Any]], 
         success: bool, 
         task_desc: str = "",
-        retrieval_metadata: Dict[str, Any] = None,
-        context_text: str = "",
-        trajectory_file: str = "trajectories.json"
+        context_learnings: List[Dict[str, str]] = None,
+        trajectory_file: str = "trajectories_valid_unseen.json"
     ) -> None:
         """Log the complete trajectory to trajectories.json"""
-        # Extract task_type from task_id
+        # Extract task_type from task_id (e.g., 'pick_and_place_simple' from 'pick_and_place_simple-Mug-None-Desk-308/...')
         task_type = task_id.split('-')[0] if task_id else ""
         
         trajectory = {
@@ -202,13 +202,11 @@ Below is a partial trajectory from a similar task. Use this as a reference for h
             "task_type": task_type,
             "task_desc": task_desc,
             "trial_num": trial_num,
-            "context_source": "trajectory",  # Indicate this is trajectory-based
-            "retrieval_metadata": retrieval_metadata or {},
-            "context_sent_to_agent": context_text,  # The actual raw trajectory text sent to LLM
+            "context_from_retrieval": context_learnings or [],
             "steps": steps,
             "success": success,
-            "help_calls": [],  # Always empty for this agent
-            "help_call_count": 0
+            "help_calls": [],  # Always empty for context-only agent
+            "help_call_count": 0  # Always zero for context-only agent
         }
         
         trajectories_path = os.path.join(log_dir, trajectory_file)

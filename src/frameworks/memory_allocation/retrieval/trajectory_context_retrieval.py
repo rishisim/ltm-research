@@ -26,7 +26,7 @@ from google import genai
 from google.genai import types
 
 # Load environment variables
-env_path = Path(__file__).resolve().parent.parent.parent.parent / '.env'
+env_path = Path(__file__).resolve().parent.parent.parent.parent.parent / '.env'
 load_dotenv(env_path)
 
 # Initialize the client with API key from environment
@@ -231,7 +231,7 @@ if __name__ == "__main__":
     import os
     
     # Path to training trajectories
-    base_dir = Path(__file__).parent.parent.parent.parent  # ltm-research/
+    base_dir = Path(__file__).parent.parent.parent.parent.parent  # ltm-research/
     traj_path = base_dir / "alfworld_runs" / "memory_allocation_test" / "trajectories.json"
     
     if traj_path.exists():

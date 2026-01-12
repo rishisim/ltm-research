@@ -1,9 +1,11 @@
 """
-Hard Negative Memory Agent - A memory-augmented agent using HARD NEGATIVE retrieval
+Memory Agent - A memory-augmented agent for ALFWorld
 
-This agent extends the base ReAct agent with hard negative retrieval:
-1. Context retrieval at task start - Retrieves LEAST relevant learnings (bottom similarity)
-2. Help tool during execution - Returns LOWEST similarity matches
+This agent extends the base ReAct agent with:
+1. Context retrieval at task start - Uses context_retrieval to provide relevant 
+   learnings from previous similar tasks
+2. Help tool during execution - Allows the agent to call help["query"] at any 
+   point to retrieve targeted learnings via tool_retrieval
 """
 
 import sys
@@ -17,12 +19,13 @@ from src.core.history import EnvironmentHistory
 from src.core.llm import get_chat, Model
 from src.frameworks.react import ReAct
 
-# Import HARD NEGATIVE retrieval modules
-from src.frameworks.memory_allocation.hard_neg_context_retrieval import (
+# Import retrieval modules
+# Import retrieval modules
+from src.frameworks.memory_allocation.retrieval.context_retrieval import (
     retrieve_learnings_only,
     format_learnings_for_prompt
 )
-from src.frameworks.memory_allocation.hard_neg_tool_retrieval import (
+from src.frameworks.memory_allocation.retrieval.tool_retrieval import (
     help_tool,
     format_help_response
 )
@@ -32,11 +35,11 @@ from src.frameworks.memory_allocation.hard_neg_tool_retrieval import (
 HELP_PATTERN = re.compile(r'help\s*\[\s*["\'](.+?)["\']\s*\]', re.IGNORECASE)
 
 
-class HardNegMemoryAgent(ReAct):
+class MemoryAgent(ReAct):
     """
-    A HARD NEGATIVE memory agent that:
-    1. Retrieves LEAST relevant context at task start (bottom similarity)
-    2. Provides a help["query"] tool that returns LOWEST similarity matches
+    A memory-augmented agent that:
+    1. Retrieves relevant context at task start using context_retrieval
+    2. Provides a help["query"] tool that agents can call during execution
     """
     
     def __init__(self, model: Model = "gemini-2.5-flash", to_print: bool = True):
@@ -84,13 +87,13 @@ Use this tool when you:
     
     def _execute_help_tool(self, query: str) -> str:
         """
-        Execute the HARD NEGATIVE help tool and return formatted response.
+        Execute the help tool and return formatted response.
         
         Args:
             query: The help query from the agent
             
         Returns:
-            Formatted help response string (with LOWEST similarity matches)
+            Formatted help response string
         """
         if not self.memory_bank_path:
             return "Error: Memory bank path not configured. Cannot provide help."
@@ -119,7 +122,7 @@ Use this tool when you:
         memory_bank_path: str = ""
     ) -> Tuple[EnvironmentHistory, bool]:
         """
-        Run the HARD NEGATIVE memory agent on the environment.
+        Run the memory-augmented agent on the environment.
         
         Args:
             env: The environment to run on
@@ -142,14 +145,14 @@ Use this tool when you:
         help_calls: List[Dict[str, str]] = []
         retrieved_learnings: List[Dict[str, str]] = []  # Store raw learnings for logging
         
-        # Step 1: Retrieve HARD NEGATIVE context from memory bank at task start
+        # Step 1: Retrieve context from memory bank at task start
         context_learnings = ""
         if memory_bank_path and task_desc:
             try:
                 learnings = retrieve_learnings_only(
                     new_task_desc=task_desc,
                     memory_bank_path=memory_bank_path,
-                    top_k_similar=20,  # Bottom 20 (lowest similarity)
+                    top_k_similar=20,
                     top_per_phase=2
                 )
                 if learnings:
@@ -157,7 +160,7 @@ Use this tool when you:
                     context_learnings = format_learnings_for_prompt(learnings)
                     if self.to_print:
                         print("\n" + "="*60)
-                        print("HARD NEG CONTEXT (LEAST RELEVANT):")
+                        print("CONTEXT FROM PREVIOUS EXPERIENCES:")
                         print("="*60)
                         print(context_learnings)
                         print("="*60 + "\n")
@@ -213,7 +216,7 @@ The following learnings are from previous tasks similar to yours. Use them to av
             help_query = self._parse_help_action(action)
             
             if help_query:
-                # Execute help tool (HARD NEGATIVE - lowest similarity)
+                # Execute help tool
                 observation = self._execute_help_tool(help_query)
                 
                 # Log the help call

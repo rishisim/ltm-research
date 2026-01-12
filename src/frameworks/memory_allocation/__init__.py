@@ -1,2 +1,2 @@
-from src.frameworks.memory_allocation.memory_allocation import MemoryAllocationReflexion
-from src.frameworks.memory_allocation.memory_agent import MemoryAgent
+from src.frameworks.memory_allocation.agents.memory_allocation import MemoryAllocationReflexion
+from src.frameworks.memory_allocation.agents.memory_agent import MemoryAgent

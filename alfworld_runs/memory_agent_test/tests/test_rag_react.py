@@ -4,7 +4,7 @@ import sys
 import yaml
 import json
 import alfworld.agents.environment as envs
-from src.frameworks.memory_allocation.rag_react import RAGReAct
+from src.frameworks.memory_allocation.agents.rag_react import RAGReAct
 
 def main():
     # Set up environment
@@ -29,7 +29,7 @@ def main():
     
     print("\n--- Testing Retrieval Directly ---")
     try:
-        from src.frameworks.memory_allocation.rag_context_retrieval import retrieve_similar_trajectory
+        from src.frameworks.memory_allocation.retrieval.rag_context_retrieval import retrieve_similar_trajectory
         csv_path = agent.csv_path
         cache_path = agent.cache_path
         

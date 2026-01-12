@@ -1,11 +1,11 @@
 """
-Memory Agent - A memory-augmented agent for ALFWorld
+Tool Retrieval Only Agent - Memory agent with help tool but no context retrieval
 
-This agent extends the base ReAct agent with:
-1. Context retrieval at task start - Uses context_retrieval to provide relevant 
-   learnings from previous similar tasks
-2. Help tool during execution - Allows the agent to call help["query"] at any 
-   point to retrieve targeted learnings via tool_retrieval
+This agent is an ablation of the full MemoryAgent that:
+1. NO context retrieval at task start - Does not retrieve previous similar tasks
+2. Help tool during execution - Allows the agent to call help["query"] via tool_retrieval
+
+This is used for ablation studies to measure the impact of tool retrieval alone.
 """
 
 import sys
@@ -19,12 +19,8 @@ from src.core.history import EnvironmentHistory
 from src.core.llm import get_chat, Model
 from src.frameworks.react import ReAct
 
-# Import retrieval modules
-from src.frameworks.memory_allocation.context_retrieval import (
-    retrieve_learnings_only,
-    format_learnings_for_prompt
-)
-from src.frameworks.memory_allocation.tool_retrieval import (
+# Import only tool retrieval (no context retrieval)
+from src.frameworks.memory_allocation.retrieval.tool_retrieval import (
     help_tool,
     format_help_response
 )
@@ -34,10 +30,10 @@ from src.frameworks.memory_allocation.tool_retrieval import (
 HELP_PATTERN = re.compile(r'help\s*\[\s*["\'](.+?)["\']\s*\]', re.IGNORECASE)
 
 
-class MemoryAgent(ReAct):
+class ToolRetrievalOnlyAgent(ReAct):
     """
-    A memory-augmented agent that:
-    1. Retrieves relevant context at task start using context_retrieval
+    A tool-retrieval-only agent that:
+    1. Does NOT retrieve context at task start (ablation)
     2. Provides a help["query"] tool that agents can call during execution
     """
     
@@ -118,10 +114,11 @@ Use this tool when you:
         trial_num: int = 1,
         log_dir: str = "",
         task_desc: str = "",
-        memory_bank_path: str = ""
+        memory_bank_path: str = "",
+        trajectory_file: str = "trajectories_valid_unseen.json"
     ) -> Tuple[EnvironmentHistory, bool]:
         """
-        Run the memory-augmented agent on the environment.
+        Run the tool-retrieval-only agent on the environment.
         
         Args:
             env: The environment to run on
@@ -133,6 +130,7 @@ Use this tool when you:
             log_dir: Directory to save logs
             task_desc: The task description text
             memory_bank_path: Path to the knowledge_base.json file
+            trajectory_file: Name of the trajectory output file
             
         Returns:
             Tuple of (environment history, success boolean)
@@ -142,44 +140,16 @@ Use this tool when you:
         # Collect steps as (action, observation) pairs
         steps: List[Dict[str, Any]] = []
         help_calls: List[Dict[str, str]] = []
-        retrieved_learnings: List[Dict[str, str]] = []  # Store raw learnings for logging
         
-        # Step 1: Retrieve context from memory bank at task start
-        context_learnings = ""
-        if memory_bank_path and task_desc:
-            try:
-                learnings = retrieve_learnings_only(
-                    new_task_desc=task_desc,
-                    memory_bank_path=memory_bank_path,
-                    top_k_similar=20,
-                    top_per_phase=2
-                )
-                if learnings:
-                    retrieved_learnings = learnings  # Store for trajectory logging
-                    context_learnings = format_learnings_for_prompt(learnings)
-                    if self.to_print:
-                        print("\n" + "="*60)
-                        print("CONTEXT FROM PREVIOUS EXPERIENCES:")
-                        print("="*60)
-                        print(context_learnings)
-                        print("="*60 + "\n")
-            except Exception as e:
-                if self.to_print:
-                    print(f"Warning: Could not retrieve context: {e}")
+        # NO context retrieval at task start (this is the ablation difference)
+        # Just print a note that we're skipping context retrieval
+        if self.to_print:
+            print("\n" + "="*60)
+            print("TOOL RETRIEVAL ONLY MODE (No Context Retrieval)")
+            print("="*60 + "\n")
         
-        # Step 2: Build enhanced prompt with context and help instructions
+        # Step 2: Build enhanced prompt with ONLY help instructions (no context)
         enhanced_prompt = base_prompt
-        
-        # Add context learnings if available
-        if context_learnings:
-            enhanced_prompt = f"""[CONTEXT FROM PREVIOUS SIMILAR TASKS]
-The following learnings are from previous tasks similar to yours. Use them to avoid common mistakes:
-
-{context_learnings}
-
-[END CONTEXT]
-
-{base_prompt}"""
         
         # Add help tool instructions
         help_instructions = self._get_help_instructions()
@@ -283,7 +253,7 @@ The following learnings are from previous tasks similar to yours. Use them to av
         if log_dir:
             self._log_trajectory(
                 log_dir, task_id, trial_num, steps, 
-                is_success, task_desc, help_calls, retrieved_learnings
+                is_success, task_desc, help_calls, trajectory_file
             )
 
         return env_history, is_success
@@ -297,7 +267,7 @@ The following learnings are from previous tasks similar to yours. Use them to av
         success: bool, 
         task_desc: str = "",
         help_calls: List[Dict[str, str]] = None,
-        context_learnings: List[Dict[str, str]] = None
+        trajectory_file: str = "trajectories_valid_unseen.json"
     ) -> None:
         """Log the complete trajectory to trajectories.json"""
         # Extract task_type from task_id (e.g., 'pick_and_place_simple' from 'pick_and_place_simple-Mug-None-Desk-308/...')
@@ -308,14 +278,14 @@ The following learnings are from previous tasks similar to yours. Use them to av
             "task_type": task_type,
             "task_desc": task_desc,
             "trial_num": trial_num,
-            "context_from_retrieval": context_learnings or [],
+            "context_from_retrieval": [],  # Always empty for tool-retrieval-only agent
             "steps": steps,
             "success": success,
             "help_calls": help_calls or [],
             "help_call_count": len(help_calls) if help_calls else 0
         }
         
-        trajectories_path = os.path.join(log_dir, "trajectories.json")
+        trajectories_path = os.path.join(log_dir, trajectory_file)
         
         # Read existing trajectories, append new one, write back
         trajectories = []

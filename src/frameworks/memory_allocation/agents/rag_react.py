@@ -9,13 +9,13 @@ from src.core.history import EnvironmentHistory
 from src.core.llm import get_chat, Model
 from src.frameworks.react import ReAct
 
-from src.frameworks.memory_allocation.rag_context_retrieval import retrieve_similar_trajectory
+from src.frameworks.memory_allocation.retrieval.rag_context_retrieval import retrieve_similar_trajectory
 
 class RAGReAct(ReAct):
     def __init__(self, model: Model = "gemini-2.5-flash", to_print: bool = True):
         super().__init__(model, to_print)
         # Define paths relative to project root
-        self.project_root = Path(__file__).resolve().parent.parent.parent.parent
+        self.project_root = Path(__file__).resolve().parent.parent.parent.parent.parent
         self.csv_path = self.project_root / "alfworld_runs/memory_agent_test/rag_react/truncated_trajectories.csv"
         self.cache_path = self.project_root / "alfworld_runs/memory_agent_test/rag_react/trajectory_embeddings.json"
 
@@ -66,12 +66,13 @@ class RAGReAct(ReAct):
         
         enhanced_prompt = base_prompt
         if trunc_trajectory_text:
-            enhanced_prompt = f"""[CONTEXT FROM A SIMILAR TASK]
-Below is a partial trajectory from a similar task that was completed successfully. 
-Use this as a reference for how to approach your current task:
+            enhanced_prompt = f"""{base_prompt}
+
+[CONTEXT FROM A SIMILAR TASK]
+Below is a partial trajectory from a similar task. Use this as a reference for the strategy, but adapt it to your current environment.
 {trunc_trajectory_text}
 [END CONTEXT]
-{base_prompt}"""
+"""
             if self.to_print:
                 print(f"\n[RAG] Injected context from similar task.")
 

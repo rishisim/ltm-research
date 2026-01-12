@@ -16,7 +16,7 @@ from typing import List, Dict, Any, Optional, Tuple
 from pathlib import Path
 
 # Reuse embedding utilities from existing context_retrieval
-from src.frameworks.memory_allocation.context_retrieval import (
+from src.frameworks.memory_allocation.retrieval.context_retrieval import (
     get_embedding,
     get_batch_embeddings,
     cosine_similarity,
@@ -176,7 +176,7 @@ def retrieve_similar_trajectory(
 
 if __name__ == "__main__":
     # Test block
-    project_root = Path(__file__).resolve().parent.parent.parent.parent
+    project_root = Path(__file__).resolve().parent.parent.parent.parent.parent
     csv_file = project_root / "alfworld_runs/memory_agent_test/rag_react/truncated_trajectories.csv"
     cache_file = project_root / "alfworld_runs/memory_agent_test/rag_react/trajectory_embeddings.json"
     

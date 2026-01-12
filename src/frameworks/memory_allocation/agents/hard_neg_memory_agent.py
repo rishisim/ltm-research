@@ -1,11 +1,9 @@
 """
-Tool Retrieval Only Agent - Memory agent with help tool but no context retrieval
+Hard Negative Memory Agent - A memory-augmented agent using HARD NEGATIVE retrieval
 
-This agent is an ablation of the full MemoryAgent that:
-1. NO context retrieval at task start - Does not retrieve previous similar tasks
-2. Help tool during execution - Allows the agent to call help["query"] via tool_retrieval
-
-This is used for ablation studies to measure the impact of tool retrieval alone.
+This agent extends the base ReAct agent with hard negative retrieval:
+1. Context retrieval at task start - Retrieves LEAST relevant learnings (bottom similarity)
+2. Help tool during execution - Returns LOWEST similarity matches
 """
 
 import sys
@@ -19,8 +17,12 @@ from src.core.history import EnvironmentHistory
 from src.core.llm import get_chat, Model
 from src.frameworks.react import ReAct
 
-# Import only tool retrieval (no context retrieval)
-from src.frameworks.memory_allocation.tool_retrieval import (
+# Import HARD NEGATIVE retrieval modules
+from src.frameworks.memory_allocation.retrieval.hard_neg_context_retrieval import (
+    retrieve_learnings_only,
+    format_learnings_for_prompt
+)
+from src.frameworks.memory_allocation.retrieval.hard_neg_tool_retrieval import (
     help_tool,
     format_help_response
 )
@@ -30,11 +32,11 @@ from src.frameworks.memory_allocation.tool_retrieval import (
 HELP_PATTERN = re.compile(r'help\s*\[\s*["\'](.+?)["\']\s*\]', re.IGNORECASE)
 
 
-class ToolRetrievalOnlyAgent(ReAct):
+class HardNegMemoryAgent(ReAct):
     """
-    A tool-retrieval-only agent that:
-    1. Does NOT retrieve context at task start (ablation)
-    2. Provides a help["query"] tool that agents can call during execution
+    A HARD NEGATIVE memory agent that:
+    1. Retrieves LEAST relevant context at task start (bottom similarity)
+    2. Provides a help["query"] tool that returns LOWEST similarity matches
     """
     
     def __init__(self, model: Model = "gemini-2.5-flash", to_print: bool = True):
@@ -82,13 +84,13 @@ Use this tool when you:
     
     def _execute_help_tool(self, query: str) -> str:
         """
-        Execute the help tool and return formatted response.
+        Execute the HARD NEGATIVE help tool and return formatted response.
         
         Args:
             query: The help query from the agent
             
         Returns:
-            Formatted help response string
+            Formatted help response string (with LOWEST similarity matches)
         """
         if not self.memory_bank_path:
             return "Error: Memory bank path not configured. Cannot provide help."
@@ -114,11 +116,10 @@ Use this tool when you:
         trial_num: int = 1,
         log_dir: str = "",
         task_desc: str = "",
-        memory_bank_path: str = "",
-        trajectory_file: str = "trajectories_valid_unseen.json"
+        memory_bank_path: str = ""
     ) -> Tuple[EnvironmentHistory, bool]:
         """
-        Run the tool-retrieval-only agent on the environment.
+        Run the HARD NEGATIVE memory agent on the environment.
         
         Args:
             env: The environment to run on
@@ -130,7 +131,6 @@ Use this tool when you:
             log_dir: Directory to save logs
             task_desc: The task description text
             memory_bank_path: Path to the knowledge_base.json file
-            trajectory_file: Name of the trajectory output file
             
         Returns:
             Tuple of (environment history, success boolean)
@@ -140,16 +140,44 @@ Use this tool when you:
         # Collect steps as (action, observation) pairs
         steps: List[Dict[str, Any]] = []
         help_calls: List[Dict[str, str]] = []
+        retrieved_learnings: List[Dict[str, str]] = []  # Store raw learnings for logging
         
-        # NO context retrieval at task start (this is the ablation difference)
-        # Just print a note that we're skipping context retrieval
-        if self.to_print:
-            print("\n" + "="*60)
-            print("TOOL RETRIEVAL ONLY MODE (No Context Retrieval)")
-            print("="*60 + "\n")
+        # Step 1: Retrieve HARD NEGATIVE context from memory bank at task start
+        context_learnings = ""
+        if memory_bank_path and task_desc:
+            try:
+                learnings = retrieve_learnings_only(
+                    new_task_desc=task_desc,
+                    memory_bank_path=memory_bank_path,
+                    top_k_similar=20,  # Bottom 20 (lowest similarity)
+                    top_per_phase=2
+                )
+                if learnings:
+                    retrieved_learnings = learnings  # Store for trajectory logging
+                    context_learnings = format_learnings_for_prompt(learnings)
+                    if self.to_print:
+                        print("\n" + "="*60)
+                        print("HARD NEG CONTEXT (LEAST RELEVANT):")
+                        print("="*60)
+                        print(context_learnings)
+                        print("="*60 + "\n")
+            except Exception as e:
+                if self.to_print:
+                    print(f"Warning: Could not retrieve context: {e}")
         
-        # Step 2: Build enhanced prompt with ONLY help instructions (no context)
+        # Step 2: Build enhanced prompt with context and help instructions
         enhanced_prompt = base_prompt
+        
+        # Add context learnings if available
+        if context_learnings:
+            enhanced_prompt = f"""[CONTEXT FROM PREVIOUS SIMILAR TASKS]
+The following learnings are from previous tasks similar to yours. Use them to avoid common mistakes:
+
+{context_learnings}
+
+[END CONTEXT]
+
+{base_prompt}"""
         
         # Add help tool instructions
         help_instructions = self._get_help_instructions()
@@ -185,7 +213,7 @@ Use this tool when you:
             help_query = self._parse_help_action(action)
             
             if help_query:
-                # Execute help tool
+                # Execute help tool (HARD NEGATIVE - lowest similarity)
                 observation = self._execute_help_tool(help_query)
                 
                 # Log the help call
@@ -253,7 +281,7 @@ Use this tool when you:
         if log_dir:
             self._log_trajectory(
                 log_dir, task_id, trial_num, steps, 
-                is_success, task_desc, help_calls, trajectory_file
+                is_success, task_desc, help_calls, retrieved_learnings
             )
 
         return env_history, is_success
@@ -267,7 +295,7 @@ Use this tool when you:
         success: bool, 
         task_desc: str = "",
         help_calls: List[Dict[str, str]] = None,
-        trajectory_file: str = "trajectories_valid_unseen.json"
+        context_learnings: List[Dict[str, str]] = None
     ) -> None:
         """Log the complete trajectory to trajectories.json"""
         # Extract task_type from task_id (e.g., 'pick_and_place_simple' from 'pick_and_place_simple-Mug-None-Desk-308/...')
@@ -278,14 +306,14 @@ Use this tool when you:
             "task_type": task_type,
             "task_desc": task_desc,
             "trial_num": trial_num,
-            "context_from_retrieval": [],  # Always empty for tool-retrieval-only agent
+            "context_from_retrieval": context_learnings or [],
             "steps": steps,
             "success": success,
             "help_calls": help_calls or [],
             "help_call_count": len(help_calls) if help_calls else 0
         }
         
-        trajectories_path = os.path.join(log_dir, trajectory_file)
+        trajectories_path = os.path.join(log_dir, "trajectories.json")
         
         # Read existing trajectories, append new one, write back
         trajectories = []
