@@ -1,0 +1,58 @@
+[
+  {
+    "task_id": "test_task_001",
+    "task_type": "test_task_001",
+    "task_desc": "look at alarmclock under the desklamp",
+    "trial_num": 1,
+    "context_source": "rag_retrieval",
+    "retrieval_metadata": {
+      "source": "rag_retrieval",
+      "retrieved_trajectory": "Step 1: action: think: I need to find an alarmclock and then look at it under the desklamp. I already have a desklamp from the previous turn, which I turned on. Now I need to find an alarmclock. Alarmclocks are often found on desks or dressers. I will start by checking desk 1., observation: OK. Step 2: action: go to desk 1, observation: You arrive at desk 1. On the desk 1, you see a alarmclock 2, a alarmclock 1, a desklamp 1, a keychain 2, a laptop 2, a pen 1, and a pencil 1. Step 3: action: look at alarmclock 1 under desklamp 1, observation: Nothing happens. Step 4: action: think: My previous attempt to `look at alarmclock 1 under desklamp 1` failed with \"Nothing happens.\" I realize..."
+    },
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: stop test",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "think: stop test",
+        "observation": "OK.",
+        "is_help_call": false
+      }
+    ],
+    "success": false,
+    "help_calls": [],
+    "help_call_count": 0
+  },
+  {
+    "task_id": "test_task_001",
+    "task_type": "test_task_001",
+    "task_desc": "look at alarmclock under the desklamp",
+    "trial_num": 1,
+    "context_source": "rag_retrieval",
+    "retrieval_metadata": {
+      "source": "rag_retrieval",
+      "retrieved_trajectory": "Step 1: action: think: I need to find an alarmclock and then look at it under the desklamp. I already have a desklamp from the previous turn, which I turned on. Now I need to find an alarmclock. Alarmclocks are often found on desks or dressers. I will start by checking desk 1., observation: OK. Step 2: action: go to desk 1, observation: You arrive at desk 1. On the desk 1, you see a alarmclock 2, a alarmclock 1, a desklamp 1, a keychain 2, a laptop 2, a pen 1, and a pencil 1. Step 3: action: look at alarmclock 1 under desklamp 1, observation: Nothing happens. Step 4: action: think: My previous attempt to `look at alarmclock 1 under desklamp 1` failed with \"Nothing happens.\" I realize..."
+    },
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: stop test",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "think: stop test",
+        "observation": "OK.",
+        "is_help_call": false
+      }
+    ],
+    "success": false,
+    "help_calls": [],
+    "help_call_count": 0
+  }
+]

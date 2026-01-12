@@ -1,0 +1,240 @@
+[
+  {
+    "task_id": "trial_T20190907_033306_962974",
+    "task_type": "trial_T20190907_033306_962974",
+    "task_desc": "cool some potato and put it in microwave",
+    "trial_num": 1,
+    "context_source": "rag_retrieval",
+    "retrieval_metadata": {
+      "source": "rag_retrieval",
+      "retrieved_trajectory": "Step 1: action: think: To solve the task, I need to find a bowl, cool it, and then put it in the microwave., observation: OK. Step 2: action: go to diningtable 1, observation: You arrive at diningtable 1. On the diningtable 1, you see a bowl 2, a bowl 1, a butterknife 2, a cup 1, a houseplant 1, a knife 2, a knife 1, a lettuce 1, a mug 3, a mug 2, a peppershaker 2, a plate 1, a saltshaker 2, a saltshaker 1, a soapbottle 2, a soapbottle 1, a spatula 3, a spatula 2, a statue 1, and a tomato 2. Step 3: action: think: I have found a bowl (bowl 2 and bowl 1) on the diningtable 1. I will take bowl 1., observation: OK...."
+    },
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I need to find a potato, cool it, and then put it in the microwave. First, I will look for a potato. I will start by checking the fridge.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to fridge 1",
+        "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "open fridge 1",
+        "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a apple 2, a apple 1, a bowl 3, a bowl 2, a egg 2, a lettuce 1, and a tomato 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "think: I have checked the fridge but did not find a potato. I will now check the cabinets for a potato. I will start with cabinet 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "go to cabinet 1",
+        "observation": "You arrive at cabinet 1. On the cabinet 1, you see a bowl 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "think: I have checked cabinet 1 and did not find a potato. I will now check cabinet 2.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "open cabinet 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "go to cabinet 2",
+        "observation": "You arrive at cabinet 2. The cabinet 2 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "open cabinet 2",
+        "observation": "You open the cabinet 2. The cabinet 2 is open. In it, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 10,
+        "action": "think: I have checked cabinet 2 and did not find a potato. I will now check cabinet 3.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 11,
+        "action": "go to cabinet 3",
+        "observation": "You arrive at cabinet 3. On the cabinet 3, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 12,
+        "action": "open cabinet 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 13,
+        "action": "think: I have checked cabinet 3 and did not find a potato. I will now check cabinet 4.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 14,
+        "action": "go to cabinet 4",
+        "observation": "You arrive at cabinet 4. On the cabinet 4, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 15,
+        "action": "open cabinet 4",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 16,
+        "action": "think: I have checked cabinet 4 and did not find a potato. I will now check cabinet 5.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 17,
+        "action": "go to cabinet 5",
+        "observation": "You arrive at cabinet 5. The cabinet 5 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 18,
+        "action": "open cabinet 5",
+        "observation": "You open the cabinet 5. The cabinet 5 is open. In it, you see a mug 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 19,
+        "action": "think: I have checked cabinet 5 and did not find a potato. I will now check cabinet 6.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 20,
+        "action": "go to cabinet 6",
+        "observation": "You arrive at cabinet 6. The cabinet 6 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 21,
+        "action": "open cabinet 6",
+        "observation": "You open the cabinet 6. The cabinet 6 is open. In it, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 22,
+        "action": "think: I have checked all cabinets and the fridge, but I still haven't found a potato. I will now check the drawers. I will start with drawer 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 23,
+        "action": "open drawer 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 24,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 25,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see a fork 1, and a spatula 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 26,
+        "action": "think: I have checked drawer 1 and did not find a potato. I will now check drawer 2.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 27,
+        "action": "open drawer 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 28,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. The drawer 2 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 29,
+        "action": "open drawer 2",
+        "observation": "You open the drawer 2. The drawer 2 is open. In it, you see a creditcard 1, a peppershaker 2, a saltshaker 1, and a spatula 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 30,
+        "action": "think: I have checked drawer 2 and did not find a potato. I will now check drawer 3.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 31,
+        "action": "go to drawer 3",
+        "observation": "You arrive at drawer 3. The drawer 3 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 32,
+        "action": "open drawer 3",
+        "observation": "You open the drawer 3. The drawer 3 is open. In it, you see a cellphone 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 33,
+        "action": "think: I have checked the fridge, all cabinets, and all drawers, but I still haven't found a potato. I will now check the countertops. I will start with countertop 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 34,
+        "action": "go to countertop 1",
+        "observation": "You arrive at countertop 1. On the countertop 1, you see a fork 2, and a mug 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 35,
+        "action": "think: I have checked countertop 1 and did not find a potato. I will now check countertop 2.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 36,
+        "action": "go to countertop 2",
+        "observation": "You arrive at countertop 2. On the countertop 2, you see a butterknife 1, a cellphone 1, a mug 1, a peppershaker 1, a potato 2, a potato 1, a soapbottle 1, a spoon 1, and a vase 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 37,
+        "action": "take potato 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      }
+    ],
+    "success": false,
+    "help_calls": [],
+    "help_call_count": 0
+  }
+]
