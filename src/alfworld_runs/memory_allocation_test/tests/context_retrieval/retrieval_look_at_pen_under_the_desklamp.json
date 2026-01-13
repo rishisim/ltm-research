@@ -1,0 +1,541 @@
+{
+  "query": "look at pen under the desklamp.",
+  "metadata": {
+    "pick_learning_count": 8,
+    "max_learning_count": 5,
+    "actual_selected_count": 8,
+    "knowledge_retrieval_base_count": 18,
+    "top_similar_tasks": [
+      {
+        "task_desc": "examine the pen with the desklamp.",
+        "similarity_score": 0.9151329510957203,
+        "learning_count": 5,
+        "validated_learning_count": 5
+      },
+      {
+        "task_desc": "look at pencil under the desklamp.",
+        "similarity_score": 0.9148174665534241,
+        "learning_count": 2,
+        "validated_learning_count": 2
+      },
+      {
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.8307147669405699,
+        "learning_count": 4,
+        "validated_learning_count": 4
+      },
+      {
+        "task_desc": "look at laptop under the desklamp.",
+        "similarity_score": 0.8228279792921882,
+        "learning_count": 5,
+        "validated_learning_count": 4
+      },
+      {
+        "task_desc": "look at pillow under the desklamp.",
+        "similarity_score": 0.8005094938164219,
+        "learning_count": 2,
+        "validated_learning_count": 2
+      }
+    ]
+  },
+  "knowledge_retrieval_base": [
+    {
+      "task_desc": "examine the pencil with the desklamp.",
+      "similarity_score": 0.8307147669405699,
+      "learning_count": 4,
+      "kb_index": 26,
+      "issue_text": "Failed to take desklamp, confirming it is a fixed object.",
+      "learning_text": "Adapted strategy by moving the movable pencil to the fixed desklamp's location.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "desklamp",
+      "verbs": "take",
+      "goal_phase": "ACQUIRE",
+      "issue_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        10,
+        10
+      ],
+      "evidence_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
+      "evidence_trial_num": 4,
+      "evidence_step_range": [
+        10,
+        11
+      ]
+    },
+    {
+      "task_desc": "examine the pencil with the desklamp.",
+      "similarity_score": 0.8307147669405699,
+      "learning_count": 4,
+      "kb_index": 27,
+      "issue_text": "Failed to take pencil, initially believed to be fixed.",
+      "learning_text": "Successfully picked up the pencil, demonstrating it was movable despite prior failures.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "pencil",
+      "verbs": "take",
+      "goal_phase": "ACQUIRE",
+      "issue_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        12,
+        12
+      ],
+      "evidence_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
+      "evidence_trial_num": 4,
+      "evidence_step_range": [
+        10,
+        10
+      ]
+    },
+    {
+      "task_desc": "examine the pencil with the desklamp.",
+      "similarity_score": 0.8307147669405699,
+      "learning_count": 4,
+      "kb_index": 28,
+      "issue_text": "Failed to examine objects due to lack of co-location.",
+      "learning_text": "Ensured co-location of pencil and desklamp by moving the pencil to the desklamp's location.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "pencil, desklamp",
+      "verbs": "examine",
+      "goal_phase": "TRANSFORM",
+      "issue_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        28,
+        31
+      ],
+      "evidence_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
+      "evidence_trial_num": 4,
+      "evidence_step_range": [
+        10,
+        11
+      ]
+    },
+    {
+      "task_desc": "look at laptop under the desklamp.",
+      "similarity_score": 0.8228279792921882,
+      "learning_count": 5,
+      "kb_index": 6,
+      "issue_text": "Failed to navigate to a drawer using `go to` command, resulting in \"Nothing happens.\"",
+      "learning_text": "If `go to` fails for a container, try interacting directly with it using commands like `open`.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "drawer",
+      "verbs": "go to, open",
+      "goal_phase": "SEARCH",
+      "issue_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        20,
+        21
+      ],
+      "evidence_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323",
+      "evidence_trial_num": 2,
+      "evidence_step_range": [
+        28,
+        29
+      ]
+    },
+    {
+      "task_desc": "look at laptop under the desklamp.",
+      "similarity_score": 0.8228279792921882,
+      "learning_count": 5,
+      "kb_index": 7,
+      "issue_text": "Unable to place the laptop on or under the desklamp using `place` or `put` commands.",
+      "learning_text": "Explicit placement might not be required; ensure the object is in the same location as the light source and activate the light source.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "laptop, desk, desklamp",
+      "verbs": "place, put, use",
+      "goal_phase": "PLACE",
+      "issue_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323",
+      "issue_trial_num": 5,
+      "issue_step_range": [
+        12,
+        14
+      ],
+      "evidence_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323",
+      "evidence_trial_num": 6,
+      "evidence_step_range": [
+        32,
+        33
+      ]
+    },
+    {
+      "task_desc": "look at laptop under the desklamp.",
+      "similarity_score": 0.8228279792921882,
+      "learning_count": 5,
+      "kb_index": 374,
+      "issue_text": "Attempted to 'go to' drawer 7, but it resulted in 'Nothing happens' repeatedly.",
+      "learning_text": "When 'go to' fails for a container, try to interact directly with 'open' to access its contents.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "drawer",
+      "verbs": "go to",
+      "goal_phase": "SEARCH",
+      "issue_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323/trial_T20190908_014226_839563",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        20,
+        21
+      ],
+      "evidence_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323/trial_T20190908_014226_839563",
+      "evidence_trial_num": 2,
+      "evidence_step_range": [
+        28,
+        29
+      ]
+    },
+    {
+      "task_desc": "look at laptop under the desklamp.",
+      "similarity_score": 0.8228279792921882,
+      "learning_count": 5,
+      "kb_index": 375,
+      "issue_text": "Failed to place laptop on or under desklamp using 'place' or 'put' commands.",
+      "learning_text": "To fulfill 'under the desklamp' condition, ensure the object is in the same location as the desklamp and activate the desklamp, rather than explicitly 'placing' it.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "laptop, desklamp, desk",
+      "verbs": "place, put",
+      "goal_phase": "PLACE",
+      "issue_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323/trial_T20190908_014226_839563",
+      "issue_trial_num": 5,
+      "issue_step_range": [
+        12,
+        14
+      ],
+      "evidence_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323/trial_T20190908_014226_839563",
+      "evidence_trial_num": 6,
+      "evidence_step_range": [
+        32,
+        33
+      ]
+    },
+    {
+      "task_desc": "examine the pen with the desklamp.",
+      "similarity_score": 0.9151329510957203,
+      "learning_count": 5,
+      "kb_index": 18,
+      "issue_text": "Attempted to interact with a non-existent or inaccessible drawer.",
+      "learning_text": "Verify the existence and accessibility of containers before attempting to interact with them.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "drawer",
+      "verbs": "go, open",
+      "goal_phase": "SEARCH",
+      "issue_task_id": "look_at_obj_in_light-Pen-None-DeskLamp-305/trial_T20190907_115849_734053",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        10,
+        11
+      ],
+      "evidence_task_id": "look_at_obj_in_light-Pen-None-DeskLamp-305/trial_T20190907_115849_734053",
+      "evidence_trial_num": 1,
+      "evidence_step_range": [
+        12,
+        12
+      ]
+    },
+    {
+      "task_desc": "examine the pen with the desklamp.",
+      "similarity_score": 0.9151329510957203,
+      "learning_count": 5,
+      "kb_index": 19,
+      "issue_text": "Used 'take' verb on a stationary desklamp instead of 'use' to activate it.",
+      "learning_text": "Use the 'use' command to activate stationary light sources like a desklamp.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "desklamp",
+      "verbs": "take",
+      "goal_phase": "ACQUIRE",
+      "issue_task_id": "look_at_obj_in_light-Pen-None-DeskLamp-305/trial_T20190907_115849_734053",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        15,
+        15
+      ],
+      "evidence_task_id": "look_at_obj_in_light-Pen-None-DeskLamp-305/trial_T20190907_115849_734053",
+      "evidence_trial_num": 1,
+      "evidence_step_range": [
+        17,
+        17
+      ]
+    },
+    {
+      "task_desc": "examine the pen with the desklamp.",
+      "similarity_score": 0.9151329510957203,
+      "learning_count": 5,
+      "kb_index": 20,
+      "issue_text": "Failed to examine object with light source due to missing preconditions.",
+      "learning_text": "Ensure the target object is held and the light source is activated before attempting to examine.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "pen, desklamp",
+      "verbs": "examine",
+      "goal_phase": "TRANSFORM",
+      "issue_task_id": "look_at_obj_in_light-Pen-None-DeskLamp-305/trial_T20190907_115849_734053",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        13,
+        16
+      ],
+      "evidence_task_id": "look_at_obj_in_light-Pen-None-DeskLamp-305/trial_T20190907_115849_734053",
+      "evidence_trial_num": 1,
+      "evidence_step_range": [
+        14,
+        17
+      ]
+    },
+    {
+      "task_desc": "examine the pen with the desklamp.",
+      "similarity_score": 0.9151329510957203,
+      "learning_count": 5,
+      "kb_index": 21,
+      "issue_text": "Pen not found in expected locations (drawers) after repeated search attempts.",
+      "learning_text": "Expand search to other furniture types like shelves when an object is not found in initial expected locations.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "pen",
+      "verbs": "go, open",
+      "goal_phase": "ACQUIRE",
+      "issue_task_id": "look_at_obj_in_light-Pen-None-DeskLamp-319/trial_T20190908_222409_540184",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        4,
+        32
+      ],
+      "evidence_task_id": "look_at_obj_in_light-Pen-None-DeskLamp-319/trial_T20190908_222409_540184",
+      "evidence_trial_num": 1,
+      "evidence_step_range": [
+        33,
+        34
+      ]
+    },
+    {
+      "task_desc": "examine the pen with the desklamp.",
+      "similarity_score": 0.9151329510957203,
+      "learning_count": 5,
+      "kb_index": 22,
+      "issue_text": "Attempted to examine pen with desklamp before turning the desklamp on.",
+      "learning_text": "Ensure interactive objects like desklamps are turned on before attempting to use them for a task.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "desklamp",
+      "verbs": "examine, use",
+      "goal_phase": "TRANSFORM",
+      "issue_task_id": "look_at_obj_in_light-Pen-None-DeskLamp-319/trial_T20190908_222409_540184",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        38,
+        38
+      ],
+      "evidence_task_id": "look_at_obj_in_light-Pen-None-DeskLamp-319/trial_T20190908_222409_540184",
+      "evidence_trial_num": 1,
+      "evidence_step_range": [
+        39,
+        40
+      ]
+    },
+    {
+      "task_desc": "look at pencil under the desklamp.",
+      "similarity_score": 0.9148174665534241,
+      "learning_count": 2,
+      "kb_index": 23,
+      "issue_text": "Inefficiently searched for pencil in multiple incorrect locations (drawers, garbagecan, early shelves).",
+      "learning_text": "Expand search to a wider range of locations, including shelves, to locate the object.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "pencil",
+      "verbs": "go to, open",
+      "goal_phase": "ACQUIRE",
+      "issue_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-319/trial_T20190908_135102_644449",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        2,
+        34
+      ],
+      "evidence_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-319/trial_T20190908_135102_644449",
+      "evidence_trial_num": 1,
+      "evidence_step_range": [
+        35,
+        35
+      ]
+    },
+    {
+      "task_desc": "look at pencil under the desklamp.",
+      "similarity_score": 0.9148174665534241,
+      "learning_count": 2,
+      "kb_index": 24,
+      "issue_text": "Attempted 'look at' action on dresser 1 to find pencil, but it had no effect.",
+      "learning_text": "Verify object presence before using 'look at'; if not found, continue searching elsewhere.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "pencil, dresser",
+      "verbs": "look at",
+      "goal_phase": "SEARCH",
+      "issue_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-319/trial_T20190908_135102_644449",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        26,
+        26
+      ],
+      "evidence_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-319/trial_T20190908_135102_644449",
+      "evidence_trial_num": 1,
+      "evidence_step_range": [
+        35,
+        35
+      ]
+    },
+    {
+      "task_desc": "examine the pencil with the desklamp.",
+      "similarity_score": 0.8307147669405699,
+      "learning_count": 4,
+      "kb_index": 25,
+      "issue_text": "Attempted to look at desklamp at an incorrect location.",
+      "learning_text": "Correctly identified the desklamp's actual location on shelf 2 through continued search.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "desklamp",
+      "verbs": "look at",
+      "goal_phase": "SEARCH",
+      "issue_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        3,
+        3
+      ],
+      "evidence_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
+      "evidence_trial_num": 1,
+      "evidence_step_range": [
+        9,
+        9
+      ]
+    },
+    {
+      "task_desc": "look at pillow under the desklamp.",
+      "similarity_score": 0.8005094938164219,
+      "learning_count": 2,
+      "kb_index": 40,
+      "issue_text": "Failed to locate the desklamp in initial search attempts across multiple locations.",
+      "learning_text": "Systematically explore different locations, such as shelves, when initial searches in common areas like desks fail to find the object.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "Pillow, DeskLamp",
+      "verbs": "look at",
+      "goal_phase": "SEARCH",
+      "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-320/trial_T20190906_225859_247598",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        3,
+        6
+      ],
+      "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-320/trial_T20190906_225859_247598",
+      "evidence_trial_num": 1,
+      "evidence_step_range": [
+        7,
+        7
+      ]
+    },
+    {
+      "task_desc": "look at pillow under the desklamp.",
+      "similarity_score": 0.8005094938164219,
+      "learning_count": 2,
+      "kb_index": 41,
+      "issue_text": "Attempted to place the pillow 'under' or 'on' the desklamp using 'put' actions, which had no effect.",
+      "learning_text": "To achieve 'look at obj under desklamp', activate the desklamp using the 'use' command after bringing the object to its location.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "Pillow, DeskLamp",
+      "verbs": "look at",
+      "goal_phase": "PLACE",
+      "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-320/trial_T20190906_225859_247598",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        8,
+        9
+      ],
+      "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-320/trial_T20190906_225859_247598",
+      "evidence_trial_num": 1,
+      "evidence_step_range": [
+        10,
+        10
+      ]
+    },
+    {
+      "task_desc": "look at laptop under the desklamp.",
+      "similarity_score": 0.8228279792921882,
+      "learning_count": 5,
+      "kb_index": 8,
+      "issue_text": "Attempted to `open` a dresser that is not a container or is already open.",
+      "learning_text": "No specific learning was applied to resolve this issue within the provided trials.",
+      "valid_level": "CANDIDATE",
+      "obj_type": "dresser",
+      "verbs": "open",
+      "goal_phase": "SEARCH",
+      "issue_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323",
+      "issue_trial_num": 6,
+      "issue_step_range": [
+        19,
+        19
+      ],
+      "evidence_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323",
+      "evidence_trial_num": 6,
+      "evidence_step_range": [
+        19,
+        19
+      ]
+    }
+  ],
+  "selected_learnings": [
+    {
+      "issue": "Failed to take desklamp, confirming it is a fixed object.",
+      "learning": "Adapted strategy by moving the movable pencil to the fixed desklamp's location.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "ACQUIRE",
+      "task_desc": "examine the pencil with the desklamp.",
+      "similarity_score": 0.8307147669405699
+    },
+    {
+      "issue": "Failed to take pencil, initially believed to be fixed.",
+      "learning": "Successfully picked up the pencil, demonstrating it was movable despite prior failures.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "ACQUIRE",
+      "task_desc": "examine the pencil with the desklamp.",
+      "similarity_score": 0.8307147669405699
+    },
+    {
+      "issue": "Failed to examine objects due to lack of co-location.",
+      "learning": "Ensured co-location of pencil and desklamp by moving the pencil to the desklamp's location.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "TRANSFORM",
+      "task_desc": "examine the pencil with the desklamp.",
+      "similarity_score": 0.8307147669405699
+    },
+    {
+      "issue": "Failed to navigate to a drawer using `go to` command, resulting in \"Nothing happens.\"",
+      "learning": "If `go to` fails for a container, try interacting directly with it using commands like `open`.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "SEARCH",
+      "task_desc": "look at laptop under the desklamp.",
+      "similarity_score": 0.8228279792921882
+    },
+    {
+      "issue": "Unable to place the laptop on or under the desklamp using `place` or `put` commands.",
+      "learning": "Explicit placement might not be required; ensure the object is in the same location as the light source and activate the light source.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "PLACE",
+      "task_desc": "look at laptop under the desklamp.",
+      "similarity_score": 0.8228279792921882
+    },
+    {
+      "issue": "Attempted to 'go to' drawer 7, but it resulted in 'Nothing happens' repeatedly.",
+      "learning": "When 'go to' fails for a container, try to interact directly with 'open' to access its contents.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "SEARCH",
+      "task_desc": "look at laptop under the desklamp.",
+      "similarity_score": 0.8228279792921882
+    },
+    {
+      "issue": "Failed to place laptop on or under desklamp using 'place' or 'put' commands.",
+      "learning": "To fulfill 'under the desklamp' condition, ensure the object is in the same location as the desklamp and activate the desklamp, rather than explicitly 'placing' it.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "PLACE",
+      "task_desc": "look at laptop under the desklamp.",
+      "similarity_score": 0.8228279792921882
+    },
+    {
+      "issue": "Attempted to interact with a non-existent or inaccessible drawer.",
+      "learning": "Verify the existence and accessibility of containers before attempting to interact with them.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "goal_phase": "SEARCH",
+      "task_desc": "examine the pen with the desklamp.",
+      "similarity_score": 0.9151329510957203
+    }
+  ]
+}

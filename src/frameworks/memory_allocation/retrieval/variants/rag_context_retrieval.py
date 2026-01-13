@@ -16,7 +16,7 @@ from typing import List, Dict, Any, Optional, Tuple
 from pathlib import Path
 
 # Reuse embedding utilities from existing context_retrieval
-from src.frameworks.memory_allocation.retrieval.context_retrieval import (
+from src.frameworks.memory_allocation.retrieval.core.context_retrieval import (
     get_embedding,
     get_batch_embeddings,
     cosine_similarity,

@@ -21,7 +21,7 @@ from src.frameworks.react import ReAct
 
 # Import retrieval modules
 # Import retrieval modules
-from src.frameworks.memory_allocation.retrieval.context_retrieval import (
+from src.frameworks.memory_allocation.retrieval.core.context_retrieval import (
     retrieve_learnings_only,
     format_learnings_for_prompt
 )

@@ -1,0 +1,356 @@
+[
+  {
+    "task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-308/trial_T20190908_222917_366542",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the alarmclock with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a bowl 1, a desklamp 1, a mug 1, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "take desklamp 1 from desk 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "take alarmclock 1 from desk 2",
+        "observation": "You pick up the alarmclock 1 from the desk 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a bowl 1, a desklamp 1, a mug 1, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "examine alarmclock 1 with desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "think: I have the alarmclock 1 in my inventory. The desklamp 1 is on desk 1. I tried to examine the alarmclock with the desklamp, but it didn't work. I also tried to take the desklamp, but it failed, indicating it's a fixed object. I need to turn on the desklamp before I can use it to examine something.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0
+  },
+  {
+    "task_id": "look_at_obj_in_light-Book-None-DeskLamp-308/trial_T20190908_020029_636862",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the book with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 2, a cd 1, a cellphone 3, a desklamp 1, a mug 1, a pen 1, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 3, a bowl 3, a cd 3, a mug 2, and a pencil 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 2, a cd 1, a cellphone 3, a desklamp 1, a mug 1, a pen 1, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "think: I need to find a book. I have already checked desk 1 and it doesn't have a book. I will check desk 2 next.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. On the drawer 2, you see a cellphone 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "go to drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "go to drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      }
+    ],
+    "success": false,
+    "help_calls": [],
+    "help_call_count": 0
+  },
+  {
+    "task_id": "look_at_obj_in_light-Bowl-None-DeskLamp-308/trial_T20190907_133919_856963",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at bowl under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "go to shelf 1",
+        "observation": "You arrive at shelf 1. On the shelf 1, you see a cellphone 3, and a creditcard 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to shelf 2",
+        "observation": "You arrive at shelf 2. On the shelf 2, you see a mug 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "go to shelf 3",
+        "observation": "You arrive at shelf 3. On the shelf 3, you see a desklamp 1, a pen 1, and a pencil 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "go to shelf 4",
+        "observation": "You arrive at shelf 4. On the shelf 4, you see a pencil 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "go to shelf 5",
+        "observation": "You arrive at shelf 5. On the shelf 5, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "go to shelf 6",
+        "observation": "You arrive at shelf 6. On the shelf 6, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a desklamp 1, a keychain 3, a mug 2, a pen 2, a pen 1, and a pencil 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 1, a bowl 1, and a cd 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "take bowl 1 from desk 2",
+        "observation": "You pick up the bowl 1 from the desk 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 10,
+        "action": "go to shelf 3",
+        "observation": "You arrive at shelf 3. On the shelf 3, you see a desklamp 1, a pen 1, and a pencil 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 11,
+        "action": "put bowl 1 under desklamp 1 on shelf 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 12,
+        "action": "put bowl 1 on shelf 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 13,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0
+  },
+  {
+    "task_id": "look_at_obj_in_light-CD-None-DeskLamp-308/trial_T20190908_141942_810052",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at cd under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 1, a desklamp 1, and a mug 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 3, a bowl 3, a bowl 2, a cd 1, a creditcard 1, a laptop 2, and a mug 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "take cd 1 from desk 2",
+        "observation": "You pick up the cd 1 from the desk 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 1, a desklamp 1, and a mug 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "put cd 1 on desk 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "put cd 1 under desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "put cd 1 on desk 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "help[\"cannot put cd on desk\"]",
+        "observation": "Error retrieving help: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '* BatchEmbedContentsRequest.requests: at most 100 requests can be in one batch\\n', 'status': 'INVALID_ARGUMENT'}}",
+        "is_help_call": true
+      },
+      {
+        "step": 9,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [
+      {
+        "step": 8,
+        "query": "cannot put cd on desk",
+        "response": "Error retrieving help: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '* BatchEmbedContentsRequest.requests: at most 100 requests can be in one batch\\n', 'status': 'INVALID_ARGUMENT'}}"
+      }
+    ],
+    "help_call_count": 1
+  },
+  {
+    "task_id": "look_at_obj_in_light-Mug-None-DeskLamp-308/trial_T20190908_161733_213242",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at mug under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a mug, then find a desklamp, and finally look at the mug under the desklamp. I will start by searching for a mug.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a creditcard 1, a desklamp 1, a laptop 1, a pencil 2, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "think: I have found the desklamp 1 on desk 1. Now I need to find a mug. I will check the other objects in the room for a mug, starting with desk 2.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 1, a book 2, a bowl 1, a cd 2, and a mug 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "take mug 3 from desk 2",
+        "observation": "You pick up the mug 3 from the desk 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a creditcard 1, a desklamp 1, a laptop 1, a pencil 2, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "put mug 3 on desk 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "put mug 3 under desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0
+  }
+]

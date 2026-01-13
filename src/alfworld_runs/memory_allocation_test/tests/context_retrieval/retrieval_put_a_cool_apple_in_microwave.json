@@ -1,0 +1,895 @@
+{
+  "query": "put a cool apple in microwave.",
+  "metadata": {
+    "pick_learning_count": 17,
+    "max_learning_count": 11,
+    "actual_selected_count": 17,
+    "knowledge_retrieval_base_count": 30,
+    "top_similar_tasks": [
+      {
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.8449943498818164,
+        "learning_count": 8,
+        "validated_learning_count": 6
+      },
+      {
+        "task_desc": "heat some apple and put it in fridge.",
+        "similarity_score": 0.8337676225576354,
+        "learning_count": 11,
+        "validated_learning_count": 10
+      },
+      {
+        "task_desc": "put a cool bowl in microwave.",
+        "similarity_score": 0.8036272172254426,
+        "learning_count": 3,
+        "validated_learning_count": 3
+      },
+      {
+        "task_desc": "put a cool bread in microwave.",
+        "similarity_score": 0.786665016744474,
+        "learning_count": 3,
+        "validated_learning_count": 3
+      },
+      {
+        "task_desc": "put a cool apple in garbagecan.",
+        "similarity_score": 0.7508798076707353,
+        "learning_count": 5,
+        "validated_learning_count": 5
+      }
+    ]
+  },
+  "knowledge_retrieval_base": [
+    {
+      "task_desc": "put a hot apple in fridge.",
+      "similarity_score": 0.8449943498818164,
+      "learning_count": 8,
+      "kb_index": 214,
+      "issue_text": "Failed to open or look inside the fridge from a distance.",
+      "learning_text": "Go to the fridge's location before attempting to open or look inside it.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "fridge",
+      "verbs": "open, look",
+      "goal_phase": "PLACE",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        3,
+        5
+      ],
+      "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+      "evidence_trial_num": 7,
+      "evidence_step_range": [
+        34,
+        35
+      ]
+    },
+    {
+      "task_desc": "put a hot apple in fridge.",
+      "similarity_score": 0.8449943498818164,
+      "learning_count": 8,
+      "kb_index": 218,
+      "issue_text": "Failed to heat apple in microwave or put apple into microwave.",
+      "learning_text": "Heat the item in an open microwave; it can be heated even if another item is inside.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "apple, microwave",
+      "verbs": "heat, put",
+      "goal_phase": "TRANSFORM",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+      "issue_trial_num": 2,
+      "issue_step_range": [
+        8,
+        8
+      ],
+      "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+      "evidence_trial_num": 7,
+      "evidence_step_range": [
+        32,
+        33
+      ]
+    },
+    {
+      "task_desc": "heat some apple and put it in fridge.",
+      "similarity_score": 0.8337676225576354,
+      "learning_count": 11,
+      "kb_index": 209,
+      "issue_text": "Heated apple disappeared from inventory after heating with an open microwave.",
+      "learning_text": "Ensure the microwave is closed when heating an item to keep it in inventory.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "apple, microwave",
+      "verbs": "heat",
+      "goal_phase": "TRANSFORM",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        7,
+        13
+      ],
+      "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "evidence_trial_num": 5,
+      "evidence_step_range": [
+        9,
+        10
+      ]
+    },
+    {
+      "task_desc": "heat some apple and put it in fridge.",
+      "similarity_score": 0.8337676225576354,
+      "learning_count": 11,
+      "kb_index": 211,
+      "issue_text": "Agent attempted to put apple into microwave before heating, but the action failed.",
+      "learning_text": "Do not put the item into the microwave; heat it directly while holding it and ensuring the microwave is closed.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "apple, microwave",
+      "verbs": "put",
+      "goal_phase": "TRANSFORM",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "issue_trial_num": 2,
+      "issue_step_range": [
+        13,
+        14
+      ],
+      "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "evidence_trial_num": 4,
+      "evidence_step_range": [
+        10,
+        11
+      ]
+    },
+    {
+      "task_desc": "heat some apple and put it in fridge.",
+      "similarity_score": 0.8337676225576354,
+      "learning_count": 11,
+      "kb_index": 213,
+      "issue_text": "Agent attempted to put heated apple in fridge using 'put' command, but it failed.",
+      "learning_text": "Use the 'move' command to place an item into a receptacle like a fridge.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "apple, fridge",
+      "verbs": "put, move",
+      "goal_phase": "PLACE",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        13,
+        13
+      ],
+      "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "evidence_trial_num": 5,
+      "evidence_step_range": [
+        16,
+        16
+      ]
+    },
+    {
+      "task_desc": "heat some apple and put it in fridge.",
+      "similarity_score": 0.8337676225576354,
+      "learning_count": 11,
+      "kb_index": 457,
+      "issue_text": "Attempted to place heated apple in fridge using 'put' command, but it failed.",
+      "learning_text": "Use the 'move' command instead of 'put' to place an item into a receptacle.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "apple, fridge",
+      "verbs": "put",
+      "goal_phase": "PLACE",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        13,
+        13
+      ],
+      "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "evidence_trial_num": 5,
+      "evidence_step_range": [
+        16,
+        16
+      ]
+    },
+    {
+      "task_desc": "heat some apple and put it in fridge.",
+      "similarity_score": 0.8337676225576354,
+      "learning_count": 11,
+      "kb_index": 459,
+      "issue_text": "Attempted to put apple directly into an open microwave before heating, which failed.",
+      "learning_text": "Do not explicitly put items into the microwave; ensure it is closed and use the 'heat' action directly.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "apple, microwave",
+      "verbs": "put",
+      "goal_phase": "TRANSFORM",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "issue_trial_num": 2,
+      "issue_step_range": [
+        13,
+        14
+      ],
+      "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "evidence_trial_num": 4,
+      "evidence_step_range": [
+        11,
+        12
+      ]
+    },
+    {
+      "task_desc": "heat some apple and put it in fridge.",
+      "similarity_score": 0.8337676225576354,
+      "learning_count": 11,
+      "kb_index": 461,
+      "issue_text": "Heated an apple with an open microwave, causing the item to disappear from inventory.",
+      "learning_text": "Ensure the microwave is closed before performing the 'heat' action to retain the item.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "apple, microwave",
+      "verbs": "heat",
+      "goal_phase": "TRANSFORM",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "issue_trial_num": 3,
+      "issue_step_range": [
+        11,
+        11
+      ],
+      "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "evidence_trial_num": 4,
+      "evidence_step_range": [
+        11,
+        12
+      ]
+    },
+    {
+      "task_desc": "put a cool bowl in microwave.",
+      "similarity_score": 0.8036272172254426,
+      "learning_count": 3,
+      "kb_index": 151,
+      "issue_text": "Failed to interact with the fridge because it was closed, preventing cooling.",
+      "learning_text": "Always ensure the appliance is open by using the 'open' action before attempting to interact with it.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "fridge",
+      "verbs": "open, cool",
+      "goal_phase": "TRANSFORM",
+      "issue_task_id": "pick_cool_then_place_in_recep-Bowl-None-Microwave-7/trial_T20190908_231310_981246",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        6,
+        8
+      ],
+      "evidence_task_id": "pick_cool_then_place_in_recep-Bowl-None-Microwave-7/trial_T20190908_231310_981246",
+      "evidence_trial_num": 2,
+      "evidence_step_range": [
+        22,
+        23
+      ]
+    },
+    {
+      "task_desc": "put a cool bread in microwave.",
+      "similarity_score": 0.786665016744474,
+      "learning_count": 3,
+      "kb_index": 161,
+      "issue_text": "Repeatedly failed to open fridge.",
+      "learning_text": "Go to the fridge before attempting to open it.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "fridge",
+      "verbs": "open",
+      "goal_phase": "TRANSFORM",
+      "issue_task_id": "pick_cool_then_place_in_recep-Bread-None-Microwave-15/trial_T20190907_132900_527945",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        7,
+        8
+      ],
+      "evidence_task_id": "pick_cool_then_place_in_recep-Bread-None-Microwave-15/trial_T20190907_132900_527945",
+      "evidence_trial_num": 2,
+      "evidence_step_range": [
+        8,
+        9
+      ]
+    },
+    {
+      "task_desc": "put a cool apple in garbagecan.",
+      "similarity_score": 0.7508798076707353,
+      "learning_count": 5,
+      "kb_index": 145,
+      "issue_text": "Failed to locate the target object 'apple' after searching many common locations.",
+      "learning_text": "Systematically search all possible locations, including less obvious ones like the microwave, to find the target object.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "apple",
+      "verbs": "pick",
+      "goal_phase": "SEARCH",
+      "issue_task_id": "pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        4,
+        49
+      ],
+      "evidence_task_id": "pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484",
+      "evidence_trial_num": 4,
+      "evidence_step_range": [
+        20,
+        20
+      ]
+    },
+    {
+      "task_desc": "put a cool apple in garbagecan.",
+      "similarity_score": 0.7508798076707353,
+      "learning_count": 5,
+      "kb_index": 146,
+      "issue_text": "Repeated 'go to' action to a location with no effect, indicating a navigation issue.",
+      "learning_text": "Verify current location before attempting to 'go to' an already visited location, or re-issue the command if it fails.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "cabinet",
+      "verbs": "pick",
+      "goal_phase": "SEARCH",
+      "issue_task_id": "pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484",
+      "issue_trial_num": 2,
+      "issue_step_range": [
+        20,
+        21
+      ],
+      "evidence_task_id": "pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484",
+      "evidence_trial_num": 3,
+      "evidence_step_range": [
+        2,
+        2
+      ]
+    },
+    {
+      "task_desc": "put a hot apple in fridge.",
+      "similarity_score": 0.8449943498818164,
+      "learning_count": 8,
+      "kb_index": 215,
+      "issue_text": "Failed to open cabinets or drawers without being at their location.",
+      "learning_text": "Go to the cabinet or drawer's location before attempting to open it.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "cabinet, drawer",
+      "verbs": "open",
+      "goal_phase": "SEARCH",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+      "issue_trial_num": 2,
+      "issue_step_range": [
+        25,
+        25
+      ],
+      "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+      "evidence_trial_num": 2,
+      "evidence_step_range": [
+        22,
+        23
+      ]
+    },
+    {
+      "task_desc": "put a hot apple in fridge.",
+      "similarity_score": 0.8449943498818164,
+      "learning_count": 8,
+      "kb_index": 216,
+      "issue_text": "Failed to put down an item using the 'put' command.",
+      "learning_text": "Use the 'move' command to place an item from inventory onto a surface.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "apple, cup",
+      "verbs": "put, move",
+      "goal_phase": "RECOVER",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+      "issue_trial_num": 3,
+      "issue_step_range": [
+        21,
+        22
+      ],
+      "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+      "evidence_trial_num": 3,
+      "evidence_step_range": [
+        31,
+        31
+      ]
+    },
+    {
+      "task_desc": "put a hot apple in fridge.",
+      "similarity_score": 0.8449943498818164,
+      "learning_count": 8,
+      "kb_index": 217,
+      "issue_text": "Failed to take or move an item while already holding another item.",
+      "learning_text": "Place the currently held item down before attempting to take or move another item.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "cup, pot, pan, mug, kettle",
+      "verbs": "take, move",
+      "goal_phase": "ACQUIRE",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+      "issue_trial_num": 3,
+      "issue_step_range": [
+        14,
+        14
+      ],
+      "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+      "evidence_trial_num": 3,
+      "evidence_step_range": [
+        31,
+        34
+      ]
+    },
+    {
+      "task_desc": "put a hot apple in fridge.",
+      "similarity_score": 0.8449943498818164,
+      "learning_count": 8,
+      "kb_index": 220,
+      "issue_text": "Failed to close the microwave while an item was still inside.",
+      "learning_text": "Remove all items from the microwave before attempting to close it.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "microwave, cup",
+      "verbs": "close",
+      "goal_phase": "TRANSFORM",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+      "issue_trial_num": 3,
+      "issue_step_range": [
+        18,
+        18
+      ],
+      "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+      "evidence_trial_num": 3,
+      "evidence_step_range": [
+        34,
+        44
+      ]
+    },
+    {
+      "task_desc": "heat some apple and put it in fridge.",
+      "similarity_score": 0.8337676225576354,
+      "learning_count": 11,
+      "kb_index": 210,
+      "issue_text": "Agent attempted to open fridge without being at its location.",
+      "learning_text": "Go to the object's location before attempting to interact with it.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "fridge",
+      "verbs": "open",
+      "goal_phase": "RECOVER",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "issue_trial_num": 2,
+      "issue_step_range": [
+        2,
+        3
+      ],
+      "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "evidence_trial_num": 2,
+      "evidence_step_range": [
+        4,
+        4
+      ]
+    },
+    {
+      "task_desc": "heat some apple and put it in fridge.",
+      "similarity_score": 0.8337676225576354,
+      "learning_count": 11,
+      "kb_index": 212,
+      "issue_text": "Agent attempted to heat apple with microwave while microwave was closed.",
+      "learning_text": "Open the microwave before attempting to heat an item.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "apple, microwave",
+      "verbs": "heat",
+      "goal_phase": "TRANSFORM",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "issue_trial_num": 3,
+      "issue_step_range": [
+        8,
+        8
+      ],
+      "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "evidence_trial_num": 3,
+      "evidence_step_range": [
+        9,
+        10
+      ]
+    },
+    {
+      "task_desc": "heat some apple and put it in fridge.",
+      "similarity_score": 0.8337676225576354,
+      "learning_count": 11,
+      "kb_index": 458,
+      "issue_text": "Tried to open a container without being at its location.",
+      "learning_text": "Always go to the object's location before attempting to open it.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "fridge, cabinet",
+      "verbs": "open",
+      "goal_phase": "SEARCH",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "issue_trial_num": 2,
+      "issue_step_range": [
+        2,
+        2
+      ],
+      "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "evidence_trial_num": 2,
+      "evidence_step_range": [
+        4,
+        5
+      ]
+    },
+    {
+      "task_desc": "heat some apple and put it in fridge.",
+      "similarity_score": 0.8337676225576354,
+      "learning_count": 11,
+      "kb_index": 460,
+      "issue_text": "Attempted to heat an item with the microwave without being at its location.",
+      "learning_text": "Go to the appliance's location before attempting to use it for heating.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "apple, microwave",
+      "verbs": "heat",
+      "goal_phase": "TRANSFORM",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "issue_trial_num": 3,
+      "issue_step_range": [
+        8,
+        8
+      ],
+      "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "evidence_trial_num": 3,
+      "evidence_step_range": [
+        9,
+        11
+      ]
+    },
+    {
+      "task_desc": "put a cool bowl in microwave.",
+      "similarity_score": 0.8036272172254426,
+      "learning_count": 3,
+      "kb_index": 152,
+      "issue_text": "Used 'put [object] in [appliance]' instead of the direct 'cool with' action for cooling.",
+      "learning_text": "To cool an object, use the 'cool [object] with [appliance]' action directly, not 'put in'.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "bowl, fridge",
+      "verbs": "put, cool",
+      "goal_phase": "TRANSFORM",
+      "issue_task_id": "pick_cool_then_place_in_recep-Bowl-None-Microwave-7/trial_T20190908_231310_981246",
+      "issue_trial_num": 2,
+      "issue_step_range": [
+        24,
+        24
+      ],
+      "evidence_task_id": "pick_cool_then_place_in_recep-Bowl-None-Microwave-7/trial_T20190908_231310_981246",
+      "evidence_trial_num": 2,
+      "evidence_step_range": [
+        26,
+        26
+      ]
+    },
+    {
+      "task_desc": "put a cool bowl in microwave.",
+      "similarity_score": 0.8036272172254426,
+      "learning_count": 3,
+      "kb_index": 153,
+      "issue_text": "Used 'put [object] in [receptacle]' instead of 'move [object] to [receptacle]' to place an item.",
+      "learning_text": "To place an object into a receptacle, use the 'move [object] to [receptacle]' action.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "bowl, microwave",
+      "verbs": "put, move",
+      "goal_phase": "PLACE",
+      "issue_task_id": "pick_cool_then_place_in_recep-Bowl-None-Microwave-7/trial_T20190908_231310_981246",
+      "issue_trial_num": 2,
+      "issue_step_range": [
+        29,
+        29
+      ],
+      "evidence_task_id": "pick_cool_then_place_in_recep-Bowl-None-Microwave-7/trial_T20190908_231310_981246",
+      "evidence_trial_num": 2,
+      "evidence_step_range": [
+        31,
+        31
+      ]
+    },
+    {
+      "task_desc": "put a cool bread in microwave.",
+      "similarity_score": 0.786665016744474,
+      "learning_count": 3,
+      "kb_index": 162,
+      "issue_text": "Used 'put' instead of 'cool' to transform bread in fridge.",
+      "learning_text": "Use the 'cool' verb to cool an object with an appliance.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "bread, fridge",
+      "verbs": "put",
+      "goal_phase": "TRANSFORM",
+      "issue_task_id": "pick_cool_then_place_in_recep-Bread-None-Microwave-15/trial_T20190907_132900_527945",
+      "issue_trial_num": 2,
+      "issue_step_range": [
+        10,
+        10
+      ],
+      "evidence_task_id": "pick_cool_then_place_in_recep-Bread-None-Microwave-15/trial_T20190907_132900_527945",
+      "evidence_trial_num": 2,
+      "evidence_step_range": [
+        11,
+        11
+      ]
+    },
+    {
+      "task_desc": "put a cool bread in microwave.",
+      "similarity_score": 0.786665016744474,
+      "learning_count": 3,
+      "kb_index": 163,
+      "issue_text": "Used 'put' instead of 'move' to place bread in microwave.",
+      "learning_text": "Use the 'move' verb to place an object into a receptacle.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "bread, microwave",
+      "verbs": "put",
+      "goal_phase": "PLACE",
+      "issue_task_id": "pick_cool_then_place_in_recep-Bread-None-Microwave-15/trial_T20190907_132900_527945",
+      "issue_trial_num": 2,
+      "issue_step_range": [
+        15,
+        15
+      ],
+      "evidence_task_id": "pick_cool_then_place_in_recep-Bread-None-Microwave-15/trial_T20190907_132900_527945",
+      "evidence_trial_num": 2,
+      "evidence_step_range": [
+        16,
+        16
+      ]
+    },
+    {
+      "task_desc": "put a cool apple in garbagecan.",
+      "similarity_score": 0.7508798076707353,
+      "learning_count": 5,
+      "kb_index": 144,
+      "issue_text": "Attempted to interact with a closed fridge.",
+      "learning_text": "Open the fridge before attempting to interact with its contents.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "fridge",
+      "verbs": "cool",
+      "goal_phase": "RECOVER",
+      "issue_task_id": "pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484",
+      "issue_trial_num": 1,
+      "issue_step_range": [
+        2,
+        2
+      ],
+      "evidence_task_id": "pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484",
+      "evidence_trial_num": 1,
+      "evidence_step_range": [
+        3,
+        3
+      ]
+    },
+    {
+      "task_desc": "put a cool apple in garbagecan.",
+      "similarity_score": 0.7508798076707353,
+      "learning_count": 5,
+      "kb_index": 147,
+      "issue_text": "Used 'put' instead of 'cool' to cool an apple in the fridge.",
+      "learning_text": "Use the specific 'cool' command with the cooling appliance to cool an object.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "apple, fridge",
+      "verbs": "cool",
+      "goal_phase": "TRANSFORM",
+      "issue_task_id": "pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484",
+      "issue_trial_num": 4,
+      "issue_step_range": [
+        24,
+        24
+      ],
+      "evidence_task_id": "pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484",
+      "evidence_trial_num": 4,
+      "evidence_step_range": [
+        25,
+        25
+      ]
+    },
+    {
+      "task_desc": "put a cool apple in garbagecan.",
+      "similarity_score": 0.7508798076707353,
+      "learning_count": 5,
+      "kb_index": 148,
+      "issue_text": "Used 'put' instead of 'move' to place an apple into the garbagecan.",
+      "learning_text": "Use the 'move' command to place an object into the garbagecan.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "apple, garbagecan",
+      "verbs": "place",
+      "goal_phase": "PLACE",
+      "issue_task_id": "pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484",
+      "issue_trial_num": 4,
+      "issue_step_range": [
+        28,
+        28
+      ],
+      "evidence_task_id": "pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484",
+      "evidence_trial_num": 4,
+      "evidence_step_range": [
+        29,
+        29
+      ]
+    },
+    {
+      "task_desc": "put a hot apple in fridge.",
+      "similarity_score": 0.8449943498818164,
+      "learning_count": 8,
+      "kb_index": 219,
+      "issue_text": "Failed to heat apple directly on a stoveburner without a container.",
+      "learning_text": "Place the item in a suitable container (e.g., pot, pan) before heating on a stoveburner.",
+      "valid_level": "CANDIDATE",
+      "obj_type": "apple, stoveburner",
+      "verbs": "heat, put",
+      "goal_phase": "TRANSFORM",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+      "issue_trial_num": 2,
+      "issue_step_range": [
+        14,
+        14
+      ],
+      "evidence_task_id": "",
+      "evidence_trial_num": "",
+      "evidence_step_range": []
+    },
+    {
+      "task_desc": "put a hot apple in fridge.",
+      "similarity_score": 0.8449943498818164,
+      "learning_count": 8,
+      "kb_index": 221,
+      "issue_text": "Heated apple became un-interactable after successful heating in microwave.",
+      "learning_text": "No successful action or strategy was found to resolve this issue.",
+      "valid_level": "CANDIDATE",
+      "obj_type": "apple",
+      "verbs": "put, take",
+      "goal_phase": "PLACE",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+      "issue_trial_num": 7,
+      "issue_step_range": [
+        36,
+        36
+      ],
+      "evidence_task_id": "",
+      "evidence_trial_num": "",
+      "evidence_step_range": []
+    },
+    {
+      "task_desc": "heat some apple and put it in fridge.",
+      "similarity_score": 0.8337676225576354,
+      "learning_count": 11,
+      "kb_index": 462,
+      "issue_text": "Attempted to close a container without being at its location.",
+      "learning_text": "Go to the object's location before attempting to close it.",
+      "valid_level": "CANDIDATE",
+      "obj_type": "fridge",
+      "verbs": "close",
+      "goal_phase": "RECOVER",
+      "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "issue_trial_num": 4,
+      "issue_step_range": [
+        24,
+        25
+      ],
+      "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
+      "evidence_trial_num": 4,
+      "evidence_step_range": [
+        24,
+        25
+      ]
+    }
+  ],
+  "selected_learnings": [
+    {
+      "issue": "Failed to open or look inside the fridge from a distance.",
+      "learning": "Go to the fridge's location before attempting to open or look inside it.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "PLACE",
+      "task_desc": "put a hot apple in fridge.",
+      "similarity_score": 0.8449943498818164
+    },
+    {
+      "issue": "Failed to heat apple in microwave or put apple into microwave.",
+      "learning": "Heat the item in an open microwave; it can be heated even if another item is inside.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "TRANSFORM",
+      "task_desc": "put a hot apple in fridge.",
+      "similarity_score": 0.8449943498818164
+    },
+    {
+      "issue": "Heated apple disappeared from inventory after heating with an open microwave.",
+      "learning": "Ensure the microwave is closed when heating an item to keep it in inventory.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "TRANSFORM",
+      "task_desc": "heat some apple and put it in fridge.",
+      "similarity_score": 0.8337676225576354
+    },
+    {
+      "issue": "Agent attempted to put apple into microwave before heating, but the action failed.",
+      "learning": "Do not put the item into the microwave; heat it directly while holding it and ensuring the microwave is closed.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "TRANSFORM",
+      "task_desc": "heat some apple and put it in fridge.",
+      "similarity_score": 0.8337676225576354
+    },
+    {
+      "issue": "Agent attempted to put heated apple in fridge using 'put' command, but it failed.",
+      "learning": "Use the 'move' command to place an item into a receptacle like a fridge.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "PLACE",
+      "task_desc": "heat some apple and put it in fridge.",
+      "similarity_score": 0.8337676225576354
+    },
+    {
+      "issue": "Attempted to place heated apple in fridge using 'put' command, but it failed.",
+      "learning": "Use the 'move' command instead of 'put' to place an item into a receptacle.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "PLACE",
+      "task_desc": "heat some apple and put it in fridge.",
+      "similarity_score": 0.8337676225576354
+    },
+    {
+      "issue": "Attempted to put apple directly into an open microwave before heating, which failed.",
+      "learning": "Do not explicitly put items into the microwave; ensure it is closed and use the 'heat' action directly.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "TRANSFORM",
+      "task_desc": "heat some apple and put it in fridge.",
+      "similarity_score": 0.8337676225576354
+    },
+    {
+      "issue": "Heated an apple with an open microwave, causing the item to disappear from inventory.",
+      "learning": "Ensure the microwave is closed before performing the 'heat' action to retain the item.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "TRANSFORM",
+      "task_desc": "heat some apple and put it in fridge.",
+      "similarity_score": 0.8337676225576354
+    },
+    {
+      "issue": "Failed to interact with the fridge because it was closed, preventing cooling.",
+      "learning": "Always ensure the appliance is open by using the 'open' action before attempting to interact with it.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "TRANSFORM",
+      "task_desc": "put a cool bowl in microwave.",
+      "similarity_score": 0.8036272172254426
+    },
+    {
+      "issue": "Repeatedly failed to open fridge.",
+      "learning": "Go to the fridge before attempting to open it.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "TRANSFORM",
+      "task_desc": "put a cool bread in microwave.",
+      "similarity_score": 0.786665016744474
+    },
+    {
+      "issue": "Failed to locate the target object 'apple' after searching many common locations.",
+      "learning": "Systematically search all possible locations, including less obvious ones like the microwave, to find the target object.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "SEARCH",
+      "task_desc": "put a cool apple in garbagecan.",
+      "similarity_score": 0.7508798076707353
+    },
+    {
+      "issue": "Repeated 'go to' action to a location with no effect, indicating a navigation issue.",
+      "learning": "Verify current location before attempting to 'go to' an already visited location, or re-issue the command if it fails.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "SEARCH",
+      "task_desc": "put a cool apple in garbagecan.",
+      "similarity_score": 0.7508798076707353
+    },
+    {
+      "issue": "Failed to open cabinets or drawers without being at their location.",
+      "learning": "Go to the cabinet or drawer's location before attempting to open it.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "goal_phase": "SEARCH",
+      "task_desc": "put a hot apple in fridge.",
+      "similarity_score": 0.8449943498818164
+    },
+    {
+      "issue": "Failed to put down an item using the 'put' command.",
+      "learning": "Use the 'move' command to place an item from inventory onto a surface.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "goal_phase": "RECOVER",
+      "task_desc": "put a hot apple in fridge.",
+      "similarity_score": 0.8449943498818164
+    },
+    {
+      "issue": "Failed to take or move an item while already holding another item.",
+      "learning": "Place the currently held item down before attempting to take or move another item.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "goal_phase": "ACQUIRE",
+      "task_desc": "put a hot apple in fridge.",
+      "similarity_score": 0.8449943498818164
+    },
+    {
+      "issue": "Failed to close the microwave while an item was still inside.",
+      "learning": "Remove all items from the microwave before attempting to close it.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "goal_phase": "TRANSFORM",
+      "task_desc": "put a hot apple in fridge.",
+      "similarity_score": 0.8449943498818164
+    },
+    {
+      "issue": "Agent attempted to open fridge without being at its location.",
+      "learning": "Go to the object's location before attempting to interact with it.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "goal_phase": "RECOVER",
+      "task_desc": "heat some apple and put it in fridge.",
+      "similarity_score": 0.8337676225576354
+    }
+  ]
+}

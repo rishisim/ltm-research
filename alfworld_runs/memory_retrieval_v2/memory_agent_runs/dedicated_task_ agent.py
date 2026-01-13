@@ -104,16 +104,19 @@ class DedicatedTaskAgent(ReAct):
     def _format_hardcoded_context(self, learnings: List[Dict[str, str]]) -> str:
         """
         Format hard-coded learnings into a prompt section.
+        Matches the format from context_retrieval.format_learnings_for_prompt()
         """
         if not learnings:
             return ""
         
-        context_text = ""
+        formatted_lines = []
         for i, learning in enumerate(learnings, 1):
-            context_text += f"{i}. Issue: {learning['issue_text']}\n"
-            context_text += f"   Learning: {learning['learning_text']}\n\n"
+            formatted_lines.append(
+                f"\n{i}. Issue: {learning['issue_text']}"
+                f"\n   Learning: {learning['learning_text']}"
+            )
         
-        return context_text.strip()
+        return "".join(formatted_lines)
 
     def run(
         self, 

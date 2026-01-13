@@ -13,7 +13,14 @@ src/
     ├── reflexion.py       # Adds self-reflection after failures
     └── memory_allocation/ # Extended agents with retrieval-augmented memory
         ├── agents/        # MemoryAgent, ContextOnlyAgent, ToolOnlyAgent, etc.
-        ├── retrieval/     # context_retrieval.py (task-start), tool_retrieval.py (help["query"])
+        ├── retrieval/     # Organized retrieval modules
+        │   ├── core/      # Core retrieval implementation
+        │   │   ├── embedding_cache.py      (persistent embedding caching)
+        │   │   ├── learning_counts.py      (task aggregation + learning counts)
+        │   │   └── context_retrieval.py    (main optimized retrieval algorithm)
+        │   ├── variants/  # Alternative retrieval strategies
+        │   ├── tool_retrieval.py           (help tool during execution)
+        │   └── README.md  (comprehensive documentation)
         └── preprocessing/ # Knowledge base construction utilities
 ```
 
@@ -57,10 +64,18 @@ Models: `"gpt-4"`, `"gpt-3.5-turbo"`, `"gemini-2.0-flash"`, `"gemini-2.5-flash"`
 
 ### Memory Retrieval
 Two retrieval mechanisms in `memory_allocation/retrieval/`:
-1. **Context retrieval** (`context_retrieval.py`): Called at task start, uses embedding similarity on `task_desc`
-2. **Tool retrieval** (`tool_retrieval.py`): Called via `help["query"]` action during execution
 
-Both use Google's `text-embedding-004` model and cosine similarity with validation-level ranking.
+1. **Context retrieval** (`core/context_retrieval.py`): Called at task start
+   - Uses optimized embedding caching with `embedding_cache.py`
+   - Queries learning counts aggregation (`learning_counts.py`)
+   - Algorithm: Top-5 similarity → dynamic pick count (1.5 × max_learning_count) → left join → validation ranking
+   - Returns selected learnings formatted for LLM prompt
+
+2. **Tool retrieval** (`tool_retrieval.py`): Called via `help["query"]` action during execution
+   - Dynamic mid-task learning retrieval
+   - Ranked by validation level and similarity
+
+Both use Google's `text-embedding-004` model with persistent caching to avoid re-embedding.
 
 ### Memory Bank Schema (`knowledge_base.json`)
 Each entry in the knowledge base contains:
@@ -83,7 +98,7 @@ Each entry in the knowledge base contains:
 - `CANDIDATE` (1): Not yet validated
 
 ### Goal Phases
-Defined in [context_retrieval.py](src/frameworks/memory_allocation/retrieval/context_retrieval.py#L35):
+Defined in [core/context_retrieval.py](src/frameworks/memory_allocation/retrieval/core/context_retrieval.py):
 - **SEARCH**: Finding/locating objects (keywords: `find`, `look`, `where`, `cannot find`)
 - **ACQUIRE**: Picking up objects (keywords: `pick`, `take`, `grab`, `hold`)
 - **TRANSFORM**: Applying operations (keywords: `heat`, `cool`, `clean`, `microwave`, `fridge`)
@@ -134,3 +149,15 @@ Key scripts in `scripts/` for common workflows:
 - `context_only_agent.py`: Only context retrieval at task start, no help tool
 - `tool_only_agent.py`: Only help tool during execution, no initial context
 - `trajectory_context_agent.py`: Uses raw trajectories instead of extracted learnings
+
+## Knowledge Base & Retrieval
+
+**Storage**: `alfworld_runs/memory_retrieval_v2/knowledge_base/`
+- `knowledge_base.json` - Main KB with ~400 issue-learning pairs
+- `knowledge_base.mem_learning_counts.json` - Cached aggregation (unique tasks + counts)
+- Embeddings cached for fast retrieval (no re-embedding on subsequent runs)
+
+**Retrieval Output**: `alfworld_runs/memory_retrieval_v2/results/`
+- `knowledge_retrieval_bases.json` - Full retrieval tables indexed by task_id
+- Tracks what context was retrieved for each task execution
+- Useful for analysis and debugging retrieval effectiveness
