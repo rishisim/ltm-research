@@ -10,7 +10,7 @@ import json
 import os
 import argparse
 import csv
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Set
 from collections import defaultdict
 from src.core.llm import get_chat
 
@@ -33,48 +33,6 @@ For each issue encountered during the trajectories, extract an entry. Issues inc
 - Using wrong verbs or commands that were corrected later
 - Objects not found in expected locations
 
-Output MUST be valid JSON only. No markdown. No extra keys.
-
-Schema:
-{
-  "entries": [
-    {
-      "task_desc": string (the task description, e.g., "put a cool tomato in microwave."),
-      "obj_type": string (lowercase, e.g., "tomato"),
-      "verbs": string (single verb, e.g., "cool"),
-      "goal_phase": "SEARCH" | "ACQUIRE" | "TRANSFORM" | "PLACE" | "RECOVER",
-      "issue_text": string (<30 words, what went wrong),
-      "learning_text": string (<40 words, the specific ACTION/STRATEGY that fixed the issue. Include the specific action in brackets. Format: "General strategy. [Action: exact command or step]"),
-      "trigger": {
-        "key": "WRONG_VERB" | "PRECONDITION" | "NO_EFFECT" | "CONTAINER_STATE" | "LOOP" | "NOT_FOUND" | "OTHER",
-        "verb": string (the action verb that failed, e.g., "put"),
-        "target_type": string (lowercase object type, e.g., "microwave"),
-        "obs": string (the observation that indicated the issue)
-      },
-      "valid_level": "VALID_SAME_TRIAL" | "VALID_NEXT_TRIAL" | "CANDIDATE",
-      "evidence_ref": {
-        "task_id": string,
-        "trial_num": number,
-        "step_range": [start_step, end_step]
-      },
-      "issue_ref": {
-        "task_id": string,
-        "trial_num": number,
-        "step_range": [start_step, end_step]
-      }
-    }
-  ]
-}
-
-trigger.key meanings:
-- WRONG_VERB: Used wrong action verb (e.g., "put" instead of "move")
-- PRECONDITION: Agent not at correct location or prerequisite not met
-- NO_EFFECT: Action simply didn't work for unknown reason
-- CONTAINER_STATE: Container open/closed/occupied issue blocking action
-- LOOP: Agent stuck in repeated no-op actions
-- NOT_FOUND: Object not found in expected locations
-- OTHER: Doesn't fit above categories
-
 valid_level meanings:
 - VALID_SAME_TRIAL: Issue was fixed later in the same trial
 - VALID_NEXT_TRIAL: Issue was fixed in a later trial
@@ -88,15 +46,42 @@ issue_ref meanings:
 
 Learning Text Guidelines:
 - Good: Actionable verbs, specific strategies, can be specific to objects/locations if those worked
-- Good: Include bracketed specific action after general strategy (e.g., "Search bed 2. [Action: go to bed 2]")
 - Bad: Passive observations, describing what happened without the action taken
 
 Rules:
 - Look across trials to find what eventually worked
 - learning_text MUST describe the corrective action/strategy, not just what happened
 - Consolidate duplicate issues within the same trial: if the same issue occurs across multiple consecutive or nearby steps, create ONE entry with an expanded step_range
-- Only create separate entries for the same issue type if the learnings are different
+- Only create separate entries for the same issue type within the same task if the learnings are different
 - If no issues found, return {"entries": []}
+
+
+Output MUST be valid JSON only. No markdown. No extra keys.
+
+Schema:
+{
+  "entries": [
+    {
+      "task_desc": string (the task description, e.g., "put a cool tomato in microwave."),
+      "obj_type": string (e.g., "tomato, fridge"),
+      "verbs": string (e.g., "cool"),
+      "goal_phase": "SEARCH" | "ACQUIRE" | "TRANSFORM" | "PLACE" | "RECOVER",
+      "issue_text": string (<30 words, what went wrong),
+      "issue_ref": {
+        "task_id": string,
+        "trial_num": number,
+        "step_range": [start_step, end_step]
+      }
+      "learning_text": string (<40 words, the specific ACTION/STRATEGY that fixed the issue.),
+      "evidence_ref": {
+        "task_id": string,
+        "trial_num": number,
+        "step_range": [start_step, end_step]
+      },
+      "valid_level": "VALID_SAME_TRIAL" | "VALID_NEXT_TRIAL" | "CANDIDATE",
+    }
+  ]
+}
 
 <TRAJECTORIES_JSON>"""
 
@@ -117,6 +102,30 @@ def save_json(path: str, data: Any):
     """Save data to JSON file."""
     with open(path, 'w') as f:
         json.dump(data, f, indent=2)
+
+
+def load_progress(path: str) -> Set[str]:
+    """Load processed task_ids from a progress file."""
+    data = load_json(path)
+    if isinstance(data, list):
+        return set(str(x) for x in data)
+    return set()
+
+
+def save_progress(path: str, task_ids: Set[str]):
+    """Persist processed task_ids to a progress file."""
+    save_json(path, sorted(task_ids))
+
+
+def processed_task_ids_from_entries(entries: List[Dict[str, Any]]) -> Set[str]:
+    """Extract processed task_ids from existing knowledge base entries."""
+    processed = set()
+    for entry in entries:
+        issue = entry.get("issue_ref") or {}
+        tid = issue.get("task_id")
+        if tid:
+            processed.add(tid)
+    return processed
 
 
 def group_trajectories_by_task(trajectories: List[Dict[str, Any]]) -> Dict[str, List[Dict[str, Any]]]:
@@ -186,80 +195,126 @@ def convert_to_csv(entries: List[Dict[str, Any]], output_path: str):
         print("No entries to convert to CSV")
         return
     
-    # Flattened fieldnames
+    # Flattened fieldnames matching actual JSON structure
     fieldnames = [
         "task_desc", "obj_type", "verbs", "goal_phase",
-        "trigger_key", "trigger_verb", "trigger_target_type", "trigger_obs",
         "issue_text", "learning_text", "valid_level",
-        "evidence_task_id", "evidence_trial_num", "evidence_step_range",
-        "issue_task_id", "issue_trial_num", "issue_step_range"
+        "issue_task_id", "issue_trial_num", "issue_step_range",
+        "evidence_task_id", "evidence_trial_num", "evidence_step_range"
     ]
     
     with open(output_path, 'w', newline='', encoding='utf-8') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for entry in entries:
-            # Flatten trigger object
-            trigger = entry.get("trigger", {})
-            evidence = entry.get("evidence_ref", {})
-            issue = entry.get("issue_ref", {})
-            evidence_step_range = evidence.get("step_range", [])
-            issue_step_range = issue.get("step_range", [])
+            # Flatten evidence_ref and issue_ref objects; tolerate missing/None values
+            evidence = entry.get("evidence_ref") or {}
+            issue = entry.get("issue_ref") or {}
+            evidence_step_range = evidence.get("step_range") or []
+            issue_step_range = issue.get("step_range") or []
+
+            if not isinstance(evidence_step_range, list):
+                evidence_step_range = []
+            if not isinstance(issue_step_range, list):
+                issue_step_range = []
             
             row = {
                 "task_desc": entry.get("task_desc", ""),
                 "obj_type": entry.get("obj_type", ""),
                 "verbs": entry.get("verbs", ""),
                 "goal_phase": entry.get("goal_phase", ""),
-                "trigger_key": trigger.get("key", ""),
-                "trigger_verb": trigger.get("verb", ""),
-                "trigger_target_type": trigger.get("target_type", ""),
-                "trigger_obs": trigger.get("obs", ""),
                 "issue_text": entry.get("issue_text", ""),
                 "learning_text": entry.get("learning_text", ""),
                 "valid_level": entry.get("valid_level", ""),
-                "evidence_task_id": evidence.get("task_id", ""),
-                "evidence_trial_num": evidence.get("trial_num", ""),
-                "evidence_step_range": f"{evidence_step_range[0]}-{evidence_step_range[1]}" if len(evidence_step_range) == 2 else "",
                 "issue_task_id": issue.get("task_id", ""),
                 "issue_trial_num": issue.get("trial_num", ""),
-                "issue_step_range": f"{issue_step_range[0]}-{issue_step_range[1]}" if len(issue_step_range) == 2 else ""
+                "issue_step_range": f"{issue_step_range[0]}-{issue_step_range[1]}" if len(issue_step_range) == 2 else "",
+                "evidence_task_id": evidence.get("task_id", ""),
+                "evidence_trial_num": evidence.get("trial_num", ""),
+                "evidence_step_range": f"{evidence_step_range[0]}-{evidence_step_range[1]}" if len(evidence_step_range) == 2 else ""
             }
             writer.writerow(row)
     
     print(f"Saved CSV to {output_path}")
 
 
-def generate_knowledge_base(log_dir: str):
+def generate_knowledge_base(
+    log_dir: str,
+    task_ids: List[str] = None,
+    reuse_json: bool = False,
+    resume: bool = False,
+    progress_path: str = None,
+):
     """Main logic to generate knowledge base from trajectories."""
     
     trajectories_path = os.path.join(log_dir, "trajectories.json")
     json_output_path = os.path.join(log_dir, "knowledge_base.json")
     csv_output_path = os.path.join(log_dir, "knowledge_base.csv")
-    
+    progress_path = progress_path or os.path.join(log_dir, "knowledge_base_progress.json")
+
+    # Load existing entries if present
+    existing_entries: List[Dict[str, Any]] = []
+    if os.path.exists(json_output_path):
+        existing_entries = load_json(json_output_path)
+
+    # When reuse_json without resume, just convert existing entries
+    if reuse_json and not resume:
+        if not existing_entries:
+            print(f"No existing knowledge base at {json_output_path} to reuse")
+            return
+        print(f"Reusing existing knowledge base at {json_output_path}")
+        convert_to_csv(existing_entries, csv_output_path)
+        return
+
+    # Resume mode: skip already processed task_ids
+    processed_tasks = processed_task_ids_from_entries(existing_entries)
+    processed_tasks |= load_progress(progress_path)
+
     if not os.path.exists(trajectories_path):
         print(f"No trajectories found at {trajectories_path}")
         return
-    
+
     trajectories = load_json(trajectories_path)
     if not trajectories:
         print("No trajectories to process")
         return
-    
+
     # Group by task_id
     grouped = group_trajectories_by_task(trajectories)
     print(f"Found {len(grouped)} unique tasks")
     
+    # Filter to specific task_ids if provided
+    if task_ids:
+        grouped = {tid: grouped[tid] for tid in task_ids if tid in grouped}
+        print(f"Filtering to {len(grouped)} specified tasks")
+
+    # Apply resume filter
+    if resume and processed_tasks:
+        original_count = len(grouped)
+        grouped = {tid: trajs for tid, trajs in grouped.items() if tid not in processed_tasks}
+        print(f"Resume enabled: skipping {original_count - len(grouped)} already processed tasks")
+
+    # If nothing to do, still refresh CSV from existing entries
+    if not grouped:
+        print("No new tasks to process; refreshing CSV from existing entries")
+        convert_to_csv(existing_entries, csv_output_path)
+        return
+
     # Process each task group
-    all_entries = []
+    new_entries: List[Dict[str, Any]] = []
     for task_id, task_trajs in grouped.items():
         entries = process_task_trajectories(task_id, task_trajs, MODEL_NAME)
-        all_entries.extend(entries)
-    
-    # Save JSON
+        new_entries.extend(entries)
+        processed_tasks.add(task_id)
+
+    # Merge and save JSON
+    all_entries = existing_entries + new_entries
     save_json(json_output_path, all_entries)
-    print(f"Saved {len(all_entries)} entries to {json_output_path}")
-    
+    print(f"Saved {len(all_entries)} total entries to {json_output_path}")
+
+    # Persist progress for resume (includes tasks with zero extracted entries)
+    save_progress(progress_path, processed_tasks)
+
     # Convert to CSV
     convert_to_csv(all_entries, csv_output_path)
 
@@ -274,6 +329,35 @@ if __name__ == "__main__":
         required=True,
         help="Directory containing trajectories.json"
     )
+    parser.add_argument(
+        "--task_ids",
+        type=str,
+        nargs="+",
+        default=None,
+        help="Specific task_ids to process (space-separated)"
+    )
+    parser.add_argument(
+        "--reuse_json",
+        action="store_true",
+        help="If set, reuse existing knowledge_base.json in log_dir instead of regenerating"
+    )
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="Skip tasks already present in knowledge_base.json or progress file and append new ones"
+    )
+    parser.add_argument(
+        "--progress_path",
+        type=str,
+        default=None,
+        help="Optional path for progress file (default: knowledge_base_progress.json in log_dir)"
+    )
     
     args = parser.parse_args()
-    generate_knowledge_base(args.log_dir)
+    generate_knowledge_base(
+        args.log_dir,
+        args.task_ids,
+        args.reuse_json,
+        args.resume,
+        args.progress_path,
+    )
