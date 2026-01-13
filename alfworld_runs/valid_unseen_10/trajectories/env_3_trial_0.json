@@ -1,0 +1,90 @@
+[
+    {
+        "label": "action",
+        "value": "think: To solve the task, I need to find and take a watch, then put it on the safe."
+    },
+    {
+        "label": "observation",
+        "value": "OK."
+    },
+    {
+        "label": "action",
+        "value": "think: First I need to find a watch. A watch is more likely to appear in drawers (1-5), dresser (1), sidetable (1), shelves (1-12), or cabinets (1-4). I will check the drawers first, starting with drawer 1."
+    },
+    {
+        "label": "observation",
+        "value": "OK."
+    },
+    {
+        "label": "action",
+        "value": "go to drawer 1"
+    },
+    {
+        "label": "observation",
+        "value": "You arrive at drawer 1. The drawer 1 is closed."
+    },
+    {
+        "label": "action",
+        "value": "open drawer 1"
+    },
+    {
+        "label": "observation",
+        "value": "You open the drawer 1. The drawer 1 is open. In it, you see a watch 1."
+    },
+    {
+        "label": "action",
+        "value": "think: Now I have found a watch (1). Next, I need to take it."
+    },
+    {
+        "label": "observation",
+        "value": "OK."
+    },
+    {
+        "label": "action",
+        "value": "take watch 1 from drawer 1"
+    },
+    {
+        "label": "observation",
+        "value": "You pick up the watch 1 from the drawer 1."
+    },
+    {
+        "label": "action",
+        "value": "think: Now I have the watch (1). Next, I need to put it on the safe (1)."
+    },
+    {
+        "label": "observation",
+        "value": "OK."
+    },
+    {
+        "label": "action",
+        "value": "go to safe 1"
+    },
+    {
+        "label": "observation",
+        "value": "You arrive at safe 1. The safe 1 is closed."
+    },
+    {
+        "label": "action",
+        "value": "move watch 1 to safe 1"
+    },
+    {
+        "label": "observation",
+        "value": "Nothing happens."
+    },
+    {
+        "label": "action",
+        "value": "open safe 1"
+    },
+    {
+        "label": "observation",
+        "value": "You open the safe 1. The safe 1 is open. In it, you see a vase 3, and a vase 2."
+    },
+    {
+        "label": "action",
+        "value": "move watch 1 to safe 1"
+    },
+    {
+        "label": "observation",
+        "value": "You move the watch 1 to the safe 1."
+    }
+]

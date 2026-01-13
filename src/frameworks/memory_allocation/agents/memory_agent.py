@@ -152,8 +152,9 @@ Use this tool when you:
                 learnings = retrieve_learnings_only(
                     new_task_desc=task_desc,
                     memory_bank_path=memory_bank_path,
-                    top_k_similar=20,
-                    top_per_phase=2
+                    top_k_similar_tasks=5,
+                    log_dir=log_dir,
+                    task_id=task_id
                 )
                 if learnings:
                     retrieved_learnings = learnings  # Store for trajectory logging

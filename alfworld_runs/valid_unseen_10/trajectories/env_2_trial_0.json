@@ -1,0 +1,98 @@
+[
+    {
+        "label": "action",
+        "value": "think: To solve the task, I need to find and take a plate, then clean it with sinkbasin, then put it in countertop."
+    },
+    {
+        "label": "observation",
+        "value": "OK."
+    },
+    {
+        "label": "action",
+        "value": "think: First I need to find a plate. A plate is more likely to appear in cabinets (1-6), drawers (1-3), shelves (1-3), countertops (1-3), or sinkbasin (1). I will check these locations one by one, starting with cabinet 1."
+    },
+    {
+        "label": "observation",
+        "value": "OK."
+    },
+    {
+        "label": "action",
+        "value": "go to cabinet 1"
+    },
+    {
+        "label": "observation",
+        "value": "You arrive at cabinet 1. On the cabinet 1, you see a plate 1."
+    },
+    {
+        "label": "action",
+        "value": "take plate 1 from cabinet 1"
+    },
+    {
+        "label": "observation",
+        "value": "You pick up the plate 1 from the cabinet 1."
+    },
+    {
+        "label": "action",
+        "value": "think: Now I have the plate 1. Next, I need to clean it using the sinkbasin 1."
+    },
+    {
+        "label": "observation",
+        "value": "OK."
+    },
+    {
+        "label": "action",
+        "value": "go to sinkbasin 1"
+    },
+    {
+        "label": "observation",
+        "value": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing."
+    },
+    {
+        "label": "action",
+        "value": "clean plate 1 with sinkbasin 1"
+    },
+    {
+        "label": "observation",
+        "value": "You clean the plate 1 using the sinkbasin 1."
+    },
+    {
+        "label": "action",
+        "value": "think: Now I have a clean plate (1). Next, I need to put it in a countertop. I will choose countertop 1."
+    },
+    {
+        "label": "observation",
+        "value": "OK."
+    },
+    {
+        "label": "action",
+        "value": "move plate 1 to countertop 1"
+    },
+    {
+        "label": "observation",
+        "value": "Nothing happens."
+    },
+    {
+        "label": "action",
+        "value": "think: My previous action `move plate 1 to countertop 1` failed because I was not at countertop 1. I am currently at sinkbasin 1. I need to go to countertop 1 first, then move the plate."
+    },
+    {
+        "label": "observation",
+        "value": "OK."
+    },
+    {
+        "label": "action",
+        "value": "go to countertop 1"
+    },
+    {
+        "label": "observation",
+        "value": "You arrive at countertop 1. On the countertop 1, you see a apple 2, a dishsponge 2, a potato 3, and a potato 2."
+    },
+    {
+        "label": "action",
+        "value": "move plate 1 to countertop 1"
+    },
+    {
+        "label": "observation",
+        "value": "You move the plate 1 to the countertop 1."
+    }
+]

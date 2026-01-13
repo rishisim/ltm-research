@@ -1,0 +1,568 @@
+[
+  {
+    "task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-308/trial_T20190908_222917_366542",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the alarmclock with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "issue": "Failed to take or move the desklamp, indicating it is stationary.",
+        "learning": "If an object is stationary, move the other required object to its location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221
+      },
+      {
+        "issue": "Failed to take pillow from bed because agent was not at its location.",
+        "learning": "Go to the object's location before attempting to take it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221
+      },
+      {
+        "issue": "Attempted to examine pillow without the desklamp present or active.",
+        "learning": "Ensure the desklamp is present and active when attempting to examine an object.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "RECOVER",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221
+      },
+      {
+        "issue": "Failed to examine pillow with desklamp because objects were not co-located.",
+        "learning": "Bring the pillow to the desklamp's location before attempting examination.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "RECOVER",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221
+      },
+      {
+        "issue": "Used 'examine with' or 'use on' commands instead of 'use' for desklamp examination.",
+        "learning": "To examine an object with a desklamp, hold the object and use the desklamp.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "RECOVER",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221
+      },
+      {
+        "issue": "Failed to take desklamp, confirming it is a fixed object.",
+        "learning": "Adapted strategy by moving the movable pencil to the fixed desklamp's location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.7794621670637999
+      },
+      {
+        "issue": "Failed to take pencil, initially believed to be fixed.",
+        "learning": "Successfully picked up the pencil, demonstrating it was movable despite prior failures.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.7794621670637999
+      },
+      {
+        "issue": "Failed to examine objects due to lack of co-location.",
+        "learning": "Ensured co-location of pencil and desklamp by moving the pencil to the desklamp's location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.7794621670637999
+      },
+      {
+        "issue": "Repeated attempts to turn on, use, or examine desklamp 1 had no effect.",
+        "learning": "Use the 'use [object]' command to successfully turn on the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "look at alarmclock under the desklamp.",
+        "similarity_score": 0.9227028208774675
+      },
+      {
+        "issue": "Directly attempting to 'look at alarmclock under desklamp' failed, even with the lamp on.",
+        "learning": "First, pick up the alarmclock before attempting to look at it under the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "look at alarmclock under the desklamp.",
+        "similarity_score": 0.9227028208774675
+      },
+      {
+        "issue": "Attempted to examine watch with desklamp when desklamp was off.",
+        "learning": "Ensure the desklamp is turned on before attempting to examine an object with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the watch with the desklamp.",
+        "similarity_score": 0.8189119085967494
+      },
+      {
+        "issue": "Used 'turn on' command to activate desklamp, which had no effect.",
+        "learning": "Use the 'use' command to activate the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the watch with the desklamp.",
+        "similarity_score": 0.8189119085967494
+      },
+      {
+        "issue": "Attempted to 'look at' a location, which had no effect for finding objects.",
+        "learning": "Rely on 'go to' observations to identify objects present at a location.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221
+      },
+      {
+        "issue": "Used 'examine X with Y' command, which was ineffective for the task.",
+        "learning": "To examine an object with a light source, 'use' the light source directly.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221
+      },
+      {
+        "issue": "Attempted to 'take' the desklamp, which was not the correct action for its use.",
+        "learning": "Do not 'take' the desklamp; instead, 'use' it in its fixed location.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221
+      },
+      {
+        "issue": "Failed to examine object with desklamp because it was off.",
+        "learning": "Turn on the desklamp before attempting to examine objects with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221
+      },
+      {
+        "issue": "Used 'turn on' command instead of 'use' to activate the desklamp.",
+        "learning": "Use the 'use' command to turn on the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221
+      },
+      {
+        "issue": "Attempted to use desklamp from an incorrect location (bed).",
+        "learning": "Go to the desklamp's location before attempting to use it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I need to examine the alarmclock with the desklamp. First, I need to find and take the alarmclock. Then, I need to find the desklamp, ensure it's on, and bring the alarmclock to its location to examine it. I will start by looking for the alarmclock on desk 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a bowl 1, a desklamp 1, a mug 1, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "think: I need to find the alarmclock. I have already checked desk 1 and it's not there. I will now check desk 2.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "take alarmclock 1 from desk 2",
+        "observation": "You pick up the alarmclock 1 from the desk 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "think: I have the alarmclock. I need to examine it with the desklamp. I know the desklamp is on desk 1. I need to go to desk 1, ensure the desklamp is on, and then use the desklamp while holding the alarmclock.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a bowl 1, a desklamp 1, a mug 1, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0
+  },
+  {
+    "task_id": "look_at_obj_in_light-Book-None-DeskLamp-308/trial_T20190908_020029_636862",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the book with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "issue": "Initial attempt to take the newspaper failed.",
+        "learning": "The newspaper can be taken from its location to bring it to the desklamp.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the newspaper with the desklamp.",
+        "similarity_score": 0.8078181817385156
+      },
+      {
+        "issue": "Failed to examine newspaper when desklamp was not co-located or using incorrect command.",
+        "learning": "Bring the newspaper to the desklamp's location after turning the desklamp on.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the newspaper with the desklamp.",
+        "similarity_score": 0.8078181817385156
+      },
+      {
+        "issue": "Directly examining book with desklamp failed, as the desklamp was not active.",
+        "learning": "To examine an object with a desklamp, first activate the desklamp using the 'use' command.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the book with the desklamp.",
+        "similarity_score": 1.0
+      },
+      {
+        "issue": "Attempted to place book on the general desk surface instead of the specific target under the desklamp.",
+        "learning": "Place the book specifically under the desklamp to fulfill the task requirement.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "look at book under the desklamp.",
+        "similarity_score": 0.8991646771653196
+      },
+      {
+        "issue": "Failed to place book under desklamp because the desklamp was not turned on.",
+        "learning": "Turn on the desklamp using the 'use' command before attempting to place objects under it for observation.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "look at book under the desklamp.",
+        "similarity_score": 0.8991646771653196
+      },
+      {
+        "issue": "Attempted to interact with a non-existent or inaccessible drawer.",
+        "learning": "Verify the existence and accessibility of containers before attempting to interact with them.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "examine the pen with the desklamp.",
+        "similarity_score": 0.8159634836155802
+      },
+      {
+        "issue": "Used 'take' verb on a stationary desklamp instead of 'use' to activate it.",
+        "learning": "Use the 'use' command to activate stationary light sources like a desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pen with the desklamp.",
+        "similarity_score": 0.8159634836155802
+      },
+      {
+        "issue": "Failed to examine object with light source due to missing preconditions.",
+        "learning": "Ensure the target object is held and the light source is activated before attempting to examine.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pen with the desklamp.",
+        "similarity_score": 0.8159634836155802
+      },
+      {
+        "issue": "Pen not found in expected locations (drawers) after repeated search attempts.",
+        "learning": "Expand search to other furniture types like shelves when an object is not found in initial expected locations.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pen with the desklamp.",
+        "similarity_score": 0.8159634836155802
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "action": "drop bowl 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "think: The task is to examine the book with the desklamp. I need to find a book, take it, go to the desklamp, and then examine the book with the desklamp. I know from previous observations that a book 1 is on desk 1 and a desklamp 1 is on sidetable 2 and is already turned on.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 2, a cd 1, a cellphone 3, a desklamp 1, a mug 1, a pen 1, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "think: The task is to examine the book with the desklamp. I am currently at desk 1, and I see a desklamp 1 here, but no book. I need to find a book first. I will check desk 2 for a book.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 3, a bowl 3, a cd 3, a mug 2, and a pencil 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "think: I need to find a book. I have already checked desk 1 and desk 2 and found no book. I will now check the drawers, starting with drawer 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "open drawer 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 10,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. On the drawer 2, you see a cellphone 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 11,
+        "action": "open drawer 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 12,
+        "action": "think: I am at drawer 2 and tried to open it, but nothing happened. This could mean it's already open or cannot be opened. I need to find a book. I will try to look inside drawer 2 to see if it's open and contains a book. If not, I will continue searching other drawers.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 13,
+        "action": "look inside drawer 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 14,
+        "action": "help[\"cannot open or look inside drawer 2\"]",
+        "observation": "Error retrieving help: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '* BatchEmbedContentsRequest.requests: at most 100 requests can be in one batch\\n', 'status': 'INVALID_ARGUMENT'}}",
+        "is_help_call": true
+      },
+      {
+        "step": 15,
+        "action": "think: I am unable to open or look inside drawer 2. Given the \"Nothing happens\" response, I will assume it's inaccessible or cannot be opened at this time. I need to find a book, so I will continue searching other drawers, starting with drawer 3.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 16,
+        "action": "go to drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 17,
+        "action": "think: My last attempt to go to drawer 3 resulted in \"Nothing happens\", which is unusual for a 'go to' command. This might mean I'm already there, or it's not a valid location to go to, or an environment issue. Given the task is to find a book, and I've checked desk 1, desk 2, and drawer 1, and",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 18,
+        "action": "...and I've encountered issues with drawer 2 and drawer 3. I will try to go to drawer 3 again to confirm its accessibility, then open and look inside. If that fails, I will proceed to drawer 4.",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 19,
+        "action": "think: I have tried to go to drawer 3 twice and received \"Nothing happens\", which often means I am already at that location. I will now attempt to open drawer 3 to search for the book.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 20,
+        "action": "open drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 21,
+        "action": "think: I have tried to open drawer 3 and received \"Nothing happens\", which suggests it's either already open and empty, or cannot be opened. I need to find a book, so I will continue searching other drawers, starting with drawer 4.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 22,
+        "action": "go to drawer 4",
+        "observation": "You arrive at drawer 4. The drawer 4 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 23,
+        "action": "open drawer 4",
+        "observation": "You open the drawer 4. The drawer 4 is open. In it, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 24,
+        "action": "think: I have opened drawer 4 and found nothing. I need to continue searching for the book. I will now go to drawer 5.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 25,
+        "action": "go to drawer 5",
+        "observation": "You arrive at drawer 5. On the drawer 5, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 26,
+        "action": "open drawer 5",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 27,
+        "action": "think: I have tried to open drawer 5 and received \"Nothing happens\", which suggests it's either already open and empty, or cannot be opened. I need to find a book, so I will continue searching other drawers, starting with drawer 6.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 28,
+        "action": "go to drawer 6",
+        "observation": "You arrive at drawer 6. The drawer 6 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 29,
+        "action": "open drawer 6",
+        "observation": "You open the drawer 6. The drawer 6 is open. In it, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 30,
+        "action": "think: I have searched all drawers and desks and have not found a book. According to learning 9, I should expand my search to other furniture types like shelves. I will now check shelf 1 for the book.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 31,
+        "action": "go to shelf 1",
+        "observation": "You arrive at shelf 1. On the shelf 1, you see a bowl 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 32,
+        "action": "think: I have checked shelf 1 and found a bowl, but no book. I need to continue searching for the book on other shelves. I will now check shelf 2.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 33,
+        "action": "go to shelf 2",
+        "observation": "You arrive at shelf 2. On the shelf 2, you see a creditcard 1, and a pencil 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 34,
+        "action": "think: I have checked shelf 2 and found no book. I need to continue searching for the book on other shelves. I will now check shelf 3.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 35,
+        "action": "go to shelf 3",
+        "observation": "You arrive at shelf 3. On the shelf 3, you see a alarmclock 1, a bowl 2, and a desklamp 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 36,
+        "action": "think: I have checked shelf 3 and found no book. I need to continue searching for the book on other shelves. I will now check shelf 4.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 37,
+        "action": "go to shelf 4",
+        "observation": "You arrive at shelf 4. On the shelf 4, you see a alarmclock 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 38,
+        "action": "go to shelf 5",
+        "observation": "You arrive at shelf 5. On the shelf 5, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 39,
+        "action": "go to shelf 6",
+        "observation": "You arrive at shelf 6. On the shelf 6, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 40,
+        "action": "think: I have searched all desks, drawers, and shelves and have not found a book. I will now expand my search to the remaining furniture: bed 1, garbagecan 1, laundryhamper 1, and safe 1. I will start by checking bed 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 41,
+        "action": "go to bed 1",
+        "observation": "You arrive at bed 1. On the bed 1, you see a book 1, a cellphone 1, a laptop 2, a laptop 1, a pillow 2, and a pillow 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 42,
+        "action": "take book 1 from bed 1",
+        "observation": "You pick up the book 1 from the bed 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 43,
+        "action": "think: I have successfully taken the book 1. Now I need to examine it with a desklamp. I know from previous observations that a desklamp 1 is on desk 1. I will go to desk 1, turn on the desklamp if it's not already on, place the book under it, and then examine the book.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 44,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 2, a cd 1, a cellphone 3, a desklamp 1, a mug 1, a pen 1, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 45,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [
+      {
+        "step": 14,
+        "query": "cannot open or look inside drawer 2",
+        "response": "Error retrieving help: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '* BatchEmbedContentsRequest.requests: at most 100 requests can be in one batch\\n', 'status': 'INVALID_ARGUMENT'}}"
+      }
+    ],
+    "help_call_count": 1
+  }
+]

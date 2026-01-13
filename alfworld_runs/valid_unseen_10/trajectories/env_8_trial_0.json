@@ -1,0 +1,66 @@
+[
+    {
+        "label": "action",
+        "value": "think: To solve the task, I need to find and take a bowl, then find and use a desklamp. First I need to find a bowl. A bowl is more likely to appear in desk (1-2), shelf (1-6), drawer (1-6), bed (1), garbagecan (1). I can check one by one, starting with desk 1."
+    },
+    {
+        "label": "observation",
+        "value": "OK."
+    },
+    {
+        "label": "action",
+        "value": "go to desk 1"
+    },
+    {
+        "label": "observation",
+        "value": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a desklamp 1, a mug 1, and a pencil 1."
+    },
+    {
+        "label": "action",
+        "value": "go to desk 2"
+    },
+    {
+        "label": "observation",
+        "value": "You arrive at desk 2. On the desk 2, you see a bowl 2, a bowl 1, a cd 2, a cd 1, and a creditcard 3."
+    },
+    {
+        "label": "action",
+        "value": "think: Now I find a bowl (2 or 1). I will take bowl 1. Next, I need to take it."
+    },
+    {
+        "label": "observation",
+        "value": "OK."
+    },
+    {
+        "label": "action",
+        "value": "take bowl 1 from desk 2"
+    },
+    {
+        "label": "observation",
+        "value": "You pick up the bowl 1 from the desk 2."
+    },
+    {
+        "label": "action",
+        "value": "think: Now I have taken bowl 1. Next, I need to find a desklamp. I already saw a desklamp on desk 1. So I will go to desk 1 and use the desklamp."
+    },
+    {
+        "label": "observation",
+        "value": "OK."
+    },
+    {
+        "label": "action",
+        "value": "go to desk 1"
+    },
+    {
+        "label": "observation",
+        "value": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a desklamp 1, a mug 1, and a pencil 1."
+    },
+    {
+        "label": "action",
+        "value": "use desklamp 1"
+    },
+    {
+        "label": "observation",
+        "value": "You turn on the desklamp 1."
+    }
+]

@@ -121,11 +121,15 @@ def run_memory_agent():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     config_path = os.path.join(base_dir, 'data', 'alfworld', 'base_config.yaml')
     
-    # Default output directory
+    # Default output directory with timestamped subfolder
     if args.output_dir:
+        # User provided explicit path - use as-is
         log_dir = args.output_dir
     else:
-        log_dir = os.path.join(base_dir, 'alfworld_runs', 'memory_agent_test')
+        # Auto-generate timestamped subfolder under memory_agent_runs
+        from datetime import datetime
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        log_dir = os.path.join(base_dir, 'alfworld_runs', 'memory_retrieval_v2', 'memory_agent_runs', timestamp)
     os.makedirs(log_dir, exist_ok=True)
     
     # Default memory bank path

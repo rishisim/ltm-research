@@ -433,7 +433,9 @@ def retrieve_learnings_only(
     new_task_desc: str,
     memory_bank_path: str,
     top_k_similar_tasks: int = 5,
-    force_rebuild_cache: bool = False
+    force_rebuild_cache: bool = False,
+    log_dir: Optional[str] = None,
+    task_id: Optional[str] = None
 ) -> List[Dict[str, Any]]:
     """
     Convenience function to retrieve only the selected learnings list.
@@ -443,6 +445,8 @@ def retrieve_learnings_only(
         memory_bank_path: Path to the knowledge_base.json file
         top_k_similar_tasks: Number of top similar tasks (default: 5)
         force_rebuild_cache: If True, rebuild caches
+        log_dir: Optional directory to save retrieval files
+        task_id: Optional task ID for logging
         
     Returns:
         List of selected learning dictionaries
@@ -451,7 +455,9 @@ def retrieve_learnings_only(
         new_task_desc,
         memory_bank_path,
         top_k_similar_tasks=top_k_similar_tasks,
-        force_rebuild_cache=force_rebuild_cache
+        force_rebuild_cache=force_rebuild_cache,
+        log_dir=log_dir,
+        task_id=task_id
     )
     return result["selected_learnings"]
 
