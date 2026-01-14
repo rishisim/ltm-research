@@ -1,0 +1,96 @@
+{
+  "task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-308/trial_T20190908_222933_607649",
+  "trial_num": 1,
+  "task_desc": "examine the alarmclock with the desklamp.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "think: To solve the task, I need to find an alarmclock, then find a desklamp, and finally examine the alarmclock with the desklamp. First, I will look for an alarmclock. Alarmclocks are commonly found on desks, sidetables, or shelves. I will start by checking desk 1.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 2,
+      "action": "go to desk 1",
+      "observation": "You arrive at desk 1. On the desk 1, you see a bowl 1, a desklamp 1, and a laptop 2."
+    },
+    {
+      "step": 3,
+      "action": "go to desk 2",
+      "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 1, a keychain 2, and a mug 1."
+    },
+    {
+      "step": 4,
+      "action": "think: I have found an alarmclock (alarmclock 1) on desk 2. I have also found a desklamp (desklamp 1) on desk 1. The desklamp needs to be turned on before I can use it to examine the alarmclock. I will go to desk 1, turn on the desklamp, then go to desk 2 and examine the alarmclock.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 5,
+      "action": "go to desk 1",
+      "observation": "You arrive at desk 1. On the desk 1, you see a bowl 1, a desklamp 1, and a laptop 2."
+    },
+    {
+      "step": 6,
+      "action": "use desklamp 1",
+      "observation": "You turn on the desklamp 1."
+    },
+    {
+      "step": 7,
+      "action": "go to desk 2",
+      "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 1, a keychain 2, and a mug 1."
+    },
+    {
+      "step": 8,
+      "action": "examine alarmclock 1 with desklamp 1",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 9,
+      "action": "think: My previous attempt to `examine alarmclock 1 with desklamp 1` failed because the desklamp 1 was on desk 1 and I was at desk 2. I need to bring the desklamp to the same location as the alarmclock. I will go back to desk 1, take the desklamp, then go to desk 2 and try again.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 10,
+      "action": "go to desk 1",
+      "observation": "You arrive at desk 1. On the desk 1, you see a bowl 1, a desklamp 1, and a laptop 2."
+    },
+    {
+      "step": 11,
+      "action": "take desklamp 1 from desk 1",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 12,
+      "action": "think: My attempt to take the desklamp 1 failed. This suggests that the desklamp might not be portable. If I cannot bring the desklamp to the alarmclock, I must bring the alarmclock to the desklamp. I will go to desk 2, take the alarmclock 1, then return to desk 1 where the desklamp 1 is, and examine the alarmclock there.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 13,
+      "action": "go to desk 2",
+      "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 1, a keychain 2, and a mug 1."
+    },
+    {
+      "step": 14,
+      "action": "take alarmclock 1 from desk 2",
+      "observation": "You pick up the alarmclock 1 from the desk 2."
+    },
+    {
+      "step": 15,
+      "action": "go to desk 1",
+      "observation": "You arrive at desk 1. On the desk 1, you see a bowl 1, a desklamp 1, and a laptop 2."
+    }
+  ],
+  "success": true,
+  "num_steps": 15,
+  "retrieved_trajectories": [
+    {
+      "rank": 1,
+      "source_task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-314/trial_T20190908_042454_725701",
+      "similarity_score": 0.9227028208774675,
+      "task_desc": "look at alarmclock under the desklamp.",
+      "success": true
+    }
+  ],
+  "retrieval_context_word_count": 154,
+  "top_k_used": 1,
+  "word_limit_per_traj": 130
+}

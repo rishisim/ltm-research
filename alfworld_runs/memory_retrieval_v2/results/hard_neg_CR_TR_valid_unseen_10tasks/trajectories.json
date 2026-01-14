@@ -1,0 +1,2162 @@
+[
+  {
+    "task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-308/trial_T20190908_222917_366542",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the alarmclock with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "issue": "Failed to heat apple directly on a stoveburner without a container.",
+        "learning": "Place the item in a suitable container (e.g., pot, pan) before heating on a stoveburner.",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3263236027211207
+      },
+      {
+        "issue": "Heated apple became un-interactable after successful heating in microwave.",
+        "learning": "No successful action or strategy was found to resolve this issue.",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "PLACE",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3263236027211207
+      },
+      {
+        "issue": "An 'open' action was reported as successful but immediately followed by a contradictory 'Nothing happens' observation.",
+        "learning": "N/A",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "SEARCH",
+        "task_desc": "cool some tomato and put it in garbagecan.",
+        "similarity_score": 0.3269904850334408
+      },
+      {
+        "issue": "Using the 'look around' command on a surface resulted in 'Nothing happens'.",
+        "learning": "N/A",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "SEARCH",
+        "task_desc": "cool some tomato and put it in garbagecan.",
+        "similarity_score": 0.3269904850334408
+      },
+      {
+        "issue": "The target object 'tomato' was not found after extensive systematic searching across all trials.",
+        "learning": "N/A",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "SEARCH",
+        "task_desc": "cool some tomato and put it in garbagecan.",
+        "similarity_score": 0.3269904850334408
+      },
+      {
+        "issue": "Failed to open fridge 1 repeatedly, receiving 'Nothing happens' observation.",
+        "learning": "When containers fail to open, search open surfaces like countertops for the target object.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "put a hot tomato in garbagecan.",
+        "similarity_score": 0.32146718744431035
+      },
+      {
+        "issue": "Repeatedly failed to open fridge.",
+        "learning": "Go to the fridge before attempting to open it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "put a cool bread in microwave.",
+        "similarity_score": 0.3257980876436854
+      },
+      {
+        "issue": "Failed to open or look inside the fridge from a distance.",
+        "learning": "Go to the fridge's location before attempting to open or look inside it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3263236027211207
+      },
+      {
+        "issue": "Failed to heat apple in microwave or put apple into microwave.",
+        "learning": "Heat the item in an open microwave; it can be heated even if another item is inside.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3263236027211207
+      },
+      {
+        "issue": "Attempting to 'go to' a location (cabinet 2) repeatedly resulted in 'Nothing happens'.",
+        "learning": "Proceed with interaction actions like 'open' even if 'go to' reports 'Nothing happens', as the agent might already be at the target location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "cool some tomato and put it in garbagecan.",
+        "similarity_score": 0.3269904850334408
+      },
+      {
+        "issue": "Using the 'look in' command on various containers and surfaces consistently resulted in 'Nothing happens'.",
+        "learning": "Switch to alternative observation commands like 'look around' or rely on automatic observations upon arrival at a location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "cool some tomato and put it in garbagecan.",
+        "similarity_score": 0.3269904850334408
+      },
+      {
+        "issue": "Attempted to cool an item with an open fridge, resulting in no effect.",
+        "learning": "Close the fridge before attempting to cool an item with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "put a cool tomato in garbagecan.",
+        "similarity_score": 0.30233756657018346
+      }
+    ],
+    "retrieval_type": "hard_negative",
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I need to find both an alarmclock and a desklamp in this new room. I will start by searching for a desklamp, then an alarmclock. I will check desk 1 first.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a bowl 1, a desklamp 1, a mug 1, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "think: I have found the desklamp 1 on desk 1. Now I need to find an alarmclock. I will check desk 2 next.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a bowl 1, a desklamp 1, a mug 1, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "take desklamp 1 from desk 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "take alarmclock 1 from desk 2",
+        "observation": "You pick up the alarmclock 1 from the desk 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a bowl 1, a desklamp 1, a mug 1, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 10,
+        "action": "put alarmclock 1 on desk 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 11,
+        "action": "examine alarmclock 1 with desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 12,
+        "action": "think: I am holding the alarmclock 1 and the desklamp 1 is on desk 1. I previously tried to examine them together and it failed. I also failed to take the desklamp or put down the alarmclock. In the previous task, I had to \"use\" the desklamp to turn it on. I should try turning on the desklamp first, then attempt to examine the alarmclock with it.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 13,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 13
+  },
+  {
+    "task_id": "look_at_obj_in_light-Book-None-DeskLamp-308/trial_T20190908_020029_636862",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the book with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "issue": "Soapbar 4 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+        "learning": "Avoid `soapbar 4` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.33044675840151055
+      },
+      {
+        "issue": "Failed to heat apple directly on a stoveburner without a container.",
+        "learning": "Place the item in a suitable container (e.g., pot, pan) before heating on a stoveburner.",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.33093305831690917
+      },
+      {
+        "issue": "Heated apple became un-interactable after successful heating in microwave.",
+        "learning": "No successful action or strategy was found to resolve this issue.",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "PLACE",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.33093305831690917
+      },
+      {
+        "issue": "Repeatedly failed to take visible soapbars from toilet, receiving 'Nothing happens'.",
+        "learning": "Persist in attempting to take objects from locations where they are visible, as they may eventually become pickable.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.3198611772125318
+      },
+      {
+        "issue": "Soapbar 3 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+        "learning": "Avoid `soapbar 3` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.33044675840151055
+      },
+      {
+        "issue": "Soapbar 1 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+        "learning": "Avoid `soapbar 1` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.33044675840151055
+      },
+      {
+        "issue": "Pan not found after checking initial locations (cabinets, drawers, countertops, microwave).",
+        "learning": "Expand search strategy to include less obvious locations like stoveburners to find the object.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "clean some pan and put it in fridge.",
+        "similarity_score": 0.330655321317595
+      },
+      {
+        "issue": "Failed to open or look inside the fridge from a distance.",
+        "learning": "Go to the fridge's location before attempting to open or look inside it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.33093305831690917
+      },
+      {
+        "issue": "Failed to heat apple in microwave or put apple into microwave.",
+        "learning": "Heat the item in an open microwave; it can be heated even if another item is inside.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.33093305831690917
+      },
+      {
+        "issue": "Attempted to open a cabinet without being at its location.",
+        "learning": "Go to the cabinet's location before attempting to open it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.3198611772125318
+      },
+      {
+        "issue": "Attempted to look inside a cabinet that was closed.",
+        "learning": "Open the cabinet first before attempting to look inside it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.3198611772125318
+      },
+      {
+        "issue": "Using 'look in' action after opening a cabinet yields no new information.",
+        "learning": "Rely on the observation from 'open' action for cabinet contents, as 'look in' is ineffective.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.3198611772125318
+      }
+    ],
+    "retrieval_type": "hard_negative",
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I need to find a book, take it, and then use the desklamp on it. I will start by searching for a book.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 2, a cd 1, a cellphone 3, a desklamp 1, a mug 1, a pen 1, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 3, a bowl 3, a cd 3, a mug 2, and a pencil 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. On the drawer 2, you see a cellphone 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "go to drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "The drawer 3 is closed.",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "go to drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 10,
+        "action": "open drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 11,
+        "action": "It seems you are stuck trying to interact with drawer 3. Since \"Nothing happens\" when you try to go to or open it, it's best to move on. Continue searching for the book in other locations, such as the shelves.",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 12,
+        "action": "It seems you are stuck trying to interact with drawer 3. Since \"Nothing happens\" when you try to go to or open it, it's best to move on. Continue searching for the book in other locations, such as the shelves.",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      }
+    ],
+    "success": false,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 12
+  },
+  {
+    "task_id": "look_at_obj_in_light-Bowl-None-DeskLamp-308/trial_T20190907_133919_856963",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at bowl under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "issue": "Failed to heat apple directly on a stoveburner without a container.",
+        "learning": "Place the item in a suitable container (e.g., pot, pan) before heating on a stoveburner.",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3780922833366742
+      },
+      {
+        "issue": "Heated apple became un-interactable after successful heating in microwave.",
+        "learning": "No successful action or strategy was found to resolve this issue.",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "PLACE",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3780922833366742
+      },
+      {
+        "issue": "Repeatedly failed to take visible soapbars from toilet, receiving 'Nothing happens'.",
+        "learning": "Persist in attempting to take objects from locations where they are visible, as they may eventually become pickable.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.3776253471228765
+      },
+      {
+        "issue": "Failed to open or look inside the fridge from a distance.",
+        "learning": "Go to the fridge's location before attempting to open or look inside it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3780922833366742
+      },
+      {
+        "issue": "Failed to heat apple in microwave or put apple into microwave.",
+        "learning": "Heat the item in an open microwave; it can be heated even if another item is inside.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3780922833366742
+      },
+      {
+        "issue": "Attempted to open a drawer that is not a closed container.",
+        "learning": "Do not attempt to open objects that are not closed containers.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "put two alarmclock in dresser.",
+        "similarity_score": 0.35623648336206354
+      },
+      {
+        "issue": "Attempted to go to an inaccessible or invalid location.",
+        "learning": "If 'go to' action results in 'Nothing happens', proceed to check the next potential location.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "put two alarmclock in dresser.",
+        "similarity_score": 0.35623648336206354
+      },
+      {
+        "issue": "Failed to move an object to a target location while not at the target location.",
+        "learning": "Ensure agent is at the target location before attempting to 'move' an object to it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "put two alarmclock in dresser.",
+        "similarity_score": 0.35623648336206354
+      },
+      {
+        "issue": "Used 'put' action for a surface instead of a container.",
+        "learning": "Use 'move' action for placing objects on surfaces, not 'put'.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "put two alarmclock in dresser.",
+        "similarity_score": 0.35623648336206354
+      },
+      {
+        "issue": "Alarmclock not found at the initially expected location bed 1.",
+        "learning": "Check alternative locations like desk 1 when the object is not found at the primary search spot.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "put two alarmclock in shelf.",
+        "similarity_score": 0.3626591390881172
+      },
+      {
+        "issue": "Attempted to open a cabinet without being at its location.",
+        "learning": "Go to the cabinet's location before attempting to open it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.3776253471228765
+      },
+      {
+        "issue": "Attempted to look inside a cabinet that was closed.",
+        "learning": "Open the cabinet first before attempting to look inside it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.3776253471228765
+      }
+    ],
+    "retrieval_type": "hard_negative",
+    "steps": [
+      {
+        "step": 1,
+        "action": "move bowl 1 to sidetable 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "put bowl 1 on sidetable 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "help[\"cannot place bowl on sidetable 2\"]",
+        "observation": "Help for issue: \"cannot place bowl on sidetable 2\"\n\nHARD NEGATIVE learnings from past experiences:\n\n1. Similar Issue: \n   Learning: No specific learning was applied to resolve this issue within the provided trials.\n   (Validation: CANDIDATE, Score: 0.67, Similarity: 0.33)\n\n2. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.67, Similarity: 0.33)\n\n3. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.67, Similarity: 0.33)",
+        "is_help_call": true
+      },
+      {
+        "step": 4,
+        "action": "turn off desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "look at sidetable 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "go to sidetable 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "The repeated \"Nothing happens\" for actions targeting `sidetable 2` (move, put, turn off, look at, go to) suggests the agent is no longer at `sidetable 2` or `sidetable 2` is currently inaccessible. Since the last `go to sidetable 2` also failed, I need to re-establish my location.",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "The environment has changed, and `sidetable 2` is no longer present in the room, which is why all actions targeting it failed. I need to find a new desklamp and a suitable surface to place the bowl on.",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "The environment has changed, and `sidetable 2` is no longer available. I need to find a new desklamp and a surface to place the bowl on. I will start by checking `desk 1` for a desklamp.",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 10,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a desklamp 1, a keychain 3, a mug 2, a pen 2, a pen 1, and a pencil 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 11,
+        "action": "move bowl 1 to desk 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 12,
+        "action": "turn on desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 13,
+        "action": "drop bowl 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 14,
+        "action": "inventory",
+        "observation": "You are not carrying anything.",
+        "is_help_call": false
+      },
+      {
+        "step": 15,
+        "action": "go to shelf 2",
+        "observation": "You arrive at shelf 2. On the shelf 2, you see a mug 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 16,
+        "action": "think: I have searched all available locations and opened all containers, but I cannot find a bowl. I need to use the help tool.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 17,
+        "action": "help[\"cannot find the bowl\"]",
+        "observation": "Help for issue: \"cannot find the bowl\"\n\nHARD NEGATIVE learnings from past experiences:\n\n1. Similar Issue: \n   Learning: No specific learning was applied to resolve this issue within the provided trials.\n   (Validation: CANDIDATE, Score: 0.60, Similarity: 0.40)\n\n2. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.60, Similarity: 0.40)\n\n3. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.60, Similarity: 0.40)",
+        "is_help_call": true
+      },
+      {
+        "step": 18,
+        "action": "think: My inventory check revealed I am not carrying the bowl, despite having picked it up earlier. The environment has also changed. I need to find a bowl again. I will start by checking the shelves.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 19,
+        "action": "go to shelf 1",
+        "observation": "You arrive at shelf 1. On the shelf 1, you see a cellphone 3, and a creditcard 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 20,
+        "action": "go to shelf 2",
+        "observation": "You arrive at shelf 2. On the shelf 2, you see a mug 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 21,
+        "action": "go to shelf 3",
+        "observation": "You arrive at shelf 3. On the shelf 3, you see a desklamp 1, a pen 1, and a pencil 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 22,
+        "action": "go to shelf 4",
+        "observation": "You arrive at shelf 4. On the shelf 4, you see a pencil 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 23,
+        "action": "go to shelf 5",
+        "observation": "You arrive at shelf 5. On the shelf 5, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 24,
+        "action": "On the shelf 5, you see nothing.",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 25,
+        "action": "think: I am currently at shelf 5 and have not found the bowl. I need to continue searching for the bowl in other locations. I will check shelf 6 next.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 26,
+        "action": "go to shelf 6",
+        "observation": "You arrive at shelf 6. On the shelf 6, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 27,
+        "action": "think: I have checked all shelves (1-6) and have not found a bowl. I need to continue searching for the bowl in other locations. I will now check the drawers, starting with drawer 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 28,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 29,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see a creditcard 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 30,
+        "action": "In it, you see a creditcard 1.",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 31,
+        "action": "think: I have checked shelf 1-6 and drawer 1. I need to continue searching for the bowl in the remaining drawers (2-6). I will check drawer 2 next.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 32,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. On the drawer 2, you see a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 33,
+        "action": "think: I am at drawer 2 and see a pencil 1, but no bowl. I need to continue searching for the bowl in the remaining drawers. I will check drawer 3 next.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 34,
+        "action": "go to drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 35,
+        "action": "think: My previous attempt to `go to drawer 3` resulted in \"Nothing happens,\" indicating it might be inaccessible or I am already at a location that doesn't allow direct access. Following learning 7, I should proceed to check the next potential location. I will now check drawer 4.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 36,
+        "action": "go to drawer 4",
+        "observation": "You arrive at drawer 4. The drawer 4 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 37,
+        "action": "open drawer 4",
+        "observation": "You open the drawer 4. The drawer 4 is open. In it, you see a cd 2, and a pen 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 38,
+        "action": "think: I have checked shelves 1-6, drawer 1, drawer 2, and drawer 4. I need to continue searching for the bowl in the remaining drawers. I will check drawer 5 next.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 39,
+        "action": "go to drawer 5",
+        "observation": "You arrive at drawer 5. On the drawer 5, you see a book 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 40,
+        "action": "think: I am at drawer 5 and see a book 2, but no bowl. I need to continue searching for the bowl in the remaining drawers. I will check drawer 6 next.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 41,
+        "action": "go to drawer 6",
+        "observation": "You arrive at drawer 6. The drawer 6 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 42,
+        "action": "open drawer 6",
+        "observation": "You open the drawer 6. The drawer 6 is open. In it, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 43,
+        "action": "think: I have checked all shelves and most drawers for a bowl. I will now check the remaining locations: desk 1, desk 2, garbagecan 1, laundryhamper 1, safe 1, and bed 1. I will start with desk 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 44,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a desklamp 1, a keychain 3, a mug 2, a pen 2, a pen 1, and a pencil 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 45,
+        "action": "think: I am at desk 1 and see a desklamp 1, but no bowl. I have checked all shelves and drawers. I need to continue searching for the bowl in the remaining locations: desk 2, garbagecan 1, laundryhamper 1, safe 1, and bed 1. I will go to desk 2 next.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 46,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 1, a bowl 1, and a cd 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 47,
+        "action": "take bowl 1 from desk 2",
+        "observation": "You pick up the bowl 1 from the desk 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 48,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a desklamp 1, a keychain 3, a mug 2, a pen 2, a pen 1, and a pencil 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 49,
+        "action": "move bowl 1 to desk 1",
+        "observation": "You move the bowl 1 to the desk 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": false,
+    "help_calls": [
+      {
+        "step": 3,
+        "query": "cannot place bowl on sidetable 2",
+        "response": "Help for issue: \"cannot place bowl on sidetable 2\"\n\nHARD NEGATIVE learnings from past experiences:\n\n1. Similar Issue: \n   Learning: No specific learning was applied to resolve this issue within the provided trials.\n   (Validation: CANDIDATE, Score: 0.67, Similarity: 0.33)\n\n2. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.67, Similarity: 0.33)\n\n3. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.67, Similarity: 0.33)"
+      },
+      {
+        "step": 17,
+        "query": "cannot find the bowl",
+        "response": "Help for issue: \"cannot find the bowl\"\n\nHARD NEGATIVE learnings from past experiences:\n\n1. Similar Issue: \n   Learning: No specific learning was applied to resolve this issue within the provided trials.\n   (Validation: CANDIDATE, Score: 0.60, Similarity: 0.40)\n\n2. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.60, Similarity: 0.40)\n\n3. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.60, Similarity: 0.40)"
+      }
+    ],
+    "help_call_count": 2,
+    "step_num": 49
+  },
+  {
+    "task_id": "look_at_obj_in_light-CD-None-DeskLamp-308/trial_T20190908_141942_810052",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at cd under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "issue": "Failed to heat apple directly on a stoveburner without a container.",
+        "learning": "Place the item in a suitable container (e.g., pot, pan) before heating on a stoveburner.",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3127586705946643
+      },
+      {
+        "issue": "Heated apple became un-interactable after successful heating in microwave.",
+        "learning": "No successful action or strategy was found to resolve this issue.",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "PLACE",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3127586705946643
+      },
+      {
+        "issue": "Required object (kettle) was not found in the environment after systematic search.",
+        "learning": "If an object is not found after exhaustive search, it may not be present in the environment.",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "SEARCH",
+        "task_desc": "put a clean kettle in stoveburner.",
+        "similarity_score": 0.3160962879788729
+      },
+      {
+        "issue": "Failed to open or look inside the fridge from a distance.",
+        "learning": "Go to the fridge's location before attempting to open or look inside it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3127586705946643
+      },
+      {
+        "issue": "Failed to heat apple in microwave or put apple into microwave.",
+        "learning": "Heat the item in an open microwave; it can be heated even if another item is inside.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3127586705946643
+      },
+      {
+        "issue": "Repeatedly failed to take visible soapbars from toilet, receiving 'Nothing happens'.",
+        "learning": "Persist in attempting to take objects from locations where they are visible, as they may eventually become pickable.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.3409882267150872
+      },
+      {
+        "issue": "Failed to open cabinets or drawers without being at their location.",
+        "learning": "Go to the cabinet or drawer's location before attempting to open it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3127586705946643
+      },
+      {
+        "issue": "Failed to put down an item using the 'put' command.",
+        "learning": "Use the 'move' command to place an item from inventory onto a surface.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "RECOVER",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3127586705946643
+      },
+      {
+        "issue": "Failed to take or move an item while already holding another item.",
+        "learning": "Place the currently held item down before attempting to take or move another item.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3127586705946643
+      },
+      {
+        "issue": "Failed to close the microwave while an item was still inside.",
+        "learning": "Remove all items from the microwave before attempting to close it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3127586705946643
+      },
+      {
+        "issue": "Attempting 'go to' a drawer when already at an accessible location had no effect.",
+        "learning": "If 'go to' a container fails, try 'open' directly if already in the general area.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "put a clean kettle in stoveburner.",
+        "similarity_score": 0.3160962879788729
+      },
+      {
+        "issue": "Attempted to open or look inside a container that was not openable or already open.",
+        "learning": "If 'open' or 'look in' a container results in 'Nothing happens', assume it's not openable or already open and proceed.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "put a clean kettle in stoveburner.",
+        "similarity_score": 0.3160962879788729
+      }
+    ],
+    "retrieval_type": "hard_negative",
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: My task is to \"look at cd under the desklamp\". First, I need to find a cd. I will search the available locations: desk 1, desk 2, drawers 1-6, and shelves 1-6. I will start with desk 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 1, a desklamp 1, and a mug 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "think: I have checked desk 1 and found a desklamp, but no cd. I will now check desk 2 for the cd.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 3, a bowl 3, a bowl 2, a cd 1, a creditcard 1, a laptop 2, and a mug 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "take cd 1 from desk 2",
+        "observation": "You pick up the cd 1 from the desk 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "think: I have the cd 1. I need to place it under a desklamp and then look at it. I previously saw a desklamp 1 on desk 1. I will go to desk 1, place the cd 1 there, and then look at it.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 1, a desklamp 1, and a mug 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "move cd 1 to desk 1",
+        "observation": "You move the cd 1 to the desk 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 10,
+        "action": "look at cd 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 11,
+        "action": "help[\"'look at' command on item under desklamp yields 'Nothing happens'\"]",
+        "observation": "Help for issue: \"'look at' command on item under desklamp yields 'Nothing happens'\"\n\nHARD NEGATIVE learnings from past experiences:\n\n1. Similar Issue: \n   Learning: No specific learning was applied to resolve this issue within the provided trials.\n   (Validation: CANDIDATE, Score: 0.66, Similarity: 0.34)\n\n2. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.66, Similarity: 0.34)\n\n3. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.66, Similarity: 0.34)",
+        "is_help_call": true
+      },
+      {
+        "step": 12,
+        "action": "look at desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 13,
+        "action": "think: The task is to \"look at cd under the desklamp\". I have placed the cd 1 on desk 1, where desklamp 1 is located, and I have turned on desklamp 1. My previous attempts to `look at cd 1` and `look at desklamp 1` resulted in \"Nothing happens\". The help tool provided \"",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 14,
+        "action": "think: The previous task \"look at bowl under the desklamp\" completed successfully after I took the bowl, went to the desklamp, and turned the desklamp on, without explicitly placing the bowl under it. In this task, I took the cd, then placed it on the desk with the desklamp, and turned the desklamp on, but the task did",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 15,
+        "action": "think: The task is \"look at cd under the desklamp\". I have placed the cd on the desk with the desklamp and turned the desklamp on. The previous similar task completed after turning on the desklamp, without an explicit 'look at' command. Since this task has not completed, it suggests the condition \"cd under the desklamp\" is not fully met,",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 16,
+        "action": "think: The previous task completed when the item was in inventory and the desklamp was turned on. Currently, the cd is on the desk. I will pick up the cd and then try using the desklamp again.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 17,
+        "action": "take cd 1 from desk 1",
+        "observation": "You pick up the cd 1 from the desk 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [
+      {
+        "step": 11,
+        "query": "'look at' command on item under desklamp yields 'Nothing happens'",
+        "response": "Help for issue: \"'look at' command on item under desklamp yields 'Nothing happens'\"\n\nHARD NEGATIVE learnings from past experiences:\n\n1. Similar Issue: \n   Learning: No specific learning was applied to resolve this issue within the provided trials.\n   (Validation: CANDIDATE, Score: 0.66, Similarity: 0.34)\n\n2. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.66, Similarity: 0.34)\n\n3. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.66, Similarity: 0.34)"
+      }
+    ],
+    "help_call_count": 1,
+    "step_num": 17
+  },
+  {
+    "task_id": "look_at_obj_in_light-Mug-None-DeskLamp-308/trial_T20190908_161733_213242",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at mug under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "issue": "Soapbar 4 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+        "learning": "Avoid `soapbar 4` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.3856349896405576
+      },
+      {
+        "issue": "Failed to heat apple directly on a stoveburner without a container.",
+        "learning": "Place the item in a suitable container (e.g., pot, pan) before heating on a stoveburner.",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3897824203097065
+      },
+      {
+        "issue": "Heated apple became un-interactable after successful heating in microwave.",
+        "learning": "No successful action or strategy was found to resolve this issue.",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "PLACE",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3897824203097065
+      },
+      {
+        "issue": "Repeatedly failed to take visible soapbars from toilet, receiving 'Nothing happens'.",
+        "learning": "Persist in attempting to take objects from locations where they are visible, as they may eventually become pickable.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.360848962982383
+      },
+      {
+        "issue": "Soapbar 3 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+        "learning": "Avoid `soapbar 3` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.3856349896405576
+      },
+      {
+        "issue": "Soapbar 1 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+        "learning": "Avoid `soapbar 1` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.3856349896405576
+      },
+      {
+        "issue": "Failed to open or look inside the fridge from a distance.",
+        "learning": "Go to the fridge's location before attempting to open or look inside it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3897824203097065
+      },
+      {
+        "issue": "Failed to heat apple in microwave or put apple into microwave.",
+        "learning": "Heat the item in an open microwave; it can be heated even if another item is inside.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3897824203097065
+      },
+      {
+        "issue": "Attempted to open a cabinet without being at its location.",
+        "learning": "Go to the cabinet's location before attempting to open it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.360848962982383
+      },
+      {
+        "issue": "Attempted to look inside a cabinet that was closed.",
+        "learning": "Open the cabinet first before attempting to look inside it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.360848962982383
+      },
+      {
+        "issue": "Using 'look in' action after opening a cabinet yields no new information.",
+        "learning": "Rely on the observation from 'open' action for cabinet contents, as 'look in' is ineffective.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.360848962982383
+      },
+      {
+        "issue": "Failed to move item to container because agent was not at the container's location.",
+        "learning": "Always go to the target container before attempting to move an item into it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.360848962982383
+      }
+    ],
+    "retrieval_type": "hard_negative",
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I need to find a mug, then find a desklamp, place the mug under the desklamp, and finally look at the mug. I will start by searching for a mug.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see a creditcard 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "think: I need to continue searching for the mug. I will check drawer 2 next.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. On the drawer 2, you see a cd 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "go to drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "open drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "go to drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "help[\"cannot interact with drawer 3\"]",
+        "observation": "Help for issue: \"cannot interact with drawer 3\"\n\nHARD NEGATIVE learnings from past experiences:\n\n1. Similar Issue: \n   Learning: No specific learning was applied to resolve this issue within the provided trials.\n   (Validation: CANDIDATE, Score: 0.66, Similarity: 0.34)\n\n2. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.66, Similarity: 0.34)\n\n3. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.66, Similarity: 0.34)",
+        "is_help_call": true
+      },
+      {
+        "step": 10,
+        "action": "think: The help tool indicates no successful strategy for interacting with drawer 3. I will skip drawer 3 and continue searching for the mug in other locations. I will check drawer 4 next.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 11,
+        "action": "go to drawer 4",
+        "observation": "You arrive at drawer 4. The drawer 4 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 12,
+        "action": "open drawer 4",
+        "observation": "You open the drawer 4. The drawer 4 is open. In it, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 13,
+        "action": "go to drawer 5",
+        "observation": "You arrive at drawer 5. On the drawer 5, you see a cd 3, and a cellphone 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 14,
+        "action": "go to drawer 6",
+        "observation": "You arrive at drawer 6. The drawer 6 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 15,
+        "action": "open drawer 6",
+        "observation": "You open the drawer 6. The drawer 6 is open. In it, you see a creditcard 3, and a pencil 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 16,
+        "action": "think: I have checked all the drawers (1-6) and haven't found the mug. I will now check other potential locations for a mug, starting with desk 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 17,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a creditcard 1, a desklamp 1, a laptop 1, a pencil 2, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 18,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 1, a book 2, a bowl 1, a cd 2, and a mug 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 19,
+        "action": "take mug 3 from desk 2",
+        "observation": "You pick up the mug 3 from the desk 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 20,
+        "action": "think: I have found and taken the mug. Now I need to find a desklamp. I saw a desklamp on desk 1. I will go to desk 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 21,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a creditcard 1, a desklamp 1, a laptop 1, a pencil 2, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 22,
+        "action": "drop mug 3 on desk 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 23,
+        "action": "help[\"cannot drop mug on desk 1\"]",
+        "observation": "Help for issue: \"cannot drop mug on desk 1\"\n\nHARD NEGATIVE learnings from past experiences:\n\n1. Similar Issue: \n   Learning: No specific learning was applied to resolve this issue within the provided trials.\n   (Validation: CANDIDATE, Score: 0.64, Similarity: 0.36)\n\n2. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.64, Similarity: 0.36)\n\n3. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.64, Similarity: 0.36)",
+        "is_help_call": true
+      },
+      {
+        "step": 24,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [
+      {
+        "step": 9,
+        "query": "cannot interact with drawer 3",
+        "response": "Help for issue: \"cannot interact with drawer 3\"\n\nHARD NEGATIVE learnings from past experiences:\n\n1. Similar Issue: \n   Learning: No specific learning was applied to resolve this issue within the provided trials.\n   (Validation: CANDIDATE, Score: 0.66, Similarity: 0.34)\n\n2. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.66, Similarity: 0.34)\n\n3. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.66, Similarity: 0.34)"
+      },
+      {
+        "step": 23,
+        "query": "cannot drop mug on desk 1",
+        "response": "Help for issue: \"cannot drop mug on desk 1\"\n\nHARD NEGATIVE learnings from past experiences:\n\n1. Similar Issue: \n   Learning: No specific learning was applied to resolve this issue within the provided trials.\n   (Validation: CANDIDATE, Score: 0.64, Similarity: 0.36)\n\n2. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.64, Similarity: 0.36)\n\n3. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.64, Similarity: 0.36)"
+      }
+    ],
+    "help_call_count": 2,
+    "step_num": 24
+  },
+  {
+    "task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-308/trial_T20190908_220545_153480",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at pencil under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "issue": "Soapbar 4 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+        "learning": "Avoid `soapbar 4` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.34969450284070275
+      },
+      {
+        "issue": "Repeatedly failed to open fridge.",
+        "learning": "Go to the fridge before attempting to open it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "put a cool bread in microwave.",
+        "similarity_score": 0.3345222537225524
+      },
+      {
+        "issue": "Repeatedly failed to take visible soapbars from toilet, receiving 'Nothing happens'.",
+        "learning": "Persist in attempting to take objects from locations where they are visible, as they may eventually become pickable.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.3357605000419243
+      },
+      {
+        "issue": "Soapbar 3 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+        "learning": "Avoid `soapbar 3` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.34969450284070275
+      },
+      {
+        "issue": "Soapbar 1 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+        "learning": "Avoid `soapbar 1` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.34969450284070275
+      },
+      {
+        "issue": "Mug not found at the initial search location (countertop 1).",
+        "learning": "Continue searching for the mug at alternative locations (e.g., countertop 2).",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "put a clean mug in coffeemachine.",
+        "similarity_score": 0.33362266011519126
+      },
+      {
+        "issue": "The 'put' command failed to place the mug into the coffeemachine.",
+        "learning": "Use the 'move' command as an alternative to successfully place the mug into the coffeemachine.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "put a clean mug in coffeemachine.",
+        "similarity_score": 0.33362266011519126
+      },
+      {
+        "issue": "Used 'put' instead of 'cool' to transform bread in fridge.",
+        "learning": "Use the 'cool' verb to cool an object with an appliance.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "put a cool bread in microwave.",
+        "similarity_score": 0.3345222537225524
+      },
+      {
+        "issue": "Used 'put' instead of 'move' to place bread in microwave.",
+        "learning": "Use the 'move' verb to place an object into a receptacle.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "put a cool bread in microwave.",
+        "similarity_score": 0.3345222537225524
+      }
+    ],
+    "retrieval_type": "hard_negative",
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a pencil, find a desklamp, place the pencil under the desklamp, and then look at the pencil.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "think: First, I need to find a pencil. I will check desk 1, then desk 2, then drawers, then shelves.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a bowl 2, a creditcard 2, a desklamp 1, a laptop 1, a mug 1, and a pen 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 1, a bowl 3, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "take pencil 1 from desk 2",
+        "observation": "You pick up the pencil 1 from the desk 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "think: I have the pencil. I need to go to desk 1 where I saw a desklamp 1. Then I will place the pencil under the desklamp and look at it.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a bowl 2, a creditcard 2, a desklamp 1, a laptop 1, a mug 1, and a pen 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "put pencil 1 on desk 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 9
+  },
+  {
+    "task_id": "pick_and_place_simple-Mug-None-Desk-308/trial_T20190908_125200_737896",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put a mug in desk.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "issue": "An 'open' action was reported as successful but immediately followed by a contradictory 'Nothing happens' observation.",
+        "learning": "N/A",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "SEARCH",
+        "task_desc": "cool some tomato and put it in garbagecan.",
+        "similarity_score": 0.37002787056459746
+      },
+      {
+        "issue": "Using the 'look around' command on a surface resulted in 'Nothing happens'.",
+        "learning": "N/A",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "SEARCH",
+        "task_desc": "cool some tomato and put it in garbagecan.",
+        "similarity_score": 0.37002787056459746
+      },
+      {
+        "issue": "The target object 'tomato' was not found after extensive systematic searching across all trials.",
+        "learning": "N/A",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "SEARCH",
+        "task_desc": "cool some tomato and put it in garbagecan.",
+        "similarity_score": 0.37002787056459746
+      },
+      {
+        "issue": "Attempted to open tissuebox 1, but the action had no effect.",
+        "learning": "Recognize that some containers like tissuebox 1 may not be openable, requiring alternative search strategies.",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "SEARCH",
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.3817020414689458
+      },
+      {
+        "issue": "Agent failed to locate the potato after searching multiple common locations.",
+        "learning": "Prioritize searching countertop 2 for the potato, as it is a common location for produce.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "clean some potato and put it in garbagecan.",
+        "similarity_score": 0.3480646705750115
+      },
+      {
+        "issue": "Attempting to 'go to' a location (cabinet 2) repeatedly resulted in 'Nothing happens'.",
+        "learning": "Proceed with interaction actions like 'open' even if 'go to' reports 'Nothing happens', as the agent might already be at the target location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "cool some tomato and put it in garbagecan.",
+        "similarity_score": 0.37002787056459746
+      },
+      {
+        "issue": "Using the 'look in' command on various containers and surfaces consistently resulted in 'Nothing happens'.",
+        "learning": "Switch to alternative observation commands like 'look around' or rely on automatic observations upon arrival at a location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "cool some tomato and put it in garbagecan.",
+        "similarity_score": 0.37002787056459746
+      },
+      {
+        "issue": "Failed to open fridge, likely due to not being at its location.",
+        "learning": "Go to the container's location before attempting to open it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "heat some potato and put it in garbagecan.",
+        "similarity_score": 0.3724746527924449
+      },
+      {
+        "issue": "Soapbar not found after searching multiple common locations (shelves, basins).",
+        "learning": "Expand search to less obvious locations like the toilet to find the soapbar.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.3817020414689458
+      },
+      {
+        "issue": "Attempted to open garbagecan 1, but the action had no effect.",
+        "learning": "Use the 'move' command to place objects into containers that cannot be opened.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.3817020414689458
+      },
+      {
+        "issue": "Failed to take soapbar 1 from toilet 1 despite it being visible.",
+        "learning": "Re-attempt 'take' action for visible objects, as initial failures might be transient or due to minor command variations.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.3817020414689458
+      },
+      {
+        "issue": "Using 'look inside' on garbagecan 1 had no effect, suggesting it's not an inspectable container.",
+        "learning": "If 'look inside' fails for a container, consider it non-inspectable and try alternative interaction methods or search strategies.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.3817020414689458
+      },
+      {
+        "issue": "Agent repeatedly failed to interact with cabinet 2, receiving 'Nothing happens' observations.",
+        "learning": "Recognize when an object is non-interactable and skip it to continue the search.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "clean some potato and put it in garbagecan.",
+        "similarity_score": 0.3480646705750115
+      },
+      {
+        "issue": "Soapbottle not found in common locations like bathtubbasin, sinkbasin, shelves, or cart.",
+        "learning": "Expand search to less common locations like garbagecan when primary locations are empty.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "find two soapbottle and put them in cart.",
+        "similarity_score": 0.3595866669727191
+      }
+    ],
+    "retrieval_type": "hard_negative",
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I need to find a mug, take it, and then put it in a desk. I will start by searching for a mug on the shelves.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to shelf 1",
+        "observation": "You arrive at shelf 1. On the shelf 1, you see a cellphone 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "go to shelf 2",
+        "observation": "You arrive at shelf 2. On the shelf 2, you see a mug 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "take mug 1 from shelf 2",
+        "observation": "You pick up the mug 1 from the shelf 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 1, a cd 1, a desklamp 1, and a laptop 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "open drawer 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "think: I have the mug and I am at desk 1. The task is to put the mug in the desk. Since opening drawer 1 failed, I will try to place the mug directly on desk 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "open drawer 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "move mug 1 to desk 1",
+        "observation": "You move the mug 1 to the desk 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 9
+  },
+  {
+    "task_id": "pick_and_place_simple-Pencil-None-Shelf-308/trial_T20190908_121952_610012",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put a pencil in shelf.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "issue": "An 'open' action was reported as successful but immediately followed by a contradictory 'Nothing happens' observation.",
+        "learning": "N/A",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "SEARCH",
+        "task_desc": "cool some tomato and put it in garbagecan.",
+        "similarity_score": 0.36817354525054935
+      },
+      {
+        "issue": "Using the 'look around' command on a surface resulted in 'Nothing happens'.",
+        "learning": "N/A",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "SEARCH",
+        "task_desc": "cool some tomato and put it in garbagecan.",
+        "similarity_score": 0.36817354525054935
+      },
+      {
+        "issue": "The target object 'tomato' was not found after extensive systematic searching across all trials.",
+        "learning": "N/A",
+        "valid_level": "CANDIDATE",
+        "goal_phase": "SEARCH",
+        "task_desc": "cool some tomato and put it in garbagecan.",
+        "similarity_score": 0.36817354525054935
+      },
+      {
+        "issue": "Attempting to 'go to' a location (cabinet 2) repeatedly resulted in 'Nothing happens'.",
+        "learning": "Proceed with interaction actions like 'open' even if 'go to' reports 'Nothing happens', as the agent might already be at the target location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "cool some tomato and put it in garbagecan.",
+        "similarity_score": 0.36817354525054935
+      },
+      {
+        "issue": "Using the 'look in' command on various containers and surfaces consistently resulted in 'Nothing happens'.",
+        "learning": "Switch to alternative observation commands like 'look around' or rely on automatic observations upon arrival at a location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "cool some tomato and put it in garbagecan.",
+        "similarity_score": 0.36817354525054935
+      },
+      {
+        "issue": "Failed to open fridge, likely due to not being at its location.",
+        "learning": "Go to the container's location before attempting to open it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "heat some potato and put it in garbagecan.",
+        "similarity_score": 0.37993755615783603
+      },
+      {
+        "issue": "Repeatedly failed to open fridge.",
+        "learning": "Go to the fridge before attempting to open it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "put a cool bread in microwave.",
+        "similarity_score": 0.3811050824047796
+      },
+      {
+        "issue": "Attempted to take an item from a closed fridge.",
+        "learning": "Open the fridge before attempting to take items from it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "put a tomato in microwave.",
+        "similarity_score": 0.33831077175667756
+      },
+      {
+        "issue": "Attempted to place an item into a closed microwave.",
+        "learning": "Open the microwave before attempting to place items into it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "put a tomato in microwave.",
+        "similarity_score": 0.33831077175667756
+      },
+      {
+        "issue": "Attempted to examine watch with desklamp when desklamp was off.",
+        "learning": "Ensure the desklamp is turned on before attempting to examine an object with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the watch with the desklamp.",
+        "similarity_score": 0.36492799522416947
+      },
+      {
+        "issue": "Used 'turn on' command to activate desklamp, which had no effect.",
+        "learning": "Use the 'use' command to activate the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the watch with the desklamp.",
+        "similarity_score": 0.36492799522416947
+      }
+    ],
+    "retrieval_type": "hard_negative",
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I need to find a pencil, take it, then find a shelf and put the pencil on it. I will start by searching for a pencil on desk 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a desklamp 1, a keychain 1, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "take pencil 1 from desk 1",
+        "observation": "You pick up the pencil 1 from the desk 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "think: I have the pencil. Now I need to put it on a shelf. I will go to shelf 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "go to shelf 1",
+        "observation": "You arrive at shelf 1. On the shelf 1, you see a keychain 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "put pencil 1 on shelf 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "move pencil 1 to shelf 1",
+        "observation": "You move the pencil 1 to the shelf 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 7
+  },
+  {
+    "task_id": "pick_and_place_simple-PepperShaker-None-Drawer-10/trial_T20190906_184021_215264",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put some peppershaker on drawer.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "issue": "Initial attempt to take the newspaper failed.",
+        "learning": "The newspaper can be taken from its location to bring it to the desklamp.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the newspaper with the desklamp.",
+        "similarity_score": 0.37024588897191785
+      },
+      {
+        "issue": "Failed to examine newspaper when desklamp was not co-located or using incorrect command.",
+        "learning": "Bring the newspaper to the desklamp's location after turning the desklamp on.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the newspaper with the desklamp.",
+        "similarity_score": 0.37024588897191785
+      },
+      {
+        "issue": "The 'examine' action failed repeatedly even with the desklamp on.",
+        "learning": "To examine an object, it must first be picked up or held by the agent.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the cellphone with the desklamp.",
+        "similarity_score": 0.3484493328420179
+      },
+      {
+        "issue": "Attempted to examine with desklamp while it was off, resulting in no effect.",
+        "learning": "Turn on the desklamp using the 'use' command before attempting to examine objects with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the cellphone with the desklamp.",
+        "similarity_score": 0.3484493328420179
+      },
+      {
+        "issue": "Failed repeatedly to examine cellphone with desklamp while cellphone was on the desk.",
+        "learning": "Acquire the object (cellphone) by taking it before attempting to examine it with another object.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the cellphone with the desklamp.",
+        "similarity_score": 0.3484493328420179
+      },
+      {
+        "issue": "Attempted to examine watch with desklamp when desklamp was off.",
+        "learning": "Ensure the desklamp is turned on before attempting to examine an object with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the watch with the desklamp.",
+        "similarity_score": 0.35517606275474084
+      },
+      {
+        "issue": "Used 'turn on' command to activate desklamp, which had no effect.",
+        "learning": "Use the 'use' command to activate the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the watch with the desklamp.",
+        "similarity_score": 0.35517606275474084
+      },
+      {
+        "issue": "Desklamp cannot be taken or moved from its location.",
+        "learning": "Use the desklamp in its fixed location by turning it on.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the newspaper with the desklamp.",
+        "similarity_score": 0.37024588897191785
+      },
+      {
+        "issue": "Attempted to examine objects that were not co-located.",
+        "learning": "Ensure both objects are at the same location before attempting to examine them.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the newspaper with the desklamp.",
+        "similarity_score": 0.37024588897191785
+      }
+    ],
+    "retrieval_type": "hard_negative",
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I need to find a peppershaker, take it, then find a drawer and put the peppershaker on it. I will start by searching for a peppershaker on the countertops.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to countertop 1",
+        "observation": "You arrive at countertop 1. On the countertop 1, you see a creditcard 1, and a tomato 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "go to countertop 2",
+        "observation": "You arrive at countertop 2. On the countertop 2, you see a cellphone 1, a fork 1, a knife 1, a lettuce 1, a saltshaker 2, and a soapbottle 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "go to countertop 3",
+        "observation": "You arrive at countertop 3. On the countertop 3, you see a apple 1, a bread 1, a butterknife 2, a butterknife 1, a cup 2, a egg 2, a houseplant 1, a knife 3, a knife 2, a pan 2, a peppershaker 1, and a vase 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "take peppershaker 1 from countertop 3",
+        "observation": "You pick up the peppershaker 1 from the countertop 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "think: I have taken the peppershaker 1. Now I need to put it on a drawer. I will go to drawer 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see a dishsponge 2, and a spoon 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "move peppershaker 1 to drawer 1",
+        "observation": "You move the peppershaker 1 to the drawer 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 9
+  },
+  {
+    "task_id": "pick_and_place_simple-SaltShaker-None-Cabinet-10/trial_T20190906_191429_743650",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put some saltshaker on cabinet.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "issue": "Initial attempt to take the newspaper failed.",
+        "learning": "The newspaper can be taken from its location to bring it to the desklamp.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the newspaper with the desklamp.",
+        "similarity_score": 0.34612757178515036
+      },
+      {
+        "issue": "Failed to examine newspaper when desklamp was not co-located or using incorrect command.",
+        "learning": "Bring the newspaper to the desklamp's location after turning the desklamp on.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the newspaper with the desklamp.",
+        "similarity_score": 0.34612757178515036
+      },
+      {
+        "issue": "Failed to take desklamp, confirming it is a fixed object.",
+        "learning": "Adapted strategy by moving the movable pencil to the fixed desklamp's location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.3529724446028543
+      },
+      {
+        "issue": "Failed to take pencil, initially believed to be fixed.",
+        "learning": "Successfully picked up the pencil, demonstrating it was movable despite prior failures.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.3529724446028543
+      },
+      {
+        "issue": "Failed to examine objects due to lack of co-location.",
+        "learning": "Ensured co-location of pencil and desklamp by moving the pencil to the desklamp's location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.3529724446028543
+      },
+      {
+        "issue": "The 'examine' action failed repeatedly even with the desklamp on.",
+        "learning": "To examine an object, it must first be picked up or held by the agent.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the cellphone with the desklamp.",
+        "similarity_score": 0.3406122931746068
+      },
+      {
+        "issue": "Attempted to examine with desklamp while it was off, resulting in no effect.",
+        "learning": "Turn on the desklamp using the 'use' command before attempting to examine objects with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the cellphone with the desklamp.",
+        "similarity_score": 0.3406122931746068
+      },
+      {
+        "issue": "Failed repeatedly to examine cellphone with desklamp while cellphone was on the desk.",
+        "learning": "Acquire the object (cellphone) by taking it before attempting to examine it with another object.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the cellphone with the desklamp.",
+        "similarity_score": 0.3406122931746068
+      },
+      {
+        "issue": "Desklamp cannot be taken or moved from its location.",
+        "learning": "Use the desklamp in its fixed location by turning it on.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the newspaper with the desklamp.",
+        "similarity_score": 0.34612757178515036
+      }
+    ],
+    "retrieval_type": "hard_negative",
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I need to find a saltshaker, take it, and then put it on any cabinet. I will start by checking the countertops for the saltshaker.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "go to countertop 1",
+        "observation": "You arrive at countertop 1. On the countertop 1, you see a mug 1, and a soapbottle 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "go to countertop 2",
+        "observation": "You arrive at countertop 2. On the countertop 2, you see a apple 2, a bowl 2, a bread 2, a bread 1, a creditcard 3, a creditcard 2, a fork 1, a knife 1, and a lettuce 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "go to countertop 3",
+        "observation": "You arrive at countertop 3. On the countertop 3, you see a apple 3, a butterknife 1, a cellphone 1, a houseplant 1, a knife 2, a plate 3, a spoon 3, a spoon 2, a statue 1, and a vase 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "think: I have checked all countertops and did not find a saltshaker. Now I will check the cabinets, starting with cabinet 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "go to cabinet 1",
+        "observation": "You arrive at cabinet 1. On the cabinet 1, you see a glassbottle 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "go to cabinet 2",
+        "observation": "You arrive at cabinet 2. The cabinet 2 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "open cabinet 2",
+        "observation": "You open the cabinet 2. The cabinet 2 is open. In it, you see a cup 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "go to cabinet 3",
+        "observation": "You arrive at cabinet 3. On the cabinet 3, you see a plate 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 10,
+        "action": "go to cabinet 4",
+        "observation": "You arrive at cabinet 4. On the cabinet 4, you see a glassbottle 1, and a soapbottle 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 11,
+        "action": "go to cabinet 5",
+        "observation": "You arrive at cabinet 5. The cabinet 5 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 12,
+        "action": "open cabinet 5",
+        "observation": "You open the cabinet 5. The cabinet 5 is open. In it, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 13,
+        "action": "go to cabinet 6",
+        "observation": "You arrive at cabinet 6. The cabinet 6 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 14,
+        "action": "open cabinet 6",
+        "observation": "You open the cabinet 6. The cabinet 6 is open. In it, you see a plate 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 15,
+        "action": "think: I have checked all countertops and cabinets and still haven't found the saltshaker. I will now check the drawers, starting with drawer 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 16,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 17,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see a creditcard 1, and a spatula 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 18,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. The drawer 2 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 19,
+        "action": "open drawer 2",
+        "observation": "You open the drawer 2. The drawer 2 is open. In it, you see a peppershaker 1, and a spoon 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 20,
+        "action": "go to drawer 3",
+        "observation": "You arrive at drawer 3. The drawer 3 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 21,
+        "action": "open drawer 3",
+        "observation": "You open the drawer 3. The drawer 3 is open. In it, you see a dishsponge 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 22,
+        "action": "help[\"cannot find the saltshaker\"]",
+        "observation": "Help for issue: \"cannot find the saltshaker\"\n\nHARD NEGATIVE learnings from past experiences:\n\n1. Similar Issue: \n   Learning: No specific learning was applied to resolve this issue within the provided trials.\n   (Validation: CANDIDATE, Score: 0.63, Similarity: 0.37)\n\n2. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.63, Similarity: 0.37)\n\n3. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.63, Similarity: 0.37)",
+        "is_help_call": true
+      },
+      {
+        "step": 23,
+        "action": "think: I have checked countertops, cabinets, and drawers. I will now check the remaining locations: shelves, fridge, coffeemachine, microwave, sinkbasin, stoveburners, and toaster. I will start with shelf 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 24,
+        "action": "go to shelf 1",
+        "observation": "You arrive at shelf 1. On the shelf 1, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 25,
+        "action": "go to shelf 2",
+        "observation": "You arrive at shelf 2. On the shelf 2, you see a glassbottle 3, and a saltshaker 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 26,
+        "action": "take saltshaker 1 from shelf 2",
+        "observation": "You pick up the saltshaker 1 from the shelf 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 27,
+        "action": "think: I have found and taken the saltshaker. Now I need to put it on a cabinet. I will choose cabinet 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 28,
+        "action": "go to cabinet 1",
+        "observation": "You arrive at cabinet 1. On the cabinet 1, you see a glassbottle 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 29,
+        "action": "put saltshaker 1 on cabinet 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 30,
+        "action": "think: I have the saltshaker 1 in my inventory and I am at cabinet 1. The previous 'put' command failed. Based on the successful example, I should use the 'move' command to place the saltshaker on the cabinet.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 31,
+        "action": "move saltshaker 1 to cabinet 1",
+        "observation": "You move the saltshaker 1 to the cabinet 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [
+      {
+        "step": 22,
+        "query": "cannot find the saltshaker",
+        "response": "Help for issue: \"cannot find the saltshaker\"\n\nHARD NEGATIVE learnings from past experiences:\n\n1. Similar Issue: \n   Learning: No specific learning was applied to resolve this issue within the provided trials.\n   (Validation: CANDIDATE, Score: 0.63, Similarity: 0.37)\n\n2. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.63, Similarity: 0.37)\n\n3. Similar Issue: \n   Learning: No successful strategy found.\n   (Validation: CANDIDATE, Score: 0.63, Similarity: 0.37)"
+      }
+    ],
+    "help_call_count": 1,
+    "step_num": 31
+  }
+]

@@ -1,0 +1,61 @@
+{
+  "task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-308/trial_T20190908_222917_366542",
+  "trial_num": 1,
+  "task_desc": "examine the alarmclock with the desklamp.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "think: To solve the task, I need to find an alarmclock, then find a desklamp, and finally examine the alarmclock with the desklamp. First, I will look for an alarmclock. Alarmclocks are commonly found on desks, sidetables, or shelves. I will start by checking desk 1.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 2,
+      "action": "go to desk 1",
+      "observation": "You arrive at desk 1. On the desk 1, you see a bowl 1, a desklamp 1, a mug 1, and a pencil 1."
+    },
+    {
+      "step": 3,
+      "action": "think: I have found a desklamp 1 on desk 1, but I still need to find an alarmclock. I will continue searching for an alarmclock. I will check desk 2 next.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 4,
+      "action": "go to desk 2",
+      "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 1."
+    },
+    {
+      "step": 5,
+      "action": "take alarmclock 1 from desk 2",
+      "observation": "You pick up the alarmclock 1 from the desk 2."
+    },
+    {
+      "step": 6,
+      "action": "think: I have found the alarmclock 1 and picked it up. I also found the desklamp 1 on desk 1. Now I need to go back to desk 1, turn on the desklamp, and then examine the alarmclock with it.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 7,
+      "action": "go to desk 1",
+      "observation": "You arrive at desk 1. On the desk 1, you see a bowl 1, a desklamp 1, a mug 1, and a pencil 1."
+    },
+    {
+      "step": 8,
+      "action": "use desklamp 1",
+      "observation": "You turn on the desklamp 1."
+    }
+  ],
+  "success": true,
+  "num_steps": 8,
+  "retrieved_trajectories": [
+    {
+      "rank": 1,
+      "source_task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-314/trial_T20190908_042454_725701",
+      "similarity_score": 0.9227028208774675,
+      "task_desc": "look at alarmclock under the desklamp.",
+      "success": true
+    }
+  ],
+  "retrieval_context_word_count": 154,
+  "top_k_used": 1,
+  "word_limit_per_traj": 130
+}

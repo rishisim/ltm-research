@@ -1,0 +1,71 @@
+{
+  "task_id": "look_at_obj_in_light-Bowl-None-DeskLamp-308/trial_T20190907_133935_066606",
+  "trial_num": 1,
+  "task_desc": "look at bowl under the desklamp.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "think: To solve the task, I need to find a bowl, take it, find a desklamp, place the bowl under the desklamp, and then look at the bowl.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 2,
+      "action": "think: I need to find a bowl first. I will check the drawers, then desks, then shelves, and finally other containers. I'll start with drawer 1.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 3,
+      "action": "go to drawer 1",
+      "observation": "You arrive at drawer 1. The drawer 1 is closed."
+    },
+    {
+      "step": 4,
+      "action": "open drawer 1",
+      "observation": "You open the drawer 1. The drawer 1 is open. In it, you see a cellphone 2."
+    },
+    {
+      "step": 5,
+      "action": "go to drawer 2",
+      "observation": "You arrive at drawer 2. On the drawer 2, you see a keychain 1."
+    },
+    {
+      "step": 6,
+      "action": "think: I have checked drawer 1 and drawer 2. I need to continue searching for the bowl. I will check drawer 3 next.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 7,
+      "action": "go to drawer 3",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 8,
+      "action": "The drawer 3 is closed.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 9,
+      "action": "open drawer 3",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 10,
+      "action": "open drawer 3",
+      "observation": "Nothing happens."
+    }
+  ],
+  "success": false,
+  "num_steps": 10,
+  "retrieved_trajectories": [
+    {
+      "rank": 1,
+      "source_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-320/trial_T20190906_225859_247598",
+      "similarity_score": 0.7953135540338744,
+      "task_desc": "look at pillow under the desklamp.",
+      "success": true
+    }
+  ],
+  "retrieval_context_word_count": 154,
+  "top_k_used": 1,
+  "word_limit_per_traj": 130
+}

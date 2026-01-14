@@ -1,0 +1,56 @@
+{
+  "task_id": "look_at_obj_in_light-Bowl-None-DeskLamp-308/trial_T20190907_133919_856963",
+  "trial_num": 1,
+  "task_desc": "look at bowl under the desklamp.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "think: To solve the task, I need to find a bowl, take it, then find a desklamp, and finally use the desklamp. I will start by searching for a bowl in the available locations. I'll check drawers first, then desks, then shelves.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 2,
+      "action": "go to drawer 1",
+      "observation": "You arrive at drawer 1. The drawer 1 is closed."
+    },
+    {
+      "step": 3,
+      "action": "open drawer 1",
+      "observation": "You open the drawer 1. The drawer 1 is open. In it, you see a creditcard 1."
+    },
+    {
+      "step": 4,
+      "action": "think: I need to find a bowl. I have checked drawer 1. I will continue checking the other drawers.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 5,
+      "action": "go to drawer 2",
+      "observation": "You arrive at drawer 2. On the drawer 2, you see a pencil 1."
+    },
+    {
+      "step": 6,
+      "action": "open drawer 2",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 7,
+      "action": "open drawer 2",
+      "observation": "Nothing happens."
+    }
+  ],
+  "success": false,
+  "num_steps": 7,
+  "retrieved_trajectories": [
+    {
+      "rank": 1,
+      "source_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-320/trial_T20190906_225859_247598",
+      "similarity_score": 0.7953135540338744,
+      "task_desc": "look at pillow under the desklamp.",
+      "success": true
+    }
+  ],
+  "retrieval_context_word_count": 154,
+  "top_k_used": 1,
+  "word_limit_per_traj": 130
+}

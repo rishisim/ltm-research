@@ -1,0 +1,66 @@
+{
+  "task_id": "look_at_obj_in_light-Bowl-None-DeskLamp-308/trial_T20190907_133953_562557",
+  "trial_num": 1,
+  "task_desc": "examine the bowl with the desklamp.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "think: I need to find a bowl and a desklamp, then examine the bowl with the desklamp. I will start by looking for a bowl. Bowls are often found on desks, shelves, or in drawers. I will check desk 1 first.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 2,
+      "action": "go to desk 1",
+      "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 2, a alarmclock 1, a desklamp 1, a mug 1, and a pencil 1."
+    },
+    {
+      "step": 3,
+      "action": "think: I have found a desklamp (desklamp 1) on desk 1. I need to find a bowl. There is no bowl on desk 1. I will check desk 2 next.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 4,
+      "action": "go to desk 2",
+      "observation": "You arrive at desk 2. On the desk 2, you see a bowl 3, a bowl 2, and a mug 2."
+    },
+    {
+      "step": 5,
+      "action": "take bowl 3 from desk 2",
+      "observation": "You pick up the bowl 3 from the desk 2."
+    },
+    {
+      "step": 6,
+      "action": "think: I have found a bowl (bowl 3) and picked it up. I have also found a desklamp (desklamp 1) on desk 1. I am currently at desk 2. I need to go to desk 1 to use the desklamp.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 7,
+      "action": "go to desk 1",
+      "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 2, a alarmclock 1, a desklamp 1, a mug 1, and a pencil 1."
+    },
+    {
+      "step": 8,
+      "action": "examine bowl 3 with desklamp 1",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 9,
+      "action": "use desklamp 1",
+      "observation": "You turn on the desklamp 1."
+    }
+  ],
+  "success": true,
+  "num_steps": 9,
+  "retrieved_trajectories": [
+    {
+      "rank": 1,
+      "source_task_id": "look_at_obj_in_light-Mug-None-DeskLamp-301/trial_T20190908_155916_103990",
+      "similarity_score": 0.8253912647860865,
+      "task_desc": "examine the mug with the desklamp.",
+      "success": true
+    }
+  ],
+  "retrieval_context_word_count": 154,
+  "top_k_used": 1,
+  "word_limit_per_traj": 130
+}

@@ -1,0 +1,18 @@
+{
+  "description": "First 10 valid_unseen tasks for hard negative CR+TR evaluation (v2)",
+  "split": "valid_unseen",
+  "created": "2026-01-14",
+  "total_tasks": 10,
+  "tasks": [
+    "valid_unseen:look_at_obj_in_light-AlarmClock-None-DeskLamp-308/trial_T20190908_222917_366542",
+    "valid_unseen:look_at_obj_in_light-Book-None-DeskLamp-308/trial_T20190908_020029_636862",
+    "valid_unseen:look_at_obj_in_light-Bowl-None-DeskLamp-308/trial_T20190907_133919_856963",
+    "valid_unseen:look_at_obj_in_light-CD-None-DeskLamp-308/trial_T20190908_141942_810052",
+    "valid_unseen:look_at_obj_in_light-Mug-None-DeskLamp-308/trial_T20190908_161733_213242",
+    "valid_unseen:look_at_obj_in_light-Pencil-None-DeskLamp-308/trial_T20190908_220545_153480",
+    "valid_unseen:pick_and_place_simple-Mug-None-Desk-308/trial_T20190908_125200_737896",
+    "valid_unseen:pick_and_place_simple-Pencil-None-Shelf-308/trial_T20190908_121952_610012",
+    "valid_unseen:pick_and_place_simple-PepperShaker-None-Drawer-10/trial_T20190906_184021_215264",
+    "valid_unseen:pick_and_place_simple-SaltShaker-None-Cabinet-10/trial_T20190906_191429_743650"
+  ]
+}

@@ -1,0 +1,40 @@
+# Plain Trajectory Agent - Run Summary
+
+## Configuration
+- Agent: PlainTrajAgent (memory_retrieval_v2)
+- Retrieval: Top-1 similar trajectory (by task_desc similarity)
+- Word limit: 130 words per trajectory
+- Dataset: valid_unseen (10 tasks)
+- Model: gemini-2.5-flash
+- Trajectories source: alfworld_runs/memory_retrieval_v2/knowledge_base/memory_allocation_runs/trajectories.json
+
+## Results
+- SUCCESS: 4/10 (40.0%)
+- FAIL: 6/10 (60.0%)
+
+## Successful Tasks
+1. look_at_obj_in_light-AlarmClock-None-DeskLamp-308/trial_T20190908_222917_366542
+2. look_at_obj_in_light-AlarmClock-None-DeskLamp-308/trial_T20190908_222933_607649
+3. look_at_obj_in_light-Bowl-None-DeskLamp-308/trial_T20190907_133953_562557
+4. look_at_obj_in_light-CD-None-DeskLamp-308/trial_T20190908_141942_810052
+
+## Failed Tasks
+1. look_at_obj_in_light-AlarmClock-None-DeskLamp-308/trial_T20190908_222951_616606
+2. look_at_obj_in_light-Book-None-DeskLamp-308/trial_T20190908_020029_636862
+3. look_at_obj_in_light-Book-None-DeskLamp-308/trial_T20190908_020048_814402
+4. look_at_obj_in_light-Book-None-DeskLamp-308/trial_T20190908_144951_587345
+5. look_at_obj_in_light-Bowl-None-DeskLamp-308/trial_T20190907_133919_856963
+6. look_at_obj_in_light-Bowl-None-DeskLamp-308/trial_T20190907_133935_066606
+
+## Output Location
+- Main directory: alfworld_runs/plain_traj_agent/valid_unseen/
+- Per-task logs: alfworld_runs/plain_traj_agent/valid_unseen/<task_id>/traj_data.json
+- Summary: alfworld_runs/plain_traj_agent/valid_unseen/world.log
+- Full output: alfworld_runs/plain_traj_agent_run_log.txt
+
+## Metadata Tracking
+Each task's traj_data.json includes:
+- retrieved_trajectories: source_task_id, similarity_score, task_desc, success
+- retrieval_context_word_count: actual words sent to agent
+- top_k_used: 1
+- word_limit_per_traj: 130

@@ -1,0 +1,101 @@
+{
+  "task_id": "look_at_obj_in_light-Book-None-DeskLamp-308/trial_T20190908_020048_814402",
+  "trial_num": 1,
+  "task_desc": "examine the book with the desklamp.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "think: I need to find a book first. I will check desk 1, desk 2, and then the shelves.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 2,
+      "action": "go to desk 1",
+      "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 2, a creditcard 1, a desklamp 1, and a keychain 2."
+    },
+    {
+      "step": 3,
+      "action": "go to desk 2",
+      "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 3, a bowl 1, a creditcard 3, a creditcard 2, a mug 3, a mug 2, and a mug 1."
+    },
+    {
+      "step": 4,
+      "action": "think: I have not found a book yet. My plan was to check the shelves next. I will start with shelf 1.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 5,
+      "action": "go to shelf 1",
+      "observation": "You arrive at shelf 1. On the shelf 1, you see a alarmclock 1, and a pen 1."
+    },
+    {
+      "step": 6,
+      "action": "go to shelf 2",
+      "observation": "You arrive at shelf 2. On the shelf 2, you see a pencil 1."
+    },
+    {
+      "step": 7,
+      "action": "go to shelf 3",
+      "observation": "You arrive at shelf 3. On the shelf 3, you see a alarmclock 2, and a desklamp 1."
+    },
+    {
+      "step": 8,
+      "action": "go to shelf 4",
+      "observation": "You arrive at shelf 4. On the shelf 4, you see nothing."
+    },
+    {
+      "step": 9,
+      "action": "go to shelf 5",
+      "observation": "You arrive at shelf 5. On the shelf 5, you see nothing."
+    },
+    {
+      "step": 10,
+      "action": "go to shelf 6",
+      "observation": "You arrive at shelf 6. On the shelf 6, you see nothing."
+    },
+    {
+      "step": 11,
+      "action": "think: I have not found a book yet. I have checked desks and shelves. Now I will check the drawers. I will start with drawer 1.",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 12,
+      "action": "go to drawer 1",
+      "observation": "You arrive at drawer 1. The drawer 1 is closed."
+    },
+    {
+      "step": 13,
+      "action": "open drawer 1",
+      "observation": "You open the drawer 1. The drawer 1 is open. In it, you see nothing."
+    },
+    {
+      "step": 14,
+      "action": "go to drawer 2",
+      "observation": "You arrive at drawer 2. On the drawer 2, you see a cd 1."
+    },
+    {
+      "step": 15,
+      "action": "open drawer 2",
+      "observation": "Nothing happens."
+    },
+    {
+      "step": 16,
+      "action": "open drawer 2",
+      "observation": "Nothing happens."
+    }
+  ],
+  "success": false,
+  "num_steps": 16,
+  "retrieved_trajectories": [
+    {
+      "rank": 1,
+      "source_task_id": "look_at_obj_in_light-Book-None-DeskLamp-320/trial_T20190909_152445_177541",
+      "similarity_score": 1.0,
+      "task_desc": "examine the book with the desklamp.",
+      "success": true
+    }
+  ],
+  "retrieval_context_word_count": 154,
+  "top_k_used": 1,
+  "word_limit_per_traj": 130
+}
