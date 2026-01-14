@@ -46,18 +46,22 @@ def get_file_hash(file_path: str) -> str:
     return hash_md5.hexdigest()
 
 
-def get_cache_path(knowledge_base_path: str) -> Path:
+def get_cache_path(knowledge_base_path: str, embed_field: str = "task_desc") -> Path:
     """
     Get the cache file path for a knowledge base.
     
     Args:
         knowledge_base_path: Path to knowledge_base.json
+        embed_field: Which field is embedded - "task_desc" or "issue_text"
         
     Returns:
         Path to the embeddings cache file
     """
     kb_path = Path(knowledge_base_path)
-    return kb_path.parent / f"{kb_path.stem}{EMBEDDINGS_CACHE_SUFFIX}"
+    if embed_field == "issue_text":
+        return kb_path.parent / f"{kb_path.stem}.issue_embeddings_cache.json"
+    else:
+        return kb_path.parent / f"{kb_path.stem}{EMBEDDINGS_CACHE_SUFFIX}"
 
 
 def get_embedding(text: str) -> np.ndarray:
@@ -108,13 +112,14 @@ def get_batch_embeddings(texts: List[str], batch_size: int = 100) -> List[np.nda
     return all_embeddings
 
 
-def is_cache_valid(knowledge_base_path: str, cache_path: Path) -> bool:
+def is_cache_valid(knowledge_base_path: str, cache_path: Path, embed_field: str = "task_desc") -> bool:
     """
     Check if the embeddings cache is valid (exists and matches source file).
     
     Args:
         knowledge_base_path: Path to knowledge_base.json
         cache_path: Path to the cache file
+        embed_field: Which field is embedded (for validation)
         
     Returns:
         True if cache is valid, False otherwise
@@ -130,31 +135,39 @@ def is_cache_valid(knowledge_base_path: str, cache_path: Path) -> bool:
         current_hash = get_file_hash(knowledge_base_path)
         cached_hash = cache_data.get("source_hash", "")
         
-        return current_hash == cached_hash
+        # Also verify embed_field matches
+        cached_field = cache_data.get("embed_field", "task_desc")
+        
+        return current_hash == cached_hash and cached_field == embed_field
     except (json.JSONDecodeError, IOError):
         return False
 
 
-def create_knowledge_base_embeddings(knowledge_base_path: str, force: bool = False) -> Dict[str, Any]:
+def create_knowledge_base_embeddings(
+    knowledge_base_path: str, 
+    force: bool = False,
+    embed_field: str = "task_desc"
+) -> Dict[str, Any]:
     """
     Create embeddings for all entries in the knowledge base and cache them.
     
     Args:
         knowledge_base_path: Path to knowledge_base.json
         force: If True, rebuild cache even if valid
+        embed_field: Which field to embed - "task_desc" or "issue_text" (default: "task_desc")
         
     Returns:
         Dictionary containing embeddings cache data
     """
-    cache_path = get_cache_path(knowledge_base_path)
+    cache_path = get_cache_path(knowledge_base_path, embed_field=embed_field)
     
     # Check if cache is valid
-    if not force and is_cache_valid(knowledge_base_path, cache_path):
-        print(f"Loading existing embeddings cache from {cache_path}")
+    if not force and is_cache_valid(knowledge_base_path, cache_path, embed_field=embed_field):
+        print(f"Loading existing {embed_field} embeddings cache from {cache_path}")
         with open(cache_path, 'r') as f:
             return json.load(f)
     
-    print(f"Creating new embeddings cache for {knowledge_base_path}...")
+    print(f"Creating new {embed_field} embeddings cache for {knowledge_base_path}...")
     
     # Load knowledge base
     with open(knowledge_base_path, 'r') as f:
@@ -166,6 +179,7 @@ def create_knowledge_base_embeddings(knowledge_base_path: str, force: bool = Fal
             "source_path": str(knowledge_base_path),
             "created_at": datetime.now().isoformat(),
             "embedding_model": EMBEDDING_MODEL,
+            "embed_field": embed_field,
             "entry_count": 0,
             "entries": []
         }
@@ -173,18 +187,18 @@ def create_knowledge_base_embeddings(knowledge_base_path: str, force: bool = Fal
             json.dump(cache_data, f, indent=2)
         return cache_data
     
-    # Extract all task descriptions
-    task_descs = [entry.get("task_desc", "") for entry in knowledge_base]
+    # Extract all texts to embed based on embed_field
+    texts_to_embed = [entry.get(embed_field, "") for entry in knowledge_base]
     
-    print(f"  Embedding {len(task_descs)} entries...")
-    embeddings = get_batch_embeddings(task_descs)
+    print(f"  Embedding {len(texts_to_embed)} {embed_field} entries...")
+    embeddings = get_batch_embeddings(texts_to_embed)
     
     # Build cache data with embeddings
     entries_with_embeddings = []
     for i, (entry, embedding) in enumerate(zip(knowledge_base, embeddings)):
         entries_with_embeddings.append({
             "index": i,
-            "task_desc": entry.get("task_desc", ""),
+            embed_field: entry.get(embed_field, ""),
             "embedding": embedding.tolist(),  # Convert numpy array to list for JSON
             # Include key fields for quick access
             "valid_level": entry.get("valid_level", "CANDIDATE"),
@@ -196,6 +210,7 @@ def create_knowledge_base_embeddings(knowledge_base_path: str, force: bool = Fal
         "source_path": str(knowledge_base_path),
         "created_at": datetime.now().isoformat(),
         "embedding_model": EMBEDDING_MODEL,
+        "embed_field": embed_field,
         "entry_count": len(entries_with_embeddings),
         "entries": entries_with_embeddings
     }
@@ -209,18 +224,27 @@ def create_knowledge_base_embeddings(knowledge_base_path: str, force: bool = Fal
     return cache_data
 
 
-def load_embeddings_cache(knowledge_base_path: str, force_rebuild: bool = False) -> Tuple[Dict[str, Any], List[np.ndarray]]:
+def load_embeddings_cache(
+    knowledge_base_path: str, 
+    force_rebuild: bool = False,
+    embed_field: str = "task_desc"
+) -> Tuple[Dict[str, Any], List[np.ndarray]]:
     """
     Load or create embeddings cache and return both cache data and numpy embeddings.
     
     Args:
         knowledge_base_path: Path to knowledge_base.json
         force_rebuild: If True, rebuild cache even if valid
+        embed_field: Which field to embed - "task_desc" or "issue_text"
         
     Returns:
         Tuple of (cache_data dict, list of numpy embedding arrays)
     """
-    cache_data = create_knowledge_base_embeddings(knowledge_base_path, force=force_rebuild)
+    cache_data = create_knowledge_base_embeddings(
+        knowledge_base_path, 
+        force=force_rebuild,
+        embed_field=embed_field
+    )
     
     # Convert embeddings back to numpy arrays
     embeddings = [

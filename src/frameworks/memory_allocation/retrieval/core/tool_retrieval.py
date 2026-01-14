@@ -12,20 +12,19 @@ when they are struggling. The tool:
 import os
 import json
 import numpy as np
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 from dotenv import load_dotenv
 from pathlib import Path
-from google import genai
+
+from .embedding_cache import (
+    get_embedding,
+    cosine_similarity,
+    load_embeddings_cache
+)
 
 # Load environment variables
 env_path = Path(__file__).resolve().parent.parent.parent.parent / '.env'
 load_dotenv(env_path)
-
-# Initialize Google GenAI client for embeddings
-genai_client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
-
-# Embedding model to use
-EMBEDDING_MODEL = "text-embedding-004"
 
 # Valid goal phases
 GOAL_PHASES = ["SEARCH", "ACQUIRE", "TRANSFORM", "PLACE", "RECOVER"]
@@ -37,10 +36,15 @@ VALID_LEVEL_PRIORITY = {
     "CANDIDATE": 1,
 }
 
+# Global cache for issue_text embeddings (loaded once per knowledge base)
+_issue_embeddings_cache = None
+_cached_kb_path = None
+
 
 def get_embedding(text: str) -> np.ndarray:
     """
     Get the embedding for a text string using Google's embedding model.
+    Imported from embedding_cache module.
     
     Args:
         text: The text to embed
@@ -48,16 +52,15 @@ def get_embedding(text: str) -> np.ndarray:
     Returns:
         numpy array of the embedding vector
     """
-    result = genai_client.models.embed_content(
-        model=EMBEDDING_MODEL,
-        contents=text,
-    )
-    return np.array(result.embeddings[0].values)
+    # This is now imported from embedding_cache, but keeping function for backward compatibility
+    from .embedding_cache import get_embedding as _get_embedding
+    return _get_embedding(text)
 
 
 def get_batch_embeddings(texts: List[str]) -> List[np.ndarray]:
     """
     Get embeddings for a batch of texts.
+    Imported from embedding_cache module.
     
     Args:
         texts: List of texts to embed
@@ -65,27 +68,19 @@ def get_batch_embeddings(texts: List[str]) -> List[np.ndarray]:
     Returns:
         List of numpy arrays of embedding vectors
     """
-    if not texts:
-        return []
-    
-    result = genai_client.models.embed_content(
-        model=EMBEDDING_MODEL,
-        contents=texts,
-    )
-    return [np.array(emb.values) for emb in result.embeddings]
+    # This is now imported from embedding_cache, but keeping function for backward compatibility
+    from .embedding_cache import get_batch_embeddings as _get_batch_embeddings
+    return _get_batch_embeddings(texts)
 
 
 def cosine_similarity(vec1: np.ndarray, vec2: np.ndarray) -> float:
     """
     Compute cosine similarity between two vectors.
+    Imported from embedding_cache module.
     """
-    norm1 = np.linalg.norm(vec1)
-    norm2 = np.linalg.norm(vec2)
-    
-    if norm1 == 0 or norm2 == 0:
-        return 0.0
-    
-    return np.dot(vec1, vec2) / (norm1 * norm2)
+    # This is now imported from embedding_cache, but keeping function for backward compatibility
+    from .embedding_cache import cosine_similarity as _cosine_similarity
+    return _cosine_similarity(vec1, vec2)
 
 
 def load_memory_bank(memory_bank_path: str) -> List[Dict[str, Any]]:
@@ -94,6 +89,40 @@ def load_memory_bank(memory_bank_path: str) -> List[Dict[str, Any]]:
     """
     with open(memory_bank_path, 'r') as f:
         return json.load(f)
+
+
+def load_issue_embeddings(memory_bank_path: str, force_rebuild: bool = False) -> Tuple[List[Dict[str, Any]], List[np.ndarray]]:
+    """
+    Load cached issue_text embeddings for the knowledge base.
+    
+    Uses the global cache to avoid reloading on every help_tool call within the same session.
+    
+    Args:
+        memory_bank_path: Path to knowledge_base.json
+        force_rebuild: If True, rebuild cache even if valid
+        
+    Returns:
+        Tuple of (cache entries with metadata, list of numpy embedding arrays)
+    """
+    global _issue_embeddings_cache, _cached_kb_path
+    
+    # Check if we already have the cache loaded for this KB
+    if not force_rebuild and _cached_kb_path == memory_bank_path and _issue_embeddings_cache is not None:
+        return _issue_embeddings_cache
+    
+    # Load from disk (or create if doesn't exist)
+    print(f"Loading issue_text embeddings cache for {memory_bank_path}...")
+    cache_data, embeddings = load_embeddings_cache(
+        memory_bank_path, 
+        force_rebuild=force_rebuild,
+        embed_field="issue_text"
+    )
+    
+    # Store in global cache
+    _cached_kb_path = memory_bank_path
+    _issue_embeddings_cache = (cache_data.get("entries", []), embeddings)
+    
+    return _issue_embeddings_cache
 
 
 def infer_goal_phase(issue_text: str) -> Optional[str]:
@@ -158,6 +187,9 @@ def help_tool(
     # Load memory bank
     memory_bank = load_memory_bank(memory_bank_path)
     
+    # Load cached issue_text embeddings
+    cached_entries, all_issue_embeddings = load_issue_embeddings(memory_bank_path)
+    
     # Infer goal phase if not provided
     inferred_phase = False
     if goal_phase is None:
@@ -174,15 +206,19 @@ def help_tool(
             "results": []
         }
     
-    # Step 1: Filter memory bank by goal_phase
+    # Step 1: Filter by goal_phase (filter both KB and cached embeddings together)
     if goal_phase:
-        filtered_entries = [
-            entry for entry in memory_bank
+        # Filter indices where goal_phase matches
+        filtered_indices = [
+            i for i, entry in enumerate(memory_bank)
             if entry.get("goal_phase") == goal_phase
         ]
+        filtered_entries = [memory_bank[i] for i in filtered_indices]
+        filtered_embeddings = [all_issue_embeddings[i] for i in filtered_indices]
     else:
         # If no phase, search all entries
         filtered_entries = memory_bank
+        filtered_embeddings = all_issue_embeddings
     
     if not filtered_entries:
         return {
@@ -193,21 +229,16 @@ def help_tool(
             "results": []
         }
     
-    # Step 2: Similarity search on issue_text
-    # Extract issue texts from filtered entries
-    issue_texts = [entry.get("issue_text", "") for entry in filtered_entries]
-    
-    # Get embedding for query issue
+    # Step 2: Similarity search on issue_text using CACHED embeddings
+    # Get embedding for query issue only
     query_embedding = get_embedding(issue)
     
-    # Get embeddings for all issue texts
-    issue_embeddings = get_batch_embeddings(issue_texts)
+    # Use the pre-computed embeddings for filtered entries
+    # No need to call get_batch_embeddings anymore!
     
     # Calculate similarity scores
-    similarities = [
-        cosine_similarity(query_embedding, issue_emb)
-        for issue_emb in issue_embeddings
-    ]
+    from .embedding_cache import cosine_similarity_batch
+    similarities = cosine_similarity_batch(query_embedding, filtered_embeddings)
     
     # Create list of (similarity, entry) tuples and add validation priority
     scored_entries = []
