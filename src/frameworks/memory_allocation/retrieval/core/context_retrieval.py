@@ -67,7 +67,29 @@ def load_knowledge_base(knowledge_base_path: str) -> List[Dict[str, Any]]:
         List of knowledge base entries
     """
     with open(knowledge_base_path, 'r') as f:
-        return json.load(f)
+        kb = json.load(f)
+
+    # Normalize reference structure to nested issue_ref / evidence_ref
+    for entry in kb:
+        _normalize_refs(entry)
+
+    return kb
+
+
+def _normalize_refs(entry: Dict[str, Any]) -> None:
+    """Ensure refs are stored in nested objects, preserving flat fields if present."""
+    if not entry.get("issue_ref"):
+        entry["issue_ref"] = {
+            "task_id": entry.get("issue_task_id", ""),
+            "trial_num": entry.get("issue_trial_num", ""),
+            "step_range": entry.get("issue_step_range", [])
+        }
+    if not entry.get("evidence_ref"):
+        entry["evidence_ref"] = {
+            "task_id": entry.get("evidence_task_id", ""),
+            "trial_num": entry.get("evidence_trial_num", ""),
+            "step_range": entry.get("evidence_step_range", [])
+        }
 
 
 def retrieve_context(
@@ -140,6 +162,11 @@ def retrieve_context(
     
     # Step 3.5 & 3.6: Re-rank with CANDIDATE at bottom, order by similarity
     knowledge_retrieval_base = _rerank_by_validation(knowledge_retrieval_base)
+    # Enforce similarity < 1.0 on output rows
+    knowledge_retrieval_base = [
+        row for row in knowledge_retrieval_base
+        if row.get("similarity_score", 0.0) < 1.0
+    ]
     
     # Step 3.7: Select top pick_learning_count rows
     selected_rows = knowledge_retrieval_base[:pick_learning_count]
@@ -242,6 +269,20 @@ def _build_knowledge_retrieval_base(
             # Build joined row - handle None values for refs
             issue_ref = kb_entry.get("issue_ref") or {}
             evidence_ref = kb_entry.get("evidence_ref") or {}
+
+            # Fallback to flattened ref fields when nested refs are absent
+            if not issue_ref:
+                issue_ref = {
+                    "task_id": kb_entry.get("issue_task_id", ""),
+                    "trial_num": kb_entry.get("issue_trial_num", ""),
+                    "step_range": kb_entry.get("issue_step_range", [])
+                }
+            if not evidence_ref:
+                evidence_ref = {
+                    "task_id": kb_entry.get("evidence_task_id", ""),
+                    "trial_num": kb_entry.get("evidence_trial_num", ""),
+                    "step_range": kb_entry.get("evidence_step_range", [])
+                }
             
             row = {
                 # From left table (mem_learning_counts)

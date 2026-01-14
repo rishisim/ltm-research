@@ -227,7 +227,10 @@ def get_top_similar_tasks(
             sim = 0.0
         else:
             sim = float(np.dot(query_embedding, emb) / (norm1 * norm2))
-        
+        # Skip degenerate self-matches (similarity >= 1.0) so outputs stay < 1
+        if sim >= 1.0:
+            continue
+
         similarities.append((i, sim))
     
     # Sort by similarity descending
