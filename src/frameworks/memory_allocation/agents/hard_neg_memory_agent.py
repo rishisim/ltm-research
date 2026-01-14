@@ -310,7 +310,8 @@ The following learnings are from previous tasks similar to yours. Use them to av
             "steps": steps,
             "success": success,
             "help_calls": help_calls or [],
-            "help_call_count": len(help_calls) if help_calls else 0
+            "help_call_count": len(help_calls) if help_calls else 0,
+            "step_num": len(steps)
         }
         
         trajectories_path = os.path.join(log_dir, "trajectories.json")

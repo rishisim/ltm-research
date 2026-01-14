@@ -174,7 +174,8 @@ Below is a partial trajectory from a similar task. Use this as a reference for t
             "steps": steps,
             "success": success,
             "help_calls": [], # RAG agent doesn't use help tool
-            "help_call_count": 0
+            "help_call_count": 0,
+            "step_num": len(steps)
         }
         
         if not os.path.exists(log_dir):

@@ -97,7 +97,6 @@ Use this tool when you:
             result = help_tool(
                 issue=query,
                 memory_bank_path=self.memory_bank_path,
-                goal_phase=None,  # Let it infer from the query
                 top_k=3
             )
             return format_help_response(result)
@@ -282,7 +281,8 @@ Use this tool when you:
             "steps": steps,
             "success": success,
             "help_calls": help_calls or [],
-            "help_call_count": len(help_calls) if help_calls else 0
+            "help_call_count": len(help_calls) if help_calls else 0,
+            "step_num": len(steps)
         }
         
         trajectories_path = os.path.join(log_dir, trajectory_file)

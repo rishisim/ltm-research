@@ -208,7 +208,8 @@ Below is a partial trajectory from a similar task. Use this as a reference for h
             "steps": steps,
             "success": success,
             "help_calls": [],  # Always empty for this agent
-            "help_call_count": 0
+            "help_call_count": 0,
+            "step_num": len(steps)
         }
         
         trajectories_path = os.path.join(log_dir, trajectory_file)

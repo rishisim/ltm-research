@@ -3,10 +3,10 @@ Tool Retrieval Module for Agent Tool Calls
 
 This module provides a help_tool that agents can call during trajectory execution
 when they are struggling. The tool:
-1. Takes the issue description and goal_phase from the agent
-2. Filters the memory bank by goal_phase
-3. Performs similarity search on issue_text within the filtered entries
-4. Returns top 3 issues and learnings as JSON
+1. Takes the issue description from the agent
+2. Performs similarity search on issue_text across all memory bank entries
+3. Ranks by similarity and validation level
+4. Returns top K issues and learnings as JSON
 """
 
 import os
@@ -26,14 +26,11 @@ from .embedding_cache import (
 env_path = Path(__file__).resolve().parent.parent.parent.parent / '.env'
 load_dotenv(env_path)
 
-# Valid goal phases
-GOAL_PHASES = ["SEARCH", "ACQUIRE", "TRANSFORM", "PLACE", "RECOVER"]
-
-# Validation level priority for ranking (higher is better)
-VALID_LEVEL_PRIORITY = {
-    "VALID_NEXT_TRIAL": 3,
-    "VALID_SAME_TRIAL": 2,
-    "CANDIDATE": 1,
+# Validation level weights for multiplicative scoring
+VALID_LEVEL_WEIGHT = {
+    "VALID_NEXT_TRIAL": 1,
+    "VALID_SAME_TRIAL": 1,
+    "CANDIDATE": 0.5,
 }
 
 # Global cache for issue_text embeddings (loaded once per knowledge base)
@@ -125,46 +122,9 @@ def load_issue_embeddings(memory_bank_path: str, force_rebuild: bool = False) ->
     return _issue_embeddings_cache
 
 
-def infer_goal_phase(issue_text: str) -> Optional[str]:
-    """
-    Infer the goal phase from the issue text using keyword matching.
-    This is a simple heuristic - could be improved with LLM or better logic.
-    
-    Args:
-        issue_text: The issue description from the agent
-        
-    Returns:
-        Inferred goal phase or None if unable to infer
-    """
-    issue_lower = issue_text.lower()
-    
-    # Keywords associated with each phase
-    phase_keywords = {
-        "SEARCH": ["find", "found", "search", "locate", "look", "where", "not found", "cannot find"],
-        "ACQUIRE": ["pick", "take", "grab", "get", "acquire", "hold", "carrying"],
-        "TRANSFORM": ["heat", "cool", "clean", "slice", "cut", "cook", "transform", 
-                      "microwave", "fridge", "stove", "sink"],
-        "PLACE": ["put", "place", "drop", "set", "move to", "place in"],
-        "RECOVER": ["stuck", "error", "nothing happens", "wrong", "undo", "close", "open"]
-    }
-    
-    # Count keyword matches for each phase
-    phase_scores = {}
-    for phase, keywords in phase_keywords.items():
-        score = sum(1 for kw in keywords if kw in issue_lower)
-        if score > 0:
-            phase_scores[phase] = score
-    
-    if phase_scores:
-        return max(phase_scores.keys(), key=lambda x: phase_scores[x])
-    
-    return None
-
-
 def help_tool(
     issue: str,
     memory_bank_path: str,
-    goal_phase: Optional[str] = None,
     top_k: int = 3
 ) -> Dict[str, Any]:
     """
@@ -173,16 +133,12 @@ def help_tool(
     Args:
         issue: The issue description from the agent (e.g., "cannot find tomato")
         memory_bank_path: Path to the knowledge_base.json file
-        goal_phase: The current goal phase (SEARCH, ACQUIRE, TRANSFORM, PLACE, RECOVER).
-                   If None, will attempt to infer from the issue text.
         top_k: Number of top similar issues to retrieve (default: 3)
         
     Returns:
         Dictionary containing:
         - query_issue: The original issue
-        - goal_phase: The goal phase used for filtering
-        - inferred_phase: Whether the phase was inferred (True) or provided (False)
-        - results: List of top matching issues with learnings
+        - results: List of top matching issues with learnings, ranked by similarity and validation
     """
     # Load memory bank
     memory_bank = load_memory_bank(memory_bank_path)
@@ -190,70 +146,47 @@ def help_tool(
     # Load cached issue_text embeddings
     cached_entries, all_issue_embeddings = load_issue_embeddings(memory_bank_path)
     
-    # Infer goal phase if not provided
-    inferred_phase = False
-    if goal_phase is None:
-        goal_phase = infer_goal_phase(issue)
-        inferred_phase = True
-    
-    # Validate goal phase
-    if goal_phase and goal_phase not in GOAL_PHASES:
+    if not memory_bank:
         return {
             "query_issue": issue,
-            "goal_phase": goal_phase,
-            "inferred_phase": inferred_phase,
-            "error": f"Invalid goal_phase. Must be one of: {GOAL_PHASES}",
+            "message": "Memory bank is empty",
             "results": []
         }
     
-    # Step 1: Filter by goal_phase (filter both KB and cached embeddings together)
-    if goal_phase:
-        # Filter indices where goal_phase matches
-        filtered_indices = [
-            i for i, entry in enumerate(memory_bank)
-            if entry.get("goal_phase") == goal_phase
-        ]
-        filtered_entries = [memory_bank[i] for i in filtered_indices]
-        filtered_embeddings = [all_issue_embeddings[i] for i in filtered_indices]
-    else:
-        # If no phase, search all entries
-        filtered_entries = memory_bank
-        filtered_embeddings = all_issue_embeddings
-    
-    if not filtered_entries:
-        return {
-            "query_issue": issue,
-            "goal_phase": goal_phase,
-            "inferred_phase": inferred_phase,
-            "message": f"No entries found for goal_phase: {goal_phase}",
-            "results": []
-        }
-    
-    # Step 2: Similarity search on issue_text using CACHED embeddings
+    # Step 1: Similarity search on issue_text using CACHED embeddings
     # Get embedding for query issue only
     query_embedding = get_embedding(issue)
     
-    # Use the pre-computed embeddings for filtered entries
+    # Use the pre-computed embeddings for cached entries
     # No need to call get_batch_embeddings anymore!
     
     # Calculate similarity scores
     from .embedding_cache import cosine_similarity_batch
-    similarities = cosine_similarity_batch(query_embedding, filtered_embeddings)
+    similarities = cosine_similarity_batch(query_embedding, all_issue_embeddings)
     
-    # Create list of (similarity, entry) tuples and add validation priority
+    # Create list of (score, similarity, cache_entry) tuples using multiplicative scoring
+    # Score = similarity * validation_weight
+    # Note: cached_entries only have limited fields, need to fetch full data from memory_bank using index
     scored_entries = []
-    for i, (sim, entry) in enumerate(zip(similarities, filtered_entries)):
-        valid_level = entry.get("valid_level", "CANDIDATE")
-        valid_priority = VALID_LEVEL_PRIORITY.get(valid_level, 0)
-        scored_entries.append((sim, valid_priority, entry))
+    for i, (sim, cache_entry) in enumerate(zip(similarities, cached_entries)):
+        # Get the full entry from the original knowledge base using the index
+        entry_index = cache_entry.get("index", i)
+        if entry_index < len(memory_bank):
+            full_entry = memory_bank[entry_index]
+            valid_level = full_entry.get("valid_level", "CANDIDATE")
+            valid_weight = VALID_LEVEL_WEIGHT.get(valid_level, 1)
+            # Multiplicative score: similarity * validation_weight
+            score = sim * valid_weight
+            scored_entries.append((score, sim, full_entry))
     
-    # Sort by similarity first, then by validation priority for ties
-    scored_entries.sort(key=lambda x: (x[0], x[1]), reverse=True)
+    # Sort by multiplicative score (descending)
+    scored_entries.sort(key=lambda x: x[0], reverse=True)
     
     # Step 3: Take top_k results
     top_results = []
-    for sim, valid_priority, entry in scored_entries[:top_k]:
+    for score, sim, entry in scored_entries[:top_k]:
         result = {
+            "score": float(score),  # Multiplicative score (similarity * validation_weight)
             "similarity_score": float(sim),
             "issue": entry.get("issue_text", ""),
             "learning": entry.get("learning_text", ""),
@@ -266,8 +199,6 @@ def help_tool(
     
     return {
         "query_issue": issue,
-        "goal_phase": goal_phase,
-        "inferred_phase": inferred_phase,
         "results": top_results
     }
 
@@ -290,14 +221,13 @@ def format_help_response(response: Dict[str, Any]) -> str:
     
     lines = [
         f"Help for issue: \"{response['query_issue']}\"",
-        f"Goal Phase: {response['goal_phase']}",
         "\nRelevant learnings from past experiences:"
     ]
     
     for i, result in enumerate(response["results"], 1):
         lines.append(f"\n{i}. Similar Issue: {result['issue']}")
         lines.append(f"   Learning: {result['learning']}")
-        lines.append(f"   (Validation: {result['valid_level']}, Similarity: {result['similarity_score']:.2f})")
+        lines.append(f"   (Validation: {result['valid_level']}, Score: {result.get('score', 0):.2f}, Similarity: {result['similarity_score']:.2f})")
     
     return "\n".join(lines)
 
@@ -319,7 +249,7 @@ def save_as_csv(data: Dict[str, Any], output_path: Path):
         all_keys.update(entry.keys())
     
     # Define column order with priority columns first
-    priority_cols = ["similarity_score", "valid_level", "issue", "learning"]
+    priority_cols = ["score", "similarity_score", "valid_level", "issue", "learning"]
     sorted_priority_cols = [c for c in priority_cols if c in all_keys]
     other_cols = [c for c in sorted(list(all_keys)) if c not in priority_cols]
     
@@ -356,13 +286,6 @@ if __name__ == "__main__":
         help="Path to the knowledge_base.json file"
     )
     parser.add_argument(
-        "--goal-phase",
-        type=str,
-        default=None,
-        choices=GOAL_PHASES,
-        help="Current goal phase (if not provided, will infer from issue)"
-    )
-    parser.add_argument(
         "--top-k",
         type=int,
         default=3,
@@ -392,7 +315,6 @@ if __name__ == "__main__":
     result = help_tool(
         issue=args.issue,
         memory_bank_path=args.memory_bank,
-        goal_phase=args.goal_phase,
         top_k=args.top_k
     )
     

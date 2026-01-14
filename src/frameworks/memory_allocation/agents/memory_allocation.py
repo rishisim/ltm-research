@@ -125,7 +125,8 @@ class MemoryAllocationReflexion(ReAct):
             "task_desc": task_desc,
             "trial_num": trial_num,
             "steps": steps,
-            "success": success
+            "success": success,
+            "step_num": len(steps)
         }
         
         trajectories_path = os.path.join(log_dir, "trajectories.json")

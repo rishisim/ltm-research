@@ -284,6 +284,22 @@ def _build_knowledge_retrieval_base(
                     "step_range": kb_entry.get("evidence_step_range", [])
                 }
             
+            # Build nested refs with prefixed keys and no duplicated flat fields
+            issue_text = issue_ref.get("text", "") or kb_entry.get("issue_text", "")
+
+            prefixed_issue_ref = {
+                "issue_text": issue_text,
+                "issue_task_id": issue_ref.get("task_id", ""),
+                "issue_trial_num": issue_ref.get("trial_num", ""),
+                "issue_step_range": issue_ref.get("step_range", []),
+            }
+
+            prefixed_evidence_ref = {
+                "evidence_task_id": evidence_ref.get("task_id", ""),
+                "evidence_trial_num": evidence_ref.get("trial_num", ""),
+                "evidence_step_range": evidence_ref.get("step_range", []),
+            }
+
             row = {
                 # From left table (mem_learning_counts)
                 "task_desc": task_desc,
@@ -291,19 +307,14 @@ def _build_knowledge_retrieval_base(
                 "learning_count": learning_count,
                 "kb_index": kb_index,
                 # From right table (knowledge_base)
-                "issue_text": kb_entry.get("issue_text", ""),
                 "learning_text": kb_entry.get("learning_text", ""),
                 "valid_level": kb_entry.get("valid_level", "CANDIDATE"),
                 "obj_type": kb_entry.get("obj_type", ""),
                 "verbs": kb_entry.get("verbs", ""),
                 "goal_phase": kb_entry.get("goal_phase", ""),
-                # Flatten refs for easier CSV export
-                "issue_task_id": issue_ref.get("task_id", ""),
-                "issue_trial_num": issue_ref.get("trial_num", ""),
-                "issue_step_range": issue_ref.get("step_range", []),
-                "evidence_task_id": evidence_ref.get("task_id", ""),
-                "evidence_trial_num": evidence_ref.get("trial_num", ""),
-                "evidence_step_range": evidence_ref.get("step_range", []),
+                # Nested refs only (prefixed keys)
+                "issue_ref": prefixed_issue_ref,
+                "evidence_ref": prefixed_evidence_ref,
             }
             retrieval_base.append(row)
     
@@ -362,8 +373,12 @@ def _format_selected_learnings(selected_rows: List[Dict[str, Any]]) -> List[Dict
     learnings = []
     
     for row in selected_rows:
+        # Pull issue text from nested ref (new structure), fallback to legacy top-level key
+        nested_issue = (row.get("issue_ref") or {}).get("issue_text", "")
+        issue_text = nested_issue or row.get("issue_text", "")
+
         learning = {
-            "issue": row.get("issue_text", ""),
+            "issue": issue_text,
             "learning": row.get("learning_text", ""),
             "valid_level": row.get("valid_level", ""),
             "goal_phase": row.get("goal_phase", ""),
