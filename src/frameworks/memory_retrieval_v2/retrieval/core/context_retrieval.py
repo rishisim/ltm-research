@@ -151,7 +151,7 @@ def retrieve_context(
     # Step 3.2: Calculate max_learning_count and pick_learning_count
     learning_counts = [task["learning_count"] for task in top_similar_tasks]
     max_learning_count = max(learning_counts)
-    pick_learning_count = math.ceil(1.5 * max_learning_count)
+    pick_learning_count = min(math.ceil(1.5 * max_learning_count), 25)
     
     # Step 3.3 & 3.4: Build knowledge_retrieval_base via left join
     knowledge_base = load_knowledge_base(memory_bank_path)
