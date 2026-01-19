@@ -1,5 +1,5 @@
 import sys
-from typing import List, Tuple, Any
+from typing import List, Tuple, Any, Dict
 from src.core.base import Framework, BaseEnv
 from src.core.history import EnvironmentHistory
 from src.core.llm import get_chat, Model
@@ -9,18 +9,18 @@ class ReAct(Framework):
         self.model = model
         self.to_print = to_print
 
-    def _llm(self, prompt: str, stop: List[str] = ["\n"]) -> str:
+    def _llm(self, prompt: str, stop: List[str] = ["\n"]) -> Tuple[str, Dict[str, int]]:
         try:
             cur_try = 0
             while cur_try < 6:
-                text = get_chat(prompt=prompt, model=self.model, temperature=cur_try * 0.2, stop_strs=stop)
+                text, usage = get_chat(prompt=prompt, model=self.model, temperature=cur_try * 0.2, stop_strs=stop)
                 if text is not None and len(text.strip()) >= 5:
-                    return text
+                    return text, usage
                 cur_try += 1
-            return ""
+            return "", {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
         except Exception as e:
             print(f"LLM Error: {e}")
-            return ""
+            return "", {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
 
     def run(self, env: BaseEnv, base_prompt: str, memory: List[str], start_ob: str = "") -> Tuple[EnvironmentHistory, bool]:
         env_history = EnvironmentHistory(base_prompt, start_ob, memory[-3:] if len(memory) > 3 else memory)

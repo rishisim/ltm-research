@@ -1,0 +1,386 @@
+[
+  {
+    "task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-308/trial_T20190908_222917_366542",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the alarmclock with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "unique_id": "1",
+        "issue": "Repeated attempts to turn on, use, or examine desklamp 1 had no effect.",
+        "learning": "Use the 'use [object]' command to successfully turn on the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "look at alarmclock under the desklamp.",
+        "similarity_score": 0.9227028208774675,
+        "ranking_score": 0.8304325387897208
+      },
+      {
+        "unique_id": "2",
+        "issue": "Directly attempting to 'look at alarmclock under desklamp' failed, even with the lamp on.",
+        "learning": "First, pick up the alarmclock before attempting to look at it under the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "look at alarmclock under the desklamp.",
+        "similarity_score": 0.9227028208774675,
+        "ranking_score": 0.8304325387897208
+      },
+      {
+        "unique_id": "34",
+        "issue": "Failed to take or move the desklamp, indicating it is stationary.",
+        "learning": "If an object is stationary, move the other required object to its location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "unique_id": "35",
+        "issue": "Failed to take pillow from bed because agent was not at its location.",
+        "learning": "Go to the object's location before attempting to take it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "unique_id": "37",
+        "issue": "Attempted to examine pillow without the desklamp present or active.",
+        "learning": "Ensure the desklamp is present and active when attempting to examine an object.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "RECOVER",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "unique_id": "38",
+        "issue": "Failed to examine pillow with desklamp because objects were not co-located.",
+        "learning": "Bring the pillow to the desklamp's location before attempting examination.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "RECOVER",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "unique_id": "40",
+        "issue": "Used 'examine with' or 'use on' commands instead of 'use' for desklamp examination.",
+        "learning": "To examine an object with a desklamp, hold the object and use the desklamp.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "RECOVER",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "unique_id": "27",
+        "issue": "Failed to take desklamp, confirming it is a fixed object.",
+        "learning": "Adapted strategy by moving the movable pencil to the fixed desklamp's location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.7794621670637999,
+        "ranking_score": 0.7794621670637999
+      },
+      {
+        "unique_id": "28",
+        "issue": "Failed to take pencil, initially believed to be fixed.",
+        "learning": "Successfully picked up the pencil, demonstrating it was movable despite prior failures.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.7794621670637999,
+        "ranking_score": 0.7794621670637999
+      },
+      {
+        "unique_id": "29",
+        "issue": "Failed to examine objects due to lack of co-location.",
+        "learning": "Ensured co-location of pencil and desklamp by moving the pencil to the desklamp's location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.7794621670637999,
+        "ranking_score": 0.7794621670637999
+      },
+      {
+        "unique_id": "52",
+        "issue": "Attempted to examine watch with desklamp when desklamp was off.",
+        "learning": "Ensure the desklamp is turned on before attempting to examine an object with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the watch with the desklamp.",
+        "similarity_score": 0.8189119085967494,
+        "ranking_score": 0.7370207177370746
+      },
+      {
+        "unique_id": "53",
+        "issue": "Used 'turn on' command to activate desklamp, which had no effect.",
+        "learning": "Use the 'use' command to activate the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the watch with the desklamp.",
+        "similarity_score": 0.8189119085967494,
+        "ranking_score": 0.7370207177370746
+      },
+      {
+        "unique_id": "30",
+        "issue": "Attempted to 'look at' a location, which had no effect for finding objects.",
+        "learning": "Rely on 'go to' observations to identify objects present at a location.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "unique_id": "31",
+        "issue": "Used 'examine X with Y' command, which was ineffective for the task.",
+        "learning": "To examine an object with a light source, 'use' the light source directly.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "unique_id": "32",
+        "issue": "Attempted to 'take' the desklamp, which was not the correct action for its use.",
+        "learning": "Do not 'take' the desklamp; instead, 'use' it in its fixed location.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "unique_id": "33",
+        "issue": "Failed to examine object with desklamp because it was off.",
+        "learning": "Turn on the desklamp before attempting to examine objects with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "unique_id": "36",
+        "issue": "Used 'turn on' command instead of 'use' to activate the desklamp.",
+        "learning": "Use the 'use' command to turn on the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "unique_id": "39",
+        "issue": "Attempted to use desklamp from an incorrect location (bed).",
+        "learning": "Go to the desklamp's location before attempting to use it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.71571081501047
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find and take an alarmclock, then find and use a desklamp. Then I need to bring the alarmclock to the desklamp and use the desklamp.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2027,
+          "output_tokens": 46,
+          "total_tokens": 2073
+        }
+      },
+      {
+        "step": 2,
+        "action": "think: First I need to find an alarmclock. An alarmclock is more likely to appear in drawer (1-6), desk (1-2), sidetable (1-2), shelf (1-6), bed (1). I can check one by one, starting with drawer 1.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2080,
+          "output_tokens": 63,
+          "total_tokens": 2143
+        }
+      },
+      {
+        "step": 3,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2151,
+          "output_tokens": 5,
+          "total_tokens": 2156
+        }
+      },
+      {
+        "step": 4,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see a creditcard 1, and a pen 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2176,
+          "output_tokens": 4,
+          "total_tokens": 2180
+        }
+      },
+      {
+        "step": 5,
+        "action": "take creditcard 1 from drawer 1",
+        "observation": "You pick up the creditcard 1 from the drawer 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2217,
+          "output_tokens": 9,
+          "total_tokens": 2226
+        }
+      },
+      {
+        "step": 6,
+        "action": "think: I don't need the creditcard. I need to find an alarmclock.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2246,
+          "output_tokens": 19,
+          "total_tokens": 2265
+        }
+      },
+      {
+        "step": 7,
+        "action": "put creditcard 1 in drawer 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2273,
+          "output_tokens": 9,
+          "total_tokens": 2282
+        }
+      },
+      {
+        "step": 8,
+        "action": "think: I need to put the creditcard back into the drawer.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2291,
+          "output_tokens": 14,
+          "total_tokens": 2305
+        }
+      },
+      {
+        "step": 9,
+        "action": "put creditcard 1 in drawer 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2313,
+          "output_tokens": 9,
+          "total_tokens": 2322
+        }
+      },
+      {
+        "step": 10,
+        "action": "think: I need to open the drawer first.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2331,
+          "output_tokens": 10,
+          "total_tokens": 2341
+        }
+      },
+      {
+        "step": 11,
+        "action": "open drawer 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2349,
+          "output_tokens": 4,
+          "total_tokens": 2353
+        }
+      },
+      {
+        "step": 12,
+        "action": "think: The drawer is already open. I should be able to put the creditcard in the drawer.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2362,
+          "output_tokens": 21,
+          "total_tokens": 2383
+        }
+      },
+      {
+        "step": 13,
+        "action": "put creditcard 1 in drawer 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2391,
+          "output_tokens": 9,
+          "total_tokens": 2400
+        }
+      },
+      {
+        "step": 14,
+        "action": "think: I am having trouble putting the creditcard back in the drawer. I should try a different approach. I will leave the creditcard and continue searching for the alarmclock.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2409,
+          "output_tokens": 36,
+          "total_tokens": 2445
+        }
+      },
+      {
+        "step": 15,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. On the drawer 2, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2453,
+          "output_tokens": 5,
+          "total_tokens": 2458
+        }
+      },
+      {
+        "step": 16,
+        "action": "go to drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2481,
+          "output_tokens": 5,
+          "total_tokens": 2486
+        }
+      },
+      {
+        "step": 17,
+        "action": "go to drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2495,
+          "output_tokens": 5,
+          "total_tokens": 2500
+        }
+      }
+    ],
+    "success": false,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 17,
+    "input_tokens": 39045,
+    "output_tokens": 273,
+    "total_tokens": 39318
+  }
+]

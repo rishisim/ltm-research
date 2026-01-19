@@ -16,7 +16,8 @@
       "task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-314/trial_T20190908_042454_725701",
       "trial_num": "1",
       "step_range": "13-13"
-    }
+    },
+    "unique_id": "1"
   },
   {
     "task_desc": "look at alarmclock under the desklamp.",
@@ -35,7 +36,8 @@
       "task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-314/trial_T20190908_042454_725701",
       "trial_num": "1",
       "step_range": "19-19"
-    }
+    },
+    "unique_id": "2"
   },
   {
     "task_desc": "look at book under the desklamp.",
@@ -54,7 +56,8 @@
       "task_id": "look_at_obj_in_light-Book-None-DeskLamp-316",
       "trial_num": "1",
       "step_range": "4-4"
-    }
+    },
+    "unique_id": "3"
   },
   {
     "task_desc": "look at book under the desklamp.",
@@ -73,7 +76,8 @@
       "task_id": "look_at_obj_in_light-Book-None-DeskLamp-316",
       "trial_num": "1",
       "step_range": "5-5"
-    }
+    },
+    "unique_id": "4"
   },
   {
     "task_desc": "examine the book with the desklamp.",
@@ -92,7 +96,8 @@
       "task_id": "look_at_obj_in_light-Book-None-DeskLamp-320/trial_T20190909_152445_177541",
       "trial_num": "1",
       "step_range": "14-14"
-    }
+    },
+    "unique_id": "5"
   },
   {
     "task_desc": "examine the cellphone with the desklamp.",
@@ -111,7 +116,8 @@
       "task_id": "look_at_obj_in_light-CellPhone-None-DeskLamp-316",
       "trial_num": "1",
       "step_range": "7-7"
-    }
+    },
+    "unique_id": "6"
   },
   {
     "task_desc": "look at laptop under the desklamp.",
@@ -130,7 +136,8 @@
       "task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323",
       "trial_num": "2",
       "step_range": "28-29"
-    }
+    },
+    "unique_id": "7"
   },
   {
     "task_desc": "look at laptop under the desklamp.",
@@ -149,7 +156,8 @@
       "task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323",
       "trial_num": "6",
       "step_range": "32-33"
-    }
+    },
+    "unique_id": "8"
   },
   {
     "task_desc": "look at laptop under the desklamp.",
@@ -168,7 +176,8 @@
       "task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323",
       "trial_num": "6",
       "step_range": "19-19"
-    }
+    },
+    "unique_id": "9"
   },
   {
     "task_desc": "examine the mug with the desklamp.",
@@ -187,7 +196,8 @@
       "task_id": "look_at_obj_in_light-Mug-None-DeskLamp-301/trial_T20190908_155916_103990",
       "trial_num": "1",
       "step_range": "5-5"
-    }
+    },
+    "unique_id": "10"
   },
   {
     "task_desc": "examine the mug with the desklamp.",
@@ -206,7 +216,8 @@
       "task_id": "look_at_obj_in_light-Mug-None-DeskLamp-301/trial_T20190908_155916_103990",
       "trial_num": "1",
       "step_range": "9-9"
-    }
+    },
+    "unique_id": "11"
   },
   {
     "task_desc": "examine the mug with the desklamp.",
@@ -225,7 +236,8 @@
       "task_id": "look_at_obj_in_light-Mug-None-DeskLamp-301/trial_T20190908_155916_103990",
       "trial_num": "1",
       "step_range": "14-14"
-    }
+    },
+    "unique_id": "12"
   },
   {
     "task_desc": "examine the newspaper with the desklamp.",
@@ -244,7 +256,8 @@
       "task_id": "look_at_obj_in_light-Newspaper-None-DeskLamp-216",
       "trial_num": "1",
       "step_range": "6-6"
-    }
+    },
+    "unique_id": "13"
   },
   {
     "task_desc": "examine the newspaper with the desklamp.",
@@ -263,7 +276,8 @@
       "task_id": "look_at_obj_in_light-Newspaper-None-DeskLamp-216",
       "trial_num": "2",
       "step_range": "12-12"
-    }
+    },
+    "unique_id": "14"
   },
   {
     "task_desc": "examine the newspaper with the desklamp.",
@@ -282,7 +296,8 @@
       "task_id": "look_at_obj_in_light-Newspaper-None-DeskLamp-216",
       "trial_num": "2",
       "step_range": "12-13"
-    }
+    },
+    "unique_id": "15"
   },
   {
     "task_desc": "examine the newspaper with the desklamp.",
@@ -301,7 +316,8 @@
       "task_id": "look_at_obj_in_light-Newspaper-None-DeskLamp-225/trial_T20190909_085334_452202",
       "trial_num": "1",
       "step_range": "14-15"
-    }
+    },
+    "unique_id": "16"
   },
   {
     "task_desc": "examine the newspaper with the desklamp.",
@@ -320,7 +336,8 @@
       "task_id": "look_at_obj_in_light-Newspaper-None-DeskLamp-225/trial_T20190909_085334_452202",
       "trial_num": "1",
       "step_range": "7-7"
-    }
+    },
+    "unique_id": "17"
   },
   {
     "task_desc": "examine the newspaper with the desklamp.",
@@ -339,7 +356,8 @@
       "task_id": "look_at_obj_in_light-Newspaper-None-DeskLamp-225/trial_T20190909_085334_452202",
       "trial_num": "1",
       "step_range": "12-13"
-    }
+    },
+    "unique_id": "18"
   },
   {
     "task_desc": "examine the pen with the desklamp.",
@@ -358,7 +376,8 @@
       "task_id": "look_at_obj_in_light-Pen-None-DeskLamp-305/trial_T20190907_115849_734053",
       "trial_num": "1",
       "step_range": "12-12"
-    }
+    },
+    "unique_id": "19"
   },
   {
     "task_desc": "examine the pen with the desklamp.",
@@ -377,7 +396,8 @@
       "task_id": "look_at_obj_in_light-Pen-None-DeskLamp-305/trial_T20190907_115849_734053",
       "trial_num": "1",
       "step_range": "17-17"
-    }
+    },
+    "unique_id": "20"
   },
   {
     "task_desc": "examine the pen with the desklamp.",
@@ -396,7 +416,8 @@
       "task_id": "look_at_obj_in_light-Pen-None-DeskLamp-305/trial_T20190907_115849_734053",
       "trial_num": "1",
       "step_range": "14-17"
-    }
+    },
+    "unique_id": "21"
   },
   {
     "task_desc": "examine the pen with the desklamp.",
@@ -415,7 +436,8 @@
       "task_id": "look_at_obj_in_light-Pen-None-DeskLamp-319/trial_T20190908_222409_540184",
       "trial_num": "1",
       "step_range": "33-34"
-    }
+    },
+    "unique_id": "22"
   },
   {
     "task_desc": "examine the pen with the desklamp.",
@@ -434,7 +456,8 @@
       "task_id": "look_at_obj_in_light-Pen-None-DeskLamp-319/trial_T20190908_222409_540184",
       "trial_num": "1",
       "step_range": "39-40"
-    }
+    },
+    "unique_id": "23"
   },
   {
     "task_desc": "look at pencil under the desklamp.",
@@ -453,7 +476,8 @@
       "task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-319/trial_T20190908_135102_644449",
       "trial_num": "1",
       "step_range": "35-35"
-    }
+    },
+    "unique_id": "24"
   },
   {
     "task_desc": "look at pencil under the desklamp.",
@@ -472,7 +496,8 @@
       "task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-319/trial_T20190908_135102_644449",
       "trial_num": "1",
       "step_range": "35-35"
-    }
+    },
+    "unique_id": "25"
   },
   {
     "task_desc": "examine the pencil with the desklamp.",
@@ -491,7 +516,8 @@
       "task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
       "trial_num": "1",
       "step_range": "9-9"
-    }
+    },
+    "unique_id": "26"
   },
   {
     "task_desc": "examine the pencil with the desklamp.",
@@ -510,7 +536,8 @@
       "task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
       "trial_num": "4",
       "step_range": "10-11"
-    }
+    },
+    "unique_id": "27"
   },
   {
     "task_desc": "examine the pencil with the desklamp.",
@@ -529,7 +556,8 @@
       "task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
       "trial_num": "4",
       "step_range": "10-10"
-    }
+    },
+    "unique_id": "28"
   },
   {
     "task_desc": "examine the pencil with the desklamp.",
@@ -548,7 +576,8 @@
       "task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
       "trial_num": "4",
       "step_range": "10-11"
-    }
+    },
+    "unique_id": "29"
   },
   {
     "task_desc": "examine the pillow with the desklamp.",
@@ -567,7 +596,8 @@
       "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-216",
       "trial_num": "1",
       "step_range": "3-3"
-    }
+    },
+    "unique_id": "30"
   },
   {
     "task_desc": "examine the pillow with the desklamp.",
@@ -586,7 +616,8 @@
       "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-216",
       "trial_num": "1",
       "step_range": "11-11"
-    }
+    },
+    "unique_id": "31"
   },
   {
     "task_desc": "examine the pillow with the desklamp.",
@@ -605,7 +636,8 @@
       "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-216",
       "trial_num": "1",
       "step_range": "11-11"
-    }
+    },
+    "unique_id": "32"
   },
   {
     "task_desc": "examine the pillow with the desklamp.",
@@ -624,7 +656,8 @@
       "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-306",
       "trial_num": "1",
       "step_range": "10-10"
-    }
+    },
+    "unique_id": "33"
   },
   {
     "task_desc": "examine the pillow with the desklamp.",
@@ -643,7 +676,8 @@
       "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
       "trial_num": "2",
       "step_range": "10-10"
-    }
+    },
+    "unique_id": "34"
   },
   {
     "task_desc": "examine the pillow with the desklamp.",
@@ -662,7 +696,8 @@
       "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
       "trial_num": "2",
       "step_range": "11-12"
-    }
+    },
+    "unique_id": "35"
   },
   {
     "task_desc": "examine the pillow with the desklamp.",
@@ -681,7 +716,8 @@
       "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
       "trial_num": "1",
       "step_range": "6-6"
-    }
+    },
+    "unique_id": "36"
   },
   {
     "task_desc": "examine the pillow with the desklamp.",
@@ -700,7 +736,8 @@
       "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
       "trial_num": "2",
       "step_range": "15-16"
-    }
+    },
+    "unique_id": "37"
   },
   {
     "task_desc": "examine the pillow with the desklamp.",
@@ -719,7 +756,8 @@
       "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
       "trial_num": "2",
       "step_range": "10-13"
-    }
+    },
+    "unique_id": "38"
   },
   {
     "task_desc": "examine the pillow with the desklamp.",
@@ -738,7 +776,8 @@
       "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
       "trial_num": "1",
       "step_range": "26-26"
-    }
+    },
+    "unique_id": "39"
   },
   {
     "task_desc": "examine the pillow with the desklamp.",
@@ -757,7 +796,8 @@
       "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
       "trial_num": "2",
       "step_range": "15-16"
-    }
+    },
+    "unique_id": "40"
   },
   {
     "task_desc": "look at pillow under the desklamp.",
@@ -776,7 +816,8 @@
       "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-320/trial_T20190906_225859_247598",
       "trial_num": "1",
       "step_range": "7-7"
-    }
+    },
+    "unique_id": "41"
   },
   {
     "task_desc": "look at pillow under the desklamp.",
@@ -795,7 +836,8 @@
       "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-320/trial_T20190906_225859_247598",
       "trial_num": "1",
       "step_range": "10-10"
-    }
+    },
+    "unique_id": "42"
   },
   {
     "task_desc": "look at statue under the desklamp.",
@@ -814,7 +856,8 @@
       "task_id": "look_at_obj_in_light-Statue-None-DeskLamp-304",
       "trial_num": "5",
       "step_range": "25-25"
-    }
+    },
+    "unique_id": "43"
   },
   {
     "task_desc": "look at statue under the desklamp.",
@@ -833,7 +876,8 @@
       "task_id": "look_at_obj_in_light-Statue-None-DeskLamp-304",
       "trial_num": "2",
       "step_range": "10-10"
-    }
+    },
+    "unique_id": "44"
   },
   {
     "task_desc": "look at statue under the desklamp.",
@@ -852,7 +896,8 @@
       "task_id": "look_at_obj_in_light-Statue-None-DeskLamp-304",
       "trial_num": "6",
       "step_range": "11-11"
-    }
+    },
+    "unique_id": "45"
   },
   {
     "task_desc": "look at statue under the desklamp.",
@@ -871,7 +916,8 @@
       "task_id": "look_at_obj_in_light-Statue-None-DeskLamp-304",
       "trial_num": "5",
       "step_range": "14-14"
-    }
+    },
+    "unique_id": "46"
   },
   {
     "task_desc": "look at statue under the desklamp.",
@@ -890,7 +936,8 @@
       "task_id": "look_at_obj_in_light-Statue-None-DeskLamp-304",
       "trial_num": "6",
       "step_range": "10-10"
-    }
+    },
+    "unique_id": "47"
   },
   {
     "task_desc": "look at statue under the desklamp.",
@@ -909,7 +956,8 @@
       "task_id": "look_at_obj_in_light-Statue-None-DeskLamp-304",
       "trial_num": "6",
       "step_range": "11-11"
-    }
+    },
+    "unique_id": "48"
   },
   {
     "task_desc": "examine the tissuebox with the desklamp.",
@@ -928,7 +976,8 @@
       "task_id": "look_at_obj_in_light-TissueBox-None-DeskLamp-328/trial_T20190907_201322_516201",
       "trial_num": "1",
       "step_range": "6-6"
-    }
+    },
+    "unique_id": "49"
   },
   {
     "task_desc": "examine the tissuebox with the desklamp.",
@@ -947,7 +996,8 @@
       "task_id": "look_at_obj_in_light-TissueBox-None-DeskLamp-328/trial_T20190907_201322_516201",
       "trial_num": "1",
       "step_range": "6-6"
-    }
+    },
+    "unique_id": "50"
   },
   {
     "task_desc": "examine the tissuebox with the desklamp.",
@@ -966,7 +1016,8 @@
       "task_id": "look_at_obj_in_light-TissueBox-None-DeskLamp-328/trial_T20190907_201322_516201",
       "trial_num": "1",
       "step_range": "18-18"
-    }
+    },
+    "unique_id": "51"
   },
   {
     "task_desc": "examine the watch with the desklamp.",
@@ -985,7 +1036,8 @@
       "task_id": "look_at_obj_in_light-Watch-None-DeskLamp-205/trial_T20190907_001948_509721",
       "trial_num": "1",
       "step_range": "19-19"
-    }
+    },
+    "unique_id": "52"
   },
   {
     "task_desc": "examine the watch with the desklamp.",
@@ -1004,7 +1056,8 @@
       "task_id": "look_at_obj_in_light-Watch-None-DeskLamp-205/trial_T20190907_001948_509721",
       "trial_num": "1",
       "step_range": "19-19"
-    }
+    },
+    "unique_id": "53"
   },
   {
     "task_desc": "put some book on desk.",
@@ -1023,7 +1076,8 @@
       "task_id": "pick_and_place_simple-Book-None-Desk-304/trial_T20190908_141325_880062",
       "trial_num": "1",
       "step_range": "21-21"
-    }
+    },
+    "unique_id": "54"
   },
   {
     "task_desc": "put some book on desk.",
@@ -1042,7 +1096,8 @@
       "task_id": "pick_and_place_simple-Book-None-Desk-304/trial_T20190908_141325_880062",
       "trial_num": "1",
       "step_range": "21-21"
-    }
+    },
+    "unique_id": "55"
   },
   {
     "task_desc": "put some book on desk.",
@@ -1061,7 +1116,8 @@
       "task_id": "pick_and_place_simple-Book-None-Desk-304/trial_T20190908_141325_880062",
       "trial_num": "1",
       "step_range": "16-16"
-    }
+    },
+    "unique_id": "56"
   },
   {
     "task_desc": "put some book on desk.",
@@ -1080,7 +1136,8 @@
       "task_id": "pick_and_place_simple-Book-None-Desk-304/trial_T20190908_141325_880062",
       "trial_num": "1",
       "step_range": "21-21"
-    }
+    },
+    "unique_id": "57"
   },
   {
     "task_desc": "put some book on desk.",
@@ -1099,7 +1156,8 @@
       "task_id": "pick_and_place_simple-Book-None-Desk-304/trial_T20190908_141325_880062",
       "trial_num": "1",
       "step_range": "16-16"
-    }
+    },
+    "unique_id": "58"
   },
   {
     "task_desc": "put some book on desk.",
@@ -1118,7 +1176,8 @@
       "task_id": "pick_and_place_simple-Book-None-Desk-304/trial_T20190908_141325_880062",
       "trial_num": "1",
       "step_range": "21-21"
-    }
+    },
+    "unique_id": "59"
   },
   {
     "task_desc": "put some book on desk.",
@@ -1137,7 +1196,8 @@
       "task_id": "pick_and_place_simple-Book-None-Desk-304/trial_T20190908_141325_880062",
       "trial_num": "1",
       "step_range": "21-21"
-    }
+    },
+    "unique_id": "60"
   },
   {
     "task_desc": "put some book on desk.",
@@ -1156,7 +1216,8 @@
       "task_id": "pick_and_place_simple-Book-None-Desk-313/trial_T20190909_140547_719284",
       "trial_num": "1",
       "step_range": "8-16"
-    }
+    },
+    "unique_id": "61"
   },
   {
     "task_desc": "put some book on desk.",
@@ -1175,7 +1236,8 @@
       "task_id": "pick_and_place_simple-Book-None-Desk-313/trial_T20190909_140547_719284",
       "trial_num": "1",
       "step_range": "7-16"
-    }
+    },
+    "unique_id": "62"
   },
   {
     "task_desc": "put some book on sofa.",
@@ -1194,7 +1256,8 @@
       "task_id": "pick_and_place_simple-Book-None-Sofa-202/trial_T20190907_043652_096323",
       "trial_num": "1",
       "step_range": "4-4"
-    }
+    },
+    "unique_id": "63"
   },
   {
     "task_desc": "put a candle in toilet.",
@@ -1213,7 +1276,8 @@
       "task_id": "pick_and_place_simple-Candle-None-Toilet-409/trial_T20190908_142251_407168",
       "trial_num": "1",
       "step_range": "4-9"
-    }
+    },
+    "unique_id": "64"
   },
   {
     "task_desc": "put a candle in toilet.",
@@ -1232,7 +1296,8 @@
       "task_id": "pick_and_place_simple-Candle-None-Toilet-409/trial_T20190908_142251_407168",
       "trial_num": "1",
       "step_range": "8-9"
-    }
+    },
+    "unique_id": "65"
   },
   {
     "task_desc": "put some laptop on ottoman.",
@@ -1251,7 +1316,8 @@
       "task_id": "pick_and_place_simple-Laptop-None-Ottoman-203/trial_T20190908_110713_350931",
       "trial_num": "1",
       "step_range": "22-22"
-    }
+    },
+    "unique_id": "66"
   },
   {
     "task_desc": "put some laptop on ottoman.",
@@ -1270,7 +1336,8 @@
       "task_id": "pick_and_place_simple-Laptop-None-Ottoman-203/trial_T20190908_110713_350931",
       "trial_num": "1",
       "step_range": "6-19"
-    }
+    },
+    "unique_id": "67"
   },
   {
     "task_desc": "put some pencil on shelf.",
@@ -1289,7 +1356,8 @@
       "task_id": "pick_and_place_simple-Pencil-None-Shelf-313/trial_T20190908_182722_927182",
       "trial_num": "1",
       "step_range": "3-8"
-    }
+    },
+    "unique_id": "68"
   },
   {
     "task_desc": "put some pencil on shelf.",
@@ -1308,7 +1376,8 @@
       "task_id": "pick_and_place_simple-Pencil-None-Shelf-313/trial_T20190908_182722_927182",
       "trial_num": "1",
       "step_range": "5-8"
-    }
+    },
+    "unique_id": "69"
   },
   {
     "task_desc": "put a pencil in sidetable.",
@@ -1327,7 +1396,8 @@
       "task_id": "pick_and_place_simple-Pencil-None-SideTable-309",
       "trial_num": "1",
       "step_range": "6-6"
-    }
+    },
+    "unique_id": "70"
   },
   {
     "task_desc": "put a pencil in sidetable.",
@@ -1346,7 +1416,8 @@
       "task_id": "pick_and_place_simple-Pencil-None-SideTable-309",
       "trial_num": "1",
       "step_range": "5-5"
-    }
+    },
+    "unique_id": "71"
   },
   {
     "task_desc": "put a peppershaker in drawer.",
@@ -1365,7 +1436,8 @@
       "task_id": "pick_and_place_simple-PepperShaker-None-Drawer-5",
       "trial_num": "1",
       "step_range": "6-6"
-    }
+    },
+    "unique_id": "72"
   },
   {
     "task_desc": "put a statue in coffeetable.",
@@ -1384,7 +1456,8 @@
       "task_id": "pick_and_place_simple-Statue-None-CoffeeTable-230/trial_T20190909_145138_877153",
       "trial_num": "1",
       "step_range": "4-4"
-    }
+    },
+    "unique_id": "73"
   },
   {
     "task_desc": "put some tissuebox on toilet.",
@@ -1403,7 +1476,8 @@
       "task_id": "pick_and_place_simple-TissueBox-None-Toilet-402/trial_T20190908_060020_023543",
       "trial_num": "1",
       "step_range": "4-12"
-    }
+    },
+    "unique_id": "74"
   },
   {
     "task_desc": "put some tissuebox on toilet.",
@@ -1422,7 +1496,8 @@
       "task_id": "pick_and_place_simple-TissueBox-None-Toilet-402/trial_T20190908_060020_023543",
       "trial_num": "1",
       "step_range": "14-14"
-    }
+    },
+    "unique_id": "75"
   },
   {
     "task_desc": "put some toiletpaper on toiletpaperhanger.",
@@ -1441,7 +1516,8 @@
       "task_id": "pick_and_place_simple-ToiletPaper-None-ToiletPaperHanger-409",
       "trial_num": "1",
       "step_range": "4-8"
-    }
+    },
+    "unique_id": "76"
   },
   {
     "task_desc": "put some toiletpaper on toiletpaperhanger.",
@@ -1460,7 +1536,8 @@
       "task_id": "pick_and_place_simple-ToiletPaper-None-ToiletPaperHanger-409",
       "trial_num": "1",
       "step_range": "8-8"
-    }
+    },
+    "unique_id": "77"
   },
   {
     "task_desc": "put a tomato in microwave.",
@@ -1479,7 +1556,8 @@
       "task_id": "pick_and_place_simple-Tomato-None-Microwave-5/trial_T20190918_171755_707602",
       "trial_num": "1",
       "step_range": "3-3"
-    }
+    },
+    "unique_id": "78"
   },
   {
     "task_desc": "put a tomato in microwave.",
@@ -1498,7 +1576,8 @@
       "task_id": "pick_and_place_simple-Tomato-None-Microwave-5/trial_T20190918_171755_707602",
       "trial_num": "1",
       "step_range": "6-6"
-    }
+    },
+    "unique_id": "79"
   },
   {
     "task_desc": "put some winebottle on diningtable.",
@@ -1517,7 +1596,8 @@
       "task_id": "pick_and_place_simple-WineBottle-None-DiningTable-15",
       "trial_num": "1",
       "step_range": "32-32"
-    }
+    },
+    "unique_id": "80"
   },
   {
     "task_desc": "put some winebottle on diningtable.",
@@ -1536,7 +1616,8 @@
       "task_id": "pick_and_place_simple-WineBottle-None-DiningTable-15",
       "trial_num": "1",
       "step_range": "4-28"
-    }
+    },
+    "unique_id": "81"
   },
   {
     "task_desc": "clean some apple and put it in fridge.",
@@ -1555,7 +1636,8 @@
       "task_id": "pick_clean_then_place_in_recep-Apple-None-Fridge-27/trial_T20190906_220837_406682",
       "trial_num": "3",
       "step_range": "19-19"
-    }
+    },
+    "unique_id": "82"
   },
   {
     "task_desc": "clean some apple and put it in fridge.",
@@ -1574,7 +1656,8 @@
       "task_id": "pick_clean_then_place_in_recep-Apple-None-Fridge-27/trial_T20190906_220837_406682",
       "trial_num": "2",
       "step_range": "11-11"
-    }
+    },
+    "unique_id": "83"
   },
   {
     "task_desc": "clean some apple and put it in fridge.",
@@ -1593,7 +1676,8 @@
       "task_id": "pick_clean_then_place_in_recep-Apple-None-Fridge-27/trial_T20190906_220837_406682",
       "trial_num": "2",
       "step_range": "13-13"
-    }
+    },
+    "unique_id": "84"
   },
   {
     "task_desc": "clean some apple and put it in fridge.",
@@ -1612,7 +1696,8 @@
       "task_id": "pick_clean_then_place_in_recep-Apple-None-Fridge-27/trial_T20190906_220837_406682",
       "trial_num": "2",
       "step_range": "16-16"
-    }
+    },
+    "unique_id": "85"
   },
   {
     "task_desc": "clean some apple and put it in fridge.",
@@ -1631,7 +1716,8 @@
       "task_id": "pick_clean_then_place_in_recep-Apple-None-Fridge-27/trial_T20190906_220837_406682",
       "trial_num": "2",
       "step_range": "27-27"
-    }
+    },
+    "unique_id": "86"
   },
   {
     "task_desc": "clean some apple and put it in fridge.",
@@ -1650,7 +1736,8 @@
       "task_id": "pick_clean_then_place_in_recep-Apple-None-Fridge-27/trial_T20190906_220837_406682",
       "trial_num": "2",
       "step_range": "32-32"
-    }
+    },
+    "unique_id": "87"
   },
   {
     "task_desc": "clean some apple and put it in fridge.",
@@ -1669,7 +1756,8 @@
       "task_id": "pick_clean_then_place_in_recep-Apple-None-Fridge-27/trial_T20190906_220837_406682",
       "trial_num": "3",
       "step_range": "6-7"
-    }
+    },
+    "unique_id": "88"
   },
   {
     "task_desc": "clean some butterknife and put it in drawer.",
@@ -1688,7 +1776,8 @@
       "task_id": "pick_clean_then_place_in_recep-ButterKnife-None-Drawer-8/trial_T20190909_124509_288754",
       "trial_num": "1",
       "step_range": "9-10"
-    }
+    },
+    "unique_id": "89"
   },
   {
     "task_desc": "clean some butterknife and put it in drawer.",
@@ -1707,7 +1796,8 @@
       "task_id": "pick_clean_then_place_in_recep-ButterKnife-None-Drawer-8/trial_T20190909_124509_288754",
       "trial_num": "1",
       "step_range": "14-14"
-    }
+    },
+    "unique_id": "90"
   },
   {
     "task_desc": "clean some butterknife and put it in drawer.",
@@ -1726,7 +1816,8 @@
       "task_id": "pick_clean_then_place_in_recep-ButterKnife-None-Drawer-8/trial_T20190909_124509_288754",
       "trial_num": "1",
       "step_range": "15-15"
-    }
+    },
+    "unique_id": "91"
   },
   {
     "task_desc": "clean some butterknife and put it in drawer.",
@@ -1745,7 +1836,8 @@
       "task_id": "pick_clean_then_place_in_recep-ButterKnife-None-Drawer-8/trial_T20190909_124509_288754",
       "trial_num": "1",
       "step_range": "18-18"
-    }
+    },
+    "unique_id": "92"
   },
   {
     "task_desc": "clean some dishsponge and put it in toilet.",
@@ -1764,7 +1856,8 @@
       "task_id": "pick_clean_then_place_in_recep-DishSponge-None-Toilet-427",
       "trial_num": "2",
       "step_range": "1-23"
-    }
+    },
+    "unique_id": "93"
   },
   {
     "task_desc": "clean some dishsponge and put it in toilet.",
@@ -1783,7 +1876,8 @@
       "task_id": "pick_clean_then_place_in_recep-DishSponge-None-Toilet-427",
       "trial_num": "2",
       "step_range": "1-1"
-    }
+    },
+    "unique_id": "94"
   },
   {
     "task_desc": "clean some dishsponge and put it in toilet.",
@@ -1802,7 +1896,8 @@
       "task_id": "pick_clean_then_place_in_recep-DishSponge-None-Toilet-427",
       "trial_num": "2",
       "step_range": "27-28"
-    }
+    },
+    "unique_id": "95"
   },
   {
     "task_desc": "clean some dishsponge and put it in toilet.",
@@ -1821,7 +1916,8 @@
       "task_id": "pick_clean_then_place_in_recep-DishSponge-None-Toilet-427",
       "trial_num": "2",
       "step_range": "33-33"
-    }
+    },
+    "unique_id": "96"
   },
   {
     "task_desc": "put a clean egg in sidetable.",
@@ -1840,7 +1936,8 @@
       "task_id": "pick_clean_then_place_in_recep-Egg-None-SideTable-21/trial_T20190908_033957_288599",
       "trial_num": "1",
       "step_range": "10-11"
-    }
+    },
+    "unique_id": "97"
   },
   {
     "task_desc": "put a clean egg in sidetable.",
@@ -1859,7 +1956,8 @@
       "task_id": "pick_clean_then_place_in_recep-Egg-None-SideTable-21/trial_T20190908_033957_288599",
       "trial_num": "1",
       "step_range": "15-15"
-    }
+    },
+    "unique_id": "98"
   },
   {
     "task_desc": "put a clean kettle in stoveburner.",
@@ -1878,7 +1976,8 @@
       "task_id": "pick_clean_then_place_in_recep-Kettle-None-StoveBurner-1/trial_T20190908_172105_948396",
       "trial_num": "5",
       "step_range": "38-38"
-    }
+    },
+    "unique_id": "99"
   },
   {
     "task_desc": "put a clean kettle in stoveburner.",
@@ -1897,7 +1996,8 @@
       "task_id": "pick_clean_then_place_in_recep-Kettle-None-StoveBurner-1/trial_T20190908_172105_948396",
       "trial_num": "2",
       "step_range": "9-9"
-    }
+    },
+    "unique_id": "100"
   },
   {
     "task_desc": "put a clean kettle in stoveburner.",
@@ -1916,7 +2016,8 @@
       "task_id": "pick_clean_then_place_in_recep-Kettle-None-StoveBurner-1/trial_T20190908_172105_948396",
       "trial_num": "3",
       "step_range": "15-15"
-    }
+    },
+    "unique_id": "101"
   },
   {
     "task_desc": "put a clean kettle in stoveburner.",
@@ -1935,7 +2036,8 @@
       "task_id": "pick_clean_then_place_in_recep-Kettle-None-StoveBurner-1/trial_T20190908_172105_948396",
       "trial_num": "3",
       "step_range": "33-33"
-    }
+    },
+    "unique_id": "102"
   },
   {
     "task_desc": "put a clean kettle in stoveburner.",
@@ -1954,7 +2056,8 @@
       "task_id": "pick_clean_then_place_in_recep-Kettle-None-StoveBurner-1/trial_T20190908_172105_948396",
       "trial_num": "3",
       "step_range": "36-36"
-    }
+    },
+    "unique_id": "103"
   },
   {
     "task_desc": "put a clean kettle in stoveburner.",
@@ -1973,7 +2076,8 @@
       "task_id": "pick_clean_then_place_in_recep-Kettle-None-StoveBurner-1/trial_T20190908_172105_948396",
       "trial_num": "5",
       "step_range": "17-17"
-    }
+    },
+    "unique_id": "104"
   },
   {
     "task_desc": "put a clean ladle in countertop.",
@@ -1992,7 +2096,8 @@
       "task_id": "pick_clean_then_place_in_recep-Ladle-None-CounterTop-20/trial_T20190907_130836_804995",
       "trial_num": "1",
       "step_range": "11-11"
-    }
+    },
+    "unique_id": "105"
   },
   {
     "task_desc": "put a clean ladle in countertop.",
@@ -2011,7 +2116,8 @@
       "task_id": "pick_clean_then_place_in_recep-Ladle-None-CounterTop-8",
       "trial_num": "6",
       "step_range": "45-46"
-    }
+    },
+    "unique_id": "106"
   },
   {
     "task_desc": "put a clean ladle in countertop.",
@@ -2030,7 +2136,8 @@
       "task_id": "pick_clean_then_place_in_recep-Ladle-None-CounterTop-8",
       "trial_num": "2",
       "step_range": "39-39"
-    }
+    },
+    "unique_id": "107"
   },
   {
     "task_desc": "put a clean ladle in countertop.",
@@ -2049,7 +2156,8 @@
       "task_id": "pick_clean_then_place_in_recep-Ladle-None-CounterTop-8",
       "trial_num": "5",
       "step_range": "28-28"
-    }
+    },
+    "unique_id": "108"
   },
   {
     "task_desc": "clean some lettuce and put it in countertop.",
@@ -2068,7 +2176,8 @@
       "task_id": "pick_clean_then_place_in_recep-Lettuce-None-CounterTop-13",
       "trial_num": "1",
       "step_range": "4-4"
-    }
+    },
+    "unique_id": "109"
   },
   {
     "task_desc": "clean some lettuce and put it in countertop.",
@@ -2087,7 +2196,8 @@
       "task_id": "pick_clean_then_place_in_recep-Lettuce-None-CounterTop-13",
       "trial_num": "1",
       "step_range": "11-12"
-    }
+    },
+    "unique_id": "110"
   },
   {
     "task_desc": "clean some lettuce and put it in countertop.",
@@ -2106,7 +2216,8 @@
       "task_id": "pick_clean_then_place_in_recep-Lettuce-None-CounterTop-13",
       "trial_num": "1",
       "step_range": "17-17"
-    }
+    },
+    "unique_id": "111"
   },
   {
     "task_desc": "clean some lettuce and put it in diningtable.",
@@ -2125,7 +2236,8 @@
       "task_id": "pick_clean_then_place_in_recep-Lettuce-None-DiningTable-20",
       "trial_num": "1",
       "step_range": "3-3"
-    }
+    },
+    "unique_id": "112"
   },
   {
     "task_desc": "clean some lettuce and put it in diningtable.",
@@ -2144,7 +2256,8 @@
       "task_id": "pick_clean_then_place_in_recep-Lettuce-None-DiningTable-20",
       "trial_num": "1",
       "step_range": "7-8"
-    }
+    },
+    "unique_id": "113"
   },
   {
     "task_desc": "clean some lettuce and put it in diningtable.",
@@ -2163,7 +2276,8 @@
       "task_id": "pick_clean_then_place_in_recep-Lettuce-None-DiningTable-20",
       "trial_num": "1",
       "step_range": "11-11"
-    }
+    },
+    "unique_id": "114"
   },
   {
     "task_desc": "clean some lettuce and put it in diningtable.",
@@ -2182,7 +2296,8 @@
       "task_id": "pick_clean_then_place_in_recep-Lettuce-None-DiningTable-20",
       "trial_num": "1",
       "step_range": "13-13"
-    }
+    },
+    "unique_id": "115"
   },
   {
     "task_desc": "clean some mug and put it in coffeemachine.",
@@ -2201,7 +2316,8 @@
       "task_id": "pick_clean_then_place_in_recep-Mug-None-CoffeeMachine-1",
       "trial_num": "1",
       "step_range": "8-9"
-    }
+    },
+    "unique_id": "116"
   },
   {
     "task_desc": "clean some mug and put it in coffeemachine.",
@@ -2220,7 +2336,8 @@
       "task_id": "pick_clean_then_place_in_recep-Mug-None-CoffeeMachine-1",
       "trial_num": "1",
       "step_range": "12-14"
-    }
+    },
+    "unique_id": "117"
   },
   {
     "task_desc": "clean some mug and put it in coffeemachine.",
@@ -2239,7 +2356,8 @@
       "task_id": "pick_clean_then_place_in_recep-Mug-None-CoffeeMachine-1",
       "trial_num": "1",
       "step_range": "15-15"
-    }
+    },
+    "unique_id": "118"
   },
   {
     "task_desc": "put a clean mug in coffeemachine.",
@@ -2258,7 +2376,8 @@
       "task_id": "pick_clean_then_place_in_recep-Mug-None-CoffeeMachine-13",
       "trial_num": "1",
       "step_range": "5-5"
-    }
+    },
+    "unique_id": "119"
   },
   {
     "task_desc": "put a clean mug in coffeemachine.",
@@ -2277,7 +2396,8 @@
       "task_id": "pick_clean_then_place_in_recep-Mug-None-CoffeeMachine-13",
       "trial_num": "1",
       "step_range": "14-14"
-    }
+    },
+    "unique_id": "120"
   },
   {
     "task_desc": "clean some mug and put it in coffeemachine.",
@@ -2296,7 +2416,8 @@
       "task_id": "pick_clean_then_place_in_recep-Mug-None-CoffeeMachine-18/trial_T20190909_101110_748348",
       "trial_num": "2",
       "step_range": "1-4"
-    }
+    },
+    "unique_id": "121"
   },
   {
     "task_desc": "clean some pan and put it in fridge.",
@@ -2315,7 +2436,8 @@
       "task_id": "pick_clean_then_place_in_recep-Pan-None-Fridge-13",
       "trial_num": "1",
       "step_range": "13-13"
-    }
+    },
+    "unique_id": "122"
   },
   {
     "task_desc": "clean some pan and put it in fridge.",
@@ -2334,7 +2456,8 @@
       "task_id": "pick_clean_then_place_in_recep-Pan-None-Fridge-13",
       "trial_num": "3",
       "step_range": "32-38"
-    }
+    },
+    "unique_id": "123"
   },
   {
     "task_desc": "clean some pan and put it in fridge.",
@@ -2353,7 +2476,8 @@
       "task_id": "pick_clean_then_place_in_recep-Pan-None-Fridge-13",
       "trial_num": "3",
       "step_range": "43-44"
-    }
+    },
+    "unique_id": "124"
   },
   {
     "task_desc": "clean some pan and put it in fridge.",
@@ -2372,7 +2496,8 @@
       "task_id": "pick_clean_then_place_in_recep-Pan-None-Fridge-13",
       "trial_num": "3",
       "step_range": "49-49"
-    }
+    },
+    "unique_id": "125"
   },
   {
     "task_desc": "clean some plate and put it in shelf.",
@@ -2391,7 +2516,8 @@
       "task_id": "pick_clean_then_place_in_recep-Plate-None-Shelf-7/trial_T20190908_230022_030239",
       "trial_num": "1",
       "step_range": "12-12"
-    }
+    },
+    "unique_id": "126"
   },
   {
     "task_desc": "clean some potato and put it in garbagecan.",
@@ -2410,7 +2536,8 @@
       "task_id": "pick_clean_then_place_in_recep-Potato-None-GarbageCan-19/trial_T20190908_074136_618715",
       "trial_num": "1",
       "step_range": "20-20"
-    }
+    },
+    "unique_id": "127"
   },
   {
     "task_desc": "clean some potato and put it in garbagecan.",
@@ -2429,7 +2556,8 @@
       "task_id": "pick_clean_then_place_in_recep-Potato-None-GarbageCan-19/trial_T20190908_074136_618715",
       "trial_num": "2",
       "step_range": "5-5"
-    }
+    },
+    "unique_id": "128"
   },
   {
     "task_desc": "put a clean soapbar in cabinet.",
@@ -2448,7 +2576,8 @@
       "task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
       "trial_num": "1",
       "step_range": "12-13"
-    }
+    },
+    "unique_id": "129"
   },
   {
     "task_desc": "put a clean soapbar in cabinet.",
@@ -2467,7 +2596,8 @@
       "task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
       "trial_num": "1",
       "step_range": "12-12"
-    }
+    },
+    "unique_id": "130"
   },
   {
     "task_desc": "put a clean soapbar in cabinet.",
@@ -2486,7 +2616,8 @@
       "task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
       "trial_num": "1",
       "step_range": "16-16"
-    }
+    },
+    "unique_id": "131"
   },
   {
     "task_desc": "put a clean soapbar in cabinet.",
@@ -2505,7 +2636,8 @@
       "task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
       "trial_num": "4",
       "step_range": "7-7"
-    }
+    },
+    "unique_id": "132"
   },
   {
     "task_desc": "put a clean soapbar in cabinet.",
@@ -2524,7 +2656,8 @@
       "task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
       "trial_num": "4",
       "step_range": "10-10"
-    }
+    },
+    "unique_id": "133"
   },
   {
     "task_desc": "put a clean soapbar in cabinet.",
@@ -2543,7 +2676,8 @@
       "task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
       "trial_num": "7",
       "step_range": "46-48"
-    }
+    },
+    "unique_id": "134"
   },
   {
     "task_desc": "clean some soapbar and put it in garbagecan.",
@@ -2562,7 +2696,8 @@
       "task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
       "trial_num": "4",
       "step_range": "11-11"
-    }
+    },
+    "unique_id": "135"
   },
   {
     "task_desc": "clean some soapbar and put it in garbagecan.",
@@ -2581,7 +2716,8 @@
       "task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
       "trial_num": "4",
       "step_range": "26-26"
-    }
+    },
+    "unique_id": "136"
   },
   {
     "task_desc": "clean some soapbar and put it in garbagecan.",
@@ -2600,7 +2736,8 @@
       "task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
       "trial_num": "3",
       "step_range": "11-11"
-    }
+    },
+    "unique_id": "137"
   },
   {
     "task_desc": "clean some soapbar and put it in garbagecan.",
@@ -2619,7 +2756,8 @@
       "task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
       "trial_num": "4",
       "step_range": "12-12"
-    }
+    },
+    "unique_id": "138"
   },
   {
     "task_desc": "clean some soapbar and put it in garbagecan.",
@@ -2638,7 +2776,8 @@
       "task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
       "trial_num": "4",
       "step_range": "16-17"
-    }
+    },
+    "unique_id": "139"
   },
   {
     "task_desc": "clean some soapbar and put it in garbagecan.",
@@ -2657,7 +2796,8 @@
       "task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
       "trial_num": "4",
       "step_range": "21-21"
-    }
+    },
+    "unique_id": "140"
   },
   {
     "task_desc": "clean some soapbar and put it in garbagecan.",
@@ -2676,7 +2816,8 @@
       "task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
       "trial_num": "4",
       "step_range": "26-26"
-    }
+    },
+    "unique_id": "141"
   },
   {
     "task_desc": "clean some soapbar and put it in garbagecan.",
@@ -2695,7 +2836,8 @@
       "task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
       "trial_num": "4",
       "step_range": "26-26"
-    }
+    },
+    "unique_id": "142"
   },
   {
     "task_desc": "clean some soapbar and put it in garbagecan.",
@@ -2714,7 +2856,8 @@
       "task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
       "trial_num": "4",
       "step_range": "26-26"
-    }
+    },
+    "unique_id": "143"
   },
   {
     "task_desc": "clean some spatula and put it in diningtable.",
@@ -2733,7 +2876,8 @@
       "task_id": "pick_clean_then_place_in_recep-Spatula-None-DiningTable-24/trial_T20190909_021050_633083",
       "trial_num": "1",
       "step_range": "13-13"
-    }
+    },
+    "unique_id": "144"
   },
   {
     "task_desc": "put a cool apple in garbagecan.",
@@ -2752,7 +2896,8 @@
       "task_id": "pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484",
       "trial_num": "1",
       "step_range": "3-3"
-    }
+    },
+    "unique_id": "145"
   },
   {
     "task_desc": "put a cool apple in garbagecan.",
@@ -2771,7 +2916,8 @@
       "task_id": "pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484",
       "trial_num": "4",
       "step_range": "20-20"
-    }
+    },
+    "unique_id": "146"
   },
   {
     "task_desc": "put a cool apple in garbagecan.",
@@ -2790,7 +2936,8 @@
       "task_id": "pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484",
       "trial_num": "3",
       "step_range": "2-2"
-    }
+    },
+    "unique_id": "147"
   },
   {
     "task_desc": "put a cool apple in garbagecan.",
@@ -2809,7 +2956,8 @@
       "task_id": "pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484",
       "trial_num": "4",
       "step_range": "25-25"
-    }
+    },
+    "unique_id": "148"
   },
   {
     "task_desc": "put a cool apple in garbagecan.",
@@ -2828,7 +2976,8 @@
       "task_id": "pick_cool_then_place_in_recep-Apple-None-GarbageCan-5/trial_T20190908_111836_482484",
       "trial_num": "4",
       "step_range": "29-29"
-    }
+    },
+    "unique_id": "149"
   },
   {
     "task_desc": "cool some bowl and put it in cabinet.",
@@ -2847,7 +2996,8 @@
       "task_id": "pick_cool_then_place_in_recep-Bowl-None-Cabinet-19/trial_T20190908_022130_590876",
       "trial_num": "1",
       "step_range": "6-13"
-    }
+    },
+    "unique_id": "150"
   },
   {
     "task_desc": "cool some bowl and put it in cabinet.",
@@ -2866,7 +3016,8 @@
       "task_id": "pick_cool_then_place_in_recep-Bowl-None-Cabinet-19/trial_T20190908_022130_590876",
       "trial_num": "1",
       "step_range": "18-18"
-    }
+    },
+    "unique_id": "151"
   },
   {
     "task_desc": "put a cool bowl in microwave.",
@@ -2885,7 +3036,8 @@
       "task_id": "pick_cool_then_place_in_recep-Bowl-None-Microwave-7/trial_T20190908_231310_981246",
       "trial_num": "2",
       "step_range": "22-23"
-    }
+    },
+    "unique_id": "152"
   },
   {
     "task_desc": "put a cool bowl in microwave.",
@@ -2904,7 +3056,8 @@
       "task_id": "pick_cool_then_place_in_recep-Bowl-None-Microwave-7/trial_T20190908_231310_981246",
       "trial_num": "2",
       "step_range": "26-26"
-    }
+    },
+    "unique_id": "153"
   },
   {
     "task_desc": "put a cool bowl in microwave.",
@@ -2923,7 +3076,8 @@
       "task_id": "pick_cool_then_place_in_recep-Bowl-None-Microwave-7/trial_T20190908_231310_981246",
       "trial_num": "2",
       "step_range": "31-31"
-    }
+    },
+    "unique_id": "154"
   },
   {
     "task_desc": "cool some bread and put it in countertop.",
@@ -2942,7 +3096,8 @@
       "task_id": "pick_cool_then_place_in_recep-Bread-None-CounterTop-17/trial_T20190907_150853_448489",
       "trial_num": "2",
       "step_range": "2-2"
-    }
+    },
+    "unique_id": "155"
   },
   {
     "task_desc": "cool some bread and put it in countertop.",
@@ -2961,7 +3116,8 @@
       "task_id": "pick_cool_then_place_in_recep-Bread-None-CounterTop-17/trial_T20190907_150853_448489",
       "trial_num": "2",
       "step_range": "1-1"
-    }
+    },
+    "unique_id": "156"
   },
   {
     "task_desc": "cool some bread and put it in countertop.",
@@ -2980,7 +3136,8 @@
       "task_id": "pick_cool_then_place_in_recep-Bread-None-CounterTop-17/trial_T20190907_150853_448489",
       "trial_num": "2",
       "step_range": "6-6"
-    }
+    },
+    "unique_id": "157"
   },
   {
     "task_desc": "cool some bread and put it in countertop.",
@@ -2999,7 +3156,8 @@
       "task_id": "pick_cool_then_place_in_recep-Bread-None-CounterTop-17/trial_T20190907_150853_448489",
       "trial_num": "2",
       "step_range": "14-14"
-    }
+    },
+    "unique_id": "158"
   },
   {
     "task_desc": "put a cool bread in diningtable.",
@@ -3018,7 +3176,8 @@
       "task_id": "pick_cool_then_place_in_recep-Bread-None-DiningTable-15/trial_T20190908_195722_260654",
       "trial_num": "1",
       "step_range": "5-6"
-    }
+    },
+    "unique_id": "159"
   },
   {
     "task_desc": "put a cool bread in diningtable.",
@@ -3037,7 +3196,8 @@
       "task_id": "pick_cool_then_place_in_recep-Bread-None-DiningTable-15/trial_T20190908_195722_260654",
       "trial_num": "1",
       "step_range": "9-11"
-    }
+    },
+    "unique_id": "160"
   },
   {
     "task_desc": "put a cool bread in diningtable.",
@@ -3056,7 +3216,8 @@
       "task_id": "pick_cool_then_place_in_recep-Bread-None-DiningTable-15/trial_T20190908_195722_260654",
       "trial_num": "1",
       "step_range": "15-15"
-    }
+    },
+    "unique_id": "161"
   },
   {
     "task_desc": "put a cool bread in microwave.",
@@ -3075,7 +3236,8 @@
       "task_id": "pick_cool_then_place_in_recep-Bread-None-Microwave-15/trial_T20190907_132900_527945",
       "trial_num": "2",
       "step_range": "8-9"
-    }
+    },
+    "unique_id": "162"
   },
   {
     "task_desc": "put a cool bread in microwave.",
@@ -3094,7 +3256,8 @@
       "task_id": "pick_cool_then_place_in_recep-Bread-None-Microwave-15/trial_T20190907_132900_527945",
       "trial_num": "2",
       "step_range": "11-11"
-    }
+    },
+    "unique_id": "163"
   },
   {
     "task_desc": "put a cool bread in microwave.",
@@ -3113,7 +3276,8 @@
       "task_id": "pick_cool_then_place_in_recep-Bread-None-Microwave-15/trial_T20190907_132900_527945",
       "trial_num": "2",
       "step_range": "16-16"
-    }
+    },
+    "unique_id": "164"
   },
   {
     "task_desc": "put a cool lettuce in countertop.",
@@ -3132,7 +3296,8 @@
       "task_id": "pick_cool_then_place_in_recep-Lettuce-None-CounterTop-24/trial_T20190908_015250_257517",
       "trial_num": "1",
       "step_range": "22-22"
-    }
+    },
+    "unique_id": "165"
   },
   {
     "task_desc": "put a cool lettuce in countertop.",
@@ -3151,7 +3316,8 @@
       "task_id": "pick_cool_then_place_in_recep-Lettuce-None-CounterTop-24/trial_T20190908_015250_257517",
       "trial_num": "1",
       "step_range": "28-28"
-    }
+    },
+    "unique_id": "166"
   },
   {
     "task_desc": "cool some lettuce and put it in diningtable.",
@@ -3170,7 +3336,8 @@
       "task_id": "pick_cool_then_place_in_recep-Lettuce-None-DiningTable-21",
       "trial_num": "1",
       "step_range": "11-13"
-    }
+    },
+    "unique_id": "167"
   },
   {
     "task_desc": "cool some lettuce and put it in diningtable.",
@@ -3189,7 +3356,8 @@
       "task_id": "pick_cool_then_place_in_recep-Lettuce-None-DiningTable-21",
       "trial_num": "1",
       "step_range": "17-18"
-    }
+    },
+    "unique_id": "168"
   },
   {
     "task_desc": "put a cool mug in shelf.",
@@ -3208,7 +3376,8 @@
       "task_id": "pick_cool_then_place_in_recep-Mug-None-Shelf-20",
       "trial_num": "3",
       "step_range": "19-19"
-    }
+    },
+    "unique_id": "169"
   },
   {
     "task_desc": "put a cool mug in shelf.",
@@ -3227,7 +3396,8 @@
       "task_id": "pick_cool_then_place_in_recep-Mug-None-Shelf-20",
       "trial_num": "3",
       "step_range": "38-38"
-    }
+    },
+    "unique_id": "170"
   },
   {
     "task_desc": "put a cool mug in shelf.",
@@ -3246,7 +3416,8 @@
       "task_id": "pick_cool_then_place_in_recep-Mug-None-Shelf-20",
       "trial_num": "3",
       "step_range": "38-38"
-    }
+    },
+    "unique_id": "171"
   },
   {
     "task_desc": "put a cool mug in shelf.",
@@ -3265,7 +3436,8 @@
       "task_id": "pick_cool_then_place_in_recep-Mug-None-Shelf-20",
       "trial_num": "3",
       "step_range": "19-19"
-    }
+    },
+    "unique_id": "172"
   },
   {
     "task_desc": "put a cool mug in shelf.",
@@ -3284,7 +3456,8 @@
       "task_id": "pick_cool_then_place_in_recep-Mug-None-Shelf-20",
       "trial_num": "3",
       "step_range": "41-41"
-    }
+    },
+    "unique_id": "173"
   },
   {
     "task_desc": "put a cool mug in shelf.",
@@ -3303,7 +3476,8 @@
       "task_id": "pick_cool_then_place_in_recep-Mug-None-Shelf-20",
       "trial_num": "3",
       "step_range": "45-45"
-    }
+    },
+    "unique_id": "174"
   },
   {
     "task_desc": "cool some pan and put it in diningtable.",
@@ -3322,7 +3496,8 @@
       "task_id": "pick_cool_then_place_in_recep-Pan-None-DiningTable-11",
       "trial_num": "2",
       "step_range": "1-3"
-    }
+    },
+    "unique_id": "175"
   },
   {
     "task_desc": "cool some pan and put it in diningtable.",
@@ -3341,7 +3516,8 @@
       "task_id": "pick_cool_then_place_in_recep-Pan-None-DiningTable-11",
       "trial_num": "2",
       "step_range": "8-8"
-    }
+    },
+    "unique_id": "176"
   },
   {
     "task_desc": "cool some pan and put it in diningtable.",
@@ -3360,7 +3536,8 @@
       "task_id": "pick_cool_then_place_in_recep-Pan-None-DiningTable-11",
       "trial_num": "2",
       "step_range": "12-13"
-    }
+    },
+    "unique_id": "177"
   },
   {
     "task_desc": "cool some pan and put it in diningtable.",
@@ -3379,7 +3556,8 @@
       "task_id": "pick_cool_then_place_in_recep-Pan-None-DiningTable-11",
       "trial_num": "7",
       "step_range": "28-28"
-    }
+    },
+    "unique_id": "178"
   },
   {
     "task_desc": "cool some pan and put it in diningtable.",
@@ -3398,7 +3576,8 @@
       "task_id": "pick_cool_then_place_in_recep-Pan-None-DiningTable-11",
       "trial_num": "6",
       "step_range": "4-4"
-    }
+    },
+    "unique_id": "179"
   },
   {
     "task_desc": "cool some pan and put it in diningtable.",
@@ -3417,7 +3596,8 @@
       "task_id": "pick_cool_then_place_in_recep-Pan-None-DiningTable-11",
       "trial_num": "7",
       "step_range": "12-12"
-    }
+    },
+    "unique_id": "180"
   },
   {
     "task_desc": "cool some pan and put it in diningtable.",
@@ -3436,7 +3616,8 @@
       "task_id": "N/A",
       "trial_num": "-1",
       "step_range": "-1--1"
-    }
+    },
+    "unique_id": "181"
   },
   {
     "task_desc": "",
@@ -3455,7 +3636,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "182"
   },
   {
     "task_desc": "cool some plate and put it in cabinet.",
@@ -3474,7 +3656,8 @@
       "task_id": "pick_cool_then_place_in_recep-Plate-None-Cabinet-27/trial_T20190906_173250_466409",
       "trial_num": "1",
       "step_range": "18-18"
-    }
+    },
+    "unique_id": "183"
   },
   {
     "task_desc": "cool some plate and put it in cabinet.",
@@ -3493,7 +3676,8 @@
       "task_id": "pick_cool_then_place_in_recep-Plate-None-Cabinet-27/trial_T20190906_173250_466409",
       "trial_num": "1",
       "step_range": "24-24"
-    }
+    },
+    "unique_id": "184"
   },
   {
     "task_desc": "cool some plate and put it in cabinet.",
@@ -3512,7 +3696,8 @@
       "task_id": "pick_cool_then_place_in_recep-Plate-None-Cabinet-27/trial_T20190906_173250_466409",
       "trial_num": "1",
       "step_range": "22-23"
-    }
+    },
+    "unique_id": "185"
   },
   {
     "task_desc": "cool some plate and put it in cabinet.",
@@ -3531,7 +3716,8 @@
       "task_id": "pick_cool_then_place_in_recep-Plate-None-Cabinet-27/trial_T20190906_173250_466409",
       "trial_num": "1",
       "step_range": "26-27"
-    }
+    },
+    "unique_id": "186"
   },
   {
     "task_desc": "cool some plate and put it in cabinet.",
@@ -3550,7 +3736,8 @@
       "task_id": "pick_cool_then_place_in_recep-Plate-None-Cabinet-7",
       "trial_num": "2",
       "step_range": "2-3"
-    }
+    },
+    "unique_id": "187"
   },
   {
     "task_desc": "cool some plate and put it in cabinet.",
@@ -3569,7 +3756,8 @@
       "task_id": "pick_cool_then_place_in_recep-Plate-None-Cabinet-7",
       "trial_num": "2",
       "step_range": "3-3"
-    }
+    },
+    "unique_id": "188"
   },
   {
     "task_desc": "cool some plate and put it in cabinet.",
@@ -3588,7 +3776,8 @@
       "task_id": "pick_cool_then_place_in_recep-Plate-None-Cabinet-7",
       "trial_num": "2",
       "step_range": "30-31"
-    }
+    },
+    "unique_id": "189"
   },
   {
     "task_desc": "cool some pot and put it in diningtable.",
@@ -3607,7 +3796,8 @@
       "task_id": "pick_cool_then_place_in_recep-Pot-None-DiningTable-24",
       "trial_num": "1",
       "step_range": "7-7"
-    }
+    },
+    "unique_id": "190"
   },
   {
     "task_desc": "cool some tomato and put it in diningtable.",
@@ -3626,7 +3816,8 @@
       "task_id": "pick_cool_then_place_in_recep-Tomato-None-DiningTable-11/trial_T20190908_220012_692282",
       "trial_num": "1",
       "step_range": "3-3"
-    }
+    },
+    "unique_id": "191"
   },
   {
     "task_desc": "cool some tomato and put it in diningtable.",
@@ -3645,7 +3836,8 @@
       "task_id": "pick_cool_then_place_in_recep-Tomato-None-DiningTable-11/trial_T20190908_220012_692282",
       "trial_num": "1",
       "step_range": "10-10"
-    }
+    },
+    "unique_id": "192"
   },
   {
     "task_desc": "put a cool tomato in garbagecan.",
@@ -3664,7 +3856,8 @@
       "task_id": "pick_cool_then_place_in_recep-Tomato-None-GarbageCan-15/trial_T20190907_082803_736076",
       "trial_num": "1",
       "step_range": "16-17"
-    }
+    },
+    "unique_id": "193"
   },
   {
     "task_desc": "put a cool tomato in garbagecan.",
@@ -3683,7 +3876,8 @@
       "task_id": "pick_cool_then_place_in_recep-Tomato-None-GarbageCan-15/trial_T20190907_082803_736076",
       "trial_num": "1",
       "step_range": "11-11"
-    }
+    },
+    "unique_id": "194"
   },
   {
     "task_desc": "cool some tomato and put it in garbagecan.",
@@ -3702,7 +3896,8 @@
       "task_id": "pick_cool_then_place_in_recep-Tomato-None-GarbageCan-5",
       "trial_num": "7",
       "step_range": "9-9"
-    }
+    },
+    "unique_id": "195"
   },
   {
     "task_desc": "cool some tomato and put it in garbagecan.",
@@ -3721,7 +3916,8 @@
       "task_id": "pick_cool_then_place_in_recep-Tomato-None-GarbageCan-5",
       "trial_num": "7",
       "step_range": "44-47"
-    }
+    },
+    "unique_id": "196"
   },
   {
     "task_desc": "cool some tomato and put it in garbagecan.",
@@ -3740,7 +3936,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "197"
   },
   {
     "task_desc": "cool some tomato and put it in garbagecan.",
@@ -3759,7 +3956,8 @@
       "task_id": "pick_cool_then_place_in_recep-Tomato-None-GarbageCan-5",
       "trial_num": "6",
       "step_range": "23-24"
-    }
+    },
+    "unique_id": "198"
   },
   {
     "task_desc": "cool some tomato and put it in garbagecan.",
@@ -3778,7 +3976,8 @@
       "task_id": "pick_cool_then_place_in_recep-Tomato-None-GarbageCan-5",
       "trial_num": "6",
       "step_range": "27-28"
-    }
+    },
+    "unique_id": "199"
   },
   {
     "task_desc": "cool some tomato and put it in garbagecan.",
@@ -3797,7 +3996,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "200"
   },
   {
     "task_desc": "cool some tomato and put it in garbagecan.",
@@ -3816,7 +4016,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "201"
   },
   {
     "task_desc": "put a cool winebottle in cabinet.",
@@ -3835,7 +4036,8 @@
       "task_id": "pick_cool_then_place_in_recep-WineBottle-None-Cabinet-16/trial_T20190907_084106_624638",
       "trial_num": "1",
       "step_range": "8-9"
-    }
+    },
+    "unique_id": "202"
   },
   {
     "task_desc": "put a cool winebottle in cabinet.",
@@ -3854,7 +4056,8 @@
       "task_id": "pick_cool_then_place_in_recep-WineBottle-None-Cabinet-16/trial_T20190907_084106_624638",
       "trial_num": "1",
       "step_range": "8-8"
-    }
+    },
+    "unique_id": "203"
   },
   {
     "task_desc": "put a cool winebottle in cabinet.",
@@ -3873,7 +4076,8 @@
       "task_id": "pick_cool_then_place_in_recep-WineBottle-None-Cabinet-16/trial_T20190907_084106_624638",
       "trial_num": "3",
       "step_range": "4-4"
-    }
+    },
+    "unique_id": "204"
   },
   {
     "task_desc": "put a cool winebottle in cabinet.",
@@ -3892,7 +4096,8 @@
       "task_id": "pick_cool_then_place_in_recep-WineBottle-None-Cabinet-16/trial_T20190907_084106_624638",
       "trial_num": "3",
       "step_range": "9-9"
-    }
+    },
+    "unique_id": "205"
   },
   {
     "task_desc": "put a cool winebottle in cabinet.",
@@ -3911,7 +4116,8 @@
       "task_id": "pick_cool_then_place_in_recep-WineBottle-None-Cabinet-16/trial_T20190907_084106_624638",
       "trial_num": "3",
       "step_range": "11-11"
-    }
+    },
+    "unique_id": "206"
   },
   {
     "task_desc": "put a cool winebottle in cabinet.",
@@ -3930,7 +4136,8 @@
       "task_id": "pick_cool_then_place_in_recep-WineBottle-None-Cabinet-16/trial_T20190907_084106_624638",
       "trial_num": "4",
       "step_range": "16-16"
-    }
+    },
+    "unique_id": "207"
   },
   {
     "task_desc": "put a cool winebottle in countertop.",
@@ -3949,7 +4156,8 @@
       "task_id": "pick_cool_then_place_in_recep-WineBottle-None-CounterTop-17",
       "trial_num": "1",
       "step_range": "9-11"
-    }
+    },
+    "unique_id": "208"
   },
   {
     "task_desc": "put a cool winebottle in countertop.",
@@ -3968,7 +4176,8 @@
       "task_id": "pick_cool_then_place_in_recep-WineBottle-None-CounterTop-17",
       "trial_num": "1",
       "step_range": "15-15"
-    }
+    },
+    "unique_id": "209"
   },
   {
     "task_desc": "heat some apple and put it in fridge.",
@@ -3987,7 +4196,8 @@
       "task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
       "trial_num": "5",
       "step_range": "9-10"
-    }
+    },
+    "unique_id": "210"
   },
   {
     "task_desc": "heat some apple and put it in fridge.",
@@ -4006,7 +4216,8 @@
       "task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
       "trial_num": "2",
       "step_range": "4-4"
-    }
+    },
+    "unique_id": "211"
   },
   {
     "task_desc": "heat some apple and put it in fridge.",
@@ -4025,7 +4236,8 @@
       "task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
       "trial_num": "4",
       "step_range": "10-11"
-    }
+    },
+    "unique_id": "212"
   },
   {
     "task_desc": "heat some apple and put it in fridge.",
@@ -4044,7 +4256,8 @@
       "task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
       "trial_num": "3",
       "step_range": "9-10"
-    }
+    },
+    "unique_id": "213"
   },
   {
     "task_desc": "heat some apple and put it in fridge.",
@@ -4063,7 +4276,8 @@
       "task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-30",
       "trial_num": "5",
       "step_range": "16-16"
-    }
+    },
+    "unique_id": "214"
   },
   {
     "task_desc": "put a hot apple in fridge.",
@@ -4082,7 +4296,8 @@
       "task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
       "trial_num": "7",
       "step_range": "34-35"
-    }
+    },
+    "unique_id": "215"
   },
   {
     "task_desc": "put a hot apple in fridge.",
@@ -4101,7 +4316,8 @@
       "task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
       "trial_num": "2",
       "step_range": "22-23"
-    }
+    },
+    "unique_id": "216"
   },
   {
     "task_desc": "put a hot apple in fridge.",
@@ -4120,7 +4336,8 @@
       "task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
       "trial_num": "3",
       "step_range": "31-31"
-    }
+    },
+    "unique_id": "217"
   },
   {
     "task_desc": "put a hot apple in fridge.",
@@ -4139,7 +4356,8 @@
       "task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
       "trial_num": "3",
       "step_range": "31-34"
-    }
+    },
+    "unique_id": "218"
   },
   {
     "task_desc": "put a hot apple in fridge.",
@@ -4158,7 +4376,8 @@
       "task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
       "trial_num": "7",
       "step_range": "32-33"
-    }
+    },
+    "unique_id": "219"
   },
   {
     "task_desc": "put a hot apple in fridge.",
@@ -4177,7 +4396,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "220"
   },
   {
     "task_desc": "put a hot apple in fridge.",
@@ -4196,7 +4416,8 @@
       "task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
       "trial_num": "3",
       "step_range": "34-44"
-    }
+    },
+    "unique_id": "221"
   },
   {
     "task_desc": "put a hot apple in fridge.",
@@ -4215,7 +4436,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "222"
   },
   {
     "task_desc": "put a hot bread in diningtable.",
@@ -4234,7 +4456,8 @@
       "task_id": "pick_heat_then_place_in_recep-Bread-None-DiningTable-15/trial_T20190907_030751_816698",
       "trial_num": "2",
       "step_range": "18-18"
-    }
+    },
+    "unique_id": "223"
   },
   {
     "task_desc": "put a hot bread in diningtable.",
@@ -4253,7 +4476,8 @@
       "task_id": "pick_heat_then_place_in_recep-Bread-None-DiningTable-15/trial_T20190907_030751_816698",
       "trial_num": "2",
       "step_range": "14-14"
-    }
+    },
+    "unique_id": "224"
   },
   {
     "task_desc": "put a hot bread in diningtable.",
@@ -4272,7 +4496,8 @@
       "task_id": "pick_heat_then_place_in_recep-Bread-None-DiningTable-15/trial_T20190907_030751_816698",
       "trial_num": "2",
       "step_range": "7-7"
-    }
+    },
+    "unique_id": "225"
   },
   {
     "task_desc": "put a hot bread in diningtable.",
@@ -4291,7 +4516,8 @@
       "task_id": "pick_heat_then_place_in_recep-Bread-None-DiningTable-15/trial_T20190907_030751_816698",
       "trial_num": "2",
       "step_range": "13-18"
-    }
+    },
+    "unique_id": "226"
   },
   {
     "task_desc": "put a hot bread in diningtable.",
@@ -4310,7 +4536,8 @@
       "task_id": "pick_heat_then_place_in_recep-Bread-None-DiningTable-15/trial_T20190907_030751_816698",
       "trial_num": "2",
       "step_range": "13-18"
-    }
+    },
+    "unique_id": "227"
   },
   {
     "task_desc": "put a hot bread in diningtable.",
@@ -4329,7 +4556,8 @@
       "task_id": "pick_heat_then_place_in_recep-Bread-None-DiningTable-15/trial_T20190907_030751_816698",
       "trial_num": "2",
       "step_range": "18-18"
-    }
+    },
+    "unique_id": "228"
   },
   {
     "task_desc": "heat some cup and put it in cabinet.",
@@ -4348,7 +4576,8 @@
       "task_id": "pick_heat_then_place_in_recep-Cup-None-Cabinet-28",
       "trial_num": "2",
       "step_range": "11-12"
-    }
+    },
+    "unique_id": "229"
   },
   {
     "task_desc": "heat some cup and put it in cabinet.",
@@ -4367,7 +4596,8 @@
       "task_id": "pick_heat_then_place_in_recep-Cup-None-Cabinet-28",
       "trial_num": "2",
       "step_range": "6-9"
-    }
+    },
+    "unique_id": "230"
   },
   {
     "task_desc": "heat some cup and put it in cabinet.",
@@ -4386,7 +4616,8 @@
       "task_id": "pick_heat_then_place_in_recep-Cup-None-Cabinet-28",
       "trial_num": "2",
       "step_range": "7-9"
-    }
+    },
+    "unique_id": "231"
   },
   {
     "task_desc": "heat some cup and put it in cabinet.",
@@ -4405,7 +4636,8 @@
       "task_id": "pick_heat_then_place_in_recep-Cup-None-Cabinet-28",
       "trial_num": "1",
       "step_range": "22-22"
-    }
+    },
+    "unique_id": "232"
   },
   {
     "task_desc": "heat some cup and put it in cabinet.",
@@ -4424,7 +4656,8 @@
       "task_id": "pick_heat_then_place_in_recep-Cup-None-Cabinet-28",
       "trial_num": "2",
       "step_range": "13-14"
-    }
+    },
+    "unique_id": "233"
   },
   {
     "task_desc": "heat some egg and put it in garbagecan.",
@@ -4443,7 +4676,8 @@
       "task_id": "pick_heat_then_place_in_recep-Egg-None-GarbageCan-12",
       "trial_num": "1",
       "step_range": "32-33"
-    }
+    },
+    "unique_id": "234"
   },
   {
     "task_desc": "heat some egg and put it in garbagecan.",
@@ -4462,7 +4696,8 @@
       "task_id": "pick_heat_then_place_in_recep-Egg-None-GarbageCan-12",
       "trial_num": "3",
       "step_range": "5-11"
-    }
+    },
+    "unique_id": "235"
   },
   {
     "task_desc": "heat some egg and put it in garbagecan.",
@@ -4481,7 +4716,8 @@
       "task_id": "pick_heat_then_place_in_recep-Egg-None-GarbageCan-12",
       "trial_num": "1",
       "step_range": "48-48"
-    }
+    },
+    "unique_id": "236"
   },
   {
     "task_desc": "heat some egg and put it in garbagecan.",
@@ -4500,7 +4736,8 @@
       "task_id": "pick_heat_then_place_in_recep-Egg-None-GarbageCan-12",
       "trial_num": "3",
       "step_range": "14-16"
-    }
+    },
+    "unique_id": "237"
   },
   {
     "task_desc": "heat some mug and put it in cabinet.",
@@ -4519,7 +4756,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-Cabinet-12/trial_T20190909_032940_018377",
       "trial_num": "2",
       "step_range": "3-4"
-    }
+    },
+    "unique_id": "238"
   },
   {
     "task_desc": "heat some mug and put it in cabinet.",
@@ -4538,7 +4776,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-Cabinet-12/trial_T20190909_032940_018377",
       "trial_num": "1",
       "step_range": "8-9"
-    }
+    },
+    "unique_id": "239"
   },
   {
     "task_desc": "heat some mug and put it in cabinet.",
@@ -4557,7 +4796,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-Cabinet-12/trial_T20190909_032940_018377",
       "trial_num": "2",
       "step_range": "11-12"
-    }
+    },
+    "unique_id": "240"
   },
   {
     "task_desc": "heat some mug and put it in cabinet.",
@@ -4576,7 +4816,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-Cabinet-12/trial_T20190909_032940_018377",
       "trial_num": "1",
       "step_range": "13-14"
-    }
+    },
+    "unique_id": "241"
   },
   {
     "task_desc": "heat some mug and put it in cabinet.",
@@ -4595,7 +4836,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-Cabinet-12/trial_T20190909_032940_018377",
       "trial_num": "2",
       "step_range": "18-19"
-    }
+    },
+    "unique_id": "242"
   },
   {
     "task_desc": "heat some mug and put it in cabinet.",
@@ -4614,7 +4856,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-Cabinet-12/trial_T20190909_032940_018377",
       "trial_num": "2",
       "step_range": "22-23"
-    }
+    },
+    "unique_id": "243"
   },
   {
     "task_desc": "heat some mug and put it in coffeemachine.",
@@ -4633,7 +4876,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-16/trial_T20190908_181242_051846",
       "trial_num": "1",
       "step_range": "3-4"
-    }
+    },
+    "unique_id": "244"
   },
   {
     "task_desc": "heat some mug and put it in coffeemachine.",
@@ -4652,7 +4896,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-16/trial_T20190908_181242_051846",
       "trial_num": "1",
       "step_range": "10-10"
-    }
+    },
+    "unique_id": "245"
   },
   {
     "task_desc": "heat some mug and put it in coffeemachine.",
@@ -4671,7 +4916,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-16/trial_T20190908_181242_051846",
       "trial_num": "1",
       "step_range": "13-13"
-    }
+    },
+    "unique_id": "246"
   },
   {
     "task_desc": "heat some mug and put it in coffeemachine.",
@@ -4690,7 +4936,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-30",
       "trial_num": "2",
       "step_range": "7-9"
-    }
+    },
+    "unique_id": "247"
   },
   {
     "task_desc": "heat some mug and put it in coffeemachine.",
@@ -4709,7 +4956,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-30",
       "trial_num": "4",
       "step_range": "37-37"
-    }
+    },
+    "unique_id": "248"
   },
   {
     "task_desc": "heat some mug and put it in coffeemachine.",
@@ -4728,7 +4976,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-30",
       "trial_num": "4",
       "step_range": "21-23"
-    }
+    },
+    "unique_id": "249"
   },
   {
     "task_desc": "heat some mug and put it in coffeemachine.",
@@ -4747,7 +4996,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-30",
       "trial_num": "4",
       "step_range": "27-27"
-    }
+    },
+    "unique_id": "250"
   },
   {
     "task_desc": "heat some mug and put it in coffeemachine.",
@@ -4766,7 +5016,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-30",
       "trial_num": "4",
       "step_range": "35-37"
-    }
+    },
+    "unique_id": "251"
   },
   {
     "task_desc": "put a hot mug in shelf.",
@@ -4785,7 +5036,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242",
       "trial_num": "1",
       "step_range": "9-10"
-    }
+    },
+    "unique_id": "252"
   },
   {
     "task_desc": "put a hot mug in shelf.",
@@ -4804,7 +5056,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242",
       "trial_num": "1",
       "step_range": "15-16"
-    }
+    },
+    "unique_id": "253"
   },
   {
     "task_desc": "put a hot mug in shelf.",
@@ -4823,7 +5076,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242",
       "trial_num": "5",
       "step_range": "26-26"
-    }
+    },
+    "unique_id": "254"
   },
   {
     "task_desc": "put a hot mug in shelf.",
@@ -4842,7 +5096,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242",
       "trial_num": "5",
       "step_range": "26-26"
-    }
+    },
+    "unique_id": "255"
   },
   {
     "task_desc": "put a hot mug in shelf.",
@@ -4861,7 +5116,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242",
       "trial_num": "3",
       "step_range": "6-7"
-    }
+    },
+    "unique_id": "256"
   },
   {
     "task_desc": "put a hot mug in shelf.",
@@ -4880,7 +5136,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242",
       "trial_num": "5",
       "step_range": "26-26"
-    }
+    },
+    "unique_id": "257"
   },
   {
     "task_desc": "put a hot mug in shelf.",
@@ -4899,7 +5156,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242",
       "trial_num": "5",
       "step_range": "24-26"
-    }
+    },
+    "unique_id": "258"
   },
   {
     "task_desc": "put a hot mug in shelf.",
@@ -4918,7 +5176,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "259"
   },
   {
     "task_desc": "put a hot mug in shelf.",
@@ -4937,7 +5196,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "260"
   },
   {
     "task_desc": "put a hot mug in shelf.",
@@ -4956,7 +5216,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "261"
   },
   {
     "task_desc": "put a hot mug in shelf.",
@@ -4975,7 +5236,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242",
       "trial_num": "5",
       "step_range": "24-26"
-    }
+    },
+    "unique_id": "262"
   },
   {
     "task_desc": "put a hot mug in shelf.",
@@ -4994,7 +5256,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "263"
   },
   {
     "task_desc": "put a hot mug in shelf.",
@@ -5013,7 +5276,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "264"
   },
   {
     "task_desc": "put a hot mug in shelf.",
@@ -5032,7 +5296,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242",
       "trial_num": "5",
       "step_range": "33-33"
-    }
+    },
+    "unique_id": "265"
   },
   {
     "task_desc": "put a hot plate in cabinet.",
@@ -5051,7 +5316,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-Cabinet-28/trial_T20190907_035752_332060",
       "trial_num": "2",
       "step_range": "10-12"
-    }
+    },
+    "unique_id": "266"
   },
   {
     "task_desc": "put a hot plate in cabinet.",
@@ -5070,7 +5336,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-Cabinet-28/trial_T20190907_035752_332060",
       "trial_num": "3",
       "step_range": "27-28"
-    }
+    },
+    "unique_id": "267"
   },
   {
     "task_desc": "put a hot plate in cabinet.",
@@ -5089,7 +5356,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-Cabinet-28/trial_T20190907_035752_332060",
       "trial_num": "2",
       "step_range": "9-10"
-    }
+    },
+    "unique_id": "268"
   },
   {
     "task_desc": "put a hot plate in cabinet.",
@@ -5108,7 +5376,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "269"
   },
   {
     "task_desc": "put a hot plate in cabinet.",
@@ -5127,7 +5396,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "270"
   },
   {
     "task_desc": "put a hot plate in cabinet.",
@@ -5146,7 +5416,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "271"
   },
   {
     "task_desc": "put a hot plate in cabinet.",
@@ -5165,7 +5436,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "272"
   },
   {
     "task_desc": "put a hot plate in cabinet.",
@@ -5184,7 +5456,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "273"
   },
   {
     "task_desc": "put a hot plate in cabinet.",
@@ -5203,7 +5476,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "274"
   },
   {
     "task_desc": "put a hot plate in cabinet.",
@@ -5222,7 +5496,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "275"
   },
   {
     "task_desc": "heat some plate and put it in countertop.",
@@ -5241,7 +5516,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-1/trial_T20190909_115633_911483",
       "trial_num": "2",
       "step_range": "14-15"
-    }
+    },
+    "unique_id": "276"
   },
   {
     "task_desc": "heat some plate and put it in countertop.",
@@ -5260,7 +5536,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-1/trial_T20190909_115633_911483",
       "trial_num": "4",
       "step_range": "28-29"
-    }
+    },
+    "unique_id": "277"
   },
   {
     "task_desc": "heat some plate and put it in countertop.",
@@ -5279,7 +5556,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-1/trial_T20190909_115633_911483",
       "trial_num": "4",
       "step_range": "28-29"
-    }
+    },
+    "unique_id": "278"
   },
   {
     "task_desc": "heat some plate and put it in countertop.",
@@ -5298,7 +5576,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "279"
   },
   {
     "task_desc": "heat some plate and put it in countertop.",
@@ -5317,7 +5596,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-1/trial_T20190909_115633_911483",
       "trial_num": "1",
       "step_range": "29-32"
-    }
+    },
+    "unique_id": "280"
   },
   {
     "task_desc": "heat some plate and put it in countertop.",
@@ -5336,7 +5616,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-1/trial_T20190909_115633_911483",
       "trial_num": "1",
       "step_range": "31-32"
-    }
+    },
+    "unique_id": "281"
   },
   {
     "task_desc": "heat some plate and put it in countertop.",
@@ -5355,7 +5636,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-1/trial_T20190909_115633_911483",
       "trial_num": "2",
       "step_range": "30-32"
-    }
+    },
+    "unique_id": "282"
   },
   {
     "task_desc": "heat some plate and put it in countertop.",
@@ -5374,7 +5656,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "283"
   },
   {
     "task_desc": "heat some plate and put it in countertop.",
@@ -5393,7 +5676,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "284"
   },
   {
     "task_desc": "heat some plate and put it in countertop.",
@@ -5412,7 +5696,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "285"
   },
   {
     "task_desc": "heat some plate and put it in countertop.",
@@ -5431,7 +5716,8 @@
       "task_id": "",
       "trial_num": "",
       "step_range": ""
-    }
+    },
+    "unique_id": "286"
   },
   {
     "task_desc": "put a hot plate in countertop.",
@@ -5450,7 +5736,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-28/trial_T20190907_180330_211175",
       "trial_num": "1",
       "step_range": "26-26"
-    }
+    },
+    "unique_id": "287"
   },
   {
     "task_desc": "put a hot plate in countertop.",
@@ -5469,7 +5756,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-28/trial_T20190907_180330_211175",
       "trial_num": "4",
       "step_range": "30-30"
-    }
+    },
+    "unique_id": "288"
   },
   {
     "task_desc": "put a hot plate in countertop.",
@@ -5488,7 +5776,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-28/trial_T20190907_180330_211175",
       "trial_num": "4",
       "step_range": "30-30"
-    }
+    },
+    "unique_id": "289"
   },
   {
     "task_desc": "put a hot plate in countertop.",
@@ -5507,7 +5796,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-28/trial_T20190907_180330_211175",
       "trial_num": "2",
       "step_range": "46-47"
-    }
+    },
+    "unique_id": "290"
   },
   {
     "task_desc": "put a hot plate in countertop.",
@@ -5526,7 +5816,8 @@
       "task_id": "",
       "trial_num": "0",
       "step_range": "0-0"
-    }
+    },
+    "unique_id": "291"
   },
   {
     "task_desc": "put a hot plate in countertop.",
@@ -5545,7 +5836,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-28/trial_T20190907_180330_211175",
       "trial_num": "4",
       "step_range": "30-30"
-    }
+    },
+    "unique_id": "292"
   },
   {
     "task_desc": "put a hot plate in countertop.",
@@ -5564,7 +5856,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-28/trial_T20190907_180330_211175",
       "trial_num": "4",
       "step_range": "34-35"
-    }
+    },
+    "unique_id": "293"
   },
   {
     "task_desc": "heat some plate and put it in countertop.",
@@ -5583,7 +5876,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-7",
       "trial_num": "2",
       "step_range": "24-27"
-    }
+    },
+    "unique_id": "294"
   },
   {
     "task_desc": "heat some plate and put it in countertop.",
@@ -5602,7 +5896,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-7",
       "trial_num": "2",
       "step_range": "24-25"
-    }
+    },
+    "unique_id": "295"
   },
   {
     "task_desc": "heat some plate and put it in countertop.",
@@ -5621,7 +5916,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-7",
       "trial_num": "2",
       "step_range": "16-18"
-    }
+    },
+    "unique_id": "296"
   },
   {
     "task_desc": "heat some plate and put it in countertop.",
@@ -5640,7 +5936,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-7",
       "trial_num": "2",
       "step_range": "30-30"
-    }
+    },
+    "unique_id": "297"
   },
   {
     "task_desc": "heat some plate and put it in countertop.",
@@ -5659,7 +5956,8 @@
       "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-7",
       "trial_num": "2",
       "step_range": "27-27"
-    }
+    },
+    "unique_id": "298"
   },
   {
     "task_desc": "heat some potato and put it in garbagecan.",
@@ -5678,7 +5976,8 @@
       "task_id": "pick_heat_then_place_in_recep-Potato-None-GarbageCan-3",
       "trial_num": "2",
       "step_range": "7-8"
-    }
+    },
+    "unique_id": "299"
   },
   {
     "task_desc": "heat some potato and put it in garbagecan.",
@@ -5697,7 +5996,8 @@
       "task_id": "pick_heat_then_place_in_recep-Potato-None-GarbageCan-3",
       "trial_num": "2",
       "step_range": "3-4"
-    }
+    },
+    "unique_id": "300"
   },
   {
     "task_desc": "heat some potato and put it in garbagecan.",
@@ -5716,7 +6016,8 @@
       "task_id": "pick_heat_then_place_in_recep-Potato-None-GarbageCan-3",
       "trial_num": "2",
       "step_range": "12-12"
-    }
+    },
+    "unique_id": "301"
   },
   {
     "task_desc": "heat some potato and put it in garbagecan.",
@@ -5735,7 +6036,8 @@
       "task_id": "pick_heat_then_place_in_recep-Potato-None-GarbageCan-3",
       "trial_num": "2",
       "step_range": "12-13"
-    }
+    },
+    "unique_id": "302"
   },
   {
     "task_desc": "heat some potato and put it in garbagecan.",
@@ -5754,7 +6056,8 @@
       "task_id": "pick_heat_then_place_in_recep-Potato-None-GarbageCan-3",
       "trial_num": "2",
       "step_range": "19-19"
-    }
+    },
+    "unique_id": "303"
   },
   {
     "task_desc": "heat some potato and put it in garbagecan.",
@@ -5773,7 +6076,8 @@
       "task_id": "pick_heat_then_place_in_recep-Potato-None-GarbageCan-3",
       "trial_num": "2",
       "step_range": "17-17"
-    }
+    },
+    "unique_id": "304"
   },
   {
     "task_desc": "put a hot tomato in garbagecan.",
@@ -5792,7 +6096,8 @@
       "task_id": "pick_heat_then_place_in_recep-Tomato-None-GarbageCan-16/trial_T20190906_171701_034036",
       "trial_num": "2",
       "step_range": "24-27"
-    }
+    },
+    "unique_id": "305"
   },
   {
     "task_desc": "put a hot tomato in garbagecan.",
@@ -5811,7 +6116,8 @@
       "task_id": "pick_heat_then_place_in_recep-Tomato-None-GarbageCan-16/trial_T20190906_171701_034036",
       "trial_num": "2",
       "step_range": "23-27"
-    }
+    },
+    "unique_id": "306"
   },
   {
     "task_desc": "put a hot tomato in garbagecan.",
@@ -5830,7 +6136,8 @@
       "task_id": "pick_heat_then_place_in_recep-Tomato-None-GarbageCan-16/trial_T20190906_171701_034036",
       "trial_num": "2",
       "step_range": "32-32"
-    }
+    },
+    "unique_id": "307"
   },
   {
     "task_desc": "put a hot tomato in sidetable.",
@@ -5849,7 +6156,8 @@
       "task_id": "pick_heat_then_place_in_recep-Tomato-None-SideTable-3/trial_T20190907_140859_097831",
       "trial_num": "2",
       "step_range": "5-6"
-    }
+    },
+    "unique_id": "308"
   },
   {
     "task_desc": "put a hot tomato in sidetable.",
@@ -5868,7 +6176,8 @@
       "task_id": "pick_heat_then_place_in_recep-Tomato-None-SideTable-3/trial_T20190907_140859_097831",
       "trial_num": "2",
       "step_range": "8-8"
-    }
+    },
+    "unique_id": "309"
   },
   {
     "task_desc": "put a hot tomato in sidetable.",
@@ -5887,7 +6196,8 @@
       "task_id": "pick_heat_then_place_in_recep-Tomato-None-SideTable-3/trial_T20190907_140859_097831",
       "trial_num": "2",
       "step_range": "8-8"
-    }
+    },
+    "unique_id": "310"
   },
   {
     "task_desc": "put a hot tomato in sidetable.",
@@ -5906,7 +6216,8 @@
       "task_id": "pick_heat_then_place_in_recep-Tomato-None-SideTable-3/trial_T20190907_140859_097831",
       "trial_num": "2",
       "step_range": "5-6"
-    }
+    },
+    "unique_id": "311"
   },
   {
     "task_desc": "put a hot tomato in sidetable.",
@@ -5925,7 +6236,8 @@
       "task_id": "pick_heat_then_place_in_recep-Tomato-None-SideTable-3/trial_T20190907_140859_097831",
       "trial_num": "2",
       "step_range": "8-8"
-    }
+    },
+    "unique_id": "312"
   },
   {
     "task_desc": "put a hot tomato in sidetable.",
@@ -5944,7 +6256,8 @@
       "task_id": "pick_heat_then_place_in_recep-Tomato-None-SideTable-3/trial_T20190907_140859_097831",
       "trial_num": "2",
       "step_range": "11-12"
-    }
+    },
+    "unique_id": "313"
   },
   {
     "task_desc": "put a hot tomato in sidetable.",
@@ -5963,7 +6276,8 @@
       "task_id": "pick_heat_then_place_in_recep-Tomato-None-SideTable-3/trial_T20190907_140859_097831",
       "trial_num": "2",
       "step_range": "16-16"
-    }
+    },
+    "unique_id": "314"
   },
   {
     "task_desc": "put two alarmclock in desk.",
@@ -5982,7 +6296,8 @@
       "task_id": "pick_two_obj_and_place-AlarmClock-None-Desk-307/trial_T20190907_013752_725369",
       "trial_num": "2",
       "step_range": "14-15"
-    }
+    },
+    "unique_id": "315"
   },
   {
     "task_desc": "put two alarmclock in dresser.",
@@ -6001,7 +6316,8 @@
       "task_id": "pick_two_obj_and_place-AlarmClock-None-Dresser-305/trial_T20190907_165758_902037",
       "trial_num": "1",
       "step_range": "15-15"
-    }
+    },
+    "unique_id": "316"
   },
   {
     "task_desc": "put two alarmclock in dresser.",
@@ -6020,7 +6336,8 @@
       "task_id": "pick_two_obj_and_place-AlarmClock-None-Dresser-305/trial_T20190907_165758_902037",
       "trial_num": "1",
       "step_range": "17-18"
-    }
+    },
+    "unique_id": "317"
   },
   {
     "task_desc": "put two alarmclock in dresser.",
@@ -6039,7 +6356,8 @@
       "task_id": "pick_two_obj_and_place-AlarmClock-None-Dresser-305/trial_T20190907_165758_902037",
       "trial_num": "1",
       "step_range": "24-25"
-    }
+    },
+    "unique_id": "318"
   },
   {
     "task_desc": "put two alarmclock in dresser.",
@@ -6058,7 +6376,8 @@
       "task_id": "pick_two_obj_and_place-AlarmClock-None-Dresser-305/trial_T20190907_165758_902037",
       "trial_num": "1",
       "step_range": "24-25"
-    }
+    },
+    "unique_id": "319"
   },
   {
     "task_desc": "put two alarmclock in shelf.",
@@ -6077,7 +6396,8 @@
       "task_id": "pick_two_obj_and_place-AlarmClock-None-Shelf-316/trial_T20190909_010429_853588",
       "trial_num": "1",
       "step_range": "4-4"
-    }
+    },
+    "unique_id": "320"
   },
   {
     "task_desc": "find two book and put them in drawer.",
@@ -6096,7 +6416,8 @@
       "task_id": "pick_two_obj_and_place-Book-None-Drawer-307",
       "trial_num": "3",
       "step_range": "26-26"
-    }
+    },
+    "unique_id": "321"
   },
   {
     "task_desc": "find two book and put them in drawer.",
@@ -6115,7 +6436,8 @@
       "task_id": "pick_two_obj_and_place-Book-None-Drawer-307",
       "trial_num": "1",
       "step_range": "23-23"
-    }
+    },
+    "unique_id": "322"
   },
   {
     "task_desc": "find two book and put them in drawer.",
@@ -6134,7 +6456,8 @@
       "task_id": "pick_two_obj_and_place-Book-None-Drawer-307",
       "trial_num": "6",
       "step_range": "9-9"
-    }
+    },
+    "unique_id": "323"
   },
   {
     "task_desc": "find two book and put them in drawer.",
@@ -6153,7 +6476,8 @@
       "task_id": "pick_two_obj_and_place-Book-None-Drawer-307",
       "trial_num": "4",
       "step_range": "32-32"
-    }
+    },
+    "unique_id": "324"
   },
   {
     "task_desc": "find two book and put them in drawer.",
@@ -6172,7 +6496,8 @@
       "task_id": "pick_two_obj_and_place-Book-None-Drawer-307",
       "trial_num": "4",
       "step_range": "32-32"
-    }
+    },
+    "unique_id": "325"
   },
   {
     "task_desc": "find two bowl and put them in dresser.",
@@ -6191,7 +6516,8 @@
       "task_id": "pick_two_obj_and_place-Bowl-None-Dresser-327",
       "trial_num": "1",
       "step_range": "9-10"
-    }
+    },
+    "unique_id": "326"
   },
   {
     "task_desc": "find two bowl and put them in dresser.",
@@ -6210,7 +6536,8 @@
       "task_id": "pick_two_obj_and_place-Bowl-None-Dresser-327",
       "trial_num": "1",
       "step_range": "17-18"
-    }
+    },
+    "unique_id": "327"
   },
   {
     "task_desc": "put two cd in dresser.",
@@ -6229,7 +6556,8 @@
       "task_id": "pick_two_obj_and_place-CD-None-Dresser-303",
       "trial_num": "1",
       "step_range": "5-5"
-    }
+    },
+    "unique_id": "328"
   },
   {
     "task_desc": "put two cd in dresser.",
@@ -6248,7 +6576,8 @@
       "task_id": "pick_two_obj_and_place-CD-None-Dresser-303",
       "trial_num": "1",
       "step_range": "6-6"
-    }
+    },
+    "unique_id": "329"
   },
   {
     "task_desc": "put two cd in dresser.",
@@ -6267,7 +6596,8 @@
       "task_id": "pick_two_obj_and_place-CD-None-Dresser-303",
       "trial_num": "1",
       "step_range": "21-21"
-    }
+    },
+    "unique_id": "330"
   },
   {
     "task_desc": "find two candle and put them in cabinet.",
@@ -6286,7 +6616,8 @@
       "task_id": "pick_two_obj_and_place-Candle-None-Cabinet-403/trial_T20190909_065841_838469",
       "trial_num": "1",
       "step_range": "8-8"
-    }
+    },
+    "unique_id": "331"
   },
   {
     "task_desc": "put two candle in drawer.",
@@ -6305,7 +6636,8 @@
       "task_id": "pick_two_obj_and_place-Candle-None-Drawer-427/trial_T20190909_043940_867553",
       "trial_num": "1",
       "step_range": "20-20"
-    }
+    },
+    "unique_id": "332"
   },
   {
     "task_desc": "put two candle in drawer.",
@@ -6324,7 +6656,8 @@
       "task_id": "pick_two_obj_and_place-Candle-None-Drawer-427/trial_T20190909_043940_867553",
       "trial_num": "2",
       "step_range": "9-9"
-    }
+    },
+    "unique_id": "333"
   },
   {
     "task_desc": "find two cellphone and put them in drawer.",
@@ -6343,7 +6676,8 @@
       "task_id": "pick_two_obj_and_place-CellPhone-None-Drawer-329/trial_T20190909_030006_191201",
       "trial_num": "1",
       "step_range": "7-7"
-    }
+    },
+    "unique_id": "334"
   },
   {
     "task_desc": "find two cellphone and put them in drawer.",
@@ -6362,7 +6696,8 @@
       "task_id": "pick_two_obj_and_place-CellPhone-None-Drawer-329/trial_T20190909_030006_191201",
       "trial_num": "1",
       "step_range": "16-16"
-    }
+    },
+    "unique_id": "335"
   },
   {
     "task_desc": "find two cellphone and put them in drawer.",
@@ -6381,7 +6716,8 @@
       "task_id": "pick_two_obj_and_place-CellPhone-None-Drawer-329/trial_T20190909_030006_191201",
       "trial_num": "2",
       "step_range": "8-17"
-    }
+    },
+    "unique_id": "336"
   },
   {
     "task_desc": "find two cellphone and put them in drawer.",
@@ -6400,7 +6736,8 @@
       "task_id": "pick_two_obj_and_place-CellPhone-None-Drawer-329/trial_T20190909_030006_191201",
       "trial_num": "2",
       "step_range": "16-17"
-    }
+    },
+    "unique_id": "337"
   },
   {
     "task_desc": "find two creditcard and put them in sofa.",
@@ -6419,7 +6756,8 @@
       "task_id": "pick_two_obj_and_place-CreditCard-None-Sofa-216",
       "trial_num": "1",
       "step_range": "3-3"
-    }
+    },
+    "unique_id": "338"
   },
   {
     "task_desc": "find two creditcard and put them in sofa.",
@@ -6438,7 +6776,8 @@
       "task_id": "pick_two_obj_and_place-CreditCard-None-Sofa-216",
       "trial_num": "1",
       "step_range": "18-18"
-    }
+    },
+    "unique_id": "339"
   },
   {
     "task_desc": "find two egg and put them in microwave.",
@@ -6457,7 +6796,8 @@
       "task_id": "pick_two_obj_and_place-Egg-None-Microwave-30/trial_T20190907_163255_256147",
       "trial_num": "1",
       "step_range": "3-3"
-    }
+    },
+    "unique_id": "340"
   },
   {
     "task_desc": "find two egg and put them in microwave.",
@@ -6476,7 +6816,8 @@
       "task_id": "pick_two_obj_and_place-Egg-None-Microwave-30/trial_T20190907_163255_256147",
       "trial_num": "1",
       "step_range": "9-9"
-    }
+    },
+    "unique_id": "341"
   },
   {
     "task_desc": "put two keychain in drawer.",
@@ -6495,7 +6836,8 @@
       "task_id": "pick_two_obj_and_place-KeyChain-None-Drawer-317/trial_T20190912_073129_052747",
       "trial_num": "2",
       "step_range": "1-1"
-    }
+    },
+    "unique_id": "342"
   },
   {
     "task_desc": "put two keychain in drawer.",
@@ -6514,7 +6856,8 @@
       "task_id": "pick_two_obj_and_place-KeyChain-None-Drawer-317/trial_T20190912_073129_052747",
       "trial_num": "2",
       "step_range": "30-33"
-    }
+    },
+    "unique_id": "343"
   },
   {
     "task_desc": "put two keychain in drawer.",
@@ -6533,7 +6876,8 @@
       "task_id": "pick_two_obj_and_place-KeyChain-None-Drawer-317/trial_T20190912_073129_052747",
       "trial_num": "2",
       "step_range": "28-30"
-    }
+    },
+    "unique_id": "344"
   },
   {
     "task_desc": "find two newspaper and put them in sofa.",
@@ -6552,7 +6896,8 @@
       "task_id": "pick_two_obj_and_place-Newspaper-None-Sofa-212",
       "trial_num": "1",
       "step_range": "11-11"
-    }
+    },
+    "unique_id": "345"
   },
   {
     "task_desc": "find two newspaper and put them in sofa.",
@@ -6571,7 +6916,8 @@
       "task_id": "pick_two_obj_and_place-Newspaper-None-Sofa-212",
       "trial_num": "1",
       "step_range": "14-14"
-    }
+    },
+    "unique_id": "346"
   },
   {
     "task_desc": "find two pillow and put them in ottoman.",
@@ -6590,7 +6936,8 @@
       "task_id": "pick_two_obj_and_place-Pillow-None-Ottoman-208/trial_T20190908_091434_545645",
       "trial_num": "1",
       "step_range": "6-7"
-    }
+    },
+    "unique_id": "347"
   },
   {
     "task_desc": "find two saltshaker and put them in drawer.",
@@ -6609,7 +6956,8 @@
       "task_id": "pick_two_obj_and_place-SaltShaker-None-Drawer-12",
       "trial_num": "1",
       "step_range": "16-19"
-    }
+    },
+    "unique_id": "348"
   },
   {
     "task_desc": "find two saltshaker and put them in drawer.",
@@ -6628,7 +6976,8 @@
       "task_id": "pick_two_obj_and_place-SaltShaker-None-Drawer-12",
       "trial_num": "1",
       "step_range": "19-19"
-    }
+    },
+    "unique_id": "349"
   },
   {
     "task_desc": "put two soapbar in cabinet.",
@@ -6647,7 +6996,8 @@
       "task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
       "trial_num": "1",
       "step_range": "13-14"
-    }
+    },
+    "unique_id": "350"
   },
   {
     "task_desc": "put two soapbar in cabinet.",
@@ -6666,7 +7016,8 @@
       "task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
       "trial_num": "1",
       "step_range": "14-14"
-    }
+    },
+    "unique_id": "351"
   },
   {
     "task_desc": "put two soapbar in cabinet.",
@@ -6685,7 +7036,8 @@
       "task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
       "trial_num": "1",
       "step_range": "14-14"
-    }
+    },
+    "unique_id": "352"
   },
   {
     "task_desc": "put two soapbar in cabinet.",
@@ -6704,7 +7056,8 @@
       "task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
       "trial_num": "5",
       "step_range": "14-14"
-    }
+    },
+    "unique_id": "353"
   },
   {
     "task_desc": "put two soapbar in cabinet.",
@@ -6723,7 +7076,8 @@
       "task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
       "trial_num": "2",
       "step_range": "27-28"
-    }
+    },
+    "unique_id": "354"
   },
   {
     "task_desc": "put two soapbar in cabinet.",
@@ -6742,7 +7096,8 @@
       "task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
       "trial_num": "2",
       "step_range": "31-31"
-    }
+    },
+    "unique_id": "355"
   },
   {
     "task_desc": "find two soapbottle and put them in cart.",
@@ -6761,7 +7116,8 @@
       "task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
       "trial_num": "1",
       "step_range": "16-17"
-    }
+    },
+    "unique_id": "356"
   },
   {
     "task_desc": "find two soapbottle and put them in cart.",
@@ -6780,7 +7136,8 @@
       "task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
       "trial_num": "1",
       "step_range": "22-22"
-    }
+    },
+    "unique_id": "357"
   },
   {
     "task_desc": "find two soapbottle and put them in cart.",
@@ -6799,7 +7156,8 @@
       "task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
       "trial_num": "1",
       "step_range": "24-24"
-    }
+    },
+    "unique_id": "358"
   },
   {
     "task_desc": "find two soapbottle and put them in cart.",
@@ -6818,7 +7176,8 @@
       "task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
       "trial_num": "1",
       "step_range": "28-28"
-    }
+    },
+    "unique_id": "359"
   },
   {
     "task_desc": "put two spraybottle in toilet.",
@@ -6837,7 +7196,8 @@
       "task_id": "pick_two_obj_and_place-SprayBottle-None-Toilet-422",
       "trial_num": "2",
       "step_range": "2-3"
-    }
+    },
+    "unique_id": "360"
   },
   {
     "task_desc": "put two spraybottle in toilet.",
@@ -6856,7 +7216,8 @@
       "task_id": "pick_two_obj_and_place-SprayBottle-None-Toilet-422",
       "trial_num": "4",
       "step_range": "5-5"
-    }
+    },
+    "unique_id": "361"
   },
   {
     "task_desc": "put two spraybottle in toilet.",
@@ -6875,7 +7236,8 @@
       "task_id": "pick_two_obj_and_place-SprayBottle-None-Toilet-422",
       "trial_num": "4",
       "step_range": "6-6"
-    }
+    },
+    "unique_id": "362"
   },
   {
     "task_desc": "put two spraybottle in toilet.",
@@ -6894,7 +7256,8 @@
       "task_id": "pick_two_obj_and_place-SprayBottle-None-Toilet-422",
       "trial_num": "2",
       "step_range": "20-20"
-    }
+    },
+    "unique_id": "363"
   },
   {
     "task_desc": "put two spraybottle in toilet.",
@@ -6913,7 +7276,8 @@
       "task_id": "pick_two_obj_and_place-SprayBottle-None-Toilet-422",
       "trial_num": "2",
       "step_range": "41-41"
-    }
+    },
+    "unique_id": "364"
   },
   {
     "task_desc": "put two spraybottle in toilet.",
@@ -6932,7 +7296,8 @@
       "task_id": "pick_two_obj_and_place-SprayBottle-None-Toilet-422",
       "trial_num": "2",
       "step_range": "44-44"
-    }
+    },
+    "unique_id": "365"
   },
   {
     "task_desc": "put two spraybottle in toilet.",
@@ -6951,7 +7316,8 @@
       "task_id": "pick_two_obj_and_place-SprayBottle-None-Toilet-422",
       "trial_num": "4",
       "step_range": "14-14"
-    }
+    },
+    "unique_id": "366"
   },
   {
     "task_desc": "put two toiletpaper in shelf.",
@@ -6970,7 +7336,8 @@
       "task_id": "pick_two_obj_and_place-ToiletPaper-None-Shelf-422/trial_T20190908_065858_170962",
       "trial_num": "1",
       "step_range": "4-12"
-    }
+    },
+    "unique_id": "367"
   },
   {
     "task_desc": "put two toiletpaper in shelf.",
@@ -6989,7 +7356,8 @@
       "task_id": "pick_two_obj_and_place-ToiletPaper-None-Shelf-422/trial_T20190908_065858_170962",
       "trial_num": "1",
       "step_range": "14-14"
-    }
+    },
+    "unique_id": "368"
   },
   {
     "task_desc": "put two toiletpaper in shelf.",
@@ -7008,7 +7376,8 @@
       "task_id": "pick_two_obj_and_place-ToiletPaper-None-Shelf-422/trial_T20190908_065858_170962",
       "trial_num": "1",
       "step_range": "14-14"
-    }
+    },
+    "unique_id": "369"
   },
   {
     "task_desc": "put two toiletpaper in shelf.",
@@ -7027,7 +7396,8 @@
       "task_id": "pick_two_obj_and_place-ToiletPaper-None-Shelf-422/trial_T20190908_065858_170962",
       "trial_num": "1",
       "step_range": "20-20"
-    }
+    },
+    "unique_id": "370"
   },
   {
     "task_desc": "examine the cellphone with the desklamp.",
@@ -7046,7 +7416,8 @@
       "task_id": "look_at_obj_in_light-CellPhone-None-DeskLamp-316/trial_T20190907_075452_465579",
       "trial_num": "1",
       "step_range": "3-3"
-    }
+    },
+    "unique_id": "371"
   },
   {
     "task_desc": "examine the cellphone with the desklamp.",
@@ -7065,7 +7436,8 @@
       "task_id": "look_at_obj_in_light-CellPhone-None-DeskLamp-316/trial_T20190907_075452_465579",
       "trial_num": "1",
       "step_range": "7-7"
-    }
+    },
+    "unique_id": "372"
   },
   {
     "task_desc": "look at laptop under the desklamp.",
@@ -7084,7 +7456,8 @@
       "task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323/trial_T20190908_014226_839563",
       "trial_num": "2",
       "step_range": "28-29"
-    }
+    },
+    "unique_id": "373"
   },
   {
     "task_desc": "look at laptop under the desklamp.",
@@ -7103,7 +7476,8 @@
       "task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323/trial_T20190908_014226_839563",
       "trial_num": "6",
       "step_range": "32-33"
-    }
+    },
+    "unique_id": "374"
   },
   {
     "task_desc": "examine the pillow with the desklamp.",
@@ -7122,7 +7496,8 @@
       "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-306/trial_T20190909_075045_578840",
       "trial_num": "1",
       "step_range": "10-10"
-    }
+    },
+    "unique_id": "375"
   },
   {
     "task_desc": "put a pencil in sidetable.",
@@ -7141,7 +7516,8 @@
       "task_id": "pick_and_place_simple-Pencil-None-SideTable-309/trial_T20190909_040329_875526",
       "trial_num": "1",
       "step_range": "6-6"
-    }
+    },
+    "unique_id": "376"
   },
   {
     "task_desc": "put a clean ladle in countertop.",
@@ -7160,7 +7536,8 @@
       "task_id": "pick_clean_then_place_in_recep-Ladle-None-CounterTop-8/trial_T20190909_121931_494324",
       "trial_num": "6",
       "step_range": "45-46"
-    }
+    },
+    "unique_id": "377"
   },
   {
     "task_desc": "put a clean ladle in countertop.",
@@ -7179,7 +7556,8 @@
       "task_id": "pick_clean_then_place_in_recep-Ladle-None-CounterTop-8/trial_T20190909_121931_494324",
       "trial_num": "2",
       "step_range": "39-39"
-    }
+    },
+    "unique_id": "378"
   },
   {
     "task_desc": "cool some lettuce and put it in diningtable.",
@@ -7198,7 +7576,8 @@
       "task_id": "pick_cool_then_place_in_recep-Lettuce-None-DiningTable-21/trial_T20190909_045142_232083",
       "trial_num": "1",
       "step_range": "11-11"
-    }
+    },
+    "unique_id": "379"
   },
   {
     "task_desc": "cool some lettuce and put it in diningtable.",
@@ -7217,7 +7596,8 @@
       "task_id": "pick_cool_then_place_in_recep-Lettuce-None-DiningTable-21/trial_T20190909_045142_232083",
       "trial_num": "1",
       "step_range": "17-18"
-    }
+    },
+    "unique_id": "380"
   },
   {
     "task_desc": "put a cool mug in shelf.",
@@ -7236,7 +7616,8 @@
       "task_id": "pick_cool_then_place_in_recep-Mug-None-Shelf-20/trial_T20190908_121332_701155",
       "trial_num": "1",
       "step_range": "15-15"
-    }
+    },
+    "unique_id": "381"
   },
   {
     "task_desc": "put a cool mug in shelf.",
@@ -7255,7 +7636,8 @@
       "task_id": "pick_cool_then_place_in_recep-Mug-None-Shelf-20/trial_T20190908_121332_701155",
       "trial_num": "3",
       "step_range": "38-41"
-    }
+    },
+    "unique_id": "382"
   },
   {
     "task_desc": "put a cool mug in shelf.",
@@ -7274,7 +7656,8 @@
       "task_id": "pick_cool_then_place_in_recep-Mug-None-Shelf-20/trial_T20190908_121332_701155",
       "trial_num": "3",
       "step_range": "37-38"
-    }
+    },
+    "unique_id": "383"
   },
   {
     "task_desc": "put a cool mug in shelf.",
@@ -7293,7 +7676,8 @@
       "task_id": "pick_cool_then_place_in_recep-Mug-None-Shelf-20/trial_T20190908_121332_701155",
       "trial_num": "3",
       "step_range": "18-18"
-    }
+    },
+    "unique_id": "384"
   },
   {
     "task_desc": "put a cool mug in shelf.",
@@ -7312,7 +7696,8 @@
       "task_id": "pick_cool_then_place_in_recep-Mug-None-Shelf-20/trial_T20190908_121332_701155",
       "trial_num": "3",
       "step_range": "19-20"
-    }
+    },
+    "unique_id": "385"
   },
   {
     "task_desc": "put a cool mug in shelf.",
@@ -7331,7 +7716,8 @@
       "task_id": "pick_cool_then_place_in_recep-Mug-None-Shelf-20/trial_T20190908_121332_701155",
       "trial_num": "3",
       "step_range": "30-31"
-    }
+    },
+    "unique_id": "386"
   },
   {
     "task_desc": "put a cool mug in shelf.",
@@ -7350,7 +7736,8 @@
       "task_id": "pick_cool_then_place_in_recep-Mug-None-Shelf-20/trial_T20190908_121332_701155",
       "trial_num": "3",
       "step_range": "33-34"
-    }
+    },
+    "unique_id": "387"
   },
   {
     "task_desc": "put a cool mug in shelf.",
@@ -7369,7 +7756,8 @@
       "task_id": "pick_cool_then_place_in_recep-Mug-None-Shelf-20/trial_T20190908_121332_701155",
       "trial_num": "3",
       "step_range": "41-41"
-    }
+    },
+    "unique_id": "388"
   },
   {
     "task_desc": "put a cool mug in shelf.",
@@ -7388,7 +7776,8 @@
       "task_id": "pick_cool_then_place_in_recep-Mug-None-Shelf-20/trial_T20190908_121332_701155",
       "trial_num": "3",
       "step_range": "45-45"
-    }
+    },
+    "unique_id": "389"
   },
   {
     "task_desc": "cool some pan and put it in diningtable.",
@@ -7407,7 +7796,8 @@
       "task_id": "pick_cool_then_place_in_recep-Pan-None-DiningTable-11/trial_T20190908_204315_625279",
       "trial_num": "2",
       "step_range": "1-3"
-    }
+    },
+    "unique_id": "390"
   },
   {
     "task_desc": "cool some pan and put it in diningtable.",
@@ -7426,7 +7816,8 @@
       "task_id": "pick_cool_then_place_in_recep-Pan-None-DiningTable-11/trial_T20190908_204315_625279",
       "trial_num": "2",
       "step_range": "8-8"
-    }
+    },
+    "unique_id": "391"
   },
   {
     "task_desc": "cool some pan and put it in diningtable.",
@@ -7445,7 +7836,8 @@
       "task_id": "pick_cool_then_place_in_recep-Pan-None-DiningTable-11/trial_T20190908_204315_625279",
       "trial_num": "2",
       "step_range": "13-13"
-    }
+    },
+    "unique_id": "392"
   },
   {
     "task_desc": "cool some pan and put it in diningtable.",
@@ -7464,7 +7856,8 @@
       "task_id": "pick_cool_then_place_in_recep-Pan-None-DiningTable-11/trial_T20190908_204315_625279",
       "trial_num": "7",
       "step_range": "27-27"
-    }
+    },
+    "unique_id": "393"
   },
   {
     "task_desc": "cool some pan and put it in diningtable.",
@@ -7483,7 +7876,8 @@
       "task_id": "pick_cool_then_place_in_recep-Pan-None-DiningTable-11/trial_T20190908_204315_625279",
       "trial_num": "7",
       "step_range": "12-12"
-    }
+    },
+    "unique_id": "394"
   },
   {
     "task_desc": "cool some pan and put it in diningtable.",
@@ -7502,7 +7896,8 @@
       "task_id": "pick_cool_then_place_in_recep-Pan-None-DiningTable-11/trial_T20190908_204315_625279",
       "trial_num": "7",
       "step_range": "22-23"
-    }
+    },
+    "unique_id": "395"
   },
   {
     "task_desc": "cool some pot and put it in diningtable.",
@@ -7521,7 +7916,8 @@
       "task_id": "pick_cool_then_place_in_recep-Pot-None-DiningTable-24/trial_T20190908_111415_336140",
       "trial_num": "1",
       "step_range": "7-7"
-    }
+    },
+    "unique_id": "396"
   },
   {
     "task_desc": "heat some mug and put it in coffeemachine.",
@@ -7540,7 +7936,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-30/trial_T20190908_044350_359469",
       "trial_num": "2",
       "step_range": "7-9"
-    }
+    },
+    "unique_id": "397"
   },
   {
     "task_desc": "heat some mug and put it in coffeemachine.",
@@ -7559,7 +7956,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-30/trial_T20190908_044350_359469",
       "trial_num": "4",
       "step_range": "20-23"
-    }
+    },
+    "unique_id": "398"
   },
   {
     "task_desc": "heat some mug and put it in coffeemachine.",
@@ -7578,7 +7976,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-30/trial_T20190908_044350_359469",
       "trial_num": "4",
       "step_range": "20-27"
-    }
+    },
+    "unique_id": "399"
   },
   {
     "task_desc": "heat some mug and put it in coffeemachine.",
@@ -7597,7 +7996,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-30/trial_T20190908_044350_359469",
       "trial_num": "4",
       "step_range": "26-27"
-    }
+    },
+    "unique_id": "400"
   },
   {
     "task_desc": "heat some mug and put it in coffeemachine.",
@@ -7616,7 +8016,8 @@
       "task_id": "pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-30/trial_T20190908_044350_359469",
       "trial_num": "4",
       "step_range": "35-37"
-    }
+    },
+    "unique_id": "401"
   },
   {
     "task_desc": "find two newspaper and put them in sofa.",
@@ -7635,7 +8036,8 @@
       "task_id": "pick_two_obj_and_place-Newspaper-None-Sofa-212/trial_T20190908_003932_911911",
       "trial_num": "1",
       "step_range": "12-17"
-    }
+    },
+    "unique_id": "402"
   },
   {
     "task_desc": "find two saltshaker and put them in drawer.",
@@ -7654,7 +8056,8 @@
       "task_id": "pick_two_obj_and_place-SaltShaker-None-Drawer-12/trial_T20190907_175233_453383",
       "trial_num": "1",
       "step_range": "16-19"
-    }
+    },
+    "unique_id": "403"
   },
   {
     "task_desc": "find two saltshaker and put them in drawer.",
@@ -7673,6 +8076,7 @@
       "task_id": "pick_two_obj_and_place-SaltShaker-None-Drawer-12/trial_T20190907_175233_453383",
       "trial_num": "1",
       "step_range": "19-19"
-    }
+    },
+    "unique_id": "404"
   }
 ]

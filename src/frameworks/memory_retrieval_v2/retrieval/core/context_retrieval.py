@@ -24,8 +24,9 @@ from datetime import datetime
 from dotenv import load_dotenv
 
 # Load environment variables
-env_path = Path(__file__).resolve().parent.parent.parent.parent / '.env'
-load_dotenv(env_path)
+# Load environment variables
+env_path = Path(__file__).resolve().parent.parent.parent.parent.parent.parent / '.env'
+load_dotenv(env_path, override=True)
 
 # Import from local modules
 from .embedding_cache import (
@@ -160,13 +161,8 @@ def retrieve_context(
         knowledge_base
     )
     
-    # Step 3.5 & 3.6: Re-rank with CANDIDATE at bottom, order by similarity
-    knowledge_retrieval_base = _rerank_by_validation(knowledge_retrieval_base)
-    # Enforce similarity < 1.0 on output rows
-    knowledge_retrieval_base = [
-        row for row in knowledge_retrieval_base
-        if row.get("similarity_score", 0.0) < 1.0
-    ]
+    # Step 3.5 & 3.6: Re-rank using weighted score (Similarity * ValidationWeight)
+    knowledge_retrieval_base = _rerank_by_weighted_score(knowledge_retrieval_base)
     
     # Step 3.7: Select top pick_learning_count rows
     selected_rows = knowledge_retrieval_base[:pick_learning_count]
@@ -312,6 +308,7 @@ def _build_knowledge_retrieval_base(
                 "obj_type": kb_entry.get("obj_type", ""),
                 "verbs": kb_entry.get("verbs", ""),
                 "goal_phase": kb_entry.get("goal_phase", ""),
+                "unique_id": kb_entry.get("unique_id", ""),
                 # Nested refs only (prefixed keys)
                 "issue_ref": prefixed_issue_ref,
                 "evidence_ref": prefixed_evidence_ref,
@@ -325,39 +322,43 @@ def _build_knowledge_retrieval_base(
     return retrieval_base
 
 
-def _rerank_by_validation(retrieval_base: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+def _rerank_by_weighted_score(retrieval_base: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """
-    Re-rank retrieval base: validated entries first, CANDIDATE at bottom.
+    Re-rank retrieval base using a weighted score system.
     
-    Maintains similarity score ordering within each validation group.
+    Score = similarity_score * weight(valid_level)
+    
+    Weights:
+        VALID_NEXT_TRIAL = 1.0
+        VALID_SAME_TRIAL = 0.9
+        CANDIDATE        = 0.6
+        Others           = 0.6 (default)
     
     Args:
-        retrieval_base: The knowledge_retrieval_base table
+        retrieval_base: The knowledge_retrieval_base table.
+                        Duplicate rows are modified in-place to include 'ranking_score'.
         
     Returns:
-        Re-ranked table
+        Re-ranked table (sorted by ranking_score descending)
     """
-    # Separate validated and candidate entries
-    validated = []
-    candidates = []
+    weights = {
+        "VALID_NEXT_TRIAL": 1.0,
+        "VALID_SAME_TRIAL": 0.9,
+        "CANDIDATE": 0.6
+    }
+    default_weight = 0.6
     
     for row in retrieval_base:
-        if row["valid_level"] == "CANDIDATE":
-            candidates.append(row)
-        else:
-            validated.append(row)
+        valid_level = row.get("valid_level", "CANDIDATE")
+        weight = weights.get(valid_level, default_weight)
+        similarity = row.get("similarity_score", 0.0)
+        
+        row["ranking_score"] = similarity * weight
     
-    # Sort validated by validation priority (descending), then similarity (descending)
-    validated.sort(
-        key=lambda x: (VALID_LEVEL_PRIORITY.get(x["valid_level"], 0), x["similarity_score"]),
-        reverse=True
-    )
+    # Sort by ranking_score descending
+    retrieval_base.sort(key=lambda x: x["ranking_score"], reverse=True)
     
-    # Candidates keep similarity ordering
-    candidates.sort(key=lambda x: x["similarity_score"], reverse=True)
-    
-    # Concatenate: validated first, then candidates
-    return validated + candidates
+    return retrieval_base
 
 
 def _format_selected_learnings(selected_rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -378,12 +379,14 @@ def _format_selected_learnings(selected_rows: List[Dict[str, Any]]) -> List[Dict
         issue_text = nested_issue or row.get("issue_text", "")
 
         learning = {
+            "unique_id": row.get("unique_id", ""),
             "issue": issue_text,
             "learning": row.get("learning_text", ""),
             "valid_level": row.get("valid_level", ""),
             "goal_phase": row.get("goal_phase", ""),
             "task_desc": row.get("task_desc", ""),
-            "similarity_score": row.get("similarity_score", 0.0)
+            "similarity_score": row.get("similarity_score", 0.0),
+            "ranking_score": row.get("ranking_score", 0.0)
         }
         learnings.append(learning)
     
@@ -471,7 +474,7 @@ def format_learnings_for_prompt(learnings: List[Dict[str, Any]]) -> str:
     if not learnings:
         return "No relevant learnings found."
     
-    formatted_lines = [f"Relevant learnings from {len(learnings)} similar past tasks:"]
+    formatted_lines = []
     
     for i, learning in enumerate(learnings, 1):
         issue = learning.get("issue", "")

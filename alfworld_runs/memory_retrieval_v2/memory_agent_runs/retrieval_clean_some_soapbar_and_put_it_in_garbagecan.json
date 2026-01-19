@@ -1,0 +1,632 @@
+{
+  "query": "clean some soapbar and put it in garbagecan.",
+  "metadata": {
+    "pick_learning_count": 9,
+    "max_learning_count": 6,
+    "actual_selected_count": 9,
+    "knowledge_retrieval_base_count": 22,
+    "top_similar_tasks": [
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.7547845087253106,
+        "learning_count": 6,
+        "validated_learning_count": 5
+      },
+      {
+        "task_desc": "clean some potato and put it in garbagecan.",
+        "similarity_score": 0.7399295198143891,
+        "learning_count": 2,
+        "validated_learning_count": 2
+      },
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.6676612793644544,
+        "learning_count": 6,
+        "validated_learning_count": 6
+      },
+      {
+        "task_desc": "clean some pan and put it in fridge.",
+        "similarity_score": 0.6666195674394021,
+        "learning_count": 4,
+        "validated_learning_count": 4
+      },
+      {
+        "task_desc": "clean some dishsponge and put it in toilet.",
+        "similarity_score": 0.6600915669080298,
+        "learning_count": 4,
+        "validated_learning_count": 4
+      }
+    ]
+  },
+  "knowledge_retrieval_base": [
+    {
+      "task_desc": "put a clean soapbar in cabinet.",
+      "similarity_score": 0.7547845087253106,
+      "learning_count": 6,
+      "kb_index": 131,
+      "learning_text": "Avoid `soapbar 3` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "soapbar",
+      "verbs": "clean, drop, put",
+      "goal_phase": "TRANSFORM, RECOVER, PLACE",
+      "issue_ref": {
+        "issue_text": "Soapbar 3 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+        "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+        "issue_trial_num": "1",
+        "issue_step_range": "6-15"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+        "evidence_trial_num": "4",
+        "evidence_step_range": "7-7"
+      },
+      "ranking_score": 0.7547845087253106
+    },
+    {
+      "task_desc": "put a clean soapbar in cabinet.",
+      "similarity_score": 0.7547845087253106,
+      "learning_count": 6,
+      "kb_index": 132,
+      "learning_text": "Avoid `soapbar 1` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "soapbar",
+      "verbs": "clean, drop, put",
+      "goal_phase": "TRANSFORM, RECOVER, PLACE",
+      "issue_ref": {
+        "issue_text": "Soapbar 1 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+        "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+        "issue_trial_num": "2",
+        "issue_step_range": "11-15"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+        "evidence_trial_num": "4",
+        "evidence_step_range": "10-10"
+      },
+      "ranking_score": 0.7547845087253106
+    },
+    {
+      "task_desc": "clean some potato and put it in garbagecan.",
+      "similarity_score": 0.7399295198143891,
+      "learning_count": 2,
+      "kb_index": 127,
+      "learning_text": "Prioritize searching countertop 2 for the potato, as it is a common location for produce.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "potato",
+      "verbs": "pick",
+      "goal_phase": "SEARCH",
+      "issue_ref": {
+        "issue_text": "Agent failed to locate the potato after searching multiple common locations.",
+        "issue_task_id": "pick_clean_then_place_in_recep-Potato-None-GarbageCan-19/trial_T20190908_074136_618715",
+        "issue_trial_num": "1",
+        "issue_step_range": "1-49"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_clean_then_place_in_recep-Potato-None-GarbageCan-19/trial_T20190908_074136_618715",
+        "evidence_trial_num": "2",
+        "evidence_step_range": "5-5"
+      },
+      "ranking_score": 0.7399295198143891
+    },
+    {
+      "task_desc": "put a clean soapbar in cabinet.",
+      "similarity_score": 0.7547845087253106,
+      "learning_count": 6,
+      "kb_index": 128,
+      "learning_text": "Open the target container before attempting to place an item inside.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "cabinet",
+      "verbs": "put",
+      "goal_phase": "PLACE",
+      "issue_ref": {
+        "issue_text": "Failed to put item in cabinet 1 because it was closed.",
+        "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+        "issue_trial_num": "1",
+        "issue_step_range": "8-8"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+        "evidence_trial_num": "1",
+        "evidence_step_range": "12-13"
+      },
+      "ranking_score": 0.6793060578527795
+    },
+    {
+      "task_desc": "put a clean soapbar in cabinet.",
+      "similarity_score": 0.7547845087253106,
+      "learning_count": 6,
+      "kb_index": 129,
+      "learning_text": "Navigate to the object's location before attempting to interact with it.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "cabinet",
+      "verbs": "open",
+      "goal_phase": "PLACE",
+      "issue_ref": {
+        "issue_text": "Failed to open cabinet 1 because agent was not at its location.",
+        "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+        "issue_trial_num": "1",
+        "issue_step_range": "10-10"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+        "evidence_trial_num": "1",
+        "evidence_step_range": "12-12"
+      },
+      "ranking_score": 0.6793060578527795
+    },
+    {
+      "task_desc": "put a clean soapbar in cabinet.",
+      "similarity_score": 0.7547845087253106,
+      "learning_count": 6,
+      "kb_index": 130,
+      "learning_text": "Use the 'move' verb instead of 'put' to place objects into containers.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "soapbar, cabinet",
+      "verbs": "put, move",
+      "goal_phase": "PLACE",
+      "issue_ref": {
+        "issue_text": "Failed to put soapbar in cabinet 1; 'put' verb ineffective.",
+        "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+        "issue_trial_num": "1",
+        "issue_step_range": "15-15"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+        "evidence_trial_num": "1",
+        "evidence_step_range": "16-16"
+      },
+      "ranking_score": 0.6793060578527795
+    },
+    {
+      "task_desc": "put two soapbar in cabinet.",
+      "similarity_score": 0.6676612793644544,
+      "learning_count": 6,
+      "kb_index": 352,
+      "learning_text": "Persist in attempting to take objects from locations where they are visible, as they may eventually become pickable.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "soapbar, toilet",
+      "verbs": "take",
+      "goal_phase": "ACQUIRE",
+      "issue_ref": {
+        "issue_text": "Repeatedly failed to take visible soapbars from toilet, receiving 'Nothing happens'.",
+        "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+        "issue_trial_num": "1",
+        "issue_step_range": "29-30"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+        "evidence_trial_num": "5",
+        "evidence_step_range": "14-14"
+      },
+      "ranking_score": 0.6676612793644544
+    },
+    {
+      "task_desc": "clean some pan and put it in fridge.",
+      "similarity_score": 0.6666195674394021,
+      "learning_count": 4,
+      "kb_index": 122,
+      "learning_text": "Expand search strategy to include less obvious locations like stoveburners to find the object.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "pan",
+      "verbs": "pick",
+      "goal_phase": "SEARCH",
+      "issue_ref": {
+        "issue_text": "Pan not found after checking initial locations (cabinets, drawers, countertops, microwave).",
+        "issue_task_id": "pick_clean_then_place_in_recep-Pan-None-Fridge-13",
+        "issue_trial_num": "3",
+        "issue_step_range": "22-31"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_clean_then_place_in_recep-Pan-None-Fridge-13",
+        "evidence_trial_num": "3",
+        "evidence_step_range": "32-38"
+      },
+      "ranking_score": 0.6666195674394021
+    },
+    {
+      "task_desc": "clean some potato and put it in garbagecan.",
+      "similarity_score": 0.7399295198143891,
+      "learning_count": 2,
+      "kb_index": 126,
+      "learning_text": "Recognize when an object is non-interactable and skip it to continue the search.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "cabinet 2",
+      "verbs": "go to, open",
+      "goal_phase": "SEARCH",
+      "issue_ref": {
+        "issue_text": "Agent repeatedly failed to interact with cabinet 2, receiving 'Nothing happens' observations.",
+        "issue_task_id": "pick_clean_then_place_in_recep-Potato-None-GarbageCan-19/trial_T20190908_074136_618715",
+        "issue_trial_num": "1",
+        "issue_step_range": "14-19"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_clean_then_place_in_recep-Potato-None-GarbageCan-19/trial_T20190908_074136_618715",
+        "evidence_trial_num": "1",
+        "evidence_step_range": "20-20"
+      },
+      "ranking_score": 0.6659365678329503
+    },
+    {
+      "task_desc": "clean some dishsponge and put it in toilet.",
+      "similarity_score": 0.6600915669080298,
+      "learning_count": 4,
+      "kb_index": 92,
+      "learning_text": "Systematically search all possible container types and locations, including less obvious ones like bathtubbasin.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "dishsponge, countertop, sinkbasin, drawer, bathtubbasin",
+      "verbs": "go, open, take",
+      "goal_phase": "SEARCH",
+      "issue_ref": {
+        "issue_text": "Dishsponge not found in common or initially checked locations.",
+        "issue_task_id": "pick_clean_then_place_in_recep-DishSponge-None-Toilet-427",
+        "issue_trial_num": "1",
+        "issue_step_range": "3-8"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_clean_then_place_in_recep-DishSponge-None-Toilet-427",
+        "evidence_trial_num": "2",
+        "evidence_step_range": "1-23"
+      },
+      "ranking_score": 0.6600915669080298
+    },
+    {
+      "task_desc": "clean some dishsponge and put it in toilet.",
+      "similarity_score": 0.6600915669080298,
+      "learning_count": 4,
+      "kb_index": 93,
+      "learning_text": "Re-attempting navigation in a new trial can resolve transient 'Nothing happens' issues.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "obj_type": "drawer",
+      "verbs": "go",
+      "goal_phase": "SEARCH",
+      "issue_ref": {
+        "issue_text": "Repeated 'go to' action failed to move to a specific location.",
+        "issue_task_id": "pick_clean_then_place_in_recep-DishSponge-None-Toilet-427",
+        "issue_trial_num": "1",
+        "issue_step_range": "10-11"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_clean_then_place_in_recep-DishSponge-None-Toilet-427",
+        "evidence_trial_num": "2",
+        "evidence_step_range": "1-1"
+      },
+      "ranking_score": 0.6600915669080298
+    },
+    {
+      "task_desc": "put two soapbar in cabinet.",
+      "similarity_score": 0.6676612793644544,
+      "learning_count": 6,
+      "kb_index": 349,
+      "learning_text": "Go to the cabinet's location before attempting to open it.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "cabinet",
+      "verbs": "open",
+      "goal_phase": "ACQUIRE",
+      "issue_ref": {
+        "issue_text": "Attempted to open a cabinet without being at its location.",
+        "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+        "issue_trial_num": "1",
+        "issue_step_range": "11-11"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+        "evidence_trial_num": "1",
+        "evidence_step_range": "13-14"
+      },
+      "ranking_score": 0.600895151428009
+    },
+    {
+      "task_desc": "put two soapbar in cabinet.",
+      "similarity_score": 0.6676612793644544,
+      "learning_count": 6,
+      "kb_index": 350,
+      "learning_text": "Open the cabinet first before attempting to look inside it.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "cabinet",
+      "verbs": "look",
+      "goal_phase": "SEARCH",
+      "issue_ref": {
+        "issue_text": "Attempted to look inside a cabinet that was closed.",
+        "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+        "issue_trial_num": "1",
+        "issue_step_range": "12-12"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+        "evidence_trial_num": "1",
+        "evidence_step_range": "14-14"
+      },
+      "ranking_score": 0.600895151428009
+    },
+    {
+      "task_desc": "put two soapbar in cabinet.",
+      "similarity_score": 0.6676612793644544,
+      "learning_count": 6,
+      "kb_index": 351,
+      "learning_text": "Rely on the observation from 'open' action for cabinet contents, as 'look in' is ineffective.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "cabinet",
+      "verbs": "look",
+      "goal_phase": "SEARCH",
+      "issue_ref": {
+        "issue_text": "Using 'look in' action after opening a cabinet yields no new information.",
+        "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+        "issue_trial_num": "1",
+        "issue_step_range": "15-15"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+        "evidence_trial_num": "1",
+        "evidence_step_range": "14-14"
+      },
+      "ranking_score": 0.600895151428009
+    },
+    {
+      "task_desc": "put two soapbar in cabinet.",
+      "similarity_score": 0.6676612793644544,
+      "learning_count": 6,
+      "kb_index": 353,
+      "learning_text": "Always go to the target container before attempting to move an item into it.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "soapbar, cabinet",
+      "verbs": "move",
+      "goal_phase": "PLACE",
+      "issue_ref": {
+        "issue_text": "Failed to move item to container because agent was not at the container's location.",
+        "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+        "issue_trial_num": "2",
+        "issue_step_range": "25-25"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+        "evidence_trial_num": "2",
+        "evidence_step_range": "27-28"
+      },
+      "ranking_score": 0.600895151428009
+    },
+    {
+      "task_desc": "put two soapbar in cabinet.",
+      "similarity_score": 0.6676612793644544,
+      "learning_count": 6,
+      "kb_index": 354,
+      "learning_text": "Verify item placement after 'move' action and avoid redundant 'put' commands.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "soapbar, cabinet",
+      "verbs": "put",
+      "goal_phase": "PLACE",
+      "issue_ref": {
+        "issue_text": "Used redundant 'put' action after item was already moved into the container.",
+        "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+        "issue_trial_num": "2",
+        "issue_step_range": "30-30"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+        "evidence_trial_num": "2",
+        "evidence_step_range": "31-31"
+      },
+      "ranking_score": 0.600895151428009
+    },
+    {
+      "task_desc": "clean some pan and put it in fridge.",
+      "similarity_score": 0.6666195674394021,
+      "learning_count": 4,
+      "kb_index": 121,
+      "learning_text": "Interpret 'Nothing happens' when attempting to open a container as it being inaccessible or empty, and continue the search.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "cabinet, drawer",
+      "verbs": "open",
+      "goal_phase": "SEARCH",
+      "issue_ref": {
+        "issue_text": "Failed to open various cabinets and drawers, receiving 'Nothing happens' observation.",
+        "issue_task_id": "pick_clean_then_place_in_recep-Pan-None-Fridge-13",
+        "issue_trial_num": "1",
+        "issue_step_range": "10-10"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_clean_then_place_in_recep-Pan-None-Fridge-13",
+        "evidence_trial_num": "1",
+        "evidence_step_range": "13-13"
+      },
+      "ranking_score": 0.5999576106954619
+    },
+    {
+      "task_desc": "clean some pan and put it in fridge.",
+      "similarity_score": 0.6666195674394021,
+      "learning_count": 4,
+      "kb_index": 123,
+      "learning_text": "Go to the target location (sinkbasin) before attempting to use it to clean an object.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "pan, sinkbasin",
+      "verbs": "clean",
+      "goal_phase": "TRANSFORM",
+      "issue_ref": {
+        "issue_text": "Failed to clean pan 1 because the agent was not at the sinkbasin 1.",
+        "issue_task_id": "pick_clean_then_place_in_recep-Pan-None-Fridge-13",
+        "issue_trial_num": "3",
+        "issue_step_range": "41-41"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_clean_then_place_in_recep-Pan-None-Fridge-13",
+        "evidence_trial_num": "3",
+        "evidence_step_range": "43-44"
+      },
+      "ranking_score": 0.5999576106954619
+    },
+    {
+      "task_desc": "clean some pan and put it in fridge.",
+      "similarity_score": 0.6666195674394021,
+      "learning_count": 4,
+      "kb_index": 124,
+      "learning_text": "Use 'move [object] to [container]' command instead of 'put' for placing objects into containers.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "pan, fridge",
+      "verbs": "place",
+      "goal_phase": "PLACE",
+      "issue_ref": {
+        "issue_text": "Failed to place pan 1 in fridge 1 using the 'put' command.",
+        "issue_task_id": "pick_clean_then_place_in_recep-Pan-None-Fridge-13",
+        "issue_trial_num": "3",
+        "issue_step_range": "48-48"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_clean_then_place_in_recep-Pan-None-Fridge-13",
+        "evidence_trial_num": "3",
+        "evidence_step_range": "49-49"
+      },
+      "ranking_score": 0.5999576106954619
+    },
+    {
+      "task_desc": "clean some dishsponge and put it in toilet.",
+      "similarity_score": 0.6600915669080298,
+      "learning_count": 4,
+      "kb_index": 94,
+      "learning_text": "Always navigate to the correct location before attempting an action that requires proximity, like cleaning.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "dishsponge, sinkbasin",
+      "verbs": "clean, go",
+      "goal_phase": "TRANSFORM",
+      "issue_ref": {
+        "issue_text": "Tried to clean an object without being at the required cleaning location.",
+        "issue_task_id": "pick_clean_then_place_in_recep-DishSponge-None-Toilet-427",
+        "issue_trial_num": "2",
+        "issue_step_range": "25-25"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_clean_then_place_in_recep-DishSponge-None-Toilet-427",
+        "evidence_trial_num": "2",
+        "evidence_step_range": "27-28"
+      },
+      "ranking_score": 0.5940824102172269
+    },
+    {
+      "task_desc": "clean some dishsponge and put it in toilet.",
+      "similarity_score": 0.6600915669080298,
+      "learning_count": 4,
+      "kb_index": 95,
+      "learning_text": "Use the 'move' command instead of 'put' when placing an object into a receptacle like a toilet.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "obj_type": "dishsponge, toilet",
+      "verbs": "put, move",
+      "goal_phase": "PLACE",
+      "issue_ref": {
+        "issue_text": "Incorrect verb used for placing an object into a receptacle.",
+        "issue_task_id": "pick_clean_then_place_in_recep-DishSponge-None-Toilet-427",
+        "issue_trial_num": "2",
+        "issue_step_range": "30-32"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_clean_then_place_in_recep-DishSponge-None-Toilet-427",
+        "evidence_trial_num": "2",
+        "evidence_step_range": "33-33"
+      },
+      "ranking_score": 0.5940824102172269
+    },
+    {
+      "task_desc": "put a clean soapbar in cabinet.",
+      "similarity_score": 0.7547845087253106,
+      "learning_count": 6,
+      "kb_index": 133,
+      "learning_text": "Avoid `soapbar 4` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+      "valid_level": "CANDIDATE",
+      "obj_type": "soapbar",
+      "verbs": "clean, drop, put",
+      "goal_phase": "TRANSFORM, RECOVER, PLACE",
+      "issue_ref": {
+        "issue_text": "Soapbar 4 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+        "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+        "issue_trial_num": "7",
+        "issue_step_range": "40-45"
+      },
+      "evidence_ref": {
+        "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+        "evidence_trial_num": "7",
+        "evidence_step_range": "46-48"
+      },
+      "ranking_score": 0.4528707052351863
+    }
+  ],
+  "selected_learnings": [
+    {
+      "issue": "Soapbar 3 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+      "learning": "Avoid `soapbar 3` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "TRANSFORM, RECOVER, PLACE",
+      "task_desc": "put a clean soapbar in cabinet.",
+      "similarity_score": 0.7547845087253106,
+      "ranking_score": 0.7547845087253106
+    },
+    {
+      "issue": "Soapbar 1 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+      "learning": "Avoid `soapbar 1` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "TRANSFORM, RECOVER, PLACE",
+      "task_desc": "put a clean soapbar in cabinet.",
+      "similarity_score": 0.7547845087253106,
+      "ranking_score": 0.7547845087253106
+    },
+    {
+      "issue": "Agent failed to locate the potato after searching multiple common locations.",
+      "learning": "Prioritize searching countertop 2 for the potato, as it is a common location for produce.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "SEARCH",
+      "task_desc": "clean some potato and put it in garbagecan.",
+      "similarity_score": 0.7399295198143891,
+      "ranking_score": 0.7399295198143891
+    },
+    {
+      "issue": "Failed to put item in cabinet 1 because it was closed.",
+      "learning": "Open the target container before attempting to place an item inside.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "goal_phase": "PLACE",
+      "task_desc": "put a clean soapbar in cabinet.",
+      "similarity_score": 0.7547845087253106,
+      "ranking_score": 0.6793060578527795
+    },
+    {
+      "issue": "Failed to open cabinet 1 because agent was not at its location.",
+      "learning": "Navigate to the object's location before attempting to interact with it.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "goal_phase": "PLACE",
+      "task_desc": "put a clean soapbar in cabinet.",
+      "similarity_score": 0.7547845087253106,
+      "ranking_score": 0.6793060578527795
+    },
+    {
+      "issue": "Failed to put soapbar in cabinet 1; 'put' verb ineffective.",
+      "learning": "Use the 'move' verb instead of 'put' to place objects into containers.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "goal_phase": "PLACE",
+      "task_desc": "put a clean soapbar in cabinet.",
+      "similarity_score": 0.7547845087253106,
+      "ranking_score": 0.6793060578527795
+    },
+    {
+      "issue": "Repeatedly failed to take visible soapbars from toilet, receiving 'Nothing happens'.",
+      "learning": "Persist in attempting to take objects from locations where they are visible, as they may eventually become pickable.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "ACQUIRE",
+      "task_desc": "put two soapbar in cabinet.",
+      "similarity_score": 0.6676612793644544,
+      "ranking_score": 0.6676612793644544
+    },
+    {
+      "issue": "Pan not found after checking initial locations (cabinets, drawers, countertops, microwave).",
+      "learning": "Expand search strategy to include less obvious locations like stoveburners to find the object.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "goal_phase": "SEARCH",
+      "task_desc": "clean some pan and put it in fridge.",
+      "similarity_score": 0.6666195674394021,
+      "ranking_score": 0.6666195674394021
+    },
+    {
+      "issue": "Agent repeatedly failed to interact with cabinet 2, receiving 'Nothing happens' observations.",
+      "learning": "Recognize when an object is non-interactable and skip it to continue the search.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "goal_phase": "SEARCH",
+      "task_desc": "clean some potato and put it in garbagecan.",
+      "similarity_score": 0.7399295198143891,
+      "ranking_score": 0.6659365678329503
+    }
+  ]
+}

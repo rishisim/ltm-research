@@ -197,7 +197,7 @@ def convert_to_csv(entries: List[Dict[str, Any]], output_path: str):
     
     # Flattened fieldnames matching actual JSON structure
     fieldnames = [
-        "task_desc", "obj_type", "verbs", "goal_phase",
+        "unique_id", "task_desc", "obj_type", "verbs", "goal_phase",
         "issue_text", "learning_text", "valid_level",
         "issue_task_id", "issue_trial_num", "issue_step_range",
         "evidence_task_id", "evidence_trial_num", "evidence_step_range"
@@ -219,6 +219,7 @@ def convert_to_csv(entries: List[Dict[str, Any]], output_path: str):
                 issue_step_range = []
             
             row = {
+                "unique_id": entry.get("unique_id", ""),
                 "task_desc": entry.get("task_desc", ""),
                 "obj_type": entry.get("obj_type", ""),
                 "verbs": entry.get("verbs", ""),
@@ -309,6 +310,11 @@ def generate_knowledge_base(
 
     # Merge and save JSON
     all_entries = existing_entries + new_entries
+    
+    # Assign sequential unique_ids
+    for i, entry in enumerate(all_entries):
+        entry["unique_id"] = str(i + 1)
+        
     save_json(json_output_path, all_entries)
     print(f"Saved {len(all_entries)} total entries to {json_output_path}")
 

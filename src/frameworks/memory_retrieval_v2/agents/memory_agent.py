@@ -54,14 +54,23 @@ IMPORTANT: You have access to a help tool when you're struggling or need guidanc
 To use it, output an action in this format:
 help["your issue here"]
 
-CRITICAL: Your query must be SHORT - maximum ONE sentence. Be concise.
+CRITICAL: Your query must match the style of issues in your memory bank to get the best results.
+Query Style Guidelines:
+1. Describe the FAILURE or OBSTACLE, not just what you want to do.
+2. Mention the ACTION that failed (e.g. "put command failed").
+3. Mention MISSING PRECONDITIONS (e.g. "object not found", "container closed").
+4. KEY: Do not include numbers or specific identifiers (e.g. "sidetable 1", "mug 2") - instead use general objects (e.g. "sidetable", "mug").
 
-Examples of good queries:
-help["cannot find the mug"]
-help["how to heat something in microwave"]
-help["stuck after opening drawer"]
+Examples of GOOD queries:
+help["cannot find the mug on the table"]
+help["put command failed when placing egg on sidetable"]
+help["container is closed and cannot put object inside"]
+help["repeatedly failing to go to the fridge"]
 
-Do NOT write long queries like "I have been searching for the mug for a long time and checked many locations but still cannot find it" - instead write: help["cannot find the mug"]
+Examples of BAD queries:
+help["how to put mug"] (Too vague)
+help["cannot find mug 1"] (Contains ID '1')
+help["what do i do next"] (Not specific to an issue)
 
 Use this tool when you:
 - Can't find an object after searching
@@ -198,10 +207,25 @@ The following learnings are from previous tasks similar to yours. Use them to av
 
         cur_step = 0
         reward = 0
+        
+        # Token usage tracking
+        total_input_tokens = 0
+        total_output_tokens = 0
+        total_tokens = 0
 
         while cur_step < 49:
             # Choose action
-            action = self._llm(str(env_history) + "Action:", stop=['\n']).strip()
+            action_text, usage = self._llm(str(env_history) + "Action:", stop=['\n'])
+            action = action_text.strip()
+            
+            # Update token usage
+            step_input_tokens = usage.get("input_tokens", 0)
+            step_output_tokens = usage.get("output_tokens", 0)
+            step_total_tokens = usage.get("total_tokens", 0)
+            
+            total_input_tokens += step_input_tokens
+            total_output_tokens += step_output_tokens
+            total_tokens += step_total_tokens
             
             # Clean up action
             if action.startswith('Action:'):
@@ -235,7 +259,12 @@ The following learnings are from previous tasks similar to yours. Use them to av
                     "step": cur_step + 1,
                     "action": action,
                     "observation": observation,
-                    "is_help_call": True
+                    "is_help_call": True,
+                    "token_usage": {
+                        "input_tokens": step_input_tokens,
+                        "output_tokens": step_output_tokens,
+                        "total_tokens": step_total_tokens
+                    }
                 })
                 
                 env_history.add("observation", observation)
@@ -257,7 +286,12 @@ The following learnings are from previous tasks similar to yours. Use them to av
                 "step": cur_step + 1,
                 "action": action,
                 "observation": observation,
-                "is_help_call": False
+                "is_help_call": False,
+                "token_usage": {
+                    "input_tokens": step_input_tokens,
+                    "output_tokens": step_output_tokens,
+                    "total_tokens": step_total_tokens
+                }
             })
             
             if self.to_print:
@@ -283,7 +317,8 @@ The following learnings are from previous tasks similar to yours. Use them to av
         if log_dir:
             self._log_trajectory(
                 log_dir, task_id, trial_num, steps, 
-                is_success, task_desc, help_calls, retrieved_learnings
+                is_success, task_desc, help_calls, retrieved_learnings,
+                total_input_tokens, total_output_tokens, total_tokens
             )
 
         return env_history, is_success
@@ -297,7 +332,10 @@ The following learnings are from previous tasks similar to yours. Use them to av
         success: bool, 
         task_desc: str = "",
         help_calls: List[Dict[str, str]] = None,
-        context_learnings: List[Dict[str, str]] = None
+        context_learnings: List[Dict[str, str]] = None,
+        input_tokens: int = 0,
+        output_tokens: int = 0,
+        total_tokens: int = 0
     ) -> None:
         """Log the complete trajectory to trajectories.json"""
         # Extract task_type from task_id (e.g., 'pick_and_place_simple' from 'pick_and_place_simple-Mug-None-Desk-308/...')
@@ -313,7 +351,10 @@ The following learnings are from previous tasks similar to yours. Use them to av
             "success": success,
             "help_calls": help_calls or [],
             "help_call_count": len(help_calls) if help_calls else 0,
-            "step_num": len(steps)
+            "step_num": len(steps),
+            "input_tokens": input_tokens,
+            "output_tokens": output_tokens,
+            "total_tokens": total_tokens
         }
         
         trajectories_path = os.path.join(log_dir, "trajectories.json")

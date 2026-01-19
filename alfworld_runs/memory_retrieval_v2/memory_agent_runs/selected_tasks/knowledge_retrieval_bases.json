@@ -1,0 +1,2406 @@
+{
+  "valid_unseen:look_at_obj_in_light-AlarmClock-None-DeskLamp-308/trial_T20190908_222917_366542": {
+    "query": "examine the alarmclock with the desklamp.",
+    "metadata": {
+      "pick_learning_count": 18,
+      "max_learning_count": 12,
+      "actual_selected_count": 18,
+      "knowledge_retrieval_base_count": 23,
+      "top_similar_tasks": [
+        {
+          "task_desc": "look at alarmclock under the desklamp.",
+          "similarity_score": 0.9227028208774675,
+          "learning_count": 2,
+          "validated_learning_count": 2
+        },
+        {
+          "task_desc": "examine the watch with the desklamp.",
+          "similarity_score": 0.8189119085967494,
+          "learning_count": 2,
+          "validated_learning_count": 2
+        },
+        {
+          "task_desc": "examine the pillow with the desklamp.",
+          "similarity_score": 0.7952342389005221,
+          "learning_count": 12,
+          "validated_learning_count": 12
+        },
+        {
+          "task_desc": "examine the mug with the desklamp.",
+          "similarity_score": 0.7909743503153348,
+          "learning_count": 3,
+          "validated_learning_count": 3
+        },
+        {
+          "task_desc": "examine the pencil with the desklamp.",
+          "similarity_score": 0.7794621670637999,
+          "learning_count": 4,
+          "validated_learning_count": 4
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "look at alarmclock under the desklamp.",
+        "similarity_score": 0.9227028208774675,
+        "learning_count": 2,
+        "kb_index": 0,
+        "learning_text": "Use the 'use [object]' command to successfully turn on the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "desklamp",
+        "verbs": "turn on, use, look at, examine",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "1",
+        "issue_ref": {
+          "issue_text": "Repeated attempts to turn on, use, or examine desklamp 1 had no effect.",
+          "issue_task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-314/trial_T20190908_042454_725701",
+          "issue_trial_num": "1",
+          "issue_step_range": "5-12"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-314/trial_T20190908_042454_725701",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "13-13"
+        },
+        "ranking_score": 0.8304325387897208
+      },
+      {
+        "task_desc": "look at alarmclock under the desklamp.",
+        "similarity_score": 0.9227028208774675,
+        "learning_count": 2,
+        "kb_index": 1,
+        "learning_text": "First, pick up the alarmclock before attempting to look at it under the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "alarmclock, desklamp",
+        "verbs": "look at, take",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "2",
+        "issue_ref": {
+          "issue_text": "Directly attempting to 'look at alarmclock under desklamp' failed, even with the lamp on.",
+          "issue_task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-314/trial_T20190908_042454_725701",
+          "issue_trial_num": "1",
+          "issue_step_range": "3-16"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-314/trial_T20190908_042454_725701",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "19-19"
+        },
+        "ranking_score": 0.8304325387897208
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "learning_count": 12,
+        "kb_index": 33,
+        "learning_text": "If an object is stationary, move the other required object to its location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "desklamp",
+        "verbs": "take, move",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "34",
+        "issue_ref": {
+          "issue_text": "Failed to take or move the desklamp, indicating it is stationary.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "issue_trial_num": "1",
+          "issue_step_range": "3-3"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "10-10"
+        },
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "learning_count": 12,
+        "kb_index": 34,
+        "learning_text": "Go to the object's location before attempting to take it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "pillow",
+        "verbs": "take, go to",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "35",
+        "issue_ref": {
+          "issue_text": "Failed to take pillow from bed because agent was not at its location.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "issue_trial_num": "1",
+          "issue_step_range": "4-4"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "11-12"
+        },
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "learning_count": 12,
+        "kb_index": 36,
+        "learning_text": "Ensure the desklamp is present and active when attempting to examine an object.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "pillow, desklamp",
+        "verbs": "examine, use",
+        "goal_phase": "RECOVER",
+        "unique_id": "37",
+        "issue_ref": {
+          "issue_text": "Attempted to examine pillow without the desklamp present or active.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "issue_trial_num": "1",
+          "issue_step_range": "8-28"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "15-16"
+        },
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "learning_count": 12,
+        "kb_index": 37,
+        "learning_text": "Bring the pillow to the desklamp's location before attempting examination.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "pillow, desklamp",
+        "verbs": "examine, go to, take",
+        "goal_phase": "RECOVER",
+        "unique_id": "38",
+        "issue_ref": {
+          "issue_text": "Failed to examine pillow with desklamp because objects were not co-located.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "issue_trial_num": "1",
+          "issue_step_range": "9-22"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "10-13"
+        },
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "learning_count": 12,
+        "kb_index": 39,
+        "learning_text": "To examine an object with a desklamp, hold the object and use the desklamp.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "pillow, desklamp",
+        "verbs": "examine with, use on, use",
+        "goal_phase": "RECOVER",
+        "unique_id": "40",
+        "issue_ref": {
+          "issue_text": "Used 'examine with' or 'use on' commands instead of 'use' for desklamp examination.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "issue_trial_num": "1",
+          "issue_step_range": "20-20"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "15-16"
+        },
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.7794621670637999,
+        "learning_count": 4,
+        "kb_index": 26,
+        "learning_text": "Adapted strategy by moving the movable pencil to the fixed desklamp's location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "desklamp",
+        "verbs": "take",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "27",
+        "issue_ref": {
+          "issue_text": "Failed to take desklamp, confirming it is a fixed object.",
+          "issue_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
+          "issue_trial_num": "1",
+          "issue_step_range": "10-10"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "10-11"
+        },
+        "ranking_score": 0.7794621670637999
+      },
+      {
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.7794621670637999,
+        "learning_count": 4,
+        "kb_index": 27,
+        "learning_text": "Successfully picked up the pencil, demonstrating it was movable despite prior failures.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "pencil",
+        "verbs": "take",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "28",
+        "issue_ref": {
+          "issue_text": "Failed to take pencil, initially believed to be fixed.",
+          "issue_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
+          "issue_trial_num": "1",
+          "issue_step_range": "12-12"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "10-10"
+        },
+        "ranking_score": 0.7794621670637999
+      },
+      {
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.7794621670637999,
+        "learning_count": 4,
+        "kb_index": 28,
+        "learning_text": "Ensured co-location of pencil and desklamp by moving the pencil to the desklamp's location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "pencil, desklamp",
+        "verbs": "examine",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "29",
+        "issue_ref": {
+          "issue_text": "Failed to examine objects due to lack of co-location.",
+          "issue_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
+          "issue_trial_num": "1",
+          "issue_step_range": "28-31"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "10-11"
+        },
+        "ranking_score": 0.7794621670637999
+      },
+      {
+        "task_desc": "examine the watch with the desklamp.",
+        "similarity_score": 0.8189119085967494,
+        "learning_count": 2,
+        "kb_index": 51,
+        "learning_text": "Ensure the desklamp is turned on before attempting to examine an object with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "watch, desklamp",
+        "verbs": "examine",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "52",
+        "issue_ref": {
+          "issue_text": "Attempted to examine watch with desklamp when desklamp was off.",
+          "issue_task_id": "look_at_obj_in_light-Watch-None-DeskLamp-205/trial_T20190907_001948_509721",
+          "issue_trial_num": "1",
+          "issue_step_range": "15-15"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Watch-None-DeskLamp-205/trial_T20190907_001948_509721",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "19-19"
+        },
+        "ranking_score": 0.7370207177370746
+      },
+      {
+        "task_desc": "examine the watch with the desklamp.",
+        "similarity_score": 0.8189119085967494,
+        "learning_count": 2,
+        "kb_index": 52,
+        "learning_text": "Use the 'use' command to activate the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "desklamp",
+        "verbs": "turn on",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "53",
+        "issue_ref": {
+          "issue_text": "Used 'turn on' command to activate desklamp, which had no effect.",
+          "issue_task_id": "look_at_obj_in_light-Watch-None-DeskLamp-205/trial_T20190907_001948_509721",
+          "issue_trial_num": "1",
+          "issue_step_range": "17-17"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Watch-None-DeskLamp-205/trial_T20190907_001948_509721",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "19-19"
+        },
+        "ranking_score": 0.7370207177370746
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "learning_count": 12,
+        "kb_index": 29,
+        "learning_text": "Rely on 'go to' observations to identify objects present at a location.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "pillow, desklamp",
+        "verbs": "look at, examine",
+        "goal_phase": "SEARCH",
+        "unique_id": "30",
+        "issue_ref": {
+          "issue_text": "Attempted to 'look at' a location, which had no effect for finding objects.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-216",
+          "issue_trial_num": "1",
+          "issue_step_range": "2-2"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-216",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "3-3"
+        },
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "learning_count": 12,
+        "kb_index": 30,
+        "learning_text": "To examine an object with a light source, 'use' the light source directly.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "pillow, desklamp",
+        "verbs": "look at, examine",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "31",
+        "issue_ref": {
+          "issue_text": "Used 'examine X with Y' command, which was ineffective for the task.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-216",
+          "issue_trial_num": "1",
+          "issue_step_range": "6-6"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-216",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "11-11"
+        },
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "learning_count": 12,
+        "kb_index": 31,
+        "learning_text": "Do not 'take' the desklamp; instead, 'use' it in its fixed location.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "pillow, desklamp",
+        "verbs": "look at, examine",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "32",
+        "issue_ref": {
+          "issue_text": "Attempted to 'take' the desklamp, which was not the correct action for its use.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-216",
+          "issue_trial_num": "1",
+          "issue_step_range": "7-7"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-216",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "11-11"
+        },
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "learning_count": 12,
+        "kb_index": 32,
+        "learning_text": "Turn on the desklamp before attempting to examine objects with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "desklamp, pillow",
+        "verbs": "examine, look at, use",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "33",
+        "issue_ref": {
+          "issue_text": "Failed to examine object with desklamp because it was off.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-306",
+          "issue_trial_num": "1",
+          "issue_step_range": "7-7"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-306",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "10-10"
+        },
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "learning_count": 12,
+        "kb_index": 35,
+        "learning_text": "Use the 'use' command to turn on the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "desklamp",
+        "verbs": "turn on, use",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "36",
+        "issue_ref": {
+          "issue_text": "Used 'turn on' command instead of 'use' to activate the desklamp.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "issue_trial_num": "1",
+          "issue_step_range": "5-5"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "6-6"
+        },
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "learning_count": 12,
+        "kb_index": 38,
+        "learning_text": "Go to the desklamp's location before attempting to use it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "desklamp",
+        "verbs": "use, go to",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "39",
+        "issue_ref": {
+          "issue_text": "Attempted to use desklamp from an incorrect location (bed).",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "issue_trial_num": "1",
+          "issue_step_range": "14-21"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "26-26"
+        },
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "learning_count": 12,
+        "kb_index": 374,
+        "learning_text": "Turn on the desklamp before attempting to examine objects with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "Pillow, DeskLamp",
+        "verbs": "examine",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "375",
+        "issue_ref": {
+          "issue_text": "Attempted to examine object with desklamp without turning it on.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-306/trial_T20190909_075045_578840",
+          "issue_trial_num": "1",
+          "issue_step_range": "7-7"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-306/trial_T20190909_075045_578840",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "10-10"
+        },
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "task_desc": "examine the mug with the desklamp.",
+        "similarity_score": 0.7909743503153348,
+        "learning_count": 3,
+        "kb_index": 9,
+        "learning_text": "Search for the object at a different location when it's not found at the current one.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "mug, desklamp",
+        "verbs": "look at, examine, use",
+        "goal_phase": "SEARCH",
+        "unique_id": "10",
+        "issue_ref": {
+          "issue_text": "Attempted to look at a desklamp at a location where it was not present.",
+          "issue_task_id": "look_at_obj_in_light-Mug-None-DeskLamp-301/trial_T20190908_155916_103990",
+          "issue_trial_num": "1",
+          "issue_step_range": "4-4"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Mug-None-DeskLamp-301/trial_T20190908_155916_103990",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "5-5"
+        },
+        "ranking_score": 0.7118769152838014
+      },
+      {
+        "task_desc": "examine the mug with the desklamp.",
+        "similarity_score": 0.7909743503153348,
+        "learning_count": 3,
+        "kb_index": 10,
+        "learning_text": "If an object cannot be taken, bring the other required object to its location.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "mug, desklamp",
+        "verbs": "look at, examine, use",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "11",
+        "issue_ref": {
+          "issue_text": "Attempted to take an object (desklamp) that was fixed and could not be moved.",
+          "issue_task_id": "look_at_obj_in_light-Mug-None-DeskLamp-301/trial_T20190908_155916_103990",
+          "issue_trial_num": "1",
+          "issue_step_range": "8-8"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Mug-None-DeskLamp-301/trial_T20190908_155916_103990",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "9-9"
+        },
+        "ranking_score": 0.7118769152838014
+      },
+      {
+        "task_desc": "examine the mug with the desklamp.",
+        "similarity_score": 0.7909743503153348,
+        "learning_count": 3,
+        "kb_index": 11,
+        "learning_text": "Turn on the desklamp before attempting to use it for examination.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "mug, desklamp",
+        "verbs": "look at, examine, use",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "12",
+        "issue_ref": {
+          "issue_text": "Attempted to examine an object using a desklamp that was not turned on.",
+          "issue_task_id": "look_at_obj_in_light-Mug-None-DeskLamp-301/trial_T20190908_155916_103990",
+          "issue_trial_num": "1",
+          "issue_step_range": "13-13"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Mug-None-DeskLamp-301/trial_T20190908_155916_103990",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "14-14"
+        },
+        "ranking_score": 0.7118769152838014
+      },
+      {
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.7794621670637999,
+        "learning_count": 4,
+        "kb_index": 25,
+        "learning_text": "Correctly identified the desklamp's actual location on shelf 2 through continued search.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "desklamp",
+        "verbs": "look at",
+        "goal_phase": "SEARCH",
+        "unique_id": "26",
+        "issue_ref": {
+          "issue_text": "Attempted to look at desklamp at an incorrect location.",
+          "issue_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
+          "issue_trial_num": "1",
+          "issue_step_range": "3-3"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-320/trial_T20190908_143748_669974",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "9-9"
+        },
+        "ranking_score": 0.7015159503574199
+      }
+    ]
+  },
+  "valid_unseen:look_at_obj_in_light-Mug-None-DeskLamp-308/trial_T20190908_161733_213242": {
+    "query": "look at mug under the desklamp.",
+    "metadata": {
+      "pick_learning_count": 9,
+      "max_learning_count": 6,
+      "actual_selected_count": 9,
+      "knowledge_retrieval_base_count": 18,
+      "top_similar_tasks": [
+        {
+          "task_desc": "examine the mug with the desklamp.",
+          "similarity_score": 0.9259171765016075,
+          "learning_count": 3,
+          "validated_learning_count": 3
+        },
+        {
+          "task_desc": "look at laptop under the desklamp.",
+          "similarity_score": 0.8233437887466526,
+          "learning_count": 5,
+          "validated_learning_count": 4
+        },
+        {
+          "task_desc": "look at pillow under the desklamp.",
+          "similarity_score": 0.8138824347108964,
+          "learning_count": 2,
+          "validated_learning_count": 2
+        },
+        {
+          "task_desc": "look at statue under the desklamp.",
+          "similarity_score": 0.8077536509750641,
+          "learning_count": 6,
+          "validated_learning_count": 6
+        },
+        {
+          "task_desc": "look at pencil under the desklamp.",
+          "similarity_score": 0.7922894396419512,
+          "learning_count": 2,
+          "validated_learning_count": 2
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "examine the mug with the desklamp.",
+        "similarity_score": 0.9259171765016075,
+        "learning_count": 3,
+        "kb_index": 9,
+        "learning_text": "Search for the object at a different location when it's not found at the current one.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "mug, desklamp",
+        "verbs": "look at, examine, use",
+        "goal_phase": "SEARCH",
+        "unique_id": "10",
+        "issue_ref": {
+          "issue_text": "Attempted to look at a desklamp at a location where it was not present.",
+          "issue_task_id": "look_at_obj_in_light-Mug-None-DeskLamp-301/trial_T20190908_155916_103990",
+          "issue_trial_num": "1",
+          "issue_step_range": "4-4"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Mug-None-DeskLamp-301/trial_T20190908_155916_103990",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "5-5"
+        },
+        "ranking_score": 0.8333254588514468
+      },
+      {
+        "task_desc": "examine the mug with the desklamp.",
+        "similarity_score": 0.9259171765016075,
+        "learning_count": 3,
+        "kb_index": 10,
+        "learning_text": "If an object cannot be taken, bring the other required object to its location.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "mug, desklamp",
+        "verbs": "look at, examine, use",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "11",
+        "issue_ref": {
+          "issue_text": "Attempted to take an object (desklamp) that was fixed and could not be moved.",
+          "issue_task_id": "look_at_obj_in_light-Mug-None-DeskLamp-301/trial_T20190908_155916_103990",
+          "issue_trial_num": "1",
+          "issue_step_range": "8-8"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Mug-None-DeskLamp-301/trial_T20190908_155916_103990",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "9-9"
+        },
+        "ranking_score": 0.8333254588514468
+      },
+      {
+        "task_desc": "examine the mug with the desklamp.",
+        "similarity_score": 0.9259171765016075,
+        "learning_count": 3,
+        "kb_index": 11,
+        "learning_text": "Turn on the desklamp before attempting to use it for examination.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "mug, desklamp",
+        "verbs": "look at, examine, use",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "12",
+        "issue_ref": {
+          "issue_text": "Attempted to examine an object using a desklamp that was not turned on.",
+          "issue_task_id": "look_at_obj_in_light-Mug-None-DeskLamp-301/trial_T20190908_155916_103990",
+          "issue_trial_num": "1",
+          "issue_step_range": "13-13"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Mug-None-DeskLamp-301/trial_T20190908_155916_103990",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "14-14"
+        },
+        "ranking_score": 0.8333254588514468
+      },
+      {
+        "task_desc": "look at laptop under the desklamp.",
+        "similarity_score": 0.8233437887466526,
+        "learning_count": 5,
+        "kb_index": 6,
+        "learning_text": "If `go to` fails for a container, try interacting directly with it using commands like `open`.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "drawer",
+        "verbs": "go to, open",
+        "goal_phase": "SEARCH",
+        "unique_id": "7",
+        "issue_ref": {
+          "issue_text": "Failed to navigate to a drawer using `go to` command, resulting in \"Nothing happens.\"",
+          "issue_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323",
+          "issue_trial_num": "1",
+          "issue_step_range": "20-21"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "28-29"
+        },
+        "ranking_score": 0.8233437887466526
+      },
+      {
+        "task_desc": "look at laptop under the desklamp.",
+        "similarity_score": 0.8233437887466526,
+        "learning_count": 5,
+        "kb_index": 7,
+        "learning_text": "Explicit placement might not be required; ensure the object is in the same location as the light source and activate the light source.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "laptop, desk, desklamp",
+        "verbs": "place, put, use",
+        "goal_phase": "PLACE",
+        "unique_id": "8",
+        "issue_ref": {
+          "issue_text": "Unable to place the laptop on or under the desklamp using `place` or `put` commands.",
+          "issue_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323",
+          "issue_trial_num": "5",
+          "issue_step_range": "12-14"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323",
+          "evidence_trial_num": "6",
+          "evidence_step_range": "32-33"
+        },
+        "ranking_score": 0.8233437887466526
+      },
+      {
+        "task_desc": "look at laptop under the desklamp.",
+        "similarity_score": 0.8233437887466526,
+        "learning_count": 5,
+        "kb_index": 372,
+        "learning_text": "When 'go to' fails for a container, try to interact directly with 'open' to access its contents.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "drawer",
+        "verbs": "go to",
+        "goal_phase": "SEARCH",
+        "unique_id": "373",
+        "issue_ref": {
+          "issue_text": "Attempted to 'go to' drawer 7, but it resulted in 'Nothing happens' repeatedly.",
+          "issue_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323/trial_T20190908_014226_839563",
+          "issue_trial_num": "1",
+          "issue_step_range": "20-21"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323/trial_T20190908_014226_839563",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "28-29"
+        },
+        "ranking_score": 0.8233437887466526
+      },
+      {
+        "task_desc": "look at laptop under the desklamp.",
+        "similarity_score": 0.8233437887466526,
+        "learning_count": 5,
+        "kb_index": 373,
+        "learning_text": "To fulfill 'under the desklamp' condition, ensure the object is in the same location as the desklamp and activate the desklamp, rather than explicitly 'placing' it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "laptop, desklamp, desk",
+        "verbs": "place, put",
+        "goal_phase": "PLACE",
+        "unique_id": "374",
+        "issue_ref": {
+          "issue_text": "Failed to place laptop on or under desklamp using 'place' or 'put' commands.",
+          "issue_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323/trial_T20190908_014226_839563",
+          "issue_trial_num": "5",
+          "issue_step_range": "12-14"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323/trial_T20190908_014226_839563",
+          "evidence_trial_num": "6",
+          "evidence_step_range": "32-33"
+        },
+        "ranking_score": 0.8233437887466526
+      },
+      {
+        "task_desc": "look at statue under the desklamp.",
+        "similarity_score": 0.8077536509750641,
+        "learning_count": 6,
+        "kb_index": 42,
+        "learning_text": "Statue 1 is a movable object; successfully picked it up from desk 1.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "statue",
+        "verbs": "take",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "43",
+        "issue_ref": {
+          "issue_text": "Initial attempts to take statue 1 failed, leading to the assumption it was fixed.",
+          "issue_task_id": "look_at_obj_in_light-Statue-None-DeskLamp-304",
+          "issue_trial_num": "1",
+          "issue_step_range": "9-9"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Statue-None-DeskLamp-304",
+          "evidence_trial_num": "5",
+          "evidence_step_range": "25-25"
+        },
+        "ranking_score": 0.8077536509750641
+      },
+      {
+        "task_desc": "look at statue under the desklamp.",
+        "similarity_score": 0.8077536509750641,
+        "learning_count": 6,
+        "kb_index": 43,
+        "learning_text": "Desklamp 1 is a fixed object and cannot be picked up or moved.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "desklamp",
+        "verbs": "take",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "44",
+        "issue_ref": {
+          "issue_text": "Attempted to take desklamp 1, which consistently failed, indicating it is a fixed object.",
+          "issue_task_id": "look_at_obj_in_light-Statue-None-DeskLamp-304",
+          "issue_trial_num": "1",
+          "issue_step_range": "8-8"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Statue-None-DeskLamp-304",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "10-10"
+        },
+        "ranking_score": 0.8077536509750641
+      },
+      {
+        "task_desc": "look at statue under the desklamp.",
+        "similarity_score": 0.8077536509750641,
+        "learning_count": 6,
+        "kb_index": 44,
+        "learning_text": "To satisfy 'under the desklamp' condition, hold the target object and use the desklamp at its location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "statue, desklamp",
+        "verbs": "look at, use",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "45",
+        "issue_ref": {
+          "issue_text": "Looking at statue after remotely turning on desklamp failed, misinterpreting the 'under the desklamp' condition.",
+          "issue_task_id": "look_at_obj_in_light-Statue-None-DeskLamp-304",
+          "issue_trial_num": "1",
+          "issue_step_range": "20-20"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Statue-None-DeskLamp-304",
+          "evidence_trial_num": "6",
+          "evidence_step_range": "11-11"
+        },
+        "ranking_score": 0.8077536509750641
+      },
+      {
+        "task_desc": "look at statue under the desklamp.",
+        "similarity_score": 0.8077536509750641,
+        "learning_count": 6,
+        "kb_index": 45,
+        "learning_text": "Drawers 1 and 2 are currently inaccessible and cannot be opened or navigated to.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "drawer",
+        "verbs": "go to, open",
+        "goal_phase": "SEARCH",
+        "unique_id": "46",
+        "issue_ref": {
+          "issue_text": "Repeatedly attempted to 'go to' or 'open' drawers, but they remained inaccessible.",
+          "issue_task_id": "look_at_obj_in_light-Statue-None-DeskLamp-304",
+          "issue_trial_num": "3",
+          "issue_step_range": "8-8"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Statue-None-DeskLamp-304",
+          "evidence_trial_num": "5",
+          "evidence_step_range": "14-14"
+        },
+        "ranking_score": 0.8077536509750641
+      },
+      {
+        "task_desc": "look at statue under the desklamp.",
+        "similarity_score": 0.8077536509750641,
+        "learning_count": 6,
+        "kb_index": 46,
+        "learning_text": "Objects cannot be arbitrarily placed on surfaces using the 'put' command.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "statue, shelf",
+        "verbs": "put",
+        "goal_phase": "PLACE",
+        "unique_id": "47",
+        "issue_ref": {
+          "issue_text": "Attempted to 'put' a held object (statue 1) onto a surface (shelf 1), which failed.",
+          "issue_task_id": "look_at_obj_in_light-Statue-None-DeskLamp-304",
+          "issue_trial_num": "5",
+          "issue_step_range": "29-29"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Statue-None-DeskLamp-304",
+          "evidence_trial_num": "6",
+          "evidence_step_range": "10-10"
+        },
+        "ranking_score": 0.8077536509750641
+      },
+      {
+        "task_desc": "look at pillow under the desklamp.",
+        "similarity_score": 0.8138824347108964,
+        "learning_count": 2,
+        "kb_index": 40,
+        "learning_text": "Systematically explore different locations, such as shelves, when initial searches in common areas like desks fail to find the object.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "Pillow, DeskLamp",
+        "verbs": "look at",
+        "goal_phase": "SEARCH",
+        "unique_id": "41",
+        "issue_ref": {
+          "issue_text": "Failed to locate the desklamp in initial search attempts across multiple locations.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-320/trial_T20190906_225859_247598",
+          "issue_trial_num": "1",
+          "issue_step_range": "3-6"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-320/trial_T20190906_225859_247598",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "7-7"
+        },
+        "ranking_score": 0.7324941912398067
+      },
+      {
+        "task_desc": "look at pillow under the desklamp.",
+        "similarity_score": 0.8138824347108964,
+        "learning_count": 2,
+        "kb_index": 41,
+        "learning_text": "To achieve 'look at obj under desklamp', activate the desklamp using the 'use' command after bringing the object to its location.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "Pillow, DeskLamp",
+        "verbs": "look at",
+        "goal_phase": "PLACE",
+        "unique_id": "42",
+        "issue_ref": {
+          "issue_text": "Attempted to place the pillow 'under' or 'on' the desklamp using 'put' actions, which had no effect.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-320/trial_T20190906_225859_247598",
+          "issue_trial_num": "1",
+          "issue_step_range": "8-9"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-320/trial_T20190906_225859_247598",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "10-10"
+        },
+        "ranking_score": 0.7324941912398067
+      },
+      {
+        "task_desc": "look at statue under the desklamp.",
+        "similarity_score": 0.8077536509750641,
+        "learning_count": 6,
+        "kb_index": 47,
+        "learning_text": "The specific command 'put object under another object' is not supported; use 'use' action with the light source instead.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "statue, desklamp",
+        "verbs": "put",
+        "goal_phase": "PLACE",
+        "unique_id": "48",
+        "issue_ref": {
+          "issue_text": "Used unsupported syntax 'put object under another object' for placement.",
+          "issue_task_id": "look_at_obj_in_light-Statue-None-DeskLamp-304",
+          "issue_trial_num": "6",
+          "issue_step_range": "9-9"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Statue-None-DeskLamp-304",
+          "evidence_trial_num": "6",
+          "evidence_step_range": "11-11"
+        },
+        "ranking_score": 0.7269782858775578
+      },
+      {
+        "task_desc": "look at pencil under the desklamp.",
+        "similarity_score": 0.7922894396419512,
+        "learning_count": 2,
+        "kb_index": 23,
+        "learning_text": "Expand search to a wider range of locations, including shelves, to locate the object.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "pencil",
+        "verbs": "go to, open",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "24",
+        "issue_ref": {
+          "issue_text": "Inefficiently searched for pencil in multiple incorrect locations (drawers, garbagecan, early shelves).",
+          "issue_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-319/trial_T20190908_135102_644449",
+          "issue_trial_num": "1",
+          "issue_step_range": "2-34"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-319/trial_T20190908_135102_644449",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "35-35"
+        },
+        "ranking_score": 0.7130604956777561
+      },
+      {
+        "task_desc": "look at pencil under the desklamp.",
+        "similarity_score": 0.7922894396419512,
+        "learning_count": 2,
+        "kb_index": 24,
+        "learning_text": "Verify object presence before using 'look at'; if not found, continue searching elsewhere.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "pencil, dresser",
+        "verbs": "look at",
+        "goal_phase": "SEARCH",
+        "unique_id": "25",
+        "issue_ref": {
+          "issue_text": "Attempted 'look at' action on dresser 1 to find pencil, but it had no effect.",
+          "issue_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-319/trial_T20190908_135102_644449",
+          "issue_trial_num": "1",
+          "issue_step_range": "26-26"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pencil-None-DeskLamp-319/trial_T20190908_135102_644449",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "35-35"
+        },
+        "ranking_score": 0.7130604956777561
+      },
+      {
+        "task_desc": "look at laptop under the desklamp.",
+        "similarity_score": 0.8233437887466526,
+        "learning_count": 5,
+        "kb_index": 8,
+        "learning_text": "No specific learning was applied to resolve this issue within the provided trials.",
+        "valid_level": "CANDIDATE",
+        "obj_type": "dresser",
+        "verbs": "open",
+        "goal_phase": "SEARCH",
+        "unique_id": "9",
+        "issue_ref": {
+          "issue_text": "Attempted to `open` a dresser that is not a container or is already open.",
+          "issue_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323",
+          "issue_trial_num": "6",
+          "issue_step_range": "19-19"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-323",
+          "evidence_trial_num": "6",
+          "evidence_step_range": "19-19"
+        },
+        "ranking_score": 0.4940062732479915
+      }
+    ]
+  },
+  "valid_unseen:pick_clean_then_place_in_recep-SoapBar-None-Cabinet-424/trial_T20190908_214926_337906": {
+    "query": "clean some soapbar and put it in cabinet.",
+    "metadata": {
+      "pick_learning_count": 14,
+      "max_learning_count": 9,
+      "actual_selected_count": 14,
+      "knowledge_retrieval_base_count": 26,
+      "top_similar_tasks": [
+        {
+          "task_desc": "put a clean soapbar in cabinet.",
+          "similarity_score": 0.9187897921460428,
+          "learning_count": 6,
+          "validated_learning_count": 5
+        },
+        {
+          "task_desc": "clean some soapbar and put it in garbagecan.",
+          "similarity_score": 0.8571064283730656,
+          "learning_count": 9,
+          "validated_learning_count": 8
+        },
+        {
+          "task_desc": "put two soapbar in cabinet.",
+          "similarity_score": 0.8329306549370994,
+          "learning_count": 6,
+          "validated_learning_count": 6
+        },
+        {
+          "task_desc": "clean some butterknife and put it in drawer.",
+          "similarity_score": 0.724591141906938,
+          "learning_count": 4,
+          "validated_learning_count": 4
+        },
+        {
+          "task_desc": "clean some plate and put it in shelf.",
+          "similarity_score": 0.6977341167393513,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.9187897921460428,
+        "learning_count": 6,
+        "kb_index": 131,
+        "learning_text": "Avoid `soapbar 3` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "soapbar",
+        "verbs": "clean, drop, put",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "unique_id": "132",
+        "issue_ref": {
+          "issue_text": "Soapbar 3 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "issue_trial_num": "1",
+          "issue_step_range": "6-15"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "7-7"
+        },
+        "ranking_score": 0.9187897921460428
+      },
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.9187897921460428,
+        "learning_count": 6,
+        "kb_index": 132,
+        "learning_text": "Avoid `soapbar 1` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "soapbar",
+        "verbs": "clean, drop, put",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "unique_id": "133",
+        "issue_ref": {
+          "issue_text": "Soapbar 1 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "issue_trial_num": "2",
+          "issue_step_range": "11-15"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "10-10"
+        },
+        "ranking_score": 0.9187897921460428
+      },
+      {
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.8571064283730656,
+        "learning_count": 9,
+        "kb_index": 134,
+        "learning_text": "Expand search to less obvious locations like the toilet to find the soapbar.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "soapbar",
+        "verbs": "go to, search",
+        "goal_phase": "SEARCH",
+        "unique_id": "135",
+        "issue_ref": {
+          "issue_text": "Soapbar not found after searching multiple common locations (shelves, basins).",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "issue_trial_num": "1",
+          "issue_step_range": "1-10"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "11-11"
+        },
+        "ranking_score": 0.8571064283730656
+      },
+      {
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.8571064283730656,
+        "learning_count": 9,
+        "kb_index": 135,
+        "learning_text": "Use the 'move' command to place objects into containers that cannot be opened.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "garbagecan",
+        "verbs": "open",
+        "goal_phase": "SEARCH",
+        "unique_id": "136",
+        "issue_ref": {
+          "issue_text": "Attempted to open garbagecan 1, but the action had no effect.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "issue_trial_num": "2",
+          "issue_step_range": "1-2"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "26-26"
+        },
+        "ranking_score": 0.8571064283730656
+      },
+      {
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.8571064283730656,
+        "learning_count": 9,
+        "kb_index": 137,
+        "learning_text": "Re-attempt 'take' action for visible objects, as initial failures might be transient or due to minor command variations.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "soapbar, toilet",
+        "verbs": "take",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "138",
+        "issue_ref": {
+          "issue_text": "Failed to take soapbar 1 from toilet 1 despite it being visible.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "issue_trial_num": "3",
+          "issue_step_range": "20-25"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "12-12"
+        },
+        "ranking_score": 0.8571064283730656
+      },
+      {
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.8571064283730656,
+        "learning_count": 9,
+        "kb_index": 141,
+        "learning_text": "If 'look inside' fails for a container, consider it non-inspectable and try alternative interaction methods or search strategies.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "garbagecan",
+        "verbs": "look inside",
+        "goal_phase": "SEARCH",
+        "unique_id": "142",
+        "issue_ref": {
+          "issue_text": "Using 'look inside' on garbagecan 1 had no effect, suggesting it's not an inspectable container.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "issue_trial_num": "3",
+          "issue_step_range": "18-18"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "26-26"
+        },
+        "ranking_score": 0.8571064283730656
+      },
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8329306549370994,
+        "learning_count": 6,
+        "kb_index": 352,
+        "learning_text": "Persist in attempting to take objects from locations where they are visible, as they may eventually become pickable.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "soapbar, toilet",
+        "verbs": "take",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "353",
+        "issue_ref": {
+          "issue_text": "Repeatedly failed to take visible soapbars from toilet, receiving 'Nothing happens'.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "issue_trial_num": "1",
+          "issue_step_range": "29-30"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "evidence_trial_num": "5",
+          "evidence_step_range": "14-14"
+        },
+        "ranking_score": 0.8329306549370994
+      },
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.9187897921460428,
+        "learning_count": 6,
+        "kb_index": 128,
+        "learning_text": "Open the target container before attempting to place an item inside.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cabinet",
+        "verbs": "put",
+        "goal_phase": "PLACE",
+        "unique_id": "129",
+        "issue_ref": {
+          "issue_text": "Failed to put item in cabinet 1 because it was closed.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "issue_trial_num": "1",
+          "issue_step_range": "8-8"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "12-13"
+        },
+        "ranking_score": 0.8269108129314385
+      },
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.9187897921460428,
+        "learning_count": 6,
+        "kb_index": 129,
+        "learning_text": "Navigate to the object's location before attempting to interact with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cabinet",
+        "verbs": "open",
+        "goal_phase": "PLACE",
+        "unique_id": "130",
+        "issue_ref": {
+          "issue_text": "Failed to open cabinet 1 because agent was not at its location.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "issue_trial_num": "1",
+          "issue_step_range": "10-10"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "12-12"
+        },
+        "ranking_score": 0.8269108129314385
+      },
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.9187897921460428,
+        "learning_count": 6,
+        "kb_index": 130,
+        "learning_text": "Use the 'move' verb instead of 'put' to place objects into containers.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbar, cabinet",
+        "verbs": "put, move",
+        "goal_phase": "PLACE",
+        "unique_id": "131",
+        "issue_ref": {
+          "issue_text": "Failed to put soapbar in cabinet 1; 'put' verb ineffective.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "issue_trial_num": "1",
+          "issue_step_range": "15-15"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "16-16"
+        },
+        "ranking_score": 0.8269108129314385
+      },
+      {
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.8571064283730656,
+        "learning_count": 9,
+        "kb_index": 138,
+        "learning_text": "Ensure agent is at the correct location before attempting to use an object with a receptacle (e.g., cleaning).",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbar, sinkbasin",
+        "verbs": "clean",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "139",
+        "issue_ref": {
+          "issue_text": "Attempted to clean soapbar 1 with sinkbasin 1 without being at the sinkbasin location.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "issue_trial_num": "4",
+          "issue_step_range": "14-14"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "16-17"
+        },
+        "ranking_score": 0.771395785535759
+      },
+      {
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.8571064283730656,
+        "learning_count": 9,
+        "kb_index": 139,
+        "learning_text": "Ensure agent is at the target receptacle before attempting to place an object into it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbar, garbagecan",
+        "verbs": "put in",
+        "goal_phase": "PLACE",
+        "unique_id": "140",
+        "issue_ref": {
+          "issue_text": "Attempted to put soapbar 1 in garbagecan 1 without being at the garbagecan location.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "issue_trial_num": "4",
+          "issue_step_range": "19-19"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "21-21"
+        },
+        "ranking_score": 0.771395785535759
+      },
+      {
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.8571064283730656,
+        "learning_count": 9,
+        "kb_index": 140,
+        "learning_text": "If 'put in' fails for a receptacle, try using the 'move [object] to [receptacle]' command as an alternative.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbar, garbagecan",
+        "verbs": "put in, move",
+        "goal_phase": "PLACE",
+        "unique_id": "141",
+        "issue_ref": {
+          "issue_text": "The 'put in' command failed to place soapbar 1 into garbagecan 1, even when at the location.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "issue_trial_num": "4",
+          "issue_step_range": "22-22"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "26-26"
+        },
+        "ranking_score": 0.771395785535759
+      },
+      {
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.8571064283730656,
+        "learning_count": 9,
+        "kb_index": 142,
+        "learning_text": "If 'drop' fails for a receptacle, try using the 'move [object] to [receptacle]' command as an alternative.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbar, garbagecan",
+        "verbs": "drop, move",
+        "goal_phase": "PLACE",
+        "unique_id": "143",
+        "issue_ref": {
+          "issue_text": "The 'drop' command failed to place soapbar 1 into garbagecan 1.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "issue_trial_num": "4",
+          "issue_step_range": "25-25"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "26-26"
+        },
+        "ranking_score": 0.771395785535759
+      },
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8329306549370994,
+        "learning_count": 6,
+        "kb_index": 349,
+        "learning_text": "Go to the cabinet's location before attempting to open it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cabinet",
+        "verbs": "open",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "350",
+        "issue_ref": {
+          "issue_text": "Attempted to open a cabinet without being at its location.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "issue_trial_num": "1",
+          "issue_step_range": "11-11"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "13-14"
+        },
+        "ranking_score": 0.7496375894433894
+      },
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8329306549370994,
+        "learning_count": 6,
+        "kb_index": 350,
+        "learning_text": "Open the cabinet first before attempting to look inside it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cabinet",
+        "verbs": "look",
+        "goal_phase": "SEARCH",
+        "unique_id": "351",
+        "issue_ref": {
+          "issue_text": "Attempted to look inside a cabinet that was closed.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "issue_trial_num": "1",
+          "issue_step_range": "12-12"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "14-14"
+        },
+        "ranking_score": 0.7496375894433894
+      },
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8329306549370994,
+        "learning_count": 6,
+        "kb_index": 351,
+        "learning_text": "Rely on the observation from 'open' action for cabinet contents, as 'look in' is ineffective.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cabinet",
+        "verbs": "look",
+        "goal_phase": "SEARCH",
+        "unique_id": "352",
+        "issue_ref": {
+          "issue_text": "Using 'look in' action after opening a cabinet yields no new information.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "issue_trial_num": "1",
+          "issue_step_range": "15-15"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "14-14"
+        },
+        "ranking_score": 0.7496375894433894
+      },
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8329306549370994,
+        "learning_count": 6,
+        "kb_index": 353,
+        "learning_text": "Always go to the target container before attempting to move an item into it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbar, cabinet",
+        "verbs": "move",
+        "goal_phase": "PLACE",
+        "unique_id": "354",
+        "issue_ref": {
+          "issue_text": "Failed to move item to container because agent was not at the container's location.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "issue_trial_num": "2",
+          "issue_step_range": "25-25"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "27-28"
+        },
+        "ranking_score": 0.7496375894433894
+      },
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8329306549370994,
+        "learning_count": 6,
+        "kb_index": 354,
+        "learning_text": "Verify item placement after 'move' action and avoid redundant 'put' commands.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbar, cabinet",
+        "verbs": "put",
+        "goal_phase": "PLACE",
+        "unique_id": "355",
+        "issue_ref": {
+          "issue_text": "Used redundant 'put' action after item was already moved into the container.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "issue_trial_num": "2",
+          "issue_step_range": "30-30"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "31-31"
+        },
+        "ranking_score": 0.7496375894433894
+      },
+      {
+        "task_desc": "clean some butterknife and put it in drawer.",
+        "similarity_score": 0.724591141906938,
+        "learning_count": 4,
+        "kb_index": 88,
+        "learning_text": "Go to the cleaning location (e.g., sinkbasin) before attempting to clean an object.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "butterknife, sinkbasin",
+        "verbs": "clean",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "89",
+        "issue_ref": {
+          "issue_text": "Failed to clean object because agent was not at the cleaning location.",
+          "issue_task_id": "pick_clean_then_place_in_recep-ButterKnife-None-Drawer-8/trial_T20190909_124509_288754",
+          "issue_trial_num": "1",
+          "issue_step_range": "7-7"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-ButterKnife-None-Drawer-8/trial_T20190909_124509_288754",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "9-10"
+        },
+        "ranking_score": 0.6521320277162442
+      },
+      {
+        "task_desc": "clean some butterknife and put it in drawer.",
+        "similarity_score": 0.724591141906938,
+        "learning_count": 4,
+        "kb_index": 89,
+        "learning_text": "Go to the target receptacle (e.g., drawer) before attempting to place an object.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "butterknife, drawer",
+        "verbs": "put",
+        "goal_phase": "PLACE",
+        "unique_id": "90",
+        "issue_ref": {
+          "issue_text": "Failed to place object because agent was not at the target receptacle.",
+          "issue_task_id": "pick_clean_then_place_in_recep-ButterKnife-None-Drawer-8/trial_T20190909_124509_288754",
+          "issue_trial_num": "1",
+          "issue_step_range": "12-12"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-ButterKnife-None-Drawer-8/trial_T20190909_124509_288754",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "14-14"
+        },
+        "ranking_score": 0.6521320277162442
+      },
+      {
+        "task_desc": "clean some butterknife and put it in drawer.",
+        "similarity_score": 0.724591141906938,
+        "learning_count": 4,
+        "kb_index": 90,
+        "learning_text": "Open the receptacle (e.g., drawer) before attempting to place an object inside.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "butterknife, drawer",
+        "verbs": "put",
+        "goal_phase": "PLACE",
+        "unique_id": "91",
+        "issue_ref": {
+          "issue_text": "Failed to place object into a closed receptacle.",
+          "issue_task_id": "pick_clean_then_place_in_recep-ButterKnife-None-Drawer-8/trial_T20190909_124509_288754",
+          "issue_trial_num": "1",
+          "issue_step_range": "14-14"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-ButterKnife-None-Drawer-8/trial_T20190909_124509_288754",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "15-15"
+        },
+        "ranking_score": 0.6521320277162442
+      },
+      {
+        "task_desc": "clean some butterknife and put it in drawer.",
+        "similarity_score": 0.724591141906938,
+        "learning_count": 4,
+        "kb_index": 91,
+        "learning_text": "Use 'move' verb instead of 'put' to successfully place objects into receptacles.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "butterknife, drawer",
+        "verbs": "put",
+        "goal_phase": "PLACE",
+        "unique_id": "92",
+        "issue_ref": {
+          "issue_text": "Used 'put' verb which had no effect for placing object into receptacle.",
+          "issue_task_id": "pick_clean_then_place_in_recep-ButterKnife-None-Drawer-8/trial_T20190909_124509_288754",
+          "issue_trial_num": "1",
+          "issue_step_range": "17-17"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-ButterKnife-None-Drawer-8/trial_T20190909_124509_288754",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "18-18"
+        },
+        "ranking_score": 0.6521320277162442
+      },
+      {
+        "task_desc": "clean some plate and put it in shelf.",
+        "similarity_score": 0.6977341167393513,
+        "learning_count": 1,
+        "kb_index": 125,
+        "learning_text": "Use 'move' verb instead of 'put' to place plate 1 in shelf 1.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "plate, shelf",
+        "verbs": "clean, pick, place",
+        "goal_phase": "PLACE",
+        "unique_id": "126",
+        "issue_ref": {
+          "issue_text": "Using 'put' verb to place plate 1 in shelf 1 failed.",
+          "issue_task_id": "pick_clean_then_place_in_recep-Plate-None-Shelf-7/trial_T20190908_230022_030239",
+          "issue_trial_num": "1",
+          "issue_step_range": "11-11"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-Plate-None-Shelf-7/trial_T20190908_230022_030239",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "12-12"
+        },
+        "ranking_score": 0.6279607050654161
+      },
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.9187897921460428,
+        "learning_count": 6,
+        "kb_index": 133,
+        "learning_text": "Avoid `soapbar 4` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "CANDIDATE",
+        "obj_type": "soapbar",
+        "verbs": "clean, drop, put",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "unique_id": "134",
+        "issue_ref": {
+          "issue_text": "Soapbar 4 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "issue_trial_num": "7",
+          "issue_step_range": "40-45"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "evidence_trial_num": "7",
+          "evidence_step_range": "46-48"
+        },
+        "ranking_score": 0.5512738752876257
+      },
+      {
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.8571064283730656,
+        "learning_count": 9,
+        "kb_index": 136,
+        "learning_text": "Recognize that some containers like tissuebox 1 may not be openable, requiring alternative search strategies.",
+        "valid_level": "CANDIDATE",
+        "obj_type": "tissuebox",
+        "verbs": "open",
+        "goal_phase": "SEARCH",
+        "unique_id": "137",
+        "issue_ref": {
+          "issue_text": "Attempted to open tissuebox 1, but the action had no effect.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "issue_trial_num": "2",
+          "issue_step_range": "4-6"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "evidence_trial_num": "3",
+          "evidence_step_range": "11-11"
+        },
+        "ranking_score": 0.5142638570238394
+      }
+    ]
+  },
+  "valid_unseen:pick_two_obj_and_place-SoapBar-None-Cabinet-424/trial_T20190909_081720_491733": {
+    "query": "find two soapbar and put them in cabinet.",
+    "metadata": {
+      "pick_learning_count": 14,
+      "max_learning_count": 9,
+      "actual_selected_count": 14,
+      "knowledge_retrieval_base_count": 26,
+      "top_similar_tasks": [
+        {
+          "task_desc": "put two soapbar in cabinet.",
+          "similarity_score": 0.8739189744415408,
+          "learning_count": 6,
+          "validated_learning_count": 6
+        },
+        {
+          "task_desc": "find two candle and put them in cabinet.",
+          "similarity_score": 0.8142855198130785,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        },
+        {
+          "task_desc": "put a clean soapbar in cabinet.",
+          "similarity_score": 0.8117241296040036,
+          "learning_count": 6,
+          "validated_learning_count": 5
+        },
+        {
+          "task_desc": "find two soapbottle and put them in cart.",
+          "similarity_score": 0.7541540418345164,
+          "learning_count": 4,
+          "validated_learning_count": 4
+        },
+        {
+          "task_desc": "clean some soapbar and put it in garbagecan.",
+          "similarity_score": 0.7413658762167564,
+          "learning_count": 9,
+          "validated_learning_count": 8
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8739189744415408,
+        "learning_count": 6,
+        "kb_index": 352,
+        "learning_text": "Persist in attempting to take objects from locations where they are visible, as they may eventually become pickable.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "soapbar, toilet",
+        "verbs": "take",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "353",
+        "issue_ref": {
+          "issue_text": "Repeatedly failed to take visible soapbars from toilet, receiving 'Nothing happens'.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "issue_trial_num": "1",
+          "issue_step_range": "29-30"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "evidence_trial_num": "5",
+          "evidence_step_range": "14-14"
+        },
+        "ranking_score": 0.8739189744415408
+      },
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.8117241296040036,
+        "learning_count": 6,
+        "kb_index": 131,
+        "learning_text": "Avoid `soapbar 3` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "soapbar",
+        "verbs": "clean, drop, put",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "unique_id": "132",
+        "issue_ref": {
+          "issue_text": "Soapbar 3 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "issue_trial_num": "1",
+          "issue_step_range": "6-15"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "7-7"
+        },
+        "ranking_score": 0.8117241296040036
+      },
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.8117241296040036,
+        "learning_count": 6,
+        "kb_index": 132,
+        "learning_text": "Avoid `soapbar 1` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "soapbar",
+        "verbs": "clean, drop, put",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "unique_id": "133",
+        "issue_ref": {
+          "issue_text": "Soapbar 1 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "issue_trial_num": "2",
+          "issue_step_range": "11-15"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "10-10"
+        },
+        "ranking_score": 0.8117241296040036
+      },
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8739189744415408,
+        "learning_count": 6,
+        "kb_index": 349,
+        "learning_text": "Go to the cabinet's location before attempting to open it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cabinet",
+        "verbs": "open",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "350",
+        "issue_ref": {
+          "issue_text": "Attempted to open a cabinet without being at its location.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "issue_trial_num": "1",
+          "issue_step_range": "11-11"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "13-14"
+        },
+        "ranking_score": 0.7865270769973867
+      },
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8739189744415408,
+        "learning_count": 6,
+        "kb_index": 350,
+        "learning_text": "Open the cabinet first before attempting to look inside it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cabinet",
+        "verbs": "look",
+        "goal_phase": "SEARCH",
+        "unique_id": "351",
+        "issue_ref": {
+          "issue_text": "Attempted to look inside a cabinet that was closed.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "issue_trial_num": "1",
+          "issue_step_range": "12-12"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "14-14"
+        },
+        "ranking_score": 0.7865270769973867
+      },
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8739189744415408,
+        "learning_count": 6,
+        "kb_index": 351,
+        "learning_text": "Rely on the observation from 'open' action for cabinet contents, as 'look in' is ineffective.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cabinet",
+        "verbs": "look",
+        "goal_phase": "SEARCH",
+        "unique_id": "352",
+        "issue_ref": {
+          "issue_text": "Using 'look in' action after opening a cabinet yields no new information.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "issue_trial_num": "1",
+          "issue_step_range": "15-15"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "14-14"
+        },
+        "ranking_score": 0.7865270769973867
+      },
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8739189744415408,
+        "learning_count": 6,
+        "kb_index": 353,
+        "learning_text": "Always go to the target container before attempting to move an item into it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbar, cabinet",
+        "verbs": "move",
+        "goal_phase": "PLACE",
+        "unique_id": "354",
+        "issue_ref": {
+          "issue_text": "Failed to move item to container because agent was not at the container's location.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "issue_trial_num": "2",
+          "issue_step_range": "25-25"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "27-28"
+        },
+        "ranking_score": 0.7865270769973867
+      },
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8739189744415408,
+        "learning_count": 6,
+        "kb_index": 354,
+        "learning_text": "Verify item placement after 'move' action and avoid redundant 'put' commands.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbar, cabinet",
+        "verbs": "put",
+        "goal_phase": "PLACE",
+        "unique_id": "355",
+        "issue_ref": {
+          "issue_text": "Used redundant 'put' action after item was already moved into the container.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "issue_trial_num": "2",
+          "issue_step_range": "30-30"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "31-31"
+        },
+        "ranking_score": 0.7865270769973867
+      },
+      {
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.7413658762167564,
+        "learning_count": 9,
+        "kb_index": 134,
+        "learning_text": "Expand search to less obvious locations like the toilet to find the soapbar.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "soapbar",
+        "verbs": "go to, search",
+        "goal_phase": "SEARCH",
+        "unique_id": "135",
+        "issue_ref": {
+          "issue_text": "Soapbar not found after searching multiple common locations (shelves, basins).",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "issue_trial_num": "1",
+          "issue_step_range": "1-10"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "11-11"
+        },
+        "ranking_score": 0.7413658762167564
+      },
+      {
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.7413658762167564,
+        "learning_count": 9,
+        "kb_index": 135,
+        "learning_text": "Use the 'move' command to place objects into containers that cannot be opened.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "garbagecan",
+        "verbs": "open",
+        "goal_phase": "SEARCH",
+        "unique_id": "136",
+        "issue_ref": {
+          "issue_text": "Attempted to open garbagecan 1, but the action had no effect.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "issue_trial_num": "2",
+          "issue_step_range": "1-2"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "26-26"
+        },
+        "ranking_score": 0.7413658762167564
+      },
+      {
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.7413658762167564,
+        "learning_count": 9,
+        "kb_index": 137,
+        "learning_text": "Re-attempt 'take' action for visible objects, as initial failures might be transient or due to minor command variations.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "soapbar, toilet",
+        "verbs": "take",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "138",
+        "issue_ref": {
+          "issue_text": "Failed to take soapbar 1 from toilet 1 despite it being visible.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "issue_trial_num": "3",
+          "issue_step_range": "20-25"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "12-12"
+        },
+        "ranking_score": 0.7413658762167564
+      },
+      {
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.7413658762167564,
+        "learning_count": 9,
+        "kb_index": 141,
+        "learning_text": "If 'look inside' fails for a container, consider it non-inspectable and try alternative interaction methods or search strategies.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "garbagecan",
+        "verbs": "look inside",
+        "goal_phase": "SEARCH",
+        "unique_id": "142",
+        "issue_ref": {
+          "issue_text": "Using 'look inside' on garbagecan 1 had no effect, suggesting it's not an inspectable container.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "issue_trial_num": "3",
+          "issue_step_range": "18-18"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "26-26"
+        },
+        "ranking_score": 0.7413658762167564
+      },
+      {
+        "task_desc": "find two candle and put them in cabinet.",
+        "similarity_score": 0.8142855198130785,
+        "learning_count": 1,
+        "kb_index": 330,
+        "learning_text": "Place the currently held object into the target container before attempting to pick up another.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "candle",
+        "verbs": "take",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "331",
+        "issue_ref": {
+          "issue_text": "Attempted to pick up a second object while already holding one.",
+          "issue_task_id": "pick_two_obj_and_place-Candle-None-Cabinet-403/trial_T20190909_065841_838469",
+          "issue_trial_num": "1",
+          "issue_step_range": "4-4"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-Candle-None-Cabinet-403/trial_T20190909_065841_838469",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "8-8"
+        },
+        "ranking_score": 0.7328569678317707
+      },
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.8117241296040036,
+        "learning_count": 6,
+        "kb_index": 128,
+        "learning_text": "Open the target container before attempting to place an item inside.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cabinet",
+        "verbs": "put",
+        "goal_phase": "PLACE",
+        "unique_id": "129",
+        "issue_ref": {
+          "issue_text": "Failed to put item in cabinet 1 because it was closed.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "issue_trial_num": "1",
+          "issue_step_range": "8-8"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "12-13"
+        },
+        "ranking_score": 0.7305517166436033
+      },
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.8117241296040036,
+        "learning_count": 6,
+        "kb_index": 129,
+        "learning_text": "Navigate to the object's location before attempting to interact with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cabinet",
+        "verbs": "open",
+        "goal_phase": "PLACE",
+        "unique_id": "130",
+        "issue_ref": {
+          "issue_text": "Failed to open cabinet 1 because agent was not at its location.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "issue_trial_num": "1",
+          "issue_step_range": "10-10"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "12-12"
+        },
+        "ranking_score": 0.7305517166436033
+      },
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.8117241296040036,
+        "learning_count": 6,
+        "kb_index": 130,
+        "learning_text": "Use the 'move' verb instead of 'put' to place objects into containers.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbar, cabinet",
+        "verbs": "put, move",
+        "goal_phase": "PLACE",
+        "unique_id": "131",
+        "issue_ref": {
+          "issue_text": "Failed to put soapbar in cabinet 1; 'put' verb ineffective.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "issue_trial_num": "1",
+          "issue_step_range": "15-15"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "16-16"
+        },
+        "ranking_score": 0.7305517166436033
+      },
+      {
+        "task_desc": "find two soapbottle and put them in cart.",
+        "similarity_score": 0.7541540418345164,
+        "learning_count": 4,
+        "kb_index": 355,
+        "learning_text": "Expand search to less common locations like garbagecan when primary locations are empty.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbottle, bathtubbasin, sinkbasin, shelf, cart, garbagecan",
+        "verbs": "search, find",
+        "goal_phase": "SEARCH",
+        "unique_id": "356",
+        "issue_ref": {
+          "issue_text": "Soapbottle not found in common locations like bathtubbasin, sinkbasin, shelves, or cart.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
+          "issue_trial_num": "1",
+          "issue_step_range": "3-15"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "16-17"
+        },
+        "ranking_score": 0.6787386376510648
+      },
+      {
+        "task_desc": "find two soapbottle and put them in cart.",
+        "similarity_score": 0.7541540418345164,
+        "learning_count": 4,
+        "kb_index": 356,
+        "learning_text": "Go to the target location before attempting to place an object into it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbottle, cart",
+        "verbs": "move, go",
+        "goal_phase": "PLACE",
+        "unique_id": "357",
+        "issue_ref": {
+          "issue_text": "Attempted to move object to a container without being at the target location.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
+          "issue_trial_num": "1",
+          "issue_step_range": "20-20"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "22-22"
+        },
+        "ranking_score": 0.6787386376510648
+      },
+      {
+        "task_desc": "find two soapbottle and put them in cart.",
+        "similarity_score": 0.7541540418345164,
+        "learning_count": 4,
+        "kb_index": 357,
+        "learning_text": "Use 'move' command instead of 'put' to place an object into a container.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbottle, cart",
+        "verbs": "put, move",
+        "goal_phase": "PLACE",
+        "unique_id": "358",
+        "issue_ref": {
+          "issue_text": "Used 'put' command which failed, indicating an incorrect verb for placing an object.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
+          "issue_trial_num": "1",
+          "issue_step_range": "23-23"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "24-24"
+        },
+        "ranking_score": 0.6787386376510648
+      },
+      {
+        "task_desc": "find two soapbottle and put them in cart.",
+        "similarity_score": 0.7541540418345164,
+        "learning_count": 4,
+        "kb_index": 358,
+        "learning_text": "Continue expanding search to less obvious locations like toilet when primary locations are exhausted.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbottle, garbagecan, toilet",
+        "verbs": "search, find",
+        "goal_phase": "SEARCH",
+        "unique_id": "359",
+        "issue_ref": {
+          "issue_text": "Second soapbottle not found in previously successful or common locations.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
+          "issue_trial_num": "1",
+          "issue_step_range": "25-27"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "28-28"
+        },
+        "ranking_score": 0.6787386376510648
+      },
+      {
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.7413658762167564,
+        "learning_count": 9,
+        "kb_index": 138,
+        "learning_text": "Ensure agent is at the correct location before attempting to use an object with a receptacle (e.g., cleaning).",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbar, sinkbasin",
+        "verbs": "clean",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "139",
+        "issue_ref": {
+          "issue_text": "Attempted to clean soapbar 1 with sinkbasin 1 without being at the sinkbasin location.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "issue_trial_num": "4",
+          "issue_step_range": "14-14"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "16-17"
+        },
+        "ranking_score": 0.6672292885950808
+      },
+      {
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.7413658762167564,
+        "learning_count": 9,
+        "kb_index": 139,
+        "learning_text": "Ensure agent is at the target receptacle before attempting to place an object into it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbar, garbagecan",
+        "verbs": "put in",
+        "goal_phase": "PLACE",
+        "unique_id": "140",
+        "issue_ref": {
+          "issue_text": "Attempted to put soapbar 1 in garbagecan 1 without being at the garbagecan location.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "issue_trial_num": "4",
+          "issue_step_range": "19-19"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "21-21"
+        },
+        "ranking_score": 0.6672292885950808
+      },
+      {
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.7413658762167564,
+        "learning_count": 9,
+        "kb_index": 140,
+        "learning_text": "If 'put in' fails for a receptacle, try using the 'move [object] to [receptacle]' command as an alternative.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbar, garbagecan",
+        "verbs": "put in, move",
+        "goal_phase": "PLACE",
+        "unique_id": "141",
+        "issue_ref": {
+          "issue_text": "The 'put in' command failed to place soapbar 1 into garbagecan 1, even when at the location.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "issue_trial_num": "4",
+          "issue_step_range": "22-22"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "26-26"
+        },
+        "ranking_score": 0.6672292885950808
+      },
+      {
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.7413658762167564,
+        "learning_count": 9,
+        "kb_index": 142,
+        "learning_text": "If 'drop' fails for a receptacle, try using the 'move [object] to [receptacle]' command as an alternative.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbar, garbagecan",
+        "verbs": "drop, move",
+        "goal_phase": "PLACE",
+        "unique_id": "143",
+        "issue_ref": {
+          "issue_text": "The 'drop' command failed to place soapbar 1 into garbagecan 1.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "issue_trial_num": "4",
+          "issue_step_range": "25-25"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "26-26"
+        },
+        "ranking_score": 0.6672292885950808
+      },
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.8117241296040036,
+        "learning_count": 6,
+        "kb_index": 133,
+        "learning_text": "Avoid `soapbar 4` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "CANDIDATE",
+        "obj_type": "soapbar",
+        "verbs": "clean, drop, put",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "unique_id": "134",
+        "issue_ref": {
+          "issue_text": "Soapbar 4 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "issue_trial_num": "7",
+          "issue_step_range": "40-45"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "evidence_trial_num": "7",
+          "evidence_step_range": "46-48"
+        },
+        "ranking_score": 0.48703447776240216
+      },
+      {
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.7413658762167564,
+        "learning_count": 9,
+        "kb_index": 136,
+        "learning_text": "Recognize that some containers like tissuebox 1 may not be openable, requiring alternative search strategies.",
+        "valid_level": "CANDIDATE",
+        "obj_type": "tissuebox",
+        "verbs": "open",
+        "goal_phase": "SEARCH",
+        "unique_id": "137",
+        "issue_ref": {
+          "issue_text": "Attempted to open tissuebox 1, but the action had no effect.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "issue_trial_num": "2",
+          "issue_step_range": "4-6"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-GarbageCan-429",
+          "evidence_trial_num": "3",
+          "evidence_step_range": "11-11"
+        },
+        "ranking_score": 0.44481952573005384
+      }
+    ]
+  }
+}

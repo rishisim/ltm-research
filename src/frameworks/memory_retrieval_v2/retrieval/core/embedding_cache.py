@@ -16,8 +16,8 @@ from dotenv import load_dotenv
 from google import genai
 
 # Load environment variables
-env_path = Path(__file__).resolve().parent.parent.parent.parent.parent / '.env'
-load_dotenv(env_path)
+env_path = Path(__file__).resolve().parent.parent.parent.parent.parent.parent / '.env'
+load_dotenv(env_path, override=True)
 
 # Initialize Google GenAI client for embeddings
 genai_client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
@@ -188,7 +188,14 @@ def create_knowledge_base_embeddings(
         return cache_data
     
     # Extract all texts to embed based on embed_field
-    texts_to_embed = [entry.get(embed_field, "") for entry in knowledge_base]
+    texts_to_embed = []
+    for entry in knowledge_base:
+        if embed_field == "issue_text":
+            # Fallback for issue_ref if issue_text is missing
+            text = entry.get("issue_text") or entry.get("issue_ref", {}).get("text", "")
+        else:
+            text = entry.get(embed_field, "")
+        texts_to_embed.append(text)
     
     print(f"  Embedding {len(texts_to_embed)} {embed_field} entries...")
     embeddings = get_batch_embeddings(texts_to_embed)

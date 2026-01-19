@@ -11,6 +11,7 @@ when they are struggling. The tool:
 
 import os
 import json
+import re
 import numpy as np
 from typing import List, Dict, Any, Optional, Tuple
 from dotenv import load_dotenv
@@ -21,6 +22,7 @@ from .embedding_cache import (
     cosine_similarity,
     load_embeddings_cache
 )
+from rank_bm25 import BM25Okapi
 
 # Load environment variables
 env_path = Path(__file__).resolve().parent.parent.parent.parent / '.env'
@@ -28,14 +30,30 @@ load_dotenv(env_path)
 
 # Validation level weights for multiplicative scoring
 VALID_LEVEL_WEIGHT = {
-    "VALID_NEXT_TRIAL": 1,
-    "VALID_SAME_TRIAL": 1,
-    "CANDIDATE": 0.5,
+    "VALID_NEXT_TRIAL": 1.0,
+    "VALID_SAME_TRIAL": 0.9,
+    "CANDIDATE": 0.6,
 }
 
 # Global cache for issue_text embeddings (loaded once per knowledge base)
 _issue_embeddings_cache = None
 _cached_kb_path = None
+_bm25_cache = None
+
+_cached_kb_path = None
+_bm25_cache = None
+
+
+def clean_query(query: str) -> str:
+    """
+    Clean the query by removing digits and extra whitespace.
+    This helps BM25 focus on objects/actions rather than specific instance IDs.
+    """
+    # Remove digits
+    cleaned = re.sub(r'\d+', '', query)
+    # Collapse whitespace
+    cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+    return cleaned
 
 
 def get_embedding(text: str) -> np.ndarray:
@@ -101,12 +119,16 @@ def load_issue_embeddings(memory_bank_path: str, force_rebuild: bool = False) ->
     Returns:
         Tuple of (cache entries with metadata, list of numpy embedding arrays)
     """
-    global _issue_embeddings_cache, _cached_kb_path
+    global _issue_embeddings_cache, _cached_kb_path, _bm25_cache
     
     # Check if we already have the cache loaded for this KB
     if not force_rebuild and _cached_kb_path == memory_bank_path and _issue_embeddings_cache is not None:
         return _issue_embeddings_cache
     
+    # Reset BM25 cache if we are switching KBs
+    if _cached_kb_path != memory_bank_path:
+        _bm25_cache = None
+
     # Load from disk (or create if doesn't exist)
     print(f"Loading issue_text embeddings cache for {memory_bank_path}...")
     cache_data, embeddings = load_embeddings_cache(
@@ -140,6 +162,8 @@ def help_tool(
         - query_issue: The original issue
         - results: List of top matching issues with learnings, ranked by similarity and validation
     """
+    global _bm25_cache
+
     # Load memory bank
     memory_bank = load_memory_bank(memory_bank_path)
     
@@ -153,53 +177,104 @@ def help_tool(
             "results": []
         }
     
-    # Step 1: Similarity search on issue_text using CACHED embeddings
-    # Get embedding for query issue only
-    query_embedding = get_embedding(issue)
+    # --- Prepare BM25 ---
+    if _bm25_cache is None:
+        print("Building BM25 index...")
+        corpus = []
+        for entry in memory_bank:
+            issue_txt = (entry.get("issue_text") or entry.get("issue_ref", {}).get("text", "")).lower()
+            learning_txt = (entry.get("learning_text", "") or "").lower()
+            obj_type = (entry.get("obj_type", "") or "").lower()
+            verbs = (entry.get("verbs", "") or "").lower()
+            
+            # New structure: obj_type + verbs + issue_text + learning_text
+            doc_text = f"{obj_type} {verbs} {issue_txt} {learning_txt}"
+            corpus.append(doc_text.split())
+        _bm25_cache = BM25Okapi(corpus)
     
-    # Use the pre-computed embeddings for cached entries
-    # No need to call get_batch_embeddings anymore!
+    # --- Pre-process Query ---
+    # Clean digits from query for retrieval (but keep original for response)
+    search_issue = clean_query(issue)
     
-    # Calculate similarity scores
+    # --- Step 1: Embedding Similarity ---
+    query_embedding = get_embedding(search_issue)
     from .embedding_cache import cosine_similarity_batch
-    similarities = cosine_similarity_batch(query_embedding, all_issue_embeddings)
+    # Calculate all cosine similarities
+    cos_similarities = cosine_similarity_batch(query_embedding, all_issue_embeddings)
     
-    # Create list of (score, similarity, cache_entry) tuples using multiplicative scoring
-    # Score = similarity * validation_weight
-    # Note: cached_entries only have limited fields, need to fetch full data from memory_bank using index
+    # --- Step 2: BM25 Similarity ---
+    tokenized_query = search_issue.lower().split()
+    bm25_scores = _bm25_cache.get_scores(tokenized_query)
+    
+    # --- Step 3: Candidate Selection (Top 100 BM25 U Top 100 Dense) ---
+    top_n_candidates = 100
+    
+    # Get indices of top N cosine scores
+    top_cos_indices = np.argsort(cos_similarities)[-top_n_candidates:]
+    
+    # Get indices of top N BM25 scores
+    top_bm25_indices = np.argsort(bm25_scores)[-top_n_candidates:]
+    
+    # Union of candidates
+    candidate_indices = set(top_cos_indices) | set(top_bm25_indices)
+    
+    # --- Step 4: Normalization and Ranking ---
+    # We only care about statistics within the candidate set for BM25 normalization
+    candidate_bm25_scores = [bm25_scores[i] for i in candidate_indices]
+    min_bm25 = min(candidate_bm25_scores) if candidate_bm25_scores else 0
+    max_bm25 = max(candidate_bm25_scores) if candidate_bm25_scores else 1
+    if max_bm25 == min_bm25:
+        max_bm25 = min_bm25 + 1e-6 # Avoid div/0
+        
     scored_entries = []
-    for i, (sim, cache_entry) in enumerate(zip(similarities, cached_entries)):
-        # Get the full entry from the original knowledge base using the index
+    
+    for i in candidate_indices:
+        # Get raw scores
+        raw_cos = cos_similarities[i]
+        raw_bm25 = bm25_scores[i]
+        
+        # Normalize Cosine: Clamp(cos, 0, 1)
+        cos_norm = max(0.0, min(1.0, float(raw_cos)))
+        
+        # Normalize BM25: (score - min) / (max - min)
+        bm25_norm = (raw_bm25 - min_bm25) / (max_bm25 - min_bm25)
+        
+        # Get validation weight
+        # Ensure we map cache index to memory bank index correctly (should be 1-to-1 but strictly cache_entry has 'index')
+        cache_entry = cached_entries[i] if i < len(cached_entries) else {}
         entry_index = cache_entry.get("index", i)
+        
         if entry_index < len(memory_bank):
             full_entry = memory_bank[entry_index]
             valid_level = full_entry.get("valid_level", "CANDIDATE")
             valid_weight = VALID_LEVEL_WEIGHT.get(valid_level, 1)
-            # Multiplicative score: similarity * validation_weight
-            score = sim * valid_weight
-            scored_entries.append((score, sim, full_entry))
+            
+            # Final Score
+            tr_rank_score = (0.7 * cos_norm + 0.3 * bm25_norm) * valid_weight
+            
+            result_entry = {
+                "TR_rank_score": tr_rank_score,
+                "similarity_score": float(raw_cos), # Keep original for reference
+                "bm25_score": float(raw_bm25),
+                "cos_norm": cos_norm,
+                "bm25_norm": bm25_norm,
+                "issue": full_entry.get("issue_text") or full_entry.get("issue_ref", {}).get("text", ""),
+                "learning": full_entry.get("learning_text", ""),
+                "valid_level": valid_level,
+                "unique_id": full_entry.get("unique_id", ""),
+                "trigger": full_entry.get("trigger", {}),
+                "obj_type": full_entry.get("obj_type", ""),
+                "verbs": full_entry.get("verbs", "")
+            }
+            scored_entries.append(result_entry)
+
+    # Sort by TR_rank_score (descending)
+    scored_entries.sort(key=lambda x: x["TR_rank_score"], reverse=True)
     
-    # Sort by multiplicative score (descending)
-    scored_entries.sort(key=lambda x: x[0], reverse=True)
-    
-    # Step 3: Take top_k results
-    top_results = []
-    for score, sim, entry in scored_entries[:top_k]:
-        result = {
-            "score": float(score),  # Multiplicative score (similarity * validation_weight)
-            "similarity_score": float(sim),
-            "issue": entry.get("issue_text", ""),
-            "learning": entry.get("learning_text", ""),
-            "valid_level": entry.get("valid_level", ""),
-            "trigger": entry.get("trigger", {}),
-            "obj_type": entry.get("obj_type", ""),
-            "verbs": entry.get("verbs", "")
-        }
-        top_results.append(result)
-    
+    # Step 5: Return top_k
     return {
         "query_issue": issue,
-        "results": top_results
+        "results": scored_entries[:top_k]
     }
 
 
@@ -221,13 +296,16 @@ def format_help_response(response: Dict[str, Any]) -> str:
     
     lines = [
         f"Help for issue: \"{response['query_issue']}\"",
-        "\nRelevant learnings from past experiences:"
+        "Relevant learnings from past experiences:"
     ]
     
     for i, result in enumerate(response["results"], 1):
-        lines.append(f"\n{i}. Similar Issue: {result['issue']}")
+        lines.append(f"\nLEARNING {i}:")
+        lines.append(f"   unique_id: {result.get('unique_id', 'N/A')}")
+        lines.append(f"   Issue: {result['issue']}")
         lines.append(f"   Learning: {result['learning']}")
-        lines.append(f"   (Validation: {result['valid_level']}, Score: {result.get('score', 0):.2f}, Similarity: {result['similarity_score']:.2f})")
+        lines.append(f"   (Validation: {result['valid_level']}, Score: {result.get('TR_rank_score', 0):.2f})") 
+        lines.append(f"   (Metrics: Cos={result.get('similarity_score',0):.2f}, BM25={result.get('bm25_score',0):.2f}, CosNorm={result.get('cos_norm',0):.2f}, BM25Norm={result.get('bm25_norm',0):.2f})")
     
     return "\n".join(lines)
 
@@ -249,7 +327,7 @@ def save_as_csv(data: Dict[str, Any], output_path: Path):
         all_keys.update(entry.keys())
     
     # Define column order with priority columns first
-    priority_cols = ["score", "similarity_score", "valid_level", "issue", "learning"]
+    priority_cols = ["TR_rank_score", "similarity_score", "valid_level", "issue", "learning"]
     sorted_priority_cols = [c for c in priority_cols if c in all_keys]
     other_cols = [c for c in sorted(list(all_keys)) if c not in priority_cols]
     

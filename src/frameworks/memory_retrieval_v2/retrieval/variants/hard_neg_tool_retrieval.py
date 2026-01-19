@@ -36,8 +36,8 @@ load_dotenv(env_path)
 # Higher weight = higher priority
 VALID_LEVEL_WEIGHT_HARD_NEG = {
     "CANDIDATE": 1.0,            # Highest weight (prioritize unvalidated)
-    "VALID_SAME_TRIAL": 0.5,    # Lower weight (de-prioritize validated)
-    "VALID_NEXT_TRIAL": 0.5,    # Lower weight (de-prioritize validated)
+    "VALID_SAME_TRIAL": 0.85,    # Lower weight (de-prioritize validated)
+    "VALID_NEXT_TRIAL": 0.6,    # Lower weight (de-prioritize validated)
 }
 
 # Global cache for issue_text embeddings (loaded once per knowledge base)
@@ -151,11 +151,12 @@ def help_tool(
     top_results = []
     for inverted_score, sim, entry in scored_entries[:top_k]:
         result = {
-            "score": float(inverted_score),  # Inverted score
+            "TR_rank_score": float(inverted_score),  # Inverted score
             "similarity_score": float(sim),   # Original similarity (will be low)
-            "issue": entry.get("issue_text", ""),
+            "issue": entry.get("issue_text") or entry.get("issue_ref", {}).get("text", ""),
             "learning": entry.get("learning_text", ""),
             "valid_level": entry.get("valid_level", ""),
+            "unique_id": entry.get("unique_id", ""),  # Added unique_id
             "trigger": entry.get("trigger", {}),
             "obj_type": entry.get("obj_type", ""),
             "verbs": entry.get("verbs", "")
@@ -195,8 +196,11 @@ def format_help_response(response: Dict[str, Any]) -> str:
     
     for i, result in enumerate(response["results"], 1):
         lines.append(f"\n{i}. Similar Issue: {result['issue']}")
+        lines.append(f"   RELEVANT ISSUE LEARNINGS:")
+        lines.append(f"   unique_id: {result.get('unique_id', 'N/A')}")
+        lines.append(f"   Issue: {result['issue']}")
         lines.append(f"   Learning: {result['learning']}")
-        lines.append(f"   (Validation: {result['valid_level']}, Score: {result.get('score', 0):.2f}, Similarity: {result['similarity_score']:.2f})")
+        lines.append(f"   (Validation: {result['valid_level']}, Score: {result.get('TR_rank_score', 0):.2f}, Similarity: {result['similarity_score']:.2f})")
     
     return "\n".join(lines)
 

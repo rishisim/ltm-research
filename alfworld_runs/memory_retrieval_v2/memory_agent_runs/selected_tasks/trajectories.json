@@ -1,0 +1,1449 @@
+[
+  {
+    "task_id": "valid_unseen:look_at_obj_in_light-AlarmClock-None-DeskLamp-308/trial_T20190908_222917_366542",
+    "task_type": "valid_unseen:look_at_obj_in_light",
+    "task_desc": "examine the alarmclock with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "unique_id": "1",
+        "issue": "Repeated attempts to turn on, use, or examine desklamp 1 had no effect.",
+        "learning": "Use the 'use [object]' command to successfully turn on the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "look at alarmclock under the desklamp.",
+        "similarity_score": 0.9227028208774675,
+        "ranking_score": 0.8304325387897208
+      },
+      {
+        "unique_id": "2",
+        "issue": "Directly attempting to 'look at alarmclock under desklamp' failed, even with the lamp on.",
+        "learning": "First, pick up the alarmclock before attempting to look at it under the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "look at alarmclock under the desklamp.",
+        "similarity_score": 0.9227028208774675,
+        "ranking_score": 0.8304325387897208
+      },
+      {
+        "unique_id": "34",
+        "issue": "Failed to take or move the desklamp, indicating it is stationary.",
+        "learning": "If an object is stationary, move the other required object to its location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "unique_id": "35",
+        "issue": "Failed to take pillow from bed because agent was not at its location.",
+        "learning": "Go to the object's location before attempting to take it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "unique_id": "37",
+        "issue": "Attempted to examine pillow without the desklamp present or active.",
+        "learning": "Ensure the desklamp is present and active when attempting to examine an object.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "RECOVER",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "unique_id": "38",
+        "issue": "Failed to examine pillow with desklamp because objects were not co-located.",
+        "learning": "Bring the pillow to the desklamp's location before attempting examination.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "RECOVER",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "unique_id": "40",
+        "issue": "Used 'examine with' or 'use on' commands instead of 'use' for desklamp examination.",
+        "learning": "To examine an object with a desklamp, hold the object and use the desklamp.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "RECOVER",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "unique_id": "27",
+        "issue": "Failed to take desklamp, confirming it is a fixed object.",
+        "learning": "Adapted strategy by moving the movable pencil to the fixed desklamp's location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.7794621670637999,
+        "ranking_score": 0.7794621670637999
+      },
+      {
+        "unique_id": "28",
+        "issue": "Failed to take pencil, initially believed to be fixed.",
+        "learning": "Successfully picked up the pencil, demonstrating it was movable despite prior failures.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.7794621670637999,
+        "ranking_score": 0.7794621670637999
+      },
+      {
+        "unique_id": "29",
+        "issue": "Failed to examine objects due to lack of co-location.",
+        "learning": "Ensured co-location of pencil and desklamp by moving the pencil to the desklamp's location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.7794621670637999,
+        "ranking_score": 0.7794621670637999
+      },
+      {
+        "unique_id": "52",
+        "issue": "Attempted to examine watch with desklamp when desklamp was off.",
+        "learning": "Ensure the desklamp is turned on before attempting to examine an object with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the watch with the desklamp.",
+        "similarity_score": 0.8189119085967494,
+        "ranking_score": 0.7370207177370746
+      },
+      {
+        "unique_id": "53",
+        "issue": "Used 'turn on' command to activate desklamp, which had no effect.",
+        "learning": "Use the 'use' command to activate the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the watch with the desklamp.",
+        "similarity_score": 0.8189119085967494,
+        "ranking_score": 0.7370207177370746
+      },
+      {
+        "unique_id": "30",
+        "issue": "Attempted to 'look at' a location, which had no effect for finding objects.",
+        "learning": "Rely on 'go to' observations to identify objects present at a location.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "unique_id": "31",
+        "issue": "Used 'examine X with Y' command, which was ineffective for the task.",
+        "learning": "To examine an object with a light source, 'use' the light source directly.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "unique_id": "32",
+        "issue": "Attempted to 'take' the desklamp, which was not the correct action for its use.",
+        "learning": "Do not 'take' the desklamp; instead, 'use' it in its fixed location.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "unique_id": "33",
+        "issue": "Failed to examine object with desklamp because it was off.",
+        "learning": "Turn on the desklamp before attempting to examine objects with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "unique_id": "36",
+        "issue": "Used 'turn on' command instead of 'use' to activate the desklamp.",
+        "learning": "Use the 'use' command to turn on the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "unique_id": "39",
+        "issue": "Attempted to use desklamp from an incorrect location (bed).",
+        "learning": "Go to the desklamp's location before attempting to use it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.71571081501047
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find and take an alarmclock, then find and use a desklamp, and finally examine the alarmclock with the desklamp.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "think: First I need to find an alarmclock. An alarmclock is more likely to appear in drawer (1-6), desk (1-2), sidetable (1-2), shelf (1-6), bed (1). I can check one by one, starting with drawer 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see a creditcard 1, and a pen 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. On the drawer 2, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "go to drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "go to drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      }
+    ],
+    "success": false,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 7
+  },
+  {
+    "task_id": "valid_unseen:look_at_obj_in_light-Mug-None-DeskLamp-308/trial_T20190908_161733_213242",
+    "task_type": "valid_unseen:look_at_obj_in_light",
+    "task_desc": "look at mug under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "unique_id": "10",
+        "issue": "Attempted to look at a desklamp at a location where it was not present.",
+        "learning": "Search for the object at a different location when it's not found at the current one.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "examine the mug with the desklamp.",
+        "similarity_score": 0.9259171765016075,
+        "ranking_score": 0.8333254588514468
+      },
+      {
+        "unique_id": "11",
+        "issue": "Attempted to take an object (desklamp) that was fixed and could not be moved.",
+        "learning": "If an object cannot be taken, bring the other required object to its location.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the mug with the desklamp.",
+        "similarity_score": 0.9259171765016075,
+        "ranking_score": 0.8333254588514468
+      },
+      {
+        "unique_id": "12",
+        "issue": "Attempted to examine an object using a desklamp that was not turned on.",
+        "learning": "Turn on the desklamp before attempting to use it for examination.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the mug with the desklamp.",
+        "similarity_score": 0.9259171765016075,
+        "ranking_score": 0.8333254588514468
+      },
+      {
+        "unique_id": "7",
+        "issue": "Failed to navigate to a drawer using `go to` command, resulting in \"Nothing happens.\"",
+        "learning": "If `go to` fails for a container, try interacting directly with it using commands like `open`.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "look at laptop under the desklamp.",
+        "similarity_score": 0.8233437887466526,
+        "ranking_score": 0.8233437887466526
+      },
+      {
+        "unique_id": "8",
+        "issue": "Unable to place the laptop on or under the desklamp using `place` or `put` commands.",
+        "learning": "Explicit placement might not be required; ensure the object is in the same location as the light source and activate the light source.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "look at laptop under the desklamp.",
+        "similarity_score": 0.8233437887466526,
+        "ranking_score": 0.8233437887466526
+      },
+      {
+        "unique_id": "373",
+        "issue": "Attempted to 'go to' drawer 7, but it resulted in 'Nothing happens' repeatedly.",
+        "learning": "When 'go to' fails for a container, try to interact directly with 'open' to access its contents.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "look at laptop under the desklamp.",
+        "similarity_score": 0.8233437887466526,
+        "ranking_score": 0.8233437887466526
+      },
+      {
+        "unique_id": "374",
+        "issue": "Failed to place laptop on or under desklamp using 'place' or 'put' commands.",
+        "learning": "To fulfill 'under the desklamp' condition, ensure the object is in the same location as the desklamp and activate the desklamp, rather than explicitly 'placing' it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "look at laptop under the desklamp.",
+        "similarity_score": 0.8233437887466526,
+        "ranking_score": 0.8233437887466526
+      },
+      {
+        "unique_id": "43",
+        "issue": "Initial attempts to take statue 1 failed, leading to the assumption it was fixed.",
+        "learning": "Statue 1 is a movable object; successfully picked it up from desk 1.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "look at statue under the desklamp.",
+        "similarity_score": 0.8077536509750641,
+        "ranking_score": 0.8077536509750641
+      },
+      {
+        "unique_id": "44",
+        "issue": "Attempted to take desklamp 1, which consistently failed, indicating it is a fixed object.",
+        "learning": "Desklamp 1 is a fixed object and cannot be picked up or moved.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "look at statue under the desklamp.",
+        "similarity_score": 0.8077536509750641,
+        "ranking_score": 0.8077536509750641
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find and take a mug, then find and use a desklamp.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "think: First I need to find a mug. A mug is more likely to appear in drawer (1-6), desk (1-2), shelf (1-6), garbagecan (1). I can check one by one, starting with drawer 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see a creditcard 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. On the drawer 2, you see a cd 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "go to drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "help[\"repeatedly failing to go to the drawer\"]",
+        "observation": "Help for issue: \"repeatedly failing to go to the drawer\"\nRelevant learnings from past experiences:\n\nLEARNING 1:\n   Issue ID: 342\n   Issue: Repeatedly failed to go to drawer 4, action had no effect.\n   Learning: Persist with 'go to' action for a location, as it may succeed on retry.\n   (Validation: VALID_NEXT_TRIAL, Score: 0.89)\n   (Metrics: Cos=0.84, BM25=11.31, CosNorm=0.84, BM25Norm=1.00)\n\nLEARNING 2:\n   Issue ID: 373\n   Issue: Attempted to 'go to' drawer 7, but it resulted in 'Nothing happens' repeatedly.\n   Learning: When 'go to' fails for a container, try to interact directly with 'open' to access its contents.\n   (Validation: VALID_NEXT_TRIAL, Score: 0.76)\n   (Metrics: Cos=0.78, BM25=7.99, CosNorm=0.78, BM25Norm=0.70)\n\nLEARNING 3:\n   Issue ID: 46\n   Issue: Repeatedly attempted to 'go to' or 'open' drawers, but they remained inaccessible.\n   Learning: Drawers 1 and 2 are currently inaccessible and cannot be opened or navigated to.\n   (Validation: VALID_NEXT_TRIAL, Score: 0.75)\n   (Metrics: Cos=0.76, BM25=8.46, CosNorm=0.76, BM25Norm=0.75)",
+        "is_help_call": true
+      },
+      {
+        "step": 8,
+        "action": "think: Since 'go to' failed for drawer 3, I should try to open it directly.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "open drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 10,
+        "action": "think: Since I cannot go to or open drawer 3, I will try the next drawer.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 11,
+        "action": "go to drawer 4",
+        "observation": "You arrive at drawer 4. The drawer 4 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 12,
+        "action": "open drawer 4",
+        "observation": "You open the drawer 4. The drawer 4 is open. In it, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 13,
+        "action": "go to drawer 5",
+        "observation": "You arrive at drawer 5. On the drawer 5, you see a cd 3, and a cellphone 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 14,
+        "action": "go to drawer 6",
+        "observation": "You arrive at drawer 6. The drawer 6 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 15,
+        "action": "open drawer 6",
+        "observation": "You open the drawer 6. The drawer 6 is open. In it, you see a creditcard 3, and a pencil 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 16,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a creditcard 1, a desklamp 1, a laptop 1, a pencil 2, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 17,
+        "action": "think: Now I have checked all drawers. I will check desk 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 18,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a alarmclock 1, a book 2, a bowl 1, a cd 2, and a mug 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 19,
+        "action": "think: Now I find a mug (3). Next, I need to take it.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 20,
+        "action": "take mug 3 from desk 2",
+        "observation": "You pick up the mug 3 from the desk 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 21,
+        "action": "think: Now I take a mug (3). Next, I need to find a desklamp. A desklamp is more likely to appear in desk (1-2), shelf (1-6). I can check one by one, starting with desk 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 22,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a creditcard 1, a desklamp 1, a laptop 1, a pencil 2, and a pencil 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 23,
+        "action": "think: Now I find a desklamp (1). Next, I need to use it.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 24,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [
+      {
+        "step": 7,
+        "query": "repeatedly failing to go to the drawer",
+        "response": "Help for issue: \"repeatedly failing to go to the drawer\"\nRelevant learnings from past experiences:\n\nLEARNING 1:\n   Issue ID: 342\n   Issue: Repeatedly failed to go to drawer 4, action had no effect.\n   Learning: Persist with 'go to' action for a location, as it may succeed on retry.\n   (Validation: VALID_NEXT_TRIAL, Score: 0.89)\n   (Metrics: Cos=0.84, BM25=11.31, CosNorm=0.84, BM25Norm=1.00)\n\nLEARNING 2:\n   Issue ID: 373\n   Issue: Attempted to 'go to' drawer 7, but it resulted in 'Nothing happens' repeatedly.\n   Learning: When 'go to' fails for a container, try to interact directly with 'open' to access its contents.\n   (Validation: VALID_NEXT_TRIAL, Score: 0.76)\n   (Metrics: Cos=0.78, BM25=7.99, CosNorm=0.78, BM25Norm=0.70)\n\nLEARNING 3:\n   Issue ID: 46\n   Issue: Repeatedly attempted to 'go to' or 'open' drawers, but they remained inaccessible.\n   Learning: Drawers 1 and 2 are currently inaccessible and cannot be opened or navigated to.\n   (Validation: VALID_NEXT_TRIAL, Score: 0.75)\n   (Metrics: Cos=0.76, BM25=8.46, CosNorm=0.76, BM25Norm=0.75)"
+      }
+    ],
+    "help_call_count": 1,
+    "step_num": 24
+  },
+  {
+    "task_id": "valid_unseen:pick_clean_then_place_in_recep-SoapBar-None-Cabinet-424/trial_T20190908_214926_337906",
+    "task_type": "valid_unseen:pick_clean_then_place_in_recep",
+    "task_desc": "clean some soapbar and put it in cabinet.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "unique_id": "132",
+        "issue": "Soapbar 3 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+        "learning": "Avoid `soapbar 3` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.9187897921460428,
+        "ranking_score": 0.9187897921460428
+      },
+      {
+        "unique_id": "133",
+        "issue": "Soapbar 1 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+        "learning": "Avoid `soapbar 1` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.9187897921460428,
+        "ranking_score": 0.9187897921460428
+      },
+      {
+        "unique_id": "135",
+        "issue": "Soapbar not found after searching multiple common locations (shelves, basins).",
+        "learning": "Expand search to less obvious locations like the toilet to find the soapbar.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.8571064283730656,
+        "ranking_score": 0.8571064283730656
+      },
+      {
+        "unique_id": "136",
+        "issue": "Attempted to open garbagecan 1, but the action had no effect.",
+        "learning": "Use the 'move' command to place objects into containers that cannot be opened.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.8571064283730656,
+        "ranking_score": 0.8571064283730656
+      },
+      {
+        "unique_id": "138",
+        "issue": "Failed to take soapbar 1 from toilet 1 despite it being visible.",
+        "learning": "Re-attempt 'take' action for visible objects, as initial failures might be transient or due to minor command variations.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.8571064283730656,
+        "ranking_score": 0.8571064283730656
+      },
+      {
+        "unique_id": "142",
+        "issue": "Using 'look inside' on garbagecan 1 had no effect, suggesting it's not an inspectable container.",
+        "learning": "If 'look inside' fails for a container, consider it non-inspectable and try alternative interaction methods or search strategies.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.8571064283730656,
+        "ranking_score": 0.8571064283730656
+      },
+      {
+        "unique_id": "353",
+        "issue": "Repeatedly failed to take visible soapbars from toilet, receiving 'Nothing happens'.",
+        "learning": "Persist in attempting to take objects from locations where they are visible, as they may eventually become pickable.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8329306549370994,
+        "ranking_score": 0.8329306549370994
+      },
+      {
+        "unique_id": "129",
+        "issue": "Failed to put item in cabinet 1 because it was closed.",
+        "learning": "Open the target container before attempting to place an item inside.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.9187897921460428,
+        "ranking_score": 0.8269108129314385
+      },
+      {
+        "unique_id": "130",
+        "issue": "Failed to open cabinet 1 because agent was not at its location.",
+        "learning": "Navigate to the object's location before attempting to interact with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.9187897921460428,
+        "ranking_score": 0.8269108129314385
+      },
+      {
+        "unique_id": "131",
+        "issue": "Failed to put soapbar in cabinet 1; 'put' verb ineffective.",
+        "learning": "Use the 'move' verb instead of 'put' to place objects into containers.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.9187897921460428,
+        "ranking_score": 0.8269108129314385
+      },
+      {
+        "unique_id": "139",
+        "issue": "Attempted to clean soapbar 1 with sinkbasin 1 without being at the sinkbasin location.",
+        "learning": "Ensure agent is at the correct location before attempting to use an object with a receptacle (e.g., cleaning).",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.8571064283730656,
+        "ranking_score": 0.771395785535759
+      },
+      {
+        "unique_id": "140",
+        "issue": "Attempted to put soapbar 1 in garbagecan 1 without being at the garbagecan location.",
+        "learning": "Ensure agent is at the target receptacle before attempting to place an object into it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.8571064283730656,
+        "ranking_score": 0.771395785535759
+      },
+      {
+        "unique_id": "141",
+        "issue": "The 'put in' command failed to place soapbar 1 into garbagecan 1, even when at the location.",
+        "learning": "If 'put in' fails for a receptacle, try using the 'move [object] to [receptacle]' command as an alternative.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.8571064283730656,
+        "ranking_score": 0.771395785535759
+      },
+      {
+        "unique_id": "143",
+        "issue": "The 'drop' command failed to place soapbar 1 into garbagecan 1.",
+        "learning": "If 'drop' fails for a receptacle, try using the 'move [object] to [receptacle]' command as an alternative.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.8571064283730656,
+        "ranking_score": 0.771395785535759
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find and take a soapbar, then clean it with sinkbasin, then put it in cabinet.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "think: First I need to find a soapbar. A soapbar is more likely to appear in sinkbasin (1-2), toilet (1), cabinet (1-4). I can check one by one, starting with sinkbasin 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "go to sinkbasin 1",
+        "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "think: Now I have checked sinkbasin 1 and found nothing. Next I will check sinkbasin 2.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "go to sinkbasin 2",
+        "observation": "You arrive at sinkbasin 2. On the sinkbasin 2, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "think: Now I have checked sinkbasin 2 and found nothing. Next I will check toilet 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "go to toilet 1",
+        "observation": "You arrive at toilet 1. On the toilet 1, you see a spraybottle 1, and a toiletpaper 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "think: Now I have checked toilet 1 and found nothing. Next I will check cabinet 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "go to cabinet 1",
+        "observation": "You arrive at cabinet 1. The cabinet 1 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 10,
+        "action": "open cabinet 1",
+        "observation": "You open the cabinet 1. The cabinet 1 is open. In it, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 11,
+        "action": "think: Now I have checked cabinet 1 and found nothing. Next I will check cabinet 2.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 12,
+        "action": "go to cabinet 2",
+        "observation": "You arrive at cabinet 2. The cabinet 2 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 13,
+        "action": "open cabinet 2",
+        "observation": "You open the cabinet 2. The cabinet 2 is open. In it, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 14,
+        "action": "think: Now I have checked cabinet 2 and found nothing. Next I will check cabinet 3.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 15,
+        "action": "go to cabinet 3",
+        "observation": "You arrive at cabinet 3. The cabinet 3 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 16,
+        "action": "open cabinet 3",
+        "observation": "You open the cabinet 3. The cabinet 3 is open. In it, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 17,
+        "action": "think: Now I have checked cabinet 3 and found nothing. Next I will check cabinet 4.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 18,
+        "action": "go to cabinet 4",
+        "observation": "You arrive at cabinet 4. The cabinet 4 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 19,
+        "action": "open cabinet 4",
+        "observation": "You open the cabinet 4. The cabinet 4 is open. In it, you see a candle 1, and a cloth 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 20,
+        "action": "think: Now I have checked cabinet 4 and found nothing. I have checked all the likely locations and found nothing. I will check toilet 1 again, in case I missed it.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 21,
+        "action": "go to toilet 1",
+        "observation": "You arrive at toilet 1. On the toilet 1, you see a spraybottle 1, and a toiletpaper 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 22,
+        "action": "think: I still cannot find the soapbar. I will try to search for it again, but this time I will use the help tool.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 23,
+        "action": "help[\"cannot find the soapbar after searching common locations\"]",
+        "observation": "Help for issue: \"cannot find the soapbar after searching common locations\"\nRelevant learnings from past experiences:\n\nLEARNING 1:\n   Issue ID: 135\n   Issue: Soapbar not found after searching multiple common locations (shelves, basins).\n   Learning: Expand search to less obvious locations like the toilet to find the soapbar.\n   (Validation: VALID_NEXT_TRIAL, Score: 0.93)\n   (Metrics: Cos=0.89, BM25=22.45, CosNorm=0.89, BM25Norm=1.00)\n\nLEARNING 2:\n   Issue ID: 133\n   Issue: Soapbar 1 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.\n   Learning: Avoid `soapbar 1` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.\n   (Validation: VALID_NEXT_TRIAL, Score: 0.60)\n   (Metrics: Cos=0.70, BM25=7.78, CosNorm=0.70, BM25Norm=0.35)\n\nLEARNING 3:\n   Issue ID: 132\n   Issue: Soapbar 3 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.\n   Learning: Avoid `soapbar 3` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.\n   (Validation: VALID_NEXT_TRIAL, Score: 0.59)\n   (Metrics: Cos=0.69, BM25=7.78, CosNorm=0.69, BM25Norm=0.35)",
+        "is_help_call": true
+      },
+      {
+        "step": 24,
+        "action": "think: The help tool suggests expanding the search to less obvious locations like the toilet. I have already checked the toilet, but I will check it again carefully.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 25,
+        "action": "look in toilet 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 26,
+        "action": "think: Looking in the toilet did not reveal the soapbar. I will try taking the spraybottle from the toilet, in case the soapbar is hidden underneath.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 27,
+        "action": "take spraybottle 1 from toilet 1",
+        "observation": "You pick up the spraybottle 1 from the toilet 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 28,
+        "action": "think: Now that I have taken the spraybottle, I can look at the toilet again to see if the soapbar was hidden underneath.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 29,
+        "action": "look in toilet 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 30,
+        "action": "think: Looking in the toilet still does not reveal the soapbar. I will try to examine the environment more broadly, in case I have missed something obvious.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 31,
+        "action": "look around",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 32,
+        "action": "think: I am still unable to find the soapbar. I will try to use the help tool again, but this time I will phrase the query differently.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 33,
+        "action": "help[\"object not found after searching all common locations\"]",
+        "observation": "Help for issue: \"object not found after searching all common locations\"\nRelevant learnings from past experiences:\n\nLEARNING 1:\n   Issue ID: 146\n   Issue: Failed to locate the target object 'apple' after searching many common locations.\n   Learning: Systematically search all possible locations, including less obvious ones like the microwave, to find the target object.\n   (Validation: VALID_NEXT_TRIAL, Score: 0.80)\n   (Metrics: Cos=0.79, BM25=12.70, CosNorm=0.79, BM25Norm=0.81)\n\nLEARNING 2:\n   Issue ID: 121\n   Issue: Mug not found in initial search locations (diningtable, cabinets).\n   Learning: Prioritize searching countertops and drawers for mugs based on common object locations.\n   (Validation: VALID_NEXT_TRIAL, Score: 0.76)\n   (Metrics: Cos=0.71, BM25=13.58, CosNorm=0.71, BM25Norm=0.87)\n\nLEARNING 3:\n   Issue ID: 135\n   Issue: Soapbar not found after searching multiple common locations (shelves, basins).\n   Learning: Expand search to less obvious locations like the toilet to find the soapbar.\n   (Validation: VALID_NEXT_TRIAL, Score: 0.76)\n   (Metrics: Cos=0.66, BM25=15.34, CosNorm=0.66, BM25Norm=0.98)",
+        "is_help_call": true
+      },
+      {
+        "step": 34,
+        "action": "think: The help tool suggests systematically searching all possible locations, including less obvious ones. I have checked the sinkbasins, toilet, and cabinets. I will now check the countertop.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 35,
+        "action": "go to countertop 1",
+        "observation": "You arrive at countertop 1. On the countertop 1, you see a soapbar 1, and a soapbottle 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 36,
+        "action": "think: Now I have found a soapbar (1). Next, I need to take it.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 37,
+        "action": "take soapbar 1 from countertop 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 38,
+        "action": "think: I tried to take the soapbar, but nothing happened. Based on previous experience, I should try again.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 39,
+        "action": "take soapbar 1 from countertop 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 40,
+        "action": "think: I tried to take the soapbar again, but nothing happened. Based on previous experience, soapbar 1 might be un-cleanable, un-droppable, and un-placeable, causing a deadlock. I will try to find another soapbar.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 41,
+        "action": "think: I need to find another soapbar. I will check the locations I have already checked, starting with sinkbasin 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 42,
+        "action": "go to sinkbasin 1",
+        "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 43,
+        "action": "think: Now I have checked sinkbasin 1 and found nothing. Next I will check sinkbasin 2.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 44,
+        "action": "go to sinkbasin 2",
+        "observation": "You arrive at sinkbasin 2. On the sinkbasin 2, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 45,
+        "action": "think: Now I have checked sinkbasin 2 and found nothing. Next I will check toilet 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 46,
+        "action": "go to toilet 1",
+        "observation": "You arrive at toilet 1. On the toilet 1, you see a toiletpaper 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 47,
+        "action": "think: Now I have checked toilet 1 and found nothing. Next I will check cabinet 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 48,
+        "action": "go to cabinet 1",
+        "observation": "You arrive at cabinet 1. The cabinet 1 is open. In it, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 49,
+        "action": "think: Now I have checked cabinet 1 and found nothing. Next I will check cabinet 2.",
+        "observation": "OK.",
+        "is_help_call": false
+      }
+    ],
+    "success": false,
+    "help_calls": [
+      {
+        "step": 23,
+        "query": "cannot find the soapbar after searching common locations",
+        "response": "Help for issue: \"cannot find the soapbar after searching common locations\"\nRelevant learnings from past experiences:\n\nLEARNING 1:\n   Issue ID: 135\n   Issue: Soapbar not found after searching multiple common locations (shelves, basins).\n   Learning: Expand search to less obvious locations like the toilet to find the soapbar.\n   (Validation: VALID_NEXT_TRIAL, Score: 0.93)\n   (Metrics: Cos=0.89, BM25=22.45, CosNorm=0.89, BM25Norm=1.00)\n\nLEARNING 2:\n   Issue ID: 133\n   Issue: Soapbar 1 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.\n   Learning: Avoid `soapbar 1` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.\n   (Validation: VALID_NEXT_TRIAL, Score: 0.60)\n   (Metrics: Cos=0.70, BM25=7.78, CosNorm=0.70, BM25Norm=0.35)\n\nLEARNING 3:\n   Issue ID: 132\n   Issue: Soapbar 3 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.\n   Learning: Avoid `soapbar 3` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.\n   (Validation: VALID_NEXT_TRIAL, Score: 0.59)\n   (Metrics: Cos=0.69, BM25=7.78, CosNorm=0.69, BM25Norm=0.35)"
+      },
+      {
+        "step": 33,
+        "query": "object not found after searching all common locations",
+        "response": "Help for issue: \"object not found after searching all common locations\"\nRelevant learnings from past experiences:\n\nLEARNING 1:\n   Issue ID: 146\n   Issue: Failed to locate the target object 'apple' after searching many common locations.\n   Learning: Systematically search all possible locations, including less obvious ones like the microwave, to find the target object.\n   (Validation: VALID_NEXT_TRIAL, Score: 0.80)\n   (Metrics: Cos=0.79, BM25=12.70, CosNorm=0.79, BM25Norm=0.81)\n\nLEARNING 2:\n   Issue ID: 121\n   Issue: Mug not found in initial search locations (diningtable, cabinets).\n   Learning: Prioritize searching countertops and drawers for mugs based on common object locations.\n   (Validation: VALID_NEXT_TRIAL, Score: 0.76)\n   (Metrics: Cos=0.71, BM25=13.58, CosNorm=0.71, BM25Norm=0.87)\n\nLEARNING 3:\n   Issue ID: 135\n   Issue: Soapbar not found after searching multiple common locations (shelves, basins).\n   Learning: Expand search to less obvious locations like the toilet to find the soapbar.\n   (Validation: VALID_NEXT_TRIAL, Score: 0.76)\n   (Metrics: Cos=0.66, BM25=15.34, CosNorm=0.66, BM25Norm=0.98)"
+      }
+    ],
+    "help_call_count": 2,
+    "step_num": 49
+  },
+  {
+    "task_id": "valid_unseen:pick_two_obj_and_place-SoapBar-None-Cabinet-424/trial_T20190909_081720_491733",
+    "task_type": "valid_unseen:pick_two_obj_and_place",
+    "task_desc": "find two soapbar and put them in cabinet.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "unique_id": "353",
+        "issue": "Repeatedly failed to take visible soapbars from toilet, receiving 'Nothing happens'.",
+        "learning": "Persist in attempting to take objects from locations where they are visible, as they may eventually become pickable.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8739189744415408,
+        "ranking_score": 0.8739189744415408
+      },
+      {
+        "unique_id": "132",
+        "issue": "Soapbar 3 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+        "learning": "Avoid `soapbar 3` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.8117241296040036,
+        "ranking_score": 0.8117241296040036
+      },
+      {
+        "unique_id": "133",
+        "issue": "Soapbar 1 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+        "learning": "Avoid `soapbar 1` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.8117241296040036,
+        "ranking_score": 0.8117241296040036
+      },
+      {
+        "unique_id": "350",
+        "issue": "Attempted to open a cabinet without being at its location.",
+        "learning": "Go to the cabinet's location before attempting to open it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8739189744415408,
+        "ranking_score": 0.7865270769973867
+      },
+      {
+        "unique_id": "351",
+        "issue": "Attempted to look inside a cabinet that was closed.",
+        "learning": "Open the cabinet first before attempting to look inside it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8739189744415408,
+        "ranking_score": 0.7865270769973867
+      },
+      {
+        "unique_id": "352",
+        "issue": "Using 'look in' action after opening a cabinet yields no new information.",
+        "learning": "Rely on the observation from 'open' action for cabinet contents, as 'look in' is ineffective.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8739189744415408,
+        "ranking_score": 0.7865270769973867
+      },
+      {
+        "unique_id": "354",
+        "issue": "Failed to move item to container because agent was not at the container's location.",
+        "learning": "Always go to the target container before attempting to move an item into it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8739189744415408,
+        "ranking_score": 0.7865270769973867
+      },
+      {
+        "unique_id": "355",
+        "issue": "Used redundant 'put' action after item was already moved into the container.",
+        "learning": "Verify item placement after 'move' action and avoid redundant 'put' commands.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.8739189744415408,
+        "ranking_score": 0.7865270769973867
+      },
+      {
+        "unique_id": "135",
+        "issue": "Soapbar not found after searching multiple common locations (shelves, basins).",
+        "learning": "Expand search to less obvious locations like the toilet to find the soapbar.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.7413658762167564,
+        "ranking_score": 0.7413658762167564
+      },
+      {
+        "unique_id": "136",
+        "issue": "Attempted to open garbagecan 1, but the action had no effect.",
+        "learning": "Use the 'move' command to place objects into containers that cannot be opened.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.7413658762167564,
+        "ranking_score": 0.7413658762167564
+      },
+      {
+        "unique_id": "138",
+        "issue": "Failed to take soapbar 1 from toilet 1 despite it being visible.",
+        "learning": "Re-attempt 'take' action for visible objects, as initial failures might be transient or due to minor command variations.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.7413658762167564,
+        "ranking_score": 0.7413658762167564
+      },
+      {
+        "unique_id": "142",
+        "issue": "Using 'look inside' on garbagecan 1 had no effect, suggesting it's not an inspectable container.",
+        "learning": "If 'look inside' fails for a container, consider it non-inspectable and try alternative interaction methods or search strategies.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "clean some soapbar and put it in garbagecan.",
+        "similarity_score": 0.7413658762167564,
+        "ranking_score": 0.7413658762167564
+      },
+      {
+        "unique_id": "331",
+        "issue": "Attempted to pick up a second object while already holding one.",
+        "learning": "Place the currently held object into the target container before attempting to pick up another.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "find two candle and put them in cabinet.",
+        "similarity_score": 0.8142855198130785,
+        "ranking_score": 0.7328569678317707
+      },
+      {
+        "unique_id": "129",
+        "issue": "Failed to put item in cabinet 1 because it was closed.",
+        "learning": "Open the target container before attempting to place an item inside.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "PLACE",
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.8117241296040036,
+        "ranking_score": 0.7305517166436033
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find and take the first soapbar, then put it in cabinet, then find and take the second soapbar, then put it in cabinet.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "think: First I need to find the first soapbar. A soapbar is more likely to appear in sinkbasin (1-2), countertop (1), toilet (1). I can check one by one, starting with sinkbasin 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "go to sinkbasin 1",
+        "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "go to sinkbasin 2",
+        "observation": "You arrive at sinkbasin 2. On the sinkbasin 2, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "go to countertop 1",
+        "observation": "You arrive at countertop 1. On the countertop 1, you see a soapbar 1, a soapbottle 1, a spraybottle 1, and a toiletpaper 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "think: Now I find the first soapbar (1). Next, I need to take it. I can find the second soapbar later in other locations.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "take soapbar 1 from countertop 1",
+        "observation": "You pick up the soapbar 1 from the countertop 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 8,
+        "action": "think: Now I take the first soapbar (1). Next, I need to put it in cabinet.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 9,
+        "action": "go to cabinet 1",
+        "observation": "You arrive at cabinet 1. The cabinet 1 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 10,
+        "action": "open cabinet 1",
+        "observation": "You open the cabinet 1. The cabinet 1 is open. In it, you see a cloth 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 11,
+        "action": "move soapbar 1 to cabinet 1",
+        "observation": "You move the soapbar 1 to the cabinet 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 12,
+        "action": "think: Now I put the first soapbar in cabinet. Next, I need to find the second soapbar. I can check other locations.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 13,
+        "action": "go to toilet 1",
+        "observation": "You arrive at toilet 1. On the toilet 1, you see a candle 1, a soapbar 2, and a spraybottle 3.",
+        "is_help_call": false
+      },
+      {
+        "step": 14,
+        "action": "think: Now I find the second soapbar (2). Next, I need to take it.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 15,
+        "action": "take soapbar 2 from toilet 1",
+        "observation": "You pick up the soapbar 2 from the toilet 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 16,
+        "action": "think: Now I take the second soapbar (2). Next, I need to put it in cabinet.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 17,
+        "action": "go to cabinet 1",
+        "observation": "You arrive at cabinet 1. The cabinet 1 is open. In it, you see a cloth 1, and a soapbar 1.",
+        "is_help_call": false
+      },
+      {
+        "step": 18,
+        "action": "move soapbar 2 to cabinet 1",
+        "observation": "You move the soapbar 2 to the cabinet 1.",
+        "is_help_call": false
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 18
+  },
+  {
+    "task_id": "valid_unseen:look_at_obj_in_light-AlarmClock-None-DeskLamp-308/trial_T20190908_222917_366542",
+    "task_type": "valid_unseen:look_at_obj_in_light",
+    "task_desc": "examine the alarmclock with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [
+      {
+        "unique_id": "1",
+        "issue": "Repeated attempts to turn on, use, or examine desklamp 1 had no effect.",
+        "learning": "Use the 'use [object]' command to successfully turn on the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "look at alarmclock under the desklamp.",
+        "similarity_score": 0.9227028208774675,
+        "ranking_score": 0.8304325387897208
+      },
+      {
+        "unique_id": "2",
+        "issue": "Directly attempting to 'look at alarmclock under desklamp' failed, even with the lamp on.",
+        "learning": "First, pick up the alarmclock before attempting to look at it under the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "look at alarmclock under the desklamp.",
+        "similarity_score": 0.9227028208774675,
+        "ranking_score": 0.8304325387897208
+      },
+      {
+        "unique_id": "34",
+        "issue": "Failed to take or move the desklamp, indicating it is stationary.",
+        "learning": "If an object is stationary, move the other required object to its location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "unique_id": "35",
+        "issue": "Failed to take pillow from bed because agent was not at its location.",
+        "learning": "Go to the object's location before attempting to take it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "unique_id": "37",
+        "issue": "Attempted to examine pillow without the desklamp present or active.",
+        "learning": "Ensure the desklamp is present and active when attempting to examine an object.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "RECOVER",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "unique_id": "38",
+        "issue": "Failed to examine pillow with desklamp because objects were not co-located.",
+        "learning": "Bring the pillow to the desklamp's location before attempting examination.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "RECOVER",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "unique_id": "40",
+        "issue": "Used 'examine with' or 'use on' commands instead of 'use' for desklamp examination.",
+        "learning": "To examine an object with a desklamp, hold the object and use the desklamp.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "RECOVER",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.7952342389005221
+      },
+      {
+        "unique_id": "27",
+        "issue": "Failed to take desklamp, confirming it is a fixed object.",
+        "learning": "Adapted strategy by moving the movable pencil to the fixed desklamp's location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.7794621670637999,
+        "ranking_score": 0.7794621670637999
+      },
+      {
+        "unique_id": "28",
+        "issue": "Failed to take pencil, initially believed to be fixed.",
+        "learning": "Successfully picked up the pencil, demonstrating it was movable despite prior failures.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.7794621670637999,
+        "ranking_score": 0.7794621670637999
+      },
+      {
+        "unique_id": "29",
+        "issue": "Failed to examine objects due to lack of co-location.",
+        "learning": "Ensured co-location of pencil and desklamp by moving the pencil to the desklamp's location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pencil with the desklamp.",
+        "similarity_score": 0.7794621670637999,
+        "ranking_score": 0.7794621670637999
+      },
+      {
+        "unique_id": "52",
+        "issue": "Attempted to examine watch with desklamp when desklamp was off.",
+        "learning": "Ensure the desklamp is turned on before attempting to examine an object with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the watch with the desklamp.",
+        "similarity_score": 0.8189119085967494,
+        "ranking_score": 0.7370207177370746
+      },
+      {
+        "unique_id": "53",
+        "issue": "Used 'turn on' command to activate desklamp, which had no effect.",
+        "learning": "Use the 'use' command to activate the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the watch with the desklamp.",
+        "similarity_score": 0.8189119085967494,
+        "ranking_score": 0.7370207177370746
+      },
+      {
+        "unique_id": "30",
+        "issue": "Attempted to 'look at' a location, which had no effect for finding objects.",
+        "learning": "Rely on 'go to' observations to identify objects present at a location.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "SEARCH",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "unique_id": "31",
+        "issue": "Used 'examine X with Y' command, which was ineffective for the task.",
+        "learning": "To examine an object with a light source, 'use' the light source directly.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "unique_id": "32",
+        "issue": "Attempted to 'take' the desklamp, which was not the correct action for its use.",
+        "learning": "Do not 'take' the desklamp; instead, 'use' it in its fixed location.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "ACQUIRE",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "unique_id": "33",
+        "issue": "Failed to examine object with desklamp because it was off.",
+        "learning": "Turn on the desklamp before attempting to examine objects with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "unique_id": "36",
+        "issue": "Used 'turn on' command instead of 'use' to activate the desklamp.",
+        "learning": "Use the 'use' command to turn on the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.71571081501047
+      },
+      {
+        "unique_id": "39",
+        "issue": "Attempted to use desklamp from an incorrect location (bed).",
+        "learning": "Go to the desklamp's location before attempting to use it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "goal_phase": "TRANSFORM",
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.7952342389005221,
+        "ranking_score": 0.71571081501047
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find and take an alarmclock, then find and use a desklamp, and finally examine the alarmclock with the desklamp.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 2,
+        "action": "think: First I need to find an alarmclock. An alarmclock is more likely to appear in drawer (1-6), desk (1-2), sidetable (1-2), shelf (1-6), bed (1). I can check one by one, starting with drawer 1.",
+        "observation": "OK.",
+        "is_help_call": false
+      },
+      {
+        "step": 3,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+        "is_help_call": false
+      },
+      {
+        "step": 4,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see a creditcard 1, and a pen 2.",
+        "is_help_call": false
+      },
+      {
+        "step": 5,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. On the drawer 2, you see nothing.",
+        "is_help_call": false
+      },
+      {
+        "step": 6,
+        "action": "go to drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      },
+      {
+        "step": 7,
+        "action": "go to drawer 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false
+      }
+    ],
+    "success": false,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 7
+  }
+]

@@ -17,7 +17,7 @@ import argparse
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from src.envs.alfworld_env import AlfworldEnv
-from src.frameworks.memory_allocation import MemoryAgent
+from src.frameworks.memory_retrieval_v2.agents.memory_agent import MemoryAgent
 
 
 def load_config(config_path):
