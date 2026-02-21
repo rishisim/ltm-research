@@ -1,9 +1,10 @@
 """
-Hard Negative Memory Agent - A memory-augmented agent using HARD NEGATIVE retrieval (v2)
+Hard Negative Memory Agent
 
-This agent extends the base ReAct agent with hard negative retrieval:
-1. Context retrieval at task start - Retrieves LEAST relevant learnings (bottom-k similarity)
-2. Help tool during execution - Returns LOWEST similarity matches with inverted validation scoring
+This agent uses the Hard Negative (least similar) retrieval variants for both
+Context Retrieval (at start) and Tool Retrieval (help tool).
+
+It serves as a baseline to demonstrate that retrieval quality matters.
 """
 
 import sys
@@ -18,11 +19,11 @@ from src.core.llm import get_chat, Model
 from src.frameworks.react import ReAct
 
 # Import HARD NEGATIVE retrieval modules
-from ..retrieval.variants.hard_neg_context_retrieval import (
+from src.frameworks.memory_retrieval_v2.retrieval.variants.hard_neg_context_retrieval import (
     retrieve_learnings_only,
     format_learnings_for_prompt
 )
-from ..retrieval.variants.hard_neg_tool_retrieval import (
+from src.frameworks.memory_retrieval_v2.retrieval.variants.hard_neg_tool_retrieval import (
     help_tool,
     format_help_response
 )
@@ -34,9 +35,10 @@ HELP_PATTERN = re.compile(r'help\s*\[\s*["\'](.+?)["\']\s*\]', re.IGNORECASE)
 
 class HardNegMemoryAgent(ReAct):
     """
-    A HARD NEGATIVE memory agent that:
-    1. Retrieves LEAST relevant context at task start (bottom-k similarity)
-    2. Provides a help["query"] tool that returns LOWEST similarity matches
+    A memory-augmented agent that uses HARD NEGATIVE retrieval logic.
+    
+    1. Retrieves IRRELEVANT context at task start
+    2. Provides IRRELEVANT help advice when queried
     """
     
     def __init__(self, model: Model = "gemini-2.5-flash", to_print: bool = True):
@@ -46,20 +48,30 @@ class HardNegMemoryAgent(ReAct):
     def _get_help_instructions(self) -> str:
         """
         Returns instructions for the agent on how to use the help tool.
+        (Instructions remain the same, only the retrieval quality changes invisibly to the agent)
         """
         return """
 IMPORTANT: You have access to a help tool when you're struggling or need guidance.
 To use it, output an action in this format:
 help["your issue here"]
 
-CRITICAL: Your query must be SHORT - maximum ONE sentence. Be concise.
+CRITICAL: Your query must match the style of issues in your memory bank to get the best results.
+Query Style Guidelines:
+1. Describe the FAILURE or OBSTACLE, not just what you want to do.
+2. Mention the ACTION that failed (e.g. "put command failed").
+3. Mention MISSING PRECONDITIONS (e.g. "object not found", "container closed").
+4. KEY: Do not include numbers or specific identifiers (e.g. "sidetable 1", "mug 2") - instead use general objects (e.g. "sidetable", "mug").
 
-Examples of good queries:
-help["cannot find the mug"]
-help["how to heat something in microwave"]
-help["stuck after opening drawer"]
+Examples of GOOD queries:
+help["cannot find the mug on the table"]
+help["put command failed when placing egg on sidetable"]
+help["container is closed and cannot put object inside"]
+help["repeatedly failing to go to the fridge"]
 
-Do NOT write long queries like "I have been searching for the mug for a long time and checked many locations but still cannot find it" - instead write: help["cannot find the mug"]
+Examples of BAD queries:
+help["how to put mug"] (Too vague)
+help["cannot find mug 1"] (Contains ID '1')
+help["what do i do next"] (Not specific to an issue)
 
 Use this tool when you:
 - Can't find an object after searching
@@ -68,34 +80,17 @@ Use this tool when you:
 """
 
     def _parse_help_action(self, action: str) -> Optional[str]:
-        """
-        Parse an action to check if it's a help call.
-        
-        Args:
-            action: The action string from the agent
-            
-        Returns:
-            The help query if action is a help call, None otherwise
-        """
         match = HELP_PATTERN.search(action)
         if match:
             return match.group(1)
         return None
     
     def _execute_help_tool(self, query: str) -> str:
-        """
-        Execute the HARD NEGATIVE help tool and return formatted response.
-        
-        Args:
-            query: The help query from the agent
-            
-        Returns:
-            Formatted help response string (with LOWEST similarity matches)
-        """
         if not self.memory_bank_path:
             return "Error: Memory bank path not configured. Cannot provide help."
         
         try:
+            # Calls the Hard Negative help_tool
             result = help_tool(
                 issue=query,
                 memory_bank_path=self.memory_bank_path,
@@ -117,58 +112,39 @@ Use this tool when you:
         task_desc: str = "",
         memory_bank_path: str = ""
     ) -> Tuple[EnvironmentHistory, bool]:
-        """
-        Run the HARD NEGATIVE memory-augmented agent on the environment.
-        
-        Args:
-            env: The environment to run on
-            base_prompt: The base prompt for the agent
-            memory: List of previous reflexions/memories
-            start_ob: Starting observation
-            task_id: Unique identifier for the task
-            trial_num: Trial number for this task
-            log_dir: Directory to save logs
-            task_desc: The task description text
-            memory_bank_path: Path to the knowledge_base.json file
-            
-        Returns:
-            Tuple of (environment history, success boolean)
-        """
         self.memory_bank_path = memory_bank_path
         
-        # Collect steps as (action, observation) pairs
         steps: List[Dict[str, Any]] = []
         help_calls: List[Dict[str, str]] = []
-        retrieved_learnings: List[Dict[str, str]] = []  # Store raw learnings for logging
+        retrieved_learnings: List[Dict[str, str]] = []
         
-        # Step 1: Retrieve HARD NEGATIVE context from memory bank at task start
+        # Step 1: Retrieve context (Hard Negative)
         context_learnings = ""
         if memory_bank_path and task_desc:
             try:
                 learnings = retrieve_learnings_only(
                     new_task_desc=task_desc,
                     memory_bank_path=memory_bank_path,
-                    bottom_k_similar_tasks=5,
+                    top_k_similar_tasks=5,
                     log_dir=log_dir,
                     task_id=task_id
                 )
                 if learnings:
-                    retrieved_learnings = learnings  # Store for trajectory logging
+                    retrieved_learnings = learnings
                     context_learnings = format_learnings_for_prompt(learnings)
                     if self.to_print:
                         print("\n" + "="*60)
-                        print("HARD NEGATIVE CONTEXT FROM LEAST SIMILAR TASKS:")
+                        print("CONTEXT FROM PREVIOUS EXPERIENCES (Hard Negative):")
                         print("="*60)
                         print(context_learnings)
                         print("="*60 + "\n")
             except Exception as e:
                 if self.to_print:
-                    print(f"Warning: Could not retrieve hard negative context: {e}")
+                    print(f"Warning: Could not retrieve context: {e}")
         
-        # Step 2: Build enhanced prompt with context and help instructions
+        # Step 2: Build enhanced prompt
         enhanced_prompt = base_prompt
         
-        # Add context learnings if available
         if context_learnings:
             enhanced_prompt = f"""[CONTEXT FROM PREVIOUS SIMILAR TASKS]
 The following learnings are from previous tasks similar to yours. Use them to avoid common mistakes:
@@ -179,11 +155,9 @@ The following learnings are from previous tasks similar to yours. Use them to av
 
 {base_prompt}"""
         
-        # Add help tool instructions
         help_instructions = self._get_help_instructions()
         enhanced_prompt = f"{enhanced_prompt}\n\n{help_instructions}"
         
-        # Initialize environment history with enhanced prompt
         env_history = EnvironmentHistory(
             enhanced_prompt, 
             start_ob, 
@@ -196,12 +170,23 @@ The following learnings are from previous tasks similar to yours. Use them to av
 
         cur_step = 0
         reward = 0
+        
+        total_input_tokens = 0
+        total_output_tokens = 0
+        total_tokens = 0
 
         while cur_step < 49:
-            # Choose action
-            action = self._llm(str(env_history) + "Action:", stop=['\n']).strip()
+            action_text, usage = self._llm(str(env_history) + "Action:", stop=['\n'])
+            action = action_text.strip()
             
-            # Clean up action
+            step_input_tokens = usage.get("input_tokens", 0)
+            step_output_tokens = usage.get("output_tokens", 0)
+            step_total_tokens = usage.get("total_tokens", 0)
+            
+            total_input_tokens += step_input_tokens
+            total_output_tokens += step_output_tokens
+            total_tokens += step_total_tokens
+            
             if action.startswith('Action:'):
                 action = action[7:].strip()
             if action.startswith('>'):
@@ -209,14 +194,11 @@ The following learnings are from previous tasks similar to yours. Use them to av
 
             env_history.add("action", action)
             
-            # Check if this is a help action
             help_query = self._parse_help_action(action)
             
             if help_query:
-                # Execute HARD NEGATIVE help tool
                 observation = self._execute_help_tool(help_query)
                 
-                # Log the help call
                 help_calls.append({
                     "step": cur_step + 1,
                     "query": help_query,
@@ -225,24 +207,25 @@ The following learnings are from previous tasks similar to yours. Use them to av
                 
                 if self.to_print:
                     print(f'Action: {action}')
-                    print(f'Hard Negative Help Response:\n{observation}')
+                    print(f'Help Response:\n{observation}')
                     sys.stdout.flush()
                 
-                # Record the step with help flag
                 steps.append({
                     "step": cur_step + 1,
                     "action": action,
                     "observation": observation,
-                    "is_help_call": True
+                    "is_help_call": True,
+                    "token_usage": {
+                        "input_tokens": step_input_tokens,
+                        "output_tokens": step_output_tokens,
+                        "total_tokens": step_total_tokens
+                    }
                 })
                 
                 env_history.add("observation", observation)
-                
-                # Don't interact with environment for help calls
                 cur_step += 1
                 continue
             
-            # Normal environment interaction
             observation, reward, done, info = env.step(action)
             
             if action.startswith('think:'):
@@ -250,12 +233,16 @@ The following learnings are from previous tasks similar to yours. Use them to av
 
             env_history.add("observation", observation)
             
-            # Record the step
             steps.append({
                 "step": cur_step + 1,
                 "action": action,
                 "observation": observation,
-                "is_help_call": False
+                "is_help_call": False,
+                "token_usage": {
+                    "input_tokens": step_input_tokens,
+                    "output_tokens": step_output_tokens,
+                    "total_tokens": step_total_tokens
+                }
             })
             
             if self.to_print:
@@ -269,19 +256,18 @@ The following learnings are from previous tasks similar to yours. Use them to av
             
             cur_step += 1
 
-        # Determine success
         is_success = reward > 0
         
         if self.to_print:
             print(f"\nTask {'SUCCESS' if is_success else 'FAILURE'}")
             if help_calls:
-                print(f"Hard negative help tool was called {len(help_calls)} time(s) during this task.")
+                print(f"Help tool was called {len(help_calls)} time(s) during this task.")
         
-        # Log trajectory
         if log_dir:
             self._log_trajectory(
                 log_dir, task_id, trial_num, steps, 
-                is_success, task_desc, help_calls, retrieved_learnings
+                is_success, task_desc, help_calls, retrieved_learnings,
+                total_input_tokens, total_output_tokens, total_tokens
             )
 
         return env_history, is_success
@@ -295,10 +281,12 @@ The following learnings are from previous tasks similar to yours. Use them to av
         success: bool, 
         task_desc: str = "",
         help_calls: List[Dict[str, str]] = None,
-        context_learnings: List[Dict[str, str]] = None
+        context_learnings: List[Dict[str, str]] = None,
+        input_tokens: int = 0,
+        output_tokens: int = 0,
+        total_tokens: int = 0
     ) -> None:
         """Log the complete trajectory to trajectories.json"""
-        # Extract task_type from task_id (e.g., 'pick_and_place_simple' from 'pick_and_place_simple-Mug-None-Desk-308/...')
         task_type = task_id.split('-')[0] if task_id else ""
         
         trajectory = {
@@ -307,17 +295,19 @@ The following learnings are from previous tasks similar to yours. Use them to av
             "task_desc": task_desc,
             "trial_num": trial_num,
             "context_from_retrieval": context_learnings or [],
-            "retrieval_type": "hard_negative",
             "steps": steps,
             "success": success,
             "help_calls": help_calls or [],
             "help_call_count": len(help_calls) if help_calls else 0,
-            "step_num": len(steps)
+            "step_num": len(steps),
+            "input_tokens": input_tokens,
+            "output_tokens": output_tokens,
+            "total_tokens": total_tokens,
+            "agent_type": "hard_negative"
         }
         
         trajectories_path = os.path.join(log_dir, "trajectories.json")
         
-        # Read existing trajectories, append new one, write back
         trajectories = []
         if os.path.exists(trajectories_path):
             with open(trajectories_path, 'r') as f:

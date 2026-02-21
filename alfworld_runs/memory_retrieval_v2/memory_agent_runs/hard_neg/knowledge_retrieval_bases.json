@@ -1,0 +1,717 @@
+{
+  "valid_unseen:look_at_obj_in_light-Mug-None-DeskLamp-308/trial_T20190908_161733_213242": {
+    "query": "look at mug under the desklamp.",
+    "metadata": {
+      "pick_learning_count": 12,
+      "max_learning_count": 8,
+      "actual_selected_count": 12,
+      "knowledge_retrieval_base_count": 28,
+      "top_similar_tasks": [
+        {
+          "task_desc": "put two soapbar in cabinet.",
+          "similarity_score": 0.360848962982383,
+          "learning_count": 6,
+          "validated_learning_count": 6
+        },
+        {
+          "task_desc": "find two soapbottle and put them in cart.",
+          "similarity_score": 0.382322828856495,
+          "learning_count": 4,
+          "validated_learning_count": 4
+        },
+        {
+          "task_desc": "put a clean soapbar in cabinet.",
+          "similarity_score": 0.3856349896405576,
+          "learning_count": 6,
+          "validated_learning_count": 5
+        },
+        {
+          "task_desc": "put two toiletpaper in shelf.",
+          "similarity_score": 0.3870283281862742,
+          "learning_count": 4,
+          "validated_learning_count": 4
+        },
+        {
+          "task_desc": "put a hot apple in fridge.",
+          "similarity_score": 0.3897824203097065,
+          "learning_count": 8,
+          "validated_learning_count": 6
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.3856349896405576,
+        "learning_count": 6,
+        "kb_index": 133,
+        "learning_text": "Avoid `soapbar 4` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "CANDIDATE",
+        "obj_type": "soapbar",
+        "verbs": "clean, drop, put",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "unique_id": "134",
+        "issue_ref": {
+          "issue_text": "Soapbar 4 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "issue_trial_num": "7",
+          "issue_step_range": "40-45"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "evidence_trial_num": "7",
+          "evidence_step_range": "46-48"
+        },
+        "ranking_score": 0.23138099378433455
+      },
+      {
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3897824203097065,
+        "learning_count": 8,
+        "kb_index": 219,
+        "learning_text": "Place the item in a suitable container (e.g., pot, pan) before heating on a stoveburner.",
+        "valid_level": "CANDIDATE",
+        "obj_type": "apple, stoveburner",
+        "verbs": "heat, put",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "220",
+        "issue_ref": {
+          "issue_text": "Failed to heat apple directly on a stoveburner without a container.",
+          "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+          "issue_trial_num": "2",
+          "issue_step_range": "14-14"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "",
+          "evidence_trial_num": "",
+          "evidence_step_range": ""
+        },
+        "ranking_score": 0.2338694521858239
+      },
+      {
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3897824203097065,
+        "learning_count": 8,
+        "kb_index": 221,
+        "learning_text": "No successful action or strategy was found to resolve this issue.",
+        "valid_level": "CANDIDATE",
+        "obj_type": "apple",
+        "verbs": "put, take",
+        "goal_phase": "PLACE",
+        "unique_id": "222",
+        "issue_ref": {
+          "issue_text": "Heated apple became un-interactable after successful heating in microwave.",
+          "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+          "issue_trial_num": "7",
+          "issue_step_range": "36-36"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "",
+          "evidence_trial_num": "",
+          "evidence_step_range": ""
+        },
+        "ranking_score": 0.2338694521858239
+      },
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.360848962982383,
+        "learning_count": 6,
+        "kb_index": 349,
+        "learning_text": "Go to the cabinet's location before attempting to open it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cabinet",
+        "verbs": "open",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "350",
+        "issue_ref": {
+          "issue_text": "Attempted to open a cabinet without being at its location.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "issue_trial_num": "1",
+          "issue_step_range": "11-11"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "13-14"
+        },
+        "ranking_score": 0.3247640666841447
+      },
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.360848962982383,
+        "learning_count": 6,
+        "kb_index": 350,
+        "learning_text": "Open the cabinet first before attempting to look inside it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cabinet",
+        "verbs": "look",
+        "goal_phase": "SEARCH",
+        "unique_id": "351",
+        "issue_ref": {
+          "issue_text": "Attempted to look inside a cabinet that was closed.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "issue_trial_num": "1",
+          "issue_step_range": "12-12"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "14-14"
+        },
+        "ranking_score": 0.3247640666841447
+      },
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.360848962982383,
+        "learning_count": 6,
+        "kb_index": 351,
+        "learning_text": "Rely on the observation from 'open' action for cabinet contents, as 'look in' is ineffective.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cabinet",
+        "verbs": "look",
+        "goal_phase": "SEARCH",
+        "unique_id": "352",
+        "issue_ref": {
+          "issue_text": "Using 'look in' action after opening a cabinet yields no new information.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "issue_trial_num": "1",
+          "issue_step_range": "15-15"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "14-14"
+        },
+        "ranking_score": 0.3247640666841447
+      },
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.360848962982383,
+        "learning_count": 6,
+        "kb_index": 353,
+        "learning_text": "Always go to the target container before attempting to move an item into it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbar, cabinet",
+        "verbs": "move",
+        "goal_phase": "PLACE",
+        "unique_id": "354",
+        "issue_ref": {
+          "issue_text": "Failed to move item to container because agent was not at the container's location.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "issue_trial_num": "2",
+          "issue_step_range": "25-25"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "27-28"
+        },
+        "ranking_score": 0.3247640666841447
+      },
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.360848962982383,
+        "learning_count": 6,
+        "kb_index": 354,
+        "learning_text": "Verify item placement after 'move' action and avoid redundant 'put' commands.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbar, cabinet",
+        "verbs": "put",
+        "goal_phase": "PLACE",
+        "unique_id": "355",
+        "issue_ref": {
+          "issue_text": "Used redundant 'put' action after item was already moved into the container.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "issue_trial_num": "2",
+          "issue_step_range": "30-30"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "31-31"
+        },
+        "ranking_score": 0.3247640666841447
+      },
+      {
+        "task_desc": "find two soapbottle and put them in cart.",
+        "similarity_score": 0.382322828856495,
+        "learning_count": 4,
+        "kb_index": 355,
+        "learning_text": "Expand search to less common locations like garbagecan when primary locations are empty.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbottle, bathtubbasin, sinkbasin, shelf, cart, garbagecan",
+        "verbs": "search, find",
+        "goal_phase": "SEARCH",
+        "unique_id": "356",
+        "issue_ref": {
+          "issue_text": "Soapbottle not found in common locations like bathtubbasin, sinkbasin, shelves, or cart.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
+          "issue_trial_num": "1",
+          "issue_step_range": "3-15"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "16-17"
+        },
+        "ranking_score": 0.3440905459708455
+      },
+      {
+        "task_desc": "find two soapbottle and put them in cart.",
+        "similarity_score": 0.382322828856495,
+        "learning_count": 4,
+        "kb_index": 356,
+        "learning_text": "Go to the target location before attempting to place an object into it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbottle, cart",
+        "verbs": "move, go",
+        "goal_phase": "PLACE",
+        "unique_id": "357",
+        "issue_ref": {
+          "issue_text": "Attempted to move object to a container without being at the target location.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
+          "issue_trial_num": "1",
+          "issue_step_range": "20-20"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "22-22"
+        },
+        "ranking_score": 0.3440905459708455
+      },
+      {
+        "task_desc": "find two soapbottle and put them in cart.",
+        "similarity_score": 0.382322828856495,
+        "learning_count": 4,
+        "kb_index": 357,
+        "learning_text": "Use 'move' command instead of 'put' to place an object into a container.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbottle, cart",
+        "verbs": "put, move",
+        "goal_phase": "PLACE",
+        "unique_id": "358",
+        "issue_ref": {
+          "issue_text": "Used 'put' command which failed, indicating an incorrect verb for placing an object.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
+          "issue_trial_num": "1",
+          "issue_step_range": "23-23"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "24-24"
+        },
+        "ranking_score": 0.3440905459708455
+      },
+      {
+        "task_desc": "find two soapbottle and put them in cart.",
+        "similarity_score": 0.382322828856495,
+        "learning_count": 4,
+        "kb_index": 358,
+        "learning_text": "Continue expanding search to less obvious locations like toilet when primary locations are exhausted.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbottle, garbagecan, toilet",
+        "verbs": "search, find",
+        "goal_phase": "SEARCH",
+        "unique_id": "359",
+        "issue_ref": {
+          "issue_text": "Second soapbottle not found in previously successful or common locations.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
+          "issue_trial_num": "1",
+          "issue_step_range": "25-27"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBottle-None-Cart-401",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "28-28"
+        },
+        "ranking_score": 0.3440905459708455
+      },
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.3856349896405576,
+        "learning_count": 6,
+        "kb_index": 128,
+        "learning_text": "Open the target container before attempting to place an item inside.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cabinet",
+        "verbs": "put",
+        "goal_phase": "PLACE",
+        "unique_id": "129",
+        "issue_ref": {
+          "issue_text": "Failed to put item in cabinet 1 because it was closed.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "issue_trial_num": "1",
+          "issue_step_range": "8-8"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "12-13"
+        },
+        "ranking_score": 0.34707149067650184
+      },
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.3856349896405576,
+        "learning_count": 6,
+        "kb_index": 129,
+        "learning_text": "Navigate to the object's location before attempting to interact with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cabinet",
+        "verbs": "open",
+        "goal_phase": "PLACE",
+        "unique_id": "130",
+        "issue_ref": {
+          "issue_text": "Failed to open cabinet 1 because agent was not at its location.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "issue_trial_num": "1",
+          "issue_step_range": "10-10"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "12-12"
+        },
+        "ranking_score": 0.34707149067650184
+      },
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.3856349896405576,
+        "learning_count": 6,
+        "kb_index": 130,
+        "learning_text": "Use the 'move' verb instead of 'put' to place objects into containers.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "soapbar, cabinet",
+        "verbs": "put, move",
+        "goal_phase": "PLACE",
+        "unique_id": "131",
+        "issue_ref": {
+          "issue_text": "Failed to put soapbar in cabinet 1; 'put' verb ineffective.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "issue_trial_num": "1",
+          "issue_step_range": "15-15"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "16-16"
+        },
+        "ranking_score": 0.34707149067650184
+      },
+      {
+        "task_desc": "put two toiletpaper in shelf.",
+        "similarity_score": 0.3870283281862742,
+        "learning_count": 4,
+        "kb_index": 366,
+        "learning_text": "Open the container to access its contents and continue searching.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cabinet",
+        "verbs": "open",
+        "goal_phase": "SEARCH",
+        "unique_id": "367",
+        "issue_ref": {
+          "issue_text": "Cannot access contents of a container because it is closed.",
+          "issue_task_id": "pick_two_obj_and_place-ToiletPaper-None-Shelf-422/trial_T20190908_065858_170962",
+          "issue_trial_num": "1",
+          "issue_step_range": "3-11"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-ToiletPaper-None-Shelf-422/trial_T20190908_065858_170962",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "4-12"
+        },
+        "ranking_score": 0.3483254953676468
+      },
+      {
+        "task_desc": "put two toiletpaper in shelf.",
+        "similarity_score": 0.3870283281862742,
+        "learning_count": 4,
+        "kb_index": 367,
+        "learning_text": "Continue searching other potential locations for the toiletpaper.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "toiletpaper",
+        "verbs": "go to, take",
+        "goal_phase": "SEARCH",
+        "unique_id": "368",
+        "issue_ref": {
+          "issue_text": "Toiletpaper not found at toiletpaperhanger 1.",
+          "issue_task_id": "pick_two_obj_and_place-ToiletPaper-None-Shelf-422/trial_T20190908_065858_170962",
+          "issue_trial_num": "1",
+          "issue_step_range": "2-2"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-ToiletPaper-None-Shelf-422/trial_T20190908_065858_170962",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "14-14"
+        },
+        "ranking_score": 0.3483254953676468
+      },
+      {
+        "task_desc": "put two toiletpaper in shelf.",
+        "similarity_score": 0.3870283281862742,
+        "learning_count": 4,
+        "kb_index": 368,
+        "learning_text": "Continue searching other potential locations for the toiletpaper.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "toiletpaper",
+        "verbs": "go to, take",
+        "goal_phase": "SEARCH",
+        "unique_id": "369",
+        "issue_ref": {
+          "issue_text": "Toiletpaper not found at drawer 1.",
+          "issue_task_id": "pick_two_obj_and_place-ToiletPaper-None-Shelf-422/trial_T20190908_065858_170962",
+          "issue_trial_num": "1",
+          "issue_step_range": "13-13"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-ToiletPaper-None-Shelf-422/trial_T20190908_065858_170962",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "14-14"
+        },
+        "ranking_score": 0.3483254953676468
+      },
+      {
+        "task_desc": "put two toiletpaper in shelf.",
+        "similarity_score": 0.3870283281862742,
+        "learning_count": 4,
+        "kb_index": 369,
+        "learning_text": "Continue searching other potential locations for the toiletpaper.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "toiletpaper",
+        "verbs": "go to, take",
+        "goal_phase": "SEARCH",
+        "unique_id": "370",
+        "issue_ref": {
+          "issue_text": "Toiletpaper not found at countertop 1.",
+          "issue_task_id": "pick_two_obj_and_place-ToiletPaper-None-Shelf-422/trial_T20190908_065858_170962",
+          "issue_trial_num": "1",
+          "issue_step_range": "19-19"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-ToiletPaper-None-Shelf-422/trial_T20190908_065858_170962",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "20-20"
+        },
+        "ranking_score": 0.3483254953676468
+      },
+      {
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3897824203097065,
+        "learning_count": 8,
+        "kb_index": 215,
+        "learning_text": "Go to the cabinet or drawer's location before attempting to open it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cabinet, drawer",
+        "verbs": "open",
+        "goal_phase": "SEARCH",
+        "unique_id": "216",
+        "issue_ref": {
+          "issue_text": "Failed to open cabinets or drawers without being at their location.",
+          "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+          "issue_trial_num": "2",
+          "issue_step_range": "25-25"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "22-23"
+        },
+        "ranking_score": 0.35080417827873583
+      },
+      {
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3897824203097065,
+        "learning_count": 8,
+        "kb_index": 216,
+        "learning_text": "Use the 'move' command to place an item from inventory onto a surface.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "apple, cup",
+        "verbs": "put, move",
+        "goal_phase": "RECOVER",
+        "unique_id": "217",
+        "issue_ref": {
+          "issue_text": "Failed to put down an item using the 'put' command.",
+          "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+          "issue_trial_num": "3",
+          "issue_step_range": "21-22"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+          "evidence_trial_num": "3",
+          "evidence_step_range": "31-31"
+        },
+        "ranking_score": 0.35080417827873583
+      },
+      {
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3897824203097065,
+        "learning_count": 8,
+        "kb_index": 217,
+        "learning_text": "Place the currently held item down before attempting to take or move another item.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cup, pot, pan, mug, kettle",
+        "verbs": "take, move",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "218",
+        "issue_ref": {
+          "issue_text": "Failed to take or move an item while already holding another item.",
+          "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+          "issue_trial_num": "3",
+          "issue_step_range": "14-14"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+          "evidence_trial_num": "3",
+          "evidence_step_range": "31-34"
+        },
+        "ranking_score": 0.35080417827873583
+      },
+      {
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3897824203097065,
+        "learning_count": 8,
+        "kb_index": 220,
+        "learning_text": "Remove all items from the microwave before attempting to close it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "microwave, cup",
+        "verbs": "close",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "221",
+        "issue_ref": {
+          "issue_text": "Failed to close the microwave while an item was still inside.",
+          "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+          "issue_trial_num": "3",
+          "issue_step_range": "18-18"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+          "evidence_trial_num": "3",
+          "evidence_step_range": "34-44"
+        },
+        "ranking_score": 0.35080417827873583
+      },
+      {
+        "task_desc": "put two soapbar in cabinet.",
+        "similarity_score": 0.360848962982383,
+        "learning_count": 6,
+        "kb_index": 352,
+        "learning_text": "Persist in attempting to take objects from locations where they are visible, as they may eventually become pickable.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "soapbar, toilet",
+        "verbs": "take",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "353",
+        "issue_ref": {
+          "issue_text": "Repeatedly failed to take visible soapbars from toilet, receiving 'Nothing happens'.",
+          "issue_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "issue_trial_num": "1",
+          "issue_step_range": "29-30"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_two_obj_and_place-SoapBar-None-Cabinet-428/trial_T20190909_013318_053714",
+          "evidence_trial_num": "5",
+          "evidence_step_range": "14-14"
+        },
+        "ranking_score": 0.360848962982383
+      },
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.3856349896405576,
+        "learning_count": 6,
+        "kb_index": 131,
+        "learning_text": "Avoid `soapbar 3` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "soapbar",
+        "verbs": "clean, drop, put",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "unique_id": "132",
+        "issue_ref": {
+          "issue_text": "Soapbar 3 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "issue_trial_num": "1",
+          "issue_step_range": "6-15"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "7-7"
+        },
+        "ranking_score": 0.3856349896405576
+      },
+      {
+        "task_desc": "put a clean soapbar in cabinet.",
+        "similarity_score": 0.3856349896405576,
+        "learning_count": 6,
+        "kb_index": 132,
+        "learning_text": "Avoid `soapbar 1` as it is un-cleanable and cannot be dropped or placed, leading to task deadlock.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "soapbar",
+        "verbs": "clean, drop, put",
+        "goal_phase": "TRANSFORM, RECOVER, PLACE",
+        "unique_id": "133",
+        "issue_ref": {
+          "issue_text": "Soapbar 1 is un-cleanable, un-droppable, and un-placeable, causing a deadlock.",
+          "issue_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "issue_trial_num": "2",
+          "issue_step_range": "11-15"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_clean_then_place_in_recep-SoapBar-None-Cabinet-422/trial_T20190909_170330_111958",
+          "evidence_trial_num": "4",
+          "evidence_step_range": "10-10"
+        },
+        "ranking_score": 0.3856349896405576
+      },
+      {
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3897824203097065,
+        "learning_count": 8,
+        "kb_index": 214,
+        "learning_text": "Go to the fridge's location before attempting to open or look inside it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "fridge",
+        "verbs": "open, look",
+        "goal_phase": "PLACE",
+        "unique_id": "215",
+        "issue_ref": {
+          "issue_text": "Failed to open or look inside the fridge from a distance.",
+          "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+          "issue_trial_num": "1",
+          "issue_step_range": "3-5"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+          "evidence_trial_num": "7",
+          "evidence_step_range": "34-35"
+        },
+        "ranking_score": 0.3897824203097065
+      },
+      {
+        "task_desc": "put a hot apple in fridge.",
+        "similarity_score": 0.3897824203097065,
+        "learning_count": 8,
+        "kb_index": 218,
+        "learning_text": "Heat the item in an open microwave; it can be heated even if another item is inside.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "apple, microwave",
+        "verbs": "heat, put",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "219",
+        "issue_ref": {
+          "issue_text": "Failed to heat apple in microwave or put apple into microwave.",
+          "issue_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+          "issue_trial_num": "2",
+          "issue_step_range": "8-8"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+          "evidence_trial_num": "7",
+          "evidence_step_range": "32-33"
+        },
+        "ranking_score": 0.3897824203097065
+      }
+    ]
+  }
+}
