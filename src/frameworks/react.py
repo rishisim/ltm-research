@@ -23,7 +23,10 @@ class ReAct(Framework):
             return "", {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
 
     def run(self, env: BaseEnv, base_prompt: str, memory: List[str], start_ob: str = "") -> Tuple[EnvironmentHistory, bool]:
-        env_history = EnvironmentHistory(base_prompt, start_ob, memory[-3:] if len(memory) > 3 else memory)
+        # Add a brief framing instruction to stabilize the language model and avoid API timeouts
+        stabilized_prompt = "You are an AI agent playing a text-based game. Follow the exact format of the examples below to solve the task.\n\n" + base_prompt
+        
+        env_history = EnvironmentHistory(stabilized_prompt, start_ob, memory[-3:] if len(memory) > 3 else memory)
         
         if self.to_print:
             print(start_ob)
@@ -31,7 +34,8 @@ class ReAct(Framework):
 
         cur_step = 0
         while cur_step < 49:
-            action = self._llm(str(env_history) + "Action:", stop=['\n']).strip()
+            action_text, _usage = self._llm(str(env_history) + "Action:", stop=['\n'])
+            action = action_text.strip()
             
             # Clean up action
             if action.startswith('Action:'):

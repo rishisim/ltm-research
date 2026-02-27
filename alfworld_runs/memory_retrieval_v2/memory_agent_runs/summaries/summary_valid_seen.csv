@@ -1,0 +1,3 @@
+framework,success_total,accuracy,avg_steps_per_trial,avg_steps_per_task,gain_from_base_react
+ReAct,18 / 20,0.9000,19.3500,19.3500,0.0000
+"React + Reflexion (final trials, max 7)",20 / 20,1.0000,16.5909,18.2500,0.1000

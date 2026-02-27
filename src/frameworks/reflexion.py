@@ -46,4 +46,5 @@ class Reflexion(ReAct):
                 query += f'Trial #{i}: {m}\n'
 
         query += '\n\nNew plan:'
-        return get_chat(query, model=self.model)
+        reflection_text, _usage = get_chat(query, model=self.model)
+        return reflection_text

@@ -1,0 +1,29 @@
+{
+  "split": "valid_seen",
+  "rows": [
+    {
+      "split": "valid_seen",
+      "framework_id": "react",
+      "framework": "ReAct",
+      "success_total": "18 / 20",
+      "accuracy": 0.9,
+      "avg_steps_per_trial": 19.35,
+      "avg_steps_per_task": 19.35,
+      "attempt_count": 20,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/alfworld_runs/memory_retrieval_v2/memory_agent_runs/seen/react",
+      "gain_from_base_react": 0.0
+    },
+    {
+      "split": "valid_seen",
+      "framework_id": "react_reflexion",
+      "framework": "React + Reflexion (final trials, max 7)",
+      "success_total": "20 / 20",
+      "accuracy": 1.0,
+      "avg_steps_per_trial": 16.59090909090909,
+      "avg_steps_per_task": 18.25,
+      "attempt_count": 22,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/alfworld_runs/memory_retrieval_v2/memory_agent_runs/seen/react_reflexion",
+      "gain_from_base_react": 0.09999999999999998
+    }
+  ]
+}

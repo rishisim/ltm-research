@@ -1,0 +1,5 @@
+split,framework,success_total,accuracy,avg_steps_per_trial,avg_steps_per_task,gain_from_base_react
+valid_seen,ReAct,18 / 20,0.9000,19.3500,19.3500,0.0000
+valid_seen,"React + Reflexion (final trials, max 7)",20 / 20,1.0000,16.5909,18.2500,0.1000
+valid_unseen,ReAct,15 / 20,0.7500,13.9500,13.9500,0.0000
+valid_unseen,"React + Reflexion (final trials, max 7)",19 / 20,0.9500,20.4737,38.9000,0.2000

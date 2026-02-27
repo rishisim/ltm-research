@@ -43,6 +43,10 @@ class EnvironmentHistory:
 
     def _get_base_query(self, base_query: str, start_info: str, memory: List[str]) -> str:
         query = base_query
+        
+        # Add a framing instruction so the LLM knows what to do after the few-shot examples
+        query += "\n\nWith the above examples as context, now solve the following task:"
+        
         if memory and len(memory) > 0:
             query += '\n\nYour memory for the task below:'
             for i, m in enumerate(memory):

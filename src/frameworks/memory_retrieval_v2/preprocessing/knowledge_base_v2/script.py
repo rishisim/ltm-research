@@ -153,7 +153,7 @@ def process_task_trajectories(task_id: str, trajectories: List[Dict[str, Any]], 
     max_retries = 3
     for attempt in range(max_retries):
         try:
-            response_text = get_chat(prompt, model=model, max_tokens=16384)
+            response_text, _usage = get_chat(prompt, model=model, max_tokens=16384)
             
             # Clean up response
             response_text = response_text.strip()

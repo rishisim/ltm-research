@@ -1,6 +1,7 @@
 import sys
 import os
 import json
+from pathlib import Path
 from typing import List, Tuple, Any, Dict
 from src.core.base import Framework, BaseEnv
 from src.core.history import EnvironmentHistory
@@ -16,7 +17,8 @@ class MemoryAllocationReflexion(ReAct):
         super().__init__(model, to_print)
         # Load few-shot examples for reflexion
         self.few_shot_examples = ""
-        few_shot_path = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'alfworld', 'reflexion_few_shot_examples.txt')
+        repo_root = Path(__file__).resolve().parents[4]
+        few_shot_path = repo_root / "data" / "alfworld" / "reflexion_few_shot_examples.txt"
         try:
             with open(few_shot_path, 'r') as f:
                 self.few_shot_examples = f.read()
@@ -55,7 +57,8 @@ class MemoryAllocationReflexion(ReAct):
 
         while cur_step < 49:
             # Choose action
-            action = self._llm(str(env_history) + "Action:", stop=['\n']).strip()
+            action_text, _usage = self._llm(str(env_history) + "Action:", stop=['\n'])
+            action = action_text.strip()
             
             # Clean up action
             if action.startswith('Action:'):
@@ -184,4 +187,5 @@ class MemoryAllocationReflexion(ReAct):
                 query += f'Trial #{i}: {m}\n'
 
         query += '\n\nNew plan:'
-        return get_chat(query, model=self.model)
+        reflexion_text, _usage = get_chat(query, model=self.model)
+        return reflexion_text

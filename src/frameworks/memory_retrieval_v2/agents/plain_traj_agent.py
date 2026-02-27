@@ -132,7 +132,8 @@ class PlainTrajAgent(ReAct):
 
         while cur_step < 49:
             # Choose action
-            action = self._llm(str(env_history) + "Action:", stop=['\n']).strip()
+            action_text, _usage = self._llm(str(env_history) + "Action:", stop=['\n'])
+            action = action_text.strip()
             
             # Clean up action
             if action.startswith('Action:'):

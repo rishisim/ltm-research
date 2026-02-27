@@ -23,11 +23,14 @@ load_dotenv(env_path)
 
 Model = Literal["gpt-4", "gpt-3.5-turbo", "text-davinci-003", "gemini-2.0-flash", "gemini-2.5-flash"]
 
-# Initialize new Google GenAI client
-genai_client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+# Initialize Google GenAI client with request timeout to avoid indefinite hangs.
+# Timeout is in seconds and applies per request attempt.
+genai_client = genai.Client(
+    api_key=os.environ.get("GEMINI_API_KEY")
+)
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
-@retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
+@retry(wait=wait_random_exponential(min=1, max=10), stop=stop_after_attempt(2))
 def get_gemini_chat(prompt: str, model: str, temperature: float = 0.0, stop_strs: Optional[List[str]] = None, max_tokens: int = 2048) -> Tuple[str, Dict[str, int]]:
     config = types.GenerateContentConfig(
         temperature=temperature,
@@ -63,7 +66,7 @@ def get_gemini_chat(prompt: str, model: str, temperature: float = 0.0, stop_strs
     except AttributeError:
         raise ValueError(f"Could not access response text. Response: {response}")
 
-@retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
+@retry(wait=wait_random_exponential(min=1, max=10), stop=stop_after_attempt(2))
 def get_completion(prompt: str, temperature: float = 0.0, max_tokens: int = 256, stop_strs: Optional[List[str]] = None) -> str:
     # Deprecated/Unused legacy function? leaving as is for now returning just str to avoid breaking extensive changes if used elsewhere
     response = openai.Completion.create(
@@ -78,7 +81,7 @@ def get_completion(prompt: str, temperature: float = 0.0, max_tokens: int = 256,
     )
     return response.choices[0].text
 
-@retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
+@retry(wait=wait_random_exponential(min=1, max=10), stop=stop_after_attempt(2))
 def get_chat(prompt: str, model: Model, temperature: float = 0.0, max_tokens: int = 2048, stop_strs: Optional[List[str]] = None) -> Tuple[str, Dict[str, int]]:
     if model.startswith("gemini"):
         return get_gemini_chat(prompt, model, temperature, stop_strs, max_tokens)

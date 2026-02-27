@@ -1,0 +1,3628 @@
+[
+  {
+    "task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-323/trial_T20190909_044715_250790",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at alarmclock under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "go to sidetable 1",
+        "observation": "You arrive at sidetable 1. On the sidetable 1, you see a alarmclock 3, a cd 3, a cellphone 2, and a pen 3.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1243,
+          "output_tokens": 9,
+          "total_tokens": 1414
+        }
+      },
+      {
+        "step": 2,
+        "action": "go to sidetable 2",
+        "observation": "You arrive at sidetable 2. On the sidetable 2, you see a desklamp 2, and a mug 3.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1296,
+          "output_tokens": 7,
+          "total_tokens": 1576
+        }
+      },
+      {
+        "step": 3,
+        "action": "take alarmclock 3 from sidetable 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1341,
+          "output_tokens": 11,
+          "total_tokens": 1518
+        }
+      },
+      {
+        "step": 4,
+        "action": "take alarmclock 3 from sidetable 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1361,
+          "output_tokens": 11,
+          "total_tokens": 1805
+        }
+      }
+    ],
+    "success": false,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 4,
+    "input_tokens": 5241,
+    "output_tokens": 38,
+    "total_tokens": 6313,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "look_at_obj_in_light-Bowl-None-DeskLamp-301/trial_T20190909_150719_492274",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the bowl with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "examine bowl 1 with desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1284,
+          "output_tokens": 10,
+          "total_tokens": 1443
+        }
+      },
+      {
+        "step": 2,
+        "action": "think: The previous action `examine bowl 1 with desklamp 1` failed. The task is \"examine the bowl with the desklamp\". This implies I need to place the bowl in a position where it can be examined *with* the desklamp. The desklamp 1 is on sidetable 2. Therefore, I should place the bowl 1 on sidetable 2, and then examine it.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1302,
+          "output_tokens": 91,
+          "total_tokens": 1737
+        }
+      },
+      {
+        "step": 3,
+        "action": "put bowl 1 on sidetable 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1401,
+          "output_tokens": 10,
+          "total_tokens": 1607
+        }
+      },
+      {
+        "step": 4,
+        "action": "think: My previous attempt to `put bowl 1 on sidetable 2` failed because I was not at the sidetable 2. The environment description always states \"You are in the middle of a room\" unless I explicitly `go to` a specific object. I need to go to sidetable 2 first, then place the bowl there. After placing the bowl, I should be able to examine it.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1420,
+          "output_tokens": 88,
+          "total_tokens": 3085
+        }
+      },
+      {
+        "step": 5,
+        "action": "go to sidetable 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1516,
+          "output_tokens": 7,
+          "total_tokens": 1665
+        }
+      },
+      {
+        "step": 6,
+        "action": "think: My previous attempt to `go to sidetable 2` resulted in \"Nothing happens.\" This is unusual, as `go to` commands usually provide an observation about the new location. Given that I was at `shelf 2` after taking the bowl, I should not be at `sidetable 2` automatically. However, if the `go to` command failed, I cannot",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1532,
+          "output_tokens": 82,
+          "total_tokens": 3576
+        }
+      },
+      {
+        "step": 7,
+        "action": "help[\"repeatedly failing to go to the sidetable\"]",
+        "observation": "Error retrieving help: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
+        "is_help_call": true,
+        "token_usage": {
+          "input_tokens": 1622,
+          "output_tokens": 13,
+          "total_tokens": 3019
+        }
+      },
+      {
+        "step": 8,
+        "action": "think: The previous actions `examine bowl 1 with desklamp 1`, `put bowl 1 on sidetable 2`, and `go to sidetable 2` all resulted in \"Nothing happens.\" This is highly unusual, especially for `go to` commands which typically provide an observation of the new location. The `help` tool also failed.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1718,
+          "output_tokens": 76,
+          "total_tokens": 3756
+        }
+      },
+      {
+        "step": 9,
+        "action": "go to sidetable 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1802,
+          "output_tokens": 7,
+          "total_tokens": 3274
+        }
+      },
+      {
+        "step": 10,
+        "action": "look around",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1818,
+          "output_tokens": 4,
+          "total_tokens": 3786
+        }
+      },
+      {
+        "step": 11,
+        "action": "put bowl 1 on sidetable 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1829,
+          "output_tokens": 12,
+          "total_tokens": 3571
+        }
+      },
+      {
+        "step": 12,
+        "action": "think: All previous actions (`examine`, `put`, `go to`, `look around`) have resulted in \"Nothing happens.\" This indicates a severe issue with the environment's responsiveness. The `help` tool also failed. I need to try a very basic action to see if any command can elicit a response. I will try to `go to` a different object, like `desk 1`, which was previously visited and is distinct from `sidetable 2`. If this also yields \"Nothing happens,\" it confirms the environment is completely unresponsive.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1848,
+          "output_tokens": 113,
+          "total_tokens": 2897
+        }
+      },
+      {
+        "step": 13,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 1, a keychain 1, and a mug 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1969,
+          "output_tokens": 5,
+          "total_tokens": 2156
+        }
+      },
+      {
+        "step": 14,
+        "action": "think: The environment has clearly reset, as indicated by the new room description and the objects found on desk 1. My previous actions and inventory are likely invalid. I need to restart the task of finding a bowl and a desklamp.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2017,
+          "output_tokens": 49,
+          "total_tokens": 3812
+        }
+      },
+      {
+        "step": 15,
+        "action": "take bowl 1 from desk 1",
+        "observation": "You pick up the bowl 1 from the desk 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2074,
+          "output_tokens": 8,
+          "total_tokens": 2226
+        }
+      },
+      {
+        "step": 16,
+        "action": "think: The environment has reset, and I have successfully taken `bowl 1` from `desk 1`. My new task is to \"examine the bowl with the desklamp\". I now need to find a desklamp. Based on the room description, I will check `dresser 1` first, as it's a likely place for a desklamp.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2101,
+          "output_tokens": 77,
+          "total_tokens": 2421
+        }
+      },
+      {
+        "step": 17,
+        "action": "go to dresser 1",
+        "observation": "You arrive at dresser 1. On the dresser 1, you see a cellphone 2, a creditcard 1, a desklamp 1, a pencil 2, and a watch 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2186,
+          "output_tokens": 5,
+          "total_tokens": 2266
+        }
+      },
+      {
+        "step": 18,
+        "action": "put bowl 1 on dresser 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2241,
+          "output_tokens": 8,
+          "total_tokens": 2428
+        }
+      },
+      {
+        "step": 19,
+        "action": "examine bowl 1 with desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2258,
+          "output_tokens": 10,
+          "total_tokens": 2619
+        }
+      },
+      {
+        "step": 20,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2277,
+          "output_tokens": 8,
+          "total_tokens": 3578
+        }
+      }
+    ],
+    "success": true,
+    "help_calls": [
+      {
+        "step": 7,
+        "query": "repeatedly failing to go to the sidetable",
+        "response": "Error retrieving help: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}"
+      }
+    ],
+    "help_call_count": 1,
+    "step_num": 20,
+    "input_tokens": 36215,
+    "output_tokens": 683,
+    "total_tokens": 54922,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "look_at_obj_in_light-Bowl-None-DeskLamp-316/trial_T20190908_230702_962704",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the bowl with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "examine bowl 1 with desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1178,
+          "output_tokens": 12,
+          "total_tokens": 1912
+        }
+      },
+      {
+        "step": 2,
+        "action": "think: The task is to \"examine the bowl with the desklamp\". My previous attempt to `examine bowl 1 with desklamp 1` failed. This suggests I need to place the bowl under the desklamp first. I have `bowl 1` in my inventory. The `desklamp 1` is on `sidetable 2`. I should go to `sidetable 2` and put the `bowl 1` there. Then I can try to examine the bowl.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1196,
+          "output_tokens": 107,
+          "total_tokens": 1584
+        }
+      },
+      {
+        "step": 3,
+        "action": "go to sidetable 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1311,
+          "output_tokens": 7,
+          "total_tokens": 1455
+        }
+      },
+      {
+        "step": 4,
+        "action": "think: My previous action `go to sidetable 2` failed because `sidetable 2` is no longer in the room. The room description has changed. I need to find a desklamp again. I will check the currently visible objects: `bed 1`, `desk 1`, `drawer 2`, `drawer 1`, `garbagecan 1`, `shelf 1`, and `sidetable 1`. I will start by checking `desk 1`.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1327,
+          "output_tokens": 105,
+          "total_tokens": 1964
+        }
+      },
+      {
+        "step": 5,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 1, a cd 2, a cd 1, a cellphone 1, a desklamp 1, a houseplant 1, a keychain 2, a keychain 1, and a pen 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1438,
+          "output_tokens": 5,
+          "total_tokens": 1583
+        }
+      },
+      {
+        "step": 6,
+        "action": "put bowl 1 on desk 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1519,
+          "output_tokens": 8,
+          "total_tokens": 1677
+        }
+      },
+      {
+        "step": 7,
+        "action": "examine bowl 1 with desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1536,
+          "output_tokens": 10,
+          "total_tokens": 2732
+        }
+      },
+      {
+        "step": 8,
+        "action": "think: The task is to \"examine the bowl with the desklamp\". I am currently at `desk 1`. The observation states that `bowl 1` and `desklamp 1` are both on `desk 1`. My previous attempt to `examine bowl 1 with desklamp 1` failed. This suggests that the bowl is not correctly positioned \"under",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1555,
+          "output_tokens": 79,
+          "total_tokens": 3599
+        }
+      },
+      {
+        "step": 9,
+        "action": "put bowl 1 under desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1642,
+          "output_tokens": 10,
+          "total_tokens": 3615
+        }
+      },
+      {
+        "step": 10,
+        "action": "help[\"examine command failed when trying to examine bowl with desklamp, even though both objects are on the same surface. Cannot achieve 'under' condition.\"]",
+        "observation": "Error retrieving help: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
+        "is_help_call": true,
+        "token_usage": {
+          "input_tokens": 1661,
+          "output_tokens": 32,
+          "total_tokens": 3013
+        }
+      },
+      {
+        "step": 11,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1776,
+          "output_tokens": 8,
+          "total_tokens": 3427
+        }
+      },
+      {
+        "step": 12,
+        "action": "think: The task is to \"examine the bowl with the desklamp\". I have `bowl 1` and `desklamp 1` on `desk 1`. The `desklamp 1` is turned on. My previous attempts `examine bowl 1 with desklamp 1` and `put bowl 1 under desklamp 1` both failed",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1798,
+          "output_tokens": 79,
+          "total_tokens": 3842
+        }
+      },
+      {
+        "step": 13,
+        "action": "examine bowl 1 with desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1885,
+          "output_tokens": 10,
+          "total_tokens": 3142
+        }
+      },
+      {
+        "step": 14,
+        "action": "use desklamp 1 on bowl 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1904,
+          "output_tokens": 12,
+          "total_tokens": 3161
+        }
+      },
+      {
+        "step": 15,
+        "action": "put bowl 1 on desk 1 near desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1923,
+          "output_tokens": 16,
+          "total_tokens": 3901
+        }
+      },
+      {
+        "step": 16,
+        "action": "inventory",
+        "observation": "You are not carrying anything.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1946,
+          "output_tokens": 3,
+          "total_tokens": 3914
+        }
+      },
+      {
+        "step": 17,
+        "action": "examine bowl 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1959,
+          "output_tokens": 6,
+          "total_tokens": 3929
+        }
+      },
+      {
+        "step": 18,
+        "action": "take bowl 1 from desk 1",
+        "observation": "You pick up the bowl 1 from the desk 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1972,
+          "output_tokens": 10,
+          "total_tokens": 3947
+        }
+      }
+    ],
+    "success": true,
+    "help_calls": [
+      {
+        "step": 10,
+        "query": "examine command failed when trying to examine bowl with desklamp, even though both objects are on the same surface. Cannot achieve 'under' condition.",
+        "response": "Error retrieving help: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}"
+      }
+    ],
+    "help_call_count": 1,
+    "step_num": 18,
+    "input_tokens": 29526,
+    "output_tokens": 519,
+    "total_tokens": 52397,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "look_at_obj_in_light-Box-None-DeskLamp-205/trial_T20190907_074425_330493",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at box under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1218,
+          "output_tokens": 7,
+          "total_tokens": 1372
+        }
+      },
+      {
+        "step": 2,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1242,
+          "output_tokens": 4,
+          "total_tokens": 1336
+        }
+      },
+      {
+        "step": 3,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. The drawer 2 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1273,
+          "output_tokens": 5,
+          "total_tokens": 1467
+        }
+      },
+      {
+        "step": 4,
+        "action": "open drawer 2",
+        "observation": "You open the drawer 2. The drawer 2 is open. In it, you see a watch 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1298,
+          "output_tokens": 4,
+          "total_tokens": 1450
+        }
+      },
+      {
+        "step": 5,
+        "action": "go to drawer 3",
+        "observation": "You arrive at drawer 3. The drawer 3 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1332,
+          "output_tokens": 5,
+          "total_tokens": 1541
+        }
+      },
+      {
+        "step": 6,
+        "action": "open drawer 3",
+        "observation": "You open the drawer 3. The drawer 3 is open. In it, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1357,
+          "output_tokens": 4,
+          "total_tokens": 1468
+        }
+      },
+      {
+        "step": 7,
+        "action": "go to drawer 4",
+        "observation": "You arrive at drawer 4. The drawer 4 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1388,
+          "output_tokens": 5,
+          "total_tokens": 1569
+        }
+      },
+      {
+        "step": 8,
+        "action": "open drawer 4",
+        "observation": "You open the drawer 4. The drawer 4 is open. In it, you see a creditcard 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1413,
+          "output_tokens": 4,
+          "total_tokens": 1644
+        }
+      },
+      {
+        "step": 9,
+        "action": "go to diningtable 1",
+        "observation": "You arrive at diningtable 1. On the diningtable 1, you see a box 1, a laptop 2, and a statue 3.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1448,
+          "output_tokens": 6,
+          "total_tokens": 1569
+        }
+      },
+      {
+        "step": 10,
+        "action": "think: I have found a box (box 1). Now I need to find a desklamp. I will check the sidetables and the dresser.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1493,
+          "output_tokens": 33,
+          "total_tokens": 1613
+        }
+      },
+      {
+        "step": 11,
+        "action": "go to sidetable 1",
+        "observation": "You arrive at sidetable 1. On the sidetable 1, you see a statue 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1534,
+          "output_tokens": 7,
+          "total_tokens": 1662
+        }
+      },
+      {
+        "step": 12,
+        "action": "go to sidetable 2",
+        "observation": "You arrive at sidetable 2. On the sidetable 2, you see a creditcard 3, a statue 2, and a watch 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1571,
+          "output_tokens": 7,
+          "total_tokens": 1667
+        }
+      },
+      {
+        "step": 13,
+        "action": "go to sidetable 3",
+        "observation": "You arrive at sidetable 3. On the sidetable 3, you see a desklamp 1, and a houseplant 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1620,
+          "output_tokens": 7,
+          "total_tokens": 1675
+        }
+      },
+      {
+        "step": 14,
+        "action": "take box 1 from diningtable 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1666,
+          "output_tokens": 9,
+          "total_tokens": 2777
+        }
+      },
+      {
+        "step": 15,
+        "action": "go to diningtable 1",
+        "observation": "You arrive at diningtable 1. On the diningtable 1, you see a box 1, a laptop 2, and a statue 3.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1684,
+          "output_tokens": 6,
+          "total_tokens": 1961
+        }
+      },
+      {
+        "step": 16,
+        "action": "take box 1 from diningtable 1",
+        "observation": "You pick up the box 1 from the diningtable 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1729,
+          "output_tokens": 9,
+          "total_tokens": 1995
+        }
+      },
+      {
+        "step": 17,
+        "action": "put box 1 on sidetable 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1758,
+          "output_tokens": 10,
+          "total_tokens": 1875
+        }
+      },
+      {
+        "step": 18,
+        "action": "think: I have found the box (box 1) and the desklamp (desklamp 1). I have taken the box 1. The desklamp 1 is on sidetable 3. My previous attempt to `put box 1 on sidetable 3` failed with \"Nothing happens\". This is likely because I was not at sidetable 3 when I issued the command. I need to go to sidetable 3 first, then place the box there, and then look at it.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1777,
+          "output_tokens": 111,
+          "total_tokens": 3220
+        }
+      },
+      {
+        "step": 19,
+        "action": "go to sidetable 3",
+        "observation": "You arrive at sidetable 3. On the sidetable 3, you see a desklamp 1, and a houseplant 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1896,
+          "output_tokens": 7,
+          "total_tokens": 2077
+        }
+      },
+      {
+        "step": 20,
+        "action": "put box 1 on sidetable 3",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1942,
+          "output_tokens": 10,
+          "total_tokens": 2104
+        }
+      },
+      {
+        "step": 21,
+        "action": "The `put box 1 on sidetable 3` command failed with \"Nothing happens\" even though you are at `sidetable 3` and have `box 1` in your inventory. This suggests there might be an issue with placing the box on that specific sidetable, or the command itself.",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1961,
+          "output_tokens": 66,
+          "total_tokens": 3989
+        }
+      },
+      {
+        "step": 22,
+        "action": "help[\"put command failed when placing box on sidetable\"]",
+        "observation": "Error retrieving help: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
+        "is_help_call": true,
+        "token_usage": {
+          "input_tokens": 2036,
+          "output_tokens": 13,
+          "total_tokens": 3005
+        }
+      },
+      {
+        "step": 23,
+        "action": "think: I have found the box (box 1) and the desklamp (desklamp 1). I have taken the box 1, so it is in my inventory. The desklamp 1 is on sidetable 3. I am currently at sidetable 3. My previous attempts to `put box 1 on sidetable 3` failed with \"",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2132,
+          "output_tokens": 82,
+          "total_tokens": 4176
+        }
+      },
+      {
+        "step": 24,
+        "action": "put box 1 on diningtable 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2222,
+          "output_tokens": 11,
+          "total_tokens": 4196
+        }
+      },
+      {
+        "step": 25,
+        "action": "think: I am currently holding `box 1` and am at `sidetable 3`, where `desklamp 1` is located. My attempts to `put box 1 on sidetable 3` have failed. I will try to `drop box 1` to place it on the current surface, `sidetable 3`. If successful, the box should then be on the same surface as the desklamp, allowing me to complete the task.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2240,
+          "output_tokens": 100,
+          "total_tokens": 3408
+        }
+      },
+      {
+        "step": 26,
+        "action": "drop box 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2348,
+          "output_tokens": 4,
+          "total_tokens": 2608
+        }
+      },
+      {
+        "step": 27,
+        "action": "think: My attempts to place `box 1` on `sidetable 3` (where `desklamp 1` is located) have failed with \"Nothing happens\". This suggests I cannot create the \"box under desklamp\" condition myself. Therefore, I must assume that such a condition already exists somewhere in the room, and my task is to find it. I have",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2361,
+          "output_tokens": 82,
+          "total_tokens": 4405
+        }
+      },
+      {
+        "step": 28,
+        "action": "think: My attempts to place `box 1` on `sidetable 3` (where `desklamp 1` is located) have failed with \"Nothing happens\". This suggests I cannot create the \"box under desklamp\" condition myself. Therefore, I must assume that such a condition already exists somewhere in the room, and my task is to find it. I have already checked all drawers, sidetables, and the diningtable. I will now check the dresser 1 for a desklamp or a box under a desklamp.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2449,
+          "output_tokens": 116,
+          "total_tokens": 4010
+        }
+      },
+      {
+        "step": 29,
+        "action": "go to dresser 1",
+        "observation": "You arrive at dresser 1. On the dresser 1, you see a television 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2573,
+          "output_tokens": 5,
+          "total_tokens": 3245
+        }
+      },
+      {
+        "step": 30,
+        "action": "look at dresser 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2604,
+          "output_tokens": 5,
+          "total_tokens": 3331
+        }
+      },
+      {
+        "step": 31,
+        "action": "think: I have found a box (box 1) and a desklamp (desklamp 1). I picked up box 1. The desklamp 1 is on sidetable 3. My attempts to place box 1 under desklamp 1 have failed. This suggests that I cannot create the \"box under the desklamp\" condition myself. Therefore, I",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2618,
+          "output_tokens": 82,
+          "total_tokens": 4662
+        }
+      },
+      {
+        "step": 32,
+        "action": "think: My attempts to place `box 1` under `desklamp 1` have failed, indicating I cannot create this condition. I must find an existing \"box under the desklamp\" setup. I have already checked all drawers, sidetables, the diningtable, and the dresser. I will now check the remaining furniture: armchairs, garbagecan, ottoman, and sofa. I will start with armchair 1.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2708,
+          "output_tokens": 90,
+          "total_tokens": 4007
+        }
+      },
+      {
+        "step": 33,
+        "action": "go to armchair 1",
+        "observation": "You arrive at armchair 1. On the armchair 1, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2806,
+          "output_tokens": 5,
+          "total_tokens": 3119
+        }
+      },
+      {
+        "step": 34,
+        "action": "go to armchair 2",
+        "observation": "You arrive at armchair 2. On the armchair 2, you see a remotecontrol 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2834,
+          "output_tokens": 5,
+          "total_tokens": 3137
+        }
+      },
+      {
+        "step": 35,
+        "action": "go to garbagecan 1",
+        "observation": "You arrive at garbagecan 1. On the garbagecan 1, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2866,
+          "output_tokens": 6,
+          "total_tokens": 3249
+        }
+      },
+      {
+        "step": 36,
+        "action": "go to ottoman 1",
+        "observation": "You arrive at ottoman 1. On the ottoman 1, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2897,
+          "output_tokens": 5,
+          "total_tokens": 3383
+        }
+      },
+      {
+        "step": 37,
+        "action": "go to sofa 1",
+        "observation": "You arrive at sofa 1. On the sofa 1, you see a creditcard 1, a laptop 1, a pillow 1, and a remotecontrol 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2925,
+          "output_tokens": 5,
+          "total_tokens": 3241
+        }
+      },
+      {
+        "step": 38,
+        "action": "think: I have found a box (box 1) and a desklamp (desklamp 1). I picked up box 1 from diningtable 1. The desklamp 1 is on sidetable 3. My attempts to place box 1 on sidetable 3 (where the desklamp is) have failed with \"Nothing happens\". This indicates",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2974,
+          "output_tokens": 80,
+          "total_tokens": 5018
+        }
+      },
+      {
+        "step": 39,
+        "action": "think: I have found `box 1` and `desklamp 1`. I have `box 1` in my inventory. I am currently at `sidetable 3`, where `desklamp 1` is located. My previous attempts to place the box under the desklamp failed. Based on the previous successful task (\"look at bowl under the desklamp\"), the final action was to `use desklamp 1` after finding both items and taking the bowl. I will try to `use desklamp 1` now.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 3062,
+          "output_tokens": 117,
+          "total_tokens": 4215
+        }
+      },
+      {
+        "step": 40,
+        "action": "use desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 3187,
+          "output_tokens": 6,
+          "total_tokens": 4204
+        }
+      },
+      {
+        "step": 41,
+        "action": "think: I have found `box 1` and `desklamp 1`. I have `box 1` in my inventory. I am currently at `sidetable 3`, where `desklamp 1` is located. My previous attempts to place the box under the desklamp failed, and `use desklamp 1` also failed with \"Nothing happens\".",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 3202,
+          "output_tokens": 81,
+          "total_tokens": 5246
+        }
+      },
+      {
+        "step": 42,
+        "action": "think: I have found `box 1` and `desklamp 1`. I have `box 1` in my inventory. I am currently at `sidetable 3`, where `desklamp 1` is located. My previous attempts to place the box under the desklamp using `put` or `drop` failed with \"Nothing happens\". My attempt to `use",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 3291,
+          "output_tokens": 82,
+          "total_tokens": 5335
+        }
+      },
+      {
+        "step": 43,
+        "action": "think: I have found `box 1` and `desklamp 1`. I have `box 1` in my inventory. I am currently at `sidetable 3`, where `desklamp 1` is located. My previous attempts to place the box under the desklamp using `put` or `drop` failed with \"Nothing happens\". My attempt to `use",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 3381,
+          "output_tokens": 82,
+          "total_tokens": 5425
+        }
+      }
+    ],
+    "success": false,
+    "help_calls": [
+      {
+        "step": 22,
+        "query": "put command failed when placing box on sidetable",
+        "response": "Error retrieving help: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}"
+      }
+    ],
+    "help_call_count": 1,
+    "step_num": 43,
+    "input_tokens": 92316,
+    "output_tokens": 1390,
+    "total_tokens": 126656,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "look_at_obj_in_light-CD-None-DeskLamp-302/trial_T20190907_154618_526741",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the cd with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "go to sidetable 1",
+        "observation": "You arrive at sidetable 1. On the sidetable 1, you see a bowl 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1215,
+          "output_tokens": 9,
+          "total_tokens": 1359
+        }
+      },
+      {
+        "step": 2,
+        "action": "look at sidetable 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1251,
+          "output_tokens": 9,
+          "total_tokens": 2685
+        }
+      },
+      {
+        "step": 3,
+        "action": "inventory",
+        "observation": "You are not carrying anything.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1267,
+          "output_tokens": 3,
+          "total_tokens": 3232
+        }
+      },
+      {
+        "step": 4,
+        "action": "go to shelf 3",
+        "observation": "You arrive at shelf 3. On the shelf 3, you see a cd 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1280,
+          "output_tokens": 7,
+          "total_tokens": 2711
+        }
+      },
+      {
+        "step": 5,
+        "action": "take cd 1 from shelf 3",
+        "observation": "You pick up the cd 1 from the shelf 3.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1311,
+          "output_tokens": 8,
+          "total_tokens": 1471
+        }
+      },
+      {
+        "step": 6,
+        "action": "go to sidetable 2",
+        "observation": "You arrive at sidetable 2. On the sidetable 2, you see a book 2, a desklamp 1, and a pen 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1338,
+          "output_tokens": 7,
+          "total_tokens": 1557
+        }
+      },
+      {
+        "step": 7,
+        "action": "examine cd 1 with desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1388,
+          "output_tokens": 10,
+          "total_tokens": 2142
+        }
+      },
+      {
+        "step": 8,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1407,
+          "output_tokens": 8,
+          "total_tokens": 1932
+        }
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 8,
+    "input_tokens": 10457,
+    "output_tokens": 61,
+    "total_tokens": 17089,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "look_at_obj_in_light-CD-None-DeskLamp-314/trial_T20190907_114323_767231",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at cd under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I need to find a cd. I will start by checking the desk 1.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1186,
+          "output_tokens": 19,
+          "total_tokens": 1348
+        }
+      },
+      {
+        "step": 2,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a book 1, a desklamp 1, a keychain 1, and a pencil 3.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1212,
+          "output_tokens": 5,
+          "total_tokens": 1272
+        }
+      },
+      {
+        "step": 3,
+        "action": "think: I have found the desklamp 1 on desk 1. Now I need to find a cd. I will check the current location, desk 1, for a cd.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1267,
+          "output_tokens": 39,
+          "total_tokens": 1383
+        }
+      },
+      {
+        "step": 4,
+        "action": "look around desk 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1314,
+          "output_tokens": 5,
+          "total_tokens": 1380
+        }
+      },
+      {
+        "step": 5,
+        "action": "think: I have found the desklamp 1 on desk 1. I need to find a cd. I have already checked desk 1 and did not find a cd. I will now check drawer 1.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1328,
+          "output_tokens": 45,
+          "total_tokens": 1489
+        }
+      },
+      {
+        "step": 6,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1381,
+          "output_tokens": 5,
+          "total_tokens": 1525
+        }
+      },
+      {
+        "step": 7,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see a creditcard 1, and a pen 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1406,
+          "output_tokens": 4,
+          "total_tokens": 1494
+        }
+      },
+      {
+        "step": 8,
+        "action": "think: I need to find a cd. I have checked desk 1 and drawer 1. I will now check drawer 2.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1447,
+          "output_tokens": 28,
+          "total_tokens": 1576
+        }
+      },
+      {
+        "step": 9,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. The drawer 2 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1483,
+          "output_tokens": 5,
+          "total_tokens": 1568
+        }
+      },
+      {
+        "step": 10,
+        "action": "open drawer 2",
+        "observation": "You open the drawer 2. The drawer 2 is open. In it, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1508,
+          "output_tokens": 4,
+          "total_tokens": 1613
+        }
+      },
+      {
+        "step": 11,
+        "action": "think: I need to find a cd. I have checked desk 1, drawer 1, and drawer 2. I will now check drawer 3.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1539,
+          "output_tokens": 33,
+          "total_tokens": 1678
+        }
+      },
+      {
+        "step": 12,
+        "action": "go to drawer 3",
+        "observation": "You arrive at drawer 3. The drawer 3 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1580,
+          "output_tokens": 5,
+          "total_tokens": 1677
+        }
+      },
+      {
+        "step": 13,
+        "action": "open drawer 3",
+        "observation": "You open the drawer 3. The drawer 3 is open. In it, you see a pen 3.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1605,
+          "output_tokens": 4,
+          "total_tokens": 1684
+        }
+      },
+      {
+        "step": 14,
+        "action": "think: I need to find a cd. I have checked desk 1, drawer 1, drawer 2, and drawer 3. I will now check drawer 4.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1639,
+          "output_tokens": 37,
+          "total_tokens": 1771
+        }
+      },
+      {
+        "step": 15,
+        "action": "go to drawer 4",
+        "observation": "You arrive at drawer 4. The drawer 4 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1684,
+          "output_tokens": 5,
+          "total_tokens": 1745
+        }
+      },
+      {
+        "step": 16,
+        "action": "open drawer 4",
+        "observation": "You open the drawer 4. The drawer 4 is open. In it, you see a cellphone 1, a creditcard 3, and a creditcard 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1709,
+          "output_tokens": 4,
+          "total_tokens": 1774
+        }
+      },
+      {
+        "step": 17,
+        "action": "think: I need to find a cd. I have checked desk 1, drawer 1, drawer 2, drawer 3, and drawer 4. I will now check drawer 5.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1756,
+          "output_tokens": 41,
+          "total_tokens": 1922
+        }
+      },
+      {
+        "step": 18,
+        "action": "go to drawer 5",
+        "observation": "You arrive at drawer 5. The drawer 5 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1805,
+          "output_tokens": 5,
+          "total_tokens": 1870
+        }
+      },
+      {
+        "step": 19,
+        "action": "open drawer 5",
+        "observation": "You open the drawer 5. The drawer 5 is open. In it, you see a cd 3, and a cd 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1830,
+          "output_tokens": 4,
+          "total_tokens": 1926
+        }
+      },
+      {
+        "step": 20,
+        "action": "take cd 3 from drawer 5",
+        "observation": "You pick up the cd 3 from the drawer 5.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1870,
+          "output_tokens": 8,
+          "total_tokens": 2024
+        }
+      },
+      {
+        "step": 21,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a book 1, a desklamp 1, a keychain 1, and a pencil 3.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1897,
+          "output_tokens": 5,
+          "total_tokens": 2066
+        }
+      },
+      {
+        "step": 22,
+        "action": "put cd 3 on desk 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1952,
+          "output_tokens": 8,
+          "total_tokens": 2066
+        }
+      },
+      {
+        "step": 23,
+        "action": "put cd 3 under desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1969,
+          "output_tokens": 10,
+          "total_tokens": 2303
+        }
+      },
+      {
+        "step": 24,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1988,
+          "output_tokens": 8,
+          "total_tokens": 2727
+        }
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 24,
+    "input_tokens": 38355,
+    "output_tokens": 336,
+    "total_tokens": 41881,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "look_at_obj_in_light-CD-None-DeskLamp-320/trial_T20190907_224451_655673",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at cd under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a cd 1, a cellphone 1, a creditcard 2, and a creditcard 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1186,
+          "output_tokens": 7,
+          "total_tokens": 1329
+        }
+      },
+      {
+        "step": 2,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a book 1, a pen 2, a pen 1, and a pencil 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1234,
+          "output_tokens": 5,
+          "total_tokens": 1384
+        }
+      },
+      {
+        "step": 3,
+        "action": "go to shelf 1",
+        "observation": "You arrive at shelf 1. On the shelf 1, you see a cd 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1281,
+          "output_tokens": 5,
+          "total_tokens": 1440
+        }
+      },
+      {
+        "step": 4,
+        "action": "go to shelf 2",
+        "observation": "You arrive at shelf 2. On the shelf 2, you see a alarmclock 1, and a desklamp 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1312,
+          "output_tokens": 5,
+          "total_tokens": 1462
+        }
+      },
+      {
+        "step": 5,
+        "action": "take cd 1 from desk 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1352,
+          "output_tokens": 8,
+          "total_tokens": 1668
+        }
+      },
+      {
+        "step": 6,
+        "action": "think: I need to take the cd 1 from desk 1. I am currently at shelf 2. I need to go to desk 1 first.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1369,
+          "output_tokens": 33,
+          "total_tokens": 1648
+        }
+      },
+      {
+        "step": 7,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a cd 1, a cellphone 1, a creditcard 2, and a creditcard 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1410,
+          "output_tokens": 5,
+          "total_tokens": 1573
+        }
+      },
+      {
+        "step": 8,
+        "action": "take cd 1 from desk 1",
+        "observation": "You pick up the cd 1 from the desk 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1459,
+          "output_tokens": 8,
+          "total_tokens": 1618
+        }
+      },
+      {
+        "step": 9,
+        "action": "go to shelf 2",
+        "observation": "You arrive at shelf 2. On the shelf 2, you see a alarmclock 1, and a desklamp 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1486,
+          "output_tokens": 5,
+          "total_tokens": 1600
+        }
+      },
+      {
+        "step": 10,
+        "action": "put cd 1 under desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1526,
+          "output_tokens": 10,
+          "total_tokens": 1714
+        }
+      },
+      {
+        "step": 11,
+        "action": "put cd 1 on shelf 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1545,
+          "output_tokens": 8,
+          "total_tokens": 1952
+        }
+      },
+      {
+        "step": 12,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1562,
+          "output_tokens": 8,
+          "total_tokens": 2978
+        }
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 12,
+    "input_tokens": 16722,
+    "output_tokens": 107,
+    "total_tokens": 20366,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "look_at_obj_in_light-KeyChain-None-DeskLamp-327/trial_T20190906_202601_548273",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the keychain with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a book 1, and a laptop 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1226,
+          "output_tokens": 7,
+          "total_tokens": 1324
+        }
+      },
+      {
+        "step": 2,
+        "action": "think: I need to find a keychain. I'm currently at desk 1, but there's no keychain here. I will check the drawers next, starting with drawer 1.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1262,
+          "output_tokens": 39,
+          "total_tokens": 1497
+        }
+      },
+      {
+        "step": 3,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1309,
+          "output_tokens": 5,
+          "total_tokens": 1479
+        }
+      },
+      {
+        "step": 4,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1334,
+          "output_tokens": 4,
+          "total_tokens": 1483
+        }
+      },
+      {
+        "step": 5,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. The drawer 2 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1365,
+          "output_tokens": 5,
+          "total_tokens": 1425
+        }
+      },
+      {
+        "step": 6,
+        "action": "open drawer 2",
+        "observation": "You open the drawer 2. The drawer 2 is open. In it, you see a cd 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1390,
+          "output_tokens": 4,
+          "total_tokens": 1538
+        }
+      },
+      {
+        "step": 7,
+        "action": "go to drawer 3",
+        "observation": "You arrive at drawer 3. The drawer 3 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1424,
+          "output_tokens": 5,
+          "total_tokens": 1546
+        }
+      },
+      {
+        "step": 8,
+        "action": "open drawer 3",
+        "observation": "You open the drawer 3. The drawer 3 is open. In it, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1449,
+          "output_tokens": 4,
+          "total_tokens": 1556
+        }
+      },
+      {
+        "step": 9,
+        "action": "go to drawer 4",
+        "observation": "You arrive at drawer 4. The drawer 4 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1480,
+          "output_tokens": 5,
+          "total_tokens": 1611
+        }
+      },
+      {
+        "step": 10,
+        "action": "open drawer 4",
+        "observation": "You open the drawer 4. The drawer 4 is open. In it, you see a creditcard 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1505,
+          "output_tokens": 4,
+          "total_tokens": 1678
+        }
+      },
+      {
+        "step": 11,
+        "action": "go to drawer 5",
+        "observation": "You arrive at drawer 5. The drawer 5 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1540,
+          "output_tokens": 5,
+          "total_tokens": 1717
+        }
+      },
+      {
+        "step": 12,
+        "action": "open drawer 5",
+        "observation": "You open the drawer 5. The drawer 5 is open. In it, you see a creditcard 3.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1565,
+          "output_tokens": 4,
+          "total_tokens": 1927
+        }
+      },
+      {
+        "step": 13,
+        "action": "go to drawer 6",
+        "observation": "You arrive at drawer 6. The drawer 6 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1600,
+          "output_tokens": 5,
+          "total_tokens": 1802
+        }
+      },
+      {
+        "step": 14,
+        "action": "open drawer 6",
+        "observation": "You open the drawer 6. The drawer 6 is open. In it, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1625,
+          "output_tokens": 4,
+          "total_tokens": 1857
+        }
+      },
+      {
+        "step": 15,
+        "action": "go to drawer 7",
+        "observation": "You arrive at drawer 7. On the drawer 7, you see a cd 2, and a keychain 4.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1656,
+          "output_tokens": 5,
+          "total_tokens": 1770
+        }
+      },
+      {
+        "step": 16,
+        "action": "take keychain 4 from drawer 7",
+        "observation": "You pick up the keychain 4 from the drawer 7.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1693,
+          "output_tokens": 8,
+          "total_tokens": 1783
+        }
+      },
+      {
+        "step": 17,
+        "action": "think: I have the keychain. Now I need to find a desklamp. I will check the desk 1 first.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1720,
+          "output_tokens": 26,
+          "total_tokens": 1823
+        }
+      },
+      {
+        "step": 18,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a book 1, and a laptop 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1754,
+          "output_tokens": 5,
+          "total_tokens": 1804
+        }
+      },
+      {
+        "step": 19,
+        "action": "think: I have the keychain. Now I need to find a desklamp. I have checked desk 1. I will check drawer 8 next.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1791,
+          "output_tokens": 32,
+          "total_tokens": 2128
+        }
+      },
+      {
+        "step": 20,
+        "action": "go to drawer 8",
+        "observation": "You arrive at drawer 8. The drawer 8 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1831,
+          "output_tokens": 5,
+          "total_tokens": 2059
+        }
+      },
+      {
+        "step": 21,
+        "action": "open drawer 8",
+        "observation": "You open the drawer 8. The drawer 8 is open. In it, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1856,
+          "output_tokens": 4,
+          "total_tokens": 2164
+        }
+      },
+      {
+        "step": 22,
+        "action": "go to dresser 1",
+        "observation": "You arrive at dresser 1. On the dresser 1, you see a cd 3, a cellphone 1, a desklamp 1, a keychain 3, a pencil 3, and a pencil 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1887,
+          "output_tokens": 5,
+          "total_tokens": 2106
+        }
+      },
+      {
+        "step": 23,
+        "action": "examine keychain 4 with desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1946,
+          "output_tokens": 10,
+          "total_tokens": 2043
+        }
+      },
+      {
+        "step": 24,
+        "action": "think: I have the keychain and I have found the desklamp. I tried to examine the keychain with the desklamp, but nothing happened. This suggests the desklamp might need to be turned on first. I will turn on the desklamp and then try to examine the keychain again.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1965,
+          "output_tokens": 62,
+          "total_tokens": 2287
+        }
+      },
+      {
+        "step": 25,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2035,
+          "output_tokens": 6,
+          "total_tokens": 2212
+        }
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 25,
+    "input_tokens": 40208,
+    "output_tokens": 268,
+    "total_tokens": 44619,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-328/trial_T20190908_201550_622420",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at laptop under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a cellphone 2, a cellphone 1, a desklamp 1, a keychain 1, a laptop 1, a pen 2, a pen 1, a pencil 1, a tissuebox 3, and a tissuebox 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1178,
+          "output_tokens": 5,
+          "total_tokens": 1319
+        }
+      },
+      {
+        "step": 2,
+        "action": "put laptop 1 under desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1258,
+          "output_tokens": 10,
+          "total_tokens": 1477
+        }
+      },
+      {
+        "step": 3,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1277,
+          "output_tokens": 8,
+          "total_tokens": 2083
+        }
+      },
+      {
+        "step": 4,
+        "action": "look at laptop 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1299,
+          "output_tokens": 5,
+          "total_tokens": 1865
+        }
+      },
+      {
+        "step": 5,
+        "action": "The task is \"look at laptop under the desklamp\".",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1313,
+          "output_tokens": 13,
+          "total_tokens": 3289
+        }
+      },
+      {
+        "step": 6,
+        "action": "help[\"put command failed when trying to place object under another object\"]",
+        "observation": "Error retrieving help: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
+        "is_help_call": true,
+        "token_usage": {
+          "input_tokens": 1335,
+          "output_tokens": 16,
+          "total_tokens": 3316
+        }
+      },
+      {
+        "step": 7,
+        "action": "take laptop 1 from desk 1",
+        "observation": "You pick up the laptop 1 from the desk 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1432,
+          "output_tokens": 10,
+          "total_tokens": 2596
+        }
+      }
+    ],
+    "success": true,
+    "help_calls": [
+      {
+        "step": 6,
+        "query": "put command failed when trying to place object under another object",
+        "response": "Error retrieving help: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}"
+      }
+    ],
+    "help_call_count": 1,
+    "step_num": 7,
+    "input_tokens": 9092,
+    "output_tokens": 67,
+    "total_tokens": 15945,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-302/trial_T20190909_150916_682139",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at pillow under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "go to bed 1",
+        "observation": "You arrive at bed 1. On the bed 1, you see a book 1, a laptop 1, a pillow 1, and a teddybear 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1215,
+          "output_tokens": 7,
+          "total_tokens": 1405
+        }
+      },
+      {
+        "step": 2,
+        "action": "think: The task is to \"look at pillow under the desklamp\". I have identified pillow 1 on bed 1 and desklamp 1 on sidetable 2. I need to bring the pillow to the desklamp. I currently have bowl 1 in my inventory, so I need to put it down first. I will put the bowl on sidetable 2, then pick up the pillow from bed 1, and finally place the pillow under the desklamp on sidetable 2.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1262,
+          "output_tokens": 109,
+          "total_tokens": 2040
+        }
+      },
+      {
+        "step": 3,
+        "action": "put bowl 1 on sidetable 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1379,
+          "output_tokens": 10,
+          "total_tokens": 1633
+        }
+      },
+      {
+        "step": 4,
+        "action": "think: My previous action \"put bowl 1 on sidetable 2\" failed because I was not at sidetable 2. I am currently at bed 1. I need to go to sidetable 2 first to put the bowl down.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1398,
+          "output_tokens": 54,
+          "total_tokens": 1808
+        }
+      },
+      {
+        "step": 5,
+        "action": "go to sidetable 2",
+        "observation": "You arrive at sidetable 2. On the sidetable 2, you see a desklamp 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1460,
+          "output_tokens": 7,
+          "total_tokens": 1530
+        }
+      },
+      {
+        "step": 6,
+        "action": "put bowl 1 on sidetable 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1499,
+          "output_tokens": 10,
+          "total_tokens": 1581
+        }
+      },
+      {
+        "step": 7,
+        "action": "help[\"put command failed when placing bowl on sidetable\"]",
+        "observation": "Error retrieving help: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
+        "is_help_call": true,
+        "token_usage": {
+          "input_tokens": 1518,
+          "output_tokens": 13,
+          "total_tokens": 2821
+        }
+      },
+      {
+        "step": 8,
+        "action": "go to shelf 2",
+        "observation": "You arrive at shelf 2. On the shelf 2, you see a bowl 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1614,
+          "output_tokens": 7,
+          "total_tokens": 3390
+        }
+      },
+      {
+        "step": 9,
+        "action": "put bowl 1 on shelf 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1645,
+          "output_tokens": 10,
+          "total_tokens": 2361
+        }
+      },
+      {
+        "step": 10,
+        "action": "go to bed 1",
+        "observation": "You arrive at bed 1. On the bed 1, you see a book 1, a laptop 1, a pillow 1, and a teddybear 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1662,
+          "output_tokens": 7,
+          "total_tokens": 3634
+        }
+      },
+      {
+        "step": 11,
+        "action": "think: The `put` command is consistently failing with \"Nothing happens\", regardless of the target surface (sidetable 2, shelf 2). I am currently at bed 1. I need to put down bowl 1 to pick up pillow 1. I will try to put bowl 1 on bed 1, as I am currently there. If this also fails, there might",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1710,
+          "output_tokens": 80,
+          "total_tokens": 3754
+        }
+      },
+      {
+        "step": 12,
+        "action": "put bowl 1 on bed 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1798,
+          "output_tokens": 8,
+          "total_tokens": 3771
+        }
+      },
+      {
+        "step": 13,
+        "action": "drop bowl 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1815,
+          "output_tokens": 6,
+          "total_tokens": 2378
+        }
+      },
+      {
+        "step": 14,
+        "action": "help[\"put command failed when placing object\"]",
+        "observation": "Error retrieving help: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
+        "is_help_call": true,
+        "token_usage": {
+          "input_tokens": 1828,
+          "output_tokens": 9,
+          "total_tokens": 2761
+        }
+      },
+      {
+        "step": 15,
+        "action": "take pillow 1 from bed 1",
+        "observation": "You pick up the pillow 1 from the bed 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1920,
+          "output_tokens": 10,
+          "total_tokens": 3568
+        }
+      },
+      {
+        "step": 16,
+        "action": "go to sidetable 2",
+        "observation": "You arrive at sidetable 2. On the sidetable 2, you see a desklamp 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1947,
+          "output_tokens": 7,
+          "total_tokens": 2273
+        }
+      },
+      {
+        "step": 17,
+        "action": "put pillow 1 on sidetable 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1986,
+          "output_tokens": 10,
+          "total_tokens": 3959
+        }
+      },
+      {
+        "step": 18,
+        "action": "look at pillow 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2005,
+          "output_tokens": 7,
+          "total_tokens": 3976
+        }
+      },
+      {
+        "step": 19,
+        "action": "help[\"put command failed when placing object on sidetable\"]",
+        "observation": "Error retrieving help: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
+        "is_help_call": true,
+        "token_usage": {
+          "input_tokens": 2019,
+          "output_tokens": 15,
+          "total_tokens": 3998
+        }
+      },
+      {
+        "step": 20,
+        "action": "The `put` and `drop` commands are consistently failing with \"Nothing happens\", regardless of the target surface. Additionally, `look at pillow 1` also failed, which suggests the agent might not be holding the pillow despite the `take` command appearing successful. This is a critical issue preventing the completion of the task. I need to figure out why I cannot place or drop items.",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2115,
+          "output_tokens": 79,
+          "total_tokens": 4156
+        }
+      },
+      {
+        "step": 21,
+        "action": "The `take` command appears to succeed, but then `put`, `drop`, and `look at` commands for the supposedly held item (pillow 1) consistently fail with \"Nothing happens\". Furthermore, `look at desklamp 1` (which is visible at the current location) also fails. This indicates a fundamental issue with the agent's ability to interact with objects, including checking",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2203,
+          "output_tokens": 81,
+          "total_tokens": 4247
+        }
+      },
+      {
+        "step": 22,
+        "action": "The `put` and `drop` commands are consistently failing with \"Nothing happens\", preventing me from placing the pillow under the desklamp. Additionally, the `look at` command is also failing for both held objects and visible objects in the environment, which means I cannot complete the final step of the task even if I could place the pillow. The `take` command appears to succeed, but the",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2293,
+          "output_tokens": 81,
+          "total_tokens": 4337
+        }
+      },
+      {
+        "step": 23,
+        "action": "inventory",
+        "observation": "You are carrying: a pillow 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2383,
+          "output_tokens": 1,
+          "total_tokens": 4347
+        }
+      },
+      {
+        "step": 24,
+        "action": "inventory",
+        "observation": "You are carrying: a pillow 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 2399,
+          "output_tokens": 1,
+          "total_tokens": 3979
+        }
+      }
+    ],
+    "success": false,
+    "help_calls": [
+      {
+        "step": 7,
+        "query": "put command failed when placing bowl on sidetable",
+        "response": "Error retrieving help: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}"
+      },
+      {
+        "step": 14,
+        "query": "put command failed when placing object",
+        "response": "Error retrieving help: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}"
+      },
+      {
+        "step": 19,
+        "query": "put command failed when placing object on sidetable",
+        "response": "Error retrieving help: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}"
+      }
+    ],
+    "help_call_count": 3,
+    "step_num": 24,
+    "input_tokens": 43073,
+    "output_tokens": 629,
+    "total_tokens": 73707,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-323/trial_T20190908_053153_077977",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the pillow with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "go to bed 1",
+        "observation": "You arrive at bed 1. On the bed 1, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1242,
+          "output_tokens": 7,
+          "total_tokens": 1455
+        }
+      },
+      {
+        "step": 2,
+        "action": "go to bed 2",
+        "observation": "You arrive at bed 2. On the bed 2, you see a book 1, a cellphone 3, a laptop 1, a pillow 2, a pillow 1, and a teddybear 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1269,
+          "output_tokens": 5,
+          "total_tokens": 1362
+        }
+      },
+      {
+        "step": 3,
+        "action": "take pillow 1 from bed 2",
+        "observation": "You pick up the pillow 1 from the bed 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1327,
+          "output_tokens": 8,
+          "total_tokens": 1453
+        }
+      },
+      {
+        "step": 4,
+        "action": "think: I have taken the pillow. Now I need to find a desklamp. I will check the desk 1 first.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1354,
+          "output_tokens": 27,
+          "total_tokens": 1578
+        }
+      },
+      {
+        "step": 5,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a bowl 1, a cellphone 1, a desklamp 1, a keychain 2, a mug 2, a mug 1, and a pencil 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1389,
+          "output_tokens": 5,
+          "total_tokens": 1448
+        }
+      },
+      {
+        "step": 6,
+        "action": "use desklamp 1 on pillow 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1453,
+          "output_tokens": 10,
+          "total_tokens": 1607
+        }
+      },
+      {
+        "step": 7,
+        "action": "put pillow 1 on desk 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1472,
+          "output_tokens": 8,
+          "total_tokens": 1860
+        }
+      },
+      {
+        "step": 8,
+        "action": "think: The task is to \"examine the pillow with the desklamp\". I have the pillow 1. I am at desk 1 where desklamp 1 is located. I previously tried `use desklamp 1 on pillow 1` and `put pillow 1 on desk 1`, both of which resulted in \"Nothing happens.\"",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1489,
+          "output_tokens": 73,
+          "total_tokens": 3524
+        }
+      },
+      {
+        "step": 9,
+        "action": "turn on desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1570,
+          "output_tokens": 7,
+          "total_tokens": 2078
+        }
+      },
+      {
+        "step": 10,
+        "action": "think: I need to examine the pillow with the desklamp. I have the pillow 1. I am at desk 1 where desklamp 1 is located. I tried `use desklamp 1 on pillow 1`, `put pillow 1 on desk 1`, and `turn on desklamp 1`, all of which resulted in \"Nothing happens.\" I need to ensure the desklamp is on and the pillow is under it. First, I will check the state of the desklamp.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1586,
+          "output_tokens": 109,
+          "total_tokens": 2732
+        }
+      },
+      {
+        "step": 11,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1703,
+          "output_tokens": 6,
+          "total_tokens": 3673
+        }
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 11,
+    "input_tokens": 15854,
+    "output_tokens": 265,
+    "total_tokens": 22770,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "look_at_obj_in_light-Statue-None-DeskLamp-216/trial_T20190909_193045_208933",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the statue with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I need to find a statue and a desklamp. I will start by looking for a statue in the available locations. I will check the diningtable 1 first, as statues are often decorative items.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1208,
+          "output_tokens": 44,
+          "total_tokens": 1395
+        }
+      },
+      {
+        "step": 2,
+        "action": "go to diningtable 1",
+        "observation": "You arrive at diningtable 1. On the diningtable 1, you see a box 1, and a tissuebox 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1259,
+          "output_tokens": 6,
+          "total_tokens": 1305
+        }
+      },
+      {
+        "step": 3,
+        "action": "go to sidetable 1",
+        "observation": "You arrive at sidetable 1. On the sidetable 1, you see a desklamp 1, and a statue 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1300,
+          "output_tokens": 7,
+          "total_tokens": 1460
+        }
+      },
+      {
+        "step": 4,
+        "action": "examine statue 2 with desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1345,
+          "output_tokens": 10,
+          "total_tokens": 1454
+        }
+      },
+      {
+        "step": 5,
+        "action": "think: I have found both the statue and the desklamp. I tried to examine the statue with the desklamp, but it didn't work. I recall from the previous turn that a desklamp needs to be turned on before it can be used. I need to turn on the desklamp first.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1364,
+          "output_tokens": 66,
+          "total_tokens": 1962
+        }
+      },
+      {
+        "step": 6,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1438,
+          "output_tokens": 6,
+          "total_tokens": 1559
+        }
+      },
+      {
+        "step": 7,
+        "action": "examine statue 2 with desklamp 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1460,
+          "output_tokens": 10,
+          "total_tokens": 1597
+        }
+      },
+      {
+        "step": 8,
+        "action": "examine statue 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1479,
+          "output_tokens": 4,
+          "total_tokens": 1835
+        }
+      },
+      {
+        "step": 9,
+        "action": "think: I have found the statue and the desklamp, and I have turned on the desklamp. The previous attempts to `examine statue 2 with desklamp 1` and `examine statue 2` did not work. The previous task \"look at bowl under the desklamp\" was completed by simply turning on the desklamp. Since the current task is \"examine",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1492,
+          "output_tokens": 81,
+          "total_tokens": 3536
+        }
+      },
+      {
+        "step": 10,
+        "action": "think: I have found the statue and the desklamp. I have turned on the desklamp. I have tried `examine statue 2 with desklamp 1`, `examine statue 2`, and `use desklamp 1 on statue 2`, both with the statue on the sidetable and in my inventory. All attempts resulted in \"Nothing happens\". The task is \"examine the statue with the desklamp\". I am stuck on how to perform this interaction. I will use the help tool.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1581,
+          "output_tokens": 108,
+          "total_tokens": 3607
+        }
+      },
+      {
+        "step": 11,
+        "action": "help[\"examine command failed when using an object with another object\"]",
+        "observation": "Error retrieving help: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
+        "is_help_call": true,
+        "token_usage": {
+          "input_tokens": 1697,
+          "output_tokens": 13,
+          "total_tokens": 3077
+        }
+      },
+      {
+        "step": 12,
+        "action": "take statue 2 from sidetable 1",
+        "observation": "You pick up the statue 2 from the sidetable 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1793,
+          "output_tokens": 12,
+          "total_tokens": 2470
+        }
+      }
+    ],
+    "success": true,
+    "help_calls": [
+      {
+        "step": 11,
+        "query": "examine command failed when using an object with another object",
+        "response": "Error retrieving help: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}"
+      }
+    ],
+    "help_call_count": 1,
+    "step_num": 12,
+    "input_tokens": 17416,
+    "output_tokens": 367,
+    "total_tokens": 25257,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "look_at_obj_in_light-Vase-None-DeskLamp-303/trial_T20190907_150418_457594",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at vase under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I need to find a vase first. I will check the drawers, dresser, shelves, sidetable, and desk. I'll start with drawer 1.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1256,
+          "output_tokens": 36,
+          "total_tokens": 1385
+        }
+      },
+      {
+        "step": 2,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. On the drawer 1, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1299,
+          "output_tokens": 5,
+          "total_tokens": 1346
+        }
+      },
+      {
+        "step": 3,
+        "action": "go to drawer 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1327,
+          "output_tokens": 5,
+          "total_tokens": 1398
+        }
+      },
+      {
+        "step": 4,
+        "action": "go to drawer 2",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1341,
+          "output_tokens": 5,
+          "total_tokens": 1391
+        }
+      }
+    ],
+    "success": false,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 4,
+    "input_tokens": 5223,
+    "output_tokens": 51,
+    "total_tokens": 5520,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "pick_and_place_simple-Book-None-SideTable-329/trial_T20190908_050633_745514",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put some book on sidetable.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a book, take it, and then put it on a sidetable.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 837,
+          "output_tokens": 29,
+          "total_tokens": 956
+        }
+      },
+      {
+        "step": 2,
+        "action": "go to diningtable 1",
+        "observation": "You arrive at diningtable 1. On the diningtable 1, you see a alarmclock 1, a book 3, a cd 3, a cd 1, a creditcard 2, a keychain 3, a keychain 1, a laptop 1, a mug 3, a mug 2, a mug 1, a pen 1, and a pencil 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 871,
+          "output_tokens": 6,
+          "total_tokens": 936
+        }
+      },
+      {
+        "step": 3,
+        "action": "take book 3 from diningtable 1",
+        "observation": "You pick up the book 3 from the diningtable 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 968,
+          "output_tokens": 9,
+          "total_tokens": 1053
+        }
+      },
+      {
+        "step": 4,
+        "action": "go to sidetable 1",
+        "observation": "You arrive at sidetable 1. On the sidetable 1, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 997,
+          "output_tokens": 7,
+          "total_tokens": 1085
+        }
+      },
+      {
+        "step": 5,
+        "action": "put book 3 on sidetable 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1031,
+          "output_tokens": 10,
+          "total_tokens": 1103
+        }
+      },
+      {
+        "step": 6,
+        "action": "move book 3 to sidetable 1",
+        "observation": "You move the book 3 to the sidetable 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1050,
+          "output_tokens": 10,
+          "total_tokens": 1360
+        }
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 6,
+    "input_tokens": 5754,
+    "output_tokens": 71,
+    "total_tokens": 6493,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "pick_and_place_simple-Book-None-Sofa-229/trial_T20190907_042856_259139",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put a book in sofa.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a book, take it, and then put it in the sofa.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 853,
+          "output_tokens": 27,
+          "total_tokens": 966
+        }
+      },
+      {
+        "step": 2,
+        "action": "go to coffeetable 1",
+        "observation": "You arrive at coffeetable 1. On the coffeetable 1, you see a box 1, a keychain 1, a pencil 2, a statue 2, and a tissuebox 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 885,
+          "output_tokens": 7,
+          "total_tokens": 952
+        }
+      },
+      {
+        "step": 3,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 944,
+          "output_tokens": 5,
+          "total_tokens": 1173
+        }
+      },
+      {
+        "step": 4,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 969,
+          "output_tokens": 4,
+          "total_tokens": 1042
+        }
+      },
+      {
+        "step": 5,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. The drawer 2 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1000,
+          "output_tokens": 5,
+          "total_tokens": 1096
+        }
+      },
+      {
+        "step": 6,
+        "action": "open drawer 2",
+        "observation": "You open the drawer 2. The drawer 2 is open. In it, you see a cellphone 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1025,
+          "output_tokens": 4,
+          "total_tokens": 1086
+        }
+      },
+      {
+        "step": 7,
+        "action": "go to drawer 3",
+        "observation": "You arrive at drawer 3. The drawer 3 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1059,
+          "output_tokens": 5,
+          "total_tokens": 1114
+        }
+      },
+      {
+        "step": 8,
+        "action": "open drawer 3",
+        "observation": "You open the drawer 3. The drawer 3 is open. In it, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1084,
+          "output_tokens": 4,
+          "total_tokens": 1158
+        }
+      },
+      {
+        "step": 9,
+        "action": "go to drawer 4",
+        "observation": "You arrive at drawer 4. The drawer 4 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1115,
+          "output_tokens": 5,
+          "total_tokens": 1226
+        }
+      },
+      {
+        "step": 10,
+        "action": "open drawer 4",
+        "observation": "You open the drawer 4. The drawer 4 is open. In it, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1140,
+          "output_tokens": 4,
+          "total_tokens": 1292
+        }
+      },
+      {
+        "step": 11,
+        "action": "go to sidetable 1",
+        "observation": "You arrive at sidetable 1. On the sidetable 1, you see a houseplant 1, a pen 2, a pen 1, a pencil 1, and a remotecontrol 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1171,
+          "output_tokens": 7,
+          "total_tokens": 1277
+        }
+      },
+      {
+        "step": 12,
+        "action": "go to dresser 1",
+        "observation": "You arrive at dresser 1. On the dresser 1, you see a creditcard 1, a remotecontrol 3, a remotecontrol 1, a statue 1, and a television 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1231,
+          "output_tokens": 5,
+          "total_tokens": 1343
+        }
+      },
+      {
+        "step": 13,
+        "action": "go to sidetable 2",
+        "observation": "You arrive at sidetable 2. On the sidetable 2, you see a laptop 1, a pencil 3, and a statue 3.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1286,
+          "output_tokens": 7,
+          "total_tokens": 1392
+        }
+      },
+      {
+        "step": 14,
+        "action": "go to sidetable 3",
+        "observation": "You arrive at sidetable 3. On the sidetable 3, you see a book 1, a pen 3, a tissuebox 3, and a tissuebox 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1334,
+          "output_tokens": 7,
+          "total_tokens": 1445
+        }
+      },
+      {
+        "step": 15,
+        "action": "take book 1 from sidetable 3",
+        "observation": "You pick up the book 1 from the sidetable 3.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1389,
+          "output_tokens": 10,
+          "total_tokens": 1451
+        }
+      },
+      {
+        "step": 16,
+        "action": "go to sofa 1",
+        "observation": "You arrive at sofa 1. On the sofa 1, you see a keychain 3, a keychain 2, and a pillow 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1420,
+          "output_tokens": 5,
+          "total_tokens": 1474
+        }
+      },
+      {
+        "step": 17,
+        "action": "put book 1 in sofa 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1462,
+          "output_tokens": 8,
+          "total_tokens": 1537
+        }
+      },
+      {
+        "step": 18,
+        "action": "move book 1 to sofa 1",
+        "observation": "You move the book 1 to the sofa 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1479,
+          "output_tokens": 8,
+          "total_tokens": 1605
+        }
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 18,
+    "input_tokens": 20846,
+    "output_tokens": 127,
+    "total_tokens": 22629,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "pick_and_place_simple-Bowl-None-CoffeeTable-201/trial_T20190907_171639_045329",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put some bowl on coffeetable.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a bowl, take it, and then put it on the coffeetable.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 856,
+          "output_tokens": 29,
+          "total_tokens": 980
+        }
+      },
+      {
+        "step": 2,
+        "action": "go to diningtable 1",
+        "observation": "You arrive at diningtable 1. On the diningtable 1, you see a houseplant 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 890,
+          "output_tokens": 6,
+          "total_tokens": 950
+        }
+      },
+      {
+        "step": 3,
+        "action": "go to diningtable 2",
+        "observation": "You arrive at diningtable 2. On the diningtable 2, you see a bowl 1, a creditcard 1, a keychain 1, a newspaper 1, a plate 1, a statue 3, a tissuebox 1, and a vase 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 925,
+          "output_tokens": 6,
+          "total_tokens": 1064
+        }
+      },
+      {
+        "step": 4,
+        "action": "take bowl 1 from diningtable 2",
+        "observation": "You pick up the bowl 1 from the diningtable 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 997,
+          "output_tokens": 9,
+          "total_tokens": 1055
+        }
+      },
+      {
+        "step": 5,
+        "action": "go to coffeetable 1",
+        "observation": "You arrive at coffeetable 1. On the coffeetable 1, you see a book 2, a book 1, a statue 2, and a watch 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1026,
+          "output_tokens": 7,
+          "total_tokens": 1083
+        }
+      },
+      {
+        "step": 6,
+        "action": "put bowl 1 on coffeetable 1",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1079,
+          "output_tokens": 10,
+          "total_tokens": 1152
+        }
+      },
+      {
+        "step": 7,
+        "action": "help[\"put command failed when placing bowl on coffeetable\"]",
+        "observation": "Error retrieving help: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}",
+        "is_help_call": true,
+        "token_usage": {
+          "input_tokens": 1098,
+          "output_tokens": 13,
+          "total_tokens": 1356
+        }
+      },
+      {
+        "step": 8,
+        "action": "move bowl 1 to coffeetable 1",
+        "observation": "You move the bowl 1 to the coffeetable 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1194,
+          "output_tokens": 12,
+          "total_tokens": 1698
+        }
+      }
+    ],
+    "success": true,
+    "help_calls": [
+      {
+        "step": 7,
+        "query": "put command failed when placing bowl on coffeetable",
+        "response": "Error retrieving help: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}"
+      }
+    ],
+    "help_call_count": 1,
+    "step_num": 8,
+    "input_tokens": 8065,
+    "output_tokens": 92,
+    "total_tokens": 9338,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "pick_and_place_simple-Box-None-Dresser-224/trial_T20190907_164104_229696",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put some box on dresser.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "go to cabinet 1",
+        "observation": "You arrive at cabinet 1. On the cabinet 1, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 962,
+          "output_tokens": 7,
+          "total_tokens": 1150
+        }
+      },
+      {
+        "step": 2,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. On the drawer 1, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 989,
+          "output_tokens": 5,
+          "total_tokens": 1146
+        }
+      },
+      {
+        "step": 3,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. The drawer 2 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1017,
+          "output_tokens": 5,
+          "total_tokens": 1141
+        }
+      },
+      {
+        "step": 4,
+        "action": "open drawer 2",
+        "observation": "You open the drawer 2. The drawer 2 is open. In it, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1042,
+          "output_tokens": 4,
+          "total_tokens": 1094
+        }
+      },
+      {
+        "step": 5,
+        "action": "go to drawer 3",
+        "observation": "You arrive at drawer 3. The drawer 3 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1073,
+          "output_tokens": 5,
+          "total_tokens": 1158
+        }
+      },
+      {
+        "step": 6,
+        "action": "open drawer 3",
+        "observation": "You open the drawer 3. The drawer 3 is open. In it, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1098,
+          "output_tokens": 4,
+          "total_tokens": 1216
+        }
+      },
+      {
+        "step": 7,
+        "action": "go to drawer 4",
+        "observation": "You arrive at drawer 4. On the drawer 4, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1129,
+          "output_tokens": 5,
+          "total_tokens": 1201
+        }
+      },
+      {
+        "step": 8,
+        "action": "go to drawer 5",
+        "observation": "You arrive at drawer 5. The drawer 5 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1157,
+          "output_tokens": 5,
+          "total_tokens": 1224
+        }
+      },
+      {
+        "step": 9,
+        "action": "open drawer 5",
+        "observation": "You open the drawer 5. The drawer 5 is open. In it, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1182,
+          "output_tokens": 4,
+          "total_tokens": 1241
+        }
+      },
+      {
+        "step": 10,
+        "action": "go to drawer 6",
+        "observation": "You arrive at drawer 6. The drawer 6 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1213,
+          "output_tokens": 5,
+          "total_tokens": 1276
+        }
+      },
+      {
+        "step": 11,
+        "action": "open drawer 6",
+        "observation": "You open the drawer 6. The drawer 6 is open. In it, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1238,
+          "output_tokens": 4,
+          "total_tokens": 1316
+        }
+      },
+      {
+        "step": 12,
+        "action": "go to drawer 7",
+        "observation": "You arrive at drawer 7. The drawer 7 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1269,
+          "output_tokens": 5,
+          "total_tokens": 1327
+        }
+      },
+      {
+        "step": 13,
+        "action": "open drawer 7",
+        "observation": "You open the drawer 7. The drawer 7 is open. In it, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1294,
+          "output_tokens": 4,
+          "total_tokens": 1351
+        }
+      },
+      {
+        "step": 14,
+        "action": "go to drawer 8",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1325,
+          "output_tokens": 5,
+          "total_tokens": 1386
+        }
+      },
+      {
+        "step": 15,
+        "action": "go to drawer 8",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1339,
+          "output_tokens": 5,
+          "total_tokens": 1397
+        }
+      }
+    ],
+    "success": false,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 15,
+    "input_tokens": 17327,
+    "output_tokens": 72,
+    "total_tokens": 18624,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "pick_and_place_simple-Candle-None-Cart-401/trial_T20190909_081908_677973",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put a candle in cart.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a candle, take it, and then put it in the cart.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 867,
+          "output_tokens": 27,
+          "total_tokens": 983
+        }
+      },
+      {
+        "step": 2,
+        "action": "go to shelf 1",
+        "observation": "You arrive at shelf 1. On the shelf 1, you see a cloth 1, and a toiletpaper 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 899,
+          "output_tokens": 5,
+          "total_tokens": 1045
+        }
+      },
+      {
+        "step": 3,
+        "action": "go to shelf 2",
+        "observation": "You arrive at shelf 2. On the shelf 2, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 937,
+          "output_tokens": 5,
+          "total_tokens": 1014
+        }
+      },
+      {
+        "step": 4,
+        "action": "go to shelf 3",
+        "observation": "You arrive at shelf 3. On the shelf 3, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 965,
+          "output_tokens": 5,
+          "total_tokens": 1020
+        }
+      },
+      {
+        "step": 5,
+        "action": "go to shelf 4",
+        "observation": "You arrive at shelf 4. On the shelf 4, you see a soapbottle 1, and a toiletpaper 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 993,
+          "output_tokens": 5,
+          "total_tokens": 1117
+        }
+      },
+      {
+        "step": 6,
+        "action": "go to bathtubbasin 1",
+        "observation": "You arrive at bathtubbasin 1. On the bathtubbasin 1, you see a cloth 2, and a soapbar 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1032,
+          "output_tokens": 6,
+          "total_tokens": 1150
+        }
+      },
+      {
+        "step": 7,
+        "action": "go to sinkbasin 1",
+        "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see a dishsponge 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1073,
+          "output_tokens": 6,
+          "total_tokens": 1201
+        }
+      },
+      {
+        "step": 8,
+        "action": "go to garbagecan 1",
+        "observation": "You arrive at garbagecan 1. On the garbagecan 1, you see a soapbottle 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1108,
+          "output_tokens": 6,
+          "total_tokens": 1298
+        }
+      },
+      {
+        "step": 9,
+        "action": "go to handtowelholder 1",
+        "observation": "You arrive at handtowelholder 1. On the handtowelholder 1, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1143,
+          "output_tokens": 8,
+          "total_tokens": 1314
+        }
+      },
+      {
+        "step": 10,
+        "action": "go to handtowelholder 2",
+        "observation": "You arrive at handtowelholder 2. On the handtowelholder 2, you see a handtowel 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1180,
+          "output_tokens": 8,
+          "total_tokens": 1312
+        }
+      },
+      {
+        "step": 11,
+        "action": "go to toilet 1",
+        "observation": "You arrive at toilet 1. On the toilet 1, you see a candle 1, and a spraybottle 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1222,
+          "output_tokens": 5,
+          "total_tokens": 1346
+        }
+      },
+      {
+        "step": 12,
+        "action": "take candle 1 from toilet 1",
+        "observation": "You pick up the candle 1 from the toilet 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1260,
+          "output_tokens": 8,
+          "total_tokens": 1315
+        }
+      },
+      {
+        "step": 13,
+        "action": "think: I have taken the candle 1. Now I need to put it in the cart 1. First, I need to go to the cart 1.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1287,
+          "output_tokens": 34,
+          "total_tokens": 1386
+        }
+      },
+      {
+        "step": 14,
+        "action": "go to cart 1",
+        "observation": "You arrive at cart 1. On the cart 1, you see a dishsponge 1, a spraybottle 3, and a spraybottle 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1329,
+          "output_tokens": 5,
+          "total_tokens": 1384
+        }
+      },
+      {
+        "step": 15,
+        "action": "move candle 1 to cart 1",
+        "observation": "You move the candle 1 to the cart 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1374,
+          "output_tokens": 8,
+          "total_tokens": 1416
+        }
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 15,
+    "input_tokens": 16669,
+    "output_tokens": 141,
+    "total_tokens": 18301,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "pick_and_place_simple-Candle-None-Toilet-407/trial_T20190909_055248_059513",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put a candle in toilet.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a candle, take it, and then put it on the toilet.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 859,
+          "output_tokens": 27,
+          "total_tokens": 1029
+        }
+      },
+      {
+        "step": 2,
+        "action": "go to cabinet 1",
+        "observation": "You arrive at cabinet 1. The cabinet 1 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 891,
+          "output_tokens": 5,
+          "total_tokens": 943
+        }
+      },
+      {
+        "step": 3,
+        "action": "open cabinet 1",
+        "observation": "You open the cabinet 1. The cabinet 1 is open. In it, you see a soapbar 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 916,
+          "output_tokens": 4,
+          "total_tokens": 988
+        }
+      },
+      {
+        "step": 4,
+        "action": "go to cabinet 2",
+        "observation": "You arrive at cabinet 2. The cabinet 2 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 951,
+          "output_tokens": 5,
+          "total_tokens": 1006
+        }
+      },
+      {
+        "step": 5,
+        "action": "open cabinet 2",
+        "observation": "You open the cabinet 2. The cabinet 2 is open. In it, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 976,
+          "output_tokens": 4,
+          "total_tokens": 1031
+        }
+      },
+      {
+        "step": 6,
+        "action": "go to cabinet 3",
+        "observation": "You arrive at cabinet 3. The cabinet 3 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1007,
+          "output_tokens": 5,
+          "total_tokens": 1070
+        }
+      },
+      {
+        "step": 7,
+        "action": "open cabinet 3",
+        "observation": "You open the cabinet 3. The cabinet 3 is open. In it, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1032,
+          "output_tokens": 4,
+          "total_tokens": 1090
+        }
+      },
+      {
+        "step": 8,
+        "action": "go to cabinet 4",
+        "observation": "You arrive at cabinet 4. The cabinet 4 is closed.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1063,
+          "output_tokens": 5,
+          "total_tokens": 1127
+        }
+      },
+      {
+        "step": 9,
+        "action": "open cabinet 4",
+        "observation": "You open the cabinet 4. The cabinet 4 is open. In it, you see nothing.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1088,
+          "output_tokens": 4,
+          "total_tokens": 1140
+        }
+      },
+      {
+        "step": 10,
+        "action": "go to countertop 1",
+        "observation": "You arrive at countertop 1. On the countertop 1, you see a candle 4, a candle 3, a mirror 1, a soapbottle 2, a soapbottle 1, and a toiletpaper 3.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1119,
+          "output_tokens": 5,
+          "total_tokens": 1236
+        }
+      },
+      {
+        "step": 11,
+        "action": "take candle 4 from countertop 1",
+        "observation": "You pick up the candle 4 from the countertop 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1179,
+          "output_tokens": 8,
+          "total_tokens": 1227
+        }
+      },
+      {
+        "step": 12,
+        "action": "go to toilet 1",
+        "observation": "You arrive at toilet 1. On the toilet 1, you see a spraybottle 2, and a spraybottle 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1206,
+          "output_tokens": 5,
+          "total_tokens": 1253
+        }
+      },
+      {
+        "step": 13,
+        "action": "move candle 4 to toilet 1",
+        "observation": "You move the candle 4 to the toilet 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1245,
+          "output_tokens": 8,
+          "total_tokens": 1339
+        }
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 13,
+    "input_tokens": 13532,
+    "output_tokens": 89,
+    "total_tokens": 14479,
+    "agent_type": "hard_negative"
+  },
+  {
+    "task_id": "pick_and_place_simple-Candle-None-Toilet-429/trial_T20190908_052232_887934",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put some candle on toilet.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find and take a candle, then put it on toilet.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 843,
+          "output_tokens": 24,
+          "total_tokens": 1040
+        }
+      },
+      {
+        "step": 2,
+        "action": "think: First I need to find a candle. A candle is more likely to appear in shelf (1-3), toilet (1), sinkbasin (1), garbagecan (1). I can check one by one, starting with shelf 1.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 872,
+          "output_tokens": 51,
+          "total_tokens": 923
+        }
+      },
+      {
+        "step": 3,
+        "action": "go to shelf 1",
+        "observation": "You arrive at shelf 1. On the shelf 1, you see a candle 1, a soapbar 2, and a soapbar 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 931,
+          "output_tokens": 5,
+          "total_tokens": 990
+        }
+      },
+      {
+        "step": 4,
+        "action": "take candle 1 from shelf 1",
+        "observation": "You pick up the candle 1 from the shelf 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 975,
+          "output_tokens": 8,
+          "total_tokens": 983
+        }
+      },
+      {
+        "step": 5,
+        "action": "think: Now I have the candle 1. Next, I need to put it on the toilet 1.",
+        "observation": "OK.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1002,
+          "output_tokens": 23,
+          "total_tokens": 1025
+        }
+      },
+      {
+        "step": 6,
+        "action": "go to toilet 1",
+        "observation": "You arrive at toilet 1. On the toilet 1, you see a soapbottle 2.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1033,
+          "output_tokens": 5,
+          "total_tokens": 1038
+        }
+      },
+      {
+        "step": 7,
+        "action": "move candle 1 to toilet 1",
+        "observation": "You move the candle 1 to the toilet 1.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 1065,
+          "output_tokens": 8,
+          "total_tokens": 1136
+        }
+      }
+    ],
+    "success": true,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 7,
+    "input_tokens": 6721,
+    "output_tokens": 124,
+    "total_tokens": 7135,
+    "agent_type": "hard_negative"
+  }
+]

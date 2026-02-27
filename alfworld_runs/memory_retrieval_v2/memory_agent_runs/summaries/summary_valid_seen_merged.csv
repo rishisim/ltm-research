@@ -1,0 +1,7 @@
+framework,success_total,accuracy,avg_steps_per_trial,avg_steps_per_task,gain_from_base_react
+ReAct,0 / 20,0.0000,1.0000,1.0000,0.0000
+"React + Reflexion (final trials, max 7)",0 / 20,0.0000,1.0000,1.0000,0.0000
+ReAct + Context Retrieval (CR),17 / 20,0.8500,15.0500,15.0500,0.8500
+ReAct + Tool Retrieval (TR),13 / 20,0.6500,18.0500,18.0500,0.6500
+react + CR + TR,16 / 20,0.8000,12.5000,12.5000,0.8000
+react + hard_neg CR + TR,15 / 20,0.7500,14.7000,14.7000,0.7500
