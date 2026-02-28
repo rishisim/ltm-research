@@ -137,6 +137,30 @@ def retrieve_context(
     
     # Step 2: Embed query task description
     query_embedding = get_embedding(new_task_desc)
+
+    # Safety check: if cached vectors are stale from a different model, force one rebuild.
+    if learning_counts_embeddings:
+        query_dim = int(query_embedding.shape[0])
+        cache_dim = int(learning_counts_embeddings[0].shape[0])
+        if query_dim != cache_dim:
+            if force_rebuild_cache:
+                raise ValueError(
+                    f"Embedding dimension mismatch after rebuild: query={query_dim}, cache={cache_dim}"
+                )
+
+            learning_counts_entries, learning_counts_embeddings = load_learning_counts(
+                memory_bank_path,
+                force_rebuild=True
+            )
+            if not learning_counts_entries or not learning_counts_embeddings:
+                return _empty_result(new_task_desc, log_dir, task_id)
+
+            rebuilt_cache_dim = int(learning_counts_embeddings[0].shape[0])
+            if query_dim != rebuilt_cache_dim:
+                raise ValueError(
+                    f"Embedding dimension mismatch after forced rebuild: "
+                    f"query={query_dim}, cache={rebuilt_cache_dim}"
+                )
     
     # Step 3.1: Find top-k similar tasks from mem_learning_counts
     top_similar_tasks = get_top_similar_tasks(
@@ -745,4 +769,3 @@ if __name__ == "__main__":
         print(f"  {i}. [{l.get('goal_phase', '')}] {l.get('learning', '')[:80]}...")
     if len(learnings) > 10:
         print(f"  ... and {len(learnings) - 10} more")
-

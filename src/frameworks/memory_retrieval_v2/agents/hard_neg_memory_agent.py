@@ -23,6 +23,9 @@ from src.frameworks.memory_retrieval_v2.retrieval.variants.hard_neg_context_retr
     retrieve_learnings_only,
     format_learnings_for_prompt
 )
+from src.frameworks.memory_retrieval_v2.retrieval.core.embedding_cache import (
+    get_active_embedding_model,
+)
 from src.frameworks.memory_retrieval_v2.retrieval.variants.hard_neg_tool_retrieval import (
     help_tool,
     format_help_response
@@ -117,6 +120,9 @@ Use this tool when you:
         steps: List[Dict[str, Any]] = []
         help_calls: List[Dict[str, str]] = []
         retrieved_learnings: List[Dict[str, str]] = []
+        context_retrieval_error = ""
+        context_retrieval_status = "empty"
+        embedding_model_used = get_active_embedding_model()
         
         # Step 1: Retrieve context (Hard Negative)
         context_learnings = ""
@@ -132,6 +138,7 @@ Use this tool when you:
                 if learnings:
                     retrieved_learnings = learnings
                     context_learnings = format_learnings_for_prompt(learnings)
+                    context_retrieval_status = "ok"
                     if self.to_print:
                         print("\n" + "="*60)
                         print("CONTEXT FROM PREVIOUS EXPERIENCES (Hard Negative):")
@@ -139,8 +146,22 @@ Use this tool when you:
                         print(context_learnings)
                         print("="*60 + "\n")
             except Exception as e:
+                context_retrieval_error = str(e)
+                context_retrieval_status = "error"
                 if self.to_print:
                     print(f"Warning: Could not retrieve context: {e}")
+
+        if log_dir:
+            world_log_path = os.path.join(log_dir, "world.log")
+            try:
+                with open(world_log_path, "a") as wf:
+                    wf.write(
+                        f"Context retrieval [{task_id or 'unknown_task'}]: {context_retrieval_status}\n"
+                    )
+                    if context_retrieval_error:
+                        wf.write(f"Context retrieval error: {context_retrieval_error}\n")
+            except Exception:
+                pass
         
         # Step 2: Build enhanced prompt
         enhanced_prompt = base_prompt
@@ -267,7 +288,9 @@ The following learnings are from previous tasks similar to yours. Use them to av
             self._log_trajectory(
                 log_dir, task_id, trial_num, steps, 
                 is_success, task_desc, help_calls, retrieved_learnings,
-                total_input_tokens, total_output_tokens, total_tokens
+                total_input_tokens, total_output_tokens, total_tokens,
+                context_retrieval_error=context_retrieval_error,
+                embedding_model_used=embedding_model_used,
             )
 
         return env_history, is_success
@@ -284,7 +307,9 @@ The following learnings are from previous tasks similar to yours. Use them to av
         context_learnings: List[Dict[str, str]] = None,
         input_tokens: int = 0,
         output_tokens: int = 0,
-        total_tokens: int = 0
+        total_tokens: int = 0,
+        context_retrieval_error: str = "",
+        embedding_model_used: str = "",
     ) -> None:
         """Log the complete trajectory to trajectories.json"""
         task_type = task_id.split('-')[0] if task_id else ""
@@ -303,6 +328,8 @@ The following learnings are from previous tasks similar to yours. Use them to av
             "input_tokens": input_tokens,
             "output_tokens": output_tokens,
             "total_tokens": total_tokens,
+            "context_retrieval_error": context_retrieval_error,
+            "embedding_model_used": embedding_model_used,
             "agent_type": "hard_negative"
         }
         

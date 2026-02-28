@@ -15,71 +15,20 @@ OPTIMIZATION: Embeddings for training trajectories are cached to avoid
 recomputing them for every query (reduces API calls significantly).
 """
 
-import os
 import json
 import numpy as np
 from typing import Dict, Any, List, Tuple, Optional
-from pathlib import Path
-from dotenv import load_dotenv
-
-from google import genai
-from google.genai import types
-
-# Load environment variables
-env_path = Path(__file__).resolve().parent.parent.parent.parent.parent / '.env'
-load_dotenv(env_path)
-
-# Initialize the client with API key from environment
-client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
-
-# Embedding model to use
-EMBEDDING_MODEL = "text-embedding-004"
+from .embedding_cache import (
+    get_embedding,
+    get_batch_embeddings,
+    cosine_similarity,
+)
 
 # ============================================================================
 # EMBEDDING CACHE - stores precomputed embeddings for training trajectories
 # ============================================================================
 _embedding_cache: Dict[str, Dict[str, Any]] = {}
 # Structure: {trajectories_path: {"task_descs": [...], "embeddings": [...], "trajectories": [...]}}
-
-
-def get_embedding(text: str) -> np.ndarray:
-    """
-    Get the embedding for a text string using Google's embedding model.
-    """
-    result = client.models.embed_content(
-        model=EMBEDDING_MODEL,
-        contents=text
-    )
-    return np.array(result.embeddings[0].values)
-
-
-def get_batch_embeddings(texts: List[str]) -> List[np.ndarray]:
-    """
-    Get embeddings for a batch of texts using batch API when possible.
-    """
-    if not texts:
-        return []
-    
-    # Use batch embedding API for efficiency
-    result = client.models.embed_content(
-        model=EMBEDDING_MODEL,
-        contents=texts
-    )
-    return [np.array(emb.values) for emb in result.embeddings]
-
-
-def cosine_similarity(vec1: np.ndarray, vec2: np.ndarray) -> float:
-    """
-    Compute cosine similarity between two vectors.
-    """
-    dot_product = np.dot(vec1, vec2)
-    norm1 = np.linalg.norm(vec1)
-    norm2 = np.linalg.norm(vec2)
-    
-    if norm1 == 0 or norm2 == 0:
-        return 0.0
-    
-    return float(dot_product / (norm1 * norm2))
 
 
 def load_training_trajectories(trajectories_path: str) -> List[Dict[str, Any]]:

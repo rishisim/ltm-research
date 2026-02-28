@@ -59,8 +59,9 @@ def is_learning_counts_cache_valid(knowledge_base_path: str, cache_path: Path) -
         
         current_hash = get_file_hash(knowledge_base_path)
         cached_hash = cache_data.get("source_hash", "")
-        
-        return current_hash == cached_hash
+        cached_model = cache_data.get("embedding_model", "")
+
+        return current_hash == cached_hash and cached_model == EMBEDDING_MODEL
     except (json.JSONDecodeError, IOError):
         return False
 

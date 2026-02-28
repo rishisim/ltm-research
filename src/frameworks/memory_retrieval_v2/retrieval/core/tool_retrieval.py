@@ -198,6 +198,28 @@ def help_tool(
     
     # --- Step 1: Embedding Similarity ---
     query_embedding = get_embedding(search_issue)
+    if all_issue_embeddings:
+        query_dim = int(query_embedding.shape[0])
+        cache_dim = int(all_issue_embeddings[0].shape[0])
+        if query_dim != cache_dim:
+            cached_entries, all_issue_embeddings = load_issue_embeddings(
+                memory_bank_path,
+                force_rebuild=True
+            )
+            if not all_issue_embeddings:
+                return {
+                    "query_issue": issue,
+                    "message": "Issue embedding cache is empty after rebuild",
+                    "results": []
+                }
+
+            rebuilt_cache_dim = int(all_issue_embeddings[0].shape[0])
+            if query_dim != rebuilt_cache_dim:
+                raise ValueError(
+                    f"Issue embedding dimension mismatch after forced rebuild: "
+                    f"query={query_dim}, cache={rebuilt_cache_dim}"
+                )
+
     from .embedding_cache import cosine_similarity_batch
     # Calculate all cosine similarities
     cos_similarities = cosine_similarity_batch(query_embedding, all_issue_embeddings)
@@ -427,4 +449,3 @@ if __name__ == "__main__":
         print(f"CSV Results saved to {csv_output_path}")
     except Exception as e:
         print(f"Failed to save CSV: {e}")
-

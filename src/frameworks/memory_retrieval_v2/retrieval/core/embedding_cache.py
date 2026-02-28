@@ -8,6 +8,7 @@ Embeddings are cached alongside the knowledge_base.json file.
 import os
 import json
 import hashlib
+import time
 import numpy as np
 from typing import List, Dict, Any, Optional, Tuple
 from pathlib import Path
@@ -22,8 +23,9 @@ load_dotenv(env_path, override=True)
 # Initialize Google GenAI client for embeddings
 genai_client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
-# Embedding model to use
-EMBEDDING_MODEL = "text-embedding-004"
+# Embedding model to use (intentionally pinned)
+EMBEDDING_MODEL = "gemini-embedding-001"
+EMPTY_EMBEDDING_PLACEHOLDER = "[EMPTY_TEXT]"
 
 # Cache file suffix
 EMBEDDINGS_CACHE_SUFFIX = ".embeddings_cache.json"
@@ -64,6 +66,25 @@ def get_cache_path(knowledge_base_path: str, embed_field: str = "task_desc") -> 
         return kb_path.parent / f"{kb_path.stem}{EMBEDDINGS_CACHE_SUFFIX}"
 
 
+def get_active_embedding_model() -> str:
+    """
+    Return the active embedding model used by retrieval.
+    """
+    return EMBEDDING_MODEL
+
+
+def normalize_text_for_embedding(text: Any) -> str:
+    """
+    Normalize text content so embedding calls never receive empty payloads.
+    """
+    if text is None:
+        return EMPTY_EMBEDDING_PLACEHOLDER
+    if not isinstance(text, str):
+        text = str(text)
+    normalized = text.strip()
+    return normalized if normalized else EMPTY_EMBEDDING_PLACEHOLDER
+
+
 def get_embedding(text: str) -> np.ndarray:
     """
     Get the embedding for a single text string.
@@ -74,9 +95,10 @@ def get_embedding(text: str) -> np.ndarray:
     Returns:
         numpy array of the embedding vector
     """
+    normalized_text = normalize_text_for_embedding(text)
     result = genai_client.models.embed_content(
         model=EMBEDDING_MODEL,
-        contents=text,
+        contents=normalized_text,
     )
     return np.array(result.embeddings[0].values)
 
@@ -94,21 +116,53 @@ def get_batch_embeddings(texts: List[str], batch_size: int = 100) -> List[np.nda
     """
     if not texts:
         return []
+
+    normalized_texts = [normalize_text_for_embedding(t) for t in texts]
     
+    def _embed_with_backoff(items: List[str], max_retries: int = 3) -> List[np.ndarray]:
+        """
+        Embed a list with graceful fallback:
+        - First try as a single batch.
+        - If it fails and batch has multiple items, split recursively.
+        - If single item fails, retry with exponential backoff then raise.
+        """
+        if not items:
+            return []
+
+        try:
+            result = genai_client.models.embed_content(
+                model=EMBEDDING_MODEL,
+                contents=items,
+            )
+            return [np.array(emb.values) for emb in result.embeddings]
+        except Exception:
+            if len(items) == 1:
+                for retry in range(max_retries):
+                    try:
+                        result = genai_client.models.embed_content(
+                            model=EMBEDDING_MODEL,
+                            contents=items,
+                        )
+                        return [np.array(result.embeddings[0].values)]
+                    except Exception:
+                        if retry == max_retries - 1:
+                            raise
+                        time.sleep(0.5 * (2 ** retry))
+
+            mid = len(items) // 2
+            left = _embed_with_backoff(items[:mid], max_retries=max_retries)
+            right = _embed_with_backoff(items[mid:], max_retries=max_retries)
+            return left + right
+
     all_embeddings = []
-    
-    for i in range(0, len(texts), batch_size):
-        batch = texts[i:i + batch_size]
-        result = genai_client.models.embed_content(
-            model=EMBEDDING_MODEL,
-            contents=batch,
-        )
-        batch_embeddings = [np.array(emb.values) for emb in result.embeddings]
+    for i in range(0, len(normalized_texts), batch_size):
+        batch = normalized_texts[i:i + batch_size]
+        batch_embeddings = _embed_with_backoff(batch)
         all_embeddings.extend(batch_embeddings)
-        
-        if i + batch_size < len(texts):
-            print(f"  Embedded {i + batch_size}/{len(texts)} texts...")
-    
+
+        if i + batch_size < len(normalized_texts):
+            print(f"  Embedded {i + batch_size}/{len(normalized_texts)} texts...")
+
     return all_embeddings
 
 
@@ -135,10 +189,15 @@ def is_cache_valid(knowledge_base_path: str, cache_path: Path, embed_field: str 
         current_hash = get_file_hash(knowledge_base_path)
         cached_hash = cache_data.get("source_hash", "")
         
-        # Also verify embed_field matches
+        # Also verify embed_field and embedding model match.
         cached_field = cache_data.get("embed_field", "task_desc")
-        
-        return current_hash == cached_hash and cached_field == embed_field
+        cached_model = cache_data.get("embedding_model", "")
+
+        return (
+            current_hash == cached_hash
+            and cached_field == embed_field
+            and cached_model == EMBEDDING_MODEL
+        )
     except (json.JSONDecodeError, IOError):
         return False
 
@@ -189,6 +248,7 @@ def create_knowledge_base_embeddings(
     
     # Extract all texts to embed based on embed_field
     texts_to_embed = []
+    empty_source_indices = []
     for entry in knowledge_base:
         if embed_field == "issue_text":
             # Fallback for issue_ref if issue_text is missing
@@ -196,9 +256,22 @@ def create_knowledge_base_embeddings(
         else:
             text = entry.get(embed_field, "")
         texts_to_embed.append(text)
+
+    sanitized_texts_to_embed = []
+    for idx, text in enumerate(texts_to_embed):
+        if text is None or (isinstance(text, str) and not text.strip()):
+            empty_source_indices.append(idx)
+        sanitized_texts_to_embed.append(normalize_text_for_embedding(text))
+
+    if empty_source_indices:
+        preview = empty_source_indices[:10]
+        print(
+            f"  Normalized {len(empty_source_indices)} empty {embed_field} entries "
+            f"to placeholder for embedding (sample indices: {preview})"
+        )
     
     print(f"  Embedding {len(texts_to_embed)} {embed_field} entries...")
-    embeddings = get_batch_embeddings(texts_to_embed)
+    embeddings = get_batch_embeddings(sanitized_texts_to_embed)
     
     # Build cache data with embeddings
     entries_with_embeddings = []
