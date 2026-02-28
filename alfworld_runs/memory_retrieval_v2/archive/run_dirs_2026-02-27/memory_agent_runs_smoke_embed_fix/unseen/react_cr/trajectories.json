@@ -1,0 +1,89 @@
+[
+  {
+    "task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-308/trial_T20190908_222917_366542",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the alarmclock with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        }
+      }
+    ],
+    "success": false,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 1,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "context_retrieval_error": "[Errno 8] nodename nor servname provided, or not known",
+    "embedding_model_used": "gemini-embedding-001"
+  },
+  {
+    "task_id": "look_at_obj_in_light-Book-None-DeskLamp-308/trial_T20190908_020029_636862",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the book with the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        }
+      }
+    ],
+    "success": false,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 1,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "context_retrieval_error": "[Errno 8] nodename nor servname provided, or not known",
+    "embedding_model_used": "gemini-embedding-001"
+  },
+  {
+    "task_id": "look_at_obj_in_light-Bowl-None-DeskLamp-308/trial_T20190907_133919_856963",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at bowl under the desklamp.",
+    "trial_num": 1,
+    "context_from_retrieval": [],
+    "steps": [
+      {
+        "step": 1,
+        "action": "",
+        "observation": "Nothing happens.",
+        "is_help_call": false,
+        "token_usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        }
+      }
+    ],
+    "success": false,
+    "help_calls": [],
+    "help_call_count": 0,
+    "step_num": 1,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "context_retrieval_error": "[Errno 8] nodename nor servname provided, or not known",
+    "embedding_model_used": "gemini-embedding-001"
+  }
+]

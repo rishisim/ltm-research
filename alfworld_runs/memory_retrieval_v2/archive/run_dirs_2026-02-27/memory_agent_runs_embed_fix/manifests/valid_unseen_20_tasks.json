@@ -1,0 +1,27 @@
+{
+  "split": "valid_unseen",
+  "num_tasks_requested": 20,
+  "num_tasks_selected": 20,
+  "tasks": [
+    "valid_unseen:look_at_obj_in_light-AlarmClock-None-DeskLamp-308/trial_T20190908_222917_366542",
+    "valid_unseen:look_at_obj_in_light-Book-None-DeskLamp-308/trial_T20190908_020029_636862",
+    "valid_unseen:look_at_obj_in_light-Bowl-None-DeskLamp-308/trial_T20190907_133919_856963",
+    "valid_unseen:look_at_obj_in_light-CD-None-DeskLamp-308/trial_T20190908_141942_810052",
+    "valid_unseen:look_at_obj_in_light-Mug-None-DeskLamp-308/trial_T20190908_161733_213242",
+    "valid_unseen:look_at_obj_in_light-Pencil-None-DeskLamp-308/trial_T20190908_220545_153480",
+    "valid_unseen:pick_and_place_simple-Mug-None-Desk-308/trial_T20190908_125200_737896",
+    "valid_unseen:pick_and_place_simple-Pencil-None-Shelf-308/trial_T20190908_121952_610012",
+    "valid_unseen:pick_and_place_simple-PepperShaker-None-Drawer-10/trial_T20190906_184021_215264",
+    "valid_unseen:pick_and_place_simple-SaltShaker-None-Cabinet-10/trial_T20190906_191429_743650",
+    "valid_unseen:pick_and_place_simple-SaltShaker-None-Drawer-10/trial_T20190909_021613_077537",
+    "valid_unseen:pick_and_place_simple-SoapBottle-None-Toilet-424/trial_T20190907_004321_405868",
+    "valid_unseen:pick_and_place_simple-Vase-None-Safe-219/trial_T20190908_205204_244321",
+    "valid_unseen:pick_and_place_simple-Watch-None-Safe-219/trial_T20190907_074524_006355",
+    "valid_unseen:pick_clean_then_place_in_recep-Bowl-None-Cabinet-10/trial_T20190909_061130_844814",
+    "valid_unseen:pick_clean_then_place_in_recep-Cloth-None-Cabinet-424/trial_T20190908_022321_380927",
+    "valid_unseen:pick_clean_then_place_in_recep-Cloth-None-CounterTop-424/trial_T20190908_100632_546757",
+    "valid_unseen:pick_clean_then_place_in_recep-Egg-None-Microwave-10/trial_T20190909_120554_888709",
+    "valid_unseen:pick_clean_then_place_in_recep-Knife-None-CounterTop-10/trial_T20190909_110347_624008",
+    "valid_unseen:pick_clean_then_place_in_recep-Mug-None-CoffeeMachine-10/trial_T20190907_221208_560499"
+  ]
+}

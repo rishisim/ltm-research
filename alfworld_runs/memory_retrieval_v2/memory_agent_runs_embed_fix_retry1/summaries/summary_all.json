@@ -1,0 +1,76 @@
+{
+  "rows": [
+    {
+      "split": "valid_seen",
+      "framework_id": "react_cr",
+      "framework": "ReAct + Context Retrieval (CR)",
+      "success_total": "17 / 20",
+      "accuracy": 0.85,
+      "avg_steps_per_trial": 11.35,
+      "avg_steps_per_task": 11.35,
+      "attempt_count": 20,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/alfworld_runs/memory_retrieval_v2/memory_agent_runs_embed_fix_retry1/seen/react_cr",
+      "gain_from_base_react": 0.85
+    },
+    {
+      "split": "valid_seen",
+      "framework_id": "react_tr",
+      "framework": "ReAct + Tool Retrieval (TR)",
+      "success_total": "14 / 20",
+      "accuracy": 0.7,
+      "avg_steps_per_trial": 18.15,
+      "avg_steps_per_task": 18.15,
+      "attempt_count": 20,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/alfworld_runs/memory_retrieval_v2/memory_agent_runs_embed_fix_retry1/seen/react_tr",
+      "gain_from_base_react": 0.7
+    },
+    {
+      "split": "valid_seen",
+      "framework_id": "react_cr_tr",
+      "framework": "react + CR + TR",
+      "success_total": "18 / 20",
+      "accuracy": 0.9,
+      "avg_steps_per_trial": 13.2,
+      "avg_steps_per_task": 13.2,
+      "attempt_count": 20,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/alfworld_runs/memory_retrieval_v2/memory_agent_runs_embed_fix_retry1/seen/react_cr_tr",
+      "gain_from_base_react": 0.9
+    },
+    {
+      "split": "valid_unseen",
+      "framework_id": "react_cr",
+      "framework": "ReAct + Context Retrieval (CR)",
+      "success_total": "16 / 20",
+      "accuracy": 0.8,
+      "avg_steps_per_trial": 15.15,
+      "avg_steps_per_task": 15.15,
+      "attempt_count": 20,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/alfworld_runs/memory_retrieval_v2/memory_agent_runs_embed_fix_retry1/unseen/react_cr",
+      "gain_from_base_react": 0.8
+    },
+    {
+      "split": "valid_unseen",
+      "framework_id": "react_tr",
+      "framework": "ReAct + Tool Retrieval (TR)",
+      "success_total": "13 / 20",
+      "accuracy": 0.65,
+      "avg_steps_per_trial": 15.5,
+      "avg_steps_per_task": 15.5,
+      "attempt_count": 20,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/alfworld_runs/memory_retrieval_v2/memory_agent_runs_embed_fix_retry1/unseen/react_tr",
+      "gain_from_base_react": 0.65
+    },
+    {
+      "split": "valid_unseen",
+      "framework_id": "react_cr_tr",
+      "framework": "react + CR + TR",
+      "success_total": "16 / 20",
+      "accuracy": 0.8,
+      "avg_steps_per_trial": 16.05,
+      "avg_steps_per_task": 16.05,
+      "attempt_count": 20,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/alfworld_runs/memory_retrieval_v2/memory_agent_runs_embed_fix_retry1/unseen/react_cr_tr",
+      "gain_from_base_react": 0.8
+    }
+  ]
+}

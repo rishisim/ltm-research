@@ -1,0 +1,8 @@
+{
+  "split": "valid_unseen",
+  "num_tasks_requested": 1,
+  "num_tasks_selected": 1,
+  "tasks": [
+    "valid_unseen:look_at_obj_in_light-AlarmClock-None-DeskLamp-308/trial_T20190908_222917_366542"
+  ]
+}

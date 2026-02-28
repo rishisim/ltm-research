@@ -1,0 +1,16 @@
+{
+  "created_at": "2026-02-27T18:42:27.178136",
+  "num_tasks": 3,
+  "splits": [
+    "valid_seen",
+    "valid_unseen"
+  ],
+  "frameworks": [
+    "react_tr",
+    "react_cr_tr"
+  ],
+  "max_trials": 7,
+  "model": "gemini-2.5-flash",
+  "memory_bank": "/Users/rishisim/Documents/research/ltm-research/alfworld_runs/memory_retrieval_v2/knowledge_base/knowledge_base.json",
+  "prepare_only": false
+}

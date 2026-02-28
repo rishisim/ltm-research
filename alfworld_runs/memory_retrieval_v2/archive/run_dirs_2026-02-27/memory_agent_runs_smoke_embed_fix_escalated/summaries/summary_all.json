@@ -1,0 +1,40 @@
+{
+  "rows": [
+    {
+      "split": "valid_unseen",
+      "framework_id": "react_cr",
+      "framework": "ReAct + Context Retrieval (CR)",
+      "success_total": "2 / 3",
+      "accuracy": 0.6666666666666666,
+      "avg_steps_per_trial": 11.333333333333334,
+      "avg_steps_per_task": 11.333333333333334,
+      "attempt_count": 3,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/alfworld_runs/memory_retrieval_v2/memory_agent_runs_smoke_embed_fix_escalated/unseen/react_cr",
+      "gain_from_base_react": 0.6666666666666666
+    },
+    {
+      "split": "valid_unseen",
+      "framework_id": "react_tr",
+      "framework": "ReAct + Tool Retrieval (TR)",
+      "success_total": "2 / 3",
+      "accuracy": 0.6666666666666666,
+      "avg_steps_per_trial": 27.333333333333332,
+      "avg_steps_per_task": 27.333333333333332,
+      "attempt_count": 3,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/alfworld_runs/memory_retrieval_v2/memory_agent_runs_smoke_embed_fix_escalated/unseen/react_tr",
+      "gain_from_base_react": 0.6666666666666666
+    },
+    {
+      "split": "valid_unseen",
+      "framework_id": "react_cr_tr",
+      "framework": "react + CR + TR",
+      "success_total": "2 / 3",
+      "accuracy": 0.6666666666666666,
+      "avg_steps_per_trial": 17.333333333333332,
+      "avg_steps_per_task": 17.333333333333332,
+      "attempt_count": 3,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/alfworld_runs/memory_retrieval_v2/memory_agent_runs_smoke_embed_fix_escalated/unseen/react_cr_tr",
+      "gain_from_base_react": 0.6666666666666666
+    }
+  ]
+}

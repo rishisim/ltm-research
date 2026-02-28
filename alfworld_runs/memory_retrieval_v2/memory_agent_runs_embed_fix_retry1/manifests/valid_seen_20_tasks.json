@@ -1,0 +1,27 @@
+{
+  "split": "valid_seen",
+  "num_tasks_requested": 20,
+  "num_tasks_selected": 20,
+  "tasks": [
+    "valid_seen:look_at_obj_in_light-AlarmClock-None-DeskLamp-323/trial_T20190909_044715_250790",
+    "valid_seen:look_at_obj_in_light-Bowl-None-DeskLamp-301/trial_T20190909_150719_492274",
+    "valid_seen:look_at_obj_in_light-Bowl-None-DeskLamp-316/trial_T20190908_230702_962704",
+    "valid_seen:look_at_obj_in_light-Box-None-DeskLamp-205/trial_T20190907_074425_330493",
+    "valid_seen:look_at_obj_in_light-CD-None-DeskLamp-302/trial_T20190907_154618_526741",
+    "valid_seen:look_at_obj_in_light-CD-None-DeskLamp-314/trial_T20190907_114323_767231",
+    "valid_seen:look_at_obj_in_light-CD-None-DeskLamp-320/trial_T20190907_224451_655673",
+    "valid_seen:look_at_obj_in_light-KeyChain-None-DeskLamp-327/trial_T20190906_202601_548273",
+    "valid_seen:look_at_obj_in_light-Laptop-None-DeskLamp-328/trial_T20190908_201550_622420",
+    "valid_seen:look_at_obj_in_light-Pillow-None-DeskLamp-302/trial_T20190909_150916_682139",
+    "valid_seen:look_at_obj_in_light-Pillow-None-DeskLamp-323/trial_T20190908_053153_077977",
+    "valid_seen:look_at_obj_in_light-Statue-None-DeskLamp-216/trial_T20190909_193045_208933",
+    "valid_seen:look_at_obj_in_light-Vase-None-DeskLamp-303/trial_T20190907_150418_457594",
+    "valid_seen:pick_and_place_simple-Book-None-SideTable-329/trial_T20190908_050633_745514",
+    "valid_seen:pick_and_place_simple-Book-None-Sofa-229/trial_T20190907_042856_259139",
+    "valid_seen:pick_and_place_simple-Bowl-None-CoffeeTable-201/trial_T20190907_171639_045329",
+    "valid_seen:pick_and_place_simple-Box-None-Dresser-224/trial_T20190907_164104_229696",
+    "valid_seen:pick_and_place_simple-Candle-None-Cart-401/trial_T20190909_081908_677973",
+    "valid_seen:pick_and_place_simple-Candle-None-Toilet-407/trial_T20190909_055248_059513",
+    "valid_seen:pick_and_place_simple-Candle-None-Toilet-429/trial_T20190908_052232_887934"
+  ]
+}

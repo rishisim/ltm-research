@@ -1,0 +1,16 @@
+{
+  "rows": [
+    {
+      "split": "valid_unseen",
+      "framework_id": "react_cr_tr",
+      "framework": "react + CR + TR",
+      "success_total": "1 / 1",
+      "accuracy": 1.0,
+      "avg_steps_per_trial": 9.0,
+      "avg_steps_per_task": 9.0,
+      "attempt_count": 1,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/alfworld_runs/memory_retrieval_v2/memory_agent_runs_smoke_issue_fix_probe/unseen/react_cr_tr",
+      "gain_from_base_react": 1.0
+    }
+  ]
+}

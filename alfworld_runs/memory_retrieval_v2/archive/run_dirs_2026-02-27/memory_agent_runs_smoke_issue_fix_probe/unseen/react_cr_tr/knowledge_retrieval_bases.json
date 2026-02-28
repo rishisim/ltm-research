@@ -1,0 +1,573 @@
+{
+  "look_at_obj_in_light-AlarmClock-None-DeskLamp-308/trial_T20190908_222917_366542": {
+    "query": "examine the alarmclock with the desklamp.",
+    "metadata": {
+      "pick_learning_count": 18,
+      "max_learning_count": 12,
+      "actual_selected_count": 18,
+      "knowledge_retrieval_base_count": 22,
+      "top_similar_tasks": [
+        {
+          "task_desc": "look at alarmclock under the desklamp.",
+          "similarity_score": 0.9085913103858236,
+          "learning_count": 2,
+          "validated_learning_count": 2
+        },
+        {
+          "task_desc": "examine the watch with the desklamp.",
+          "similarity_score": 0.8784177903745023,
+          "learning_count": 2,
+          "validated_learning_count": 2
+        },
+        {
+          "task_desc": "examine the cellphone with the desklamp.",
+          "similarity_score": 0.8710759954624959,
+          "learning_count": 3,
+          "validated_learning_count": 3
+        },
+        {
+          "task_desc": "examine the tissuebox with the desklamp.",
+          "similarity_score": 0.8622388650206516,
+          "learning_count": 3,
+          "validated_learning_count": 3
+        },
+        {
+          "task_desc": "examine the pillow with the desklamp.",
+          "similarity_score": 0.8536605279838139,
+          "learning_count": 12,
+          "validated_learning_count": 12
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.8536605279838139,
+        "learning_count": 12,
+        "kb_index": 33,
+        "learning_text": "If an object is stationary, move the other required object to its location.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "desklamp",
+        "verbs": "take, move",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "34",
+        "issue_ref": {
+          "issue_text": "Failed to take or move the desklamp, indicating it is stationary.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "issue_trial_num": "1",
+          "issue_step_range": "3-3"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "10-10"
+        },
+        "ranking_score": 0.8536605279838139
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.8536605279838139,
+        "learning_count": 12,
+        "kb_index": 34,
+        "learning_text": "Go to the object's location before attempting to take it.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "pillow",
+        "verbs": "take, go to",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "35",
+        "issue_ref": {
+          "issue_text": "Failed to take pillow from bed because agent was not at its location.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "issue_trial_num": "1",
+          "issue_step_range": "4-4"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "11-12"
+        },
+        "ranking_score": 0.8536605279838139
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.8536605279838139,
+        "learning_count": 12,
+        "kb_index": 36,
+        "learning_text": "Ensure the desklamp is present and active when attempting to examine an object.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "pillow, desklamp",
+        "verbs": "examine, use",
+        "goal_phase": "RECOVER",
+        "unique_id": "37",
+        "issue_ref": {
+          "issue_text": "Attempted to examine pillow without the desklamp present or active.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "issue_trial_num": "1",
+          "issue_step_range": "8-28"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "15-16"
+        },
+        "ranking_score": 0.8536605279838139
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.8536605279838139,
+        "learning_count": 12,
+        "kb_index": 37,
+        "learning_text": "Bring the pillow to the desklamp's location before attempting examination.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "pillow, desklamp",
+        "verbs": "examine, go to, take",
+        "goal_phase": "RECOVER",
+        "unique_id": "38",
+        "issue_ref": {
+          "issue_text": "Failed to examine pillow with desklamp because objects were not co-located.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "issue_trial_num": "1",
+          "issue_step_range": "9-22"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "10-13"
+        },
+        "ranking_score": 0.8536605279838139
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.8536605279838139,
+        "learning_count": 12,
+        "kb_index": 39,
+        "learning_text": "To examine an object with a desklamp, hold the object and use the desklamp.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "pillow, desklamp",
+        "verbs": "examine with, use on, use",
+        "goal_phase": "RECOVER",
+        "unique_id": "40",
+        "issue_ref": {
+          "issue_text": "Used 'examine with' or 'use on' commands instead of 'use' for desklamp examination.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "issue_trial_num": "1",
+          "issue_step_range": "20-20"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "evidence_trial_num": "2",
+          "evidence_step_range": "15-16"
+        },
+        "ranking_score": 0.8536605279838139
+      },
+      {
+        "task_desc": "look at alarmclock under the desklamp.",
+        "similarity_score": 0.9085913103858236,
+        "learning_count": 2,
+        "kb_index": 0,
+        "learning_text": "Use the 'use [object]' command to successfully turn on the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "desklamp",
+        "verbs": "turn on, use, look at, examine",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "1",
+        "issue_ref": {
+          "issue_text": "Repeated attempts to turn on, use, or examine desklamp 1 had no effect.",
+          "issue_task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-314/trial_T20190908_042454_725701",
+          "issue_trial_num": "1",
+          "issue_step_range": "5-12"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-314/trial_T20190908_042454_725701",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "13-13"
+        },
+        "ranking_score": 0.8177321793472413
+      },
+      {
+        "task_desc": "look at alarmclock under the desklamp.",
+        "similarity_score": 0.9085913103858236,
+        "learning_count": 2,
+        "kb_index": 1,
+        "learning_text": "First, pick up the alarmclock before attempting to look at it under the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "alarmclock, desklamp",
+        "verbs": "look at, take",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "2",
+        "issue_ref": {
+          "issue_text": "Directly attempting to 'look at alarmclock under desklamp' failed, even with the lamp on.",
+          "issue_task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-314/trial_T20190908_042454_725701",
+          "issue_trial_num": "1",
+          "issue_step_range": "3-16"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-314/trial_T20190908_042454_725701",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "19-19"
+        },
+        "ranking_score": 0.8177321793472413
+      },
+      {
+        "task_desc": "examine the watch with the desklamp.",
+        "similarity_score": 0.8784177903745023,
+        "learning_count": 2,
+        "kb_index": 51,
+        "learning_text": "Ensure the desklamp is turned on before attempting to examine an object with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "watch, desklamp",
+        "verbs": "examine",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "52",
+        "issue_ref": {
+          "issue_text": "Attempted to examine watch with desklamp when desklamp was off.",
+          "issue_task_id": "look_at_obj_in_light-Watch-None-DeskLamp-205/trial_T20190907_001948_509721",
+          "issue_trial_num": "1",
+          "issue_step_range": "15-15"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Watch-None-DeskLamp-205/trial_T20190907_001948_509721",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "19-19"
+        },
+        "ranking_score": 0.7905760113370521
+      },
+      {
+        "task_desc": "examine the watch with the desklamp.",
+        "similarity_score": 0.8784177903745023,
+        "learning_count": 2,
+        "kb_index": 52,
+        "learning_text": "Use the 'use' command to activate the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "desklamp",
+        "verbs": "turn on",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "53",
+        "issue_ref": {
+          "issue_text": "Used 'turn on' command to activate desklamp, which had no effect.",
+          "issue_task_id": "look_at_obj_in_light-Watch-None-DeskLamp-205/trial_T20190907_001948_509721",
+          "issue_trial_num": "1",
+          "issue_step_range": "17-17"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Watch-None-DeskLamp-205/trial_T20190907_001948_509721",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "19-19"
+        },
+        "ranking_score": 0.7905760113370521
+      },
+      {
+        "task_desc": "examine the cellphone with the desklamp.",
+        "similarity_score": 0.8710759954624959,
+        "learning_count": 3,
+        "kb_index": 5,
+        "learning_text": "To examine an object, it must first be picked up or held by the agent.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "CellPhone, DeskLamp",
+        "verbs": "examine, go to, look_at, take, use",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "6",
+        "issue_ref": {
+          "issue_text": "The 'examine' action failed repeatedly even with the desklamp on.",
+          "issue_task_id": "look_at_obj_in_light-CellPhone-None-DeskLamp-316",
+          "issue_trial_num": "1",
+          "issue_step_range": "2-6"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-CellPhone-None-DeskLamp-316",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "7-7"
+        },
+        "ranking_score": 0.7839683959162463
+      },
+      {
+        "task_desc": "examine the cellphone with the desklamp.",
+        "similarity_score": 0.8710759954624959,
+        "learning_count": 3,
+        "kb_index": 370,
+        "learning_text": "Turn on the desklamp using the 'use' command before attempting to examine objects with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cellphone, desklamp",
+        "verbs": "examine",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "371",
+        "issue_ref": {
+          "issue_text": "Attempted to examine with desklamp while it was off, resulting in no effect.",
+          "issue_task_id": "look_at_obj_in_light-CellPhone-None-DeskLamp-316/trial_T20190907_075452_465579",
+          "issue_trial_num": "1",
+          "issue_step_range": "2-2"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-CellPhone-None-DeskLamp-316/trial_T20190907_075452_465579",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "3-3"
+        },
+        "ranking_score": 0.7839683959162463
+      },
+      {
+        "task_desc": "examine the cellphone with the desklamp.",
+        "similarity_score": 0.8710759954624959,
+        "learning_count": 3,
+        "kb_index": 371,
+        "learning_text": "Acquire the object (cellphone) by taking it before attempting to examine it with another object.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "cellphone, desklamp",
+        "verbs": "examine",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "372",
+        "issue_ref": {
+          "issue_text": "Failed repeatedly to examine cellphone with desklamp while cellphone was on the desk.",
+          "issue_task_id": "look_at_obj_in_light-CellPhone-None-DeskLamp-316/trial_T20190907_075452_465579",
+          "issue_trial_num": "1",
+          "issue_step_range": "2-6"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-CellPhone-None-DeskLamp-316/trial_T20190907_075452_465579",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "7-7"
+        },
+        "ranking_score": 0.7839683959162463
+      },
+      {
+        "task_desc": "examine the tissuebox with the desklamp.",
+        "similarity_score": 0.8622388650206516,
+        "learning_count": 3,
+        "kb_index": 48,
+        "learning_text": "Activate the desklamp using the 'use' verb before examining an object.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "tissuebox, desklamp",
+        "verbs": "examine, use",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "49",
+        "issue_ref": {
+          "issue_text": "Attempted to examine object with an inactive desklamp.",
+          "issue_task_id": "look_at_obj_in_light-TissueBox-None-DeskLamp-328/trial_T20190907_201322_516201",
+          "issue_trial_num": "1",
+          "issue_step_range": "3-3"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-TissueBox-None-DeskLamp-328/trial_T20190907_201322_516201",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "6-6"
+        },
+        "ranking_score": 0.7760149785185865
+      },
+      {
+        "task_desc": "examine the tissuebox with the desklamp.",
+        "similarity_score": 0.8622388650206516,
+        "learning_count": 3,
+        "kb_index": 49,
+        "learning_text": "Use the 'use' verb to activate the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "desklamp",
+        "verbs": "turn on, use",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "50",
+        "issue_ref": {
+          "issue_text": "Used incorrect verb 'turn on' to activate the desklamp.",
+          "issue_task_id": "look_at_obj_in_light-TissueBox-None-DeskLamp-328/trial_T20190907_201322_516201",
+          "issue_trial_num": "1",
+          "issue_step_range": "5-5"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-TissueBox-None-DeskLamp-328/trial_T20190907_201322_516201",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "6-6"
+        },
+        "ranking_score": 0.7760149785185865
+      },
+      {
+        "task_desc": "examine the tissuebox with the desklamp.",
+        "similarity_score": 0.8622388650206516,
+        "learning_count": 3,
+        "kb_index": 50,
+        "learning_text": "Take the object into inventory before attempting to examine it with a tool.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "tissuebox, desklamp",
+        "verbs": "examine, look at, take",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "51",
+        "issue_ref": {
+          "issue_text": "Failed to examine object with active desklamp; object not in inventory.",
+          "issue_task_id": "look_at_obj_in_light-TissueBox-None-DeskLamp-328/trial_T20190907_201322_516201",
+          "issue_trial_num": "1",
+          "issue_step_range": "8-16"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-TissueBox-None-DeskLamp-328/trial_T20190907_201322_516201",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "18-18"
+        },
+        "ranking_score": 0.7760149785185865
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.8536605279838139,
+        "learning_count": 12,
+        "kb_index": 29,
+        "learning_text": "Rely on 'go to' observations to identify objects present at a location.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "pillow, desklamp",
+        "verbs": "look at, examine",
+        "goal_phase": "SEARCH",
+        "unique_id": "30",
+        "issue_ref": {
+          "issue_text": "Attempted to 'look at' a location, which had no effect for finding objects.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-216",
+          "issue_trial_num": "1",
+          "issue_step_range": "2-2"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-216",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "3-3"
+        },
+        "ranking_score": 0.7682944751854325
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.8536605279838139,
+        "learning_count": 12,
+        "kb_index": 30,
+        "learning_text": "To examine an object with a light source, 'use' the light source directly.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "pillow, desklamp",
+        "verbs": "look at, examine",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "31",
+        "issue_ref": {
+          "issue_text": "Used 'examine X with Y' command, which was ineffective for the task.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-216",
+          "issue_trial_num": "1",
+          "issue_step_range": "6-6"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-216",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "11-11"
+        },
+        "ranking_score": 0.7682944751854325
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.8536605279838139,
+        "learning_count": 12,
+        "kb_index": 31,
+        "learning_text": "Do not 'take' the desklamp; instead, 'use' it in its fixed location.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "pillow, desklamp",
+        "verbs": "look at, examine",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "32",
+        "issue_ref": {
+          "issue_text": "Attempted to 'take' the desklamp, which was not the correct action for its use.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-216",
+          "issue_trial_num": "1",
+          "issue_step_range": "7-7"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-216",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "11-11"
+        },
+        "ranking_score": 0.7682944751854325
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.8536605279838139,
+        "learning_count": 12,
+        "kb_index": 32,
+        "learning_text": "Turn on the desklamp before attempting to examine objects with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "desklamp, pillow",
+        "verbs": "examine, look at, use",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "33",
+        "issue_ref": {
+          "issue_text": "Failed to examine object with desklamp because it was off.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-306",
+          "issue_trial_num": "1",
+          "issue_step_range": "7-7"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-306",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "10-10"
+        },
+        "ranking_score": 0.7682944751854325
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.8536605279838139,
+        "learning_count": 12,
+        "kb_index": 35,
+        "learning_text": "Use the 'use' command to turn on the desklamp.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "desklamp",
+        "verbs": "turn on, use",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "36",
+        "issue_ref": {
+          "issue_text": "Used 'turn on' command instead of 'use' to activate the desklamp.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "issue_trial_num": "1",
+          "issue_step_range": "5-5"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "6-6"
+        },
+        "ranking_score": 0.7682944751854325
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.8536605279838139,
+        "learning_count": 12,
+        "kb_index": 38,
+        "learning_text": "Go to the desklamp's location before attempting to use it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "desklamp",
+        "verbs": "use, go to",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "39",
+        "issue_ref": {
+          "issue_text": "Attempted to use desklamp from an incorrect location (bed).",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "issue_trial_num": "1",
+          "issue_step_range": "14-21"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-307/trial_T20190908_190608_801964",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "26-26"
+        },
+        "ranking_score": 0.7682944751854325
+      },
+      {
+        "task_desc": "examine the pillow with the desklamp.",
+        "similarity_score": 0.8536605279838139,
+        "learning_count": 12,
+        "kb_index": 374,
+        "learning_text": "Turn on the desklamp before attempting to examine objects with it.",
+        "valid_level": "VALID_SAME_TRIAL",
+        "obj_type": "Pillow, DeskLamp",
+        "verbs": "examine",
+        "goal_phase": "TRANSFORM",
+        "unique_id": "375",
+        "issue_ref": {
+          "issue_text": "Attempted to examine object with desklamp without turning it on.",
+          "issue_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-306/trial_T20190909_075045_578840",
+          "issue_trial_num": "1",
+          "issue_step_range": "7-7"
+        },
+        "evidence_ref": {
+          "evidence_task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-306/trial_T20190909_075045_578840",
+          "evidence_trial_num": "1",
+          "evidence_step_range": "10-10"
+        },
+        "ranking_score": 0.7682944751854325
+      }
+    ]
+  }
+}
