@@ -1,0 +1,2047 @@
+[
+  {
+    "task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-323/trial_T20190909_044715_250790",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at alarmclock under the desklamp.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find and take an alarmclock, then find a desklamp, go to its location, and then use the desklamp.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 2, a book 1, a bowl 1, a cd 2, a desklamp 1, a mug 2, a mug 1, a pen 2, and a pen 1."
+      },
+      {
+        "step": 3,
+        "action": "think: I have found an alarmclock (alarmclock 2) and a desklamp (desklamp 1) on the desk 1. The task is to \"look at alarmclock under the desklamp\". Since both are on the desk 1, I can directly use the desklamp. I don't need to take the alarmclock.",
+        "observation": "OK."
+      },
+      {
+        "step": 4,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1."
+      },
+      {
+        "step": 5,
+        "action": "think: The task is to \"look at alarmclock under the desklamp\". I have already turned on the desklamp 1. The alarmclock 2 is on the desk 1, which is the same location as the desklamp 1. So, the alarmclock 2 is now \"under the desklamp\". I just need to look at it.",
+        "observation": "OK."
+      },
+      {
+        "step": 6,
+        "action": "look at alarmclock 2",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 7,
+        "action": "think: The previous example involved taking the object (bowl) first, then going to the desklamp's location, and finally using the desklamp. In my current situation, both the alarmclock and desklamp are on the desk 1. I initially thought I didn't need to take the alarmclock because it was already in place. However, the previous example took",
+        "observation": "OK."
+      },
+      {
+        "step": 8,
+        "action": "take alarmclock 2 from desk 1",
+        "observation": "You pick up the alarmclock 2 from the desk 1."
+      }
+    ],
+    "success": true,
+    "step_num": 8
+  },
+  {
+    "task_id": "look_at_obj_in_light-Bowl-None-DeskLamp-301/trial_T20190909_150719_492274",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the bowl with the desklamp.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a bowl, take it, then find a desklamp, and finally examine the bowl with the desklamp. The previous example suggests that \"use desklamp\" is the final action after taking the bowl.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "think: First, I need to find a bowl. I will check the shelves first, starting from shelf 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 3,
+        "action": "go to shelf 1",
+        "observation": "You arrive at shelf 1. On the shelf 1, you see a pen 1, and a pencil 1."
+      },
+      {
+        "step": 4,
+        "action": "go to shelf 2",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 5,
+        "action": "go to shelf 3",
+        "observation": "You arrive at shelf 3. On the shelf 3, you see nothing."
+      },
+      {
+        "step": 6,
+        "action": "go to shelf 2",
+        "observation": "You arrive at shelf 2. On the shelf 2, you see nothing."
+      },
+      {
+        "step": 7,
+        "action": "go to shelf 4",
+        "observation": "You arrive at shelf 4. On the shelf 4, you see nothing."
+      },
+      {
+        "step": 8,
+        "action": "go to shelf 5",
+        "observation": "You arrive at shelf 5. On the shelf 5, you see a statue 1."
+      },
+      {
+        "step": 9,
+        "action": "go to shelf 6",
+        "observation": "You arrive at shelf 6. On the shelf 6, you see nothing."
+      },
+      {
+        "step": 10,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 1, a keychain 1, and a mug 1."
+      },
+      {
+        "step": 11,
+        "action": "take bowl 1 from desk 1",
+        "observation": "You pick up the bowl 1 from the desk 1."
+      },
+      {
+        "step": 12,
+        "action": "think: I have taken the bowl 1. Now I need to find a desklamp. I will check the desk 1 first.",
+        "observation": "OK."
+      },
+      {
+        "step": 13,
+        "action": "go to desk 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 14,
+        "action": "On the desk 1, you see a alarmclock 1, a keychain 1, and a mug 1.",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 15,
+        "action": "think: I have taken the bowl 1. I need to find a desklamp. I already checked desk 1 and it wasn't there. I will check dresser 1 next.",
+        "observation": "OK."
+      },
+      {
+        "step": 16,
+        "action": "go to dresser 1",
+        "observation": "You arrive at dresser 1. On the dresser 1, you see a cellphone 2, a creditcard 1, a desklamp 1, a pencil 2, and a watch 1."
+      },
+      {
+        "step": 17,
+        "action": "examine bowl 1 with desklamp 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 18,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1."
+      }
+    ],
+    "success": true,
+    "step_num": 18
+  },
+  {
+    "task_id": "look_at_obj_in_light-Bowl-None-DeskLamp-316/trial_T20190908_230702_962704",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the bowl with the desklamp.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a bowl, take it, then find a desklamp, and finally use the desklamp to examine the bowl.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. On the drawer 1, you see a creditcard 2, and a pencil 1."
+      },
+      {
+        "step": 3,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. The drawer 2 is closed."
+      },
+      {
+        "step": 4,
+        "action": "open drawer 2",
+        "observation": "You open the drawer 2. The drawer 2 is open. In it, you see nothing."
+      },
+      {
+        "step": 5,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 1, a cd 2, a cd 1, a cellphone 1, a desklamp 1, a houseplant 1, a keychain 2, a keychain 1, and a pen 1."
+      },
+      {
+        "step": 6,
+        "action": "think: I have found both the bowl (bowl 1) and the desklamp (desklamp 1) on desk 1. The task is to examine the bowl with the desklamp. Based on the previous example, \"using\" the desklamp is the action that fulfills the \"look at/examine under the desklamp\" part. Since both are on the same desk, I can proceed to use the desklamp.",
+        "observation": "OK."
+      },
+      {
+        "step": 7,
+        "action": "examine bowl 1 with desklamp 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 8,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1."
+      },
+      {
+        "step": 9,
+        "action": "take bowl 1 from desk 1",
+        "observation": "You pick up the bowl 1 from the desk 1."
+      }
+    ],
+    "success": true,
+    "step_num": 9
+  },
+  {
+    "task_id": "look_at_obj_in_light-Box-None-DeskLamp-205/trial_T20190907_074425_330493",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at box under the desklamp.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a box, then find a desklamp, and finally look at the box under the desklamp.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "think: First, I need to find a box. I will check the drawers first, starting with drawer 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 3,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed."
+      },
+      {
+        "step": 4,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see nothing."
+      },
+      {
+        "step": 5,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. The drawer 2 is closed."
+      },
+      {
+        "step": 6,
+        "action": "open drawer 2",
+        "observation": "You open the drawer 2. The drawer 2 is open. In it, you see a watch 1."
+      },
+      {
+        "step": 7,
+        "action": "go to drawer 3",
+        "observation": "You arrive at drawer 3. The drawer 3 is closed."
+      },
+      {
+        "step": 8,
+        "action": "open drawer 3",
+        "observation": "You open the drawer 3. The drawer 3 is open. In it, you see nothing."
+      },
+      {
+        "step": 9,
+        "action": "go to drawer 4",
+        "observation": "You arrive at drawer 4. The drawer 4 is closed."
+      },
+      {
+        "step": 10,
+        "action": "open drawer 4",
+        "observation": "You open the drawer 4. The drawer 4 is open. In it, you see a creditcard 2."
+      },
+      {
+        "step": 11,
+        "action": "think: I have checked all drawers and haven't found a box. I will now check other furniture items. I'll start with diningtable 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 12,
+        "action": "go to diningtable 1",
+        "observation": "You arrive at diningtable 1. On the diningtable 1, you see a box 1, a laptop 2, and a statue 3."
+      },
+      {
+        "step": 13,
+        "action": "think: I have found a box (box 1). Now I need to find a desklamp. I will check the sidetables first, starting with sidetable 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 14,
+        "action": "go to sidetable 1",
+        "observation": "You arrive at sidetable 1. On the sidetable 1, you see a statue 1."
+      },
+      {
+        "step": 15,
+        "action": "go to sidetable 2",
+        "observation": "You arrive at sidetable 2. On the sidetable 2, you see a creditcard 3, a statue 2, and a watch 2."
+      },
+      {
+        "step": 16,
+        "action": "go to sidetable 3",
+        "observation": "You arrive at sidetable 3. On the sidetable 3, you see a desklamp 1, and a houseplant 1."
+      },
+      {
+        "step": 17,
+        "action": "think: I have found the box (box 1) and the desklamp (desklamp 1). According to the previous example, the next step is to use the desklamp.",
+        "observation": "OK."
+      },
+      {
+        "step": 18,
+        "action": "go to diningtable 1",
+        "observation": "You arrive at diningtable 1. On the diningtable 1, you see a box 1, a laptop 2, and a statue 3."
+      },
+      {
+        "step": 19,
+        "action": "take box 1 from diningtable 1",
+        "observation": "You pick up the box 1 from the diningtable 1."
+      },
+      {
+        "step": 20,
+        "action": "go to sidetable 3",
+        "observation": "You arrive at sidetable 3. On the sidetable 3, you see a desklamp 1, and a houseplant 1."
+      },
+      {
+        "step": 21,
+        "action": "put box 1 on sidetable 3",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 22,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1."
+      }
+    ],
+    "success": true,
+    "step_num": 22
+  },
+  {
+    "task_id": "look_at_obj_in_light-CD-None-DeskLamp-302/trial_T20190907_154618_526741",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the cd with the desklamp.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a cd, find a desklamp, take the cd, and then examine the cd with the desklamp.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a book 3, a creditcard 3, a creditcard 2, a pencil 3, a pencil 2, and a pencil 1."
+      },
+      {
+        "step": 3,
+        "action": "go to sidetable 1",
+        "observation": "You arrive at sidetable 1. On the sidetable 1, you see a bowl 1."
+      },
+      {
+        "step": 4,
+        "action": "go to sidetable 2",
+        "observation": "You arrive at sidetable 2. On the sidetable 2, you see a book 2, a desklamp 1, and a pen 1."
+      },
+      {
+        "step": 5,
+        "action": "think: I have checked desk 1, sidetable 1, and sidetable 2 for a cd. I haven't found it yet. I should continue searching other locations. A cd is likely to be on a shelf, in a drawer, or on the bed. I will check shelf 1 next.",
+        "observation": "OK."
+      },
+      {
+        "step": 6,
+        "action": "go to shelf 1",
+        "observation": "You arrive at shelf 1. On the shelf 1, you see a cellphone 1."
+      },
+      {
+        "step": 7,
+        "action": "go to shelf 2",
+        "observation": "You arrive at shelf 2. On the shelf 2, you see a bowl 2, and a keychain 1."
+      },
+      {
+        "step": 8,
+        "action": "go to shelf 3",
+        "observation": "You arrive at shelf 3. On the shelf 3, you see a cd 1."
+      },
+      {
+        "step": 9,
+        "action": "take cd 1 from shelf 3",
+        "observation": "You pick up the cd 1 from the shelf 3."
+      },
+      {
+        "step": 10,
+        "action": "think: I have found the cd (cd 1) and taken it. I also know that a desklamp (desklamp 1) is on sidetable 2. Now I need to go to sidetable 2 and then examine the cd with the desklamp.",
+        "observation": "OK."
+      },
+      {
+        "step": 11,
+        "action": "go to sidetable 2",
+        "observation": "You arrive at sidetable 2. On the sidetable 2, you see a book 2, a desklamp 1, and a pen 1."
+      },
+      {
+        "step": 12,
+        "action": "examine cd 1 with desklamp 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 13,
+        "action": "think: The previous attempt to `examine cd 1 with desklamp 1` failed because \"Nothing happens.\" This often means the desklamp needs to be activated or turned on first. In the example, `use desklamp 1` was used to turn it on. I should try to turn on the desklamp first, and then examine the cd with it.",
+        "observation": "OK."
+      },
+      {
+        "step": 14,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1."
+      }
+    ],
+    "success": true,
+    "step_num": 14
+  },
+  {
+    "task_id": "look_at_obj_in_light-CD-None-DeskLamp-314/trial_T20190907_114323_767231",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at cd under the desklamp.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a cd, then find a desklamp, and finally look at the cd under the desklamp.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a book 1, a desklamp 1, a keychain 1, and a pencil 3."
+      },
+      {
+        "step": 3,
+        "action": "look at cd 1 under desklamp 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 4,
+        "action": "think: I have found a desklamp (1) on desk 1. However, I have not found a cd yet. The previous action failed because I tried to look at a cd that I don't have or haven't located. I need to find a cd first. I will check the available objects for a cd. I will start by checking the drawers.",
+        "observation": "OK."
+      },
+      {
+        "step": 5,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed."
+      },
+      {
+        "step": 6,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see a creditcard 1, and a pen 1."
+      },
+      {
+        "step": 7,
+        "action": "think: I have checked drawer 1 and it does not contain a cd. I will now check drawer 2.",
+        "observation": "OK."
+      },
+      {
+        "step": 8,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. The drawer 2 is closed."
+      },
+      {
+        "step": 9,
+        "action": "open drawer 2",
+        "observation": "You open the drawer 2. The drawer 2 is open. In it, you see nothing."
+      },
+      {
+        "step": 10,
+        "action": "think: I have checked drawer 2 and it does not contain a cd. I will now check drawer 3.",
+        "observation": "OK."
+      },
+      {
+        "step": 11,
+        "action": "go to drawer 3",
+        "observation": "You arrive at drawer 3. The drawer 3 is closed."
+      },
+      {
+        "step": 12,
+        "action": "open drawer 3",
+        "observation": "You open the drawer 3. The drawer 3 is open. In it, you see a pen 3."
+      },
+      {
+        "step": 13,
+        "action": "think: I have checked drawer 3 and it does not contain a cd. I will now check drawer 4.",
+        "observation": "OK."
+      },
+      {
+        "step": 14,
+        "action": "go to drawer 4",
+        "observation": "You arrive at drawer 4. The drawer 4 is closed."
+      },
+      {
+        "step": 15,
+        "action": "open drawer 4",
+        "observation": "You open the drawer 4. The drawer 4 is open. In it, you see a cellphone 1, a creditcard 3, and a creditcard 2."
+      },
+      {
+        "step": 16,
+        "action": "think: I have checked drawer 4 and it does not contain a cd. I will now check drawer 5.",
+        "observation": "OK."
+      },
+      {
+        "step": 17,
+        "action": "go to drawer 5",
+        "observation": "You arrive at drawer 5. The drawer 5 is closed."
+      },
+      {
+        "step": 18,
+        "action": "open drawer 5",
+        "observation": "You open the drawer 5. The drawer 5 is open. In it, you see a cd 3, and a cd 2."
+      },
+      {
+        "step": 19,
+        "action": "take cd 3 from drawer 5",
+        "observation": "You pick up the cd 3 from the drawer 5."
+      },
+      {
+        "step": 20,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a book 1, a desklamp 1, a keychain 1, and a pencil 3."
+      },
+      {
+        "step": 21,
+        "action": "look at cd 3 under desklamp 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 22,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1."
+      }
+    ],
+    "success": true,
+    "step_num": 22
+  },
+  {
+    "task_id": "look_at_obj_in_light-CD-None-DeskLamp-320/trial_T20190907_224451_655673",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at cd under the desklamp.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a cd, then find a desklamp, and finally look at the cd under the desklamp.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a cd 1, a cellphone 1, a creditcard 2, and a creditcard 1."
+      },
+      {
+        "step": 3,
+        "action": "think: I have found a cd (cd 1). Now I need to find a desklamp. I will check desk 2 first.",
+        "observation": "OK."
+      },
+      {
+        "step": 4,
+        "action": "go to desk 2",
+        "observation": "You arrive at desk 2. On the desk 2, you see a book 1, a pen 2, a pen 1, and a pencil 2."
+      },
+      {
+        "step": 5,
+        "action": "think: I did not find a desklamp on desk 2. I will check the shelves next, starting with shelf 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 6,
+        "action": "go to shelf 1",
+        "observation": "You arrive at shelf 1. On the shelf 1, you see a cd 2."
+      },
+      {
+        "step": 7,
+        "action": "go to shelf 2",
+        "observation": "You arrive at shelf 2. On the shelf 2, you see a alarmclock 1, and a desklamp 1."
+      },
+      {
+        "step": 8,
+        "action": "think: I have found a desklamp (desklamp 1) on shelf 2. I previously found a cd (cd 1) on desk 1. To complete the task, I need to bring the cd to the desklamp. First, I will go to desk 1 to pick up the cd.",
+        "observation": "OK."
+      },
+      {
+        "step": 9,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a cd 1, a cellphone 1, a creditcard 2, and a creditcard 1."
+      },
+      {
+        "step": 10,
+        "action": "take cd 1 from desk 1",
+        "observation": "You pick up the cd 1 from the desk 1."
+      },
+      {
+        "step": 11,
+        "action": "go to shelf 2",
+        "observation": "You arrive at shelf 2. On the shelf 2, you see a alarmclock 1, and a desklamp 1."
+      },
+      {
+        "step": 12,
+        "action": "look at cd 1 under desklamp 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 13,
+        "action": "think: I have the cd 1 and I am at shelf 2 where the desklamp 1 is. The previous example showed that the desklamp was \"used\" (turned on). I should try turning on the desklamp first, and then the task might be considered complete, or I might need to try the \"look at\" action again.",
+        "observation": "OK."
+      },
+      {
+        "step": 14,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1."
+      }
+    ],
+    "success": true,
+    "step_num": 14
+  },
+  {
+    "task_id": "look_at_obj_in_light-KeyChain-None-DeskLamp-327/trial_T20190906_202601_548273",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the keychain with the desklamp.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a keychain, then find a desklamp, and finally examine the keychain with the desklamp.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a book 1, and a laptop 1."
+      },
+      {
+        "step": 3,
+        "action": "think: I need to find a keychain. I've checked desk 1 and it's not there. I will now check the drawers, starting with drawer 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 4,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed."
+      },
+      {
+        "step": 5,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see nothing."
+      },
+      {
+        "step": 6,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. The drawer 2 is closed."
+      },
+      {
+        "step": 7,
+        "action": "open drawer 2",
+        "observation": "You open the drawer 2. The drawer 2 is open. In it, you see a cd 1."
+      },
+      {
+        "step": 8,
+        "action": "think: I need to find a keychain. I've checked desk 1, drawer 1, and drawer 2. I will now check drawer 3.",
+        "observation": "OK."
+      },
+      {
+        "step": 9,
+        "action": "go to drawer 3",
+        "observation": "You arrive at drawer 3. The drawer 3 is closed."
+      },
+      {
+        "step": 10,
+        "action": "open drawer 3",
+        "observation": "You open the drawer 3. The drawer 3 is open. In it, you see nothing."
+      },
+      {
+        "step": 11,
+        "action": "go to drawer 4",
+        "observation": "You arrive at drawer 4. The drawer 4 is closed."
+      },
+      {
+        "step": 12,
+        "action": "open drawer 4",
+        "observation": "You open the drawer 4. The drawer 4 is open. In it, you see a creditcard 2."
+      },
+      {
+        "step": 13,
+        "action": "think: I need to find a keychain. I've checked desk 1, drawer 1, drawer 2, drawer 3, and drawer 4. I will now check drawer 5.",
+        "observation": "OK."
+      },
+      {
+        "step": 14,
+        "action": "go to drawer 5",
+        "observation": "You arrive at drawer 5. The drawer 5 is closed."
+      },
+      {
+        "step": 15,
+        "action": "open drawer 5",
+        "observation": "You open the drawer 5. The drawer 5 is open. In it, you see a creditcard 3."
+      },
+      {
+        "step": 16,
+        "action": "go to drawer 6",
+        "observation": "You arrive at drawer 6. The drawer 6 is closed."
+      },
+      {
+        "step": 17,
+        "action": "open drawer 6",
+        "observation": "You open the drawer 6. The drawer 6 is open. In it, you see nothing."
+      },
+      {
+        "step": 18,
+        "action": "go to drawer 7",
+        "observation": "You arrive at drawer 7. On the drawer 7, you see a cd 2, and a keychain 4."
+      },
+      {
+        "step": 19,
+        "action": "think: I have found the keychain 4. Now I need to take it.",
+        "observation": "OK."
+      },
+      {
+        "step": 20,
+        "action": "take keychain 4 from drawer 7",
+        "observation": "You pick up the keychain 4 from the drawer 7."
+      },
+      {
+        "step": 21,
+        "action": "think: I have the keychain 4. Now I need to find a desklamp. I will check the dresser 1 first, then the shelves, and finally the bed or garbagecan if necessary.",
+        "observation": "OK."
+      },
+      {
+        "step": 22,
+        "action": "go to dresser 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 23,
+        "action": "look at dresser 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 24,
+        "action": "go to dresser 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 25,
+        "action": "think: I have the keychain 4. I need to find a desklamp. My previous attempts to interact with dresser 1 were unsuccessful. I will now check desk 1 again, as a desklamp is very likely to be there.",
+        "observation": "OK."
+      },
+      {
+        "step": 26,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a book 1, and a laptop 1."
+      },
+      {
+        "step": 27,
+        "action": "think: I have the keychain 4. I need to find a desklamp. I have checked desk 1 and dresser 1. I will now check the shelves, starting with shelf 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 28,
+        "action": "go to shelf 1",
+        "observation": "You arrive at shelf 1. On the shelf 1, you see a bowl 1, a keychain 2, and a pen 1."
+      },
+      {
+        "step": 29,
+        "action": "think: I have the keychain 4. I need to find a desklamp. I have checked desk 1, dresser 1, and shelf 1. I will now check shelf 2.",
+        "observation": "OK."
+      },
+      {
+        "step": 30,
+        "action": "go to shelf 2",
+        "observation": "You arrive at shelf 2. On the shelf 2, you see nothing."
+      },
+      {
+        "step": 31,
+        "action": "go to shelf 3",
+        "observation": "You arrive at shelf 3. On the shelf 3, you see a alarmclock 1, a bowl 3, a bowl 2, a creditcard 1, and a keychain 1."
+      },
+      {
+        "step": 32,
+        "action": "think: I have the keychain 4. I need to find a desklamp. I have checked desk 1, dresser 1, shelf 1, and shelf 2. I am currently at shelf 3. I will now check shelf 4.",
+        "observation": "OK."
+      },
+      {
+        "step": 33,
+        "action": "go to shelf 4",
+        "observation": "You arrive at shelf 4. On the shelf 4, you see nothing."
+      },
+      {
+        "step": 34,
+        "action": "go to shelf 5",
+        "observation": "You arrive at shelf 5. On the shelf 5, you see a pencil 1."
+      },
+      {
+        "step": 35,
+        "action": "think: I have the keychain 4. I need to find a desklamp. I have checked desk 1, dresser 1, and shelves 1-5. I will now check the remaining drawers, starting with drawer 8.",
+        "observation": "OK."
+      },
+      {
+        "step": 36,
+        "action": "go to drawer 8",
+        "observation": "You arrive at drawer 8. The drawer 8 is closed."
+      },
+      {
+        "step": 37,
+        "action": "open drawer 8",
+        "observation": "You open the drawer 8. The drawer 8 is open. In it, you see nothing."
+      },
+      {
+        "step": 38,
+        "action": "think: I have the keychain 4. I need to find a desklamp. I have checked desk 1, dresser 1, shelves 1-5, and drawers 1-8. I will now check bed 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 39,
+        "action": "go to bed 1",
+        "observation": "You arrive at bed 1. On the bed 1, you see a book 2, a cellphone 3, a cellphone 2, a pillow 2, and a pillow 1."
+      },
+      {
+        "step": 40,
+        "action": "think: I have the keychain 4. I need to find a desklamp. I have checked desk 1, dresser 1 (without explicitly looking *on* it), shelves 1-5, drawers 1-8, and bed 1. The only remaining location from the initial room description is garbagecan 1. I will check it, though it's unlikely. If not there, I will re-check dresser 1 more thoroughly.",
+        "observation": "OK."
+      },
+      {
+        "step": 41,
+        "action": "go to garbagecan 1",
+        "observation": "You arrive at garbagecan 1. On the garbagecan 1, you see nothing."
+      },
+      {
+        "step": 42,
+        "action": "look at dresser 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 43,
+        "action": "think: I have the keychain 4. I need to find a desklamp. I have checked most locations. My previous attempts to interact with dresser 1 were not specific enough. I will now explicitly look *on* dresser 1, as a desklamp is often placed on top of a dresser.",
+        "observation": "OK."
+      },
+      {
+        "step": 44,
+        "action": "look on dresser 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 45,
+        "action": "go to dresser 1",
+        "observation": "You arrive at dresser 1. On the dresser 1, you see a cd 3, a cellphone 1, a desklamp 1, a keychain 3, a pencil 3, and a pencil 2."
+      },
+      {
+        "step": 46,
+        "action": "examine keychain 4 with desklamp 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 47,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1."
+      }
+    ],
+    "success": true,
+    "step_num": 47
+  },
+  {
+    "task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-328/trial_T20190908_201550_622420",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at laptop under the desklamp.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a laptop, then find a desklamp, and finally look at the laptop under the desklamp.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a cellphone 2, a cellphone 1, a desklamp 1, a keychain 1, a laptop 1, a pen 2, a pen 1, a pencil 1, a tissuebox 3, and a tissuebox 1."
+      },
+      {
+        "step": 3,
+        "action": "think: I have found both the laptop (laptop 1) and the desklamp (desklamp 1) on the desk 1. Now I need to look at the laptop under the desklamp.",
+        "observation": "OK."
+      },
+      {
+        "step": 4,
+        "action": "look at laptop 1 under desklamp 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 5,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1."
+      },
+      {
+        "step": 6,
+        "action": "look at laptop 1 under desklamp 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 7,
+        "action": "take laptop 1 from desk 1",
+        "observation": "You pick up the laptop 1 from the desk 1."
+      }
+    ],
+    "success": true,
+    "step_num": 7
+  },
+  {
+    "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-302/trial_T20190909_150916_682139",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at pillow under the desklamp.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a pillow, then find a desklamp, and finally look at the pillow under the desklamp.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "think: First, I need to find a pillow. A pillow is most likely to be found on a bed. I see a bed 1 in the room. I will go to bed 1 to look for a pillow.",
+        "observation": "OK."
+      },
+      {
+        "step": 3,
+        "action": "go to bed 1",
+        "observation": "You arrive at bed 1. On the bed 1, you see a book 1, a laptop 1, a pillow 1, and a teddybear 1."
+      },
+      {
+        "step": 4,
+        "action": "think: I have found pillow 1 on bed 1. Now I need to find a desklamp. A desklamp is likely to be on a desk or a sidetable. I will check desk 1 first.",
+        "observation": "OK."
+      },
+      {
+        "step": 5,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a book 2, a cellphone 3, a keychain 3, a pen 1, and a pencil 1."
+      },
+      {
+        "step": 6,
+        "action": "think: I did not find a desklamp on desk 1. I will check sidetable 1 next.",
+        "observation": "OK."
+      },
+      {
+        "step": 7,
+        "action": "go to sidetable 1",
+        "observation": "You arrive at sidetable 1. On the sidetable 1, you see a cellphone 1, and a creditcard 1."
+      },
+      {
+        "step": 8,
+        "action": "think: I did not find a desklamp on sidetable 1. I will check sidetable 2 next.",
+        "observation": "OK."
+      },
+      {
+        "step": 9,
+        "action": "go to sidetable 2",
+        "observation": "You arrive at sidetable 2. On the sidetable 2, you see a desklamp 1."
+      },
+      {
+        "step": 10,
+        "action": "take pillow 1 from bed 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 11,
+        "action": "think: I have found pillow 1 on bed 1 and desklamp 1 on sidetable 2. My previous attempt to take the pillow failed. This means I cannot move the pillow. Therefore, I must move the desklamp to the pillow's location. I will try to take the desklamp from sidetable 2.",
+        "observation": "OK."
+      },
+      {
+        "step": 12,
+        "action": "take desklamp 1 from sidetable 2",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 13,
+        "action": "think: I have found pillow 1 on bed 1 and desklamp 1 on sidetable 2. Since I cannot take either the pillow or the desklamp, I cannot physically place the pillow under the desklamp. However, the previous example for \"look at bowl under the desklamp\" ended with `use desklamp 1`. This suggests that \"using\" the desklamp (turning it on) is the action that fulfills the \"under the desklamp\" part of the task, implying the object is then considered to be under its light or influence. I am currently at sidetable 2, where the desklamp 1 is located. Therefore, I will use the desklamp.",
+        "observation": "OK."
+      },
+      {
+        "step": 14,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1."
+      },
+      {
+        "step": 15,
+        "action": "think: The task is to \"look at pillow under the desklamp\". I have found the pillow 1 on bed 1 and the desklamp 1 on sidetable 2. I have already tried to take both the pillow and the desklamp, and both attempts failed. This means I cannot physically move either object. The previous example for \"look at bowl under the desklamp\" ended with `use desklamp 1`. This implies that \"using\" the desklamp (turning it on) is the action that fulfills the \"under the desklamp\" part of the task, even if the objects are not physically co-located. Since I cannot move the pillow to the desklamp, or the desklamp to the pillow, and I have already turned on the desklamp, the only remaining interpretation is that the task is completed by turning on the desklamp, and the system will infer the \"look at\" part. However, the task specifically asks to \"look at pillow under the desklamp\". Simply turning on the desklamp at sidetable 2 does not mean I am looking at the pillow on bed 1 under that desklamp.",
+        "observation": "OK."
+      },
+      {
+        "step": 16,
+        "action": "think: I have found pillow 1 on bed 1 and desklamp 1 on sidetable 2. I have already turned on the desklamp 1. Since I cannot move either object, the task must imply that the \"under the desklamp\" condition is met by the desklamp being active. Therefore, I should now go to the pillow's location and look at it.",
+        "observation": "OK."
+      },
+      {
+        "step": 17,
+        "action": "go to bed 1",
+        "observation": "You arrive at bed 1. On the bed 1, you see a book 1, a laptop 1, a pillow 1, and a teddybear 1."
+      },
+      {
+        "step": 18,
+        "action": "look at pillow 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 19,
+        "action": "think: I have found pillow 1 on bed 1 and desklamp 1 on sidetable 2. I have already turned on desklamp 1. I cannot take either the pillow or the desklamp. The previous example for \"look at bowl under the desklamp\" involved taking the bowl and then using the desklamp, and the task completed.",
+        "observation": "OK."
+      },
+      {
+        "step": 20,
+        "action": "think: I have found pillow 1 on bed 1 and desklamp 1 on sidetable 2. I have already turned on desklamp 1. I cannot take either the pillow or the desklamp, which means I cannot physically place the pillow under the desklamp. The previous example for \"look at bowl under the desklamp\" involved taking the bowl and",
+        "observation": "OK."
+      },
+      {
+        "step": 21,
+        "action": "I have found pillow 1 on bed 1 and desklamp 1 on sidetable 2. I have already turned on desklamp 1. I cannot take either the pillow or the desklamp, which means I cannot physically place the pillow under the desklamp. The previous example for \"look at bowl under the desklamp\" involved taking the bowl and",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 22,
+        "action": "think: I have found pillow 1 on bed 1 and desklamp 1 on sidetable 2. I have already turned on desklamp 1. I cannot take either the pillow or the desklamp, which means I cannot physically place the pillow under the desklamp. The previous example for \"look at bowl under the desklamp\" involved taking the",
+        "observation": "OK."
+      },
+      {
+        "step": 23,
+        "action": "I have found pillow 1 on bed 1 and desklamp 1 on sidetable 2. I have already turned on desklamp 1. I cannot take either the pillow or the desklamp, which means I cannot physically place the pillow under the desklamp. The previous example for \"look at bowl under the desklamp\" involved taking the bowl and then using the",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 24,
+        "action": "think: I have found pillow 1 on bed 1 and desklamp 1 on sidetable 2. I have already turned on desklamp 1. I cannot take either the pillow or the desklamp, which means I cannot physically place the pillow under the desklamp. The previous example for \"look at bowl under the desklamp\" involved taking the bowl and then",
+        "observation": "OK."
+      },
+      {
+        "step": 25,
+        "action": "think: I have found pillow 1 on bed 1 and desklamp 1 on sidetable 2. I have already turned on desklamp 1. I cannot take either the pillow or the desklamp, which means I cannot physically place the pillow under the desklamp. The previous example for \"look at bowl under the desklamp\" involved taking the bowl and then",
+        "observation": "OK."
+      }
+    ],
+    "success": false,
+    "step_num": 25
+  },
+  {
+    "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-323/trial_T20190908_053153_077977",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the pillow with the desklamp.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I need to find a pillow and a desklamp. First, I will look for a pillow, which is most likely on a bed. I will check bed 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "go to bed 1",
+        "observation": "You arrive at bed 1. On the bed 1, you see nothing."
+      },
+      {
+        "step": 3,
+        "action": "go to bed 2",
+        "observation": "You arrive at bed 2. On the bed 2, you see a book 1, a cellphone 3, a laptop 1, a pillow 2, a pillow 1, and a teddybear 1."
+      },
+      {
+        "step": 4,
+        "action": "take pillow 1 from bed 2",
+        "observation": "You pick up the pillow 1 from the bed 2."
+      },
+      {
+        "step": 5,
+        "action": "think: I have the pillow 1. Now I need to find a desklamp. A desklamp is likely to be on a desk or a sidetable. I will check desk 1 first.",
+        "observation": "OK."
+      },
+      {
+        "step": 6,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a bowl 1, a cellphone 1, a desklamp 1, a keychain 2, a mug 2, a mug 1, and a pencil 1."
+      },
+      {
+        "step": 7,
+        "action": "examine pillow 1 with desklamp 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 8,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1."
+      }
+    ],
+    "success": true,
+    "step_num": 8
+  },
+  {
+    "task_id": "look_at_obj_in_light-Statue-None-DeskLamp-216/trial_T20190909_193045_208933",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "examine the statue with the desklamp.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I need to find a statue and a desklamp. Then I will examine the statue with the desklamp. I will start by looking for the statue in the most likely places: diningtable, sidetables, and shelf.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "go to diningtable 1",
+        "observation": "You arrive at diningtable 1. On the diningtable 1, you see a box 1, and a tissuebox 2."
+      },
+      {
+        "step": 3,
+        "action": "go to sidetable 1",
+        "observation": "You arrive at sidetable 1. On the sidetable 1, you see a desklamp 1, and a statue 2."
+      },
+      {
+        "step": 4,
+        "action": "examine statue 2 with desklamp 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 5,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1."
+      },
+      {
+        "step": 6,
+        "action": "examine statue 2 with desklamp 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 7,
+        "action": "examine statue 2",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 8,
+        "action": "take statue 2 from sidetable 1",
+        "observation": "You pick up the statue 2 from the sidetable 1."
+      }
+    ],
+    "success": true,
+    "step_num": 8
+  },
+  {
+    "task_id": "look_at_obj_in_light-Vase-None-DeskLamp-303/trial_T20190907_150418_457594",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at vase under the desklamp.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a vase, then find a desklamp, and finally look at the vase under the desklamp.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. On the drawer 1, you see nothing."
+      },
+      {
+        "step": 3,
+        "action": "go to drawer 2",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 4,
+        "action": "go to drawer 3",
+        "observation": "You arrive at drawer 3. The drawer 3 is closed."
+      },
+      {
+        "step": 5,
+        "action": "open drawer 3",
+        "observation": "You open the drawer 3. The drawer 3 is open. In it, you see nothing."
+      },
+      {
+        "step": 6,
+        "action": "go to drawer 4",
+        "observation": "You arrive at drawer 4. The drawer 4 is closed."
+      },
+      {
+        "step": 7,
+        "action": "open drawer 4",
+        "observation": "You open the drawer 4. The drawer 4 is open. In it, you see nothing."
+      },
+      {
+        "step": 8,
+        "action": "go to drawer 5",
+        "observation": "You arrive at drawer 5. The drawer 5 is closed."
+      },
+      {
+        "step": 9,
+        "action": "open drawer 5",
+        "observation": "You open the drawer 5. The drawer 5 is open. In it, you see a creditcard 3."
+      },
+      {
+        "step": 10,
+        "action": "go to desk 1",
+        "observation": "You arrive at desk 1. On the desk 1, you see a desklamp 1, a laptop 1, a mug 3, a pencil 2, and a vase 4."
+      },
+      {
+        "step": 11,
+        "action": "look at vase 4 under desklamp 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 12,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1."
+      },
+      {
+        "step": 13,
+        "action": "look at vase 4 under desklamp 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 14,
+        "action": "take vase 4 from desk 1",
+        "observation": "You pick up the vase 4 from the desk 1."
+      }
+    ],
+    "success": true,
+    "step_num": 14
+  },
+  {
+    "task_id": "pick_and_place_simple-Book-None-SideTable-329/trial_T20190908_050633_745514",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put some book on sidetable.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find and take a book, then put it on sidetable.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "think: First I need to find a book. A book is more likely to appear in bed (1), diningtable (1), drawer (1-4), sidetable (1-2). I can check one by one, starting with bed 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 3,
+        "action": "go to bed 1",
+        "observation": "You arrive at bed 1. On the bed 1, you see a book 2, a book 1, a cellphone 2, and a pillow 1."
+      },
+      {
+        "step": 4,
+        "action": "take book 1 from bed 1",
+        "observation": "You pick up the book 1 from the bed 1."
+      },
+      {
+        "step": 5,
+        "action": "think: Now I have a book (book 1). Next, I need to put it on a sidetable. I will choose sidetable 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 6,
+        "action": "go to sidetable 1",
+        "observation": "You arrive at sidetable 1. On the sidetable 1, you see nothing."
+      },
+      {
+        "step": 7,
+        "action": "move book 1 to sidetable 1",
+        "observation": "You move the book 1 to the sidetable 1."
+      }
+    ],
+    "success": true,
+    "step_num": 7
+  },
+  {
+    "task_id": "pick_and_place_simple-Book-None-Sofa-229/trial_T20190907_042856_259139",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put a book in sofa.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a book, take it, and then put it in the sofa.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "think: First I need to find a book. A book is more likely to appear in drawer (1-4), dresser (1), sidetable (1-3), coffeetable (1), armchair (1), sofa (1). I can check one by one, starting with drawer 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 3,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. The drawer 1 is closed."
+      },
+      {
+        "step": 4,
+        "action": "open drawer 1",
+        "observation": "You open the drawer 1. The drawer 1 is open. In it, you see nothing."
+      },
+      {
+        "step": 5,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. The drawer 2 is closed."
+      },
+      {
+        "step": 6,
+        "action": "open drawer 2",
+        "observation": "You open the drawer 2. The drawer 2 is open. In it, you see a cellphone 1."
+      },
+      {
+        "step": 7,
+        "action": "think: I haven't found a book yet. I will continue checking the remaining drawers, then dresser, sidetables, coffeetable, armchair, and sofa. Next, I will check drawer 3.",
+        "observation": "OK."
+      },
+      {
+        "step": 8,
+        "action": "go to drawer 3",
+        "observation": "You arrive at drawer 3. The drawer 3 is closed."
+      },
+      {
+        "step": 9,
+        "action": "open drawer 3",
+        "observation": "You open the drawer 3. The drawer 3 is open. In it, you see nothing."
+      },
+      {
+        "step": 10,
+        "action": "think: I haven't found a book yet. I will continue checking the remaining drawers, then dresser, sidetables, coffeetable, armchair, and sofa. Next, I will check drawer 4.",
+        "observation": "OK."
+      },
+      {
+        "step": 11,
+        "action": "go to drawer 4",
+        "observation": "You arrive at drawer 4. The drawer 4 is closed."
+      },
+      {
+        "step": 12,
+        "action": "open drawer 4",
+        "observation": "You open the drawer 4. The drawer 4 is open. In it, you see nothing."
+      },
+      {
+        "step": 13,
+        "action": "think: I haven't found a book yet. I will continue checking the dresser, then sidetables, coffeetable, armchair, and sofa. Next, I will check dresser 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 14,
+        "action": "go to dresser 1",
+        "observation": "You arrive at dresser 1. On the dresser 1, you see a creditcard 1, a remotecontrol 3, a remotecontrol 1, a statue 1, and a television 1."
+      },
+      {
+        "step": 15,
+        "action": "think: I haven't found a book yet. I will continue checking the sidetables, then coffeetable, armchair, and sofa. Next, I will check sidetable 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 16,
+        "action": "go to sidetable 1",
+        "observation": "You arrive at sidetable 1. On the sidetable 1, you see a houseplant 1, a pen 2, a pen 1, a pencil 1, and a remotecontrol 2."
+      },
+      {
+        "step": 17,
+        "action": "think: I haven't found a book yet. I will continue checking the remaining sidetables, then coffeetable, armchair, and sofa. Next, I will check sidetable 2.",
+        "observation": "OK."
+      },
+      {
+        "step": 18,
+        "action": "go to sidetable 2",
+        "observation": "You arrive at sidetable 2. On the sidetable 2, you see a laptop 1, a pencil 3, and a statue 3."
+      },
+      {
+        "step": 19,
+        "action": "think: I haven't found a book yet. I will continue checking the remaining sidetables, then coffeetable, armchair, and sofa. Next, I will check sidetable 3.",
+        "observation": "OK."
+      },
+      {
+        "step": 20,
+        "action": "go to sidetable 3",
+        "observation": "You arrive at sidetable 3. On the sidetable 3, you see a book 1, a pen 3, a tissuebox 3, and a tissuebox 2."
+      },
+      {
+        "step": 21,
+        "action": "take book 1 from sidetable 3",
+        "observation": "You pick up the book 1 from the sidetable 3."
+      },
+      {
+        "step": 22,
+        "action": "think: Now I have the book 1. I need to put it in the sofa.",
+        "observation": "OK."
+      },
+      {
+        "step": 23,
+        "action": "go to sofa 1",
+        "observation": "You arrive at sofa 1. On the sofa 1, you see a keychain 3, a keychain 2, and a pillow 1."
+      },
+      {
+        "step": 24,
+        "action": "move book 1 to sofa 1",
+        "observation": "You move the book 1 to the sofa 1."
+      }
+    ],
+    "success": true,
+    "step_num": 24
+  },
+  {
+    "task_id": "pick_and_place_simple-Bowl-None-CoffeeTable-201/trial_T20190907_171639_045329",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put some bowl on coffeetable.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a bowl, take it, and then put it on the coffeetable.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "think: First, I need to find a bowl. A bowl is likely to be found on a dining table, sidetable, coffeetable, or inside a drawer. I will start by checking diningtable 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 3,
+        "action": "go to diningtable 1",
+        "observation": "You arrive at diningtable 1. On the diningtable 1, you see a houseplant 1."
+      },
+      {
+        "step": 4,
+        "action": "go to diningtable 2",
+        "observation": "You arrive at diningtable 2. On the diningtable 2, you see a bowl 1, a creditcard 1, a keychain 1, a newspaper 1, a plate 1, a statue 3, a tissuebox 1, and a vase 1."
+      },
+      {
+        "step": 5,
+        "action": "take bowl 1 from diningtable 2",
+        "observation": "You pick up the bowl 1 from the diningtable 2."
+      },
+      {
+        "step": 6,
+        "action": "think: I have found the bowl 1 and picked it up. Now I need to put it on the coffeetable 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 7,
+        "action": "go to coffeetable 1",
+        "observation": "You arrive at coffeetable 1. On the coffeetable 1, you see a book 2, a book 1, a statue 2, and a watch 1."
+      },
+      {
+        "step": 8,
+        "action": "move bowl 1 to coffeetable 1",
+        "observation": "You move the bowl 1 to the coffeetable 1."
+      }
+    ],
+    "success": true,
+    "step_num": 8
+  },
+  {
+    "task_id": "pick_and_place_simple-Box-None-Dresser-224/trial_T20190907_164104_229696",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put some box on dresser.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a box, take it, and then put it on the dresser.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "go to cabinet 1",
+        "observation": "You arrive at cabinet 1. On the cabinet 1, you see nothing."
+      },
+      {
+        "step": 3,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. On the drawer 1, you see nothing."
+      },
+      {
+        "step": 4,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. The drawer 2 is closed."
+      },
+      {
+        "step": 5,
+        "action": "open drawer 2",
+        "observation": "You open the drawer 2. The drawer 2 is open. In it, you see nothing."
+      },
+      {
+        "step": 6,
+        "action": "go to drawer 3",
+        "observation": "You arrive at drawer 3. The drawer 3 is closed."
+      },
+      {
+        "step": 7,
+        "action": "open drawer 3",
+        "observation": "You open the drawer 3. The drawer 3 is open. In it, you see nothing."
+      },
+      {
+        "step": 8,
+        "action": "go to drawer 4",
+        "observation": "You arrive at drawer 4. On the drawer 4, you see nothing."
+      },
+      {
+        "step": 9,
+        "action": "go to drawer 5",
+        "observation": "You arrive at drawer 5. The drawer 5 is closed."
+      },
+      {
+        "step": 10,
+        "action": "open drawer 5",
+        "observation": "You open the drawer 5. The drawer 5 is open. In it, you see nothing."
+      },
+      {
+        "step": 11,
+        "action": "go to drawer 6",
+        "observation": "You arrive at drawer 6. The drawer 6 is closed."
+      },
+      {
+        "step": 12,
+        "action": "open drawer 6",
+        "observation": "You open the drawer 6. The drawer 6 is open. In it, you see nothing."
+      },
+      {
+        "step": 13,
+        "action": "go to drawer 7",
+        "observation": "You arrive at drawer 7. The drawer 7 is closed."
+      },
+      {
+        "step": 14,
+        "action": "open drawer 7",
+        "observation": "You open the drawer 7. The drawer 7 is open. In it, you see nothing."
+      },
+      {
+        "step": 15,
+        "action": "go to drawer 8",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 16,
+        "action": "go to drawer 8",
+        "observation": "Nothing happens."
+      }
+    ],
+    "success": false,
+    "step_num": 16
+  },
+  {
+    "task_id": "pick_and_place_simple-Candle-None-Cart-401/trial_T20190909_081908_677973",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put a candle in cart.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find and take a candle, then put it in cart.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "think: First I need to find a candle. A candle is more likely to appear in shelf (1-4), bathtubbasin (1), sinkbasin (1), toilet (1). I can check one by one, starting with shelf 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 3,
+        "action": "go to shelf 1",
+        "observation": "You arrive at shelf 1. On the shelf 1, you see a cloth 1, and a toiletpaper 2."
+      },
+      {
+        "step": 4,
+        "action": "go to shelf 2",
+        "observation": "You arrive at shelf 2. On the shelf 2, you see nothing."
+      },
+      {
+        "step": 5,
+        "action": "go to shelf 3",
+        "observation": "You arrive at shelf 3. On the shelf 3, you see nothing."
+      },
+      {
+        "step": 6,
+        "action": "go to shelf 4",
+        "observation": "You arrive at shelf 4. On the shelf 4, you see a soapbottle 1, and a toiletpaper 1."
+      },
+      {
+        "step": 7,
+        "action": "go to bathtubbasin 1",
+        "observation": "You arrive at bathtubbasin 1. On the bathtubbasin 1, you see a cloth 2, and a soapbar 1."
+      },
+      {
+        "step": 8,
+        "action": "go to sinkbasin 1",
+        "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see a dishsponge 2."
+      },
+      {
+        "step": 9,
+        "action": "go to toilet 1",
+        "observation": "You arrive at toilet 1. On the toilet 1, you see a candle 1, and a spraybottle 1."
+      },
+      {
+        "step": 10,
+        "action": "take candle 1 from toilet 1",
+        "observation": "You pick up the candle 1 from the toilet 1."
+      },
+      {
+        "step": 11,
+        "action": "think: Now I have the candle 1. Next, I need to put it in cart 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 12,
+        "action": "go to cart 1",
+        "observation": "You arrive at cart 1. On the cart 1, you see a dishsponge 1, a spraybottle 3, and a spraybottle 2."
+      },
+      {
+        "step": 13,
+        "action": "move candle 1 to cart 1",
+        "observation": "You move the candle 1 to the cart 1."
+      }
+    ],
+    "success": true,
+    "step_num": 13
+  },
+  {
+    "task_id": "pick_and_place_simple-Candle-None-Toilet-407/trial_T20190909_055248_059513",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put a candle in toilet.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find and take a candle, then put it in toilet.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "think: First I need to find a candle. A candle is more likely to appear in cabinet (1-4), countertop (1), toilet (1), sinkbasin (1-2), bathtubbasin (1), garbagecan (1). I can check one by one, starting with cabinet 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 3,
+        "action": "go to cabinet 1",
+        "observation": "You arrive at cabinet 1. The cabinet 1 is closed."
+      },
+      {
+        "step": 4,
+        "action": "open cabinet 1",
+        "observation": "You open the cabinet 1. The cabinet 1 is open. In it, you see a soapbar 1."
+      },
+      {
+        "step": 5,
+        "action": "go to cabinet 2",
+        "observation": "You arrive at cabinet 2. The cabinet 2 is closed."
+      },
+      {
+        "step": 6,
+        "action": "open cabinet 2",
+        "observation": "You open the cabinet 2. The cabinet 2 is open. In it, you see nothing."
+      },
+      {
+        "step": 7,
+        "action": "go to cabinet 3",
+        "observation": "You arrive at cabinet 3. The cabinet 3 is closed."
+      },
+      {
+        "step": 8,
+        "action": "open cabinet 3",
+        "observation": "You open the cabinet 3. The cabinet 3 is open. In it, you see nothing."
+      },
+      {
+        "step": 9,
+        "action": "go to cabinet 4",
+        "observation": "You arrive at cabinet 4. The cabinet 4 is closed."
+      },
+      {
+        "step": 10,
+        "action": "open cabinet 4",
+        "observation": "You open the cabinet 4. The cabinet 4 is open. In it, you see nothing."
+      },
+      {
+        "step": 11,
+        "action": "go to countertop 1",
+        "observation": "You arrive at countertop 1. On the countertop 1, you see a candle 4, a candle 3, a mirror 1, a soapbottle 2, a soapbottle 1, and a toiletpaper 3."
+      },
+      {
+        "step": 12,
+        "action": "take candle 4 from countertop 1",
+        "observation": "You pick up the candle 4 from the countertop 1."
+      },
+      {
+        "step": 13,
+        "action": "think: Now I have the candle 4. Next, I need to put it in toilet 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 14,
+        "action": "go to toilet 1",
+        "observation": "You arrive at toilet 1. On the toilet 1, you see a spraybottle 2, and a spraybottle 1."
+      },
+      {
+        "step": 15,
+        "action": "move candle 4 to toilet 1",
+        "observation": "You move the candle 4 to the toilet 1."
+      }
+    ],
+    "success": true,
+    "step_num": 15
+  },
+  {
+    "task_id": "pick_and_place_simple-Candle-None-Toilet-429/trial_T20190908_052232_887934",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put some candle on toilet.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find and take a candle, then put it on toilet.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "think: First I need to find a candle. A candle is more likely to appear in shelf (1-3), bathtubbasin (1), sinkbasin (1), toilet (1), garbagecan (1). I can check one by one, starting with shelf 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 3,
+        "action": "go to shelf 1",
+        "observation": "You arrive at shelf 1. On the shelf 1, you see a candle 1, a soapbar 2, and a soapbar 1."
+      },
+      {
+        "step": 4,
+        "action": "take candle 1 from shelf 1",
+        "observation": "You pick up the candle 1 from the shelf 1."
+      },
+      {
+        "step": 5,
+        "action": "think: Now I have the candle 1. Next, I need to put it on the toilet 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 6,
+        "action": "go to toilet 1",
+        "observation": "You arrive at toilet 1. On the toilet 1, you see a soapbottle 2."
+      },
+      {
+        "step": 7,
+        "action": "move candle 1 to toilet 1",
+        "observation": "You move the candle 1 to the toilet 1."
+      }
+    ],
+    "success": true,
+    "step_num": 7
+  },
+  {
+    "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-302/trial_T20190909_150916_682139",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "look at pillow under the desklamp.",
+    "trial_num": 2,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: To solve the task, I need to find a pillow, find a desklamp, and then look at the pillow when it is under the desklamp. I will start by looking for a pillow, most likely on a bed.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "go to bed 1",
+        "observation": "You arrive at bed 1. On the bed 1, you see a book 1, a laptop 1, a pillow 1, and a teddybear 1."
+      },
+      {
+        "step": 3,
+        "action": "take pillow 1 from bed 1",
+        "observation": "You pick up the pillow 1 from the bed 1."
+      },
+      {
+        "step": 4,
+        "action": "think: I have taken the pillow 1. Now I need to find a desklamp. Based on the previous example, a desklamp was found on sidetable 2. I will go there to find it.",
+        "observation": "OK."
+      },
+      {
+        "step": 5,
+        "action": "go to sidetable 2",
+        "observation": "You arrive at sidetable 2. On the sidetable 2, you see a desklamp 1."
+      },
+      {
+        "step": 6,
+        "action": "put pillow 1 on sidetable 2",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 7,
+        "action": "think: My previous attempt to put the pillow on the sidetable resulted in \"Nothing happens.\" This might be because the desklamp needs to be active first, or because the sidetable is not a valid surface for `put` in this context, or because I need to be more specific about placing it \"under\" the desklamp. The previous example turned on the desklamp. I will try turning on the desklamp first, then placing the pillow on the sidetable, and then looking at it.",
+        "observation": "OK."
+      },
+      {
+        "step": 8,
+        "action": "turn on desklamp 1",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 9,
+        "action": "think: My previous attempt `turn on desklamp 1` failed. The previous example successfully used `use desklamp 1` to turn on the desklamp. I will try `use desklamp 1` now. After the desklamp is on, I will place the pillow on the sidetable 2, which is where the desklamp is located, to put it \"under\" the desklamp. Finally, I will look at the pillow.",
+        "observation": "OK."
+      },
+      {
+        "step": 10,
+        "action": "use desklamp 1",
+        "observation": "You turn on the desklamp 1."
+      }
+    ],
+    "success": true,
+    "step_num": 10
+  },
+  {
+    "task_id": "pick_and_place_simple-Box-None-Dresser-224/trial_T20190907_164104_229696",
+    "task_type": "pick_and_place_simple",
+    "task_desc": "put some box on dresser.",
+    "trial_num": 2,
+    "steps": [
+      {
+        "step": 1,
+        "action": "think: I need to find a box and then put it on dresser 1. I will start by searching the drawers, then sidetables, then armchair, sofa, and garbagecan. I will start with drawer 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 2,
+        "action": "go to drawer 1",
+        "observation": "You arrive at drawer 1. On the drawer 1, you see nothing."
+      },
+      {
+        "step": 3,
+        "action": "go to drawer 2",
+        "observation": "You arrive at drawer 2. The drawer 2 is closed."
+      },
+      {
+        "step": 4,
+        "action": "open drawer 2",
+        "observation": "You open the drawer 2. The drawer 2 is open. In it, you see nothing."
+      },
+      {
+        "step": 5,
+        "action": "go to drawer 3",
+        "observation": "You arrive at drawer 3. The drawer 3 is closed."
+      },
+      {
+        "step": 6,
+        "action": "open drawer 3",
+        "observation": "You open the drawer 3. The drawer 3 is open. In it, you see nothing."
+      },
+      {
+        "step": 7,
+        "action": "go to drawer 4",
+        "observation": "You arrive at drawer 4. On the drawer 4, you see nothing."
+      },
+      {
+        "step": 8,
+        "action": "go to drawer 5",
+        "observation": "You arrive at drawer 5. The drawer 5 is closed."
+      },
+      {
+        "step": 9,
+        "action": "open drawer 5",
+        "observation": "You open the drawer 5. The drawer 5 is open. In it, you see nothing."
+      },
+      {
+        "step": 10,
+        "action": "go to drawer 6",
+        "observation": "You arrive at drawer 6. The drawer 6 is closed."
+      },
+      {
+        "step": 11,
+        "action": "open drawer 6",
+        "observation": "You open the drawer 6. The drawer 6 is open. In it, you see nothing."
+      },
+      {
+        "step": 12,
+        "action": "go to drawer 7",
+        "observation": "You arrive at drawer 7. The drawer 7 is closed."
+      },
+      {
+        "step": 13,
+        "action": "open drawer 7",
+        "observation": "You open the drawer 7. The drawer 7 is open. In it, you see nothing."
+      },
+      {
+        "step": 14,
+        "action": "go to drawer 8",
+        "observation": "Nothing happens."
+      },
+      {
+        "step": 15,
+        "action": "think: My previous action \"go to drawer 8\" resulted in \"Nothing happens\", indicating I cannot interact with it. I need to continue searching for the box. I have checked drawers 1-7. I will now proceed to check drawer 9.",
+        "observation": "OK."
+      },
+      {
+        "step": 16,
+        "action": "go to drawer 9",
+        "observation": "You arrive at drawer 9. The drawer 9 is closed."
+      },
+      {
+        "step": 17,
+        "action": "open drawer 9",
+        "observation": "You open the drawer 9. The drawer 9 is open. In it, you see nothing."
+      },
+      {
+        "step": 18,
+        "action": "go to drawer 10",
+        "observation": "You arrive at drawer 10. The drawer 10 is closed."
+      },
+      {
+        "step": 19,
+        "action": "open drawer 10",
+        "observation": "You open the drawer 10. The drawer 10 is open. In it, you see nothing."
+      },
+      {
+        "step": 20,
+        "action": "go to drawer 11",
+        "observation": "You arrive at drawer 11. The drawer 11 is closed."
+      },
+      {
+        "step": 21,
+        "action": "open drawer 11",
+        "observation": "You open the drawer 11. The drawer 11 is open. In it, you see nothing."
+      },
+      {
+        "step": 22,
+        "action": "go to drawer 12",
+        "observation": "You arrive at drawer 12. The drawer 12 is closed."
+      },
+      {
+        "step": 23,
+        "action": "open drawer 12",
+        "observation": "You open the drawer 12. The drawer 12 is open. In it, you see nothing."
+      },
+      {
+        "step": 24,
+        "action": "go to drawer 13",
+        "observation": "You arrive at drawer 13. The drawer 13 is closed."
+      },
+      {
+        "step": 25,
+        "action": "open drawer 13",
+        "observation": "You open the drawer 13. The drawer 13 is open. In it, you see nothing."
+      },
+      {
+        "step": 26,
+        "action": "go to drawer 14",
+        "observation": "You arrive at drawer 14. The drawer 14 is closed."
+      },
+      {
+        "step": 27,
+        "action": "open drawer 14",
+        "observation": "You open the drawer 14. The drawer 14 is open. In it, you see nothing."
+      },
+      {
+        "step": 28,
+        "action": "go to drawer 15",
+        "observation": "You arrive at drawer 15. The drawer 15 is closed."
+      },
+      {
+        "step": 29,
+        "action": "open drawer 15",
+        "observation": "You open the drawer 15. The drawer 15 is open. In it, you see nothing."
+      },
+      {
+        "step": 30,
+        "action": "go to drawer 16",
+        "observation": "You arrive at drawer 16. The drawer 16 is closed."
+      },
+      {
+        "step": 31,
+        "action": "open drawer 16",
+        "observation": "You open the drawer 16. The drawer 16 is open. In it, you see nothing."
+      },
+      {
+        "step": 32,
+        "action": "go to drawer 17",
+        "observation": "You arrive at drawer 17. The drawer 17 is closed."
+      },
+      {
+        "step": 33,
+        "action": "open drawer 17",
+        "observation": "You open the drawer 17. The drawer 17 is open. In it, you see nothing."
+      },
+      {
+        "step": 34,
+        "action": "go to drawer 18",
+        "observation": "You arrive at drawer 18. The drawer 18 is closed."
+      },
+      {
+        "step": 35,
+        "action": "open drawer 18",
+        "observation": "You open the drawer 18. The drawer 18 is open. In it, you see nothing."
+      },
+      {
+        "step": 36,
+        "action": "go to drawer 19",
+        "observation": "You arrive at drawer 19. The drawer 19 is closed."
+      },
+      {
+        "step": 37,
+        "action": "open drawer 19",
+        "observation": "You open the drawer 19. The drawer 19 is open. In it, you see nothing."
+      },
+      {
+        "step": 38,
+        "action": "go to drawer 20",
+        "observation": "You arrive at drawer 20. The drawer 20 is closed."
+      },
+      {
+        "step": 39,
+        "action": "open drawer 20",
+        "observation": "You open the drawer 20. The drawer 20 is open. In it, you see nothing."
+      },
+      {
+        "step": 40,
+        "action": "go to drawer 21",
+        "observation": "You arrive at drawer 21. The drawer 21 is closed."
+      },
+      {
+        "step": 41,
+        "action": "open drawer 21",
+        "observation": "You open the drawer 21. The drawer 21 is open. In it, you see nothing."
+      },
+      {
+        "step": 42,
+        "action": "think: I have checked all drawers (1-21) and did not find a box. My next step is to check the sidetables. I will start with sidetable 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 43,
+        "action": "go to sidetable 1",
+        "observation": "You arrive at sidetable 1. On the sidetable 1, you see a desklamp 1."
+      },
+      {
+        "step": 44,
+        "action": "think: I am at sidetable 1 and see a desklamp 1. There is no box on sidetable 1. I will now check sidetable 2.",
+        "observation": "OK."
+      },
+      {
+        "step": 45,
+        "action": "go to sidetable 2",
+        "observation": "You arrive at sidetable 2. On the sidetable 2, you see a box 2."
+      },
+      {
+        "step": 46,
+        "action": "take box 2 from sidetable 2",
+        "observation": "You pick up the box 2 from the sidetable 2."
+      },
+      {
+        "step": 47,
+        "action": "think: I have found the box 2 and picked it up. Now I need to put it on dresser 1.",
+        "observation": "OK."
+      },
+      {
+        "step": 48,
+        "action": "go to dresser 1",
+        "observation": "You arrive at dresser 1. On the dresser 1, you see a book 1, a cellphone 1, a creditcard 2, a keychain 1, a newspaper 1, a remotecontrol 1, and a television 1."
+      },
+      {
+        "step": 49,
+        "action": "move box 2 to dresser 1",
+        "observation": "You move the box 2 to the dresser 1."
+      }
+    ],
+    "success": true,
+    "step_num": 49
+  }
+]

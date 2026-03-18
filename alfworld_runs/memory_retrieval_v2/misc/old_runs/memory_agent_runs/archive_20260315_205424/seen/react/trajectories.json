@@ -1,0 +1,424 @@
+[
+  {
+    "task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-323/trial_T20190909_044715_250790",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: To solve the task, I need to find and take an alarmclock, then find and use a desklamp."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "think: First I need to find an alarmclock. An alarmclock is more likely to appear in drawer (1-11), desk (1), sidetable (1-2), bed (1-2), dresser (1), garbagecan (1). I can check one by one, starting with drawer 1."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "go to drawer 1"
+      },
+      {
+        "label": "observation",
+        "value": "You arrive at drawer 1. The drawer 1 is closed."
+      },
+      {
+        "label": "action",
+        "value": "open drawer 1"
+      },
+      {
+        "label": "observation",
+        "value": "You open the drawer 1. The drawer 1 is open. In it, you see a creditcard 1."
+      },
+      {
+        "label": "action",
+        "value": "think: I found a creditcard 1 in drawer 1, but not an alarmclock. I will continue checking the other drawers."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "go to drawer 2"
+      },
+      {
+        "label": "observation",
+        "value": "You arrive at drawer 2. The drawer 2 is closed."
+      },
+      {
+        "label": "action",
+        "value": "open drawer 2"
+      },
+      {
+        "label": "observation",
+        "value": "You open the drawer 2. The drawer 2 is open. In it, you see nothing."
+      },
+      {
+        "label": "action",
+        "value": "go to drawer 3"
+      },
+      {
+        "label": "observation",
+        "value": "You arrive at drawer 3. The drawer 3 is closed."
+      },
+      {
+        "label": "action",
+        "value": "open drawer 3"
+      },
+      {
+        "label": "observation",
+        "value": "You open the drawer 3. The drawer 3 is open. In it, you see a cd 1, and a creditcard 2."
+      },
+      {
+        "label": "action",
+        "value": "think: I found a cd 1 and a creditcard 2 in drawer 3, but not an alarmclock. I will continue checking the other drawers."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "go to drawer 4"
+      },
+      {
+        "label": "observation",
+        "value": "You arrive at drawer 4. The drawer 4 is closed."
+      },
+      {
+        "label": "action",
+        "value": "open drawer 4"
+      },
+      {
+        "label": "observation",
+        "value": "You open the drawer 4. The drawer 4 is open. In it, you see nothing."
+      },
+      {
+        "label": "action",
+        "value": "go to drawer 5"
+      },
+      {
+        "label": "observation",
+        "value": "You arrive at drawer 5. The drawer 5 is closed."
+      },
+      {
+        "label": "action",
+        "value": "open drawer 5"
+      },
+      {
+        "label": "observation",
+        "value": "You open the drawer 5. The drawer 5 is open. In it, you see nothing."
+      },
+      {
+        "label": "action",
+        "value": "go to drawer 6"
+      },
+      {
+        "label": "observation",
+        "value": "You arrive at drawer 6. The drawer 6 is closed."
+      },
+      {
+        "label": "action",
+        "value": "open drawer 6"
+      },
+      {
+        "label": "observation",
+        "value": "You open the drawer 6. The drawer 6 is open. In it, you see a cellphone 1."
+      },
+      {
+        "label": "action",
+        "value": "think: I found a cellphone 1 in drawer 6, but not an alarmclock. I will continue checking the other drawers."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "go to drawer 7"
+      },
+      {
+        "label": "observation",
+        "value": "Nothing happens."
+      },
+      {
+        "label": "action",
+        "value": "go to drawer 7"
+      },
+      {
+        "label": "observation",
+        "value": "Nothing happens."
+      }
+    ],
+    "success": false,
+    "step_num": 19
+  },
+  {
+    "task_id": "look_at_obj_in_light-Bowl-None-DeskLamp-301/trial_T20190909_150719_492274",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: To solve the task, I need to find and take a bowl, then find and use a desklamp to examine the bowl."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "think: First I need to find a bowl. A bowl is more likely to appear in drawer (1-17), desk (1), dresser (1), shelf (1-6), garbagecan (1). I can check one by one, starting with drawer 1."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "go to drawer 1"
+      },
+      {
+        "label": "observation",
+        "value": "You arrive at drawer 1. The drawer 1 is closed."
+      },
+      {
+        "label": "action",
+        "value": "open drawer 1"
+      },
+      {
+        "label": "observation",
+        "value": "You open the drawer 1. The drawer 1 is open. In it, you see nothing."
+      },
+      {
+        "label": "action",
+        "value": "go to drawer 2"
+      },
+      {
+        "label": "observation",
+        "value": "You arrive at drawer 2. The drawer 2 is closed."
+      },
+      {
+        "label": "action",
+        "value": "open drawer 2"
+      },
+      {
+        "label": "observation",
+        "value": "You open the drawer 2. The drawer 2 is open. In it, you see nothing."
+      },
+      {
+        "label": "action",
+        "value": "go to drawer 3"
+      },
+      {
+        "label": "observation",
+        "value": "You arrive at drawer 3. On the drawer 3, you see nothing."
+      },
+      {
+        "label": "action",
+        "value": "go to drawer 4"
+      },
+      {
+        "label": "observation",
+        "value": "You arrive at drawer 4. On the drawer 4, you see nothing."
+      },
+      {
+        "label": "action",
+        "value": "go to drawer 5"
+      },
+      {
+        "label": "observation",
+        "value": "You arrive at drawer 5. The drawer 5 is closed."
+      },
+      {
+        "label": "action",
+        "value": "open drawer 5"
+      },
+      {
+        "label": "observation",
+        "value": "You open the drawer 5. The drawer 5 is open. In it, you see nothing."
+      },
+      {
+        "label": "action",
+        "value": "think: I have checked drawer 1-5 and found nothing. I will continue checking drawers."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "go to drawer 6"
+      },
+      {
+        "label": "observation",
+        "value": "Nothing happens."
+      },
+      {
+        "label": "action",
+        "value": "go to drawer 6"
+      },
+      {
+        "label": "observation",
+        "value": "Nothing happens."
+      }
+    ],
+    "success": false,
+    "step_num": 13
+  },
+  {
+    "task_id": "look_at_obj_in_light-Bowl-None-DeskLamp-316/trial_T20190908_230702_962704",
+    "task_type": "look_at_obj_in_light",
+    "task_desc": "",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: To solve the task, I need to find and take a bowl, then find and use a desklamp."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "think: First I need to find a bowl. A bowl is more likely to appear in drawer (1-2), desk (1), sidetable (1), shelf (1), garbagecan (1). I can check one by one, starting with drawer 1."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "go to drawer 1"
+      },
+      {
+        "label": "observation",
+        "value": "You arrive at drawer 1. On the drawer 1, you see a creditcard 2, and a pencil 1."
+      },
+      {
+        "label": "action",
+        "value": "go to drawer 2"
+      },
+      {
+        "label": "observation",
+        "value": "You arrive at drawer 2. The drawer 2 is closed."
+      },
+      {
+        "label": "action",
+        "value": "open drawer 2"
+      },
+      {
+        "label": "observation",
+        "value": "You open the drawer 2. The drawer 2 is open. In it, you see nothing."
+      },
+      {
+        "label": "action",
+        "value": "think: I have checked the drawers. Now I will check the desk 1."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "go to desk 1"
+      },
+      {
+        "label": "observation",
+        "value": "You arrive at desk 1. On the desk 1, you see a alarmclock 1, a bowl 1, a cd 2, a cd 1, a cellphone 1, a desklamp 1, a houseplant 1, a keychain 2, a keychain 1, and a pen 1."
+      },
+      {
+        "label": "action",
+        "value": "think: Now I find a bowl (1). Next, I need to take it."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "take bowl 1 from desk 1"
+      },
+      {
+        "label": "observation",
+        "value": "You pick up the bowl 1 from the desk 1."
+      },
+      {
+        "label": "action",
+        "value": "think: Now I take a bowl (1). Next, I need to find a desklamp. A desklamp is more likely to appear in desk (1), sidetable (1), shelf (1), bed (1), drawer (1-2). I can check one by one, starting with desk 1."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "go to desk 1"
+      },
+      {
+        "label": "observation",
+        "value": "Nothing happens."
+      },
+      {
+        "label": "action",
+        "value": "think: I am already at desk 1. I see a desklamp 1 on the desk 1."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "examine bowl 1 with desklamp 1"
+      },
+      {
+        "label": "observation",
+        "value": "Nothing happens."
+      },
+      {
+        "label": "action",
+        "value": "think: I need to use the desklamp to examine the bowl. The previous action was incorrect."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "use desklamp 1 with bowl 1"
+      },
+      {
+        "label": "observation",
+        "value": "Nothing happens."
+      },
+      {
+        "label": "action",
+        "value": "think: I need to use the desklamp to examine the bowl. The previous action was incorrect. I should use the desklamp first, then examine the bowl."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "use desklamp 1"
+      },
+      {
+        "label": "observation",
+        "value": "You turn on the desklamp 1."
+      }
+    ],
+    "success": true,
+    "step_num": 17
+  }
+]

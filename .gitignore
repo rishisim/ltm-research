@@ -144,4 +144,10 @@ alfworld_runs/.alfworld_venv/
 programming_runs/root/
 webshop_runs/base_run_logs_*/
 webshop_runs/reflexion_run_logs_*/
+webshop_runs/memory_retrieval_v2/memory_agent_runs/
+webshop_runs/memory_retrieval_v2/misc/
 alfworld_mini/
+webshop_mini/
+
+# WebShop cloned repo (large, has its own git)
+webshop/

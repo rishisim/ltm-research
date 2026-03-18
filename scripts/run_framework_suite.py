@@ -101,6 +101,12 @@ def archive_existing_runs(runs_root: Path, misc_archive_root: Path) -> Optional[
 
 
 def discover_tasks_for_split(base_dir: Path, split: str, num_tasks: int) -> List[str]:
+    """Enumerate every (task, trial) pair so all game environments are covered.
+
+    Each task directory may contain multiple trial sub-directories, each with
+    its own game.tw-pddl. We include all valid trials so the full game count
+    matches the official ALFWorld split sizes (e.g. 134 for valid_unseen).
+    """
     split_dir = base_dir / "alfworld_mini" / split
     if not split_dir.exists():
         raise FileNotFoundError(f"Split directory not found: {split_dir}")
@@ -115,17 +121,14 @@ def discover_tasks_for_split(base_dir: Path, split: str, num_tasks: int) -> List
         trial_dirs = sorted(
             d for d in os.listdir(task_dir) if (task_dir / d).is_dir()
         )
-        if not trial_dirs:
-            continue
 
-        chosen_trial = trial_dirs[0]
-        game_file = task_dir / chosen_trial / "game.tw-pddl"
-        if not game_file.exists():
-            continue
-
-        specs.append(f"{split}:{task_name}/{chosen_trial}")
-        if len(specs) >= num_tasks:
-            break
+        for trial_name in trial_dirs:
+            game_file = task_dir / trial_name / "game.tw-pddl"
+            if not game_file.exists():
+                continue
+            specs.append(f"{split}:{task_name}/{trial_name}")
+            if len(specs) >= num_tasks:
+                return specs
 
     return specs
 
@@ -327,6 +330,8 @@ def run_memory_agent_variant(
     prompts: Dict[str, str],
     memory_bank_path: Path,
     quiet: bool,
+    max_learnings: int = 25,
+    min_valid_level: str = "",
 ) -> Dict[str, Any]:
     from src.frameworks.memory_retrieval_v2.agents.memory_agent import MemoryAgent
     from src.frameworks.memory_retrieval_v2.agents.hard_neg_memory_agent import HardNegMemoryAgent
@@ -385,6 +390,8 @@ def run_memory_agent_variant(
                 log_dir=str(run_dir),
                 task_desc=(task_desc if include_context else ""),
                 memory_bank_path=str(memory_bank_path),
+                max_learnings=max_learnings,
+                min_valid_level=min_valid_level,
             )
             step_num = count_action_steps(history.to_json())
         except Exception as e:

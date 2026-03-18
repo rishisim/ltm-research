@@ -8,6 +8,7 @@ Embeddings are cached alongside the knowledge_base.json file.
 import os
 import json
 import hashlib
+import threading
 import time
 import numpy as np
 from typing import List, Dict, Any, Optional, Tuple
@@ -29,6 +30,9 @@ EMPTY_EMBEDDING_PLACEHOLDER = "[EMPTY_TEXT]"
 
 # Cache file suffix
 EMBEDDINGS_CACHE_SUFFIX = ".embeddings_cache.json"
+
+# Thread-safety lock for cache creation
+_cache_lock = threading.Lock()
 
 
 def get_file_hash(file_path: str) -> str:
@@ -219,89 +223,89 @@ def create_knowledge_base_embeddings(
         Dictionary containing embeddings cache data
     """
     cache_path = get_cache_path(knowledge_base_path, embed_field=embed_field)
-    
-    # Check if cache is valid
-    if not force and is_cache_valid(knowledge_base_path, cache_path, embed_field=embed_field):
-        print(f"Loading existing {embed_field} embeddings cache from {cache_path}")
-        with open(cache_path, 'r') as f:
-            return json.load(f)
-    
-    print(f"Creating new {embed_field} embeddings cache for {knowledge_base_path}...")
-    
-    # Load knowledge base
-    with open(knowledge_base_path, 'r') as f:
-        knowledge_base = json.load(f)
-    
-    if not knowledge_base:
+
+    with _cache_lock:
+        # Re-check inside lock to avoid redundant rebuilds
+        if not force and is_cache_valid(knowledge_base_path, cache_path, embed_field=embed_field):
+            print(f"Loading existing {embed_field} embeddings cache from {cache_path}")
+            with open(cache_path, 'r') as f:
+                return json.load(f)
+
+        print(f"Creating new {embed_field} embeddings cache for {knowledge_base_path}...")
+
+        # Load knowledge base
+        with open(knowledge_base_path, 'r') as f:
+            knowledge_base = json.load(f)
+
+        if not knowledge_base:
+            cache_data = {
+                "source_hash": get_file_hash(knowledge_base_path),
+                "source_path": str(knowledge_base_path),
+                "created_at": datetime.now().isoformat(),
+                "embedding_model": EMBEDDING_MODEL,
+                "embed_field": embed_field,
+                "entry_count": 0,
+                "entries": []
+            }
+            with open(cache_path, 'w') as f:
+                json.dump(cache_data, f, indent=2)
+            return cache_data
+
+        # Extract all texts to embed based on embed_field
+        texts_to_embed = []
+        empty_source_indices = []
+        for entry in knowledge_base:
+            if embed_field == "issue_text":
+                # Fallback for issue_ref if issue_text is missing
+                text = entry.get("issue_text") or entry.get("issue_ref", {}).get("text", "")
+            else:
+                text = entry.get(embed_field, "")
+            texts_to_embed.append(text)
+
+        sanitized_texts_to_embed = []
+        for idx, text in enumerate(texts_to_embed):
+            if text is None or (isinstance(text, str) and not text.strip()):
+                empty_source_indices.append(idx)
+            sanitized_texts_to_embed.append(normalize_text_for_embedding(text))
+
+        if empty_source_indices:
+            preview = empty_source_indices[:10]
+            print(
+                f"  Normalized {len(empty_source_indices)} empty {embed_field} entries "
+                f"to placeholder for embedding (sample indices: {preview})"
+            )
+
+        print(f"  Embedding {len(texts_to_embed)} {embed_field} entries...")
+        embeddings = get_batch_embeddings(sanitized_texts_to_embed)
+
+        # Build cache data with embeddings
+        entries_with_embeddings = []
+        for i, (entry, embedding) in enumerate(zip(knowledge_base, embeddings)):
+            entries_with_embeddings.append({
+                "index": i,
+                embed_field: entry.get(embed_field, ""),
+                "embedding": embedding.tolist(),
+                "valid_level": entry.get("valid_level", "CANDIDATE"),
+                "goal_phase": entry.get("goal_phase", ""),
+            })
+
         cache_data = {
             "source_hash": get_file_hash(knowledge_base_path),
             "source_path": str(knowledge_base_path),
             "created_at": datetime.now().isoformat(),
             "embedding_model": EMBEDDING_MODEL,
             "embed_field": embed_field,
-            "entry_count": 0,
-            "entries": []
+            "entry_count": len(entries_with_embeddings),
+            "entries": entries_with_embeddings
         }
+
+        # Save cache
+        print(f"  Saving cache to {cache_path}")
         with open(cache_path, 'w') as f:
-            json.dump(cache_data, f, indent=2)
+            json.dump(cache_data, f)
+
+        print(f"  Successfully cached {len(entries_with_embeddings)} embeddings")
         return cache_data
-    
-    # Extract all texts to embed based on embed_field
-    texts_to_embed = []
-    empty_source_indices = []
-    for entry in knowledge_base:
-        if embed_field == "issue_text":
-            # Fallback for issue_ref if issue_text is missing
-            text = entry.get("issue_text") or entry.get("issue_ref", {}).get("text", "")
-        else:
-            text = entry.get(embed_field, "")
-        texts_to_embed.append(text)
-
-    sanitized_texts_to_embed = []
-    for idx, text in enumerate(texts_to_embed):
-        if text is None or (isinstance(text, str) and not text.strip()):
-            empty_source_indices.append(idx)
-        sanitized_texts_to_embed.append(normalize_text_for_embedding(text))
-
-    if empty_source_indices:
-        preview = empty_source_indices[:10]
-        print(
-            f"  Normalized {len(empty_source_indices)} empty {embed_field} entries "
-            f"to placeholder for embedding (sample indices: {preview})"
-        )
-    
-    print(f"  Embedding {len(texts_to_embed)} {embed_field} entries...")
-    embeddings = get_batch_embeddings(sanitized_texts_to_embed)
-    
-    # Build cache data with embeddings
-    entries_with_embeddings = []
-    for i, (entry, embedding) in enumerate(zip(knowledge_base, embeddings)):
-        entries_with_embeddings.append({
-            "index": i,
-            embed_field: entry.get(embed_field, ""),
-            "embedding": embedding.tolist(),  # Convert numpy array to list for JSON
-            # Include key fields for quick access
-            "valid_level": entry.get("valid_level", "CANDIDATE"),
-            "goal_phase": entry.get("goal_phase", ""),
-        })
-    
-    cache_data = {
-        "source_hash": get_file_hash(knowledge_base_path),
-        "source_path": str(knowledge_base_path),
-        "created_at": datetime.now().isoformat(),
-        "embedding_model": EMBEDDING_MODEL,
-        "embed_field": embed_field,
-        "entry_count": len(entries_with_embeddings),
-        "entries": entries_with_embeddings
-    }
-    
-    # Save cache
-    print(f"  Saving cache to {cache_path}")
-    with open(cache_path, 'w') as f:
-        json.dump(cache_data, f)
-    
-    print(f"  Successfully cached {len(entries_with_embeddings)} embeddings")
-    return cache_data
 
 
 def load_embeddings_cache(

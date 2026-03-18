@@ -2,5 +2,9 @@
 
 | Framework | Success / Total | Accuracy | Avg Steps Per Trial | Avg Steps per Task | Gain from Base ReAct |
 |---|---:|---:|---:|---:|---:|
-| ReAct | 18 / 20 | 0.9000 | 19.3500 | 19.3500 | +0.0000 |
-| React + Reflexion (final trials, max 7) | 20 / 20 | 1.0000 | 16.5909 | 18.2500 | +0.1000 |
+| ReAct | 86 / 140 | 0.6143 | 24.2857 | 24.2857 | +0.0000 |
+| React + Reflexion (final trials, max 7) | 115 / 140 | 0.8214 | 31.7163 | 79.0643 | +0.2071 |
+| ReAct + Context Retrieval (CR) | 108 / 140 | 0.7714 | 23.0857 | 23.0857 | +0.1571 |
+| ReAct + Tool Retrieval (TR) | 89 / 140 | 0.6357 | 26.9000 | 26.9000 | +0.0214 |
+| react + CR + TR | 109 / 140 | 0.7786 | 25.4071 | 25.4071 | +0.1643 |
+| react + hard_neg CR + TR | 78 / 140 | 0.5571 | 28.4143 | 28.4143 | -0.0571 |

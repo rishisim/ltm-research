@@ -1,0 +1,134 @@
+[
+  {
+    "task_id": "look_at_obj_in_light-AlarmClock-None-DeskLamp-323/trial_T20190909_044715_250790",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-Bowl-None-DeskLamp-301/trial_T20190909_150719_492274",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-Bowl-None-DeskLamp-316/trial_T20190908_230702_962704",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-Box-None-DeskLamp-205/trial_T20190907_074425_330493",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-CD-None-DeskLamp-302/trial_T20190907_154618_526741",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-CD-None-DeskLamp-314/trial_T20190907_114323_767231",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-CD-None-DeskLamp-320/trial_T20190907_224451_655673",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-KeyChain-None-DeskLamp-327/trial_T20190906_202601_548273",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-Laptop-None-DeskLamp-328/trial_T20190908_201550_622420",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-302/trial_T20190909_150916_682139",
+    "trial_num": 1,
+    "is_success": false,
+    "reflexion": "Plan: My mistake was assuming I could interact with the pillow and desklamp independently and then combine them, or that \"under the desklamp\" was a state achieved by simply turning on the lamp from a distance. The previous example's new plan (\"go to desk 1, find the lamp, then look for the bowl under the desklamp\") implies that the target object ("
+  },
+  {
+    "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-323/trial_T20190908_053153_077977",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-Statue-None-DeskLamp-216/trial_T20190909_193045_208933",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-Vase-None-DeskLamp-303/trial_T20190907_150418_457594",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_and_place_simple-Book-None-SideTable-329/trial_T20190908_050633_745514",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_and_place_simple-Book-None-Sofa-229/trial_T20190907_042856_259139",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_and_place_simple-Bowl-None-CoffeeTable-201/trial_T20190907_171639_045329",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_and_place_simple-Box-None-Dresser-224/trial_T20190907_164104_229696",
+    "trial_num": 1,
+    "is_success": false,
+    "reflexion": "New plan: I failed to find a box and got stuck in a loop trying to access drawer 8. My mistake was not continuing the search for the box in other available locations. I should have continued checking the remaining drawers (9-21), then the sidetables (1-5), and finally the armchair 1, sofa 1, and garbagecan 1. Once a box is found, I will take it and then put it on dresser 1. I will avoid repeating actions that result in \"Nothing happens\" or getting stuck in a loop."
+  },
+  {
+    "task_id": "pick_and_place_simple-Candle-None-Cart-401/trial_T20190909_081908_677973",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_and_place_simple-Candle-None-Toilet-407/trial_T20190909_055248_059513",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_and_place_simple-Candle-None-Toilet-429/trial_T20190908_052232_887934",
+    "trial_num": 1,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "look_at_obj_in_light-Pillow-None-DeskLamp-302/trial_T20190909_150916_682139",
+    "trial_num": 2,
+    "is_success": true,
+    "reflexion": ""
+  },
+  {
+    "task_id": "pick_and_place_simple-Box-None-Dresser-224/trial_T20190907_164104_229696",
+    "trial_num": 2,
+    "is_success": true,
+    "reflexion": ""
+  }
+]

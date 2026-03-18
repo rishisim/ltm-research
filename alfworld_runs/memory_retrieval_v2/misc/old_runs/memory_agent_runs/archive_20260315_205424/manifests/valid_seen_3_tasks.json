@@ -1,0 +1,10 @@
+{
+  "split": "valid_seen",
+  "num_tasks_requested": 3,
+  "num_tasks_selected": 3,
+  "tasks": [
+    "valid_seen:look_at_obj_in_light-AlarmClock-None-DeskLamp-323/trial_T20190909_044715_250790",
+    "valid_seen:look_at_obj_in_light-Bowl-None-DeskLamp-301/trial_T20190909_150719_492274",
+    "valid_seen:look_at_obj_in_light-Bowl-None-DeskLamp-316/trial_T20190908_230702_962704"
+  ]
+}

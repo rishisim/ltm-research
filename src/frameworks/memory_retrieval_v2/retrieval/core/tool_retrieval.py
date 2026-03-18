@@ -12,6 +12,7 @@ when they are struggling. The tool:
 import os
 import json
 import re
+import threading
 import numpy as np
 from typing import List, Dict, Any, Optional, Tuple
 from dotenv import load_dotenv
@@ -39,9 +40,7 @@ VALID_LEVEL_WEIGHT = {
 _issue_embeddings_cache = None
 _cached_kb_path = None
 _bm25_cache = None
-
-_cached_kb_path = None
-_bm25_cache = None
+_cache_lock = threading.Lock()
 
 
 def clean_query(query: str) -> str:
@@ -120,28 +119,33 @@ def load_issue_embeddings(memory_bank_path: str, force_rebuild: bool = False) ->
         Tuple of (cache entries with metadata, list of numpy embedding arrays)
     """
     global _issue_embeddings_cache, _cached_kb_path, _bm25_cache
-    
-    # Check if we already have the cache loaded for this KB
+
+    # Fast path: check without lock
     if not force_rebuild and _cached_kb_path == memory_bank_path and _issue_embeddings_cache is not None:
         return _issue_embeddings_cache
-    
-    # Reset BM25 cache if we are switching KBs
-    if _cached_kb_path != memory_bank_path:
-        _bm25_cache = None
 
-    # Load from disk (or create if doesn't exist)
-    print(f"Loading issue_text embeddings cache for {memory_bank_path}...")
-    cache_data, embeddings = load_embeddings_cache(
-        memory_bank_path, 
-        force_rebuild=force_rebuild,
-        embed_field="issue_text"
-    )
-    
-    # Store in global cache
-    _cached_kb_path = memory_bank_path
-    _issue_embeddings_cache = (cache_data.get("entries", []), embeddings)
-    
-    return _issue_embeddings_cache
+    with _cache_lock:
+        # Re-check inside lock to avoid redundant rebuilds
+        if not force_rebuild and _cached_kb_path == memory_bank_path and _issue_embeddings_cache is not None:
+            return _issue_embeddings_cache
+
+        # Reset BM25 cache if we are switching KBs
+        if _cached_kb_path != memory_bank_path:
+            _bm25_cache = None
+
+        # Load from disk (or create if doesn't exist)
+        print(f"Loading issue_text embeddings cache for {memory_bank_path}...")
+        cache_data, embeddings = load_embeddings_cache(
+            memory_bank_path,
+            force_rebuild=force_rebuild,
+            embed_field="issue_text"
+        )
+
+        # Store in global cache
+        _cached_kb_path = memory_bank_path
+        _issue_embeddings_cache = (cache_data.get("entries", []), embeddings)
+
+        return _issue_embeddings_cache
 
 
 def help_tool(
@@ -179,18 +183,20 @@ def help_tool(
     
     # --- Prepare BM25 ---
     if _bm25_cache is None:
-        print("Building BM25 index...")
-        corpus = []
-        for entry in memory_bank:
-            issue_txt = (entry.get("issue_text") or entry.get("issue_ref", {}).get("text", "")).lower()
-            learning_txt = (entry.get("learning_text", "") or "").lower()
-            obj_type = (entry.get("obj_type", "") or "").lower()
-            verbs = (entry.get("verbs", "") or "").lower()
-            
-            # New structure: obj_type + verbs + issue_text + learning_text
-            doc_text = f"{obj_type} {verbs} {issue_txt} {learning_txt}"
-            corpus.append(doc_text.split())
-        _bm25_cache = BM25Okapi(corpus)
+        with _cache_lock:
+            if _bm25_cache is None:
+                print("Building BM25 index...")
+                corpus = []
+                for entry in memory_bank:
+                    issue_txt = (entry.get("issue_text") or entry.get("issue_ref", {}).get("text", "")).lower()
+                    learning_txt = (entry.get("learning_text", "") or "").lower()
+                    obj_type = (entry.get("obj_type", "") or "").lower()
+                    verbs = (entry.get("verbs", "") or "").lower()
+
+                    # New structure: obj_type + verbs + issue_text + learning_text
+                    doc_text = f"{obj_type} {verbs} {issue_txt} {learning_txt}"
+                    corpus.append(doc_text.split())
+                _bm25_cache = BM25Okapi(corpus)
     
     # --- Pre-process Query ---
     # Clean digits from query for retrieval (but keep original for response)

@@ -8,6 +8,7 @@ the knowledge base grouped by task_desc with learning counts and embeddings.
 import os
 import json
 import hashlib
+import threading
 import numpy as np
 from typing import List, Dict, Any, Optional, Tuple
 from pathlib import Path
@@ -23,6 +24,9 @@ from .embedding_cache import (
 
 # Cache file suffix
 LEARNING_COUNTS_CACHE_SUFFIX = ".mem_learning_counts.json"
+
+# Thread-safety lock for cache creation
+_cache_lock = threading.Lock()
 
 
 def get_learning_counts_cache_path(knowledge_base_path: str) -> Path:
@@ -81,98 +85,99 @@ def build_learning_counts_table(knowledge_base_path: str, force: bool = False) -
         Dictionary containing the learning counts table and metadata
     """
     cache_path = get_learning_counts_cache_path(knowledge_base_path)
-    
-    # Check if cache is valid
-    if not force and is_learning_counts_cache_valid(knowledge_base_path, cache_path):
-        print(f"Loading existing learning counts cache from {cache_path}")
-        with open(cache_path, 'r') as f:
-            return json.load(f)
-    
-    print(f"Building learning counts table for {knowledge_base_path}...")
-    
-    # Load knowledge base
-    with open(knowledge_base_path, 'r') as f:
-        knowledge_base = json.load(f)
-    
-    if not knowledge_base:
+
+    with _cache_lock:
+        # Re-check inside lock to avoid redundant rebuilds
+        if not force and is_learning_counts_cache_valid(knowledge_base_path, cache_path):
+            print(f"Loading existing learning counts cache from {cache_path}")
+            with open(cache_path, 'r') as f:
+                return json.load(f)
+
+        print(f"Building learning counts table for {knowledge_base_path}...")
+
+        # Load knowledge base
+        with open(knowledge_base_path, 'r') as f:
+            knowledge_base = json.load(f)
+
+        if not knowledge_base:
+            cache_data = {
+                "source_hash": get_file_hash(knowledge_base_path),
+                "source_path": str(knowledge_base_path),
+                "created_at": datetime.now().isoformat(),
+                "embedding_model": EMBEDDING_MODEL,
+                "unique_task_count": 0,
+                "total_learning_count": 0,
+                "entries": []
+            }
+            with open(cache_path, 'w') as f:
+                json.dump(cache_data, f, indent=2)
+            return cache_data
+
+        # Group entries by task_desc
+        task_groups: Dict[str, Dict[str, Any]] = defaultdict(lambda: {
+            "learning_count": 0,
+            "entry_indices": [],
+            "valid_levels": [],
+            "goal_phases": []
+        })
+
+        for i, entry in enumerate(knowledge_base):
+            task_desc = entry.get("task_desc", "")
+            if task_desc:
+                task_groups[task_desc]["learning_count"] += 1
+                task_groups[task_desc]["entry_indices"].append(i)
+                task_groups[task_desc]["valid_levels"].append(entry.get("valid_level", "CANDIDATE"))
+                task_groups[task_desc]["goal_phases"].append(entry.get("goal_phase", ""))
+
+        # Get unique task descriptions
+        unique_task_descs = list(task_groups.keys())
+        print(f"  Found {len(unique_task_descs)} unique task descriptions")
+
+        # Get embeddings for unique task descriptions
+        print(f"  Embedding {len(unique_task_descs)} unique task descriptions...")
+        embeddings = get_batch_embeddings(unique_task_descs)
+
+        # Build the table entries
+        table_entries = []
+        for task_desc, embedding in zip(unique_task_descs, embeddings):
+            group = task_groups[task_desc]
+
+            # Count validated learnings
+            validated_count = sum(
+                1 for vl in group["valid_levels"]
+                if vl in ("VALID_SAME_TRIAL", "VALID_NEXT_TRIAL")
+            )
+
+            table_entries.append({
+                "task_desc": task_desc,
+                "task_desc_embedding": embedding.tolist(),
+                "learning_count": group["learning_count"],
+                "validated_learning_count": validated_count,
+                "candidate_count": group["learning_count"] - validated_count,
+                "entry_indices": group["entry_indices"],
+                "goal_phases": list(set(group["goal_phases"])),
+            })
+
+        # Sort by learning count descending for reference
+        table_entries.sort(key=lambda x: x["learning_count"], reverse=True)
+
         cache_data = {
             "source_hash": get_file_hash(knowledge_base_path),
             "source_path": str(knowledge_base_path),
             "created_at": datetime.now().isoformat(),
             "embedding_model": EMBEDDING_MODEL,
-            "unique_task_count": 0,
-            "total_learning_count": 0,
-            "entries": []
+            "unique_task_count": len(table_entries),
+            "total_learning_count": len(knowledge_base),
+            "entries": table_entries
         }
+
+        # Save cache
+        print(f"  Saving learning counts cache to {cache_path}")
         with open(cache_path, 'w') as f:
-            json.dump(cache_data, f, indent=2)
+            json.dump(cache_data, f)
+
+        print(f"  Successfully built learning counts table with {len(table_entries)} unique tasks")
         return cache_data
-    
-    # Group entries by task_desc
-    task_groups: Dict[str, Dict[str, Any]] = defaultdict(lambda: {
-        "learning_count": 0,
-        "entry_indices": [],
-        "valid_levels": [],
-        "goal_phases": []
-    })
-    
-    for i, entry in enumerate(knowledge_base):
-        task_desc = entry.get("task_desc", "")
-        if task_desc:
-            task_groups[task_desc]["learning_count"] += 1
-            task_groups[task_desc]["entry_indices"].append(i)
-            task_groups[task_desc]["valid_levels"].append(entry.get("valid_level", "CANDIDATE"))
-            task_groups[task_desc]["goal_phases"].append(entry.get("goal_phase", ""))
-    
-    # Get unique task descriptions
-    unique_task_descs = list(task_groups.keys())
-    print(f"  Found {len(unique_task_descs)} unique task descriptions")
-    
-    # Get embeddings for unique task descriptions
-    print(f"  Embedding {len(unique_task_descs)} unique task descriptions...")
-    embeddings = get_batch_embeddings(unique_task_descs)
-    
-    # Build the table entries
-    table_entries = []
-    for task_desc, embedding in zip(unique_task_descs, embeddings):
-        group = task_groups[task_desc]
-        
-        # Count validated learnings
-        validated_count = sum(
-            1 for vl in group["valid_levels"] 
-            if vl in ("VALID_SAME_TRIAL", "VALID_NEXT_TRIAL")
-        )
-        
-        table_entries.append({
-            "task_desc": task_desc,
-            "task_desc_embedding": embedding.tolist(),
-            "learning_count": group["learning_count"],
-            "validated_learning_count": validated_count,
-            "candidate_count": group["learning_count"] - validated_count,
-            "entry_indices": group["entry_indices"],
-            "goal_phases": list(set(group["goal_phases"])),  # Unique phases
-        })
-    
-    # Sort by learning count descending for reference
-    table_entries.sort(key=lambda x: x["learning_count"], reverse=True)
-    
-    cache_data = {
-        "source_hash": get_file_hash(knowledge_base_path),
-        "source_path": str(knowledge_base_path),
-        "created_at": datetime.now().isoformat(),
-        "embedding_model": EMBEDDING_MODEL,
-        "unique_task_count": len(table_entries),
-        "total_learning_count": len(knowledge_base),
-        "entries": table_entries
-    }
-    
-    # Save cache
-    print(f"  Saving learning counts cache to {cache_path}")
-    with open(cache_path, 'w') as f:
-        json.dump(cache_data, f)
-    
-    print(f"  Successfully built learning counts table with {len(table_entries)} unique tasks")
-    return cache_data
 
 
 def load_learning_counts(knowledge_base_path: str, force_rebuild: bool = False) -> Tuple[List[Dict[str, Any]], List[np.ndarray]]:

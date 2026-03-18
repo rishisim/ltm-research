@@ -17,7 +17,7 @@ from src.core.llm import get_chat
 # Constants
 MODEL_NAME = "gemini-2.5-flash"
 
-SYSTEM_PROMPT = """You are analyzing raw task trajectories to extract issue-learning pairs for a knowledge base.
+ALFWORLD_SYSTEM_PROMPT = """You are analyzing raw task trajectories to extract issue-learning pairs for a knowledge base.
 
 Input: A list of trajectories for the same task_id across multiple trials.
 Each trajectory has: task_id, task_desc, trial_num, steps (action/observation pairs), success boolean.
@@ -85,6 +85,84 @@ Schema:
 
 <TRAJECTORIES_JSON>"""
 
+# Kept as alias for backward compatibility
+SYSTEM_PROMPT = ALFWORLD_SYSTEM_PROMPT
+
+WEBSHOP_SYSTEM_PROMPT = """You are analyzing raw task trajectories from a web shopping environment to extract issue-learning pairs for a knowledge base.
+
+Input: A list of trajectories for the same task_id across multiple trials.
+Each trajectory has: task_id, task_desc, trial_num, steps (action/observation pairs), success boolean, reward (0-1 score).
+
+The environment is WebShop, where an agent navigates a simulated e-commerce website to find and purchase a product matching a natural language instruction. The agent uses two actions:
+- search[query]: search for products
+- click[element]: click on page elements (product links, attribute options like size/color, "Buy Now", etc.)
+
+For each issue encountered during the trajectories, extract an entry. Issues include but not limited to:
+- Search queries that returned irrelevant results
+- Clicking on wrong products that don't match the instruction
+- Forgetting to select required attributes (size, color, etc.) before buying
+- Buying a product that exceeds the price constraint
+- Not exploring enough results (missing better-matching products on other pages)
+- Selecting wrong attribute options
+
+valid_level meanings:
+- VALID_SAME_TRIAL: Issue was fixed later in the same trial
+- VALID_NEXT_TRIAL: Issue was fixed in a later trial
+- CANDIDATE: Issue was never fixed across all trials
+
+evidence_ref meanings:
+- Where the learning/solution was validated (i.e., what worked and fixed the issue)
+
+issue_ref meanings:
+- Where the issue/problem was first observed (i.e., what went wrong initially)
+
+Learning Text Guidelines:
+- Good: Specific search strategies, attribute selection approaches, price-checking habits
+- Bad: Passive observations, describing what happened without actionable advice
+
+Rules:
+- Look across trials to find what eventually worked
+- learning_text MUST describe the corrective action/strategy, not just what happened
+- Consolidate duplicate issues within the same trial
+- Only create separate entries for the same issue type if the learnings are different
+- If no issues found, return {"entries": []}
+
+Output MUST be valid JSON only. No markdown. No extra keys.
+
+Schema:
+{
+  "entries": [
+    {
+      "task_desc": string (the shopping instruction, e.g., "Find me a grey queen size quilt set under $80"),
+      "obj_type": string (the product and attributes, e.g., "bedding, quilt sets, size, options"),
+      "verbs": string (e.g., "search, click, buy"),
+      "goal_phase": "SEARCH" | "BROWSE" | "SELECT" | "PURCHASE",
+      "issue_text": string (<30 words, what went wrong),
+      "issue_ref": {
+        "task_id": string,
+        "trial_num": number,
+        "step_range": [start_step, end_step]
+      },
+      "learning_text": string (<40 words, the specific ACTION/STRATEGY that fixed the issue),
+      "evidence_ref": {
+        "task_id": string,
+        "trial_num": number,
+        "step_range": [start_step, end_step]
+      },
+      "valid_level": "VALID_SAME_TRIAL" | "VALID_NEXT_TRIAL" | "CANDIDATE"
+    }
+  ]
+}
+
+<TRAJECTORIES_JSON>"""
+
+
+def get_system_prompt(env: str = "alfworld") -> str:
+    """Return the appropriate system prompt for the given environment."""
+    if env == "webshop":
+        return WEBSHOP_SYSTEM_PROMPT
+    return ALFWORLD_SYSTEM_PROMPT
+
 
 def load_json(path: str) -> List[Dict[str, Any]]:
     """Safe JSON loader."""
@@ -142,18 +220,19 @@ def group_trajectories_by_task(trajectories: List[Dict[str, Any]]) -> Dict[str, 
     return dict(grouped)
 
 
-def process_task_trajectories(task_id: str, trajectories: List[Dict[str, Any]], model: str) -> List[Dict[str, Any]]:
+def process_task_trajectories(task_id: str, trajectories: List[Dict[str, Any]], model: str, env: str = "alfworld") -> List[Dict[str, Any]]:
     """Process all trajectories for a single task to extract knowledge base entries."""
     
     traj_str = json.dumps(trajectories, indent=2)
-    prompt = SYSTEM_PROMPT.replace("<TRAJECTORIES_JSON>", traj_str)
+    system_prompt = get_system_prompt(env)
+    prompt = system_prompt.replace("<TRAJECTORIES_JSON>", traj_str)
     
     print(f"Processing task: {task_id} ({len(trajectories)} trials)...")
     
     max_retries = 3
     for attempt in range(max_retries):
         try:
-            response_text, _usage = get_chat(prompt, model=model, max_tokens=16384)
+            response_text, _usage = get_chat(prompt, model=model, max_tokens=2048, reasoning={"effort": "none"}, request_timeout=180)
             
             # Clean up response
             response_text = response_text.strip()
@@ -245,6 +324,7 @@ def generate_knowledge_base(
     reuse_json: bool = False,
     resume: bool = False,
     progress_path: str = None,
+    env: str = "alfworld",
 ):
     """Main logic to generate knowledge base from trajectories."""
     
@@ -304,7 +384,7 @@ def generate_knowledge_base(
     # Process each task group
     new_entries: List[Dict[str, Any]] = []
     for task_id, task_trajs in grouped.items():
-        entries = process_task_trajectories(task_id, task_trajs, MODEL_NAME)
+        entries = process_task_trajectories(task_id, task_trajs, MODEL_NAME, env=env)
         new_entries.extend(entries)
         processed_tasks.add(task_id)
 
@@ -359,6 +439,14 @@ if __name__ == "__main__":
         help="Optional path for progress file (default: knowledge_base_progress.json in log_dir)"
     )
     
+    parser.add_argument(
+        "--env",
+        type=str,
+        default="alfworld",
+        choices=["alfworld", "webshop"],
+        help="Environment type for prompt selection (default: alfworld)"
+    )
+    
     args = parser.parse_args()
     generate_knowledge_base(
         args.log_dir,
@@ -366,4 +454,5 @@ if __name__ == "__main__":
         args.reuse_json,
         args.resume,
         args.progress_path,
+        env=args.env,
     )

@@ -116,34 +116,15 @@ class MemoryAllocationReflexion(ReAct):
 
         return env_history, is_success
 
-    def _log_trajectory(self, log_dir: str, task_id: str, trial_num: int, 
+    def _log_trajectory(self, log_dir: str, task_id: str, trial_num: int,
                         steps: List[Dict[str, str]], success: bool, task_desc: str = "") -> None:
-        """Log the complete trajectory to trajectories.json"""
-        # Extract task_type from task_id (e.g., 'pick_and_place_simple' from 'pick_and_place_simple-Mug-None-Desk-308/...')
-        task_type = task_id.split('-')[0] if task_id else ""
-        
-        trajectory = {
-            "task_id": task_id,
-            "task_type": task_type,
-            "task_desc": task_desc,
-            "trial_num": trial_num,
-            "steps": steps,
-            "success": success,
-            "step_num": len(steps)
-        }
-        
-        trajectories_path = os.path.join(log_dir, "trajectories.json")
-        
-        # Read existing trajectories, append new one, write back
-        trajectories = []
-        if os.path.exists(trajectories_path):
-            with open(trajectories_path, 'r') as f:
-                trajectories = json.load(f)
-        
-        trajectories.append(trajectory)
-        
-        with open(trajectories_path, 'w') as f:
-            json.dump(trajectories, f, indent=2)
+        """Log the complete trajectory to trajectories.json
+
+        NOTE: When called from run_webshop_suite.py, the suite runner handles
+        trajectory logging with proper thread locking. This method is kept as
+        a no-op to avoid a dual-writer race condition with concurrent threads.
+        """
+        pass
 
     def _log_reflexion(self, log_dir: str, task_id: str, trial_num: int, 
                        reflexion: str, is_success: bool) -> None:
@@ -155,18 +136,34 @@ class MemoryAllocationReflexion(ReAct):
             "reflexion": reflexion
         }
         
+        # Write to append-only JSONL to avoid race conditions with concurrent threads
+        jsonl_path = os.path.join(log_dir, "reflexions.jsonl")
+        line = json.dumps(reflexion_entry, separators=(",", ":")) + "\n"
+        with open(jsonl_path, "a") as f:
+            f.write(line)
+
+        # Also write the full JSON for the suite runner to read between trials
         reflexions_path = os.path.join(log_dir, "reflexions.json")
-        
-        # Read existing reflexions, append new one, write back
         reflexions = []
-        if os.path.exists(reflexions_path):
-            with open(reflexions_path, 'r') as f:
-                reflexions = json.load(f)
-        
-        reflexions.append(reflexion_entry)
-        
-        with open(reflexions_path, 'w') as f:
-            json.dump(reflexions, f, indent=2)
+        if os.path.exists(jsonl_path):
+            with open(jsonl_path, "r") as f:
+                for l in f:
+                    l = l.strip()
+                    if l:
+                        try:
+                            reflexions.append(json.loads(l))
+                        except json.JSONDecodeError:
+                            pass
+        import tempfile, os as _os
+        dirpath = _os.path.dirname(reflexions_path)
+        fd, tmp = tempfile.mkstemp(dir=dirpath, suffix=".tmp")
+        try:
+            with _os.fdopen(fd, "w") as tmpf:
+                json.dump(reflexions, tmpf, indent=2)
+            _os.replace(tmp, reflexions_path)
+        except:
+            _os.unlink(tmp)
+            raise
 
     def _generate_reflexion(self, history_str: str, memory: List[str]) -> str:
         """

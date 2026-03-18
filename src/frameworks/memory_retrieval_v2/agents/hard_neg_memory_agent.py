@@ -333,14 +333,9 @@ The following learnings are from previous tasks similar to yours. Use them to av
             "agent_type": "hard_negative"
         }
         
-        trajectories_path = os.path.join(log_dir, "trajectories.json")
-        
-        trajectories = []
-        if os.path.exists(trajectories_path):
-            with open(trajectories_path, 'r') as f:
-                trajectories = json.load(f)
-        
-        trajectories.append(trajectory)
-        
-        with open(trajectories_path, 'w') as f:
-            json.dump(trajectories, f, indent=2)
+        # Write to append-only JSONL to avoid race conditions with the suite runner
+        import json as _json
+        jsonl_path = os.path.join(log_dir, "agent_trajectories.jsonl")
+        line = _json.dumps(trajectory, separators=(",", ":")) + "\n"
+        with open(jsonl_path, "a") as f:
+            f.write(line)

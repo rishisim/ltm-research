@@ -1,0 +1,17 @@
+{
+  "split": "valid_seen",
+  "rows": [
+    {
+      "split": "valid_seen",
+      "framework_id": "react",
+      "framework": "ReAct",
+      "success_total": "1 / 3",
+      "accuracy": 0.3333333333333333,
+      "avg_steps_per_trial": 16.333333333333332,
+      "avg_steps_per_task": 16.333333333333332,
+      "attempt_count": 3,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/alfworld_runs/memory_retrieval_v2/memory_agent_runs/seen/react",
+      "gain_from_base_react": 0.0
+    }
+  ]
+}

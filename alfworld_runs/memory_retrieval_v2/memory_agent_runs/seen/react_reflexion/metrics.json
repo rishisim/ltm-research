@@ -2,15 +2,15 @@
   "framework_id": "react_reflexion",
   "framework": "React + Reflexion (final trials, max 7)",
   "split": "valid_seen",
-  "num_tasks": 20,
+  "num_tasks": 140,
   "metrics": {
-    "success": 20,
-    "total": 20,
-    "success_total": "20 / 20",
-    "accuracy": 1.0,
-    "avg_steps_per_trial": 16.59090909090909,
-    "avg_steps_per_task": 18.25,
-    "attempt_count": 22,
-    "trials_executed": 2
+    "success": 115,
+    "total": 140,
+    "success_total": "115 / 140",
+    "accuracy": 0.8214285714285714,
+    "avg_steps_per_trial": 31.716332378223495,
+    "avg_steps_per_task": 79.06428571428572,
+    "attempt_count": 349,
+    "trials_executed": 7
   }
 }

@@ -99,18 +99,20 @@ def retrieve_context(
     top_k_similar_tasks: int = 5,
     force_rebuild_cache: bool = False,
     log_dir: Optional[str] = None,
-    task_id: Optional[str] = None
+    task_id: Optional[str] = None,
+    max_learnings: int = 25,
+    min_valid_level: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
     Retrieve relevant learnings from the memory bank for a new task.
-    
+
     Uses optimized caching and dynamic learning count selection:
     1. Find top-5 similar tasks from mem_learning_counts table
     2. Calculate pick_learning_count = ceil(1.5 * max_learning_count)
     3. Left join with knowledge_base to build knowledge_retrieval_base
     4. Re-rank with CANDIDATE entries at bottom
     5. Select top pick_learning_count learnings
-    
+
     Args:
         new_task_desc: The description of the new task
         memory_bank_path: Path to the knowledge_base.json file
@@ -118,7 +120,10 @@ def retrieve_context(
         force_rebuild_cache: If True, rebuild caches even if valid
         log_dir: Optional directory to save retrieval files
         task_id: Optional task ID for logging knowledge_retrieval_base to separate file
-        
+        max_learnings: Hard cap on number of learnings to select (default: 25)
+        min_valid_level: Minimum validation level to include. One of
+            "CANDIDATE", "VALID_SAME_TRIAL", "VALID_NEXT_TRIAL", or None (no filter).
+
     Returns:
         Dictionary containing:
         - query: The original task description
@@ -176,18 +181,36 @@ def retrieve_context(
     # Step 3.2: Calculate max_learning_count and pick_learning_count
     learning_counts = [task["learning_count"] for task in top_similar_tasks]
     max_learning_count = max(learning_counts)
-    pick_learning_count = min(math.ceil(1.5 * max_learning_count), 25)
-    
+    pick_learning_count = min(math.ceil(1.5 * max_learning_count), max_learnings)
+
     # Step 3.3 & 3.4: Build knowledge_retrieval_base via left join
     knowledge_base = load_knowledge_base(memory_bank_path)
     knowledge_retrieval_base = _build_knowledge_retrieval_base(
-        top_similar_tasks, 
+        top_similar_tasks,
         knowledge_base
     )
-    
+
     # Step 3.5 & 3.6: Re-rank using weighted score (Similarity * ValidationWeight)
     knowledge_retrieval_base = _rerank_by_weighted_score(knowledge_retrieval_base)
-    
+
+    # Step 3.6b: Filter by minimum validation level
+    if min_valid_level is not None:
+        min_priority = VALID_LEVEL_PRIORITY.get(min_valid_level, 0)
+        knowledge_retrieval_base = [
+            row for row in knowledge_retrieval_base
+            if VALID_LEVEL_PRIORITY.get(row.get("valid_level", "CANDIDATE"), 0) >= min_priority
+        ]
+
+    # Step 3.6c: Deduplicate by learning_text (keep highest-ranked instance)
+    seen_learning_texts = set()
+    deduped_base = []
+    for row in knowledge_retrieval_base:
+        lt = row.get("learning_text", "")
+        if lt not in seen_learning_texts:
+            seen_learning_texts.add(lt)
+            deduped_base.append(row)
+    knowledge_retrieval_base = deduped_base
+
     # Step 3.7: Select top pick_learning_count rows
     selected_rows = knowledge_retrieval_base[:pick_learning_count]
     
@@ -463,25 +486,39 @@ def _save_knowledge_retrieval_base(result: Dict[str, Any], log_dir: str, task_id
     log_path.mkdir(parents=True, exist_ok=True)
     
     retrieval_file = log_path / "knowledge_retrieval_bases.json"
-    
-    # Load existing data or create new
-    if retrieval_file.exists():
-        with open(retrieval_file, 'r') as f:
-            all_retrievals = json.load(f)
-    else:
-        all_retrievals = {}
-    
-    # Add or update this task's retrieval
-    all_retrievals[task_id] = {
+
+    # Thread-safe: append to JSONL, then rebuild JSON atomically
+    import tempfile
+    jsonl_file = log_path / "knowledge_retrieval_bases.jsonl"
+    entry = json.dumps({task_id: {
         "query": result["query"],
         "metadata": result["metadata"],
         "knowledge_retrieval_base": result["knowledge_retrieval_base"]
-    }
-    
-    # Save back
-    with open(retrieval_file, 'w') as f:
-        json.dump(all_retrievals, f, indent=2)
-    
+    }}, separators=(",", ":"))
+    with open(jsonl_file, "a") as f:
+        f.write(entry + "\n")
+
+    # Rebuild full JSON from JSONL (atomic write)
+    all_retrievals = {}
+    if jsonl_file.exists():
+        with open(jsonl_file, "r") as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    try:
+                        all_retrievals.update(json.loads(line))
+                    except json.JSONDecodeError:
+                        pass
+
+    fd, tmp = tempfile.mkstemp(dir=str(log_path), suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w") as tmpf:
+            json.dump(all_retrievals, tmpf, indent=2)
+        os.replace(tmp, str(retrieval_file))
+    except Exception:
+        os.unlink(tmp)
+        raise
+
     print(f"  Knowledge retrieval base saved to {retrieval_file} (key: {task_id})")
 
 
@@ -518,11 +555,13 @@ def retrieve_learnings_only(
     top_k_similar_tasks: int = 5,
     force_rebuild_cache: bool = False,
     log_dir: Optional[str] = None,
-    task_id: Optional[str] = None
+    task_id: Optional[str] = None,
+    max_learnings: int = 25,
+    min_valid_level: Optional[str] = None,
 ) -> List[Dict[str, Any]]:
     """
     Convenience function to retrieve only the selected learnings list.
-    
+
     Args:
         new_task_desc: The description of the new task
         memory_bank_path: Path to the knowledge_base.json file
@@ -530,7 +569,9 @@ def retrieve_learnings_only(
         force_rebuild_cache: If True, rebuild caches
         log_dir: Optional directory to save retrieval files
         task_id: Optional task ID for logging
-        
+        max_learnings: Hard cap on number of learnings (default: 25)
+        min_valid_level: Minimum validation level to include (default: None)
+
     Returns:
         List of selected learning dictionaries
     """
@@ -540,7 +581,9 @@ def retrieve_learnings_only(
         top_k_similar_tasks=top_k_similar_tasks,
         force_rebuild_cache=force_rebuild_cache,
         log_dir=log_dir,
-        task_id=task_id
+        task_id=task_id,
+        max_learnings=max_learnings,
+        min_valid_level=min_valid_level,
     )
     return result["selected_learnings"]
 

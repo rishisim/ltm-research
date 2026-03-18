@@ -120,20 +120,22 @@ Use this tool when you:
             return f"Error retrieving help: {str(e)}"
 
     def run(
-        self, 
-        env: BaseEnv, 
-        base_prompt: str, 
-        memory: List[str], 
+        self,
+        env: BaseEnv,
+        base_prompt: str,
+        memory: List[str],
         start_ob: str = "",
         task_id: str = "",
         trial_num: int = 1,
         log_dir: str = "",
         task_desc: str = "",
-        memory_bank_path: str = ""
+        memory_bank_path: str = "",
+        max_learnings: int = 25,
+        min_valid_level: str = "",
     ) -> Tuple[EnvironmentHistory, bool]:
         """
         Run the memory-augmented agent on the environment.
-        
+
         Args:
             env: The environment to run on
             base_prompt: The base prompt for the agent
@@ -144,7 +146,9 @@ Use this tool when you:
             log_dir: Directory to save logs
             task_desc: The task description text
             memory_bank_path: Path to the knowledge_base.json file
-            
+            max_learnings: Hard cap on retrieved learnings (default: 25)
+            min_valid_level: Minimum validation level filter (default: "" = no filter)
+
         Returns:
             Tuple of (environment history, success boolean)
         """
@@ -167,7 +171,9 @@ Use this tool when you:
                     memory_bank_path=memory_bank_path,
                     top_k_similar_tasks=5,
                     log_dir=log_dir,
-                    task_id=task_id
+                    task_id=task_id,
+                    max_learnings=max_learnings,
+                    min_valid_level=min_valid_level or None,
                 )
                 if learnings:
                     retrieved_learnings = learnings  # Store for trajectory logging
@@ -384,15 +390,9 @@ The following learnings are from previous tasks similar to yours. Use them to av
             "embedding_model_used": embedding_model_used,
         }
         
-        trajectories_path = os.path.join(log_dir, "trajectories.json")
-        
-        # Read existing trajectories, append new one, write back
-        trajectories = []
-        if os.path.exists(trajectories_path):
-            with open(trajectories_path, 'r') as f:
-                trajectories = json.load(f)
-        
-        trajectories.append(trajectory)
-        
-        with open(trajectories_path, 'w') as f:
-            json.dump(trajectories, f, indent=2)
+        # Write to append-only JSONL to avoid race conditions with the suite runner
+        import json as _json
+        jsonl_path = os.path.join(log_dir, "agent_trajectories.jsonl")
+        line = _json.dumps(trajectory, separators=(",", ":")) + "\n"
+        with open(jsonl_path, "a") as f:
+            f.write(line)
