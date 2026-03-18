@@ -1,0 +1,108 @@
+\appendix
+
+\section*{Appendix}
+
+\section{Retrieval Algorithms}
+\label{app:algorithms}
+
+\begin{algorithm}[h]
+\caption{Context Retrieval from Knowledge Base}
+\label{alg:context-retrieval}
+\begin{algorithmic}[1]
+\REQUIRE Task description $q$; knowledge base $\mathcal{K}$; neighbor count $k{=}5$; scaling factor $\alpha{=}1.5$; cap $N_{\max}{=}25$; validation weights $W$
+\ENSURE Selected learnings $C$
+
+\STATE $\mathbf{v}_q \leftarrow \textsc{Embed}(q)$
+\STATE $\mathcal{T}_{\text{top}} \leftarrow \text{Top-}k \text{ tasks in } \mathcal{K} \text{ by } \text{sim}(\mathbf{v}_q, \mathbf{v}_t)$ \COMMENT{filter exact matches}
+\STATE $L_{\max} \leftarrow \max_{t \in \mathcal{T}_{\text{top}}} \textsc{LearningCount}(t)$
+\STATE $N_{\text{pick}} \leftarrow \min(\lceil \alpha \cdot L_{\max} \rceil, \; N_{\max})$
+\STATE $\mathcal{L}_{\text{pool}} \leftarrow \emptyset$
+\FOR{each $(t, s_t) \in \mathcal{T}_{\text{top}}$}
+    \FOR{each learning $\ell \in \textsc{GetLearnings}(t)$}
+        \STATE $\text{score}(\ell) \leftarrow s_t \times W[\ell.\text{valid\_level}]$
+        \STATE $\mathcal{L}_{\text{pool}} \leftarrow \mathcal{L}_{\text{pool}} \cup \{(\ell, \text{score}(\ell))\}$
+    \ENDFOR
+\ENDFOR
+\STATE Sort $\mathcal{L}_{\text{pool}}$ by score descending; deduplicate by learning text
+\STATE $C \leftarrow$ first $N_{\text{pick}}$ elements of $\mathcal{L}_{\text{pool}}$
+\RETURN $C$
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[h]
+\caption{Hybrid Tool Retrieval}
+\label{alg:tool-retrieval}
+\begin{algorithmic}[1]
+\REQUIRE Issue description $I_q$; knowledge base $\mathcal{K}$; result count $k{=}3$; dense weight $\alpha{=}0.7$; sparse weight $\beta{=}0.3$; validation weights $W$
+\ENSURE Top-$k$ issue--learning pairs
+
+\STATE $q' \leftarrow \textsc{Clean}(I_q)$ \COMMENT{remove digits, normalize}
+\STATE $\mathbf{v}_q \leftarrow \textsc{Embed}(q')$
+\STATE $\mathbf{s}_{\cos} \leftarrow \textsc{CosineSim}(\mathbf{v}_q, \mathcal{K}.\text{issue\_embeddings})$
+\STATE $\mathbf{s}_{\text{bm25}} \leftarrow \textsc{BM25}(q', \mathcal{K}.\text{index})$
+\STATE $\mathcal{C} \leftarrow \text{Top}(\mathbf{s}_{\cos}, 100) \cup \text{Top}(\mathbf{s}_{\text{bm25}}, 100)$ \COMMENT{candidate pool}
+\FOR{each $i \in \mathcal{C}$}
+    \STATE $c_i \leftarrow \text{clamp}(\mathbf{s}_{\cos}[i], 0, 1)$
+    \STATE $b_i \leftarrow \textsc{MinMaxNorm}(\mathbf{s}_{\text{bm25}}[i], \mathcal{C})$
+    \STATE $S_{\text{hybrid}} \leftarrow \alpha \cdot c_i + \beta \cdot b_i$
+    \STATE $\text{score}(i) \leftarrow S_{\text{hybrid}} \times W[\mathcal{K}[i].\text{valid\_level}]$
+\ENDFOR
+\STATE Sort $\mathcal{C}$ by score descending
+\RETURN first $k$ elements of $\mathcal{C}$
+\end{algorithmic}
+\end{algorithm}
+
+\section{Knowledge Base Schema}
+\label{app:kb-schema}
+
+Each entry in the knowledge base is a structured record containing the following fields:
+
+\begin{itemize}
+    \item \textbf{Task metadata}: task description, object type, action verbs, goal phase (\textsc{Search}, \textsc{Acquire}, \textsc{Transform}, \textsc{Place}, or \textsc{Recover}).
+    \item \textbf{Issue--learning pair}: \texttt{issue\_text} (the specific mistake encountered) and \texttt{learning\_text} (the successful correction).
+    \item \textbf{Validation level}: a confidence label reflecting downstream outcome:
+    \begin{itemize}
+        \item \textsc{Valid\_Next\_Trial}: the learning was applied and led to success in a subsequent trial (highest confidence). Weight $\omega_{\text{next}} = 1.0$.
+        \item \textsc{Valid\_Same\_Trial}: the learning is associated with success within the same trial. Weight $\omega_{\text{same}} = 0.9$.
+        \item \textsc{Candidate}: the learning was generated but the task was not completed (lowest confidence). Weight $\omega_{\text{cand}} = 0.6$.
+    \end{itemize}
+    \item \textbf{Provenance}: references to the source task, trial number, and step range for both the issue and its resolution.
+\end{itemize}
+
+\section{Experimental Details}
+\label{app:experimental-details}
+
+\subsection{Dataset Statistics}
+
+\paragraph{ALFWorld.}
+The full ALFWorld dataset~\citep{shridhar2021alfworld} comprises 3{,}827 games split into a training set (3{,}553 games), a validation-seen set (140 games), and a validation-unseen set (134 games). For knowledge base construction, we use \emph{alfworld-mini}, a curated subset of 120 training games (20 per task type $\times$ 6 task types). We run Reflexion on this subset and extract approximately 400 issue--learning entries from the resulting trajectories using the pipeline described in Section~\ref{sec:kb-construction}. The validation splits are identical to those of the full ALFWorld dataset, ensuring direct comparability with prior work. No training games appear in the validation sets.
+
+\paragraph{WebShop.}
+We partition the WebShop environment~\citep{yao2022webshop} into a development split (200 tasks) and a held-out test split (200 tasks). The knowledge base is extracted from Reflexion training trajectories on a separate set of training tasks with no overlap with either evaluation split.
+
+\subsection{Framework Variants}
+
+We evaluate six framework variants in each environment:
+\begin{enumerate}
+    \item \textbf{ReAct}: the base agent with no memory~\citep{yao2023react}, serving as the primary baseline.
+    \item \textbf{ReAct + Reflexion}: the iterative self-correction baseline~\citep{shinn2023reflexion}, allowed up to 7 trials per task.
+    \item \textbf{ReAct + CR}: base agent augmented with Context Retrieval only.
+    \item \textbf{ReAct + TR}: base agent augmented with Tool Retrieval only.
+    \item \textbf{ReAct + CR + TR}: base agent augmented with both retrieval mechanisms.
+    \item \textbf{ReAct + hard-neg CR + TR}: ablation control that retrieves maximally \emph{irrelevant} entries via inverted retrieval (Section~\ref{sec:hard-neg}).
+\end{enumerate}
+All memory-augmented variants (CR, TR, CR+TR) execute a single trial per task, whereas Reflexion may execute up to 7 trials.
+
+\subsection{Evaluation Metrics}
+
+\paragraph{Accuracy (success rate).}
+The fraction of tasks completed successfully, computed as a binary outcome per task.
+
+\paragraph{Average Steps per Trial.}
+The mean number of thought--action--observation steps per individual trial attempt. For Reflexion, this reflects the average length of a single trial, irrespective of retry count.
+
+\paragraph{Average Steps per Task.}
+The mean total steps per task across all trials. For single-trial methods, this equals Steps/Trial. For Reflexion, this accumulates steps across all retry trials (up to 7), capturing the full computational cost.
+
+\paragraph{Gain from ReAct.}
+The percentage-point difference between a variant's accuracy and the ReAct baseline accuracy on the same split.

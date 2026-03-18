@@ -1,0 +1,65 @@
+\section{Analysis and Discussion}
+\label{sec:analysis}
+
+We trace the divergence between environments to three structural properties and synthesize them into a diagnostic framework.
+
+% ----------------------------------------------------------------------------
+\subsection{Task Compositionality}
+\label{sec:compositionality}
+
+ALFWorld tasks decompose into shared sub-goal phases (\textsc{Search} $\rightarrow$ \textsc{Acquire} $\rightarrow$ \textsc{Transform} $\rightarrow$ \textsc{Place}) that recur across task types, so a modest set of phase-specific learnings covers a combinatorially large task space. WebShop tasks are monolithic: each targets a unique product through a unique catalog path with no shared sub-task decomposition. This explains why CR yields $+15.7$pp on ALFWorld but $-29$pp on WebShop---and why the hard-negative paradox emerges: in WebShop, obviously irrelevant retrievals cause less harm than plausible-looking but non-transferable ones.
+
+\paragraph{Principle.} Episodic memory is most effective when tasks share compositional sub-task structure.
+
+% ----------------------------------------------------------------------------
+\subsection{Action Space Regularity}
+\label{sec:action-space}
+
+ALFWorld's fixed grammar of ${\sim}$15 verb templates ensures that learned action sequences generalize across tasks. WebShop's action space is syntactically simple but combinatorially vast: free-form search queries and dynamically generated page elements mean that specific navigation paths never recur. TR's issue-level guidance accordingly helps in ALFWorld ($+8.2$pp unseen) but hurts in WebShop ($-21.5$pp).
+
+\paragraph{Principle.} Episodic memory is most effective when the action space is constrained and regular.
+
+% ----------------------------------------------------------------------------
+\subsection{Learning Transfer Radius}
+\label{sec:transfer-radius}
+
+We define the \emph{learning transfer radius} as the number of distinct future tasks that benefit from a single learned experience. In ALFWorld, a learning like ``open the container before taking an object'' applies to dozens of tasks across multiple types (high radius). In WebShop, each learning is tied to a unique product (radius near zero). The empirical signature is visible in ALFWorld's stronger unseen-split gains ($+19.4$pp vs.\ $+16.4$pp on seen), indicating effective cross-task generalization.
+
+\paragraph{Principle.} Episodic memory is most effective when the learning transfer radius is high.
+
+% ----------------------------------------------------------------------------
+\subsection{Efficiency--Accuracy Trade-off}
+\label{sec:efficiency}
+
+Figure~\ref{fig:accuracy-cost} plots accuracy against computational cost (steps per task) on held-out splits, revealing a key practical distinction. On ALFWorld, CR+TR occupies an efficient frontier: it achieves near-Reflexion accuracy ($+19.4$pp vs.\ $+21.6$pp) at roughly one-third the step cost (${\sim}$23 vs.\ ${\sim}$79 steps/task), making it the preferred choice when compute budgets are constrained. On WebShop, memory variants shift the agent into a strictly dominated region---accuracy degrades without any compensating reduction in cost. Reflexion improves accuracy in both environments but consistently incurs 3--4$\times$ the baseline step cost, highlighting the expense of iterative self-correction. This trade-off reinforces the environment-dependence of memory: when the three structural properties favor transfer, episodic memory provides a low-cost path to high accuracy; when they do not, the same mechanism wastes computation while actively degrading performance.
+
+\subsection{Diagnostic Framework}
+\label{sec:framework}
+
+Table~\ref{tab:framework} summarizes how the two environments differ along these dimensions.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Diagnostic framework for episodic memory effectiveness. Effect sizes relative to ReAct baseline (seen/unseen for ALFWorld, dev/test for WebShop).}
+\label{tab:framework}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcc}
+\toprule
+\textbf{Property} & \textbf{ALFWorld} & \textbf{WebShop} \\
+\midrule
+Task Compositionality & High (shared sub-goals) & Low (unique products) \\
+Action Space Regularity & High (fixed, ${\sim}$15 verbs) & Low (free-form) \\
+Learning Transfer Radius & High (1 $\rightarrow$ many tasks) & Near-zero \\
+\midrule
+Memory Effect (CR+TR) & $+16.4$/$+19.4$pp & $-30.5$/$-27.5$pp \\
+Hard-neg Effect$^*$ & $-5.7$/$-17.2$pp & $-12.5$/$-15.0$pp \\
+\bottomrule
+\end{tabular}%
+}
+\vspace{2pt}
+
+{\footnotesize $^*$Hard-neg \emph{outperforms} proper retrieval on WebShop ($-12.5$ vs.\ $-30.5$pp), indicating semantic similarity is counterproductive when transfer radius is near zero.}
+\end{table}
+
+When all three properties favor transfer, memory provides substantial gains; when they do not, retrieved experiences actively mislead the agent. Before deploying a memory system, practitioners should assess their target environment along these dimensions: task compositionality, action space regularity, and learning transfer radius. When these properties are unfavorable, alternatives such as intra-task self-correction or memory systems with explicit gating mechanisms may be more appropriate.

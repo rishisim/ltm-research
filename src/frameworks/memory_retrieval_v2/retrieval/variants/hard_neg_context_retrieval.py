@@ -37,7 +37,8 @@ from src.frameworks.memory_retrieval_v2.retrieval.core.context_retrieval import 
     _format_selected_learnings,
     _save_knowledge_retrieval_base,
     _empty_result,
-    format_learnings_for_prompt
+    format_learnings_for_prompt,
+    VALID_LEVEL_PRIORITY,
 )
 
 # Reuse core functionality by importing, but we will redefine the main logic flow
@@ -211,7 +212,9 @@ def retrieve_context(
     top_k_similar_tasks: int = 5,
     force_rebuild_cache: bool = False,
     log_dir: Optional[str] = None,
-    task_id: Optional[str] = None
+    task_id: Optional[str] = None,
+    max_learnings: int = 25,
+    min_valid_level: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
     Retrieve Hard Negative learnings (Least similar).
@@ -242,7 +245,7 @@ def retrieve_context(
     # Step 3.2: Calculate counts (same logic, just based on the returned tasks)
     learning_counts = [task["learning_count"] for task in top_similar_tasks]
     max_learning_count = max(learning_counts)
-    pick_learning_count = min(math.ceil(1.5 * max_learning_count), 25)
+    pick_learning_count = min(math.ceil(1.5 * max_learning_count), max_learnings)
     
     # Step 3.3: Build base
     knowledge_base = load_knowledge_base(memory_bank_path)
@@ -253,7 +256,15 @@ def retrieve_context(
     
     # Step 3.4: Re-rank ASCENDING (get worst of the worst)
     knowledge_retrieval_base = _rerank_by_weighted_score_ascending(knowledge_retrieval_base)
-    
+
+    # Step 3.4b: Filter by minimum validation level
+    if min_valid_level is not None:
+        min_priority = VALID_LEVEL_PRIORITY.get(min_valid_level, 0)
+        knowledge_retrieval_base = [
+            row for row in knowledge_retrieval_base
+            if VALID_LEVEL_PRIORITY.get(row.get("valid_level", "CANDIDATE"), 0) >= min_priority
+        ]
+
     # Step 3.5: Select top pick_learning_count (which are the lowest scored ones)
     selected_rows = knowledge_retrieval_base[:pick_learning_count]
     
@@ -294,7 +305,9 @@ def retrieve_learnings_only(
     top_k_similar_tasks: int = 5,
     force_rebuild_cache: bool = False,
     log_dir: Optional[str] = None,
-    task_id: Optional[str] = None
+    task_id: Optional[str] = None,
+    max_learnings: int = 25,
+    min_valid_level: Optional[str] = None,
 ) -> List[Dict[str, Any]]:
     """
     Convenience wrapper for retrieve_context.
@@ -305,7 +318,9 @@ def retrieve_learnings_only(
         top_k_similar_tasks=top_k_similar_tasks,
         force_rebuild_cache=force_rebuild_cache,
         log_dir=log_dir,
-        task_id=task_id
+        task_id=task_id,
+        max_learnings=max_learnings,
+        min_valid_level=min_valid_level,
     )
     return result["selected_learnings"]
 

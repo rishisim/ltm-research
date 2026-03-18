@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering
+\caption{ALFWorld validation-seen results (140 tasks). CR = Context Retrieval, TR = Tool Retrieval. \textbf{Bold} = best accuracy.}
+\label{tab:alfworld-seen}
+\begin{tabular}{lccccc}
+\toprule
+Framework & Success / Total & Accuracy & Steps/Trial & Steps/Task & Gain \\
+\midrule
+ReAct                             &  86 / 140 & 61.43 & 24.29 & 24.29 & --- \\
+ReAct + Reflexion$^\dagger$       & 115 / 140 & \textbf{82.14} & 31.72 & 79.06 & $+$20.71 \\
+ReAct + CR                        & 108 / 140 & 77.14 & 23.09 & 23.09 & $+$15.71 \\
+ReAct + TR                        &  89 / 140 & 63.57 & 26.90 & 26.90 & $+$2.14 \\
+ReAct + CR + TR                   & 109 / 140 & 77.86 & 25.41 & 25.41 & $+$16.43 \\
+ReAct + hard-neg CR + TR$^*$      &  78 / 140 & 55.71 & 28.41 & 28.41 & $-$5.71 \\
+\bottomrule
+\end{tabular}
+\vspace{2pt}
+
+{\footnotesize $^\dagger$Max 7 trials; Steps/Task reflects cumulative cost. $^*$Ablation control retrieving \emph{least}-similar entries.}
+\end{table*}

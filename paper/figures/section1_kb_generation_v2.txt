@@ -1,0 +1,11 @@
+Create a compact, single-row horizontal methodology diagram suitable for a two-column academic paper (IEEE/ACL style). The diagram must be narrow in height and wide, fitting within a single column or spanning two columns without dominating the page.
+
+The flow has three compact stages connected by simple arrows, left to right:
+
+1. (Left) A small icon of stacked documents labeled "Training Trajectories" with a subtle sub-label "(with reflexions)". Keep this compact — just 2-3 overlapping rectangles suggesting a stack, no detailed content inside.
+
+2. (Middle) A single compact rounded rectangle labeled "LLM" with a small sub-label "Per-task issue-learning extraction" below. Use a gear or sparkle icon to indicate processing. Do NOT expand this into multiple sub-boxes — keep it as one clean block.
+
+3. (Right) A compact table icon labeled "Memory KB" showing just column headers: "Task | Issue | Solution | Level" with 2-3 gray placeholder rows beneath. Use small colored dots or badges (green, yellow, orange) next to rows to indicate validation levels instead of full text labels.
+
+Style: Minimalist academic diagram. Use a white background, thin lines, muted pastel fills (light blue, light purple, light green), small clean sans-serif font. No drop shadows, no gradients, no decorative elements. Total height should be roughly 1/4 of the width. Think: Nature/Science figure style — clean, compact, information-dense.

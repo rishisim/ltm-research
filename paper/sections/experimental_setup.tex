@@ -1,0 +1,13 @@
+\section{Experimental Setup}
+\label{sec:experimental-setup}
+
+All agent reasoning uses Gemini 2.5 Flash, and all retrieval embeddings use Google's \texttt{text-embedding-004}, held constant across experiments.
+
+\paragraph{Tasks and splits.}
+For ALFWorld, the knowledge base is constructed from \emph{alfworld-mini}, a curated subset of 120 training games (20 per task type). We evaluate on the standard validation-seen (140 tasks) and validation-unseen (134 tasks) splits. For WebShop, we evaluate on development (200 tasks) and held-out test (200 tasks) splits, with the knowledge base extracted from separate training tasks. Full dataset details are in Appendix~\ref{app:experimental-details}.
+
+\paragraph{Framework variants.}
+We evaluate six variants per environment: ReAct (baseline), ReAct + Reflexion (up to 7 trials), ReAct + CR, ReAct + TR, ReAct + CR + TR, and a hard-negative ablation control. All memory variants execute a single trial per task.
+
+\paragraph{Metrics.}
+We report accuracy (binary success rate), average steps per trial and per task (capturing Reflexion's cumulative retry cost), and gain from the ReAct baseline in percentage points. Full metric definitions are in Appendix~\ref{app:experimental-details}.

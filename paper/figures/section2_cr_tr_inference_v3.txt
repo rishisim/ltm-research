@@ -1,0 +1,27 @@
+Create a methodology diagram for an academic paper showing the inference-time retrieval process. It should be detailed and informative — similar in richness to a typical systems architecture figure in a top ML venue paper.
+
+Layout: horizontal flow from left to right with two retrieval paths (upper and lower) feeding into a central agent.
+
+Left side: "New Task" — a document icon with a task description label.
+
+Upper path — Context Retrieval (CR), labeled "CR: Task-Level Similarity (at start)":
+- A box labeled "CR Module" containing two sub-steps: "Embed Task Description" and "Cosine Similarity Search"
+- An arrow from Memory KB (right side) labeled "Top-k Learnings" feeds into the CR module
+- The CR module output arrow labeled "Context learnings injected into prompt" points into the Prompt Initialization section of the Agent
+- Small annotation: "Proactive — activated at task start"
+
+Center: "Memory-Augmented Agent" — a rounded rectangle with two internal sections:
+- Top section: "Prompt Initialization" (where CR context is injected)
+- Bottom section: "Execution Loop / Environment" (where the agent takes actions)
+- A small robot or agent icon
+
+Lower path — Tool Retrieval (TR), labeled "TR: Issue-Level Hybrid Retrieval (need-based)":
+- A box labeled "TR Module" containing two sub-steps: "Cosine Similarity (dense)" and "BM25 (sparse)"
+- A dashed arrow from the Agent's Execution section going down to TR with label 'help["issue description"]'
+- An arrow from Memory KB feeds into TR module
+- TR output arrow labeled "Top-3 Issue-Solution Pairs" points back to the Agent's Execution section
+- Small annotation: "Reactive — activated on demand when agent struggles"
+
+Right side: "Memory KB" — a database cylinder icon with a small table preview showing Issue and Solution columns.
+
+Use light blue fill for CR path, light amber/yellow fill for TR path, light gray for Agent. Arrows should clearly show the flow direction. Use muted pastel colors, thin lines, clean sans-serif font. White background. Academic publication style.

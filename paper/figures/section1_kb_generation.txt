@@ -1,0 +1,9 @@
+The diagram shows the offline Memory Knowledge Base generation pipeline as a horizontal flow with three stages.
+
+Stage 1 (left): "Training Trajectories" — a stack/collection of task execution logs. Each trajectory contains multi-trial task executions where an agent attempts the same task multiple times. Failed attempts include reflexions (self-generated corrections). Label: "Trajectories with Reflexions".
+
+Stage 2 (middle): "LLM" — a processing block. The LLM analyzes all trials for each task and extracts structured issue-learning pairs. It identifies: what went wrong (issues), how it was resolved (solutions/learnings), and confidence level (validation status). Label: "Per-Task Issue-Learning Extraction".
+
+Stage 3 (right): "Memory Knowledge Base" — a structured table/database. Each entry contains: Task description, Issue (what went wrong), Solution/Learning (the corrective strategy), and Validation Level (VALID_NEXT_TRIAL, VALID_SAME_TRIAL, or CANDIDATE). Label: "Memory KB: Issues + Solutions".
+
+Arrows flow left-to-right connecting all three stages. Use a clean, academic style with rounded rectangles and subtle colors.

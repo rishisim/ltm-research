@@ -1,49 +1,17 @@
 [
   {
-    "task_id": "webshop_10589",
-    "task_id_int": 10589,
+    "task_id": "webshop_10642",
+    "task_id_int": 10642,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 7,
+    "reward": 0.75,
+    "success": true
   },
   {
-    "task_id": "webshop_10595",
-    "task_id_int": 10595,
+    "task_id": "webshop_10638",
+    "task_id_int": 10638,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10594",
-    "task_id_int": 10594,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10602",
-    "task_id_int": 10602,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10619",
-    "task_id_int": 10619,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10608",
-    "task_id_int": 10608,
-    "trial_num": 1,
-    "step_num": 0,
+    "step_num": 22,
     "reward": 0.0,
     "success": false
   },
@@ -51,71 +19,95 @@
     "task_id": "webshop_10627",
     "task_id_int": 10627,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 21,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_10596",
-    "task_id_int": 10596,
+    "task_id": "webshop_10589",
+    "task_id_int": 10589,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10638",
-    "task_id_int": 10638,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10642",
-    "task_id_int": 10642,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10645",
-    "task_id_int": 10645,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10646",
-    "task_id_int": 10646,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10649",
-    "task_id_int": 10649,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 11,
+    "reward": 0.5,
+    "success": true
   },
   {
     "task_id": "webshop_10656",
     "task_id_int": 10656,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 25,
+    "reward": 0.3333333333333333,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10645",
+    "task_id_int": 10645,
+    "trial_num": 1,
+    "step_num": 30,
+    "reward": 0.5714285714285714,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10669",
+    "task_id_int": 10669,
+    "trial_num": 1,
+    "step_num": 7,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10596",
+    "task_id_int": 10596,
+    "trial_num": 1,
+    "step_num": 24,
+    "reward": 0.75,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10646",
+    "task_id_int": 10646,
+    "trial_num": 1,
+    "step_num": 25,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_10657",
-    "task_id_int": 10657,
+    "task_id": "webshop_10619",
+    "task_id_int": 10619,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 17,
+    "reward": 0.7,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10594",
+    "task_id_int": 10594,
+    "trial_num": 1,
+    "step_num": 23,
+    "reward": 0.4444444444444444,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10670",
+    "task_id_int": 10670,
+    "trial_num": 1,
+    "step_num": 15,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10686",
+    "task_id_int": 10686,
+    "trial_num": 1,
+    "step_num": 9,
+    "reward": 0.8571428571428571,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10595",
+    "task_id_int": 10595,
+    "trial_num": 1,
+    "step_num": 40,
     "reward": 0.0,
     "success": false
   },
@@ -123,15 +115,15 @@
     "task_id": "webshop_10647",
     "task_id_int": 10647,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_10659",
-    "task_id_int": 10659,
+    "task_id": "webshop_10649",
+    "task_id_int": 10649,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
@@ -139,87 +131,23 @@
     "task_id": "webshop_10661",
     "task_id_int": 10661,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 18,
+    "reward": 0.05714285714285714,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10657",
+    "task_id_int": 10657,
+    "trial_num": 1,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_10662",
-    "task_id_int": 10662,
+    "task_id": "webshop_10608",
+    "task_id_int": 10608,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10664",
-    "task_id_int": 10664,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10669",
-    "task_id_int": 10669,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10670",
-    "task_id_int": 10670,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10682",
-    "task_id_int": 10682,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10683",
-    "task_id_int": 10683,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10686",
-    "task_id_int": 10686,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10687",
-    "task_id_int": 10687,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10689",
-    "task_id_int": 10689,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10698",
-    "task_id_int": 10698,
-    "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
@@ -227,47 +155,23 @@
     "task_id": "webshop_10709",
     "task_id_int": 10709,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 9,
+    "reward": 0.08000000000000002,
+    "success": true
   },
   {
-    "task_id": "webshop_10721",
-    "task_id_int": 10721,
+    "task_id": "webshop_10683",
+    "task_id_int": 10683,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 14,
+    "reward": 0.6,
+    "success": true
   },
   {
-    "task_id": "webshop_10722",
-    "task_id_int": 10722,
+    "task_id": "webshop_10659",
+    "task_id_int": 10659,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10730",
-    "task_id_int": 10730,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10745",
-    "task_id_int": 10745,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10748",
-    "task_id_int": 10748,
-    "trial_num": 1,
-    "step_num": 0,
+    "step_num": 16,
     "reward": 0.0,
     "success": false
   },
@@ -275,39 +179,55 @@
     "task_id": "webshop_10755",
     "task_id_int": 10755,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 14,
+    "reward": 0.875,
+    "success": true
   },
   {
-    "task_id": "webshop_10757",
-    "task_id_int": 10757,
+    "task_id": "webshop_10748",
+    "task_id_int": 10748,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 6,
+    "reward": 0.5,
+    "success": true
   },
   {
-    "task_id": "webshop_10774",
-    "task_id_int": 10774,
+    "task_id": "webshop_10698",
+    "task_id_int": 10698,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 14,
+    "reward": 0.3333333333333333,
+    "success": true
   },
   {
     "task_id": "webshop_10777",
     "task_id_int": 10777,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 8,
+    "reward": 0.8,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10687",
+    "task_id_int": 10687,
+    "trial_num": 1,
+    "step_num": 22,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_10781",
-    "task_id_int": 10781,
+    "task_id": "webshop_10745",
+    "task_id_int": 10745,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 9,
+    "reward": 0.8,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10602",
+    "task_id_int": 10602,
+    "trial_num": 1,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
@@ -315,39 +235,39 @@
     "task_id": "webshop_10783",
     "task_id_int": 10783,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 12,
+    "reward": 0.7142857142857143,
+    "success": true
   },
   {
-    "task_id": "webshop_10796",
-    "task_id_int": 10796,
+    "task_id": "webshop_10721",
+    "task_id_int": 10721,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 14,
+    "reward": 0.011111111111111112,
+    "success": true
   },
   {
     "task_id": "webshop_10805",
     "task_id_int": 10805,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 11,
+    "reward": 0.8,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10689",
+    "task_id_int": 10689,
+    "trial_num": 1,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_10806",
-    "task_id_int": 10806,
+    "task_id": "webshop_10662",
+    "task_id_int": 10662,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10809",
-    "task_id_int": 10809,
-    "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
@@ -355,31 +275,55 @@
     "task_id": "webshop_10812",
     "task_id_int": 10812,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 10,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10809",
+    "task_id_int": 10809,
+    "trial_num": 1,
+    "step_num": 12,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10806",
+    "task_id_int": 10806,
+    "trial_num": 1,
+    "step_num": 17,
+    "reward": 0.8333333333333334,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10664",
+    "task_id_int": 10664,
+    "trial_num": 1,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_10821",
-    "task_id_int": 10821,
+    "task_id": "webshop_10757",
+    "task_id_int": 10757,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 34,
+    "reward": 0.5,
+    "success": true
   },
   {
-    "task_id": "webshop_10822",
-    "task_id_int": 10822,
+    "task_id": "webshop_10781",
+    "task_id_int": 10781,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 30,
+    "reward": 0.6666666666666666,
+    "success": true
   },
   {
-    "task_id": "webshop_10827",
-    "task_id_int": 10827,
+    "task_id": "webshop_10730",
+    "task_id_int": 10730,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
@@ -387,31 +331,47 @@
     "task_id": "webshop_10829",
     "task_id_int": 10829,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 18,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_10830",
-    "task_id_int": 10830,
+    "task_id": "webshop_10821",
+    "task_id_int": 10821,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 24,
+    "reward": 0.8333333333333334,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10774",
+    "task_id_int": 10774,
+    "trial_num": 1,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_10831",
-    "task_id_int": 10831,
+    "task_id": "webshop_10722",
+    "task_id_int": 10722,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 33,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10839",
+    "task_id_int": 10839,
+    "trial_num": 1,
+    "step_num": 32,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_10835",
-    "task_id_int": 10835,
+    "task_id": "webshop_10682",
+    "task_id_int": 10682,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
@@ -419,23 +379,7 @@
     "task_id": "webshop_10837",
     "task_id_int": 10837,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10839",
-    "task_id_int": 10839,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10841",
-    "task_id_int": 10841,
-    "trial_num": 1,
-    "step_num": 0,
+    "step_num": 11,
     "reward": 0.0,
     "success": false
   },
@@ -443,23 +387,23 @@
     "task_id": "webshop_10842",
     "task_id_int": 10842,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 31,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_10854",
-    "task_id_int": 10854,
+    "task_id": "webshop_10796",
+    "task_id_int": 10796,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 18,
+    "reward": 0.05714285714285714,
+    "success": true
   },
   {
-    "task_id": "webshop_10858",
-    "task_id_int": 10858,
+    "task_id": "webshop_10831",
+    "task_id_int": 10831,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 20,
     "reward": 0.0,
     "success": false
   },
@@ -467,31 +411,7 @@
     "task_id": "webshop_10872",
     "task_id_int": 10872,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10878",
-    "task_id_int": 10878,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10879",
-    "task_id_int": 10879,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10890",
-    "task_id_int": 10890,
-    "trial_num": 1,
-    "step_num": 0,
+    "step_num": 15,
     "reward": 0.0,
     "success": false
   },
@@ -499,15 +419,23 @@
     "task_id": "webshop_10893",
     "task_id_int": 10893,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 8,
+    "reward": 1.0,
+    "success": true
   },
   {
     "task_id": "webshop_10894",
     "task_id_int": 10894,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 9,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10830",
+    "task_id_int": 10830,
+    "trial_num": 1,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
@@ -515,71 +443,55 @@
     "task_id": "webshop_10896",
     "task_id_int": 10896,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 9,
+    "reward": 0.42857142857142855,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10858",
+    "task_id_int": 10858,
+    "trial_num": 1,
+    "step_num": 17,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10835",
+    "task_id_int": 10835,
+    "trial_num": 1,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_10908",
-    "task_id_int": 10908,
+    "task_id": "webshop_10822",
+    "task_id_int": 10822,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 39,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10890",
+    "task_id_int": 10890,
+    "trial_num": 1,
+    "step_num": 24,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_10910",
-    "task_id_int": 10910,
+    "task_id": "webshop_10841",
+    "task_id_int": 10841,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 31,
+    "reward": 0.5,
+    "success": true
   },
   {
-    "task_id": "webshop_10925",
-    "task_id_int": 10925,
+    "task_id": "webshop_10827",
+    "task_id_int": 10827,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10933",
-    "task_id_int": 10933,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10934",
-    "task_id_int": 10934,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10944",
-    "task_id_int": 10944,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10949",
-    "task_id_int": 10949,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_10965",
-    "task_id_int": 10965,
-    "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
@@ -587,7 +499,31 @@
     "task_id": "webshop_10975",
     "task_id_int": 10975,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 14,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_10925",
+    "task_id_int": 10925,
+    "trial_num": 1,
+    "step_num": 15,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_10965",
+    "task_id_int": 10965,
+    "trial_num": 1,
+    "step_num": 20,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_10949",
+    "task_id_int": 10949,
+    "trial_num": 1,
+    "step_num": 14,
     "reward": 0.0,
     "success": false
   },
@@ -595,47 +531,31 @@
     "task_id": "webshop_10986",
     "task_id_int": 10986,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 14,
+    "reward": 0.6,
+    "success": true
   },
   {
-    "task_id": "webshop_10992",
-    "task_id_int": 10992,
+    "task_id": "webshop_10879",
+    "task_id_int": 10879,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 28,
+    "reward": 0.8,
+    "success": true
   },
   {
-    "task_id": "webshop_10997",
-    "task_id_int": 10997,
+    "task_id": "webshop_10934",
+    "task_id_int": 10934,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 32,
+    "reward": 0.7142857142857143,
+    "success": true
   },
   {
-    "task_id": "webshop_10999",
-    "task_id_int": 10999,
+    "task_id": "webshop_10910",
+    "task_id_int": 10910,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11000",
-    "task_id_int": 11000,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11003",
-    "task_id_int": 11003,
-    "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
@@ -643,7 +563,31 @@
     "task_id": "webshop_11007",
     "task_id_int": 11007,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 12,
+    "reward": 0.7777777777777778,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10878",
+    "task_id_int": 10878,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11003",
+    "task_id_int": 11003,
+    "trial_num": 1,
+    "step_num": 14,
+    "reward": 0.7272727272727273,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10944",
+    "task_id_int": 10944,
+    "trial_num": 1,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
@@ -651,39 +595,47 @@
     "task_id": "webshop_11016",
     "task_id_int": 11016,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 29,
+    "reward": 0.8181818181818182,
+    "success": true
   },
   {
-    "task_id": "webshop_11019",
-    "task_id_int": 11019,
+    "task_id": "webshop_11046",
+    "task_id_int": 11046,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11020",
-    "task_id_int": 11020,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11028",
-    "task_id_int": 11028,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 10,
+    "reward": 0.6923076923076923,
+    "success": true
   },
   {
     "task_id": "webshop_11035",
     "task_id_int": 11035,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 10,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11019",
+    "task_id_int": 11019,
+    "trial_num": 1,
+    "step_num": 37,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11065",
+    "task_id_int": 11065,
+    "trial_num": 1,
+    "step_num": 6,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11056",
+    "task_id_int": 11056,
+    "trial_num": 1,
+    "step_num": 16,
     "reward": 0.0,
     "success": false
   },
@@ -691,23 +643,31 @@
     "task_id": "webshop_11040",
     "task_id_int": 11040,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 10,
+    "reward": 0.025,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10854",
+    "task_id_int": 10854,
+    "trial_num": 1,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11046",
-    "task_id_int": 11046,
+    "task_id": "webshop_10933",
+    "task_id_int": 10933,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11052",
-    "task_id_int": 11052,
+    "task_id": "webshop_11020",
+    "task_id_int": 11020,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
@@ -715,63 +675,15 @@
     "task_id": "webshop_11055",
     "task_id_int": 11055,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 28,
+    "reward": 0.8333333333333334,
+    "success": true
   },
   {
-    "task_id": "webshop_11056",
-    "task_id_int": 11056,
+    "task_id": "webshop_10908",
+    "task_id_int": 10908,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11060",
-    "task_id_int": 11060,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11065",
-    "task_id_int": 11065,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11071",
-    "task_id_int": 11071,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11075",
-    "task_id_int": 11075,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11079",
-    "task_id_int": 11079,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11084",
-    "task_id_int": 11084,
-    "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
@@ -779,39 +691,39 @@
     "task_id": "webshop_11085",
     "task_id_int": 11085,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 10,
+    "reward": 0.625,
+    "success": true
+  },
+  {
+    "task_id": "webshop_10997",
+    "task_id_int": 10997,
+    "trial_num": 1,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11101",
-    "task_id_int": 11101,
+    "task_id": "webshop_11071",
+    "task_id_int": 11071,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 21,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11105",
-    "task_id_int": 11105,
+    "task_id": "webshop_11079",
+    "task_id_int": 11079,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 26,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11107",
-    "task_id_int": 11107,
+    "task_id": "webshop_10999",
+    "task_id_int": 10999,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11113",
-    "task_id_int": 11113,
-    "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
@@ -819,47 +731,55 @@
     "task_id": "webshop_11122",
     "task_id_int": 11122,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 10,
+    "reward": 0.8333333333333334,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11101",
+    "task_id_int": 11101,
+    "trial_num": 1,
+    "step_num": 13,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11128",
-    "task_id_int": 11128,
+    "task_id": "webshop_11052",
+    "task_id_int": 11052,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 42,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11130",
-    "task_id_int": 11130,
+    "task_id": "webshop_11060",
+    "task_id_int": 11060,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11136",
-    "task_id_int": 11136,
+    "task_id": "webshop_11028",
+    "task_id_int": 11028,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11137",
-    "task_id_int": 11137,
+    "task_id": "webshop_11107",
+    "task_id_int": 11107,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 26,
+    "reward": 0.8,
+    "success": true
   },
   {
-    "task_id": "webshop_11139",
-    "task_id_int": 11139,
+    "task_id": "webshop_11105",
+    "task_id_int": 11105,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
@@ -867,47 +787,55 @@
     "task_id": "webshop_11140",
     "task_id_int": 11140,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 18,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11142",
-    "task_id_int": 11142,
+    "task_id": "webshop_11136",
+    "task_id_int": 11136,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 37,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11113",
+    "task_id_int": 11113,
+    "trial_num": 1,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11143",
-    "task_id_int": 11143,
+    "task_id": "webshop_11084",
+    "task_id_int": 11084,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11150",
-    "task_id_int": 11150,
+    "task_id": "webshop_10992",
+    "task_id_int": 10992,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11154",
-    "task_id_int": 11154,
+    "task_id": "webshop_11130",
+    "task_id_int": 11130,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11156",
-    "task_id_int": 11156,
+    "task_id": "webshop_11128",
+    "task_id_int": 11128,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
@@ -915,39 +843,87 @@
     "task_id": "webshop_11163",
     "task_id_int": 11163,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 14,
+    "reward": 0.6,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11137",
+    "task_id_int": 11137,
+    "trial_num": 1,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
+  },
+  {
+    "task_id": "webshop_11075",
+    "task_id_int": 11075,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11139",
+    "task_id_int": 11139,
+    "trial_num": 1,
+    "step_num": 29,
+    "reward": 0.8571428571428571,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11156",
+    "task_id_int": 11156,
+    "trial_num": 1,
+    "step_num": 20,
+    "reward": 0.3333333333333333,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11184",
+    "task_id_int": 11184,
+    "trial_num": 1,
+    "step_num": 9,
+    "reward": 0.8571428571428571,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11189",
+    "task_id_int": 11189,
+    "trial_num": 1,
+    "step_num": 8,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11180",
+    "task_id_int": 11180,
+    "trial_num": 1,
+    "step_num": 12,
+    "reward": 0.7142857142857143,
+    "success": true
   },
   {
     "task_id": "webshop_11165",
     "task_id_int": 11165,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 16,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11142",
+    "task_id_int": 11142,
+    "trial_num": 1,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11170",
-    "task_id_int": 11170,
+    "task_id": "webshop_11150",
+    "task_id_int": 11150,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11171",
-    "task_id_int": 11171,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11177",
-    "task_id_int": 11177,
-    "trial_num": 1,
-    "step_num": 0,
+    "step_num": 26,
     "reward": 0.0,
     "success": false
   },
@@ -955,47 +931,7 @@
     "task_id": "webshop_11179",
     "task_id_int": 11179,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11180",
-    "task_id_int": 11180,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11184",
-    "task_id_int": 11184,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11185",
-    "task_id_int": 11185,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11189",
-    "task_id_int": 11189,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11195",
-    "task_id_int": 11195,
-    "trial_num": 1,
-    "step_num": 0,
+    "step_num": 25,
     "reward": 0.0,
     "success": false
   },
@@ -1003,71 +939,39 @@
     "task_id": "webshop_11196",
     "task_id_int": 11196,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11213",
-    "task_id_int": 11213,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11221",
-    "task_id_int": 11221,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11223",
-    "task_id_int": 11223,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 14,
+    "reward": 1.0,
+    "success": true
   },
   {
     "task_id": "webshop_11233",
     "task_id_int": 11233,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11247",
-    "task_id_int": 11247,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 8,
+    "reward": 0.6666666666666666,
+    "success": true
   },
   {
     "task_id": "webshop_11248",
     "task_id_int": 11248,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 13,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11254",
-    "task_id_int": 11254,
+    "task_id": "webshop_11000",
+    "task_id_int": 11000,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 46,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11256",
-    "task_id_int": 11256,
+    "task_id": "webshop_11143",
+    "task_id_int": 11143,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 37,
     "reward": 0.0,
     "success": false
   },
@@ -1075,39 +979,55 @@
     "task_id": "webshop_11260",
     "task_id_int": 11260,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 11,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11254",
+    "task_id_int": 11254,
+    "trial_num": 1,
+    "step_num": 14,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11261",
-    "task_id_int": 11261,
+    "task_id": "webshop_11185",
+    "task_id_int": 11185,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 35,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11264",
-    "task_id_int": 11264,
+    "task_id": "webshop_11195",
+    "task_id_int": 11195,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 19,
+    "reward": 0.625,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11247",
+    "task_id_int": 11247,
+    "trial_num": 1,
+    "step_num": 11,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11270",
-    "task_id_int": 11270,
+    "task_id": "webshop_11171",
+    "task_id_int": 11171,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 23,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11272",
-    "task_id_int": 11272,
+    "task_id": "webshop_11154",
+    "task_id_int": 11154,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
@@ -1115,111 +1035,71 @@
     "task_id": "webshop_11274",
     "task_id_int": 11274,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 7,
+    "reward": 0.4,
+    "success": true
   },
   {
-    "task_id": "webshop_11276",
-    "task_id_int": 11276,
+    "task_id": "webshop_11170",
+    "task_id_int": 11170,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 24,
+    "reward": 0.2727272727272727,
+    "success": true
   },
   {
-    "task_id": "webshop_11278",
-    "task_id_int": 11278,
+    "task_id": "webshop_11223",
+    "task_id_int": 11223,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11300",
-    "task_id_int": 11300,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 31,
+    "reward": 0.4444444444444444,
+    "success": true
   },
   {
     "task_id": "webshop_11307",
     "task_id_int": 11307,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 12,
+    "reward": 0.5,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11177",
+    "task_id_int": 11177,
+    "trial_num": 1,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
+  },
+  {
+    "task_id": "webshop_11221",
+    "task_id_int": 11221,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11272",
+    "task_id_int": 11272,
+    "trial_num": 1,
+    "step_num": 14,
+    "reward": 0.21428571428571427,
+    "success": true
   },
   {
     "task_id": "webshop_11311",
     "task_id_int": 11311,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 11,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11320",
-    "task_id_int": 11320,
+    "task_id": "webshop_11270",
+    "task_id_int": 11270,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11322",
-    "task_id_int": 11322,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11327",
-    "task_id_int": 11327,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11332",
-    "task_id_int": 11332,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11333",
-    "task_id_int": 11333,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11335",
-    "task_id_int": 11335,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11340",
-    "task_id_int": 11340,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11352",
-    "task_id_int": 11352,
-    "trial_num": 1,
-    "step_num": 0,
+    "step_num": 15,
     "reward": 0.0,
     "success": false
   },
@@ -1227,7 +1107,63 @@
     "task_id": "webshop_11356",
     "task_id_int": 11356,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 6,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11256",
+    "task_id_int": 11256,
+    "trial_num": 1,
+    "step_num": 31,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11261",
+    "task_id_int": 11261,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11352",
+    "task_id_int": 11352,
+    "trial_num": 1,
+    "step_num": 13,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11322",
+    "task_id_int": 11322,
+    "trial_num": 1,
+    "step_num": 44,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11264",
+    "task_id_int": 11264,
+    "trial_num": 1,
+    "step_num": 30,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11278",
+    "task_id_int": 11278,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11327",
+    "task_id_int": 11327,
+    "trial_num": 1,
+    "step_num": 28,
     "reward": 0.0,
     "success": false
   },
@@ -1235,31 +1171,63 @@
     "task_id": "webshop_11358",
     "task_id_int": 11358,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 13,
+    "reward": 0.5,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11320",
+    "task_id_int": 11320,
+    "trial_num": 1,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11389",
-    "task_id_int": 11389,
+    "task_id": "webshop_11213",
+    "task_id_int": 11213,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11390",
-    "task_id_int": 11390,
+    "task_id": "webshop_11276",
+    "task_id_int": 11276,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11406",
-    "task_id_int": 11406,
+    "task_id": "webshop_11340",
+    "task_id_int": 11340,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 31,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11335",
+    "task_id_int": 11335,
+    "trial_num": 1,
+    "step_num": 36,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11333",
+    "task_id_int": 11333,
+    "trial_num": 1,
+    "step_num": 35,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11332",
+    "task_id_int": 11332,
+    "trial_num": 1,
+    "step_num": 46,
     "reward": 0.0,
     "success": false
   },
@@ -1267,55 +1235,7 @@
     "task_id": "webshop_11413",
     "task_id_int": 11413,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11414",
-    "task_id_int": 11414,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11424",
-    "task_id_int": 11424,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11431",
-    "task_id_int": 11431,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11443",
-    "task_id_int": 11443,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11450",
-    "task_id_int": 11450,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11455",
-    "task_id_int": 11455,
-    "trial_num": 1,
-    "step_num": 0,
+    "step_num": 20,
     "reward": 0.0,
     "success": false
   },
@@ -1323,7 +1243,55 @@
     "task_id": "webshop_11456",
     "task_id_int": 11456,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 10,
+    "reward": 0.75,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11300",
+    "task_id_int": 11300,
+    "trial_num": 1,
+    "step_num": 36,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11450",
+    "task_id_int": 11450,
+    "trial_num": 1,
+    "step_num": 17,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11443",
+    "task_id_int": 11443,
+    "trial_num": 1,
+    "step_num": 19,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11431",
+    "task_id_int": 11431,
+    "trial_num": 1,
+    "step_num": 32,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11462",
+    "task_id_int": 11462,
+    "trial_num": 1,
+    "step_num": 16,
+    "reward": 0.8,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11389",
+    "task_id_int": 11389,
+    "trial_num": 1,
+    "step_num": 43,
     "reward": 0.0,
     "success": false
   },
@@ -1331,23 +1299,23 @@
     "task_id": "webshop_11461",
     "task_id_int": 11461,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 12,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11462",
-    "task_id_int": 11462,
+    "task_id": "webshop_11406",
+    "task_id_int": 11406,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11463",
-    "task_id_int": 11463,
+    "task_id": "webshop_11414",
+    "task_id_int": 11414,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
@@ -1355,31 +1323,7 @@
     "task_id": "webshop_11467",
     "task_id_int": 11467,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11469",
-    "task_id_int": 11469,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11471",
-    "task_id_int": 11471,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11472",
-    "task_id_int": 11472,
-    "trial_num": 1,
-    "step_num": 0,
+    "step_num": 33,
     "reward": 0.0,
     "success": false
   },
@@ -1387,79 +1331,39 @@
     "task_id": "webshop_11482",
     "task_id_int": 11482,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11484",
-    "task_id_int": 11484,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
+    "step_num": 15,
+    "reward": 1.0,
+    "success": true
   },
   {
     "task_id": "webshop_11485",
     "task_id_int": 11485,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 13,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11490",
-    "task_id_int": 11490,
+    "task_id": "webshop_11455",
+    "task_id_int": 11455,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 30,
+    "reward": 0.6666666666666666,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11471",
+    "task_id_int": 11471,
+    "trial_num": 1,
+    "step_num": 27,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11493",
-    "task_id_int": 11493,
+    "task_id": "webshop_11424",
+    "task_id_int": 11424,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11506",
-    "task_id_int": 11506,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11514",
-    "task_id_int": 11514,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11523",
-    "task_id_int": 11523,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11527",
-    "task_id_int": 11527,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11532",
-    "task_id_int": 11532,
-    "trial_num": 1,
-    "step_num": 0,
+    "step_num": 48,
     "reward": 0.0,
     "success": false
   },
@@ -1467,23 +1371,47 @@
     "task_id": "webshop_11533",
     "task_id_int": 11533,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 10,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11493",
+    "task_id_int": 11493,
+    "trial_num": 1,
+    "step_num": 10,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11535",
-    "task_id_int": 11535,
+    "task_id": "webshop_11390",
+    "task_id_int": 11390,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 47,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11542",
-    "task_id_int": 11542,
+    "task_id": "webshop_11532",
+    "task_id_int": 11532,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 8,
+    "reward": 0.06,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11484",
+    "task_id_int": 11484,
+    "trial_num": 1,
+    "step_num": 25,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11463",
+    "task_id_int": 11463,
+    "trial_num": 1,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
@@ -1491,55 +1419,31 @@
     "task_id": "webshop_11544",
     "task_id_int": 11544,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 14,
+    "reward": 0.9090909090909091,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11472",
+    "task_id_int": 11472,
+    "trial_num": 1,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11548",
-    "task_id_int": 11548,
+    "task_id": "webshop_11469",
+    "task_id_int": 11469,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11549",
-    "task_id_int": 11549,
+    "task_id": "webshop_11506",
+    "task_id_int": 11506,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11552",
-    "task_id_int": 11552,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11554",
-    "task_id_int": 11554,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11560",
-    "task_id_int": 11560,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11563",
-    "task_id_int": 11563,
-    "trial_num": 1,
-    "step_num": 0,
+    "step_num": 48,
     "reward": 0.0,
     "success": false
   },
@@ -1547,47 +1451,23 @@
     "task_id": "webshop_11564",
     "task_id_int": 11564,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 16,
+    "reward": 0.3333333333333333,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11490",
+    "task_id_int": 11490,
+    "trial_num": 1,
+    "step_num": 49,
     "reward": 0.0,
     "success": false
   },
   {
-    "task_id": "webshop_11565",
-    "task_id_int": 11565,
+    "task_id": "webshop_11514",
+    "task_id_int": 11514,
     "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11573",
-    "task_id_int": 11573,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11575",
-    "task_id_int": 11575,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11578",
-    "task_id_int": 11578,
-    "trial_num": 1,
-    "step_num": 0,
-    "reward": 0.0,
-    "success": false
-  },
-  {
-    "task_id": "webshop_11583",
-    "task_id_int": 11583,
-    "trial_num": 1,
-    "step_num": 0,
+    "step_num": 25,
     "reward": 0.0,
     "success": false
   },
@@ -1595,8 +1475,128 @@
     "task_id": "webshop_11584",
     "task_id_int": 11584,
     "trial_num": 1,
-    "step_num": 0,
+    "step_num": 10,
+    "reward": 0.8,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11563",
+    "task_id_int": 11563,
+    "trial_num": 1,
+    "step_num": 23,
+    "reward": 0.7777777777777778,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11552",
+    "task_id_int": 11552,
+    "trial_num": 1,
+    "step_num": 24,
+    "reward": 0.5,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11549",
+    "task_id_int": 11549,
+    "trial_num": 1,
+    "step_num": 44,
     "reward": 0.0,
     "success": false
+  },
+  {
+    "task_id": "webshop_11583",
+    "task_id_int": 11583,
+    "trial_num": 1,
+    "step_num": 14,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11542",
+    "task_id_int": 11542,
+    "trial_num": 1,
+    "step_num": 39,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11548",
+    "task_id_int": 11548,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11527",
+    "task_id_int": 11527,
+    "trial_num": 1,
+    "step_num": 45,
+    "reward": 0.5,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11565",
+    "task_id_int": 11565,
+    "trial_num": 1,
+    "step_num": 38,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11573",
+    "task_id_int": 11573,
+    "trial_num": 1,
+    "step_num": 38,
+    "reward": 0.3333333333333333,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11560",
+    "task_id_int": 11560,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11535",
+    "task_id_int": 11535,
+    "trial_num": 1,
+    "step_num": 41,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11554",
+    "task_id_int": 11554,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11523",
+    "task_id_int": 11523,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11578",
+    "task_id_int": 11578,
+    "trial_num": 1,
+    "step_num": 33,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11575",
+    "task_id_int": 11575,
+    "trial_num": 1,
+    "step_num": 47,
+    "reward": 0.3333333333333333,
+    "success": true
   }
 ]

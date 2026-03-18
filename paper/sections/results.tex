@@ -1,0 +1,74 @@
+\section{Results}
+\label{sec:results}
+
+Tables~\ref{tab:alfworld-seen}--\ref{tab:webshop-test} report accuracy, step counts, success ratios, and gain from the ReAct baseline. The central finding: the same memory system produces substantial gains in ALFWorld and substantial losses in WebShop.
+
+\subsection{ALFWorld: Memory Helps}
+\label{sec:results-alfworld}
+
+\input{tables/alfworld_seen}
+\input{tables/alfworld_unseen}
+
+We ablate the memory system by evaluating CR, TR, and their combination independently.
+
+\paragraph{Context Retrieval drives large gains.}
+CR alone raises accuracy by $+15.7$pp (seen) and $+14.2$pp (unseen), with consistent gains across splits suggesting generalizable patterns rather than memorized solutions. CR also \emph{reduces} average steps, indicating that proactive guidance makes the agent more efficient.
+
+\paragraph{Tool Retrieval complements CR, especially on unseen tasks.}
+TR alone yields a modest $+2.1$pp on seen tasks but $+8.2$pp on unseen tasks, suggesting that on-demand issue-level retrieval is most valuable for genuinely novel situations.
+
+\paragraph{CR+TR approaches Reflexion at one-third the cost.}
+The combined CR+TR achieves $+16.4$pp/$+19.4$pp (seen/unseen), nearly matching Reflexion's $+20.7$pp/$+21.6$pp at roughly one-third the step cost (23 vs.\ 75--79 steps/task).
+
+\paragraph{Hard-negative control confirms relevance matters.}
+Replacing relevant retrievals with maximally irrelevant ones degrades performance to $-5.7$pp (seen) and $-17.2$pp (unseen), ruling out prompt-length effects as the source of memory gains.
+
+\subsection{WebShop: Memory Hurts}
+\label{sec:results-webshop}
+
+\input{tables/webshop_dev}
+\input{tables/webshop_test}
+
+\paragraph{All memory variants degrade performance.}
+CR reduces accuracy by $-29.0$pp (dev), TR by $-21.5$pp, and CR+TR by $-30.5$pp. Adding more retrieved context produces monotonically worse outcomes, suggesting retrieved learnings introduce spurious heuristics from structurally dissimilar tasks.
+
+\paragraph{The hard-negative paradox.}
+Strikingly, the hard-negative variant ($-12.5$pp dev, $-15.0$pp test) \emph{outperforms} all properly configured retrieval variants. We hypothesize that obviously irrelevant retrievals are easier for the agent to recognize and ignore, whereas semantically similar but non-transferable experiences are treated as trustworthy guidance, producing worse outcomes through confident misdirection.
+
+\paragraph{Only Reflexion improves, at high cost.}
+Reflexion achieves $+11.0$pp (dev) and $+9.5$pp (test) as the only variant surpassing baseline, but at 3.5--3.8$\times$ the step cost. Its intra-task nature circumvents the transfer problem entirely.
+
+\paragraph{Test-set confirmation.}
+All findings replicate on held-out test splits (Table~\ref{tab:webshop-test}), confirming that the observed patterns are robust.
+
+\subsection{Cross-Environment Comparison}
+\label{sec:cross-env}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/accuracy_comparison.pdf}
+\caption{Accuracy across framework variants with paired splits: development (ALFWorld seen vs.\ WebShop dev) and held-out (ALFWorld unseen vs.\ WebShop test). Dashed lines indicate ReAct baselines.}
+\label{fig:accuracy-comparison}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/gain_from_baseline.pdf}
+\caption{Gain from ReAct baseline (percentage points) for each memory variant across all four evaluation splits. Green/blue indicates improvement; orange/red indicates degradation. Development splits (ALFWorld seen, WebShop dev) and held-out splits (ALFWorld unseen, WebShop test) show consistent patterns, confirming that the ${\sim}47$pp swing between environments is robust.}
+\label{fig:gain-baseline}
+\end{figure*}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.85\linewidth]{figures/accuracy_vs_cost.pdf}
+\caption{Accuracy vs.\ computational cost (steps/task) on held-out splits. CR+TR achieves near-Reflexion accuracy on ALFWorld at ${\sim}$1/3 the cost. On WebShop, memory degrades accuracy without reducing cost.}
+\label{fig:accuracy-cost}
+\end{figure}
+
+The same memory system, base LLM, and knowledge base pipeline produce a ${\sim}47$pp swing in effect size: CR+TR yields $+19.4$pp on ALFWorld unseen versus $-27.5$pp on WebShop test. This divergence is consistent across both split pairings (46.9pp gap in each), confirming it is attributable to environment properties rather than evaluation-set idiosyncrasies.
+
+Figure~\ref{fig:accuracy-comparison} visualizes this divergence directly: on ALFWorld, all memory variants (CR, TR, CR+TR) exceed the ReAct baseline (dashed line), with CR+TR approaching Reflexion's accuracy. On WebShop, the pattern inverts---every memory variant falls below the baseline, while Reflexion remains the sole method that improves over ReAct. The mirrored structure across paired splits (seen/dev and unseen/test) confirms that the effect is systematic rather than split-specific.
+
+Figure~\ref{fig:gain-baseline} quantifies these effects as gain from the ReAct baseline across all four evaluation splits. The contrast is stark: ALFWorld variants cluster in the positive region (green/blue), while WebShop variants cluster in the negative region (orange/red). Notably, the hard-negative control on WebShop ($-12.5$/$-15.0$pp) sits \emph{above} the properly configured retrieval variants ($-30.5$/$-27.5$pp), visually highlighting the paradox that relevant retrieval causes more harm than irrelevant retrieval in low-transfer environments.
+
+The hard-negative controls reveal an asymmetry: on ALFWorld, inverting retrieval degrades accuracy by 22--37pp relative to correct CR+TR; on WebShop, the hard-negative \emph{outperforms} correct retrieval by 12--18pp. Reflexion succeeds in both environments ($+21$pp ALFWorld, $+10$pp WebShop) because intra-task self-correction does not depend on cross-task transfer, but at 3--4$\times$ the step cost. These results suggest that episodic memory should not be applied indiscriminately; we formalize diagnostic criteria in Section~\ref{sec:analysis}.

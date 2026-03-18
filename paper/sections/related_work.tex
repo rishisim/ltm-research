@@ -1,0 +1,17 @@
+\section{Related Work}
+
+\paragraph{Tool-augmented and memory-augmented agents.}
+ReAct~\cite{yao2023react} interleaves reasoning with environment actions, and Reflexion~\cite{shinn2023reflexion} extends this with iterative self-correction.
+Several systems augment LLM agents with persistent memory: Voyager~\cite{wang2023voyager} builds a verified skill library in Minecraft, GITM~\cite{zhu2023gitm} stores successful goal decompositions, Generative Agents~\cite{park2023generative} use a memory stream with reflection, MemoryBank~\cite{zhong2024memorybank} incorporates forgetting curves, and EvoSkill~\cite{alzubi2026evoskill} automatically discovers and evolves reusable skills from execution failures.
+A common thread is the assumption that accumulated knowledge---whether stored as memories or skills---is net-positive.
+Our work challenges this by showing that the same episodic memory mechanism yields $+19$pp gains in one environment and $-31$pp degradation in another.
+
+\paragraph{Interactive benchmarks.}
+ALFWorld~\cite{shridhar2021alfworld} provides compositional household tasks with a fixed action grammar and shared sub-goal structure, making past experience highly reusable.
+WebShop~\cite{yao2022webshop} simulates e-commerce with free-form search and unique products, where successful strategies rarely transfer.
+This structural contrast motivates our comparative design.
+
+\paragraph{Retrieval-augmented generation.}
+RAG~\cite{lewis2020rag} improves outputs by conditioning on retrieved documents, and has been extended to agentic settings with trajectory or demonstration retrieval.
+While the RAG literature focuses on improving retrieval quality under the assumption that relevant retrieval helps, our results reveal a complementary failure mode: when retrieved experiences are \emph{superficially} similar but \emph{structurally} non-transferable, retrieval actively misleads the agent.
+To our knowledge, this is the first work to systematically characterize when episodic memory helps versus hurts LLM agent performance, providing a diagnostic framework based on task compositionality, action space regularity, and learning transfer radius.

@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\small
+\caption{ALFWorld results. CR = Context Retrieval, TR = Tool Retrieval. \textbf{Bold} = best accuracy. Full metrics in Appendix~\ref{app:full-results}.}
+\label{tab:alfworld}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{\textbf{Seen} (140)} & \multicolumn{2}{c}{\textbf{Unseen} (134)} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+Framework & Acc. & Gain & Acc. & Gain \\
+\midrule
+ReAct                        & 61.4 & ---    & 61.9 & --- \\
++ Reflexion$^\dagger$        & \textbf{82.1} & $+$20.7 & \textbf{83.6} & $+$21.6 \\
++ CR                         & 77.1 & $+$15.7 & 76.1 & $+$14.2 \\
++ TR                         & 63.6 & $+$2.1  & 70.1 & $+$8.2 \\
++ CR + TR                    & 77.9 & $+$16.4 & 81.3 & $+$19.4 \\
++ hard-neg$^*$               & 55.7 & $-$5.7  & 44.8 & $-$17.2 \\
+\bottomrule
+\end{tabular}
+\vspace{2pt}
+
+{\footnotesize $^\dagger$Max 7 trials. $^*$Inverted retrieval ablation.}
+\end{table}

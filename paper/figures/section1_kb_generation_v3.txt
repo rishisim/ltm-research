@@ -1,0 +1,15 @@
+Create a methodology diagram for an academic paper showing the Memory Knowledge Base generation pipeline. It should be detailed but not oversized — suitable for a research paper figure.
+
+The flow is horizontal, left to right, with three stages:
+
+Stage 1 (left): "Trajectories with Reflexions" — show a stack of 3 overlapping document cards. Inside the top visible card, show a few lines representing task execution steps (action/observation pairs), with a warning icon next to some lines indicating failures. At the bottom of the card show a small "Reflexion" section with an italic correction note. Include a label showing "Multi-trial executions" and "Failed attempts generate reflexions" as subtle annotations.
+
+Stage 2 (middle): "Per-Task Issue-Learning Extraction" — a processing block with an LLM icon (gear or sparkle). Inside this block, show three labeled sub-steps stacked vertically:
+- "Identify Issues" (what went wrong)
+- "Extract Solutions" (corrective strategies)
+- "Assign Confidence" (validation level)
+Show a small arrow cycling between trials to indicate cross-trial analysis.
+
+Stage 3 (right): "Memory KB: Issues + Solutions" — a structured table with column headers: "Task Description", "Issue", "Solution/Learning", "Validation Level". Show 3-4 rows with gray placeholder content. In the Validation Level column, use colored badges/pills: green pill labeled "VALID_NEXT_TRIAL", yellow pill labeled "VALID_SAME_TRIAL", orange pill labeled "CANDIDATE". Include a small database icon above the table.
+
+Connect stages with bold directional arrows. Use a clean academic style with rounded rectangles, muted pastel fills (light blue for trajectories, light purple for LLM, light green for KB), thin borders, and sans-serif font. White background. No drop shadows or heavy decorations.

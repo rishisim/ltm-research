@@ -1,0 +1,22 @@
+\section{Introduction}
+
+LLM-based agents are increasingly augmented with episodic memory: systems that store past experiences and retrieve them to guide future decisions.
+Recent work has demonstrated impressive gains from such augmentation---Voyager~\citep{wang2023voyager}, GITM~\citep{zhu2023gitm}, MemoryBank~\citep{zhong2024memorybank}, and Generative Agents~\citep{park2023generative}---under the implicit assumption that storing and retrieving past experience will improve performance.
+But does it always?
+
+We investigate this question through a controlled comparative study across two interactive environments: ALFWorld~\citep{shridhar2021alfworld}, a structured household task environment with compositional goals and a fixed action grammar, and WebShop~\citep{yao2022webshop}, an open-ended e-commerce environment with free-form navigation.
+The answer depends critically on environment properties.
+On ALFWorld, our memory system improves over the ReAct~\citep{yao2023react} baseline by up to $+19.4$pp on unseen tasks, nearly matching Reflexion~\citep{shinn2023reflexion} ($+21.6$pp) at roughly one-third the step cost.
+On WebShop, the \emph{same} memory system \emph{degrades} performance by up to $30.5$pp.
+Strikingly, a hard-negative control that retrieves maximally \emph{irrelevant} experiences ($-12.5$pp) outperforms the properly configured system ($-30.5$pp), revealing that semantically similar but non-transferable memories are more harmful than obviously irrelevant ones.
+This ${\sim}47$pp swing, consistent across development and held-out splits, is the central empirical finding of this paper.
+
+Our analysis traces this divergence to three environment properties: \emph{task compositionality} (shared sub-goals vs.\ unique tasks), \emph{action space regularity} (fixed grammar vs.\ free-form), and \emph{learning transfer radius} (one learning benefiting many tasks vs.\ near-zero reuse). When all three favor transfer, memory provides substantial gains; when they do not, retrieved experiences actively mislead the agent. Importantly, we show that high-similarity retrieval alone does not guarantee performance gains, as retrieved trajectories may lack transferability to the current task.
+This highlights a key distinction between retrieval relevance and actionable utility, which is often overlooked in prior work.
+
+In summary, our contributions are:
+\begin{enumerate}
+    \item A \textbf{memory-centric agent framework} with outcome-validated episodic memory and two retrieval mechanisms (proactive CR and on-demand TR), evaluated across two diverse environments.
+    \item A \textbf{controlled empirical study} showing opposite effects of the same memory system: $+19.4$pp on ALFWorld vs.\ $-30.5$pp on WebShop, with hard-negative ablations revealing that ``relevant'' but non-transferable memories cause more harm than irrelevant ones.
+    \item A \textbf{diagnostic framework} based on three environment properties that predicts when episodic memory will help or hurt, providing actionable guidance for practitioners.
+\end{enumerate}

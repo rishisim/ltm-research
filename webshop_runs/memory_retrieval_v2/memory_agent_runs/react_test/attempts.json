@@ -1,0 +1,1602 @@
+[
+  {
+    "task_id": "webshop_11630",
+    "task_id_int": 11630,
+    "trial_num": 1,
+    "step_num": 9,
+    "reward": 0.6666666666666666,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11587",
+    "task_id_int": 11587,
+    "trial_num": 1,
+    "step_num": 9,
+    "reward": 0.4,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11607",
+    "task_id_int": 11607,
+    "trial_num": 1,
+    "step_num": 11,
+    "reward": 0.6666666666666666,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11613",
+    "task_id_int": 11613,
+    "trial_num": 1,
+    "step_num": 12,
+    "reward": 0.8,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11599",
+    "task_id_int": 11599,
+    "trial_num": 1,
+    "step_num": 15,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11641",
+    "task_id_int": 11641,
+    "trial_num": 1,
+    "step_num": 6,
+    "reward": 0.8,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11606",
+    "task_id_int": 11606,
+    "trial_num": 1,
+    "step_num": 17,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11625",
+    "task_id_int": 11625,
+    "trial_num": 1,
+    "step_num": 18,
+    "reward": 0.6,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11642",
+    "task_id_int": 11642,
+    "trial_num": 1,
+    "step_num": 9,
+    "reward": 0.8333333333333334,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11650",
+    "task_id_int": 11650,
+    "trial_num": 1,
+    "step_num": 8,
+    "reward": 0.6,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11605",
+    "task_id_int": 11605,
+    "trial_num": 1,
+    "step_num": 23,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11608",
+    "task_id_int": 11608,
+    "trial_num": 1,
+    "step_num": 21,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11644",
+    "task_id_int": 11644,
+    "trial_num": 1,
+    "step_num": 12,
+    "reward": 0.625,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11640",
+    "task_id_int": 11640,
+    "trial_num": 1,
+    "step_num": 17,
+    "reward": 0.2,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11622",
+    "task_id_int": 11622,
+    "trial_num": 1,
+    "step_num": 25,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11668",
+    "task_id_int": 11668,
+    "trial_num": 1,
+    "step_num": 8,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11666",
+    "task_id_int": 11666,
+    "trial_num": 1,
+    "step_num": 9,
+    "reward": 0.8571428571428571,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11662",
+    "task_id_int": 11662,
+    "trial_num": 1,
+    "step_num": 13,
+    "reward": 0.5714285714285714,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11588",
+    "task_id_int": 11588,
+    "trial_num": 1,
+    "step_num": 31,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11663",
+    "task_id_int": 11663,
+    "trial_num": 1,
+    "step_num": 13,
+    "reward": 0.42857142857142855,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11652",
+    "task_id_int": 11652,
+    "trial_num": 1,
+    "step_num": 22,
+    "reward": 0.020000000000000004,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11669",
+    "task_id_int": 11669,
+    "trial_num": 1,
+    "step_num": 16,
+    "reward": 0.08333333333333334,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11676",
+    "task_id_int": 11676,
+    "trial_num": 1,
+    "step_num": 7,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11655",
+    "task_id_int": 11655,
+    "trial_num": 1,
+    "step_num": 22,
+    "reward": 0.42857142857142855,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11591",
+    "task_id_int": 11591,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11639",
+    "task_id_int": 11639,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11684",
+    "task_id_int": 11684,
+    "trial_num": 1,
+    "step_num": 13,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11687",
+    "task_id_int": 11687,
+    "trial_num": 1,
+    "step_num": 12,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11689",
+    "task_id_int": 11689,
+    "trial_num": 1,
+    "step_num": 15,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11701",
+    "task_id_int": 11701,
+    "trial_num": 1,
+    "step_num": 6,
+    "reward": 0.8333333333333334,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11609",
+    "task_id_int": 11609,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11696",
+    "task_id_int": 11696,
+    "trial_num": 1,
+    "step_num": 13,
+    "reward": 0.9166666666666666,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11634",
+    "task_id_int": 11634,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11677",
+    "task_id_int": 11677,
+    "trial_num": 1,
+    "step_num": 23,
+    "reward": 0.3,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11685",
+    "task_id_int": 11685,
+    "trial_num": 1,
+    "step_num": 27,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11700",
+    "task_id_int": 11700,
+    "trial_num": 1,
+    "step_num": 15,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11601",
+    "task_id_int": 11601,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11646",
+    "task_id_int": 11646,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11653",
+    "task_id_int": 11653,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11720",
+    "task_id_int": 11720,
+    "trial_num": 1,
+    "step_num": 9,
+    "reward": 0.8333333333333334,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11715",
+    "task_id_int": 11715,
+    "trial_num": 1,
+    "step_num": 12,
+    "reward": 0.4,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11708",
+    "task_id_int": 11708,
+    "trial_num": 1,
+    "step_num": 15,
+    "reward": 0.5714285714285714,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11670",
+    "task_id_int": 11670,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11728",
+    "task_id_int": 11728,
+    "trial_num": 1,
+    "step_num": 8,
+    "reward": 0.8571428571428571,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11723",
+    "task_id_int": 11723,
+    "trial_num": 1,
+    "step_num": 10,
+    "reward": 0.42857142857142855,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11673",
+    "task_id_int": 11673,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11717",
+    "task_id_int": 11717,
+    "trial_num": 1,
+    "step_num": 23,
+    "reward": 0.3333333333333333,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11731",
+    "task_id_int": 11731,
+    "trial_num": 1,
+    "step_num": 11,
+    "reward": 0.3,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11732",
+    "task_id_int": 11732,
+    "trial_num": 1,
+    "step_num": 14,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11729",
+    "task_id_int": 11729,
+    "trial_num": 1,
+    "step_num": 13,
+    "reward": 0.5,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11726",
+    "task_id_int": 11726,
+    "trial_num": 1,
+    "step_num": 20,
+    "reward": 0.6666666666666666,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11678",
+    "task_id_int": 11678,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11740",
+    "task_id_int": 11740,
+    "trial_num": 1,
+    "step_num": 11,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11742",
+    "task_id_int": 11742,
+    "trial_num": 1,
+    "step_num": 10,
+    "reward": 0.6666666666666666,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11722",
+    "task_id_int": 11722,
+    "trial_num": 1,
+    "step_num": 26,
+    "reward": 0.5,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11743",
+    "task_id_int": 11743,
+    "trial_num": 1,
+    "step_num": 13,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11744",
+    "task_id_int": 11744,
+    "trial_num": 1,
+    "step_num": 10,
+    "reward": 0.7142857142857143,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11694",
+    "task_id_int": 11694,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11691",
+    "task_id_int": 11691,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11747",
+    "task_id_int": 11747,
+    "trial_num": 1,
+    "step_num": 11,
+    "reward": 0.6666666666666666,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11755",
+    "task_id_int": 11755,
+    "trial_num": 1,
+    "step_num": 16,
+    "reward": 0.5714285714285714,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11707",
+    "task_id_int": 11707,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11758",
+    "task_id_int": 11758,
+    "trial_num": 1,
+    "step_num": 19,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11754",
+    "task_id_int": 11754,
+    "trial_num": 1,
+    "step_num": 18,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11703",
+    "task_id_int": 11703,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11757",
+    "task_id_int": 11757,
+    "trial_num": 1,
+    "step_num": 18,
+    "reward": 0.25,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11751",
+    "task_id_int": 11751,
+    "trial_num": 1,
+    "step_num": 23,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11770",
+    "task_id_int": 11770,
+    "trial_num": 1,
+    "step_num": 8,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11721",
+    "task_id_int": 11721,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11714",
+    "task_id_int": 11714,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11781",
+    "task_id_int": 11781,
+    "trial_num": 1,
+    "step_num": 8,
+    "reward": 0.8333333333333334,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11766",
+    "task_id_int": 11766,
+    "trial_num": 1,
+    "step_num": 12,
+    "reward": 0.7142857142857143,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11733",
+    "task_id_int": 11733,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11745",
+    "task_id_int": 11745,
+    "trial_num": 1,
+    "step_num": 40,
+    "reward": 0.6666666666666666,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11794",
+    "task_id_int": 11794,
+    "trial_num": 1,
+    "step_num": 11,
+    "reward": 0.8,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11796",
+    "task_id_int": 11796,
+    "trial_num": 1,
+    "step_num": 8,
+    "reward": 0.8333333333333334,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11768",
+    "task_id_int": 11768,
+    "trial_num": 1,
+    "step_num": 21,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11795",
+    "task_id_int": 11795,
+    "trial_num": 1,
+    "step_num": 12,
+    "reward": 0.5,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11741",
+    "task_id_int": 11741,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11763",
+    "task_id_int": 11763,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11803",
+    "task_id_int": 11803,
+    "trial_num": 1,
+    "step_num": 10,
+    "reward": 0.8,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11738",
+    "task_id_int": 11738,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11805",
+    "task_id_int": 11805,
+    "trial_num": 1,
+    "step_num": 13,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11810",
+    "task_id_int": 11810,
+    "trial_num": 1,
+    "step_num": 7,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11791",
+    "task_id_int": 11791,
+    "trial_num": 1,
+    "step_num": 31,
+    "reward": 0.25,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11773",
+    "task_id_int": 11773,
+    "trial_num": 1,
+    "step_num": 36,
+    "reward": 0.375,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11756",
+    "task_id_int": 11756,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11762",
+    "task_id_int": 11762,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11809",
+    "task_id_int": 11809,
+    "trial_num": 1,
+    "step_num": 15,
+    "reward": 0.4,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11793",
+    "task_id_int": 11793,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11825",
+    "task_id_int": 11825,
+    "trial_num": 1,
+    "step_num": 18,
+    "reward": 0.7142857142857143,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11784",
+    "task_id_int": 11784,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11776",
+    "task_id_int": 11776,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11782",
+    "task_id_int": 11782,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11846",
+    "task_id_int": 11846,
+    "trial_num": 1,
+    "step_num": 11,
+    "reward": 0.2857142857142857,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11802",
+    "task_id_int": 11802,
+    "trial_num": 1,
+    "step_num": 39,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11797",
+    "task_id_int": 11797,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11813",
+    "task_id_int": 11813,
+    "trial_num": 1,
+    "step_num": 28,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11853",
+    "task_id_int": 11853,
+    "trial_num": 1,
+    "step_num": 12,
+    "reward": 0.8333333333333334,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11847",
+    "task_id_int": 11847,
+    "trial_num": 1,
+    "step_num": 18,
+    "reward": 0.5714285714285714,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11850",
+    "task_id_int": 11850,
+    "trial_num": 1,
+    "step_num": 14,
+    "reward": 0.3,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11867",
+    "task_id_int": 11867,
+    "trial_num": 1,
+    "step_num": 18,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11807",
+    "task_id_int": 11807,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11822",
+    "task_id_int": 11822,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11861",
+    "task_id_int": 11861,
+    "trial_num": 1,
+    "step_num": 34,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11869",
+    "task_id_int": 11869,
+    "trial_num": 1,
+    "step_num": 33,
+    "reward": 0.9090909090909091,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11845",
+    "task_id_int": 11845,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11827",
+    "task_id_int": 11827,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11837",
+    "task_id_int": 11837,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11884",
+    "task_id_int": 11884,
+    "trial_num": 1,
+    "step_num": 10,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11848",
+    "task_id_int": 11848,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11896",
+    "task_id_int": 11896,
+    "trial_num": 1,
+    "step_num": 12,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11882",
+    "task_id_int": 11882,
+    "trial_num": 1,
+    "step_num": 10,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11885",
+    "task_id_int": 11885,
+    "trial_num": 1,
+    "step_num": 14,
+    "reward": 0.05,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11866",
+    "task_id_int": 11866,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11862",
+    "task_id_int": 11862,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11897",
+    "task_id_int": 11897,
+    "trial_num": 1,
+    "step_num": 14,
+    "reward": 0.03333333333333333,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11873",
+    "task_id_int": 11873,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11924",
+    "task_id_int": 11924,
+    "trial_num": 1,
+    "step_num": 6,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11870",
+    "task_id_int": 11870,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11913",
+    "task_id_int": 11913,
+    "trial_num": 1,
+    "step_num": 14,
+    "reward": 0.4,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11915",
+    "task_id_int": 11915,
+    "trial_num": 1,
+    "step_num": 9,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11926",
+    "task_id_int": 11926,
+    "trial_num": 1,
+    "step_num": 9,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11911",
+    "task_id_int": 11911,
+    "trial_num": 1,
+    "step_num": 18,
+    "reward": 0.8333333333333334,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11874",
+    "task_id_int": 11874,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11928",
+    "task_id_int": 11928,
+    "trial_num": 1,
+    "step_num": 10,
+    "reward": 0.5,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11883",
+    "task_id_int": 11883,
+    "trial_num": 1,
+    "step_num": 45,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11878",
+    "task_id_int": 11878,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11934",
+    "task_id_int": 11934,
+    "trial_num": 1,
+    "step_num": 11,
+    "reward": 0.375,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11936",
+    "task_id_int": 11936,
+    "trial_num": 1,
+    "step_num": 16,
+    "reward": 0.6666666666666666,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11798",
+    "task_id_int": 11798,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11927",
+    "task_id_int": 11927,
+    "trial_num": 1,
+    "step_num": 24,
+    "reward": 0.5454545454545454,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11902",
+    "task_id_int": 11902,
+    "trial_num": 1,
+    "step_num": 42,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11929",
+    "task_id_int": 11929,
+    "trial_num": 1,
+    "step_num": 24,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11946",
+    "task_id_int": 11946,
+    "trial_num": 1,
+    "step_num": 13,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11933",
+    "task_id_int": 11933,
+    "trial_num": 1,
+    "step_num": 18,
+    "reward": 0.3,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11892",
+    "task_id_int": 11892,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11949",
+    "task_id_int": 11949,
+    "trial_num": 1,
+    "step_num": 9,
+    "reward": 0.8,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11938",
+    "task_id_int": 11938,
+    "trial_num": 1,
+    "step_num": 20,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11964",
+    "task_id_int": 11964,
+    "trial_num": 1,
+    "step_num": 6,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11906",
+    "task_id_int": 11906,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11930",
+    "task_id_int": 11930,
+    "trial_num": 1,
+    "step_num": 43,
+    "reward": 0.16666666666666666,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11954",
+    "task_id_int": 11954,
+    "trial_num": 1,
+    "step_num": 18,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11950",
+    "task_id_int": 11950,
+    "trial_num": 1,
+    "step_num": 14,
+    "reward": 0.020000000000000004,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11970",
+    "task_id_int": 11970,
+    "trial_num": 1,
+    "step_num": 8,
+    "reward": 0.2,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11898",
+    "task_id_int": 11898,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11974",
+    "task_id_int": 11974,
+    "trial_num": 1,
+    "step_num": 7,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11939",
+    "task_id_int": 11939,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11904",
+    "task_id_int": 11904,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11947",
+    "task_id_int": 11947,
+    "trial_num": 1,
+    "step_num": 38,
+    "reward": 0.21428571428571427,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11963",
+    "task_id_int": 11963,
+    "trial_num": 1,
+    "step_num": 28,
+    "reward": 0.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11973",
+    "task_id_int": 11973,
+    "trial_num": 1,
+    "step_num": 19,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11966",
+    "task_id_int": 11966,
+    "trial_num": 1,
+    "step_num": 24,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11940",
+    "task_id_int": 11940,
+    "trial_num": 1,
+    "step_num": 42,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11962",
+    "task_id_int": 11962,
+    "trial_num": 1,
+    "step_num": 35,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11986",
+    "task_id_int": 11986,
+    "trial_num": 1,
+    "step_num": 15,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11981",
+    "task_id_int": 11981,
+    "trial_num": 1,
+    "step_num": 18,
+    "reward": 0.8,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11995",
+    "task_id_int": 11995,
+    "trial_num": 1,
+    "step_num": 10,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11996",
+    "task_id_int": 11996,
+    "trial_num": 1,
+    "step_num": 10,
+    "reward": 0.6428571428571429,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11829",
+    "task_id_int": 11829,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12006",
+    "task_id_int": 12006,
+    "trial_num": 1,
+    "step_num": 6,
+    "reward": 0.75,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11948",
+    "task_id_int": 11948,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11960",
+    "task_id_int": 11960,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11999",
+    "task_id_int": 11999,
+    "trial_num": 1,
+    "step_num": 23,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_12023",
+    "task_id_int": 12023,
+    "trial_num": 1,
+    "step_num": 12,
+    "reward": 0.3333333333333333,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11971",
+    "task_id_int": 11971,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11980",
+    "task_id_int": 11980,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11985",
+    "task_id_int": 11985,
+    "trial_num": 1,
+    "step_num": 38,
+    "reward": 0.7142857142857143,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11967",
+    "task_id_int": 11967,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_11998",
+    "task_id_int": 11998,
+    "trial_num": 1,
+    "step_num": 30,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12020",
+    "task_id_int": 12020,
+    "trial_num": 1,
+    "step_num": 21,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12042",
+    "task_id_int": 12042,
+    "trial_num": 1,
+    "step_num": 8,
+    "reward": 0.5714285714285714,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11994",
+    "task_id_int": 11994,
+    "trial_num": 1,
+    "step_num": 35,
+    "reward": 0.625,
+    "success": true
+  },
+  {
+    "task_id": "webshop_12048",
+    "task_id_int": 12048,
+    "trial_num": 1,
+    "step_num": 7,
+    "reward": 0.07142857142857142,
+    "success": true
+  },
+  {
+    "task_id": "webshop_12011",
+    "task_id_int": 12011,
+    "trial_num": 1,
+    "step_num": 31,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12057",
+    "task_id_int": 12057,
+    "trial_num": 1,
+    "step_num": 8,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_11987",
+    "task_id_int": 11987,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12064",
+    "task_id_int": 12064,
+    "trial_num": 1,
+    "step_num": 8,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_12065",
+    "task_id_int": 12065,
+    "trial_num": 1,
+    "step_num": 11,
+    "reward": 0.6666666666666666,
+    "success": true
+  },
+  {
+    "task_id": "webshop_12029",
+    "task_id_int": 12029,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12016",
+    "task_id_int": 12016,
+    "trial_num": 1,
+    "step_num": 45,
+    "reward": 0.8333333333333334,
+    "success": true
+  },
+  {
+    "task_id": "webshop_12040",
+    "task_id_int": 12040,
+    "trial_num": 1,
+    "step_num": 41,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12051",
+    "task_id_int": 12051,
+    "trial_num": 1,
+    "step_num": 25,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "webshop_12024",
+    "task_id_int": 12024,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12039",
+    "task_id_int": 12039,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12055",
+    "task_id_int": 12055,
+    "trial_num": 1,
+    "step_num": 39,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12079",
+    "task_id_int": 12079,
+    "trial_num": 1,
+    "step_num": 15,
+    "reward": 0.08333333333333333,
+    "success": true
+  },
+  {
+    "task_id": "webshop_12086",
+    "task_id_int": 12086,
+    "trial_num": 1,
+    "step_num": 8,
+    "reward": 0.6,
+    "success": true
+  },
+  {
+    "task_id": "webshop_12050",
+    "task_id_int": 12050,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12036",
+    "task_id_int": 12036,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12059",
+    "task_id_int": 12059,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12080",
+    "task_id_int": 12080,
+    "trial_num": 1,
+    "step_num": 25,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12067",
+    "task_id_int": 12067,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12074",
+    "task_id_int": 12074,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12070",
+    "task_id_int": 12070,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12041",
+    "task_id_int": 12041,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12075",
+    "task_id_int": 12075,
+    "trial_num": 1,
+    "step_num": 46,
+    "reward": 0.14285714285714285,
+    "success": true
+  },
+  {
+    "task_id": "webshop_12085",
+    "task_id_int": 12085,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12014",
+    "task_id_int": 12014,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "webshop_12063",
+    "task_id_int": 12063,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  }
+]

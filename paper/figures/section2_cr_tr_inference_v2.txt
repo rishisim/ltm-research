@@ -1,0 +1,15 @@
+Create a compact methodology diagram suitable for a two-column academic paper (IEEE/ACL style). The diagram must be narrow in height and appropriately sized — not dominating the page.
+
+The layout shows a horizontal flow with two retrieval paths:
+
+Left: A small document icon labeled "New Task".
+
+Center: A single compact rounded rectangle labeled "Agent" with two small internal sections stacked vertically: "Prompt" (top) and "Execution" (bottom), separated by a thin line.
+
+Right: A small database/cylinder icon labeled "Memory KB".
+
+Upper path (CR): A thin arrow from "New Task" goes up to a small compact box labeled "CR" with sub-text "task-level similarity". An arrow from "Memory KB" feeds "Top-k learnings" (small label on arrow) into this CR box. The CR box output arrow points into the "Prompt" section of the Agent. Add a small annotation: "at start".
+
+Lower path (TR): A dashed arrow from the "Execution" section of the Agent goes down to a small compact box labeled "TR" with sub-text "issue-level hybrid". An arrow from "Memory KB" feeds into this TR box. The TR box output arrow (with label "Top-3 solutions") points back into the "Execution" section of the Agent. Add a small annotation: "need-based".
+
+Style: Minimalist academic diagram. White background, thin lines, muted pastel fills (light blue for CR path, light amber/yellow for TR path, light gray for Agent). Small clean sans-serif font. No drop shadows, no gradients, no decorative elements. Compact — total height roughly 1/3 of width. Think: Nature/Science figure style — clean, compact, information-dense.

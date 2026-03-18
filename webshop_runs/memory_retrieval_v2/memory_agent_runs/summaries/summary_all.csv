@@ -1,0 +1,3 @@
+split,framework,success_total,accuracy,avg_reward,avg_steps_per_trial,avg_steps_per_task,gain_from_base_react
+dev,react + hard_neg CR + TR,87 / 200,0.4350,0.3015,28.6600,28.6600,0.4350
+test,react + hard_neg CR + TR,71 / 200,0.3550,0.2307,31.4250,31.4250,0.3550

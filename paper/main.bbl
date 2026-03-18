@@ -1,0 +1,74 @@
+\begin{thebibliography}{14}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Alzubi et~al.(2026)Alzubi, Provenzano, Bingham, Chen, and Vu}]{alzubi2026evoskill}
+Salaheddin Alzubi, Noah Provenzano, Jaydon Bingham, Weiyuan Chen, and Tu~Vu. 2026.
+\newblock {EvoSkill}: Automated skill discovery for multi-agent systems.
+\newblock \emph{arXiv preprint arXiv:2603.02766}.
+
+\bibitem[{Fan et~al.(2022)Fan, Wang, Jiang, Mandlekar, Yang, Zhu, Tang, Huang, Zhu, and Anandkumar}]{fan2022minedojo}
+Linxi Fan, Guanzhi Wang, Yunfan Jiang, Ajay Mandlekar, Yuncong Yang, Haoyi Zhu, Andrew Tang, De-An Huang, Yuke Zhu, and Anima Anandkumar. 2022.
+\newblock {MineDojo}: Building open-ended embodied agents with internet-scale knowledge.
+\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS)}.
+
+\bibitem[{Lewis et~al.(2020)Lewis, Perez, Piktus, Petroni, Karpukhin, Goyal, K{\"u}ttler, Lewis, Yih, Rockt{\"a}schel, Riedel, and Kiela}]{lewis2020rag}
+Patrick Lewis, Ethan Perez, Aleksandara Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich K{\"u}ttler, Mike Lewis, Wen-tau Yih, Tim Rockt{\"a}schel, Sebastian Riedel, and Douwe Kiela. 2020.
+\newblock Retrieval-augmented generation for knowledge-intensive {NLP} tasks.
+\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS)}.
+
+\bibitem[{Liu et~al.(2018)Liu, Guu, Pasupat, Shi, and Liang}]{liu2018reinforcement}
+Evan~Zheran Liu, Kelvin Guu, Panupong Pasupat, Tianlin Shi, and Percy Liang. 2018.
+\newblock Reinforcement learning on web interfaces using workflow-guided exploration.
+\newblock In \emph{International Conference on Learning Representations (ICLR)}.
+
+\bibitem[{Park et~al.(2023)Park, O'Brien, Cai, Morris, Liang, and Bernstein}]{park2023generative}
+Joon~Sung Park, Joseph~C O'Brien, Carrie~J Cai, Meredith~Ringel Morris, Percy Liang, and Michael~S Bernstein. 2023.
+\newblock Generative agents: Interactive simulacra of human behavior.
+\newblock In \emph{Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology (UIST)}.
+
+\bibitem[{Robertson and Zaragoza(2009)}]{robertson2009bm25}
+Stephen Robertson and Hugo Zaragoza. 2009.
+\newblock The probabilistic relevance framework: {BM25} and beyond.
+\newblock \emph{Foundations and Trends in Information Retrieval}, 3(4):333--389.
+
+\bibitem[{Shinn et~al.(2023)Shinn, Cassano, Gopinath, Narasimhan, and Yao}]{shinn2023reflexion}
+Noah Shinn, Federico Cassano, Ashwin Gopinath, Karthik Narasimhan, and Shunyu Yao. 2023.
+\newblock Reflexion: Language agents with verbal reinforcement learning.
+\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS)}.
+
+\bibitem[{Shridhar et~al.(2021)Shridhar, Yuan, C{\^o}t{\'e}, Bisk, Trischler, and Hausknecht}]{shridhar2021alfworld}
+Mohit Shridhar, Xingdi Yuan, Marc-Alexandre C{\^o}t{\'e}, Yonatan Bisk, Adam Trischler, and Matthew Hausknecht. 2021.
+\newblock {ALFWorld}: Aligning text and embodied environments for interactive learning.
+\newblock In \emph{International Conference on Learning Representations (ICLR)}.
+
+\bibitem[{Wang et~al.(2023)Wang, Xie, Jiang, Mandlekar, Xiao, Zhu, Fan, and Anandkumar}]{wang2023voyager}
+Guanzhi Wang, Yuqi Xie, Yunfan Jiang, Ajay Mandlekar, Chaowei Xiao, Yuke Zhu, Linxi Fan, and Anima Anandkumar. 2023.
+\newblock Voyager: An open-ended embodied agent with large language models.
+\newblock \emph{arXiv preprint arXiv:2305.16291}.
+
+\bibitem[{Wang et~al.(2022)Wang, Jansen, C{\^o}t{\'e}, and Ammanabrolu}]{wang2022scienceworld}
+Ruoyao Wang, Peter Jansen, Marc-Alexandre C{\^o}t{\'e}, and Prithviraj Ammanabrolu. 2022.
+\newblock {ScienceWorld}: Is your agent smarter than a 5th grader?
+\newblock In \emph{Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing (EMNLP)}.
+
+\bibitem[{Yao et~al.(2022)Yao, Chen, Yang, and Narasimhan}]{yao2022webshop}
+Shunyu Yao, Howard Chen, John Yang, and Karthik Narasimhan. 2022.
+\newblock {WebShop}: Towards scalable real-world web interaction with grounded language agents.
+\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS)}.
+
+\bibitem[{Yao et~al.(2023)Yao, Zhao, Yu, Du, Shafran, Narasimhan, and Cao}]{yao2023react}
+Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, and Yuan Cao. 2023.
+\newblock {ReAct}: Synergizing reasoning and acting in language models.
+\newblock In \emph{International Conference on Learning Representations (ICLR)}.
+
+\bibitem[{Zhong et~al.(2024)Zhong, Guo, Gao, Ye, and Wang}]{zhong2024memorybank}
+Wanjun Zhong, Lianghong Guo, Qiqi Gao, He~Ye, and Yanlin Wang. 2024.
+\newblock {MemoryBank}: Enhancing large language models with long-term memory.
+\newblock \emph{Proceedings of the AAAI Conference on Artificial Intelligence}.
+
+\bibitem[{Zhu et~al.(2023)Zhu, Chen, Tian, Tao, Su, Yang, Huang, Li, Lu, Wang, Qiao, Zhang, and Dai}]{zhu2023gitm}
+Xizhou Zhu, Yuntao Chen, Hao Tian, Chenxin Tao, Weijie Su, Chenyu Yang, Gao Huang, Bin Li, Lewei Lu, Xiaogang Wang, Yu~Qiao, Zhaoxiang Zhang, and Jifeng Dai. 2023.
+\newblock Ghost in the {Minecraft}: Generally capable agents for open-world environments via large language models with text-based knowledge and memory.
+\newblock \emph{arXiv preprint arXiv:2305.17144}.
+
+\end{thebibliography}

@@ -1,0 +1,11 @@
+The diagram shows the inference-time retrieval process when a new task arrives. It has a horizontal flow from left to right with two retrieval mechanisms feeding into the agent.
+
+Left: "New Task" — a new unseen task arrives for the agent to solve.
+
+Upper path — Context Retrieval (CR): Activated proactively at task start. The new task description is embedded and compared via cosine similarity against task descriptions in the Memory KB (task-level matching). Top-k most similar tasks are found, and their associated learnings are dynamically selected and injected into the agent's prompt before execution begins. Label: "CR: Task-Level Similarity (at start)".
+
+Center: "Memory-Augmented Agent" — the agent that receives CR context in its prompt and begins executing the task in the environment.
+
+Lower path — Tool Retrieval (TR): Activated on-demand during execution. When the agent encounters a problem, it calls help["issue description"]. The issue query is matched against individual issue entries in the Memory KB using hybrid retrieval (cosine similarity + BM25 keyword matching) at the issue level. Top-3 matched issue-solution pairs are returned to the agent. Label: "TR: Issue-Level Hybrid Retrieval (need-based)".
+
+Show CR feeding into the agent at the start (before execution loop), and TR as a bidirectional arrow between the agent and Memory KB (called during execution when needed). Both paths connect to the same Memory KB on the right side. Use a clean academic style with rounded rectangles and subtle colors.

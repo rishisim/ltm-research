@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\small
+\caption{WebShop results. CR = Context Retrieval, TR = Tool Retrieval. \textbf{Bold} = best accuracy. Full metrics in Appendix~\ref{app:full-results}.}
+\label{tab:webshop}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{\textbf{Dev} (200)} & \multicolumn{2}{c}{\textbf{Test} (200)} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+Framework & Acc. & Gain & Acc. & Gain \\
+\midrule
+ReAct                        & 56.0 & ---    & 50.5 & --- \\
++ Reflexion$^\dagger$        & \textbf{67.0} & $+$11.0 & \textbf{60.0} & $+$9.5 \\
++ CR                         & 27.0 & $-$29.0 & 31.5 & $-$19.0 \\
++ TR                         & 34.5 & $-$21.5 & 34.0 & $-$16.5 \\
++ CR + TR                    & 25.5 & $-$30.5 & 23.0 & $-$27.5 \\
++ hard-neg$^*$               & 43.5 & $-$12.5 & 35.5 & $-$15.0 \\
+\bottomrule
+\end{tabular}
+\vspace{2pt}
+
+{\footnotesize $^\dagger$Max 7 trials. $^*$Inverted retrieval ablation.}
+\end{table}

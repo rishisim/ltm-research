@@ -104,16 +104,18 @@ Use this tool when you:
             return f"Error retrieving help: {str(e)}"
 
     def run(
-        self, 
-        env: BaseEnv, 
-        base_prompt: str, 
-        memory: List[str], 
+        self,
+        env: BaseEnv,
+        base_prompt: str,
+        memory: List[str],
         start_ob: str = "",
         task_id: str = "",
         trial_num: int = 1,
         log_dir: str = "",
         task_desc: str = "",
-        memory_bank_path: str = ""
+        memory_bank_path: str = "",
+        max_learnings: int = 25,
+        min_valid_level: str = "",
     ) -> Tuple[EnvironmentHistory, bool]:
         self.memory_bank_path = memory_bank_path
         
@@ -133,7 +135,9 @@ Use this tool when you:
                     memory_bank_path=memory_bank_path,
                     top_k_similar_tasks=5,
                     log_dir=log_dir,
-                    task_id=task_id
+                    task_id=task_id,
+                    max_learnings=max_learnings,
+                    min_valid_level=min_valid_level or None,
                 )
                 if learnings:
                     retrieved_learnings = learnings

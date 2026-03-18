@@ -1,0 +1,32 @@
+{
+  "rows": [
+    {
+      "split": "dev",
+      "framework_id": "react_hard_neg_cr_tr",
+      "framework": "react + hard_neg CR + TR",
+      "success": 87,
+      "total": 200,
+      "success_total": "87 / 200",
+      "accuracy": 0.435,
+      "avg_reward": 0.3014566322566323,
+      "avg_steps_per_trial": 28.66,
+      "avg_steps_per_task": 28.66,
+      "attempt_count": 200,
+      "gain_from_base_react": 0.435
+    },
+    {
+      "split": "test",
+      "framework_id": "react_hard_neg_cr_tr",
+      "framework": "react + hard_neg CR + TR",
+      "success": 71,
+      "total": 200,
+      "success_total": "71 / 200",
+      "accuracy": 0.355,
+      "avg_reward": 0.23066450216450216,
+      "avg_steps_per_trial": 31.425,
+      "avg_steps_per_task": 31.425,
+      "attempt_count": 200,
+      "gain_from_base_react": 0.355
+    }
+  ]
+}

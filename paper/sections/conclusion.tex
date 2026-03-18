@@ -1,0 +1,6 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+This work demonstrates that episodic memory is not a universal enhancement for LLM-based agents. Through a controlled study applying an identical memory system to ALFWorld and WebShop, we show that the same retrieval mechanisms produce a ${\sim}47$pp swing in effect: up to $+19.4$pp improvement versus $-30.5$pp degradation. Our hard-negative ablation reveals that in low-transfer environments, irrelevant memories cause \emph{less} harm than semantically ``relevant'' ones, suggesting confident misdirection rather than noise injection as the failure mode.
+
+We trace this divergence to three structural properties---task compositionality, action space regularity, and learning transfer radius---and contribute a diagnostic framework giving practitioners actionable criteria for when episodic memory is appropriate. Future directions include adaptive memory gating that suppresses retrieval when transfer confidence is low, validation on additional domains, and memory filtering strategies that assess transferability before injecting retrieved content.
