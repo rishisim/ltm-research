@@ -1,0 +1,20 @@
+{
+  "split": "train",
+  "rows": [
+    {
+      "split": "train",
+      "framework_id": "react_reflexion",
+      "framework": "React + Reflexion (final trials, max 7)",
+      "success": 30,
+      "total": 50,
+      "success_total": "30 / 50",
+      "accuracy": 0.6,
+      "avg_reward": 0.10209243146536875,
+      "avg_steps_per_trial": 22.861386138613863,
+      "avg_steps_per_task": 105.9,
+      "attempt_count": 909,
+      "trials_executed": 7,
+      "gain_from_base_react": 0.6
+    }
+  ]
+}

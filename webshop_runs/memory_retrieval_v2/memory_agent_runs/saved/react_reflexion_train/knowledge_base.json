@@ -1,0 +1,4665 @@
+[
+  {
+    "task_desc": "Find me men's sandals with rubber outsole, rubber sole with color: black - schwarz ((hank foto) bla), and size: 9 uk, and price lower than 70.00 dollars",
+    "obj_type": "men's sandals, purchase action",
+    "verbs": "buy",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Agent outputs ASIN instead of buying for 'Find me' task.",
+    "issue_ref": {
+      "task_id": "webshop_9",
+      "trial_num": 2,
+      "step_range": [
+        30,
+        30
+      ]
+    },
+    "learning_text": "For 'Find me' tasks, the final action might be to click 'Buy Now' if all criteria are met.",
+    "evidence_ref": {
+      "task_id": "webshop_9",
+      "trial_num": 5,
+      "step_range": [
+        13,
+        13
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "1"
+  },
+  {
+    "task_desc": "Find me men's sandals with rubber outsole, rubber sole with color: black - schwarz ((hank foto) bla), and size: 9 uk, and price lower than 70.00 dollars",
+    "obj_type": "men's sandals, sole material",
+    "verbs": "click",
+    "goal_phase": "SELECT",
+    "issue_text": "Agent misidentified sole material, overlooking 'rubber outsole' in description.",
+    "issue_ref": {
+      "task_id": "webshop_9",
+      "trial_num": 2,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "learning_text": "Always check both 'Description' and 'Features' for sole material, as 'Synthetic sole' might still be rubber if description confirms.",
+    "evidence_ref": {
+      "task_id": "webshop_9",
+      "trial_num": 1,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "2"
+  },
+  {
+    "task_desc": "Find me men's sandals with rubber outsole, rubber sole with color: black - schwarz ((hank foto) bla), and size: 9 uk, and price lower than 70.00 dollars",
+    "obj_type": "men's sandals, size",
+    "verbs": "click",
+    "goal_phase": "SELECT",
+    "issue_text": "Agent selected size '9' without confirming it was '9 UK'.",
+    "issue_ref": {
+      "task_id": "webshop_9",
+      "trial_num": 2,
+      "step_range": [
+        20,
+        21
+      ]
+    },
+    "learning_text": "Prioritize products with explicit size units (e.g., '9 m uk') or verify size conversion if only numbers are provided.",
+    "evidence_ref": {
+      "task_id": "webshop_9",
+      "trial_num": 2,
+      "step_range": [
+        26,
+        26
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "3"
+  },
+  {
+    "task_desc": "Find me men's sandals with rubber outsole, rubber sole with color: black - schwarz ((hank foto) bla), and size: 9 uk, and price lower than 70.00 dollars",
+    "obj_type": "men's sandals, attributes",
+    "verbs": "click",
+    "goal_phase": "SELECT",
+    "issue_text": "Agent failed to explicitly check sole material for a product before concluding.",
+    "issue_ref": {
+      "task_id": "webshop_9",
+      "trial_num": 3,
+      "step_range": [
+        6,
+        7
+      ]
+    },
+    "learning_text": "Always explicitly click 'Description' or 'Features' to verify all required attributes before concluding.",
+    "evidence_ref": {
+      "task_id": "webshop_9",
+      "trial_num": 4,
+      "step_range": [
+        11,
+        12
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "4"
+  },
+  {
+    "task_desc": "Find me women's tops, tees & blouses with button closure, long sleeve with color: violet, and size: xx-large, and price lower than 60.00 dollars",
+    "obj_type": "tops, tees & blouses, button closure, long sleeve, color, size, price",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search queries were too specific, returning irrelevant results.",
+    "issue_ref": {
+      "task_id": "webshop_53",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        4
+      ]
+    },
+    "learning_text": "Simplify search queries to core product type, then filter attributes on product pages.",
+    "evidence_ref": {
+      "task_id": "webshop_53",
+      "trial_num": 2,
+      "step_range": [
+        4,
+        5
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "5"
+  },
+  {
+    "task_desc": "Find me women's tops, tees & blouses with button closure, long sleeve with color: violet, and size: xx-large, and price lower than 60.00 dollars",
+    "obj_type": "color, size",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Clicking products without verifying all required attributes (color, size).",
+    "issue_ref": {
+      "task_id": "webshop_53",
+      "trial_num": 2,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "learning_text": "Thoroughly check all product attributes (color, size) on the product page before buying.",
+    "evidence_ref": {
+      "task_id": "webshop_53",
+      "trial_num": 4,
+      "step_range": [
+        10,
+        13
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "6"
+  },
+  {
+    "task_desc": "Find me women's tops, tees & blouses with button closure, long sleeve with color: violet, and size: xx-large, and price lower than 60.00 dollars",
+    "obj_type": "color",
+    "verbs": "click",
+    "goal_phase": "SELECT",
+    "issue_text": "Overly strict interpretation of color names, missing suitable alternatives.",
+    "issue_ref": {
+      "task_id": "webshop_53",
+      "trial_num": 2,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "learning_text": "Be flexible with color names and consider close shades (e.g., 'a3-purple' for 'violet').",
+    "evidence_ref": {
+      "task_id": "webshop_53",
+      "trial_num": 4,
+      "step_range": [
+        11,
+        12
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "7"
+  },
+  {
+    "task_desc": "Find me women's skirts with high waist, elastic waistband for daily wear with color: solid green, and size: large, and price lower than 60.00 dollars",
+    "obj_type": "women's skirts",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query returned many irrelevant products like shorts and tennis skirts.",
+    "issue_ref": {
+      "task_id": "webshop_106",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        3
+      ]
+    },
+    "learning_text": "Carefully browse and filter initial search results to identify relevant products despite query noise.",
+    "evidence_ref": {
+      "task_id": "webshop_106",
+      "trial_num": 1,
+      "step_range": [
+        4,
+        5
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "8"
+  },
+  {
+    "task_desc": "Find me women's skirts with high waist, elastic waistband for daily wear with color: solid green, and size: large, and price lower than 60.00 dollars",
+    "obj_type": "skirt attributes (elastic waistband, daily wear)",
+    "verbs": "click, buy",
+    "goal_phase": "SELECT",
+    "issue_text": "Purchased a skirt without explicitly verifying all required attributes like 'elastic waistband' and 'daily wear'.",
+    "issue_ref": {
+      "task_id": "webshop_106",
+      "trial_num": 1,
+      "step_range": [
+        5,
+        9
+      ]
+    },
+    "learning_text": "Always confirm all specified product attributes are explicitly present in the description before purchasing.",
+    "evidence_ref": {
+      "task_id": "webshop_106",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        9
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "9"
+  },
+  {
+    "task_desc": "Find me easy clean area rugs for dining room, living room with color: bright blue, and item shape: runner, and size: 8 ft 10 in x 12 ft 3 in, and price lower than 240.00 dollars",
+    "obj_type": "area rug, shape, size",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query included contradictory \"runner\" shape with large area rug size.",
+    "issue_ref": {
+      "task_id": "webshop_188",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Prioritized large area rug size over \"runner\" shape in search query.",
+    "evidence_ref": {
+      "task_id": "webshop_188",
+      "trial_num": 2,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "10"
+  },
+  {
+    "task_desc": "Find me easy clean area rugs for dining room, living room with color: bright blue, and item shape: runner, and size: 8 ft 10 in x 12 ft 3 in, and price lower than 240.00 dollars",
+    "obj_type": "product link",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Repeatedly clicking a product link failed to navigate to the product page.",
+    "issue_ref": {
+      "task_id": "webshop_188",
+      "trial_num": 2,
+      "step_range": [
+        15,
+        20
+      ]
+    },
+    "learning_text": "Successfully clicked product link and navigated to product details page.",
+    "evidence_ref": {
+      "task_id": "webshop_188",
+      "trial_num": 4,
+      "step_range": [
+        7,
+        7
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "11"
+  },
+  {
+    "task_desc": "Find me easy clean area rugs for dining room, living room with color: bright blue, and item shape: runner, and size: 8 ft 10 in x 12 ft 3 in, and price lower than 240.00 dollars",
+    "obj_type": "area rug, color, size",
+    "verbs": "search, click",
+    "goal_phase": "SEARCH",
+    "issue_text": "Strict adherence to \"bright blue\" color and exact size led to no suitable results.",
+    "issue_ref": {
+      "task_id": "webshop_188",
+      "trial_num": 3,
+      "step_range": [
+        3,
+        7
+      ]
+    },
+    "learning_text": "Broadened search to \"blue\" and accepted approximate sizes (e.g., 8x10) to find a suitable product.",
+    "evidence_ref": {
+      "task_id": "webshop_188",
+      "trial_num": 4,
+      "step_range": [
+        5,
+        7
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "12"
+  },
+  {
+    "task_desc": "Find me loose fit women's sweaters with polyester cotton, short sleeve, long sleeve for teen girls, daily wear with color: z11-beige, and size: small, and price lower than 30.00 dollars",
+    "obj_type": "sweaters, size",
+    "verbs": "click, buy",
+    "goal_phase": "SELECT",
+    "issue_text": "Failed to select required 'small' size due to missing options on product page.",
+    "issue_ref": {
+      "task_id": "webshop_319",
+      "trial_num": 1,
+      "step_range": [
+        5,
+        6
+      ]
+    },
+    "learning_text": "Consult product description for material and size details when options are not directly clickable.",
+    "evidence_ref": {
+      "task_id": "webshop_319",
+      "trial_num": 6,
+      "step_range": [
+        5,
+        7
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "13"
+  },
+  {
+    "task_desc": "Find me loose fit women's sweaters with polyester cotton, short sleeve, long sleeve for teen girls, daily wear with color: z11-beige, and size: small, and price lower than 30.00 dollars",
+    "obj_type": "sweaters, color",
+    "verbs": "click",
+    "goal_phase": "SELECT",
+    "issue_text": "Product B08RYDYFGD did not offer the required 'z11-beige' color.",
+    "issue_ref": {
+      "task_id": "webshop_319",
+      "trial_num": 1,
+      "step_range": [
+        15,
+        16
+      ]
+    },
+    "learning_text": "",
+    "evidence_ref": null,
+    "valid_level": "CANDIDATE",
+    "unique_id": "14"
+  },
+  {
+    "task_desc": "Find me loose fit women's sweaters with polyester cotton, short sleeve, long sleeve for teen girls, daily wear with color: z11-beige, and size: small, and price lower than 30.00 dollars",
+    "obj_type": "sweaters, color",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query for 'z11-beige' was too specific, limiting suitable results.",
+    "issue_ref": {
+      "task_id": "webshop_319",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        19
+      ]
+    },
+    "learning_text": "Broaden search query by removing specific color code prefix (e.g., 'z11-') if exact match yields no results.",
+    "evidence_ref": {
+      "task_id": "webshop_319",
+      "trial_num": 1,
+      "step_range": [
+        21,
+        22
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "15"
+  },
+  {
+    "task_desc": "Find me loose fit women's sweaters with polyester cotton, short sleeve, long sleeve for teen girls, daily wear with color: z11-beige, and size: small, and price lower than 30.00 dollars",
+    "obj_type": "sweaters, color",
+    "verbs": "click",
+    "goal_phase": "SELECT",
+    "issue_text": "Product B09MDFR4Q2 did not offer the required 'z11-beige' color.",
+    "issue_ref": {
+      "task_id": "webshop_319",
+      "trial_num": 3,
+      "step_range": [
+        3,
+        4
+      ]
+    },
+    "learning_text": "",
+    "evidence_ref": null,
+    "valid_level": "CANDIDATE",
+    "unique_id": "16"
+  },
+  {
+    "task_desc": "Find me loose fit women's sweaters with polyester cotton, short sleeve, long sleeve for teen girls, daily wear with color: z11-beige, and size: small, and price lower than 30.00 dollars",
+    "obj_type": "product links",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Unable to inspect multiple promising products; clicking them returns to search page.",
+    "issue_ref": {
+      "task_id": "webshop_319",
+      "trial_num": 3,
+      "step_range": [
+        7,
+        16
+      ]
+    },
+    "learning_text": "Discard products that return to the search page upon clicking, as they are uninspectable.",
+    "evidence_ref": {
+      "task_id": "webshop_319",
+      "trial_num": 4,
+      "step_range": [
+        9,
+        10
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "17"
+  },
+  {
+    "task_desc": "Find me loose fit women's sweaters with polyester cotton, short sleeve, long sleeve for teen girls, daily wear with color: z11-beige, and size: small, and price lower than 30.00 dollars",
+    "obj_type": "search results page",
+    "verbs": "click",
+    "goal_phase": "SEARCH",
+    "issue_text": "Clicking 'Next >' failed to navigate to the subsequent search results page.",
+    "issue_ref": {
+      "task_id": "webshop_319",
+      "trial_num": 4,
+      "step_range": [
+        30,
+        33
+      ]
+    },
+    "learning_text": "",
+    "evidence_ref": null,
+    "valid_level": "CANDIDATE",
+    "unique_id": "18"
+  },
+  {
+    "task_desc": "Find me loose fit women's sweaters with polyester cotton, short sleeve, long sleeve for teen girls, daily wear with color: z11-beige, and size: small, and price lower than 30.00 dollars",
+    "obj_type": "sweaters, material",
+    "verbs": "click",
+    "goal_phase": "SELECT",
+    "issue_text": "Product B08K3ZVBWN description does not confirm 'polyester cotton' material.",
+    "issue_ref": {
+      "task_id": "webshop_319",
+      "trial_num": 6,
+      "step_range": [
+        47,
+        49
+      ]
+    },
+    "learning_text": "",
+    "evidence_ref": null,
+    "valid_level": "CANDIDATE",
+    "unique_id": "19"
+  },
+  {
+    "task_desc": "Find me officially licensed, machine wash men's t-shirts with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: slate, and fit type: men, and size: 3x-large, and price lower than 50.00 dollars",
+    "obj_type": "t-shirt, color",
+    "verbs": "click, browse",
+    "goal_phase": "BROWSE",
+    "issue_text": "Product B07PJD85W3 did not offer the required 'slate' color option.",
+    "issue_ref": {
+      "task_id": "webshop_409",
+      "trial_num": 1,
+      "step_range": [
+        8,
+        10
+      ]
+    },
+    "learning_text": "If a product lacks a mandatory attribute like color, return to search results to find an alternative.",
+    "evidence_ref": {
+      "task_id": "webshop_409",
+      "trial_num": 1,
+      "step_range": [
+        11,
+        11
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "20"
+  },
+  {
+    "task_desc": "Find me officially licensed, machine wash men's t-shirts with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: slate, and fit type: men, and size: 3x-large, and price lower than 50.00 dollars",
+    "obj_type": "product page",
+    "verbs": "click, browse",
+    "goal_phase": "BROWSE",
+    "issue_text": "Repeated clicks on product IDs failed to navigate to product detail pages.",
+    "issue_ref": {
+      "task_id": "webshop_409",
+      "trial_num": 1,
+      "step_range": [
+        13,
+        29
+      ]
+    },
+    "learning_text": "If product page navigation consistently fails, consider the product inaccessible and move to the next one.",
+    "evidence_ref": {
+      "task_id": "webshop_409",
+      "trial_num": 2,
+      "step_range": [
+        33,
+        33
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "21"
+  },
+  {
+    "task_desc": "Find me officially licensed, machine wash men's t-shirts with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: slate, and fit type: men, and size: 3x-large, and price lower than 50.00 dollars",
+    "obj_type": "product attributes",
+    "verbs": "click, browse",
+    "goal_phase": "BROWSE",
+    "issue_text": "Product descriptions or features were too brief, missing critical attribute details.",
+    "issue_ref": {
+      "task_id": "webshop_409",
+      "trial_num": 2,
+      "step_range": [
+        20,
+        21
+      ]
+    },
+    "learning_text": "When product details are incomplete, check both description and features sections for missing information.",
+    "evidence_ref": {
+      "task_id": "webshop_409",
+      "trial_num": 3,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "22"
+  },
+  {
+    "task_desc": "Find me officially licensed, machine wash men's t-shirts with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: slate, and fit type: men, and size: 3x-large, and price lower than 50.00 dollars",
+    "obj_type": "t-shirt, fit type, color, size",
+    "verbs": "click, select",
+    "goal_phase": "SELECT",
+    "issue_text": "Agent failed to select all required attributes (fit type, color, size) after finding a matching product.",
+    "issue_ref": {
+      "task_id": "webshop_409",
+      "trial_num": 5,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "learning_text": "After verifying all product attributes, explicitly select all required options (fit type, color, size) before purchasing.",
+    "evidence_ref": {
+      "task_id": "webshop_409",
+      "trial_num": 7,
+      "step_range": [
+        11,
+        13
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "23"
+  },
+  {
+    "task_desc": "Find me officially licensed, machine wash men's t-shirts with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: slate, and fit type: men, and size: 3x-large, and price lower than 50.00 dollars",
+    "obj_type": "t-shirt, material, fit, color",
+    "verbs": "click, browse",
+    "goal_phase": "BROWSE",
+    "issue_text": "Clicked product B081KBF3Z4 did not match multiple required attributes (material, fit, color).",
+    "issue_ref": {
+      "task_id": "webshop_409",
+      "trial_num": 2,
+      "step_range": [
+        9,
+        9
+      ]
+    },
+    "learning_text": "Thoroughly check all product attributes (material, fit, color) against the instruction before proceeding.",
+    "evidence_ref": {
+      "task_id": "webshop_409",
+      "trial_num": 2,
+      "step_range": [
+        10,
+        10
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "24"
+  },
+  {
+    "task_desc": "Find me women's shorts with tummy control, high waist, elastic waist, polyester spandex with color: pink, and size: medium, and price lower than 20.00 dollars",
+    "obj_type": "women's shorts, tummy control, high waist, elastic waist, polyester spandex, pink, medium, price",
+    "verbs": "search, click, verify",
+    "goal_phase": "SELECT",
+    "issue_text": "Selected product B09R256CR7 contained cotton, violating material constraint.",
+    "issue_ref": {
+      "task_id": "webshop_434",
+      "trial_num": 1,
+      "step_range": [
+        5,
+        10
+      ]
+    },
+    "learning_text": "Strictly verify material composition to ensure it contains only specified materials, rejecting products with additional unrequested materials.",
+    "evidence_ref": {
+      "task_id": "webshop_434",
+      "trial_num": 3,
+      "step_range": [
+        11,
+        12
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "25"
+  },
+  {
+    "task_desc": "Find me women's shorts with tummy control, high waist, elastic waist, polyester spandex with color: pink, and size: medium, and price lower than 20.00 dollars",
+    "obj_type": "women's shorts, tummy control, high waist, elastic waist, polyester spandex, pink, medium, price",
+    "verbs": "search, click, verify",
+    "goal_phase": "SELECT",
+    "issue_text": "Assumed 'elastic waist' from 'stretch' without explicit verification.",
+    "issue_ref": {
+      "task_id": "webshop_434",
+      "trial_num": 1,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "learning_text": "Explicitly verify 'elastic waist' attribute from product title or description.",
+    "evidence_ref": {
+      "task_id": "webshop_434",
+      "trial_num": 2,
+      "step_range": [
+        11,
+        13
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "26"
+  },
+  {
+    "task_desc": "Find me women's shorts with tummy control, high waist, elastic waist, polyester spandex with color: pink, and size: medium, and price lower than 20.00 dollars",
+    "obj_type": "women's shorts, tummy control, high waist, elastic waist, polyester spandex, pink, medium, price",
+    "verbs": "search, click, verify",
+    "goal_phase": "SELECT",
+    "issue_text": "Selected product B09NRHXTTG lacked the required 'pink' color option.",
+    "issue_ref": {
+      "task_id": "webshop_434",
+      "trial_num": 3,
+      "step_range": [
+        36,
+        37
+      ]
+    },
+    "learning_text": "Always check for the availability of required color options on the product page.",
+    "evidence_ref": {
+      "task_id": "webshop_434",
+      "trial_num": 3,
+      "step_range": [
+        36,
+        37
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "27"
+  },
+  {
+    "task_desc": "Find me women's shorts with tummy control, high waist, elastic waist, polyester spandex with color: pink, and size: medium, and price lower than 20.00 dollars",
+    "obj_type": "women's shorts, tummy control, high waist, elastic waist, polyester spandex, pink, medium, price",
+    "verbs": "search, click, verify",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query returned many products with incorrect material composition.",
+    "issue_ref": {
+      "task_id": "webshop_434",
+      "trial_num": 3,
+      "step_range": [
+        1,
+        48
+      ]
+    },
+    "learning_text": "Refine search query with '100%' to strictly filter for specific material compositions.",
+    "evidence_ref": {
+      "task_id": "webshop_434",
+      "trial_num": 3,
+      "step_range": [
+        48,
+        49
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "28"
+  },
+  {
+    "task_desc": "Find me women's shorts with tummy control, high waist, elastic waist, polyester spandex with color: pink, and size: medium, and price lower than 20.00 dollars",
+    "obj_type": "women's shorts, tummy control, high waist, elastic waist, polyester spandex, pink, medium, price",
+    "verbs": "search, click, verify",
+    "goal_phase": "SEARCH",
+    "issue_text": "Failed to apply refined search query from previous trial.",
+    "issue_ref": {
+      "task_id": "webshop_434",
+      "trial_num": 4,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Consistently apply successful search refinements from previous trials to improve efficiency.",
+    "evidence_ref": {
+      "task_id": "webshop_434",
+      "trial_num": 7,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "29"
+  },
+  {
+    "task_desc": "Find me women's shorts with tummy control, high waist, elastic waist, polyester spandex with color: pink, and size: medium, and price lower than 20.00 dollars",
+    "obj_type": "women's shorts, tummy control, high waist, elastic waist, polyester spandex, pink, medium, price",
+    "verbs": "search, click, verify",
+    "goal_phase": "SELECT",
+    "issue_text": "Product description was too vague to confirm material composition.",
+    "issue_ref": {
+      "task_id": "webshop_434",
+      "trial_num": 4,
+      "step_range": [
+        36,
+        39
+      ]
+    },
+    "learning_text": "Reject products if material composition cannot be explicitly verified from the description.",
+    "evidence_ref": {
+      "task_id": "webshop_434",
+      "trial_num": 4,
+      "step_range": [
+        38,
+        39
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "30"
+  },
+  {
+    "task_desc": "Find me women's shorts with tummy control, high waist, elastic waist, polyester spandex with color: pink, and size: medium, and price lower than 20.00 dollars",
+    "obj_type": "women's shorts, tummy control, high waist, elastic waist, polyester spandex, pink, medium, price",
+    "verbs": "search, click, verify",
+    "goal_phase": "BROWSE",
+    "issue_text": "Environment issue: clicking product link failed to navigate to product page.",
+    "issue_ref": {
+      "task_id": "webshop_434",
+      "trial_num": 4,
+      "step_range": [
+        41,
+        42
+      ]
+    },
+    "learning_text": "When environment issues prevent product page navigation, infer attributes from title and adapt strategy.",
+    "evidence_ref": {
+      "task_id": "webshop_434",
+      "trial_num": 6,
+      "step_range": [
+        35,
+        36
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "31"
+  },
+  {
+    "task_desc": "Find me women's shorts with tummy control, high waist, elastic waist, polyester spandex with color: pink, and size: medium, and price lower than 20.00 dollars",
+    "obj_type": "women's shorts, tummy control, high waist, elastic waist, polyester spandex, pink, medium, price",
+    "verbs": "search, click, verify",
+    "goal_phase": "BROWSE",
+    "issue_text": "Environment issue: clicking product description link failed to reveal content.",
+    "issue_ref": {
+      "task_id": "webshop_434",
+      "trial_num": 5,
+      "step_range": [
+        13,
+        16
+      ]
+    },
+    "learning_text": "When environment issues prevent attribute verification, acknowledge limitations and adapt strategy.",
+    "evidence_ref": {
+      "task_id": "webshop_434",
+      "trial_num": 5,
+      "step_range": [
+        16,
+        18
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "32"
+  },
+  {
+    "task_desc": "Find me women's shorts with tummy control, high waist, elastic waist, polyester spandex with color: pink, and size: medium, and price lower than 20.00 dollars",
+    "obj_type": "women's shorts, tummy control, high waist, elastic waist, polyester spandex, pink, medium, price",
+    "verbs": "search, click, verify",
+    "goal_phase": "SELECT",
+    "issue_text": "Selected product B09R256CR7 despite knowing it contained cotton from previous trials.",
+    "issue_ref": {
+      "task_id": "webshop_434",
+      "trial_num": 7,
+      "step_range": [
+        3,
+        7
+      ]
+    },
+    "learning_text": "Consistently apply learned material verification rules, even when facing new environment challenges.",
+    "evidence_ref": {
+      "task_id": "webshop_434",
+      "trial_num": 7,
+      "step_range": [
+        3,
+        7
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "33"
+  },
+  {
+    "task_desc": "Find me men's sleep & lounge with long sleeve, elastic waistband for daily wear with color: multi 1, and size: large, and price lower than 60.00 dollars",
+    "obj_type": "product details, sleeve length",
+    "verbs": "click, read, verify",
+    "goal_phase": "BROWSE",
+    "issue_text": "Product title indicated 'long sleeve', but description revealed 'short-sleeved tops'.",
+    "issue_ref": {
+      "task_id": "webshop_488",
+      "trial_num": 2,
+      "step_range": [
+        4,
+        5
+      ]
+    },
+    "learning_text": "Always verify sleeve length in the product description, as titles can be misleading.",
+    "evidence_ref": {
+      "task_id": "webshop_488",
+      "trial_num": 4,
+      "step_range": [
+        41,
+        43
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "34"
+  },
+  {
+    "task_desc": "Find me men's sleep & lounge with long sleeve, elastic waistband for daily wear with color: multi 1, and size: large, and price lower than 60.00 dollars",
+    "obj_type": "search results page",
+    "verbs": "click",
+    "goal_phase": "SEARCH",
+    "issue_text": "Failed to navigate to the next page of search results after viewing a product.",
+    "issue_ref": {
+      "task_id": "webshop_488",
+      "trial_num": 4,
+      "step_range": [
+        33,
+        37
+      ]
+    },
+    "learning_text": "Ensure you are on the main search results page before attempting to navigate to the next page.",
+    "evidence_ref": {
+      "task_id": "webshop_488",
+      "trial_num": 4,
+      "step_range": [
+        40,
+        40
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "35"
+  },
+  {
+    "task_desc": "Find me men's sleep & lounge with long sleeve, elastic waistband for daily wear with color: multi 1, and size: large, and price lower than 60.00 dollars",
+    "obj_type": "search results",
+    "verbs": "click",
+    "goal_phase": "SEARCH",
+    "issue_text": "Did not explore enough search result pages, missing potential matches.",
+    "issue_ref": {
+      "task_id": "webshop_488",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        3
+      ]
+    },
+    "learning_text": "Actively navigate to subsequent search result pages when initial results do not yield suitable products.",
+    "evidence_ref": {
+      "task_id": "webshop_488",
+      "trial_num": 7,
+      "step_range": [
+        3,
+        3
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "36"
+  },
+  {
+    "task_desc": "Find me men's sleep & lounge with long sleeve, elastic waistband for daily wear with color: multi 1, and size: large, and price lower than 60.00 dollars",
+    "obj_type": "search query",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query was too specific, hindering discovery of relevant products.",
+    "issue_ref": {
+      "task_id": "webshop_488",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Broaden search queries by removing highly specific attributes if initial searches yield no matches, then filter on product pages.",
+    "evidence_ref": {
+      "task_id": "webshop_488",
+      "trial_num": 7,
+      "step_range": [
+        9,
+        9
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "37"
+  },
+  {
+    "task_desc": "Find me men's sleep & lounge with long sleeve, elastic waistband for daily wear with color: multi 1, and size: large, and price lower than 60.00 dollars",
+    "obj_type": "product attributes, color",
+    "verbs": "click, observe",
+    "goal_phase": "SELECT",
+    "issue_text": "Selected product did not offer the required 'multi 1' color option.",
+    "issue_ref": {
+      "task_id": "webshop_488",
+      "trial_num": 4,
+      "step_range": [
+        15,
+        15
+      ]
+    },
+    "learning_text": "Always check available color options on the product page to ensure they match the instruction.",
+    "evidence_ref": {
+      "task_id": "webshop_488",
+      "trial_num": 4,
+      "step_range": [
+        41,
+        41
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "38"
+  },
+  {
+    "task_desc": "Find me men's sleep & lounge with long sleeve, elastic waistband for daily wear with color: multi 1, and size: large, and price lower than 60.00 dollars",
+    "obj_type": "product page navigation",
+    "verbs": "click, observe",
+    "goal_phase": "BROWSE",
+    "issue_text": "Environment bug: Clicking different products leads to the same generic product detail page.",
+    "issue_ref": {
+      "task_id": "webshop_488",
+      "trial_num": 7,
+      "step_range": [
+        12,
+        22
+      ]
+    },
+    "learning_text": "Recognize when the environment is not providing unique product details, as this prevents accurate attribute verification.",
+    "evidence_ref": {
+      "task_id": "webshop_488",
+      "trial_num": 7,
+      "step_range": [
+        23,
+        23
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "39"
+  },
+  {
+    "task_desc": "Find me loose fit, wide leg, wash cold, machine wash women's jumpsuits, rompers & overalls with long sleeve, soft material, elastic closure for daily wear with color: yellow, and size: 4x-large, and price lower than 60.00 dollars",
+    "obj_type": "jumpsuits, rompers & overalls, color, size, fit, material, care, closure, occasion, price",
+    "verbs": "buy",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Agent failed to click 'Buy Now' after verifying all product attributes.",
+    "issue_ref": {
+      "task_id": "webshop_520",
+      "trial_num": 1,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "learning_text": "Always click 'Buy Now' after confirming all product attributes and selecting options.",
+    "evidence_ref": {
+      "task_id": "webshop_520",
+      "trial_num": 5,
+      "step_range": [
+        8,
+        8
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "40"
+  },
+  {
+    "task_desc": "Find me high speed, blu ray, gold plated signal boosters with color: 1 pack, and size: 8 feet (2-pack), and style: hdmi male to male, and price lower than 120.00 dollars",
+    "obj_type": "signal boosters, HDMI, gold plated, high speed, blu ray, 8 feet, 2-pack",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query did not return products perfectly matching all specified attributes.",
+    "issue_ref": {
+      "task_id": "webshop_525",
+      "trial_num": 1,
+      "step_range": [
+        2,
+        2
+      ]
+    },
+    "learning_text": "Refine search queries by breaking down complex requirements or trying alternative keywords when initial results are poor.",
+    "evidence_ref": {
+      "task_id": "webshop_525",
+      "trial_num": 1,
+      "step_range": [
+        2,
+        2
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "41"
+  },
+  {
+    "task_desc": "Find me high speed, blu ray, gold plated signal boosters with color: 1 pack, and size: 8 feet (2-pack), and style: hdmi male to male, and price lower than 120.00 dollars",
+    "obj_type": "signal boosters, HDMI, 8 feet, 2-pack",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Agent did not explore beyond the first page of search results.",
+    "issue_ref": {
+      "task_id": "webshop_525",
+      "trial_num": 1,
+      "step_range": [
+        2,
+        5
+      ]
+    },
+    "learning_text": "Always navigate to subsequent search result pages to ensure all potential matches are considered.",
+    "evidence_ref": {
+      "task_id": "webshop_525",
+      "trial_num": 1,
+      "step_range": [
+        2,
+        5
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "42"
+  },
+  {
+    "task_desc": "Find me high speed, blu ray, gold plated signal boosters with color: 1 pack, and size: 8 feet (2-pack), and style: hdmi male to male, and price lower than 120.00 dollars",
+    "obj_type": "signal boosters, 8 feet, product type",
+    "verbs": "click",
+    "goal_phase": "SELECT",
+    "issue_text": "Agent selected a product that did not fully match length and product type requirements.",
+    "issue_ref": {
+      "task_id": "webshop_525",
+      "trial_num": 1,
+      "step_range": [
+        5,
+        6
+      ]
+    },
+    "learning_text": "If no product perfectly matches, re-evaluate search strategy or consider if any single attribute is non-negotiable before compromising.",
+    "evidence_ref": {
+      "task_id": "webshop_525",
+      "trial_num": 1,
+      "step_range": [
+        5,
+        6
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "43"
+  },
+  {
+    "task_desc": "Find me loose fit women's sweaters with polyester cotton, short sleeve, long sleeve for teen girls, daily wear with color: khaki, and size: small, and price lower than 30.00 dollars",
+    "obj_type": "sweaters, price, product relevance",
+    "verbs": "search, click",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search queries returned irrelevant products and items exceeding price.",
+    "issue_ref": {
+      "task_id": "webshop_711",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        3
+      ]
+    },
+    "learning_text": "Manually scan noisy search results and click promising products to verify all required attributes.",
+    "evidence_ref": {
+      "task_id": "webshop_711",
+      "trial_num": 1,
+      "step_range": [
+        4,
+        5
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "44"
+  },
+  {
+    "task_desc": "Find me loose fit women's sweaters with polyester cotton, short sleeve, long sleeve for teen girls, daily wear with color: khaki, and size: small, and price lower than 30.00 dollars",
+    "obj_type": "sweaters, material, polyester cotton",
+    "verbs": "click, buy",
+    "goal_phase": "BROWSE",
+    "issue_text": "Product material 'polyester cotton' was not explicitly confirmed on the product page.",
+    "issue_ref": {
+      "task_id": "webshop_711",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        6
+      ]
+    },
+    "learning_text": "When explicit attribute confirmation is unavailable, make an informed assumption based on product type.",
+    "evidence_ref": {
+      "task_id": "webshop_711",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        9
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "45"
+  },
+  {
+    "task_desc": "Find me women's shorts with nylon spandex, elastic closure, button closure for daily wear with color: khaki, and size: small, and price lower than 50.00 dollars",
+    "obj_type": "women's shorts, attributes",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial broad search query returned irrelevant men's shorts.",
+    "issue_ref": {
+      "task_id": "webshop_750",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Refined search query to explicitly include \"women's\" and key attributes.",
+    "evidence_ref": {
+      "task_id": "webshop_750",
+      "trial_num": 1,
+      "step_range": [
+        3,
+        3
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "46"
+  },
+  {
+    "task_desc": "Find me women's shorts with nylon spandex, elastic closure, button closure for daily wear with color: khaki, and size: small, and price lower than 50.00 dollars",
+    "obj_type": "shorts, material, closure",
+    "verbs": "click, examine",
+    "goal_phase": "BROWSE",
+    "issue_text": "Selected products based on partial matches, lacking explicit material or closure.",
+    "issue_ref": {
+      "task_id": "webshop_750",
+      "trial_num": 1,
+      "step_range": [
+        16,
+        21
+      ]
+    },
+    "learning_text": "Systematically checked product descriptions for explicit material and all required closure types.",
+    "evidence_ref": {
+      "task_id": "webshop_750",
+      "trial_num": 6,
+      "step_range": [
+        18,
+        22
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "47"
+  },
+  {
+    "task_desc": "Find me women's shorts with nylon spandex, elastic closure, button closure for daily wear with color: khaki, and size: small, and price lower than 50.00 dollars",
+    "obj_type": "shorts, closure",
+    "verbs": "examine",
+    "goal_phase": "SELECT",
+    "issue_text": "Assumed \"elastic closure\" based on implied comfort fit and material.",
+    "issue_ref": {
+      "task_id": "webshop_750",
+      "trial_num": 1,
+      "step_range": [
+        33,
+        33
+      ]
+    },
+    "learning_text": "Verified all required attributes explicitly in product description, avoiding assumptions.",
+    "evidence_ref": {
+      "task_id": "webshop_750",
+      "trial_num": 6,
+      "step_range": [
+        22,
+        22
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "48"
+  },
+  {
+    "task_desc": "Find me women's shorts with nylon spandex, elastic closure, button closure for daily wear with color: khaki, and size: small, and price lower than 50.00 dollars",
+    "obj_type": "shorts, price",
+    "verbs": "search, examine",
+    "goal_phase": "SEARCH",
+    "issue_text": "Identified product with correct material but price exceeded constraint.",
+    "issue_ref": {
+      "task_id": "webshop_750",
+      "trial_num": 4,
+      "step_range": [
+        3,
+        4
+      ]
+    },
+    "learning_text": "Prioritized price check in search results or product details before deep dive.",
+    "evidence_ref": {
+      "task_id": "webshop_750",
+      "trial_num": 6,
+      "step_range": [
+        18,
+        18
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "49"
+  },
+  {
+    "task_desc": "Find me women's shorts with nylon spandex, elastic closure, button closure for daily wear with color: khaki, and size: small, and price lower than 50.00 dollars",
+    "obj_type": "purchase",
+    "verbs": "buy",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Repeated \"Buy Now\" action multiple times after selection.",
+    "issue_ref": {
+      "task_id": "webshop_750",
+      "trial_num": 1,
+      "step_range": [
+        36,
+        41
+      ]
+    },
+    "learning_text": "Confirmed purchase action only once to avoid duplicate orders.",
+    "evidence_ref": {
+      "task_id": "webshop_750",
+      "trial_num": 1,
+      "step_range": [
+        42,
+        42
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "50"
+  },
+  {
+    "task_desc": "Find me non slip women's oxfords with faux fur, rubber sole with color: blue, and size: 7.5 wide women | 6.5 men, and price lower than 50.00 dollars",
+    "obj_type": "shoes, oxfords, faux fur, rubber sole, blue, size, price",
+    "verbs": "search, click",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial specific search query yielded irrelevant or overpriced results.",
+    "issue_ref": {
+      "task_id": "webshop_916",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Refine search queries by adjusting specificity to find more relevant products.",
+    "evidence_ref": {
+      "task_id": "webshop_916",
+      "trial_num": 2,
+      "step_range": [
+        1,
+        6
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "51"
+  },
+  {
+    "task_desc": "Find me non slip women's oxfords with faux fur, rubber sole with color: blue, and size: 7.5 wide women | 6.5 men, and price lower than 50.00 dollars",
+    "obj_type": "shoes, oxfords, faux fur, rubber sole, blue, size, price",
+    "verbs": "search, click",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent re-searched the same query instead of navigating to the next page.",
+    "issue_ref": {
+      "task_id": "webshop_916",
+      "trial_num": 3,
+      "step_range": [
+        4,
+        4
+      ]
+    },
+    "learning_text": "Use 'Next >' to explore subsequent search result pages, not re-execute the search.",
+    "evidence_ref": {
+      "task_id": "webshop_916",
+      "trial_num": 3,
+      "step_range": [
+        5,
+        6
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "52"
+  },
+  {
+    "task_desc": "Find me non slip women's oxfords with faux fur, rubber sole with color: blue, and size: 7.5 wide women | 6.5 men, and price lower than 50.00 dollars",
+    "obj_type": "shoes, oxfords, faux fur, rubber sole, blue, size, price",
+    "verbs": "search, click",
+    "goal_phase": "BROWSE",
+    "issue_text": "System error prevented accessing product details for attribute verification.",
+    "issue_ref": {
+      "task_id": "webshop_916",
+      "trial_num": 4,
+      "step_range": [
+        15,
+        25
+      ]
+    },
+    "learning_text": "No specific learning action, as the issue was not resolved by agent action.",
+    "evidence_ref": {
+      "task_id": "webshop_916",
+      "trial_num": 4,
+      "step_range": [
+        26,
+        27
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "53"
+  },
+  {
+    "task_desc": "Find me non slip women's oxfords with faux fur, rubber sole with color: blue, and size: 7.5 wide women | 6.5 men, and price lower than 50.00 dollars",
+    "obj_type": "shoes, oxfords, faux fur, rubber sole, blue, size, price",
+    "verbs": "search, click",
+    "goal_phase": "SEARCH",
+    "issue_text": "The 'search_next_page' action failed to advance to the next page.",
+    "issue_ref": {
+      "task_id": "webshop_916",
+      "trial_num": 5,
+      "step_range": [
+        3,
+        3
+      ]
+    },
+    "learning_text": "No specific learning action, as the issue was not resolved by agent action.",
+    "evidence_ref": {
+      "task_id": "webshop_916",
+      "trial_num": 5,
+      "step_range": [
+        4,
+        7
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "54"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: heather blue, and fit type: youth, and size: medium, and price lower than 40.00 dollars",
+    "obj_type": "t-shirts, search terms",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search queries were too specific, including too many attributes, leading to irrelevant results.",
+    "issue_ref": {
+      "task_id": "webshop_949",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        3
+      ]
+    },
+    "learning_text": "Simplify search queries by focusing on core attributes and gradually adding more specific terms.",
+    "evidence_ref": {
+      "task_id": "webshop_949",
+      "trial_num": 1,
+      "step_range": [
+        4,
+        5
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "55"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: heather blue, and fit type: youth, and size: medium, and price lower than 40.00 dollars",
+    "obj_type": "t-shirts, fit type",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Conflicting 'men's t-shirts' and 'fit type: youth' in instruction led to ambiguous search results.",
+    "issue_ref": {
+      "task_id": "webshop_949",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        3
+      ]
+    },
+    "learning_text": "Prioritize the more specific fit type ('youth') when encountering contradictory gender/age fit instructions.",
+    "evidence_ref": {
+      "task_id": "webshop_949",
+      "trial_num": 1,
+      "step_range": [
+        7,
+        8
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "56"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: heather blue, and fit type: youth, and size: medium, and price lower than 40.00 dollars",
+    "obj_type": "t-shirts, style",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Search engine consistently returned graphic/costume t-shirts despite using 'plain' or 'blank' keywords.",
+    "issue_ref": {
+      "task_id": "webshop_949",
+      "trial_num": 1,
+      "step_range": [
+        12,
+        12
+      ]
+    },
+    "learning_text": "When 'plain' or 'blank' keywords are ineffective, try searching for known brands of basic apparel or alternative terms like 'tee'.",
+    "evidence_ref": {
+      "task_id": "webshop_949",
+      "trial_num": 4,
+      "step_range": [
+        19,
+        19
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "57"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: heather blue, and fit type: youth, and size: medium, and price lower than 40.00 dollars",
+    "obj_type": "t-shirts, sleeve type",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Including uncommon attribute 'needle sleeve' in search queries led to irrelevant results.",
+    "issue_ref": {
+      "task_id": "webshop_949",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Omit highly specific or uncommon attributes from initial search queries; check for them on product pages later.",
+    "evidence_ref": {
+      "task_id": "webshop_949",
+      "trial_num": 2,
+      "step_range": [
+        7,
+        8
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "58"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: heather blue, and fit type: youth, and size: medium, and price lower than 40.00 dollars",
+    "obj_type": "t-shirts, product details",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Product page details (Description, Features, Reviews) did not explicitly confirm all required attributes.",
+    "issue_ref": {
+      "task_id": "webshop_949",
+      "trial_num": 4,
+      "step_range": [
+        26,
+        29
+      ]
+    },
+    "learning_text": "If product page details are insufficient, consider if missing attributes are implicit or if the product is not a perfect match.",
+    "evidence_ref": {
+      "task_id": "webshop_949",
+      "trial_num": 4,
+      "step_range": [
+        30,
+        30
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "59"
+  },
+  {
+    "task_desc": "Find me hand wash, machine wash men's sweaters with long sleeve with color: grey2, and size: large, and price lower than 40.00 dollars",
+    "obj_type": "men's sweaters, long sleeve, grey2, large, hand wash, machine wash, price under $40",
+    "verbs": "search, click, buy",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query missed key washing instructions.",
+    "issue_ref": {
+      "task_id": "webshop_1040",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Include all critical attributes like washing instructions in the initial search query.",
+    "evidence_ref": {
+      "task_id": "webshop_1040",
+      "trial_num": 1,
+      "step_range": [
+        8,
+        8
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "60"
+  },
+  {
+    "task_desc": "Find me hand wash, machine wash men's sweaters with long sleeve with color: grey2, and size: large, and price lower than 40.00 dollars",
+    "obj_type": "men's sweaters, long sleeve, grey2, large, hand wash, machine wash, price under $40",
+    "verbs": "search, click, buy",
+    "goal_phase": "BROWSE",
+    "issue_text": "Clicked product B09MYT5NQK had ambiguous Asian sizing and lacked 'grey2' color.",
+    "issue_ref": {
+      "task_id": "webshop_1040",
+      "trial_num": 1,
+      "step_range": [
+        3,
+        7
+      ]
+    },
+    "learning_text": "Thoroughly check product descriptions for sizing clarity and exact attribute matches.",
+    "evidence_ref": {
+      "task_id": "webshop_1040",
+      "trial_num": 1,
+      "step_range": [
+        7,
+        7
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "61"
+  },
+  {
+    "task_desc": "Find me hand wash, machine wash men's sweaters with long sleeve with color: grey2, and size: large, and price lower than 40.00 dollars",
+    "obj_type": "men's sweaters, long sleeve, grey2, large, hand wash, machine wash, price under $40",
+    "verbs": "search, click, buy",
+    "goal_phase": "SELECT",
+    "issue_text": "Rejected 'grey' or 'dark grey' as substitutes for 'grey2' color.",
+    "issue_ref": {
+      "task_id": "webshop_1040",
+      "trial_num": 3,
+      "step_range": [
+        5,
+        6
+      ]
+    },
+    "learning_text": "Accept 'grey' or 'dark grey' as reasonable substitutes for 'grey2' if exact match is unavailable.",
+    "evidence_ref": {
+      "task_id": "webshop_1040",
+      "trial_num": 6,
+      "step_range": [
+        7,
+        11
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "62"
+  },
+  {
+    "task_desc": "Find me hand wash, machine wash men's sweaters with long sleeve with color: grey2, and size: large, and price lower than 40.00 dollars",
+    "obj_type": "men's sweaters, long sleeve, grey2, large, hand wash, machine wash, price under $40",
+    "verbs": "search, click, buy",
+    "goal_phase": "SELECT",
+    "issue_text": "Rejected products stating only 'hand wash' for 'hand wash, machine wash'.",
+    "issue_ref": {
+      "task_id": "webshop_1040",
+      "trial_num": 4,
+      "step_range": [
+        11,
+        24
+      ]
+    },
+    "learning_text": "Accept 'hand wash' as sufficient for 'hand wash, machine wash' if no explicit 'machine wash' is found.",
+    "evidence_ref": {
+      "task_id": "webshop_1040",
+      "trial_num": 6,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "63"
+  },
+  {
+    "task_desc": "Find me hand wash, machine wash men's sweaters with long sleeve with color: grey2, and size: large, and price lower than 40.00 dollars",
+    "obj_type": "men's sweaters, long sleeve, grey2, large, hand wash, machine wash, price under $40",
+    "verbs": "search, click, buy",
+    "goal_phase": "BROWSE",
+    "issue_text": "Clicked on products that were not men's sweaters or were vests.",
+    "issue_ref": {
+      "task_id": "webshop_1040",
+      "trial_num": 5,
+      "step_range": [
+        13,
+        14
+      ]
+    },
+    "learning_text": "Filter search results by product type and gender from titles before clicking.",
+    "evidence_ref": {
+      "task_id": "webshop_1040",
+      "trial_num": 6,
+      "step_range": [
+        2,
+        4
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "64"
+  },
+  {
+    "task_desc": "Find me hand wash, machine wash men's sweaters with long sleeve with color: grey2, and size: large, and price lower than 40.00 dollars",
+    "obj_type": "men's sweaters, long sleeve, grey2, large, hand wash, machine wash, price under $40",
+    "verbs": "search, click, buy",
+    "goal_phase": "SEARCH",
+    "issue_text": "Failed to explore beyond the first page of search results.",
+    "issue_ref": {
+      "task_id": "webshop_1040",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        7
+      ]
+    },
+    "learning_text": "Systematically explore multiple pages of search results to find better matching products.",
+    "evidence_ref": {
+      "task_id": "webshop_1040",
+      "trial_num": 6,
+      "step_range": [
+        3,
+        5
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "65"
+  },
+  {
+    "task_desc": "Find me hand wash, machine wash men's sweaters with long sleeve with color: grey2, and size: large, and price lower than 40.00 dollars",
+    "obj_type": "men's sweaters, long sleeve, grey2, large, hand wash, machine wash, price under $40",
+    "verbs": "search, click, buy",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Repeatedly clicked 'Buy Now' without successful purchase confirmation.",
+    "issue_ref": {
+      "task_id": "webshop_1040",
+      "trial_num": 1,
+      "step_range": [
+        17,
+        20
+      ]
+    },
+    "learning_text": "Execute a single, decisive 'Buy Now' action and await confirmation.",
+    "evidence_ref": {
+      "task_id": "webshop_1040",
+      "trial_num": 6,
+      "step_range": [
+        11,
+        11
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "66"
+  },
+  {
+    "task_desc": "Find me women's work & safety footwear with steel toe, closed toe, rubber sole with color: army green, and size: 8, and price lower than 120.00 dollars",
+    "obj_type": "footwear, color",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Clicked product B09QLQ9MPJ, which lacked the required 'army green' color option.",
+    "issue_ref": {
+      "task_id": "webshop_1049",
+      "trial_num": 1,
+      "step_range": [
+        4,
+        4
+      ]
+    },
+    "learning_text": "Refine search query to include specific color attributes to filter results better.",
+    "evidence_ref": {
+      "task_id": "webshop_1049",
+      "trial_num": 3,
+      "step_range": [
+        44,
+        45
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "67"
+  },
+  {
+    "task_desc": "Find me women's work & safety footwear with steel toe, closed toe, rubber sole with color: army green, and size: 8, and price lower than 120.00 dollars",
+    "obj_type": "footwear, color, size",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Clicked product B08NJ5NMCK, which lacked 'army green' color and correct size '8'.",
+    "issue_ref": {
+      "task_id": "webshop_1049",
+      "trial_num": 1,
+      "step_range": [
+        16,
+        16
+      ]
+    },
+    "learning_text": "Refine search query to include specific color and size attributes to filter results better.",
+    "evidence_ref": {
+      "task_id": "webshop_1049",
+      "trial_num": 3,
+      "step_range": [
+        44,
+        45
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "68"
+  },
+  {
+    "task_desc": "Find me women's work & safety footwear with steel toe, closed toe, rubber sole with color: army green, and size: 8, and price lower than 120.00 dollars",
+    "obj_type": "search query, product attributes",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial broad search query failed to yield relevant products with 'army green' color.",
+    "issue_ref": {
+      "task_id": "webshop_1049",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Refine search query to be more concise and specific, e.g., 'women's steel toe boots army green size 8'.",
+    "evidence_ref": {
+      "task_id": "webshop_1049",
+      "trial_num": 3,
+      "step_range": [
+        44,
+        44
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "69"
+  },
+  {
+    "task_desc": "Find me women's work & safety footwear with steel toe, closed toe, rubber sole with color: army green, and size: 8, and price lower than 120.00 dollars",
+    "obj_type": "webpage navigation",
+    "verbs": "click, search",
+    "goal_phase": "BROWSE",
+    "issue_text": "Repeated clicks on product links or 'Next >' button failed to navigate correctly.",
+    "issue_ref": {
+      "task_id": "webshop_1049",
+      "trial_num": 1,
+      "step_range": [
+        19,
+        20
+      ]
+    },
+    "learning_text": "Re-issue or refine the search query to reset navigation state and find new product paths.",
+    "evidence_ref": {
+      "task_id": "webshop_1049",
+      "trial_num": 3,
+      "step_range": [
+        42,
+        44
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "70"
+  },
+  {
+    "task_desc": "Find me wash cold, machine wash men's underwear with elastic waistband, polyester spandex for tumble dry with color: black | black | black, and size: medium, and price lower than 60.00 dollars",
+    "obj_type": "men's underwear, color, material, care instructions",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Clicked on products that did not match required plain black color, polyester spandex material, or 'tumble dry' care instructions.",
+    "issue_ref": {
+      "task_id": "webshop_1084",
+      "trial_num": 1,
+      "step_range": [
+        3,
+        7
+      ]
+    },
+    "learning_text": "Always verify all product attributes (color, material, care instructions) from the description before proceeding.",
+    "evidence_ref": {
+      "task_id": "webshop_1084",
+      "trial_num": 4,
+      "step_range": [
+        10,
+        14
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "71"
+  },
+  {
+    "task_desc": "Find me wash cold, machine wash men's underwear with elastic waistband, polyester spandex for tumble dry with color: black | black | black, and size: medium, and price lower than 60.00 dollars",
+    "obj_type": "search query, product attributes",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Search queries were often too verbose or too broad, consistently returning irrelevant or unsuitable products.",
+    "issue_ref": {
+      "task_id": "webshop_1084",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Refine search queries by prioritizing core product type, material, and plain color to narrow down relevant results.",
+    "evidence_ref": {
+      "task_id": "webshop_1084",
+      "trial_num": 2,
+      "step_range": [
+        6,
+        6
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "72"
+  },
+  {
+    "task_desc": "Find me wash cold, machine wash men's underwear with elastic waistband, polyester spandex for tumble dry with color: black | black | black, and size: medium, and price lower than 60.00 dollars",
+    "obj_type": "product description, care instructions",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Product descriptions consistently lacked explicit details for 'wash cold' and 'tumble dry' care instructions.",
+    "issue_ref": {
+      "task_id": "webshop_1084",
+      "trial_num": 2,
+      "step_range": [
+        12,
+        12
+      ]
+    },
+    "learning_text": "Thoroughly check all available product information tabs (Description, Features, Reviews) for explicit care instructions.",
+    "evidence_ref": {
+      "task_id": "webshop_1084",
+      "trial_num": 4,
+      "step_range": [
+        11,
+        14
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "73"
+  },
+  {
+    "task_desc": "Find me wash cold, machine wash men's underwear with elastic waistband, polyester spandex for tumble dry with color: black | black | black, and size: medium, and price lower than 60.00 dollars",
+    "obj_type": "search results, navigation",
+    "verbs": "click",
+    "goal_phase": "SEARCH",
+    "issue_text": "The 'Next >' button for search results was non-functional, preventing exploration of further product pages.",
+    "issue_ref": {
+      "task_id": "webshop_1084",
+      "trial_num": 5,
+      "step_range": [
+        37,
+        38
+      ]
+    },
+    "learning_text": "When 'Next >' is non-functional, refine search queries to improve initial result relevance, as only the first page is accessible.",
+    "evidence_ref": {
+      "task_id": "webshop_1084",
+      "trial_num": 5,
+      "step_range": [
+        40,
+        40
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "74"
+  },
+  {
+    "task_desc": "Find me women's flats with comfortable fit, rubber sole with size: 6.5, and price lower than 70.00 dollars",
+    "obj_type": "shoes, price, size",
+    "verbs": "click, think",
+    "goal_phase": "SELECT",
+    "issue_text": "Failed to confirm specific price for selected size 6.5 is under $70.",
+    "issue_ref": {
+      "task_id": "webshop_1133",
+      "trial_num": 1,
+      "step_range": [
+        16,
+        17
+      ]
+    },
+    "learning_text": "Do not assume price for selected size is within budget if product page shows a price range that includes higher prices.",
+    "evidence_ref": {
+      "task_id": "webshop_1133",
+      "trial_num": 5,
+      "step_range": [
+        12,
+        12
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "75"
+  },
+  {
+    "task_desc": "Find me women's flats with comfortable fit, rubber sole with size: 6.5, and price lower than 70.00 dollars",
+    "obj_type": "shoes, comfortable fit, rubber sole",
+    "verbs": "click, buy",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Purchased product B09B6MKNYV without checking description/features for attribute confirmation.",
+    "issue_ref": {
+      "task_id": "webshop_1133",
+      "trial_num": 2,
+      "step_range": [
+        4,
+        5
+      ]
+    },
+    "learning_text": "Always check product description and features for explicit confirmation of required attributes before buying.",
+    "evidence_ref": {
+      "task_id": "webshop_1133",
+      "trial_num": 4,
+      "step_range": [
+        5,
+        6
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "76"
+  },
+  {
+    "task_desc": "Find me women's flats with comfortable fit, rubber sole with size: 6.5, and price lower than 70.00 dollars",
+    "obj_type": "product details, comfortable fit, rubber sole",
+    "verbs": "click, think",
+    "goal_phase": "BROWSE",
+    "issue_text": "Product descriptions/features were generic or irrelevant, preventing explicit attribute verification.",
+    "issue_ref": {
+      "task_id": "webshop_1133",
+      "trial_num": 4,
+      "step_range": [
+        6,
+        9
+      ]
+    },
+    "learning_text": "When product descriptions are unreliable, rely on explicit mentions or strong implications from product titles/snippets.",
+    "evidence_ref": {
+      "task_id": "webshop_1133",
+      "trial_num": 5,
+      "step_range": [
+        34,
+        35
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "77"
+  },
+  {
+    "task_desc": "Find me women's flats with comfortable fit, rubber sole with size: 6.5, and price lower than 70.00 dollars",
+    "obj_type": "product page, buy button",
+    "verbs": "click, buy, think",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Attempted to click 'Buy Now' from an incorrect page state, preventing purchase.",
+    "issue_ref": {
+      "task_id": "webshop_1133",
+      "trial_num": 6,
+      "step_range": [
+        10,
+        18
+      ]
+    },
+    "learning_text": "Ensure 'Buy Now' is clicked from the specific product page, not a generic description page.",
+    "evidence_ref": {
+      "task_id": "webshop_1133",
+      "trial_num": 6,
+      "step_range": [
+        24,
+        24
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "78"
+  },
+  {
+    "task_desc": "Find me women's flats with comfortable fit, rubber sole with size: 6.5, and price lower than 70.00 dollars",
+    "obj_type": "shoes, flats, comfortable fit, rubber sole",
+    "verbs": "click, think, buy",
+    "goal_phase": "BROWSE",
+    "issue_text": "Incorrectly inferred product type or attributes from title, leading to an unsuccessful purchase.",
+    "issue_ref": {
+      "task_id": "webshop_1133",
+      "trial_num": 5,
+      "step_range": [
+        39,
+        46
+      ]
+    },
+    "learning_text": "Carefully verify all product attributes, especially when relying on inferences from titles, to ensure a correct match.",
+    "evidence_ref": null,
+    "valid_level": "CANDIDATE",
+    "unique_id": "79"
+  },
+  {
+    "task_desc": "Find me machine wash, loose fit women's fashion hoodies & sweatshirts with quality polyester, unique design, polyester cotton, long sleeve for daily wear with color: pink, and size: 3x-large, and price lower than 40.00 dollars",
+    "obj_type": "hoodies & sweatshirts",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query returned irrelevant men's clothing results.",
+    "issue_ref": {
+      "task_id": "webshop_1139",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        3
+      ]
+    },
+    "learning_text": "Start search query with 'women's' to filter results more effectively.",
+    "evidence_ref": {
+      "task_id": "webshop_1139",
+      "trial_num": 2,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "80"
+  },
+  {
+    "task_desc": "Find me machine wash, loose fit women's fashion hoodies & sweatshirts with quality polyester, unique design, polyester cotton, long sleeve for daily wear with color: pink, and size: 3x-large, and price lower than 40.00 dollars",
+    "obj_type": "product",
+    "verbs": "buy",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Purchase failed after selecting attributes and clicking 'Buy Now'.",
+    "issue_ref": {
+      "task_id": "webshop_1139",
+      "trial_num": 1,
+      "step_range": [
+        11,
+        12
+      ]
+    },
+    "learning_text": "Click 'Buy Now' only once after confirming all attributes are selected.",
+    "evidence_ref": {
+      "task_id": "webshop_1139",
+      "trial_num": 2,
+      "step_range": [
+        8,
+        8
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "81"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts & tanks with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: purple, and fit type: men, and size: large, and price lower than 40.00 dollars",
+    "obj_type": "men's t-shirts & tanks, polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit, purple, large, machine wash, price",
+    "verbs": "search, click, buy",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search queries included highly specific terms like \"needle sleeve\" and \"heather\", resulting in irrelevant product listings.",
+    "issue_ref": {
+      "task_id": "webshop_1169",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        3
+      ]
+    },
+    "learning_text": "Broaden initial search queries by removing niche or uncommon terms to retrieve a wider range of potentially relevant products.",
+    "evidence_ref": {
+      "task_id": "webshop_1169",
+      "trial_num": 1,
+      "step_range": [
+        4,
+        5
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "82"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts & tanks with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: purple, and fit type: men, and size: large, and price lower than 40.00 dollars",
+    "obj_type": "men's t-shirts & tanks, polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit, purple, large, machine wash, price",
+    "verbs": "search, click, buy",
+    "goal_phase": "SEARCH",
+    "issue_text": "Despite various search query refinements, results consistently failed to yield products matching the core type and attributes.",
+    "issue_ref": {
+      "task_id": "webshop_1169",
+      "trial_num": 5,
+      "step_range": [
+        7,
+        20
+      ]
+    },
+    "learning_text": "Recognize when specific product attributes may be unavailable in inventory or unsearchable, leading to task limitations.",
+    "evidence_ref": {
+      "task_id": "webshop_1169",
+      "trial_num": 5,
+      "step_range": [
+        21,
+        22
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "83"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts & tanks with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: purple, and fit type: men, and size: large, and price lower than 40.00 dollars",
+    "obj_type": "men's t-shirts & tanks, polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit, purple, large, machine wash, price",
+    "verbs": "search, click, buy",
+    "goal_phase": "BROWSE",
+    "issue_text": "Clicked on a product (B09NXWD9FJ) that was a button-down shirt, not the required t-shirt or tank top.",
+    "issue_ref": {
+      "task_id": "webshop_1169",
+      "trial_num": 3,
+      "step_range": [
+        4,
+        5
+      ]
+    },
+    "learning_text": "Carefully verify the product type from the title or thumbnail before navigating to the product detail page.",
+    "evidence_ref": {
+      "task_id": "webshop_1169",
+      "trial_num": 3,
+      "step_range": [
+        5,
+        6
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "84"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts & tanks with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: purple, and fit type: men, and size: large, and price lower than 40.00 dollars",
+    "obj_type": "men's t-shirts & tanks, polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit, purple, large, machine wash, price",
+    "verbs": "search, click, buy",
+    "goal_phase": "BROWSE",
+    "issue_text": "Selected product (B09R4RLZPC) had a \"cotton/spandex\" material, not the required \"polyester heathers, heathers cotton, or cotton heather\".",
+    "issue_ref": {
+      "task_id": "webshop_1169",
+      "trial_num": 2,
+      "step_range": [
+        4,
+        8
+      ]
+    },
+    "learning_text": "Always check the product description for explicit material composition to ensure it meets specific requirements.",
+    "evidence_ref": {
+      "task_id": "webshop_1169",
+      "trial_num": 2,
+      "step_range": [
+        8,
+        9
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "85"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts & tanks with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: purple, and fit type: men, and size: large, and price lower than 40.00 dollars",
+    "obj_type": "men's t-shirts & tanks, polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit, purple, large, machine wash, price",
+    "verbs": "search, click, buy",
+    "goal_phase": "SELECT",
+    "issue_text": "Selected product (B09S9WS9P9) was not available in the required \"purple\" color option.",
+    "issue_ref": {
+      "task_id": "webshop_1169",
+      "trial_num": 3,
+      "step_range": [
+        20,
+        21
+      ]
+    },
+    "learning_text": "Confirm the availability of the required color option on the product page before evaluating other attributes.",
+    "evidence_ref": {
+      "task_id": "webshop_1169",
+      "trial_num": 3,
+      "step_range": [
+        21,
+        22
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "86"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts & tanks with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: purple, and fit type: men, and size: large, and price lower than 40.00 dollars",
+    "obj_type": "men's t-shirts & tanks, polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit, purple, large, machine wash, price",
+    "verbs": "search, click, buy",
+    "goal_phase": "BROWSE",
+    "issue_text": "Product descriptions often lacked explicit details for critical attributes like material, sleeve type, and washability.",
+    "issue_ref": {
+      "task_id": "webshop_1169",
+      "trial_num": 3,
+      "step_range": [
+        27,
+        31
+      ]
+    },
+    "learning_text": "Prioritize products with comprehensive descriptions that explicitly state all required attributes for verification.",
+    "evidence_ref": {
+      "task_id": "webshop_1169",
+      "trial_num": 3,
+      "step_range": [
+        31,
+        32
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "87"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts & tanks with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: purple, and fit type: men, and size: large, and price lower than 40.00 dollars",
+    "obj_type": "men's t-shirts & tanks, polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit, purple, large, machine wash, price",
+    "verbs": "search, click, buy",
+    "goal_phase": "BROWSE",
+    "issue_text": "Repeatedly encountered truncated or empty product 'Description' and 'Features' content, preventing attribute verification.",
+    "issue_ref": {
+      "task_id": "webshop_1169",
+      "trial_num": 4,
+      "step_range": [
+        30,
+        36
+      ]
+    },
+    "learning_text": "Recognize when product detail pages consistently fail to load descriptions, indicating a platform limitation or bug.",
+    "evidence_ref": {
+      "task_id": "webshop_1169",
+      "trial_num": 4,
+      "step_range": [
+        36,
+        37
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "88"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts & tanks with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: purple, and fit type: men, and size: large, and price lower than 40.00 dollars",
+    "obj_type": "men's t-shirts & tanks, polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit, purple, large, machine wash, price",
+    "verbs": "search, click, buy",
+    "goal_phase": "BROWSE",
+    "issue_text": "Clicking on product links repeatedly returned to the search results page instead of navigating to the product detail page.",
+    "issue_ref": {
+      "task_id": "webshop_1169",
+      "trial_num": 4,
+      "step_range": [
+        39,
+        49
+      ]
+    },
+    "learning_text": "No explicit learning or fix was demonstrated, as the task failed due to this persistent issue.",
+    "evidence_ref": {
+      "task_id": "webshop_1169",
+      "trial_num": 4,
+      "step_range": [
+        39,
+        49
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "89"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts & tanks with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: purple, and fit type: men, and size: large, and price lower than 40.00 dollars",
+    "obj_type": "men's t-shirts & tanks, polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit, purple, large, machine wash, price",
+    "verbs": "search, click, buy",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Attempted to purchase a product (B09Q5WYYG1) where critical material and sleeve type attributes were not explicitly confirmed.",
+    "issue_ref": {
+      "task_id": "webshop_1169",
+      "trial_num": 3,
+      "step_range": [
+        38,
+        48
+      ]
+    },
+    "learning_text": "Ensure all critical product attributes are explicitly verified and confirmed before initiating the purchase action.",
+    "evidence_ref": {
+      "task_id": "webshop_1169",
+      "trial_num": 3,
+      "step_range": [
+        38,
+        48
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "90"
+  },
+  {
+    "task_desc": "Find me women's swimsuits & cover ups with tummy control, long sleeve, high waist, short sleeve with color: d3-purple, and size: small, and price lower than 140.00 dollars",
+    "obj_type": "women's swimsuits, color",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query for color 'd3-purple' was too specific, yielding no exact matches.",
+    "issue_ref": {
+      "task_id": "webshop_1291",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Broaden specific color search terms to a more general color (e.g., 'purple') when exact matches are not found.",
+    "evidence_ref": {
+      "task_id": "webshop_1291",
+      "trial_num": 1,
+      "step_range": [
+        13,
+        19
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "91"
+  },
+  {
+    "task_desc": "Find me women's swimsuits & cover ups with tummy control, long sleeve, high waist, short sleeve with color: d3-purple, and size: small, and price lower than 140.00 dollars",
+    "obj_type": "women's swimsuits, color",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Clicking products without verifying the exact 'd3-purple' color was available on the product page.",
+    "issue_ref": {
+      "task_id": "webshop_1291",
+      "trial_num": 1,
+      "step_range": [
+        7,
+        12
+      ]
+    },
+    "learning_text": "Prioritize checking for required attributes like specific color on product pages before proceeding with selection.",
+    "evidence_ref": {
+      "task_id": "webshop_1291",
+      "trial_num": 1,
+      "step_range": [
+        15,
+        19
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "92"
+  },
+  {
+    "task_desc": "Find me lips makeup for dark circles, sensitive skin with color: lipicepack-m, and price lower than 40.00 dollars",
+    "obj_type": "lips makeup, dark circles",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query included contradictory \"dark circles\" for lips makeup, leading to irrelevant results.",
+    "issue_ref": {
+      "task_id": "webshop_1307",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Agent correctly identified and ignored the contradictory \"dark circles\" constraint for lips makeup.",
+    "evidence_ref": {
+      "task_id": "webshop_1307",
+      "trial_num": 2,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "93"
+  },
+  {
+    "task_desc": "Find me lips makeup for dark circles, sensitive skin with color: lipicepack-m, and price lower than 40.00 dollars",
+    "obj_type": "lips makeup, color",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Searching for specific color \"lipicepack-m\" yielded irrelevant \"Lip Ice Pack\" products.",
+    "issue_ref": {
+      "task_id": "webshop_1307",
+      "trial_num": 3,
+      "step_range": [
+        2,
+        2
+      ]
+    },
+    "learning_text": "Agent decided to drop the problematic \"lipicepack-m\" from the search query and focus on core attributes.",
+    "evidence_ref": {
+      "task_id": "webshop_1307",
+      "trial_num": 3,
+      "step_range": [
+        6,
+        6
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "94"
+  },
+  {
+    "task_desc": "Find me lips makeup for dark circles, sensitive skin with color: lipicepack-m, and price lower than 40.00 dollars",
+    "obj_type": "lips makeup",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Broad search term \"lips makeup sensitive skin\" returned makeup removers and lip balms instead of actual makeup.",
+    "issue_ref": {
+      "task_id": "webshop_1307",
+      "trial_num": 3,
+      "step_range": [
+        7,
+        7
+      ]
+    },
+    "learning_text": "Refined search terms from \"lips makeup\" to \"lipstick sensitive skin\" to find actual makeup products.",
+    "evidence_ref": {
+      "task_id": "webshop_1307",
+      "trial_num": 3,
+      "step_range": [
+        8,
+        8
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "95"
+  },
+  {
+    "task_desc": "Find me lips makeup for dark circles, sensitive skin with color: lipicepack-m, and price lower than 40.00 dollars",
+    "obj_type": "lips makeup, color",
+    "verbs": "select, buy",
+    "goal_phase": "SELECT",
+    "issue_text": "Unable to find a product with the exact specified color \"lipicepack-m\" for lips makeup.",
+    "issue_ref": {
+      "task_id": "webshop_1307",
+      "trial_num": 3,
+      "step_range": [
+        11,
+        11
+      ]
+    },
+    "learning_text": "Prioritized finding lips makeup for sensitive skin under budget, accepting that the non-standard color was not available.",
+    "evidence_ref": {
+      "task_id": "webshop_1307",
+      "trial_num": 3,
+      "step_range": [
+        11,
+        11
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "96"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts & tanks with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: royal blue, and fit type: men, and size: xx-large, and price lower than 50.00 dollars",
+    "obj_type": "men's t-shirts & tanks, material, sleeve, fit, color, size, price, care",
+    "verbs": "search, click, buy",
+    "goal_phase": "SEARCH",
+    "issue_text": "Search queries (broad or specific) frequently returned irrelevant results.",
+    "issue_ref": {
+      "task_id": "webshop_1403",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Adjust search query specificity (broaden or narrow) based on the relevance of initial results.",
+    "evidence_ref": {
+      "task_id": "webshop_1403",
+      "trial_num": 1,
+      "step_range": [
+        8,
+        8
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "97"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts & tanks with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: royal blue, and fit type: men, and size: xx-large, and price lower than 50.00 dollars",
+    "obj_type": "men's t-shirts & tanks, material, sleeve, fit, color, size, price, care",
+    "verbs": "search, click, buy",
+    "goal_phase": "BROWSE",
+    "issue_text": "Product descriptions lacked explicit confirmation for required attributes.",
+    "issue_ref": {
+      "task_id": "webshop_1403",
+      "trial_num": 1,
+      "step_range": [
+        15,
+        18
+      ]
+    },
+    "learning_text": "Adopt a strategy to make reasonable assumptions for unstated standard attributes (e.g., machine wash) if core attributes are met.",
+    "evidence_ref": {
+      "task_id": "webshop_1403",
+      "trial_num": 5,
+      "step_range": [
+        11,
+        11
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "98"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts & tanks with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: royal blue, and fit type: men, and size: xx-large, and price lower than 50.00 dollars",
+    "obj_type": "men's t-shirts & tanks, material, sleeve, fit, color, size, price, care",
+    "verbs": "search, click, buy",
+    "goal_phase": "SELECT",
+    "issue_text": "Failed to select the most specific attribute option (color/material).",
+    "issue_ref": {
+      "task_id": "webshop_1403",
+      "trial_num": 1,
+      "step_range": [
+        13,
+        13
+      ]
+    },
+    "learning_text": "Prioritize selecting attribute options that explicitly combine color and material type.",
+    "evidence_ref": {
+      "task_id": "webshop_1403",
+      "trial_num": 1,
+      "step_range": [
+        35,
+        36
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "99"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts & tanks with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: royal blue, and fit type: men, and size: xx-large, and price lower than 50.00 dollars",
+    "obj_type": "men's t-shirts & tanks, material, sleeve, fit, color, size, price, care",
+    "verbs": "search, click, buy",
+    "goal_phase": "BROWSE",
+    "issue_text": "Selected product's explicit details contradicted task requirements.",
+    "issue_ref": {
+      "task_id": "webshop_1403",
+      "trial_num": 3,
+      "step_range": [
+        19,
+        23
+      ]
+    },
+    "learning_text": "Carefully compare explicit product details (material, fit) against task requirements before proceeding.",
+    "evidence_ref": {
+      "task_id": "webshop_1403",
+      "trial_num": 3,
+      "step_range": [
+        23,
+        23
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "100"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts & tanks with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: royal blue, and fit type: men, and size: xx-large, and price lower than 50.00 dollars",
+    "obj_type": "men's t-shirts & tanks, material, sleeve, fit, color, size, price, care",
+    "verbs": "search, click, buy",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent repeatedly got stuck in search and evaluation loops.",
+    "issue_ref": {
+      "task_id": "webshop_1403",
+      "trial_num": 3,
+      "step_range": [
+        46,
+        49
+      ]
+    },
+    "learning_text": "Adopt a consistent, balanced search strategy and a clear assumption policy for unstated attributes to avoid loops.",
+    "evidence_ref": {
+      "task_id": "webshop_1403",
+      "trial_num": 5,
+      "step_range": [
+        1,
+        11
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "101"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts & tanks with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: royal blue, and fit type: men, and size: xx-large, and price lower than 50.00 dollars",
+    "obj_type": "men's t-shirts & tanks, material, sleeve, fit, color, size, price, care",
+    "verbs": "search, click, buy",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Repeated purchase attempts failed due to unconfirmed attributes or hidden criteria.",
+    "issue_ref": {
+      "task_id": "webshop_1403",
+      "trial_num": 1,
+      "step_range": [
+        43,
+        49
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "102"
+  },
+  {
+    "task_desc": "Find me easy clean window coverings for living room, dining room with color: halloween-069lop1916, and size: 52x45in, and price lower than 60.00 dollars",
+    "obj_type": "window coverings, color attribute",
+    "verbs": "search, click, buy",
+    "goal_phase": "SELECT",
+    "issue_text": "Specific color attribute 'halloween-069lop1916' not found as an explicit option.",
+    "issue_ref": {
+      "task_id": "webshop_1424",
+      "trial_num": 1,
+      "step_range": [
+        7,
+        9
+      ]
+    },
+    "learning_text": "Infer specific color from product title and other matching attributes when exact option is unavailable.",
+    "evidence_ref": {
+      "task_id": "webshop_1424",
+      "trial_num": 1,
+      "step_range": [
+        9,
+        10
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "103"
+  },
+  {
+    "task_desc": "Find me loose fit, straight leg, slim fit, winter warm men's pants with quality polyester for gym workout with color: clear, and size: x-large, and price lower than 30.00 dollars",
+    "obj_type": "men's pants, fit, material, warmth, purpose, color, size, price",
+    "verbs": "search, click, buy",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query included an unrealistic color (\"clear\"), leading to products without the requested option.",
+    "issue_ref": {
+      "task_id": "webshop_1489",
+      "trial_num": 1,
+      "step_range": [
+        2,
+        5
+      ]
+    },
+    "learning_text": "When a specific color is unrealistic or unavailable, adapt by selecting a suitable alternative color.",
+    "evidence_ref": {
+      "task_id": "webshop_1489",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        11
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "104"
+  },
+  {
+    "task_desc": "Find me slim fit women's jumpsuits, rompers & overalls with long sleeve, button closure for daily wear with color: x01-black, and size: x-large, and price lower than 60.00 dollars",
+    "obj_type": "jumpsuits, rompers & overalls, color, size",
+    "verbs": "click",
+    "goal_phase": "SELECT",
+    "issue_text": "Failed to select a suitable color option when the exact 'x01-black' was not listed on the product page.",
+    "issue_ref": {
+      "task_id": "webshop_1519",
+      "trial_num": 2,
+      "step_range": [
+        4,
+        6
+      ]
+    },
+    "learning_text": "When the exact color code is missing, select the closest generic color (e.g., 'a1-black' for 'x01-black') if other criteria match.",
+    "evidence_ref": {
+      "task_id": "webshop_1519",
+      "trial_num": 4,
+      "step_range": [
+        3,
+        5
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "105"
+  },
+  {
+    "task_desc": "Find me machine wash men's tuxedo shirts with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: navy, and fit type: women, and size: xx-large, and price lower than 40.00 dollars",
+    "obj_type": "tuxedo shirts, men's, women's fit, polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit, navy, xx-large, price",
+    "verbs": "search, finish",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial broad searches for 'tuxedo shirt' returned irrelevant costume or casual items.",
+    "issue_ref": {
+      "task_id": "webshop_1535",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        6
+      ]
+    },
+    "learning_text": "Include 'formal' in search queries to distinguish formal wear from costume or casual items.",
+    "evidence_ref": {
+      "task_id": "webshop_1535",
+      "trial_num": 5,
+      "step_range": [
+        2,
+        2
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "106"
+  },
+  {
+    "task_desc": "Find me machine wash men's tuxedo shirts with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: navy, and fit type: women, and size: xx-large, and price lower than 40.00 dollars",
+    "obj_type": "tuxedo shirts, men's, women's fit, polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit, navy, xx-large, price",
+    "verbs": "search, finish",
+    "goal_phase": "SEARCH",
+    "issue_text": "Task instruction contains a direct contradiction: 'men's tuxedo shirts' and 'fit type: women'.",
+    "issue_ref": {
+      "task_id": "webshop_1535",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Explicitly identify and systematically test contradictory attributes; conclude non-existence if no product matches.",
+    "evidence_ref": {
+      "task_id": "webshop_1535",
+      "trial_num": 7,
+      "step_range": [
+        17,
+        17
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "107"
+  },
+  {
+    "task_desc": "Find me machine wash men's tuxedo shirts with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: navy, and fit type: women, and size: xx-large, and price lower than 40.00 dollars",
+    "obj_type": "tuxedo shirts, men's, women's fit, polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit, navy, xx-large, price",
+    "verbs": "search, finish",
+    "goal_phase": "SEARCH",
+    "issue_text": "The price constraint (under $40) is unrealistic for formal tuxedo shirts.",
+    "issue_ref": {
+      "task_id": "webshop_1535",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Recognize when price constraints are too low for the specified product type and consider unavailability.",
+    "evidence_ref": {
+      "task_id": "webshop_1535",
+      "trial_num": 5,
+      "step_range": [
+        2,
+        2
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "108"
+  },
+  {
+    "task_desc": "Find me machine wash men's tuxedo shirts with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: navy, and fit type: women, and size: xx-large, and price lower than 40.00 dollars",
+    "obj_type": "tuxedo shirts, men's, women's fit, polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit, navy, xx-large, price",
+    "verbs": "search, finish",
+    "goal_phase": "SEARCH",
+    "issue_text": "Specified material requirements (heathers) are unusual for formal tuxedo shirts.",
+    "issue_ref": {
+      "task_id": "webshop_1535",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Evaluate if specified material attributes are typical for the product type; if not, broaden search or infer non-existence.",
+    "evidence_ref": {
+      "task_id": "webshop_1535",
+      "trial_num": 5,
+      "step_range": [
+        2,
+        2
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "109"
+  },
+  {
+    "task_desc": "Find me non slip men's outdoor shoes with rubber sole with color: black red w37, and size: 12 women | 10.5 men, and price lower than 140.00 dollars",
+    "obj_type": "shoes, outdoor shoes",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query returned many irrelevant results like slippers and water shoes.",
+    "issue_ref": {
+      "task_id": "webshop_1584",
+      "trial_num": 1,
+      "step_range": [
+        2,
+        2
+      ]
+    },
+    "learning_text": "Filter search results by looking for explicit keywords like 'outdoor shoes' or 'trail running shoes' to find relevant items.",
+    "evidence_ref": {
+      "task_id": "webshop_1584",
+      "trial_num": 1,
+      "step_range": [
+        5,
+        5
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "110"
+  },
+  {
+    "task_desc": "Find me non slip men's outdoor shoes with rubber sole with color: black red w37, and size: 12 women | 10.5 men, and price lower than 140.00 dollars",
+    "obj_type": "shoes, color, options",
+    "verbs": "click",
+    "goal_phase": "SELECT",
+    "issue_text": "Exact color 'black red w37' was unavailable, requiring a compromise.",
+    "issue_ref": {
+      "task_id": "webshop_1584",
+      "trial_num": 1,
+      "step_range": [
+        7,
+        7
+      ]
+    },
+    "learning_text": "When exact color is unavailable, select the closest partial match from available options (e.g., 'black').",
+    "evidence_ref": {
+      "task_id": "webshop_1584",
+      "trial_num": 1,
+      "step_range": [
+        9,
+        9
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "111"
+  },
+  {
+    "task_desc": "Find me non slip men's outdoor shoes with rubber sole with color: black red w37, and size: 12 women | 10.5 men, and price lower than 140.00 dollars",
+    "obj_type": "shoes, sole, attributes",
+    "verbs": "think",
+    "goal_phase": "BROWSE",
+    "issue_text": "Failed to explicitly confirm 'rubber sole' attribute, relying on product type assumption.",
+    "issue_ref": {
+      "task_id": "webshop_1584",
+      "trial_num": 1,
+      "step_range": [
+        7,
+        7
+      ]
+    },
+    "learning_text": "Always explicitly verify all required product attributes from descriptions, avoiding assumptions.",
+    "evidence_ref": {
+      "task_id": "webshop_1584",
+      "trial_num": 1,
+      "step_range": [
+        10,
+        10
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "112"
+  },
+  {
+    "task_desc": "Find me low sodium snack food gifts for gift set with flavor name: natural & smoked, and price lower than 50.00 dollars",
+    "obj_type": "snack food, gift set, flavor, price",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query returned gift sets not explicitly low sodium or within price.",
+    "issue_ref": {
+      "task_id": "webshop_1674",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "",
+    "evidence_ref": {
+      "task_id": "",
+      "trial_num": 0,
+      "step_range": [
+        0,
+        0
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "113"
+  },
+  {
+    "task_desc": "Find me low sodium snack food gifts for gift set with flavor name: natural & smoked, and price lower than 50.00 dollars",
+    "obj_type": "snack food, gift set, flavor, price",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent failed to effectively refine search query after multiple attempts.",
+    "issue_ref": {
+      "task_id": "webshop_1674",
+      "trial_num": 2,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "",
+    "evidence_ref": {
+      "task_id": "",
+      "trial_num": 0,
+      "step_range": [
+        0,
+        0
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "114"
+  },
+  {
+    "task_desc": "Find me low sodium snack food gifts for gift set with flavor name: natural & smoked, and price lower than 50.00 dollars",
+    "obj_type": "snack food, gift set, flavor, price",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Struggled to find products matching multiple specific constraints (low sodium, smoked, gift set).",
+    "issue_ref": {
+      "task_id": "webshop_1674",
+      "trial_num": 3,
+      "step_range": [
+        9,
+        11
+      ]
+    },
+    "learning_text": "",
+    "evidence_ref": {
+      "task_id": "",
+      "trial_num": 0,
+      "step_range": [
+        0,
+        0
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "115"
+  },
+  {
+    "task_desc": "Find me men's dress shirts with needle sleeve, classic fit with color: heather grey, and fit type: men, and size: x-large, and price lower than 50.00 dollars",
+    "obj_type": "men's dress shirts, attributes",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search queries consistently returned irrelevant results like t-shirts or casual shirts.",
+    "issue_ref": {
+      "task_id": "webshop_1679",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Use a combination of broad and specific terms, and consider synonyms like \"formal button up shirt\" to find dress shirts.",
+    "evidence_ref": {
+      "task_id": "webshop_1679",
+      "trial_num": 7,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "116"
+  },
+  {
+    "task_desc": "Find me men's dress shirts with needle sleeve, classic fit with color: heather grey, and fit type: men, and size: x-large, and price lower than 50.00 dollars",
+    "obj_type": "dress shirts, fit, color, size",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Selected products often did not match required fit (\"classic fit\") or color (\"heather grey\").",
+    "issue_ref": {
+      "task_id": "webshop_1679",
+      "trial_num": 1,
+      "step_range": [
+        12,
+        12
+      ]
+    },
+    "learning_text": "Carefully examine product descriptions for fit and available colors, accepting close matches like \"dark gray\" for \"heather grey\".",
+    "evidence_ref": {
+      "task_id": "webshop_1679",
+      "trial_num": 7,
+      "step_range": [
+        21,
+        22
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "117"
+  },
+  {
+    "task_desc": "Find me men's dress shirts with needle sleeve, classic fit with color: heather grey, and fit type: men, and size: x-large, and price lower than 50.00 dollars",
+    "obj_type": "product details",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Product detail pages for promising items were sometimes inaccessible after clicking.",
+    "issue_ref": {
+      "task_id": "webshop_1679",
+      "trial_num": 3,
+      "step_range": [
+        14,
+        19
+      ]
+    },
+    "learning_text": "Re-attempt clicking on a promising product if the initial click fails to load the product page.",
+    "evidence_ref": {
+      "task_id": "webshop_1679",
+      "trial_num": 7,
+      "step_range": [
+        20,
+        21
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "118"
+  },
+  {
+    "task_desc": "Find me men's dress shirts with needle sleeve, classic fit with color: heather grey, and fit type: men, and size: x-large, and price lower than 50.00 dollars",
+    "obj_type": "search results",
+    "verbs": "search, click",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent failed to explore beyond the first page of search results.",
+    "issue_ref": {
+      "task_id": "webshop_1679",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        28
+      ]
+    },
+    "learning_text": "Systematically navigate through multiple search result pages to find suitable products.",
+    "evidence_ref": {
+      "task_id": "webshop_1679",
+      "trial_num": 5,
+      "step_range": [
+        24,
+        26
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "119"
+  },
+  {
+    "task_desc": "Find me men's dress shirts with needle sleeve, classic fit with color: heather grey, and fit type: men, and size: x-large, and price lower than 50.00 dollars",
+    "obj_type": "dress shirts, needle sleeve",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Ignored the \"needle sleeve\" attribute due to search difficulty, leading to partial success.",
+    "issue_ref": {
+      "task_id": "webshop_1679",
+      "trial_num": 1,
+      "step_range": [
+        2,
+        2
+      ]
+    },
+    "learning_text": "Evaluate if specific, hard-to-find attributes are critical or can be relaxed for a partial match.",
+    "evidence_ref": {
+      "task_id": "webshop_1679",
+      "trial_num": 7,
+      "step_range": [
+        25,
+        26
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "120"
+  },
+  {
+    "task_desc": "Find me machine wash men's henleys with cotton heather, needle sleeve, classic fit, long sleeve with color: dark heather | white, and fit type: women, and size: x-large, and price lower than 50.00 dollars",
+    "obj_type": "henleys, shirts, women's fit",
+    "verbs": "search, click, buy",
+    "goal_phase": "BROWSE",
+    "issue_text": "Agent ignored 'fit type: women' constraint, purchased a men's product.",
+    "issue_ref": {
+      "task_id": "webshop_1743",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        12
+      ]
+    },
+    "learning_text": "Prioritized 'fit type: women' and rejected men's product after checking description.",
+    "evidence_ref": {
+      "task_id": "webshop_1743",
+      "trial_num": 2,
+      "step_range": [
+        4,
+        6
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "121"
+  },
+  {
+    "task_desc": "Find me machine wash men's henleys with cotton heather, needle sleeve, classic fit, long sleeve with color: dark heather | white, and fit type: women, and size: x-large, and price lower than 50.00 dollars",
+    "obj_type": "henleys, shirts, cotton heather, needle sleeve, classic fit, machine wash",
+    "verbs": "click, buy",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Purchased product without explicit confirmation of all material/fit attributes.",
+    "issue_ref": {
+      "task_id": "webshop_1743",
+      "trial_num": 1,
+      "step_range": [
+        11,
+        13
+      ]
+    },
+    "learning_text": "Explicitly rejected product due to missing material/fit attribute confirmation.",
+    "evidence_ref": {
+      "task_id": "webshop_1743",
+      "trial_num": 5,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "122"
+  },
+  {
+    "task_desc": "Find me machine wash men's henleys with cotton heather, needle sleeve, classic fit, long sleeve with color: dark heather | white, and fit type: women, and size: x-large, and price lower than 50.00 dollars",
+    "obj_type": "henleys, shirts, women's fit",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Unable to find product satisfying contradictory 'men's henleys' and 'fit type: women'.",
+    "issue_ref": {
+      "task_id": "webshop_1743",
+      "trial_num": 2,
+      "step_range": [
+        8,
+        13
+      ]
+    },
+    "learning_text": "Explored various search queries for 'men's', 'unisex', and 'women's' henleys.",
+    "evidence_ref": {
+      "task_id": "webshop_1743",
+      "trial_num": 2,
+      "step_range": [
+        10,
+        12
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "123"
+  },
+  {
+    "task_desc": "Find me machine wash men's henleys with cotton heather, needle sleeve, classic fit, long sleeve with color: dark heather | white, and fit type: women, and size: x-large, and price lower than 50.00 dollars",
+    "obj_type": "henleys, shirts, women's fit",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Overly specific search queries for 'women's henley' yielded irrelevant results.",
+    "issue_ref": {
+      "task_id": "webshop_1743",
+      "trial_num": 4,
+      "step_range": [
+        2,
+        10
+      ]
+    },
+    "learning_text": "Broadened initial search to 'women's long sleeve shirt' to find relevant henleys.",
+    "evidence_ref": {
+      "task_id": "webshop_1743",
+      "trial_num": 4,
+      "step_range": [
+        11,
+        12
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "124"
+  },
+  {
+    "task_desc": "Find me machine wash men's henleys with cotton heather, needle sleeve, classic fit, long sleeve with color: dark heather | white, and fit type: women, and size: x-large, and price lower than 50.00 dollars",
+    "obj_type": "henleys, shirts, women's fit",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Inconsistent search strategy, reverting to ineffective specific queries.",
+    "issue_ref": {
+      "task_id": "webshop_1743",
+      "trial_num": 4,
+      "step_range": [
+        18,
+        19
+      ]
+    },
+    "learning_text": "No consistent learning to maintain effective search strategy across trials.",
+    "evidence_ref": null,
+    "valid_level": "CANDIDATE",
+    "unique_id": "125"
+  },
+  {
+    "task_desc": "Find me machine wash men's henleys with cotton heather, needle sleeve, classic fit, long sleeve with color: dark heather | white, and fit type: women, and size: x-large, and price lower than 50.00 dollars",
+    "obj_type": "navigation",
+    "verbs": "go_back, click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Failed to return to search results using 'go_back' from product page.",
+    "issue_ref": {
+      "task_id": "webshop_1743",
+      "trial_num": 6,
+      "step_range": [
+        7,
+        15
+      ]
+    },
+    "learning_text": "Used 'Back to Search' link to return to search results from product page.",
+    "evidence_ref": {
+      "task_id": "webshop_1743",
+      "trial_num": 6,
+      "step_range": [
+        16,
+        16
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "126"
+  },
+  {
+    "task_desc": "Find me machine wash men's henleys with cotton heather, needle sleeve, classic fit, long sleeve with color: dark heather | white, and fit type: women, and size: x-large, and price lower than 50.00 dollars",
+    "obj_type": "henleys, shirts, cotton heather, needle sleeve, classic fit",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Selected women's henley did not match required material, sleeve type, and fit.",
+    "issue_ref": {
+      "task_id": "webshop_1743",
+      "trial_num": 7,
+      "step_range": [
+        15,
+        17
+      ]
+    },
+    "learning_text": "No suitable product found that explicitly matched all specific material and fit attributes.",
+    "evidence_ref": null,
+    "valid_level": "CANDIDATE",
+    "unique_id": "127"
+  },
+  {
+    "task_desc": "Find me machine wash women's shorts with imported zipper with size: 31, and price lower than 110.00 dollars",
+    "obj_type": "shorts, size, options",
+    "verbs": "click, go_back",
+    "goal_phase": "BROWSE",
+    "issue_text": "Agent clicked a product that did not offer the required size 31.",
+    "issue_ref": {
+      "task_id": "webshop_1796",
+      "trial_num": 1,
+      "step_range": [
+        4,
+        5
+      ]
+    },
+    "learning_text": "Agent learned to check available sizes on the product page and go back to search for a product with the correct size.",
+    "evidence_ref": {
+      "task_id": "webshop_1796",
+      "trial_num": 1,
+      "step_range": [
+        19,
+        20
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "128"
+  },
+  {
+    "task_desc": "Find me machine wash women's shorts with imported zipper with size: 31, and price lower than 110.00 dollars",
+    "obj_type": "shorts, zipper, attributes",
+    "verbs": "click, read_description",
+    "goal_phase": "BROWSE",
+    "issue_text": "Agent strictly interpreted 'imported zipper', rejecting 'Imported' for the garment.",
+    "issue_ref": {
+      "task_id": "webshop_1796",
+      "trial_num": 3,
+      "step_range": [
+        6,
+        7
+      ]
+    },
+    "learning_text": "Agent learned to interpret 'Imported' for the garment as sufficient for 'imported zipper' when no explicit match is found.",
+    "evidence_ref": {
+      "task_id": "webshop_1796",
+      "trial_num": 5,
+      "step_range": [
+        4,
+        5
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "129"
+  },
+  {
+    "task_desc": "Find me machine wash women's shorts with imported zipper with size: 31, and price lower than 110.00 dollars",
+    "obj_type": "shorts, attributes, description",
+    "verbs": "click, read_description, go_back",
+    "goal_phase": "BROWSE",
+    "issue_text": "Agent could not verify attributes due to missing product description.",
+    "issue_ref": {
+      "task_id": "webshop_1796",
+      "trial_num": 3,
+      "step_range": [
+        13,
+        14
+      ]
+    },
+    "learning_text": "Agent learned to abandon products where critical attribute information cannot be verified due to missing descriptions.",
+    "evidence_ref": {
+      "task_id": "webshop_1796",
+      "trial_num": 3,
+      "step_range": [
+        14,
+        15
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "130"
+  },
+  {
+    "task_desc": "Find me knee high, open toe women's work & safety footwear with steel toe with color: brown, and size: 7.5, and price lower than 60.00 dollars",
+    "obj_type": "footwear, attributes (open toe, steel toe)",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query included contradictory features \"open toe\" and \"steel toe\".",
+    "issue_ref": {
+      "task_id": "webshop_1824",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "When product features are contradictory, perform separate searches for each feature to confirm non-existence.",
+    "evidence_ref": {
+      "task_id": "webshop_1824",
+      "trial_num": 2,
+      "step_range": [
+        10,
+        13
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "131"
+  },
+  {
+    "task_desc": "Find me knee high, open toe women's work & safety footwear with steel toe with color: brown, and size: 7.5, and price lower than 60.00 dollars",
+    "obj_type": "search query",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Using descriptive text about the problem as a search query.",
+    "issue_ref": {
+      "task_id": "webshop_1824",
+      "trial_num": 2,
+      "step_range": [
+        4,
+        4
+      ]
+    },
+    "learning_text": "Search queries should describe desired product features, not task status or problems.",
+    "evidence_ref": {
+      "task_id": "webshop_1824",
+      "trial_num": 3,
+      "step_range": [
+        9,
+        9
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "132"
+  },
+  {
+    "task_desc": "Find me knee high, open toe women's work & safety footwear with steel toe with color: brown, and size: 7.5, and price lower than 60.00 dollars",
+    "obj_type": "task completion",
+    "verbs": "finish, search, click, buy",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Repeatedly attempting to `finish` the task when no product exists, with or without explanation, and the environment rejects it.",
+    "issue_ref": {
+      "task_id": "webshop_1824",
+      "trial_num": 1,
+      "step_range": [
+        7,
+        8
+      ]
+    },
+    "learning_text": "If contradictory features prevent finding a product and `finish` is rejected, find the closest partial match and purchase it.",
+    "evidence_ref": {
+      "task_id": "webshop_1824",
+      "trial_num": 6,
+      "step_range": [
+        23,
+        34
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "133"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts with comfortable fit, short sleeve with color: coast coastal blue, and size: large, and price lower than 50.00 dollars",
+    "obj_type": "men's t-shirts, attributes (machine wash, comfortable fit, short sleeve, color, size, price)",
+    "verbs": "search, click, think",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query returned many irrelevant products, making it hard to find the target.",
+    "issue_ref": {
+      "task_id": "webshop_1827",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Use a focused search query including key attributes and color, then meticulously verify all criteria on product page.",
+    "evidence_ref": {
+      "task_id": "webshop_1827",
+      "trial_num": 4,
+      "step_range": [
+        1,
+        8
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "134"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts with comfortable fit, short sleeve with color: coast coastal blue, and size: large, and price lower than 50.00 dollars",
+    "obj_type": "men's t-shirts, attributes (machine wash, comfortable fit)",
+    "verbs": "click, think",
+    "goal_phase": "SELECT",
+    "issue_text": "Agent assumed 'machine wash' based on material (100% cotton) instead of explicit confirmation.",
+    "issue_ref": {
+      "task_id": "webshop_1827",
+      "trial_num": 2,
+      "step_range": [
+        8,
+        8
+      ]
+    },
+    "learning_text": "Always explicitly verify all required attributes in product description or features.",
+    "evidence_ref": {
+      "task_id": "webshop_1827",
+      "trial_num": 4,
+      "step_range": [
+        7,
+        8
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "135"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts with comfortable fit, short sleeve with color: coast coastal blue, and size: large, and price lower than 50.00 dollars",
+    "obj_type": "men's t-shirts, attributes (comfortable fit, color)",
+    "verbs": "click, think",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Agent rejected a suitable product due to overly strict explicit verification of implied attributes.",
+    "issue_ref": {
+      "task_id": "webshop_1827",
+      "trial_num": 3,
+      "step_range": [
+        18,
+        18
+      ]
+    },
+    "learning_text": "Accept implied attributes (e.g., comfort from 100% cotton, color from product title) when explicit verification is unavailable, after confirming other explicit attributes.",
+    "evidence_ref": {
+      "task_id": "webshop_1827",
+      "trial_num": 4,
+      "step_range": [
+        7,
+        8
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "136"
+  },
+  {
+    "task_desc": "Find me machine wash men's t-shirts with comfortable fit, short sleeve with color: coast coastal blue, and size: large, and price lower than 50.00 dollars",
+    "obj_type": "men's t-shirts",
+    "verbs": "click, finish",
+    "goal_phase": "PURCHASE",
+    "issue_text": "'Buy Now' action did not lead to task completion, causing repeated attempts to finish.",
+    "issue_ref": {
+      "task_id": "webshop_1827",
+      "trial_num": 4,
+      "step_range": [
+        9,
+        9
+      ]
+    },
+    "learning_text": "N/A",
+    "evidence_ref": {
+      "task_id": "webshop_1827",
+      "trial_num": 4,
+      "step_range": [
+        9,
+        34
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "137"
+  },
+  {
+    "task_desc": "Find me easy use hair extensions, wigs & accessories for hair extensions with color: w#04 medium brown, and size: french bangs, and price lower than 40.00 dollars",
+    "obj_type": "hair extensions, wigs, accessories, color, size, price",
+    "verbs": "search, click, buy",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent failed to explore enough search result pages to find the target product.",
+    "issue_ref": {
+      "task_id": "webshop_1832",
+      "trial_num": 2,
+      "step_range": [
+        1,
+        10
+      ]
+    },
+    "learning_text": "Systematically navigate through multiple search result pages to find the target product.",
+    "evidence_ref": {
+      "task_id": "webshop_1832",
+      "trial_num": 3,
+      "step_range": [
+        3,
+        5
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "138"
+  },
+  {
+    "task_desc": "Find me easy use hair extensions, wigs & accessories for hair extensions with color: w#04 medium brown, and size: french bangs, and price lower than 40.00 dollars",
+    "obj_type": "hair extensions, wigs, accessories, color, size, price",
+    "verbs": "search, click, buy",
+    "goal_phase": "SELECT",
+    "issue_text": "Agent struggled to find exact matches for specified color and size attributes.",
+    "issue_ref": {
+      "task_id": "webshop_1832",
+      "trial_num": 3,
+      "step_range": [
+        7,
+        8
+      ]
+    },
+    "learning_text": "Adapt to available product attributes by selecting the closest matching options when exact matches are unavailable.",
+    "evidence_ref": {
+      "task_id": "webshop_1832",
+      "trial_num": 3,
+      "step_range": [
+        9,
+        10
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "139"
+  },
+  {
+    "task_desc": "Find me long lasting men's jeans with comfortable fit with color: athens, and fit type: big & tall, and size: 31w x 33l, and price lower than 70.00 dollars",
+    "obj_type": "men's jeans, fit type, size, color",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query too specific, results didn't explicitly show all attributes.",
+    "issue_ref": {
+      "task_id": "webshop_1876",
+      "trial_num": 1,
+      "step_range": [
+        2,
+        2
+      ]
+    },
+    "learning_text": "Start with broader search terms and refine attributes on product pages.",
+    "evidence_ref": {
+      "task_id": "webshop_1876",
+      "trial_num": 1,
+      "step_range": [
+        4,
+        8
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "140"
+  },
+  {
+    "task_desc": "Find me long lasting men's jeans with comfortable fit with color: athens, and fit type: big & tall, and size: 31w x 33l, and price lower than 70.00 dollars",
+    "obj_type": "jeans, price, options",
+    "verbs": "click, buy",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Failed to confirm exact price for selected attributes before buying.",
+    "issue_ref": {
+      "task_id": "webshop_1876",
+      "trial_num": 1,
+      "step_range": [
+        8,
+        9
+      ]
+    },
+    "learning_text": "Proceed with purchase if price range includes target and no exact price is shown.",
+    "evidence_ref": {
+      "task_id": "webshop_1876",
+      "trial_num": 1,
+      "step_range": [
+        10,
+        10
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "141"
+  },
+  {
+    "task_desc": "Find me wide leg, straight leg, hand wash women's pants with high waist, long sleeve for teen girls with color: x5-blue, and size: large, and price lower than 70.00 dollars",
+    "obj_type": "pants, color",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Clicked products lacking the specific \"x5-blue\" color option.",
+    "issue_ref": {
+      "task_id": "webshop_1982",
+      "trial_num": 2,
+      "step_range": [
+        3,
+        4
+      ]
+    },
+    "learning_text": "Prioritize checking for highly specific attributes like exact color early on product pages.",
+    "evidence_ref": null,
+    "valid_level": "CANDIDATE",
+    "unique_id": "142"
+  },
+  {
+    "task_desc": "Find me wide leg, straight leg, hand wash women's pants with high waist, long sleeve for teen girls with color: x5-blue, and size: large, and price lower than 70.00 dollars",
+    "obj_type": "product page",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Repeated clicks on product links failed to load the product detail page.",
+    "issue_ref": {
+      "task_id": "webshop_1982",
+      "trial_num": 3,
+      "step_range": [
+        4,
+        5
+      ]
+    },
+    "learning_text": "If a product page fails to load, return to search and try another product.",
+    "evidence_ref": {
+      "task_id": "webshop_1982",
+      "trial_num": 3,
+      "step_range": [
+        30,
+        30
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "143"
+  },
+  {
+    "task_desc": "Find me wide leg, straight leg, hand wash women's pants with high waist, long sleeve for teen girls with color: x5-blue, and size: large, and price lower than 70.00 dollars",
+    "obj_type": "pants, high waist",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Clicked product B08S78F56Z, which was \"Mid-Rise\" instead of \"High Waist\".",
+    "issue_ref": {
+      "task_id": "webshop_1982",
+      "trial_num": 4,
+      "step_range": [
+        48,
+        49
+      ]
+    },
+    "learning_text": "Immediately discard products with clear attribute mismatches like \"mid-rise\" instead of \"high waist\".",
+    "evidence_ref": {
+      "task_id": "webshop_1982",
+      "trial_num": 4,
+      "step_range": [
+        49,
+        49
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "144"
+  },
+  {
+    "task_desc": "Find me wide leg, straight leg, hand wash women's pants with high waist, long sleeve for teen girls with color: x5-blue, and size: large, and price lower than 70.00 dollars",
+    "obj_type": "buy button",
+    "verbs": "click",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Repeatedly clicked \"Buy Now\" after initial purchase attempt.",
+    "issue_ref": {
+      "task_id": "webshop_1982",
+      "trial_num": 1,
+      "step_range": [
+        14,
+        16
+      ]
+    },
+    "learning_text": "Avoid redundant \"Buy Now\" clicks; assume action processed if still on product page.",
+    "evidence_ref": {
+      "task_id": "webshop_1982",
+      "trial_num": 1,
+      "step_range": [
+        17,
+        17
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "145"
+  },
+  {
+    "task_desc": "Find me wide leg, straight leg, hand wash women's pants with high waist, long sleeve for teen girls with color: x5-blue, and size: large, and price lower than 70.00 dollars",
+    "obj_type": "task completion",
+    "verbs": "finish",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Repeatedly executed `finish` action after task completion.",
+    "issue_ref": {
+      "task_id": "webshop_1982",
+      "trial_num": 1,
+      "step_range": [
+        18,
+        21
+      ]
+    },
+    "learning_text": "Execute `finish` only once after confirming task completion.",
+    "evidence_ref": {
+      "task_id": "webshop_1982",
+      "trial_num": 5,
+      "step_range": [
+        11,
+        11
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "146"
+  },
+  {
+    "task_desc": "Find me wide leg, straight leg, hand wash women's pants with high waist, long sleeve for teen girls with color: x5-blue, and size: large, and price lower than 70.00 dollars",
+    "obj_type": "pants, straight leg",
+    "verbs": "read, interpret, browse",
+    "goal_phase": "BROWSE",
+    "issue_text": "Struggled to find products explicitly matching the \"straight leg\" attribute.",
+    "issue_ref": {
+      "task_id": "webshop_1982",
+      "trial_num": 1,
+      "step_range": [
+        11,
+        13
+      ]
+    },
+    "learning_text": "When an attribute is ambiguous or missing, continue searching for a more explicit match.",
+    "evidence_ref": null,
+    "valid_level": "CANDIDATE",
+    "unique_id": "147"
+  },
+  {
+    "task_desc": "Find me wide leg, straight leg, hand wash women's pants with high waist, long sleeve for teen girls with color: x5-blue, and size: large, and price lower than 70.00 dollars",
+    "obj_type": "product description, straight leg",
+    "verbs": "read, interpret",
+    "goal_phase": "SELECT",
+    "issue_text": "Misinterpreted product description, claiming \"straight leg\" was present when it was not.",
+    "issue_ref": {
+      "task_id": "webshop_1982",
+      "trial_num": 5,
+      "step_range": [
+        9,
+        9
+      ]
+    },
+    "learning_text": "Carefully cross-reference all attributes with the exact text in the product description.",
+    "evidence_ref": null,
+    "valid_level": "CANDIDATE",
+    "unique_id": "148"
+  },
+  {
+    "task_desc": "Find me super soft, machine washable window coverings with stainless steel for living room with color: yellow, and size: 79 x 59 in (w x l), and price lower than 60.00 dollars",
+    "obj_type": "window coverings",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial broad search query returned irrelevant product types (blankets, tapestries).",
+    "issue_ref": {
+      "task_id": "webshop_2045",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Refine search query to include specific product type like \"curtains\" and \"grommet\" to filter irrelevant items.",
+    "evidence_ref": {
+      "task_id": "webshop_2045",
+      "trial_num": 2,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "149"
+  },
+  {
+    "task_desc": "Find me super soft, machine washable window coverings with stainless steel for living room with color: yellow, and size: 79 x 59 in (w x l), and price lower than 60.00 dollars",
+    "obj_type": "window coverings, size",
+    "verbs": "buy",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Purchased a product that did not match the exact required size (54x84 instead of 79x59).",
+    "issue_ref": {
+      "task_id": "webshop_2045",
+      "trial_num": 2,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "learning_text": "Strictly adhere to all critical constraints, especially exact dimensions, and do not purchase if they are not met.",
+    "evidence_ref": {
+      "task_id": "webshop_2045",
+      "trial_num": 3,
+      "step_range": [
+        3,
+        3
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "150"
+  },
+  {
+    "task_desc": "Find me super soft, machine washable window coverings with stainless steel for living room with color: yellow, and size: 79 x 59 in (w x l), and price lower than 60.00 dollars",
+    "obj_type": "window coverings, size",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Repeated the same search query or performed unproductive searches after determining no relevant results.",
+    "issue_ref": {
+      "task_id": "webshop_2045",
+      "trial_num": 3,
+      "step_range": [
+        4,
+        4
+      ]
+    },
+    "learning_text": "After reviewing search results and concluding no match, avoid repeating the same query; instead, try new strategies or conclude unavailability.",
+    "evidence_ref": {
+      "task_id": "webshop_2045",
+      "trial_num": 6,
+      "step_range": [
+        1,
+        4
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "151"
+  },
+  {
+    "task_desc": "Find me super soft, machine washable window coverings with stainless steel for living room with color: yellow, and size: 79 x 59 in (w x l), and price lower than 60.00 dollars",
+    "obj_type": "window coverings, size",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Product with exact specified size (79w x 59l) was not available in the search results.",
+    "issue_ref": {
+      "task_id": "webshop_2045",
+      "trial_num": 1,
+      "step_range": [
+        11,
+        11
+      ]
+    },
+    "learning_text": "When a critical attribute like exact size is consistently unavailable, conclude the item is not available and terminate the task.",
+    "evidence_ref": {
+      "task_id": "webshop_2045",
+      "trial_num": 3,
+      "step_range": [
+        3,
+        3
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "152"
+  },
+  {
+    "task_desc": "Find me machine washable, machine wash men's underwear with comfortable fit with color: i licked it so it's mine love heart, and size: large, and price lower than 60.00 dollars",
+    "obj_type": "men's underwear, color",
+    "verbs": "click, think",
+    "goal_phase": "SELECT",
+    "issue_text": "The exact color 'i licked it so it's mine love heart' was not available as a selectable option for any product.",
+    "issue_ref": {
+      "task_id": "webshop_2060",
+      "trial_num": 6,
+      "step_range": [
+        19,
+        19
+      ]
+    },
+    "learning_text": "Agent learned to identify the closest available color option and justify its selection when an exact match is not present.",
+    "evidence_ref": {
+      "task_id": "webshop_2060",
+      "trial_num": 7,
+      "step_range": [
+        20,
+        20
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "153"
+  },
+  {
+    "task_desc": "Find me machine washable, machine wash men's underwear with comfortable fit with color: i licked it so it's mine love heart, and size: large, and price lower than 60.00 dollars",
+    "obj_type": "men's underwear",
+    "verbs": "search, think",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent performed unnecessary duplicate search actions.",
+    "issue_ref": {
+      "task_id": "webshop_2060",
+      "trial_num": 2,
+      "step_range": [
+        3,
+        3
+      ]
+    },
+    "learning_text": "Agent learned to analyze existing search results before performing a new search.",
+    "evidence_ref": {
+      "task_id": "webshop_2060",
+      "trial_num": 2,
+      "step_range": [
+        4,
+        4
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "154"
+  },
+  {
+    "task_desc": "Find me machine washable, machine wash men's underwear with comfortable fit with color: i licked it so it's mine love heart, and size: large, and price lower than 60.00 dollars",
+    "obj_type": "men's underwear, purchase",
+    "verbs": "click, finish, think",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Clicking 'Buy Now' did not lead to task completion, causing confusion and repeated actions.",
+    "issue_ref": {
+      "task_id": "webshop_2060",
+      "trial_num": 1,
+      "step_range": [
+        11,
+        11
+      ]
+    },
+    "learning_text": "Agent learned that for 'Find me' tasks, 'finish' might be required after verification, not necessarily a successful 'Buy Now' transaction.",
+    "evidence_ref": {
+      "task_id": "webshop_2060",
+      "trial_num": 2,
+      "step_range": [
+        17,
+        17
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "155"
+  },
+  {
+    "task_desc": "Find me machine washable, machine wash men's underwear with comfortable fit with color: i licked it so it's mine love heart, and size: large, and price lower than 60.00 dollars",
+    "obj_type": "men's underwear",
+    "verbs": "search, think",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query omitted key attributes, leading to less relevant results.",
+    "issue_ref": {
+      "task_id": "webshop_2060",
+      "trial_num": 5,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Agent learned to include all specific attributes from the instruction in the initial search query for better results.",
+    "evidence_ref": {
+      "task_id": "webshop_2060",
+      "trial_num": 5,
+      "step_range": [
+        2,
+        2
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "156"
+  },
+  {
+    "task_desc": "Find me officially licensed men's shirts with needle sleeve, classic fit with color: baby blue, and fit type: men, and size: medium, and price lower than 50.00 dollars",
+    "obj_type": "men's shirts, needle sleeve, classic fit, baby blue, medium, under $50",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query was too specific, yielding irrelevant results not matching key attributes.",
+    "issue_ref": {
+      "task_id": "webshop_2103",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Broaden search terms to general product types, then check product details for specific attributes like color and fit.",
+    "evidence_ref": {
+      "task_id": "webshop_2103",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        12
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "157"
+  },
+  {
+    "task_desc": "Find me officially licensed men's shirts with needle sleeve, classic fit with color: baby blue, and fit type: men, and size: medium, and price lower than 50.00 dollars",
+    "obj_type": "men's shirts, color (baby blue), fit type (men), size (medium)",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Clicked on a product that lacked the required color and fit options on its detail page.",
+    "issue_ref": {
+      "task_id": "webshop_2103",
+      "trial_num": 1,
+      "step_range": [
+        8,
+        8
+      ]
+    },
+    "learning_text": "If a product lacks required options, return to search results and explore other promising products with more options.",
+    "evidence_ref": {
+      "task_id": "webshop_2103",
+      "trial_num": 1,
+      "step_range": [
+        11,
+        12
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "158"
+  },
+  {
+    "task_desc": "Find me machine washable, machine wash women's dresses with polyester spandex with color: morty dark, and size: small, and price lower than 60.00 dollars",
+    "obj_type": "women's dresses, material, washability",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Failed to verify product attributes by clicking 'Description' which showed no content.",
+    "issue_ref": {
+      "task_id": "webshop_2266",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        9
+      ]
+    },
+    "learning_text": "Click 'Features' to verify product attributes like material and washability, as 'Description' does not provide content.",
+    "evidence_ref": {
+      "task_id": "webshop_2266",
+      "trial_num": 2,
+      "step_range": [
+        4,
+        5
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "159"
+  },
+  {
+    "task_desc": "Find me machine washable, machine wash women's dresses with polyester spandex with color: morty dark, and size: small, and price lower than 60.00 dollars",
+    "obj_type": "women's dresses, material, washability",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Regressed to clicking 'Description' and assuming product details instead of verifying.",
+    "issue_ref": {
+      "task_id": "webshop_2266",
+      "trial_num": 5,
+      "step_range": [
+        4,
+        5
+      ]
+    },
+    "learning_text": "Consistently click 'Features' to verify product attributes, avoiding assumptions from empty 'Description' observations.",
+    "evidence_ref": {
+      "task_id": "webshop_2266",
+      "trial_num": 2,
+      "step_range": [
+        4,
+        5
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "160"
+  },
+  {
+    "task_desc": "Find me machine washable, machine wash women's dresses with polyester spandex with color: morty dark, and size: small, and price lower than 60.00 dollars",
+    "obj_type": "task completion",
+    "verbs": "click, finish",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Failed to identify the correct final action to complete the task after attribute selection.",
+    "issue_ref": {
+      "task_id": "webshop_2266",
+      "trial_num": 2,
+      "step_range": [
+        9,
+        12
+      ]
+    },
+    "learning_text": "Always confirm the specific final action required for task completion, such as 'Buy Now' or 'finish', based on environment feedback.",
+    "evidence_ref": {
+      "task_id": "webshop_2266",
+      "trial_num": 7,
+      "step_range": [
+        6,
+        7
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "161"
+  },
+  {
+    "task_desc": "Find me loose fit women's bodysuit tops with long sleeve, short sleeve for teen girls, daily wear with color: b1-yellow, and size: large, and price lower than 50.00 dollars",
+    "obj_type": "bodysuit tops, daily wear, teen girls",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Search queries consistently returned irrelevant product types (non-bodysuits, lingerie, or sleepwear).",
+    "issue_ref": {
+      "task_id": "webshop_2286",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "",
+    "evidence_ref": {},
+    "valid_level": "CANDIDATE",
+    "unique_id": "162"
+  },
+  {
+    "task_desc": "Find me loose fit women's bodysuit tops with long sleeve, short sleeve for teen girls, daily wear with color: b1-yellow, and size: large, and price lower than 50.00 dollars",
+    "obj_type": "bodysuit, price",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Search results included many products exceeding the $50 price constraint.",
+    "issue_ref": {
+      "task_id": "webshop_2286",
+      "trial_num": 1,
+      "step_range": [
+        8,
+        8
+      ]
+    },
+    "learning_text": "",
+    "evidence_ref": {},
+    "valid_level": "CANDIDATE",
+    "unique_id": "163"
+  },
+  {
+    "task_desc": "Find me loose fit women's bodysuit tops with long sleeve, short sleeve for teen girls, daily wear with color: b1-yellow, and size: large, and price lower than 50.00 dollars",
+    "obj_type": "bodysuit, fit, style, daily wear",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Inspected bodysuits were 'slim fit', 'bodycon', 'sexy', or 'pajamas', not loose fit daily wear tops.",
+    "issue_ref": {
+      "task_id": "webshop_2286",
+      "trial_num": 4,
+      "step_range": [
+        11,
+        14
+      ]
+    },
+    "learning_text": "",
+    "evidence_ref": {},
+    "valid_level": "CANDIDATE",
+    "unique_id": "164"
+  },
+  {
+    "task_desc": "Find me loose fit women's bodysuit tops with long sleeve, short sleeve for teen girls, daily wear with color: b1-yellow, and size: large, and price lower than 50.00 dollars",
+    "obj_type": "bodysuit, color",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Found bodysuits did not match the specific 'b1-yellow' color requirement.",
+    "issue_ref": {
+      "task_id": "webshop_2286",
+      "trial_num": 4,
+      "step_range": [
+        11,
+        14
+      ]
+    },
+    "learning_text": "",
+    "evidence_ref": {},
+    "valid_level": "CANDIDATE",
+    "unique_id": "165"
+  },
+  {
+    "task_desc": "Find me loose fit women's bodysuit tops with long sleeve, short sleeve for teen girls, daily wear with color: b1-yellow, and size: large, and price lower than 50.00 dollars",
+    "obj_type": "bodysuit, sleeve options",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Found bodysuits did not offer both long and short sleeve options.",
+    "issue_ref": {
+      "task_id": "webshop_2286",
+      "trial_num": 7,
+      "step_range": [
+        6,
+        9
+      ]
+    },
+    "learning_text": "",
+    "evidence_ref": {},
+    "valid_level": "CANDIDATE",
+    "unique_id": "166"
+  },
+  {
+    "task_desc": "Find me loose fit women's bodysuit tops with long sleeve, short sleeve for teen girls, daily wear with color: b1-yellow, and size: large, and price lower than 50.00 dollars",
+    "obj_type": "navigation",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "'Back to Search' button reset search results to page 1.",
+    "issue_ref": {
+      "task_id": "webshop_2286",
+      "trial_num": 7,
+      "step_range": [
+        10,
+        10
+      ]
+    },
+    "learning_text": "Re-executed 'Next >' clicks to return to the previously browsed search page.",
+    "evidence_ref": {
+      "task_id": "webshop_2286",
+      "trial_num": 7,
+      "step_range": [
+        14,
+        14
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "167"
+  },
+  {
+    "task_desc": "Find me loose fit women's bodysuit tops with long sleeve, short sleeve for teen girls, daily wear with color: b1-yellow, and size: large, and price lower than 50.00 dollars",
+    "obj_type": "system interaction",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Clicking product link failed to update the observation with correct product details.",
+    "issue_ref": {
+      "task_id": "webshop_2286",
+      "trial_num": 5,
+      "step_range": [
+        16,
+        19
+      ]
+    },
+    "learning_text": "",
+    "evidence_ref": {},
+    "valid_level": "CANDIDATE",
+    "unique_id": "168"
+  },
+  {
+    "task_desc": "Find me high quality hair masks for hair extensions, natural hair with color: #3 | 8 | 22, and size: 22 inch, and price lower than 90.00 dollars",
+    "obj_type": "hair masks, hair extensions",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query was too broad, returning irrelevant hair extensions.",
+    "issue_ref": {
+      "task_id": "webshop_2287",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Refine search query to explicitly include \"hair mask\" to filter out extensions.",
+    "evidence_ref": {
+      "task_id": "webshop_2287",
+      "trial_num": 1,
+      "step_range": [
+        3,
+        3
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "169"
+  },
+  {
+    "task_desc": "Find me high quality hair masks for hair extensions, natural hair with color: #3 | 8 | 22, and size: 22 inch, and price lower than 90.00 dollars",
+    "obj_type": "hair masks",
+    "verbs": "buy, finish",
+    "goal_phase": "PURCHASE",
+    "issue_text": "Failed to complete the task by repeatedly clicking 'Buy Now' instead of 'finish'.",
+    "issue_ref": {
+      "task_id": "webshop_2287",
+      "trial_num": 1,
+      "step_range": [
+        8,
+        12
+      ]
+    },
+    "learning_text": "Use the 'finish' action after identifying the correct product for \"Find me\" tasks.",
+    "evidence_ref": {
+      "task_id": "webshop_2287",
+      "trial_num": 2,
+      "step_range": [
+        8,
+        9
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "170"
+  },
+  {
+    "task_desc": "Find me high quality hair masks for hair extensions, natural hair with color: #3 | 8 | 22, and size: 22 inch, and price lower than 90.00 dollars",
+    "obj_type": "hair masks, colored hair",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Search query missed the \"colored hair\" attribute, yielding less relevant masks.",
+    "issue_ref": {
+      "task_id": "webshop_2287",
+      "trial_num": 3,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Refine search query to include \"colored hair\" for more specific hair mask results.",
+    "evidence_ref": {
+      "task_id": "webshop_2287",
+      "trial_num": 3,
+      "step_range": [
+        5,
+        5
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "171"
+  },
+  {
+    "task_desc": "Find me high quality hair masks for hair extensions, natural hair with color: #3 | 8 | 22, and size: 22 inch, and price lower than 90.00 dollars",
+    "obj_type": "hair masks, price",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Search query did not include the price constraint for filtering results.",
+    "issue_ref": {
+      "task_id": "webshop_2287",
+      "trial_num": 3,
+      "step_range": [
+        5,
+        5
+      ]
+    },
+    "learning_text": "Include price constraint in the search query to filter results more effectively.",
+    "evidence_ref": {
+      "task_id": "webshop_2287",
+      "trial_num": 4,
+      "step_range": [
+        3,
+        3
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "172"
+  },
+  {
+    "task_desc": "Find me high quality hair masks for hair extensions, natural hair with color: #3 | 8 | 22, and size: 22 inch, and price lower than 90.00 dollars",
+    "obj_type": "hair masks, hair extensions, colored hair",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Repeatedly selected a product (B075S8PQRJ) that matched some criteria but was not the target.",
+    "issue_ref": {
+      "task_id": "webshop_2287",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        6
+      ]
+    },
+    "learning_text": "Explore multiple relevant products and select the one with explicit attribute matches.",
+    "evidence_ref": {
+      "task_id": "webshop_2287",
+      "trial_num": 5,
+      "step_range": [
+        3,
+        4
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "173"
+  },
+  {
+    "task_desc": "Find me women's dresses with short sleeve, high waist with color: s-9 gray, and size: x-large, and price lower than 40.00 dollars",
+    "obj_type": "women's dresses, product search",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query was too specific, yielding irrelevant results.",
+    "issue_ref": {
+      "task_id": "webshop_2504",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "When initial search results are poor, browse and click promising items to check for attribute matches.",
+    "evidence_ref": {
+      "task_id": "webshop_2504",
+      "trial_num": 1,
+      "step_range": [
+        2,
+        3
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "174"
+  },
+  {
+    "task_desc": "Find me women's dresses with short sleeve, high waist with color: s-9 gray, and size: x-large, and price lower than 40.00 dollars",
+    "obj_type": "dress attributes, color, size, high waist",
+    "verbs": "click",
+    "goal_phase": "SELECT",
+    "issue_text": "Exact attribute matches (e.g., 's-9 gray', 'high waist') were not found on product page.",
+    "issue_ref": {
+      "task_id": "webshop_2504",
+      "trial_num": 1,
+      "step_range": [
+        3,
+        3
+      ]
+    },
+    "learning_text": "Select the closest available attribute option when an exact match is not present. Prioritize key attributes.",
+    "evidence_ref": {
+      "task_id": "webshop_2504",
+      "trial_num": 1,
+      "step_range": [
+        4,
+        6
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "175"
+  },
+  {
+    "task_desc": "Find me machine wash men's sleep & lounge with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: pink, and fit type: women, and size: 2t, and price lower than 40.00 dollars",
+    "obj_type": "sleep & lounge, gender, size",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query was too literal, including conflicting gender terms, yielding irrelevant results.",
+    "issue_ref": {
+      "task_id": "webshop_2547",
+      "trial_num": 1,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Prioritize concrete attributes (size, color) and interpret conflicting gender terms (e.g., 'men's' with 'women' and '2t' implies 'toddler girl').",
+    "evidence_ref": {
+      "task_id": "webshop_2547",
+      "trial_num": 1,
+      "step_range": [
+        5,
+        5
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "176"
+  },
+  {
+    "task_desc": "Find me machine wash men's sleep & lounge with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: pink, and fit type: women, and size: 2t, and price lower than 40.00 dollars",
+    "obj_type": "sleep & lounge, pajamas, sleepwear, size, color",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Repeated search queries for specific toddler sleepwear were ineffective, yielding irrelevant results.",
+    "issue_ref": {
+      "task_id": "webshop_2547",
+      "trial_num": 1,
+      "step_range": [
+        5,
+        5
+      ]
+    },
+    "learning_text": "Systematically vary search terms (e.g., 'sleep & lounge', 'sleepwear', 'pajamas') and adjust specificity (adding/removing attributes) to find relevant items.",
+    "evidence_ref": {
+      "task_id": "webshop_2547",
+      "trial_num": 7,
+      "step_range": [
+        27,
+        27
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "177"
+  },
+  {
+    "task_desc": "Find me machine wash men's sleep & lounge with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: pink, and fit type: women, and size: 2t, and price lower than 40.00 dollars",
+    "obj_type": "product details, description, features",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Clicking product description/features did not display content, preventing verification of attributes.",
+    "issue_ref": {
+      "task_id": "webshop_2547",
+      "trial_num": 5,
+      "step_range": [
+        6,
+        6
+      ]
+    },
+    "learning_text": "Recognize when product detail sections (description/features) are non-functional and adjust strategy to rely on visible information or conclude non-availability.",
+    "evidence_ref": {
+      "task_id": "webshop_2547",
+      "trial_num": 6,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "178"
+  },
+  {
+    "task_desc": "Find me machine wash men's sleep & lounge with polyester heathers, heathers cotton, cotton heather, needle sleeve, classic fit with color: pink, and fit type: women, and size: 2t, and price lower than 40.00 dollars",
+    "obj_type": "color, product",
+    "verbs": "click",
+    "goal_phase": "SELECT",
+    "issue_text": "Identified a promising product with correct size and price, but it lacked the required pink color option.",
+    "issue_ref": {
+      "task_id": "webshop_2547",
+      "trial_num": 6,
+      "step_range": [
+        16,
+        16
+      ]
+    },
+    "learning_text": "Carefully check all visible attributes on product pages, especially color options, to ensure they match the instruction.",
+    "evidence_ref": {
+      "task_id": "webshop_2547",
+      "trial_num": 6,
+      "step_range": [
+        17,
+        17
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "179"
+  },
+  {
+    "task_desc": "Find me machine washable window coverings for living room with color: india8lbg5495, and size: 52\" w by 90\" l, and price lower than 50.00 dollars",
+    "obj_type": "window coverings, color",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query omitted the specific color attribute.",
+    "issue_ref": {
+      "task_id": "webshop_2591",
+      "trial_num": 2,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "learning_text": "Include specific color codes in the initial search query for precise results.",
+    "evidence_ref": {
+      "task_id": "webshop_2591",
+      "trial_num": 3,
+      "step_range": [
+        17,
+        17
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "180"
+  },
+  {
+    "task_desc": "Find me machine washable window coverings for living room with color: india8lbg5495, and size: 52\" w by 90\" l, and price lower than 50.00 dollars",
+    "obj_type": "window coverings, price",
+    "verbs": "search",
+    "goal_phase": "SEARCH",
+    "issue_text": "Initial search query omitted the price constraint.",
+    "issue_ref": {
+      "task_id": "webshop_2591",
+      "trial_num": 3,
+      "step_range": [
+        17,
+        17
+      ]
+    },
+    "learning_text": "Incorporate price constraints directly into the search query for filtered results.",
+    "evidence_ref": {
+      "task_id": "webshop_2591",
+      "trial_num": 3,
+      "step_range": [
+        31,
+        31
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "181"
+  },
+  {
+    "task_desc": "Find me machine washable window coverings for living room with color: india8lbg5495, and size: 52\" w by 90\" l, and price lower than 50.00 dollars",
+    "obj_type": "search results",
+    "verbs": "click",
+    "goal_phase": "BROWSE",
+    "issue_text": "Failed to explore all available search result pages.",
+    "issue_ref": {
+      "task_id": "webshop_2591",
+      "trial_num": 2,
+      "step_range": [
+        9,
+        11
+      ]
+    },
+    "learning_text": "Systematically navigate all search result pages to ensure no matching products are missed.",
+    "evidence_ref": {
+      "task_id": "webshop_2591",
+      "trial_num": 3,
+      "step_range": [
+        1,
+        16
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "182"
+  },
+  {
+    "task_desc": "Find me machine washable window coverings for living room with color: india8lbg5495, and size: 52\" w by 90\" l, and price lower than 50.00 dollars",
+    "obj_type": "product, price",
+    "verbs": "click",
+    "goal_phase": "SELECT",
+    "issue_text": "Selected a product that exceeded the price constraint.",
+    "issue_ref": {
+      "task_id": "webshop_2591",
+      "trial_num": 2,
+      "step_range": [
+        5,
+        5
+      ]
+    },
+    "learning_text": "Always verify the product price against the budget constraint on the product page.",
+    "evidence_ref": {
+      "task_id": "webshop_2591",
+      "trial_num": 2,
+      "step_range": [
+        6,
+        6
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "183"
+  },
+  {
+    "task_desc": "Find me machine washable window coverings for living room with color: india8lbg5495, and size: 52\" w by 90\" l, and price lower than 50.00 dollars",
+    "obj_type": "product, color",
+    "verbs": "click",
+    "goal_phase": "SELECT",
+    "issue_text": "Selected a product where the required color was not available.",
+    "issue_ref": {
+      "task_id": "webshop_2591",
+      "trial_num": 2,
+      "step_range": [
+        5,
+        5
+      ]
+    },
+    "learning_text": "Verify all required attribute options, like color, are available on the product page.",
+    "evidence_ref": {
+      "task_id": "webshop_2591",
+      "trial_num": 2,
+      "step_range": [
+        6,
+        6
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "184"
+  }
+]

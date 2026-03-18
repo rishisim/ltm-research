@@ -1,0 +1,10 @@
+{
+  "success": 112,
+  "total": 200,
+  "success_total": "112 / 200",
+  "accuracy": 0.56,
+  "avg_reward": 0.36810484792984793,
+  "avg_steps_per_trial": 24.435,
+  "avg_steps_per_task": 24.435,
+  "attempt_count": 200
+}
