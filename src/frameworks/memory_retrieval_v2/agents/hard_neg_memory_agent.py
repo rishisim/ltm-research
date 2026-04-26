@@ -177,8 +177,10 @@ The following learnings are from previous tasks similar to yours. Use them to av
         # Store the stable prefix for prompt caching (identical across all turns).
         self._stable_system_prompt = enhanced_prompt
 
+        # Empty base_query: prefix lives only in system_prompt, not duplicated
+        # in the user message (see memory_agent.py for why).
         env_history = EnvironmentHistory(
-            enhanced_prompt,
+            "",
             start_ob,
             memory[-3:] if len(memory) > 3 else memory
         )

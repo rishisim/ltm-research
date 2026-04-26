@@ -778,9 +778,15 @@ def main() -> None:
     args = parser.parse_args()
 
     # Set embedding provider before any retrieval module is imported.
-    # Auto-pair: gemini-* chat → gemini embeddings, claude-* chat → openai embeddings.
+    # Default: ALWAYS use Gemini embeddings, regardless of chat model. The
+    # knowledge bases were extracted with Gemini-embeddings (commit 94b2b8f),
+    # and retrieval must use the same embedding model to stay consistent with
+    # the KB. Mixing chat models for the cross-lab study is fine; mixing
+    # embedding models silently changes the retrieval distribution and
+    # confounds the comparison. Override via --embedding-provider only if you
+    # know what you're doing (e.g., a fresh KB rebuild).
     def _auto_embedding_provider(model: str) -> str:
-        return "openai" if model.startswith("claude") else "gemini"
+        return "gemini"
 
     embedding_provider = args.embedding_provider if args.embedding_provider else _auto_embedding_provider(args.model)
     os.environ["LTM_EMBEDDING_PROVIDER"] = embedding_provider

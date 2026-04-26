@@ -313,9 +313,15 @@ The following learnings are from previous tasks similar to yours. Use them to av
         #     prefix automatically; no payload change needed.
         self._stable_system_prompt = enhanced_prompt
 
-        # Initialize environment history with enhanced prompt
+        # IMPORTANT: pass an EMPTY base_query to EnvironmentHistory so the
+        # stable prefix lives ONLY in system_prompt and is NOT duplicated in
+        # the user message. Verified failure mode: when the same enhanced
+        # prompt appeared in both system and the user-message prefix, Claude
+        # treated the duplication as a conversational frame and stopped
+        # emitting valid ALFWorld commands. Gemini happened to tolerate the
+        # duplication but the experiment is cleaner with a single source.
         env_history = EnvironmentHistory(
-            enhanced_prompt,
+            "",
             start_ob,
             memory[-3:] if len(memory) > 3 else memory
         )

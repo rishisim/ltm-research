@@ -25,6 +25,18 @@ class ReAct(Framework):
                     stop_strs=stop,
                     system_prompt=system_prompt,
                 )
+                # Client-side enforcement of stop sequences. OpenRouter does not
+                # reliably honor `stop` for Anthropic and OpenAI reasoning models
+                # (verified: Claude / gpt-5-mini emit multi-line output despite
+                # body["stop"]=["\n"]). Truncating here makes the agent loop
+                # robust regardless of upstream stop-sequence support.
+                if text is not None and stop:
+                    earliest = len(text)
+                    for s in stop:
+                        idx = text.find(s)
+                        if idx != -1 and idx < earliest:
+                            earliest = idx
+                    text = text[:earliest]
                 if text is not None and len(text.strip()) >= 5:
                     return text, usage
                 cur_try += 1
