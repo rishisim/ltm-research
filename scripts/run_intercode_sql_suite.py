@@ -936,8 +936,9 @@ def main() -> None:
     parser.add_argument(
         "--memory-bank",
         type=str,
-        default="intercode_sql_runs/knowledge_base/knowledge_base.json",
-        help="Path to memory bank JSON",
+        default="intercode_sql_runs/memory_agent_runs/train/react_reflexion/knowledge_base.json",
+        help="Path to memory bank JSON. Default points to the Phase-3 KB built "
+             "from train/react_reflexion trajectories per intercode_sql_runs/README.md.",
     )
     parser.add_argument(
         "--data-dir",
