@@ -107,6 +107,7 @@ class HardNegMemoryAgent(ReAct):
         memory_bank_path: str = "",
         max_learnings: int = 25,
         min_valid_level: str = "",
+        split: str = "",
     ) -> Tuple[EnvironmentHistory, bool]:
         self.memory_bank_path = memory_bank_path
         
@@ -301,6 +302,7 @@ The following learnings are from previous tasks similar to yours. Use them to av
                 context_retrieval_error=context_retrieval_error,
                 embedding_model_used=embedding_model_used,
                 cached_tokens=total_cached_tokens,
+                split=split,
             )
 
         return env_history, is_success
@@ -321,15 +323,17 @@ The following learnings are from previous tasks similar to yours. Use them to av
         context_retrieval_error: str = "",
         embedding_model_used: str = "",
         cached_tokens: int = 0,
+        split: str = "",
     ) -> None:
         """Log the complete trajectory to trajectories.json"""
         task_type = task_id.split('-')[0] if task_id else ""
-        
+
         trajectory = {
             "task_id": task_id,
             "task_type": task_type,
             "task_desc": task_desc,
             "trial_num": trial_num,
+            "split": split,
             "context_from_retrieval": context_learnings or [],
             "steps": steps,
             "success": success,

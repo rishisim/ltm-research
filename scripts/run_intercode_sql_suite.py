@@ -16,6 +16,7 @@ Mirrors scripts/run_framework_suite.py but adapted for InterCode SQL.
 import argparse
 import json
 import os
+import random
 import shutil
 import sys
 from collections import defaultdict
@@ -468,6 +469,7 @@ def run_memory_agent_variant(
                 memory_bank_path=str(memory_bank_path),
                 max_learnings=max_learnings,
                 min_valid_level=min_valid_level,
+                split=task.split,
             )
             reward = env.last_reward
             success = reward >= reward_threshold
@@ -965,7 +967,28 @@ def main() -> None:
         action="store_true",
         help="Resume from where a previous run left off (skip completed tasks)",
     )
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=0,
+        help=(
+            "Random seed for task ordering and any harness-level sampling (default: 0). "
+            "Note: LLM calls use temperature=0 but are not bit-deterministic across "
+            "providers; the seed primarily varies harness sampling/ordering."
+        ),
+    )
     args = parser.parse_args()
+
+    # Seed the harness RNG for deterministic task ordering and any sampling.
+    # LLM calls at temperature=0 are not bit-deterministic across providers,
+    # so the seed primarily affects harness-level randomness (task shuffling,
+    # random sampling if any). Use different seeds (0, 1, 2) for multi-seed runs.
+    random.seed(args.seed)
+    try:
+        import numpy as np
+        np.random.seed(args.seed)
+    except ImportError:
+        pass
 
     # Set embedding provider before any retrieval module is imported.
     # Default: ALWAYS Gemini (the embedding model used for KB extraction).
@@ -976,7 +999,7 @@ def main() -> None:
 
     embedding_provider = args.embedding_provider if args.embedding_provider else _auto_embedding_provider(args.model)
     os.environ["LTM_EMBEDDING_PROVIDER"] = embedding_provider
-    print(f"Using model={args.model}, embedding_provider={embedding_provider}")
+    print(f"Using model={args.model}, embedding_provider={embedding_provider}, seed={args.seed}")
 
     base_dir = Path(__file__).resolve().parents[1]
     data_dir = (base_dir / args.data_dir).resolve()
@@ -1025,8 +1048,13 @@ def main() -> None:
             "memory_bank": str(memory_bank_path),
             "data_path": data_path,
             "reward_threshold": args.reward_threshold,
+            "seed": args.seed,
         },
     )
+
+    # Each seed run gets its own sub-directory so parallel seed runs don't
+    # overwrite each other: runs_root/<split>/<framework_id>/seed_<N>/
+    seed_tag = f"seed_{args.seed}"
 
     all_rows: List[Dict[str, Any]] = []
 
@@ -1039,12 +1067,12 @@ def main() -> None:
         split_rows: List[Dict[str, Any]] = []
 
         for framework_id in selected_frameworks:
-            run_dir = runs_root / split / framework_id
+            run_dir = runs_root / split / framework_id / seed_tag
             ensure_clean_dir(run_dir, resume=args.resume)
 
             print(
-                f"Running split={split} framework={framework_id} tasks={len(task_infos)} "
-                f"-> {run_dir}"
+                f"Running split={split} framework={framework_id} seed={args.seed} "
+                f"tasks={len(task_infos)} -> {run_dir}"
             )
             metrics = run_framework(
                 framework_id=framework_id,

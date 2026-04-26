@@ -442,16 +442,30 @@ def generate_knowledge_base(
     # Pass --allow-eval-trajectories only for ablations / intentional overrides.
     if not allow_eval_trajectories:
         eval_splits_found = set()
+        missing_split_count = 0
         for t in trajectories:
             s = t.get("split", "")
             if s in ("dev", "test"):
                 eval_splits_found.add(s)
+            if not s:
+                missing_split_count += 1
         if eval_splits_found:
             raise ValueError(
                 f"Eval-into-memory leakage detected: trajectories.json contains entries "
                 f"with split={sorted(eval_splits_found)}. "
                 f"Only 'train' split trajectories should be ingested into the KB. "
                 f"Pass --allow-eval-trajectories to suppress this check (for ablations only)."
+            )
+        total = len(trajectories)
+        missing_fraction = missing_split_count / total if total > 0 else 0.0
+        if missing_fraction > 0.05:
+            raise ValueError(
+                f"Eval-into-memory leakage guard: {missing_split_count}/{total} trajectory "
+                f"entries ({missing_fraction:.1%}) are missing the 'split' field. "
+                f"A missing split field means the guard cannot verify these trajectories "
+                f"are safe to ingest. Ensure all trajectories are written with a 'split' "
+                f"field. Pass --allow-eval-trajectories to suppress this check (for "
+                f"ablations only)."
             )
     # Group by task_id
     grouped = group_trajectories_by_task(trajectories)
