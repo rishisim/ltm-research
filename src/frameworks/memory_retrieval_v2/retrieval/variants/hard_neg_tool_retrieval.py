@@ -187,11 +187,25 @@ if __name__ == "__main__":
     parser.add_argument("--top-k", type=int, default=3, help="Number of bad results")
     parser.add_argument("--output", type=str, default=None, help="Output file path")
     parser.add_argument("--format", type=str, choices=["json", "text"], default="json")
-    
+    parser.add_argument(
+        "--output-root",
+        type=str,
+        default=None,
+        help=(
+            "Root directory for default output (default: auto-derived from --memory-bank parent). "
+            "E.g. 'intercode_sql_runs/hard_neg_test' or 'alfworld_runs/hard_neg_test'."
+        ),
+    )
+
     args = parser.parse_args()
-    
+
     project_root = Path(__file__).resolve().parent.parent.parent.parent.parent.parent
-    default_output_dir = project_root / "alfworld_runs/hard_neg_test/tool_retrieval"
+    if args.output_root:
+        default_output_dir = project_root / args.output_root / "tool_retrieval"
+    else:
+        # Derive from the memory-bank path to avoid hardcoding alfworld_runs
+        memory_bank_parent = Path(args.memory_bank).resolve().parent
+        default_output_dir = memory_bank_parent / "hard_neg_test" / "tool_retrieval"
     
     print("Using HARD NEGATIVE tool retrieval (Bottom 100 candidates, Lowest score first)...")
     result = help_tool(

@@ -1,0 +1,22 @@
+{
+  "source_data": "data/intercode_sql/ic_spider_dev.json",
+  "total_tasks": 1034,
+  "total_databases": 20,
+  "train_ratio": 0.4,
+  "dev_ratio": 0.3,
+  "seed": 42,
+  "splits": {
+    "train": {
+      "num_tasks": 516,
+      "num_databases": 8
+    },
+    "dev": {
+      "num_tasks": 200,
+      "num_databases": 6
+    },
+    "test": {
+      "num_tasks": 200,
+      "num_databases": 6
+    }
+  }
+}

@@ -37,22 +37,11 @@ from src.frameworks.memory_retrieval_v2.retrieval.core.tool_retrieval import (
 HELP_PATTERN = re.compile(r'help\s*\[\s*["\'](.+?)["\']\s*\]', re.IGNORECASE)
 
 
-class MemoryAgent(ReAct):
-    """
-    A memory-augmented agent that:
-    1. Retrieves relevant context at task start using context_retrieval
-    2. Provides a help["query"] tool that agents can call during execution
-    """
-    
-    def __init__(self, model: Model = "gemini-2.5-flash", to_print: bool = True):
-        super().__init__(model, to_print)
-        self.memory_bank_path: Optional[str] = None
-        
-    def _get_help_instructions(self) -> str:
-        """
-        Returns instructions for the agent on how to use the help tool.
-        """
-        return """
+# ---------------------------------------------------------------------------
+# Per-environment help-tool instruction strings
+# ---------------------------------------------------------------------------
+
+_HELP_INSTRUCTIONS_ALFWORLD = """
 IMPORTANT: You have access to a help tool when you're struggling or need guidance.
 To use it, output an action in this format:
 help["your issue here"]
@@ -80,6 +69,97 @@ Use this tool when you:
 - Are unsure about the next step
 - Keep encountering the same error
 """
+
+_HELP_INSTRUCTIONS_WEBSHOP = """
+IMPORTANT: You have access to a help tool when you're struggling or need guidance.
+To use it, output an action in this format:
+help["your issue here"]
+
+CRITICAL: Your query must match the style of issues in your memory bank to get the best results.
+Query Style Guidelines:
+1. Describe the FAILURE or OBSTACLE, not just what you want to do.
+2. Mention the product type and key constraints (e.g. "price", "color", "size").
+3. Do not include specific product names or SKUs — use general categories.
+
+Examples of GOOD queries:
+help["search returns no products matching price constraint"]
+help["clicked buy but forgot to select size attribute first"]
+help["product page does not show color options"]
+help["search query too specific and returns empty results"]
+
+Examples of BAD queries:
+help["how to buy"] (Too vague)
+help["B08XYZ product is wrong"] (Contains specific product ID)
+help["what do i do next"] (Not specific to an issue)
+
+Use this tool when you:
+- Cannot find a product matching all constraints
+- Are unsure which attribute to select
+- Keep getting wrong search results
+"""
+
+_HELP_INSTRUCTIONS_SQL = """
+IMPORTANT: You have access to a help tool when you're struggling or need guidance.
+To use it, output an action in this format:
+help["your issue here"]
+
+CRITICAL: Your query must match the style of issues in your memory bank to get the best results.
+Query Style Guidelines:
+1. Describe the SQL ERROR or LOGICAL MISTAKE, not just what you want to query.
+2. Mention the SQL operation that failed (e.g. "JOIN", "GROUP BY", "subquery").
+3. Mention the MISSING INFORMATION (e.g. "unknown column", "missing FK", "wrong aggregation").
+4. Do not include specific table names or column values — use general SQL concepts.
+
+Examples of GOOD queries:
+help["missing FK column to join two tables on"]
+help["GROUP BY clause missing after using COUNT aggregation"]
+help["column name does not exist in table, need to check schema"]
+help["subquery returns multiple rows but scalar expected"]
+help["wrong aggregation column causes incorrect total"]
+help["schema exploration needed before writing the query"]
+
+Examples of BAD queries:
+help["how to write SQL"] (Too vague)
+help["table singer_id is wrong"] (Too specific to one schema)
+help["what do i do next"] (Not specific to an issue)
+
+Use this tool when you:
+- Get a SQL error or unexpected result
+- Are unsure about column names or table relationships
+- Need to verify schema structure before querying
+- Keep getting the wrong result set
+"""
+
+
+class MemoryAgent(ReAct):
+    """
+    A memory-augmented agent that:
+    1. Retrieves relevant context at task start using context_retrieval
+    2. Provides a help["query"] tool that agents can call during execution
+    """
+
+    # Supported env_kind values: "alfworld", "webshop", "intercode_sql"
+    def __init__(
+        self,
+        model: Model = "gemini-2.5-flash",
+        to_print: bool = True,
+        env_kind: str = "alfworld",
+    ):
+        super().__init__(model, to_print)
+        self.memory_bank_path: Optional[str] = None
+        self.env_kind: str = env_kind
+
+    def _get_help_instructions(self) -> str:
+        """
+        Returns env-appropriate instructions for the agent on how to use the
+        help tool.  Dispatches on self.env_kind so that SQL agents receive SQL-
+        flavoured examples rather than ALFWorld household-object examples.
+        """
+        if self.env_kind == "intercode_sql":
+            return _HELP_INSTRUCTIONS_SQL
+        if self.env_kind == "webshop":
+            return _HELP_INSTRUCTIONS_WEBSHOP
+        return _HELP_INSTRUCTIONS_ALFWORLD
 
     def _parse_help_action(self, action: str) -> Optional[str]:
         """

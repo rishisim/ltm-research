@@ -157,10 +157,82 @@ Schema:
 <TRAJECTORIES_JSON>"""
 
 
+INTERCODE_SQL_SYSTEM_PROMPT = """You are analyzing raw task trajectories from an interactive SQL coding environment to extract issue-learning pairs for a knowledge base.
+
+Input: A list of trajectories for the same task_id across multiple trials.
+Each trajectory has: task_id, task_desc, trial_num, steps (action/observation pairs), success boolean.
+
+The environment is InterCode-SQL, where an agent interacts with a MySQL database to answer natural language questions by writing SQL queries. The agent executes SQL statements and receives query results or error messages as observations. The agent submits when confident in its answer.
+
+For each issue encountered during the trajectories, extract an entry. Issues include but not limited to:
+- SQL syntax errors that were corrected
+- Wrong table or column references that were fixed
+- Missing JOIN conditions or incorrect JOIN types
+- Incorrect WHERE clauses or filtering logic
+- Aggregation errors (wrong GROUP BY, missing HAVING, etc.)
+- Subquery errors that were resolved
+- Schema misunderstanding (wrong column names, types, etc.)
+- Incorrect use of SQL functions (COUNT, AVG, etc.)
+- Not exploring the schema before querying (leading to errors)
+
+valid_level meanings:
+- VALID_SAME_TRIAL: Issue was fixed later in the same trial
+- VALID_NEXT_TRIAL: Issue was fixed in a later trial
+- CANDIDATE: Issue was never fixed across all trials
+
+evidence_ref meanings:
+- Where the learning/solution was validated (i.e., what worked and fixed the issue)
+
+issue_ref meanings:
+- Where the issue/problem was first observed (i.e., what went wrong initially)
+
+Learning Text Guidelines:
+- Good: Specific SQL patterns, schema exploration strategies, query construction approaches
+- Bad: Passive observations, vague advice like "write better queries"
+
+Rules:
+- Look across trials to find what eventually worked
+- learning_text MUST describe the corrective action/strategy, not just what happened
+- Consolidate duplicate issues within the same trial
+- Only create separate entries for the same issue type if the learnings are different
+- If no issues found, return {"entries": []}
+
+Output MUST be valid JSON only. No markdown. No extra keys.
+
+Schema:
+{
+  "entries": [
+    {
+      "task_desc": string (the natural language question, e.g., "How many singers do we have?"),
+      "obj_type": string (database objects involved, e.g., "singer table, Singer_ID column"),
+      "verbs": string (SQL operations, e.g., "SELECT, COUNT, JOIN"),
+      "goal_phase": "EXPLORE" | "QUERY" | "REFINE" | "VERIFY",
+      "issue_text": string (<30 words, what went wrong),
+      "issue_ref": {
+        "task_id": string,
+        "trial_num": number,
+        "step_range": [start_step, end_step]
+      },
+      "learning_text": string (<40 words, the specific ACTION/STRATEGY that fixed the issue),
+      "evidence_ref": {
+        "task_id": string,
+        "trial_num": number,
+        "step_range": [start_step, end_step]
+      },
+      "valid_level": "VALID_SAME_TRIAL" | "VALID_NEXT_TRIAL" | "CANDIDATE"
+    }
+  ]
+}
+
+<TRAJECTORIES_JSON>"""
+
+
 def get_system_prompt(env: str = "alfworld") -> str:
     """Return the appropriate system prompt for the given environment."""
     if env == "webshop":
         return WEBSHOP_SYSTEM_PROMPT
+    if env == "intercode_sql":
+        return INTERCODE_SQL_SYSTEM_PROMPT
     return ALFWORLD_SYSTEM_PROMPT
 
 
@@ -232,7 +304,10 @@ def process_task_trajectories(task_id: str, trajectories: List[Dict[str, Any]], 
     max_retries = 3
     for attempt in range(max_retries):
         try:
-            response_text, _usage = get_chat(prompt, model=model, max_tokens=2048, reasoning={"effort": "none"}, request_timeout=180)
+            # reasoning={"effort": "none"} is a Gemini-specific OpenRouter extension.
+            # Pass it only for Gemini models so non-Gemini models don't fail.
+            _reasoning = {"effort": "none"} if model.startswith("gemini") else None
+            response_text, _usage = get_chat(prompt, model=model, max_tokens=2048, reasoning=_reasoning, request_timeout=180)
             
             # Clean up response
             response_text = response_text.strip()
@@ -325,9 +400,10 @@ def generate_knowledge_base(
     resume: bool = False,
     progress_path: str = None,
     env: str = "alfworld",
+    allow_eval_trajectories: bool = False,
 ):
     """Main logic to generate knowledge base from trajectories."""
-    
+
     trajectories_path = os.path.join(log_dir, "trajectories.json")
     json_output_path = os.path.join(log_dir, "knowledge_base.json")
     csv_output_path = os.path.join(log_dir, "knowledge_base.csv")
@@ -360,6 +436,23 @@ def generate_knowledge_base(
         print("No trajectories to process")
         return
 
+    # --- Eval-into-memory leakage guard ---
+    # Trajectories tagged with split="dev" or split="test" must not be ingested
+    # into the knowledge base (they are evaluation data, not training data).
+    # Pass --allow-eval-trajectories only for ablations / intentional overrides.
+    if not allow_eval_trajectories:
+        eval_splits_found = set()
+        for t in trajectories:
+            s = t.get("split", "")
+            if s in ("dev", "test"):
+                eval_splits_found.add(s)
+        if eval_splits_found:
+            raise ValueError(
+                f"Eval-into-memory leakage detected: trajectories.json contains entries "
+                f"with split={sorted(eval_splits_found)}. "
+                f"Only 'train' split trajectories should be ingested into the KB. "
+                f"Pass --allow-eval-trajectories to suppress this check (for ablations only)."
+            )
     # Group by task_id
     grouped = group_trajectories_by_task(trajectories)
     print(f"Found {len(grouped)} unique tasks")
@@ -443,10 +536,20 @@ if __name__ == "__main__":
         "--env",
         type=str,
         default="alfworld",
-        choices=["alfworld", "webshop"],
+        choices=["alfworld", "webshop", "intercode_sql"],
         help="Environment type for prompt selection (default: alfworld)"
     )
-    
+
+    parser.add_argument(
+        "--allow-eval-trajectories",
+        action="store_true",
+        help=(
+            "Suppress the eval-into-memory leakage check. "
+            "Use ONLY for ablations where you intentionally want to process "
+            "dev/test split trajectories."
+        )
+    )
+
     args = parser.parse_args()
     generate_knowledge_base(
         args.log_dir,
@@ -455,4 +558,5 @@ if __name__ == "__main__":
         args.resume,
         args.progress_path,
         env=args.env,
+        allow_eval_trajectories=args.allow_eval_trajectories,
     )

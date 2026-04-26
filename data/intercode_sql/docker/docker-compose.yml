@@ -1,0 +1,10 @@
+services:
+  env-sql-spider:
+    command: --lower_case_table_names=1
+    build:
+      context: ../
+      dockerfile: ./docker/spider.Dockerfile
+    image: docker-env-sql-spider
+    container_name: docker-env-sql-spider_ic_ctr
+    ports:
+      - "3307:3306"

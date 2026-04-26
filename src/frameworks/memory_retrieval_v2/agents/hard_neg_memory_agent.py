@@ -44,43 +44,34 @@ class HardNegMemoryAgent(ReAct):
     2. Provides IRRELEVANT help advice when queried
     """
     
-    def __init__(self, model: Model = "gemini-2.5-flash", to_print: bool = True):
+    def __init__(
+        self,
+        model: Model = "gemini-2.5-flash",
+        to_print: bool = True,
+        env_kind: str = "alfworld",
+    ):
         super().__init__(model, to_print)
         self.memory_bank_path: Optional[str] = None
-        
+        self.env_kind: str = env_kind
+
     def _get_help_instructions(self) -> str:
         """
-        Returns instructions for the agent on how to use the help tool.
-        (Instructions remain the same, only the retrieval quality changes invisibly to the agent)
+        Returns env-appropriate instructions for the agent on how to use the
+        help tool. The retrieval quality is intentionally degraded (hard
+        negative), but the instruction style should still match the environment
+        so the agent formulates valid queries.
         """
-        return """
-IMPORTANT: You have access to a help tool when you're struggling or need guidance.
-To use it, output an action in this format:
-help["your issue here"]
-
-CRITICAL: Your query must match the style of issues in your memory bank to get the best results.
-Query Style Guidelines:
-1. Describe the FAILURE or OBSTACLE, not just what you want to do.
-2. Mention the ACTION that failed (e.g. "put command failed").
-3. Mention MISSING PRECONDITIONS (e.g. "object not found", "container closed").
-4. KEY: Do not include numbers or specific identifiers (e.g. "sidetable 1", "mug 2") - instead use general objects (e.g. "sidetable", "mug").
-
-Examples of GOOD queries:
-help["cannot find the mug on the table"]
-help["put command failed when placing egg on sidetable"]
-help["container is closed and cannot put object inside"]
-help["repeatedly failing to go to the fridge"]
-
-Examples of BAD queries:
-help["how to put mug"] (Too vague)
-help["cannot find mug 1"] (Contains ID '1')
-help["what do i do next"] (Not specific to an issue)
-
-Use this tool when you:
-- Can't find an object after searching
-- Are unsure about the next step
-- Keep encountering the same error
-"""
+        # Re-use the per-env strings defined in memory_agent so we stay DRY.
+        from src.frameworks.memory_retrieval_v2.agents.memory_agent import (
+            _HELP_INSTRUCTIONS_SQL,
+            _HELP_INSTRUCTIONS_WEBSHOP,
+            _HELP_INSTRUCTIONS_ALFWORLD,
+        )
+        if self.env_kind == "intercode_sql":
+            return _HELP_INSTRUCTIONS_SQL
+        if self.env_kind == "webshop":
+            return _HELP_INSTRUCTIONS_WEBSHOP
+        return _HELP_INSTRUCTIONS_ALFWORLD
 
     def _parse_help_action(self, action: str) -> Optional[str]:
         match = HELP_PATTERN.search(action)

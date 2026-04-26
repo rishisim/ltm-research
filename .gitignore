@@ -151,3 +151,12 @@ webshop_mini/
 
 # WebShop cloned repo (large, has its own git)
 webshop/
+
+# Intercode SQL run outputs (mirror alfworld_runs/ pattern; keep README + manifests only)
+intercode_sql_runs/memory_agent_runs/
+intercode_sql_runs/smoke_test_phase1/
+intercode_sql_runs/smoke_test_phase1_v2/
+intercode_sql_runs/smoke_final_verify/
+intercode_sql_runs/*.log
+intercode_sql_runs/RUNS_COMPLETE
+intercode_sql_runs/run_status.txt

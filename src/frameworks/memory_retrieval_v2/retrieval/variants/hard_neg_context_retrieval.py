@@ -337,11 +337,25 @@ if __name__ == "__main__":
     parser.add_argument("--top-k-tasks", type=int, default=5, help="Number of bottom tasks (default: 5)")
     parser.add_argument("--output", type=str, default=None, help="Output file path")
     parser.add_argument("--rebuild-cache", action="store_true", help="Force rebuild cache")
-    
+    parser.add_argument(
+        "--output-root",
+        type=str,
+        default=None,
+        help=(
+            "Root directory for default output (default: auto-derived from --memory-bank parent). "
+            "E.g. 'intercode_sql_runs/hard_neg_test' or 'alfworld_runs/hard_neg_test'."
+        ),
+    )
+
     args = parser.parse_args()
-    
+
     project_root = Path(__file__).resolve().parent.parent.parent.parent.parent.parent
-    default_output_dir = project_root / "alfworld_runs/hard_neg_test/context_retrieval"
+    if args.output_root:
+        default_output_dir = project_root / args.output_root / "context_retrieval"
+    else:
+        # Derive from the memory-bank path to avoid hardcoding alfworld_runs
+        memory_bank_parent = Path(args.memory_bank).resolve().parent
+        default_output_dir = memory_bank_parent / "hard_neg_test" / "context_retrieval"
     
     print("Using HARD NEGATIVE retrieval algorithm (Least similar)...")
     result = retrieve_context(
