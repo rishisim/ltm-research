@@ -19,7 +19,8 @@ from .embedding_cache import (
     get_file_hash,
     get_batch_embeddings,
     get_embedding,
-    EMBEDDING_MODEL
+    EMBEDDING_MODEL,
+    get_active_embedding_model,
 )
 
 # Cache file suffix
@@ -65,7 +66,7 @@ def is_learning_counts_cache_valid(knowledge_base_path: str, cache_path: Path) -
         cached_hash = cache_data.get("source_hash", "")
         cached_model = cache_data.get("embedding_model", "")
 
-        return current_hash == cached_hash and cached_model == EMBEDDING_MODEL
+        return current_hash == cached_hash and cached_model == get_active_embedding_model()
     except (json.JSONDecodeError, IOError):
         return False
 
@@ -104,7 +105,7 @@ def build_learning_counts_table(knowledge_base_path: str, force: bool = False) -
                 "source_hash": get_file_hash(knowledge_base_path),
                 "source_path": str(knowledge_base_path),
                 "created_at": datetime.now().isoformat(),
-                "embedding_model": EMBEDDING_MODEL,
+                "embedding_model": get_active_embedding_model(),
                 "unique_task_count": 0,
                 "total_learning_count": 0,
                 "entries": []

@@ -29,20 +29,23 @@ else:
 env_path = Path(__file__).resolve().parent.parent.parent / '.env'
 load_dotenv(env_path)
 
-Model = Literal["gpt-4", "gpt-3.5-turbo", "text-davinci-003", "gemini-2.0-flash", "gemini-2.5-flash"]
+Model = Literal["gpt-4", "gpt-3.5-turbo", "text-davinci-003", "gemini-2.0-flash", "gemini-2.5-flash", "claude-haiku-4-5"]
 
-# OpenRouter configuration — all Gemini chat calls route through here.
-# Embeddings still use the Gemini SDK directly (see retrieval/core/embedding_cache.py).
+# OpenRouter configuration — all model chat calls (Gemini and Claude) route through here.
+# Embeddings still use the provider SDK directly (see retrieval/core/embedding_cache.py).
 OPENROUTER_API_BASE = "https://openrouter.ai/api/v1"
 OPENROUTER_API_KEY = os.getenv("LTM_OPENROUTER_API_KEY")
 
-# Maps internal model names to OpenRouter model IDs
+# Maps internal model names to OpenRouter model IDs.
+# All models in this map are dispatched via OpenRouter.
 OPENROUTER_MODEL_MAP = {
     "gemini-2.5-flash": "google/gemini-2.5-flash",
     "gemini-2.0-flash": "google/gemini-2.0-flash-001",
+    "claude-haiku-4-5": "anthropic/claude-haiku-4.5",
 }
 
-# OpenAI API key for GPT models (legacy path, not used for Gemini)
+# OpenAI SDK import is kept for the legacy get_completion() function (text-davinci-003).
+# All chat models (GPT, Gemini, Claude) now route through OpenRouter via requests.
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
 
@@ -64,8 +67,8 @@ def get_chat(
 ) -> Tuple[str, Dict[str, int]]:
     messages = [{"role": "user", "content": prompt}]
 
-    if model.startswith("gemini"):
-        openrouter_model = OPENROUTER_MODEL_MAP.get(model, model)
+    if model in OPENROUTER_MODEL_MAP:
+        openrouter_model = OPENROUTER_MODEL_MAP[model]
         # Use requests directly instead of openai SDK so that extra
         # parameters like `reasoning` are reliably included in the body.
         body = dict(
@@ -76,7 +79,9 @@ def get_chat(
         )
         if stop_strs:
             body["stop"] = stop_strs
-        if reasoning is not None:
+        # reasoning={"effort": ...} is a Gemini-specific OpenRouter extension;
+        # do NOT send it to Claude or other non-Gemini models.
+        if reasoning is not None and model.startswith("gemini"):
             body["reasoning"] = reasoning
         resp = _requests.post(
             f"{OPENROUTER_API_BASE}/chat/completions",
@@ -104,14 +109,41 @@ def get_chat(
         else:
             response.usage = None
     else:
-        response = openai.ChatCompletion.create(
+        # Legacy GPT path via OpenRouter (avoids the pre-v1.0 openai SDK).
+        # GPT model names that are not in OPENROUTER_MODEL_MAP are passed
+        # through to OpenRouter using their native name (e.g. "gpt-4").
+        body = dict(
             model=model,
             messages=messages,
             max_tokens=max_tokens,
-            stop=stop_strs if stop_strs else None,
             temperature=temperature,
-            request_timeout=request_timeout,
         )
+        if stop_strs:
+            body["stop"] = stop_strs
+        resp = _requests.post(
+            f"{OPENROUTER_API_BASE}/chat/completions",
+            headers={
+                "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+                "Content-Type": "application/json",
+            },
+            json=body,
+            timeout=(10, request_timeout),
+        )
+        resp.raise_for_status()
+        response_data = resp.json()
+        class _Obj:
+            pass
+        response = _Obj()
+        response.choices = response_data["choices"]
+        raw_usage = response_data.get("usage")
+        if raw_usage:
+            u = _Obj()
+            u.prompt_tokens = raw_usage.get("prompt_tokens", 0)
+            u.completion_tokens = raw_usage.get("completion_tokens", 0)
+            u.total_tokens = raw_usage.get("total_tokens", 0)
+            response.usage = u
+        else:
+            response.usage = None
 
     usage = {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
     if hasattr(response, 'usage') and response.usage is not None:

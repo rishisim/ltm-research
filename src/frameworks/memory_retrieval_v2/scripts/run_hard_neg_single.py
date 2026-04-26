@@ -1,4 +1,5 @@
 
+import argparse
 import os
 import sys
 import yaml
@@ -12,7 +13,18 @@ from src.envs.alfworld_env import AlfworldEnv
 # IMPORT HARD NEGATIVE AGENT
 from src.frameworks.memory_retrieval_v2.agents.hard_neg_memory_agent import HardNegMemoryAgent
 
-def run_hard_neg_single():
+def _auto_embedding_provider(model: str) -> str:
+    """Auto-pair embedding provider: gemini-* → gemini, claude-* → openai."""
+    if model.startswith("claude"):
+        return "openai"
+    return "gemini"
+
+def run_hard_neg_single(model: str = "gemini-2.5-flash", embedding_provider: str = ""):
+    # Set embedding provider env var before importing retrieval modules.
+    provider = embedding_provider if embedding_provider else _auto_embedding_provider(model)
+    os.environ["LTM_EMBEDDING_PROVIDER"] = provider
+    print(f"Using model={model}, embedding_provider={provider}")
+
     # 1. Configuration
     base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../"))
     
@@ -49,7 +61,7 @@ def run_hard_neg_single():
         prompts = {}
 
     # 3. Initialize Agent (HardNegMemoryAgent)
-    agent = HardNegMemoryAgent(model="gemini-2.5-flash", to_print=True)
+    agent = HardNegMemoryAgent(model=model, to_print=True)
 
     # 4. Run Loop
     tasks_run = 0
@@ -129,4 +141,22 @@ def run_hard_neg_single():
     print(f"\nExecution complete. Ran {tasks_run}/{len(target_tasks)} tasks.")
 
 if __name__ == "__main__":
-    run_hard_neg_single()
+    parser = argparse.ArgumentParser(description="Run a single hard-negative ALFWorld task with HardNegMemoryAgent")
+    parser.add_argument(
+        "--model",
+        type=str,
+        default="gemini-2.5-flash",
+        help="Chat model name (default: gemini-2.5-flash). Use 'claude-haiku-4-5' for Claude.",
+    )
+    parser.add_argument(
+        "--embedding-provider",
+        type=str,
+        default="",
+        choices=["", "gemini", "openai"],
+        help=(
+            "Embedding provider (default: auto-pair). "
+            "Auto-pair: gemini-* models → gemini, claude-* models → openai."
+        ),
+    )
+    args = parser.parse_args()
+    run_hard_neg_single(model=args.model, embedding_provider=args.embedding_provider)

@@ -1,4 +1,5 @@
 
+import argparse
 import os
 import sys
 import yaml
@@ -11,7 +12,19 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "../../../../"))
 from src.envs.alfworld_env import AlfworldEnv
 from src.frameworks.memory_retrieval_v2.agents.memory_agent import MemoryAgent
 
-def run_selected_tasks():
+def _auto_embedding_provider(model: str) -> str:
+    """Auto-pair embedding provider: gemini-* → gemini, claude-* → openai."""
+    if model.startswith("claude"):
+        return "openai"
+    return "gemini"
+
+def run_selected_tasks(model: str = "gemini-2.5-flash", embedding_provider: str = ""):
+    # Set embedding provider env var before importing retrieval modules.
+    # If not explicitly provided, auto-pair based on the chat model.
+    provider = embedding_provider if embedding_provider else _auto_embedding_provider(model)
+    os.environ["LTM_EMBEDDING_PROVIDER"] = provider
+    print(f"Using model={model}, embedding_provider={provider}")
+
     # 1. Configuration
     base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../"))
     
@@ -54,7 +67,7 @@ def run_selected_tasks():
         prompts = {}
 
     # 3. Initialize Agent
-    agent = MemoryAgent(model="gemini-2.5-flash", to_print=True)
+    agent = MemoryAgent(model=model, to_print=True)
 
     # 4. Run Loop
     tasks_run = 0
@@ -135,4 +148,22 @@ def run_selected_tasks():
     print(f"\nExecution complete. Ran {tasks_run}/{len(target_tasks)} tasks.")
 
 if __name__ == "__main__":
-    run_selected_tasks()
+    parser = argparse.ArgumentParser(description="Run selected ALFWorld tasks with MemoryAgent")
+    parser.add_argument(
+        "--model",
+        type=str,
+        default="gemini-2.5-flash",
+        help="Chat model name (default: gemini-2.5-flash). Use 'claude-haiku-4-5' for Claude.",
+    )
+    parser.add_argument(
+        "--embedding-provider",
+        type=str,
+        default="",
+        choices=["", "gemini", "openai"],
+        help=(
+            "Embedding provider (default: auto-pair). "
+            "Auto-pair: gemini-* models → gemini, claude-* models → openai."
+        ),
+    )
+    args = parser.parse_args()
+    run_selected_tasks(model=args.model, embedding_provider=args.embedding_provider)

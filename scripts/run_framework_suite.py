@@ -308,6 +308,7 @@ def run_react_baseline(
                 "steps": history_items,
                 "success": success,
                 "step_num": step_num,
+                "split": task.split,
             }
         )
 
@@ -728,7 +729,18 @@ def main() -> None:
         "--model",
         type=str,
         default="gemini-2.5-flash",
-        help="Model name (default: gemini-2.5-flash)",
+        help="Chat model name (default: gemini-2.5-flash). Use 'claude-haiku-4-5' for Claude.",
+    )
+    parser.add_argument(
+        "--embedding-provider",
+        type=str,
+        default="",
+        choices=["", "gemini", "openai"],
+        help=(
+            "Embedding provider for retrieval (default: auto-pair). "
+            "Auto-pair: gemini-* chat models → gemini, claude-* chat models → openai. "
+            "Override explicitly with 'gemini' or 'openai'."
+        ),
     )
     parser.add_argument(
         "--memory-bank",
@@ -764,6 +776,15 @@ def main() -> None:
         help="Reduce per-step framework print output",
     )
     args = parser.parse_args()
+
+    # Set embedding provider before any retrieval module is imported.
+    # Auto-pair: gemini-* chat → gemini embeddings, claude-* chat → openai embeddings.
+    def _auto_embedding_provider(model: str) -> str:
+        return "openai" if model.startswith("claude") else "gemini"
+
+    embedding_provider = args.embedding_provider if args.embedding_provider else _auto_embedding_provider(args.model)
+    os.environ["LTM_EMBEDDING_PROVIDER"] = embedding_provider
+    print(f"Using model={args.model}, embedding_provider={embedding_provider}")
 
     base_dir = Path(__file__).resolve().parents[1]
     config_path = base_dir / "data" / "alfworld" / "base_config.yaml"
@@ -821,6 +842,7 @@ def main() -> None:
             "frameworks": selected_frameworks,
             "max_trials": args.max_trials,
             "model": args.model,
+            "embedding_provider": embedding_provider,
             "memory_bank": str(memory_bank_path),
             "prepare_only": args.prepare_only,
         },

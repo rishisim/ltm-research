@@ -21,11 +21,55 @@ from google import genai
 env_path = Path(__file__).resolve().parent.parent.parent.parent.parent.parent / '.env'
 load_dotenv(env_path, override=True)
 
-# Initialize Google GenAI client for embeddings
-genai_client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+# ---------------------------------------------------------------------------
+# Embedding provider factory
+# ---------------------------------------------------------------------------
+# Set LTM_EMBEDDING_PROVIDER=openai to use OpenAI text-embedding-3-large.
+# Default is "gemini" (gemini-embedding-001), which is the research default.
+# Auto-pairing: runners set this env var based on --embedding-provider flag,
+# or auto-pair (gemini-* chat → gemini, claude-* chat → openai).
+# ---------------------------------------------------------------------------
 
-# Embedding model to use (intentionally pinned)
-EMBEDDING_MODEL = "gemini-embedding-001"
+_EMBEDDING_PROVIDER = os.environ.get("LTM_EMBEDDING_PROVIDER", "gemini").lower()
+
+# Gemini client — only instantiated when needed
+_genai_client: Optional[Any] = None
+
+def _get_genai_client() -> Any:
+    global _genai_client
+    if _genai_client is None:
+        _genai_client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+    return _genai_client
+
+# OpenAI client — only instantiated when needed
+_openai_client: Optional[Any] = None
+
+def _get_openai_client() -> Any:
+    global _openai_client
+    if _openai_client is None:
+        import openai as _openai_mod  # type: ignore
+        # Support both openai>=1.0 (new) and openai==0.27 (legacy pinned in requirements.txt).
+        # For the embedding path we use the REST API directly to avoid SDK version issues.
+        _openai_client = _openai_mod
+    return _openai_client
+
+_GEMINI_EMBEDDING_MODEL = "gemini-embedding-001"
+_OPENAI_EMBEDDING_MODEL = "text-embedding-3-large"
+
+# Expose as module-level constant for backward compat (always the active model).
+# Use get_active_embedding_model() for a function-based accessor.
+EMBEDDING_MODEL: str  # assigned below via get_active_embedding_model()
+
+def get_active_embedding_model() -> str:
+    """Return the embedding model name for the active provider."""
+    provider = os.environ.get("LTM_EMBEDDING_PROVIDER", "gemini").lower()
+    if provider == "openai":
+        return _OPENAI_EMBEDDING_MODEL
+    return _GEMINI_EMBEDDING_MODEL
+
+# Set module-level constant once at import time (stable for the process lifetime).
+EMBEDDING_MODEL = get_active_embedding_model()
+
 EMPTY_EMBEDDING_PLACEHOLDER = "[EMPTY_TEXT]"
 
 # Cache file suffix
@@ -70,13 +114,6 @@ def get_cache_path(knowledge_base_path: str, embed_field: str = "task_desc") -> 
         return kb_path.parent / f"{kb_path.stem}{EMBEDDINGS_CACHE_SUFFIX}"
 
 
-def get_active_embedding_model() -> str:
-    """
-    Return the active embedding model used by retrieval.
-    """
-    return EMBEDDING_MODEL
-
-
 def normalize_text_for_embedding(text: Any) -> str:
     """
     Normalize text content so embedding calls never receive empty payloads.
@@ -89,32 +126,75 @@ def normalize_text_for_embedding(text: Any) -> str:
     return normalized if normalized else EMPTY_EMBEDDING_PLACEHOLDER
 
 
-def get_embedding(text: str) -> np.ndarray:
-    """
-    Get the embedding for a single text string.
-    
-    Args:
-        text: The text to embed
-        
-    Returns:
-        numpy array of the embedding vector
-    """
-    normalized_text = normalize_text_for_embedding(text)
-    result = genai_client.models.embed_content(
-        model=EMBEDDING_MODEL,
+def _gemini_embed_single(normalized_text: str) -> np.ndarray:
+    """Embed a single text via Google GenAI."""
+    model = get_active_embedding_model()
+    result = _get_genai_client().models.embed_content(
+        model=model,
         contents=normalized_text,
     )
     return np.array(result.embeddings[0].values)
 
 
+def _openai_embed_single(normalized_text: str) -> np.ndarray:
+    """Embed a single text via OpenAI REST API (provider-agnostic, no SDK version lock)."""
+    import requests as _req
+    api_key = os.environ.get("OPENAI_API_KEY", "")
+    resp = _req.post(
+        "https://api.openai.com/v1/embeddings",
+        headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
+        json={"model": _OPENAI_EMBEDDING_MODEL, "input": normalized_text},
+        timeout=60,
+    )
+    resp.raise_for_status()
+    return np.array(resp.json()["data"][0]["embedding"])
+
+
+def _openai_embed_batch(normalized_texts: List[str]) -> List[np.ndarray]:
+    """Embed a batch of texts via OpenAI REST API."""
+    import requests as _req
+    api_key = os.environ.get("OPENAI_API_KEY", "")
+    resp = _req.post(
+        "https://api.openai.com/v1/embeddings",
+        headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
+        json={"model": _OPENAI_EMBEDDING_MODEL, "input": normalized_texts},
+        timeout=120,
+    )
+    resp.raise_for_status()
+    data = resp.json()["data"]
+    # OpenAI returns results in the same order as input
+    return [np.array(item["embedding"]) for item in data]
+
+
+def get_embedding(text: str) -> np.ndarray:
+    """
+    Get the embedding for a single text string using the active provider.
+
+    Args:
+        text: The text to embed
+
+    Returns:
+        numpy array of the embedding vector
+    """
+    normalized_text = normalize_text_for_embedding(text)
+    provider = os.environ.get("LTM_EMBEDDING_PROVIDER", "gemini").lower()
+    if provider == "openai":
+        return _openai_embed_single(normalized_text)
+    return _gemini_embed_single(normalized_text)
+
+
 def get_batch_embeddings(texts: List[str], batch_size: int = 100) -> List[np.ndarray]:
     """
     Get embeddings for a batch of texts with batching to handle API limits.
-    
+
+    Uses the active provider (gemini or openai) as set by LTM_EMBEDDING_PROVIDER.
+
     Args:
         texts: List of texts to embed
-        batch_size: Number of texts per API call (default: 100)
-        
+        batch_size: Number of texts per API call (default: 100 for Gemini; OpenAI
+                    handles up to 2048 items per call but we keep the same batch_size
+                    for rate-limit safety)
+
     Returns:
         List of numpy arrays of embedding vectors
     """
@@ -122,7 +202,18 @@ def get_batch_embeddings(texts: List[str], batch_size: int = 100) -> List[np.nda
         return []
 
     normalized_texts = [normalize_text_for_embedding(t) for t in texts]
-    
+    provider = os.environ.get("LTM_EMBEDDING_PROVIDER", "gemini").lower()
+
+    if provider == "openai":
+        return _get_batch_embeddings_openai(normalized_texts, batch_size)
+    return _get_batch_embeddings_gemini(normalized_texts, batch_size)
+
+
+def _get_batch_embeddings_gemini(normalized_texts: List[str], batch_size: int = 100) -> List[np.ndarray]:
+    """Batch embedding via Google GenAI with recursive split-on-failure backoff."""
+
+    model = get_active_embedding_model()
+
     def _embed_with_backoff(items: List[str], max_retries: int = 3) -> List[np.ndarray]:
         """
         Embed a list with graceful fallback:
@@ -134,8 +225,8 @@ def get_batch_embeddings(texts: List[str], batch_size: int = 100) -> List[np.nda
             return []
 
         try:
-            result = genai_client.models.embed_content(
-                model=EMBEDDING_MODEL,
+            result = _get_genai_client().models.embed_content(
+                model=model,
                 contents=items,
             )
             return [np.array(emb.values) for emb in result.embeddings]
@@ -143,8 +234,8 @@ def get_batch_embeddings(texts: List[str], batch_size: int = 100) -> List[np.nda
             if len(items) == 1:
                 for retry in range(max_retries):
                     try:
-                        result = genai_client.models.embed_content(
-                            model=EMBEDDING_MODEL,
+                        result = _get_genai_client().models.embed_content(
+                            model=model,
                             contents=items,
                         )
                         return [np.array(result.embeddings[0].values)]
@@ -158,11 +249,35 @@ def get_batch_embeddings(texts: List[str], batch_size: int = 100) -> List[np.nda
             right = _embed_with_backoff(items[mid:], max_retries=max_retries)
             return left + right
 
-    all_embeddings = []
+    all_embeddings: List[np.ndarray] = []
     for i in range(0, len(normalized_texts), batch_size):
         batch = normalized_texts[i:i + batch_size]
         batch_embeddings = _embed_with_backoff(batch)
         all_embeddings.extend(batch_embeddings)
+
+        if i + batch_size < len(normalized_texts):
+            print(f"  Embedded {i + batch_size}/{len(normalized_texts)} texts...")
+
+    return all_embeddings
+
+
+def _get_batch_embeddings_openai(normalized_texts: List[str], batch_size: int = 100) -> List[np.ndarray]:
+    """Batch embedding via OpenAI REST API with simple retry on failure."""
+
+    all_embeddings: List[np.ndarray] = []
+    max_retries = 3
+
+    for i in range(0, len(normalized_texts), batch_size):
+        batch = normalized_texts[i:i + batch_size]
+        for attempt in range(max_retries):
+            try:
+                embeddings = _openai_embed_batch(batch)
+                all_embeddings.extend(embeddings)
+                break
+            except Exception:
+                if attempt == max_retries - 1:
+                    raise
+                time.sleep(0.5 * (2 ** attempt))
 
         if i + batch_size < len(normalized_texts):
             print(f"  Embedded {i + batch_size}/{len(normalized_texts)} texts...")
@@ -200,7 +315,7 @@ def is_cache_valid(knowledge_base_path: str, cache_path: Path, embed_field: str 
         return (
             current_hash == cached_hash
             and cached_field == embed_field
-            and cached_model == EMBEDDING_MODEL
+            and cached_model == get_active_embedding_model()
         )
     except (json.JSONDecodeError, IOError):
         return False
@@ -242,7 +357,7 @@ def create_knowledge_base_embeddings(
                 "source_hash": get_file_hash(knowledge_base_path),
                 "source_path": str(knowledge_base_path),
                 "created_at": datetime.now().isoformat(),
-                "embedding_model": EMBEDDING_MODEL,
+                "embedding_model": get_active_embedding_model(),
                 "embed_field": embed_field,
                 "entry_count": 0,
                 "entries": []
