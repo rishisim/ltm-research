@@ -285,7 +285,7 @@ class MemoryAgent(ReAct):
         
         # Step 2: Build enhanced prompt with context and help instructions
         enhanced_prompt = base_prompt
-        
+
         # Add context learnings if available
         if context_learnings:
             enhanced_prompt = f"""[CONTEXT FROM PREVIOUS SIMILAR TASKS]
@@ -296,15 +296,27 @@ The following learnings are from previous tasks similar to yours. Use them to av
 [END CONTEXT]
 
 {base_prompt}"""
-        
+
         # Add help tool instructions
         help_instructions = self._get_help_instructions()
         enhanced_prompt = f"{enhanced_prompt}\n\n{help_instructions}"
-        
+
+        # Store the stable prefix for prompt caching.
+        # This string (system instructions + few-shots + retrieved context +
+        # help instructions) is identical across ALL turns of this task.
+        # It is passed as the system_prompt argument to _llm so that:
+        #   - Anthropic/Claude (via OpenRouter): cache_control is attached and
+        #     the prefix is cached server-side (TTL 5 min, min 1024 tokens).
+        #   - OpenAI/GPT (direct or via OpenRouter): automatic prefix caching
+        #     fires because the system message is byte-identical every call.
+        #   - Gemini (via OpenRouter): implicit caching applies to the repeated
+        #     prefix automatically; no payload change needed.
+        self._stable_system_prompt = enhanced_prompt
+
         # Initialize environment history with enhanced prompt
         env_history = EnvironmentHistory(
-            enhanced_prompt, 
-            start_ob, 
+            enhanced_prompt,
+            start_ob,
             memory[-3:] if len(memory) > 3 else memory
         )
         
@@ -314,25 +326,35 @@ The following learnings are from previous tasks similar to yours. Use them to av
 
         cur_step = 0
         reward = 0
-        
+
         # Token usage tracking
         total_input_tokens = 0
         total_output_tokens = 0
         total_tokens = 0
+        total_cached_tokens = 0
 
         while cur_step < 49:
-            # Choose action
-            action_text, usage = self._llm(str(env_history) + "Action:", stop=['\n'])
+            # Choose action — pass the stable system prefix for prompt caching.
+            # The stable prefix (enhanced_prompt) is byte-identical across all
+            # turns; the growing trajectory in str(env_history) is the variable
+            # suffix and is NOT cached.
+            action_text, usage = self._llm(
+                str(env_history) + "Action:",
+                stop=['\n'],
+                system_prompt=self._stable_system_prompt,
+            )
             action = action_text.strip()
             
             # Update token usage
             step_input_tokens = usage.get("input_tokens", 0)
             step_output_tokens = usage.get("output_tokens", 0)
             step_total_tokens = usage.get("total_tokens", 0)
-            
+            step_cached_tokens = usage.get("cached_tokens", 0)
+
             total_input_tokens += step_input_tokens
             total_output_tokens += step_output_tokens
             total_tokens += step_total_tokens
+            total_cached_tokens += step_cached_tokens
             
             # Clean up action
             if action.startswith('Action:'):
@@ -370,7 +392,8 @@ The following learnings are from previous tasks similar to yours. Use them to av
                     "token_usage": {
                         "input_tokens": step_input_tokens,
                         "output_tokens": step_output_tokens,
-                        "total_tokens": step_total_tokens
+                        "total_tokens": step_total_tokens,
+                        "cached_tokens": step_cached_tokens,
                     }
                 })
                 
@@ -397,7 +420,8 @@ The following learnings are from previous tasks similar to yours. Use them to av
                 "token_usage": {
                     "input_tokens": step_input_tokens,
                     "output_tokens": step_output_tokens,
-                    "total_tokens": step_total_tokens
+                    "total_tokens": step_total_tokens,
+                    "cached_tokens": step_cached_tokens,
                 }
             })
             
@@ -423,22 +447,23 @@ The following learnings are from previous tasks similar to yours. Use them to av
         # Log trajectory
         if log_dir:
             self._log_trajectory(
-                log_dir, task_id, trial_num, steps, 
+                log_dir, task_id, trial_num, steps,
                 is_success, task_desc, help_calls, retrieved_learnings,
                 total_input_tokens, total_output_tokens, total_tokens,
                 context_retrieval_error=context_retrieval_error,
                 embedding_model_used=embedding_model_used,
+                cached_tokens=total_cached_tokens,
             )
 
         return env_history, is_success
     
     def _log_trajectory(
-        self, 
-        log_dir: str, 
-        task_id: str, 
+        self,
+        log_dir: str,
+        task_id: str,
         trial_num: int,
-        steps: List[Dict[str, Any]], 
-        success: bool, 
+        steps: List[Dict[str, Any]],
+        success: bool,
         task_desc: str = "",
         help_calls: List[Dict[str, str]] = None,
         context_learnings: List[Dict[str, str]] = None,
@@ -447,6 +472,7 @@ The following learnings are from previous tasks similar to yours. Use them to av
         total_tokens: int = 0,
         context_retrieval_error: str = "",
         embedding_model_used: str = "",
+        cached_tokens: int = 0,
     ) -> None:
         """Log the complete trajectory to trajectories.json"""
         # Extract task_type from task_id (e.g., 'pick_and_place_simple' from 'pick_and_place_simple-Mug-None-Desk-308/...')
@@ -466,6 +492,7 @@ The following learnings are from previous tasks similar to yours. Use them to av
             "input_tokens": input_tokens,
             "output_tokens": output_tokens,
             "total_tokens": total_tokens,
+            "cached_tokens": cached_tokens,
             "context_retrieval_error": context_retrieval_error,
             "embedding_model_used": embedding_model_used,
         }

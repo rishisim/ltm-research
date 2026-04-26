@@ -160,7 +160,7 @@ class HardNegMemoryAgent(ReAct):
         
         # Step 2: Build enhanced prompt
         enhanced_prompt = base_prompt
-        
+
         if context_learnings:
             enhanced_prompt = f"""[CONTEXT FROM PREVIOUS SIMILAR TASKS]
 The following learnings are from previous tasks similar to yours. Use them to avoid common mistakes:
@@ -170,13 +170,16 @@ The following learnings are from previous tasks similar to yours. Use them to av
 [END CONTEXT]
 
 {base_prompt}"""
-        
+
         help_instructions = self._get_help_instructions()
         enhanced_prompt = f"{enhanced_prompt}\n\n{help_instructions}"
-        
+
+        # Store the stable prefix for prompt caching (identical across all turns).
+        self._stable_system_prompt = enhanced_prompt
+
         env_history = EnvironmentHistory(
-            enhanced_prompt, 
-            start_ob, 
+            enhanced_prompt,
+            start_ob,
             memory[-3:] if len(memory) > 3 else memory
         )
         
@@ -186,22 +189,29 @@ The following learnings are from previous tasks similar to yours. Use them to av
 
         cur_step = 0
         reward = 0
-        
+
         total_input_tokens = 0
         total_output_tokens = 0
         total_tokens = 0
+        total_cached_tokens = 0
 
         while cur_step < 49:
-            action_text, usage = self._llm(str(env_history) + "Action:", stop=['\n'])
+            action_text, usage = self._llm(
+                str(env_history) + "Action:",
+                stop=['\n'],
+                system_prompt=self._stable_system_prompt,
+            )
             action = action_text.strip()
             
             step_input_tokens = usage.get("input_tokens", 0)
             step_output_tokens = usage.get("output_tokens", 0)
             step_total_tokens = usage.get("total_tokens", 0)
-            
+            step_cached_tokens = usage.get("cached_tokens", 0)
+
             total_input_tokens += step_input_tokens
             total_output_tokens += step_output_tokens
             total_tokens += step_total_tokens
+            total_cached_tokens += step_cached_tokens
             
             if action.startswith('Action:'):
                 action = action[7:].strip()
@@ -234,7 +244,8 @@ The following learnings are from previous tasks similar to yours. Use them to av
                     "token_usage": {
                         "input_tokens": step_input_tokens,
                         "output_tokens": step_output_tokens,
-                        "total_tokens": step_total_tokens
+                        "total_tokens": step_total_tokens,
+                        "cached_tokens": step_cached_tokens,
                     }
                 })
                 
@@ -257,7 +268,8 @@ The following learnings are from previous tasks similar to yours. Use them to av
                 "token_usage": {
                     "input_tokens": step_input_tokens,
                     "output_tokens": step_output_tokens,
-                    "total_tokens": step_total_tokens
+                    "total_tokens": step_total_tokens,
+                    "cached_tokens": step_cached_tokens,
                 }
             })
             
@@ -281,22 +293,23 @@ The following learnings are from previous tasks similar to yours. Use them to av
         
         if log_dir:
             self._log_trajectory(
-                log_dir, task_id, trial_num, steps, 
+                log_dir, task_id, trial_num, steps,
                 is_success, task_desc, help_calls, retrieved_learnings,
                 total_input_tokens, total_output_tokens, total_tokens,
                 context_retrieval_error=context_retrieval_error,
                 embedding_model_used=embedding_model_used,
+                cached_tokens=total_cached_tokens,
             )
 
         return env_history, is_success
     
     def _log_trajectory(
-        self, 
-        log_dir: str, 
-        task_id: str, 
+        self,
+        log_dir: str,
+        task_id: str,
         trial_num: int,
-        steps: List[Dict[str, Any]], 
-        success: bool, 
+        steps: List[Dict[str, Any]],
+        success: bool,
         task_desc: str = "",
         help_calls: List[Dict[str, str]] = None,
         context_learnings: List[Dict[str, str]] = None,
@@ -305,6 +318,7 @@ The following learnings are from previous tasks similar to yours. Use them to av
         total_tokens: int = 0,
         context_retrieval_error: str = "",
         embedding_model_used: str = "",
+        cached_tokens: int = 0,
     ) -> None:
         """Log the complete trajectory to trajectories.json"""
         task_type = task_id.split('-')[0] if task_id else ""
@@ -323,6 +337,7 @@ The following learnings are from previous tasks similar to yours. Use them to av
             "input_tokens": input_tokens,
             "output_tokens": output_tokens,
             "total_tokens": total_tokens,
+            "cached_tokens": cached_tokens,
             "context_retrieval_error": context_retrieval_error,
             "embedding_model_used": embedding_model_used,
             "agent_type": "hard_negative"
