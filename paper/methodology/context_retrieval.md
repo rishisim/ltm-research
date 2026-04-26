@@ -6,7 +6,7 @@ To enable the agent to leverage past experiences effectively, we implemented a *
 
 ### 1. Embedding and Similarity Search
 The core of the retrieval mechanism utilizes semantic similarity to identify relevant historical tasks.
-*   **Embedding Model**: We employ the `text-embedding-004` model (Google GenAI) to generate high-dimensional vector representations of task descriptions.
+*   **Embedding Model**: We employ the `gemini-embedding-001` model (Google GenAI) to generate high-dimensional vector representations of task descriptions.
 *   **Vector Space**: Both the current task description query $q$ and all historical task descriptions in the Knowledge Base $\{d_1, d_2, ..., d_n\}$ are mapped to a shared vector space.
 *   **Similarity Metric**: We compute the **Cosine Similarity** between the query vector $v_q$ and each historical task vector $v_{d_i}$ to quantify relevance:
     $$ \text{Sim}(v_q, v_{d_i}) = \frac{v_q \cdot v_{d_i}}{\|v_q\| \|v_{d_i}\|} $$

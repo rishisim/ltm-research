@@ -2,8 +2,8 @@
 
 \paragraph{Tool-augmented and memory-augmented agents.}
 ReAct~\cite{yao2023react} interleaves reasoning with environment actions, and Reflexion~\cite{shinn2023reflexion} extends this with iterative self-correction.
-Several systems augment LLM agents with persistent memory: Voyager~\cite{wang2023voyager} builds a verified skill library in Minecraft, GITM~\cite{zhu2023gitm} stores successful goal decompositions, Generative Agents~\cite{park2023generative} use a memory stream with reflection, MemoryBank~\cite{zhong2024memorybank} incorporates forgetting curves, and EvoSkill~\cite{alzubi2026evoskill} automatically discovers and evolves reusable skills from execution failures.
-A common thread is the assumption that accumulated knowledge---whether stored as memories or skills---is net-positive.
+Several systems augment LLM agents with persistent memory: Voyager~\cite{wang2023voyager} builds a verified skill library in Minecraft, GITM~\cite{zhu2023gitm} stores successful goal decompositions, Generative Agents~\cite{park2023generative} use a memory stream with reflection, MemoryBank~\cite{zhong2024memorybank} incorporates forgetting curves, A-Mem~\cite{xu2025amem} treats memory itself as an agentic module that autonomously decides what to store, update, and retrieve, and EvoSkill~\cite{alzubi2026evoskill} automatically discovers and evolves reusable skills from execution failures.
+A common thread is the assumption that accumulated knowledge, whether stored as memories or skills, is net-positive.
 Our work challenges this by showing that the same episodic memory mechanism yields $+19$pp gains in one environment and $-31$pp degradation in another.
 
 \paragraph{Interactive benchmarks.}

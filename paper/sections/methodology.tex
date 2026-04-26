@@ -17,7 +17,7 @@ WebShop~\cite{yao2022webshop} is an e-commerce navigation environment where agen
 \subsection{Base Agent: ReAct}
 \label{sec:react}
 
-All agents build on ReAct~\cite{yao2023react}, interleaving reasoning traces with actions. We use Gemini 2.5 Flash as the base LLM for all experiments, executing a single trajectory per task with no retries.
+All agents build on ReAct~\cite{yao2023react}, interleaving reasoning traces with actions. We use Gemini 2.5 Flash as the base LLM for all experiments.
 
 % ----------------------------------------------------------------------------
 \subsection{Memory Systems}
@@ -54,7 +54,7 @@ The knowledge base is constructed offline from training trajectories using LLM-b
 \subsubsection{Context Retrieval (CR)}
 \label{sec:context-retrieval}
 
-CR operates proactively: before the agent acts, it retrieves relevant past learnings based on embedding similarity (using \texttt{text-embedding-004}) between the new task description and historical tasks. The top-$k$ ($k{=}5$) most similar tasks are identified, their associated learnings are pooled and scored by:
+CR operates proactively: before the agent acts, it retrieves relevant past learnings based on embedding similarity (using \texttt{gemini-embedding-001}) between the new task description and historical tasks. The top-$k$ ($k{=}5$) most similar tasks are identified, their associated learnings are pooled and scored by:
 \begin{equation}
     \text{Score}_{\text{CR}}(\ell) = \text{sim}(\mathbf{v}_q, \mathbf{v}_{t(\ell)}) \times \omega_{\ell}
 \label{eq:cr-score}
@@ -64,9 +64,9 @@ where $\text{sim}$ is cosine similarity and $\omega_{\ell}$ is the validation we
 \paragraph{Dynamic context sizing.}
 Rather than retrieving a fixed number of learnings, CR adapts the context window to neighborhood complexity. Let $L_{\max}$ denote the maximum learning count among the top-$k$ tasks. The retrieval quota is:
 \begin{equation}
-    N_{\text{pick}} = \min\!\left(\left\lceil \alpha \cdot L_{\max} \right\rceil,\; N_{\max}\right)
+    N_{\text{pick}} = \min\!\left(\left\lceil \alpha \cdot L_{\max} \right\rceil,\; p\right)
 \end{equation}
-where $\alpha = 1.5$ is a scaling factor and $N_{\max} = 25$ is a hard cap. The top-scored learnings are formatted as issue--learning pairs and prepended to the agent's prompt. The full procedure is given in Algorithm~\ref{alg:context-retrieval} (Appendix~\ref{app:algorithms}).
+where $\alpha = 1.5$ is a scaling factor and $p \in [5, 25]$ is a tunable cap. The top-scored learnings are formatted as issue--learning pairs and prepended to the agent's prompt. The full procedure is given in Algorithm~\ref{alg:context-retrieval} (Appendix~\ref{app:algorithms}).
 
 % ---- 3.3.3 ----
 \subsubsection{Tool Retrieval (TR)}

@@ -1,5 +1,9 @@
 \documentclass[11pt]{article}
 \usepackage[review]{acl}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -7,6 +11,7 @@
 \usepackage{subcaption}
 \usepackage{booktabs}
 \usepackage{microtype}
+\usepackage{array}
 \usepackage{algorithm}
 \usepackage{algorithmic}
 
@@ -24,7 +29,7 @@
 }
 \makeatother
 
-\title{Under What Conditions Does Episodic Memory Improve LLM Agent Performance? \\
+\title{When Does Episodic Memory Help or Hurt LLM Agents? \\
 A Two-Environment Comparative Study}
 
 \author{Anonymous}
@@ -36,7 +41,7 @@ A Two-Environment Comparative Study}
 % ABSTRACT
 % ============================================================================
 \begin{abstract}
-LLM-based agents are increasingly augmented with episodic memory, yet it remains unclear \emph{under what conditions} such memory improves performance. We investigate this through a controlled study across two interactive environments: ALFWorld (structured household tasks, fixed action grammar) and WebShop (open-ended e-commerce, free-form navigation). Our memory-centric framework stores outcome-validated episodic experiences and retrieves them via two complementary mechanisms: proactive \emph{Context Retrieval} (CR) and on-demand hybrid \emph{Tool Retrieval} (TR). On ALFWorld, CR+TR improves over the ReAct baseline by up to $+19.4$pp, approaching Reflexion at one-third the step cost. On WebShop, the \emph{same} system \emph{degrades} performance by up to $-30.5$pp. A hard-negative ablation reveals that irrelevant memories ($-12.5$pp) cause \emph{less} harm than semantically ``relevant'' ones ($-30.5$pp), indicating active misdirection rather than noise. We trace this ${\sim}47$pp divergence to three environment properties---\emph{task compositionality}, \emph{action space regularity}, and \emph{learning transfer radius}---and distill them into a diagnostic framework for predicting when episodic memory will help or hurt.
+LLM-based agents are increasingly augmented with episodic memory, yet it remains unclear \emph{under what conditions} such memory improves performance. We investigate this through a controlled study across two interactive environments: ALFWorld (structured household tasks, fixed action grammar) and WebShop (open-ended e-commerce, free-form navigation). Our memory-centric framework stores outcome-validated episodic experiences and retrieves them via two complementary mechanisms: proactive \emph{Context Retrieval} (CR) and on-demand hybrid \emph{Tool Retrieval} (TR). On ALFWorld, CR+TR improves over the ReAct baseline by up to $+19.4$pp, approaching Reflexion at one-third the step cost. On WebShop, the \emph{same} system \emph{degrades} performance by up to $-30.5$pp. A hard-negative ablation reveals that irrelevant memories ($-12.5$pp) cause \emph{less} harm than semantically ``relevant'' ones ($-30.5$pp), indicating active misdirection rather than noise. In our experiments, we attribute this ${\sim}47$pp divergence to three environment properties: \emph{task compositionality}, \emph{action space regularity}, and \emph{learning transfer radius}. We distill these observations into a diagnostic framework for when episodic memory is likely to help or hurt — though broader validation across additional environments and models remains necessary before these properties can be treated as general predictors.
 \end{abstract}
 
 % ============================================================================

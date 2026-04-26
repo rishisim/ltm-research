@@ -9,13 +9,13 @@
 \caption{Context Retrieval from Knowledge Base}
 \label{alg:context-retrieval}
 \begin{algorithmic}[1]
-\REQUIRE Task description $q$; knowledge base $\mathcal{K}$; neighbor count $k{=}5$; scaling factor $\alpha{=}1.5$; cap $N_{\max}{=}25$; validation weights $W$
+\REQUIRE Task description $q$; knowledge base $\mathcal{K}$; neighbor count $k{=}5$; scaling factor $\alpha{=}1.5$; cap $p \in [5, 25]$; validation weights $W$
 \ENSURE Selected learnings $C$
 
 \STATE $\mathbf{v}_q \leftarrow \textsc{Embed}(q)$
 \STATE $\mathcal{T}_{\text{top}} \leftarrow \text{Top-}k \text{ tasks in } \mathcal{K} \text{ by } \text{sim}(\mathbf{v}_q, \mathbf{v}_t)$ \COMMENT{filter exact matches}
 \STATE $L_{\max} \leftarrow \max_{t \in \mathcal{T}_{\text{top}}} \textsc{LearningCount}(t)$
-\STATE $N_{\text{pick}} \leftarrow \min(\lceil \alpha \cdot L_{\max} \rceil, \; N_{\max})$
+\STATE $N_{\text{pick}} \leftarrow \min(\lceil \alpha \cdot L_{\max} \rceil, \; p)$
 \STATE $\mathcal{L}_{\text{pool}} \leftarrow \emptyset$
 \FOR{each $(t, s_t) \in \mathcal{T}_{\text{top}}$}
     \FOR{each learning $\ell \in \textsc{GetLearnings}(t)$}
@@ -78,7 +78,7 @@ Each entry in the knowledge base is a structured record containing the following
 The full ALFWorld dataset~\citep{shridhar2021alfworld} comprises 3{,}827 games split into a training set (3{,}553 games), a validation-seen set (140 games), and a validation-unseen set (134 games). For knowledge base construction, we use \emph{alfworld-mini}, a curated subset of 120 training games (20 per task type $\times$ 6 task types). We run Reflexion on this subset and extract approximately 400 issue--learning entries from the resulting trajectories using the pipeline described in Section~\ref{sec:kb-construction}. The validation splits are identical to those of the full ALFWorld dataset, ensuring direct comparability with prior work. No training games appear in the validation sets.
 
 \paragraph{WebShop.}
-We partition the WebShop environment~\citep{yao2022webshop} into a development split (200 tasks) and a held-out test split (200 tasks). The knowledge base is extracted from Reflexion training trajectories on a separate set of training tasks with no overlap with either evaluation split.
+We partition the WebShop environment~\citep{yao2022webshop} into a development split (200 tasks) and a held-out test split (200 tasks). The knowledge base is extracted from Reflexion training trajectories on a separate set of training tasks with no overlap with either evaluation split, yielding approximately 677 issue--learning entries.
 
 \subsection{Framework Variants}
 
@@ -106,3 +106,51 @@ The mean total steps per task across all trials. For single-trial methods, this 
 
 \paragraph{Gain from ReAct.}
 The percentage-point difference between a variant's accuracy and the ReAct baseline accuracy on the same split.
+
+\subsection{Hyperparameters}
+\label{app:hyperparameters}
+
+Table~\ref{tab:hyperparameters} lists all hyperparameters used across experiments.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lr p{2.7cm}}
+\toprule
+\textbf{Parameter} & \textbf{Value} & \textbf{Description} \\
+\midrule
+\multicolumn{3}{l}{\emph{Context Retrieval}} \\
+$p$ & $[5, 25]$ & Tunable cap on retrieved learnings \\
+$\alpha$ & 1.5 & Dynamic context sizing factor \\
+$k_{\text{CR}}$ & 5 & Neighbor tasks retrieved \\
+\midrule
+\multicolumn{3}{l}{\emph{Tool Retrieval}} \\
+$k_{\text{TR}}$ & 3 & Results returned per query \\
+Dense weight & 0.7 & Cosine similarity fusion weight \\
+Sparse weight & 0.3 & BM25 fusion weight \\
+Candidate pool & $100{+}100$ & Top-100 from each strategy \\
+\midrule
+\multicolumn{3}{l}{\emph{Validation Weights}} \\
+$\omega_{\text{next}}$ & 1.0 & \textsc{Valid\_}\newline\textsc{Next\_Trial} \\
+$\omega_{\text{same}}$ & 0.9 & \textsc{Valid\_}\newline\textsc{Same\_Trial} \\
+$\omega_{\text{cand}}$ & 0.6 & \textsc{Candidate} \\
+\midrule
+\multicolumn{3}{l}{\emph{Agent Configuration}} \\
+Max steps/task & 49 & Episode length limit \\
+Temperature & 0.0 & Deterministic decoding \\
+Max output tokens & 2{,}048 & LLM generation limit \\
+Max Reflexion trials & 7 & Retry budget \\
+\bottomrule
+\end{tabular}
+\caption{Hyperparameters used across all experiments.}
+\label{tab:hyperparameters}
+\end{table}
+
+\subsection{Implementation Details}
+\label{app:implementation-details}
+
+All agent reasoning uses Gemini 2.5 Flash routed through the OpenRouter API. We use greedy decoding (temperature 0.0) with a maximum output length of 2{,}048 tokens. API calls employ exponential backoff (2\,s--30\,s) with up to 8 retry attempts.
+
+Retrieval embeddings use \texttt{gemini-embedding-001} via the Google GenAI SDK directly, with a batch size of 100 texts per API call. Embeddings are cached to disk alongside the knowledge base file; the cache includes a hash of the source file and the embedding model name for automatic invalidation on changes.
+
+Each task trial is limited to 49 thought--action--observation steps across all agent variants. For Reflexion, this limit applies per trial, with up to 7 trials per task.

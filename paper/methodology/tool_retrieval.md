@@ -13,7 +13,7 @@ When the agent invokes the help tool with an `issue` description (e.g., "cannot 
 The system employs a two-stage retrieval process to capture both semantic meaning and exact keyword matches.
 
 #### A. Dense Retrieval (Semantic)
-*   **Embedding**: The cleaned query is embedded into a high-dimensional vector $v_q$ using Google's `text-embedding-004` model.
+*   **Embedding**: The cleaned query is embedded into a high-dimensional vector $v_q$ using Google's `gemini-embedding-001` model.
 *   **Similarity**: We compute the **Cosine Similarity** between $v_q$ and the pre-computed embeddings of all `issue_text` fields in the Knowledge Base. This captures the semantic intent of the problem.
 
 #### B. Sparse Retrieval (Lexical)

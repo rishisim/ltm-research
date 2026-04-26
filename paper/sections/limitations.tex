@@ -1,6 +1,8 @@
 \section{Limitations}
 \label{sec:limitations}
 
-\paragraph{Single base LLM.} All experiments use Gemini 2.5 Flash. Different LLMs may exhibit different sensitivities to retrieved context; the interaction between memory augmentation and base model capability remains open.
+% \paragraph{Single base LLM.} All experiments use Gemini 2.5 Flash. Different LLMs may exhibit different sensitivities to retrieved context; the interaction between memory augmentation and base model capability remains open.
 
-\paragraph{Two environments.} Our framework is derived from two environments. Validation on additional domains (e.g., ScienceWorld~\citep{wang2022scienceworld}, Minecraft~\citep{fan2022minedojo}, MiniWoB++~\citep{liu2018reinforcement}) would strengthen confidence in its generality.
+% \paragraph{Two environments.} Our framework is derived from two environments. Validation on additional domains (e.g., ScienceWorld~\citep{wang2022scienceworld}, Minecraft~\citep{fan2022minedojo}, MiniWoB++~\citep{liu2018reinforcement}) would strengthen confidence in its generality.
+
+We evaluate only one base LLM and two environments. All memory variants use single-trajectory evaluation, and we do not include repeated-run confidence estimates. These constraints limit how far the proposed diagnostic framework can be generalized: the three environment properties (task compositionality, action space regularity, and learning transfer radius) are derived from and validated on only two data points, so they should be treated as preliminary hypotheses rather than established predictors. Future work should test additional models, domains, and multi-run evaluation protocols to assess whether these properties hold as reliable indicators of memory benefit more broadly.

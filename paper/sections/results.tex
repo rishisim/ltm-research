@@ -26,6 +26,13 @@ Replacing relevant retrievals with maximally irrelevant ones degrades performanc
 \subsection{WebShop: Memory Hurts}
 \label{sec:results-webshop}
 
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.85\linewidth]{figures/accuracy_vs_cost.pdf}
+\caption{Accuracy vs.\ computational cost (steps/task) on held-out splits. CR+TR achieves near-Reflexion accuracy on ALFWorld at ${\sim}$1/3 the cost. On WebShop, memory degrades accuracy without reducing cost.}
+\label{fig:accuracy-cost}
+\end{figure}
+
 \input{tables/webshop_dev}
 \input{tables/webshop_test}
 
@@ -58,17 +65,10 @@ All findings replicate on held-out test splits (Table~\ref{tab:webshop-test}), c
 \label{fig:gain-baseline}
 \end{figure*}
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.85\linewidth]{figures/accuracy_vs_cost.pdf}
-\caption{Accuracy vs.\ computational cost (steps/task) on held-out splits. CR+TR achieves near-Reflexion accuracy on ALFWorld at ${\sim}$1/3 the cost. On WebShop, memory degrades accuracy without reducing cost.}
-\label{fig:accuracy-cost}
-\end{figure}
-
 The same memory system, base LLM, and knowledge base pipeline produce a ${\sim}47$pp swing in effect size: CR+TR yields $+19.4$pp on ALFWorld unseen versus $-27.5$pp on WebShop test. This divergence is consistent across both split pairings (46.9pp gap in each), confirming it is attributable to environment properties rather than evaluation-set idiosyncrasies.
 
-Figure~\ref{fig:accuracy-comparison} visualizes this divergence directly: on ALFWorld, all memory variants (CR, TR, CR+TR) exceed the ReAct baseline (dashed line), with CR+TR approaching Reflexion's accuracy. On WebShop, the pattern inverts---every memory variant falls below the baseline, while Reflexion remains the sole method that improves over ReAct. The mirrored structure across paired splits (seen/dev and unseen/test) confirms that the effect is systematic rather than split-specific.
+Figure~\ref{fig:accuracy-comparison} visualizes this divergence directly: on ALFWorld, all memory variants (CR, TR, CR+TR) exceed the ReAct baseline (dashed line), with CR+TR approaching Reflexion's accuracy. On WebShop, the pattern inverts: every memory variant falls below the baseline, while Reflexion remains the sole method that improves over ReAct. The mirrored structure across paired splits (seen/dev and unseen/test) confirms that the effect is systematic rather than split-specific.
 
 Figure~\ref{fig:gain-baseline} quantifies these effects as gain from the ReAct baseline across all four evaluation splits. The contrast is stark: ALFWorld variants cluster in the positive region (green/blue), while WebShop variants cluster in the negative region (orange/red). Notably, the hard-negative control on WebShop ($-12.5$/$-15.0$pp) sits \emph{above} the properly configured retrieval variants ($-30.5$/$-27.5$pp), visually highlighting the paradox that relevant retrieval causes more harm than irrelevant retrieval in low-transfer environments.
 
-The hard-negative controls reveal an asymmetry: on ALFWorld, inverting retrieval degrades accuracy by 22--37pp relative to correct CR+TR; on WebShop, the hard-negative \emph{outperforms} correct retrieval by 12--18pp. Reflexion succeeds in both environments ($+21$pp ALFWorld, $+10$pp WebShop) because intra-task self-correction does not depend on cross-task transfer, but at 3--4$\times$ the step cost. These results suggest that episodic memory should not be applied indiscriminately; we formalize diagnostic criteria in Section~\ref{sec:analysis}.
+The hard-negative controls reveal an asymmetry: on ALFWorld, inverting retrieval degrades accuracy by 22--37pp relative to correct CR+TR; on WebShop, the hard-negative \emph{outperforms} correct retrieval by 12--18pp. Reflexion succeeds in both environments ($+21$pp ALFWorld, $+10$pp WebShop) because intra-task self-correction does not depend on cross-task transfer, but at 3--4$\times$ the step cost.
