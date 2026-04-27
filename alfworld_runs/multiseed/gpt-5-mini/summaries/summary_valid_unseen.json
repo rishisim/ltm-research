@@ -1,0 +1,17 @@
+{
+  "split": "valid_unseen",
+  "rows": [
+    {
+      "split": "valid_unseen",
+      "framework_id": "react",
+      "framework": "ReAct",
+      "success_total": "60 / 134",
+      "accuracy": 0.44776119402985076,
+      "avg_steps_per_trial": 29.425373134328357,
+      "avg_steps_per_task": 29.425373134328357,
+      "attempt_count": 134,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/alfworld_runs/multiseed/gpt-5-mini/unseen/react/seed_0",
+      "gain_from_base_react": 0.0
+    }
+  ]
+}

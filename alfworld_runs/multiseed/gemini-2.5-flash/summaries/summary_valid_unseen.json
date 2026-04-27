@@ -1,0 +1,17 @@
+{
+  "split": "valid_unseen",
+  "rows": [
+    {
+      "split": "valid_unseen",
+      "framework_id": "react_hard_neg_cr_tr",
+      "framework": "react + hard_neg CR + TR",
+      "success_total": "66 / 134",
+      "accuracy": 0.4925373134328358,
+      "avg_steps_per_trial": 31.71641791044776,
+      "avg_steps_per_task": 31.71641791044776,
+      "attempt_count": 134,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/alfworld_runs/multiseed/gemini-2.5-flash/unseen/react_hard_neg_cr_tr/seed_1",
+      "gain_from_base_react": 0.4925373134328358
+    }
+  ]
+}

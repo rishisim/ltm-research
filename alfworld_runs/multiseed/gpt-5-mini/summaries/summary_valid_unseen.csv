@@ -1,0 +1,2 @@
+framework,success_total,accuracy,avg_steps_per_trial,avg_steps_per_task,gain_from_base_react
+ReAct,60 / 134,0.4478,29.4254,29.4254,0.0000

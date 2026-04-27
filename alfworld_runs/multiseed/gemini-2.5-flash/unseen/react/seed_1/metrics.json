@@ -1,0 +1,15 @@
+{
+  "framework_id": "react",
+  "framework": "ReAct",
+  "split": "valid_unseen",
+  "num_tasks": 134,
+  "metrics": {
+    "success": 92,
+    "total": 134,
+    "success_total": "92 / 134",
+    "accuracy": 0.6865671641791045,
+    "avg_steps_per_trial": 22.097014925373134,
+    "avg_steps_per_task": 22.097014925373134,
+    "attempt_count": 134
+  }
+}

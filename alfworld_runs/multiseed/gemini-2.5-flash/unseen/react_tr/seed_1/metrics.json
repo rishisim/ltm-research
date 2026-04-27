@@ -1,0 +1,15 @@
+{
+  "framework_id": "react_tr",
+  "framework": "ReAct + Tool Retrieval (TR)",
+  "split": "valid_unseen",
+  "num_tasks": 134,
+  "metrics": {
+    "success": 87,
+    "total": 134,
+    "success_total": "87 / 134",
+    "accuracy": 0.6492537313432836,
+    "avg_steps_per_trial": 23.313432835820894,
+    "avg_steps_per_task": 23.313432835820894,
+    "attempt_count": 134
+  }
+}
