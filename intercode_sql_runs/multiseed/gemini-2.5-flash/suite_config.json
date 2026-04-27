@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-04-27T01:23:47.014146",
+  "num_tasks": 200,
+  "splits": [
+    "test"
+  ],
+  "frameworks": [
+    "react_hard_neg_cr_tr"
+  ],
+  "max_trials": 7,
+  "model": "gemini-2.5-flash",
+  "embedding_provider": "gemini",
+  "memory_bank": "/Users/rishisim/Documents/research/ltm-research/intercode_sql_runs/memory_agent_runs/train/react_reflexion/knowledge_base.json",
+  "data_path": "data/intercode_sql/ic_spider_dev.json",
+  "reward_threshold": 1.0,
+  "seed": 0
+}

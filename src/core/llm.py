@@ -38,6 +38,7 @@ Model = Literal[
     "gpt-5-nano",
     "gpt-5-mini",
     "gpt-5.4-nano",
+    "gpt-5.4-mini",
     "claude-haiku-4-5",
     "claude-3-5-haiku",
 ]
@@ -61,6 +62,7 @@ OPENROUTER_MODEL_MAP = {
     "gpt-5-nano": "openai/gpt-5-nano",
     "gpt-5-mini": "openai/gpt-5-mini",
     "gpt-5.4-nano": "openai/gpt-5.4-nano",
+    "gpt-5.4-mini": "openai/gpt-5.4-mini",
     "claude-haiku-4-5": "anthropic/claude-haiku-4.5",
     "claude-3-5-haiku": "anthropic/claude-3.5-haiku",
 }
@@ -166,11 +168,14 @@ def get_chat(
             body["stop"] = stop_strs
 
         # OpenRouter's `reasoning` extension is supported by Gemini and GPT-5
-        # reasoning models. For GPT-5 (incl. nano), we default to minimal
-        # effort because the agent loop calls _llm at every ReAct step and
-        # wasting output tokens on internal reasoning per step is expensive
-        # (verified: ~64 reasoning tokens for a trivial query at default
-        # effort, 0 at minimal). Callers can still override.
+        # reasoning models. For GPT-5* we default to "minimal" effort.
+        # We tried "low" (per the OpenAI docs' general guidance for tool-use
+        # workflows), but in our specific setup with long stable system
+        # prompts (~3k tokens of memory context + help instructions),
+        # gpt-5.4-mini at "low" effort threw uncaught exceptions inside
+        # agent.run() for ~60% of CR+TR tasks (silent trajectory gap).
+        # gpt-5-mini and gpt-5.4-mini at "minimal" effort run all tasks to
+        # completion with full trajectories. Callers can override.
         if reasoning is None and model.startswith("gpt-5"):
             reasoning = {"effort": "minimal"}
         if reasoning is not None and (

@@ -1,0 +1,2 @@
+split,framework,success_total,accuracy,avg_reward,avg_steps_per_trial,avg_steps_per_task,gain_from_base_react
+test,ReAct,117 / 200,0.5850,0.6171,8.3500,8.3500,0.0000

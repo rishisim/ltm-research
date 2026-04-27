@@ -1,0 +1,18 @@
+{
+  "split": "test",
+  "rows": [
+    {
+      "split": "test",
+      "framework_id": "react",
+      "framework": "ReAct",
+      "success_total": "25 / 50",
+      "accuracy": 0.5,
+      "avg_reward": 0.5610666666666667,
+      "avg_steps_per_trial": 10.38,
+      "avg_steps_per_task": 10.38,
+      "attempt_count": 50,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/intercode_sql_runs/multiseed_canary/gpt-5.4-mini/test/react/seed_0",
+      "gain_from_base_react": 0.0
+    }
+  ]
+}

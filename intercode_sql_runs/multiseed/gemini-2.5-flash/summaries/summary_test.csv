@@ -1,0 +1,2 @@
+framework,success_total,accuracy,avg_reward,avg_steps_per_trial,avg_steps_per_task,gain_from_base_react
+react + CR + TR,154 / 200,0.7700,0.7763,10.3450,10.3450,0.7700
