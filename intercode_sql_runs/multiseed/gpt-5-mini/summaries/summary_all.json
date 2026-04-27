@@ -2,16 +2,16 @@
   "rows": [
     {
       "split": "test",
-      "framework_id": "react",
-      "framework": "ReAct",
-      "success_total": "117 / 200",
-      "accuracy": 0.585,
-      "avg_reward": 0.6170642857142857,
-      "avg_steps_per_trial": 8.35,
-      "avg_steps_per_task": 8.35,
+      "framework_id": "react_cr",
+      "framework": "ReAct + Context Retrieval (CR)",
+      "success_total": "73 / 200",
+      "accuracy": 0.365,
+      "avg_reward": 0.3798166666666667,
+      "avg_steps_per_trial": 8.665,
+      "avg_steps_per_task": 8.665,
       "attempt_count": 200,
-      "run_dir": "/Users/rishisim/Documents/research/ltm-research/intercode_sql_runs/multiseed/gpt-5-mini/test/react/seed_0",
-      "gain_from_base_react": 0.0
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/intercode_sql_runs/multiseed/gpt-5-mini/test/react_cr/seed_1",
+      "gain_from_base_react": 0.365
     }
   ]
 }

@@ -2,4 +2,4 @@
 
 | Framework | Success / Total | Accuracy | Avg Reward | Avg Steps Per Trial | Avg Steps per Task | Gain from Base ReAct |
 |---|---:|---:|---:|---:|---:|---:|
-| ReAct | 117 / 200 | 0.5850 | 0.6171 | 8.3500 | 8.3500 | +0.0000 |
+| ReAct + Context Retrieval (CR) | 73 / 200 | 0.3650 | 0.3798 | 8.6650 | 8.6650 | +0.3650 |

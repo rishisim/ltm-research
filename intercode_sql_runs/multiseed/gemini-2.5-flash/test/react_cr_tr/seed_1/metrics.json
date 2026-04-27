@@ -1,0 +1,16 @@
+{
+  "framework_id": "react_cr_tr",
+  "framework": "react + CR + TR",
+  "split": "test",
+  "num_tasks": 200,
+  "metrics": {
+    "success": 157,
+    "total": 200,
+    "success_total": "157 / 200",
+    "accuracy": 0.785,
+    "avg_reward": 0.7949916666666667,
+    "avg_steps_per_trial": 10.35,
+    "avg_steps_per_task": 10.35,
+    "attempt_count": 200
+  }
+}

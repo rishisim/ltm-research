@@ -2,4 +2,4 @@
 
 | Framework | Success / Total | Accuracy | Avg Reward | Avg Steps Per Trial | Avg Steps per Task | Gain from Base ReAct |
 |---|---:|---:|---:|---:|---:|---:|
-| react + CR + TR | 154 / 200 | 0.7700 | 0.7763 | 10.3450 | 10.3450 | +0.7700 |
+| react + hard_neg CR + TR | 158 / 200 | 0.7900 | 0.7946 | 10.6100 | 10.6100 | +0.7900 |

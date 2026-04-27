@@ -2,15 +2,15 @@
   "rows": [
     {
       "split": "valid_unseen",
-      "framework_id": "react",
-      "framework": "ReAct",
-      "success_total": "60 / 134",
-      "accuracy": 0.44776119402985076,
-      "avg_steps_per_trial": 29.425373134328357,
-      "avg_steps_per_task": 29.425373134328357,
+      "framework_id": "react_tr",
+      "framework": "ReAct + Tool Retrieval (TR)",
+      "success_total": "55 / 134",
+      "accuracy": 0.41044776119402987,
+      "avg_steps_per_trial": 26.119402985074625,
+      "avg_steps_per_task": 26.119402985074625,
       "attempt_count": 134,
-      "run_dir": "/Users/rishisim/Documents/research/ltm-research/alfworld_runs/multiseed/gpt-5-mini/unseen/react/seed_0",
-      "gain_from_base_react": 0.0
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/alfworld_runs/multiseed/gpt-5-mini/unseen/react_tr/seed_1",
+      "gain_from_base_react": 0.41044776119402987
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "framework_id": "react_cr",
+  "framework": "ReAct + Context Retrieval (CR)",
+  "split": "valid_unseen",
+  "num_tasks": 134,
+  "metrics": {
+    "success": 62,
+    "total": 134,
+    "success_total": "62 / 134",
+    "accuracy": 0.4626865671641791,
+    "avg_steps_per_trial": 20.37313432835821,
+    "avg_steps_per_task": 20.37313432835821,
+    "attempt_count": 134
+  }
+}

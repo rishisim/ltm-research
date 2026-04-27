@@ -16,10 +16,14 @@ Setup:
 """
 
 import csv
+import logging
+import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 from src.core.base import BaseEnv
+
+logger = logging.getLogger(__name__)
 
 
 # Module-level preprocess function with required annotations for InterCode.
@@ -115,9 +119,19 @@ class InterCodeSQLEnv(BaseEnv):
         InterCodeSQLEnv._shared_env = self.env
         InterCodeSQLEnv._shared_env_data_path = self.data_path
 
+    # Maximum retry attempts and base backoff (seconds) for the preprocess race.
+    _RESET_MAX_RETRIES: int = 5
+    _RESET_BACKOFF_BASE: float = 1.0
+
     def reset(self) -> Tuple[str, Dict[str, Any]]:
         """
         Reset the environment to the task at self.task_index.
+
+        Wraps the underlying env.reset() with exponential-backoff retries to
+        absorb the transient ``USE <db>`` race that fires when multiple SQL
+        processes share a single Docker MySQL container.  The underlying error
+        is a plain RuntimeError whose message starts with
+        "Preprocess command failed to execute successfully".
 
         Returns:
             observation: The natural-language question the agent must answer
@@ -126,7 +140,27 @@ class InterCodeSQLEnv(BaseEnv):
         """
         global _last_db_name
 
-        self.env.reset(self.task_index)
+        last_exc: Optional[RuntimeError] = None
+        for attempt in range(self._RESET_MAX_RETRIES):
+            try:
+                self.env.reset(self.task_index)
+                break  # success
+            except RuntimeError as exc:
+                if "Preprocess command failed" not in str(exc):
+                    raise  # unrelated error — don't swallow
+                last_exc = exc
+                wait = self._RESET_BACKOFF_BASE * (2 ** attempt)
+                logger.warning(
+                    "[InterCodeSQLEnv] Retrying preprocess (attempt %d/%d, "
+                    "task_index=%d, backoff=%.1fs): %s",
+                    attempt + 1, self._RESET_MAX_RETRIES,
+                    self.task_index, wait, exc,
+                )
+                time.sleep(wait)
+        else:
+            # All retries exhausted — re-raise so the runner records FAIL.
+            raise last_exc  # type: ignore[misc]
+
         self._task_query = self.env.query if hasattr(self.env, "query") else ""
         self._db_name = _last_db_name
 

@@ -2,16 +2,16 @@
   "rows": [
     {
       "split": "test",
-      "framework_id": "react_cr_tr",
-      "framework": "react + CR + TR",
-      "success_total": "154 / 200",
-      "accuracy": 0.77,
-      "avg_reward": 0.776325,
-      "avg_steps_per_trial": 10.345,
-      "avg_steps_per_task": 10.345,
+      "framework_id": "react_hard_neg_cr_tr",
+      "framework": "react + hard_neg CR + TR",
+      "success_total": "158 / 200",
+      "accuracy": 0.79,
+      "avg_reward": 0.7946,
+      "avg_steps_per_trial": 10.61,
+      "avg_steps_per_task": 10.61,
       "attempt_count": 200,
-      "run_dir": "/Users/rishisim/Documents/research/ltm-research/intercode_sql_runs/multiseed/gemini-2.5-flash/test/react_cr_tr/seed_0",
-      "gain_from_base_react": 0.77
+      "run_dir": "/Users/rishisim/Documents/research/ltm-research/intercode_sql_runs/multiseed/gemini-2.5-flash/test/react_hard_neg_cr_tr/seed_1",
+      "gain_from_base_react": 0.79
     }
   ]
 }

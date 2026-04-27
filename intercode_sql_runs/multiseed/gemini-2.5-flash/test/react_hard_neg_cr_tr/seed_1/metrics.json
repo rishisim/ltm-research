@@ -1,0 +1,16 @@
+{
+  "framework_id": "react_hard_neg_cr_tr",
+  "framework": "react + hard_neg CR + TR",
+  "split": "test",
+  "num_tasks": 200,
+  "metrics": {
+    "success": 158,
+    "total": 200,
+    "success_total": "158 / 200",
+    "accuracy": 0.79,
+    "avg_reward": 0.7946,
+    "avg_steps_per_trial": 10.61,
+    "avg_steps_per_task": 10.61,
+    "attempt_count": 200
+  }
+}
