@@ -39,20 +39,75 @@ load_dotenv(env_path, override=True)
 _EMBEDDING_PROVIDER = os.environ.get("LTM_EMBEDDING_PROVIDER", "gemini").lower()
 
 # Gemini client — only instantiated when needed (lazy import of google.genai)
+# Falls back to google.generativeai (older SDK, pydantic 1.x compat) when the
+# newer google-genai package is not installed (e.g., inside the WebShop amd64
+# Docker container which is pinned to spacy 3.3 / pydantic 1.8).
 _genai_client: Optional[Any] = None
+
+
+class _OldSDKClientWrapper:
+    """Adapter that lets google.generativeai (old SDK) speak the new SDK's
+    .models.embed_content() shape used throughout this module.
+
+    The new SDK returns: response.embeddings = [Emb(values=[...]), ...]
+    The old SDK returns: {"embedding": [...]} for single, or {"embedding": [[...], ...]} for batch.
+    This wrapper normalizes both into the new-SDK shape.
+    """
+
+    class _Models:
+        def embed_content(self, model: str, contents):
+            import google.generativeai as _old_sdk  # type: ignore
+            # Old SDK requires a "models/" prefix and returns a different schema.
+            old_model = model if model.startswith("models/") else f"models/{model}"
+            class _Emb:  # noqa: D401
+                pass
+            class _Resp:  # noqa: D401
+                pass
+            resp = _Resp()
+            if isinstance(contents, list):
+                # Old SDK accepts a list and returns {"embedding": [[...], [...]]}
+                r = _old_sdk.embed_content(model=old_model, content=contents)
+                resp.embeddings = []
+                for vec in r["embedding"]:
+                    e = _Emb()
+                    e.values = vec
+                    resp.embeddings.append(e)
+            else:
+                r = _old_sdk.embed_content(model=old_model, content=contents)
+                e = _Emb()
+                e.values = r["embedding"]
+                resp.embeddings = [e]
+            return resp
+
+    def __init__(self):
+        self.models = self._Models()
+
 
 def _get_genai_client() -> Any:
     global _genai_client
     if _genai_client is None:
+        # Prefer the newer google-genai SDK (production default on the host).
         try:
             from google import genai as _genai_mod  # type: ignore
+            _genai_client = _genai_mod.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+            return _genai_client
+        except ImportError:
+            pass
+        # Fall back to google.generativeai (old SDK, pydantic-1 compatible).
+        try:
+            import google.generativeai as _old_sdk  # type: ignore
+            _old_sdk.configure(api_key=os.environ.get("GEMINI_API_KEY"))
+            _genai_client = _OldSDKClientWrapper()
+            return _genai_client
         except ImportError as exc:
             raise ImportError(
-                "google-genai is not installed.  Install it with: pip install google-genai\n"
-                "If you are running inside the WebShop container, set "
-                "LTM_EMBEDDING_PROVIDER=openai instead."
+                "Neither google-genai nor google-generativeai is installed.\n"
+                "Install one of them: pip install google-genai (preferred), or\n"
+                "pip install google-generativeai (older SDK, pydantic-1 compatible).\n"
+                "If running inside the WebShop container with neither, set\n"
+                "LTM_EMBEDDING_PROVIDER=openai instead (note: this changes the\n"
+                "embedding model and will mismatch a Gemini-embedded KB)."
             ) from exc
-        _genai_client = _genai_mod.Client(api_key=os.environ.get("GEMINI_API_KEY"))
     return _genai_client
 
 # OpenAI client — only instantiated when needed

@@ -7,14 +7,13 @@ Mirrors the ALFWorld experiment structure in `alfworld_runs/memory_retrieval_v2/
 
 ```
 memory_retrieval_v2/
-├── knowledge_base/                 # Knowledge base from train split trajectories
-│   ├── knowledge_base.json         # Raw knowledge base entries
-│   ├── knowledge_base.csv          # CSV export of KB
-│   └── *.embeddings_cache.json     # Cached embeddings
-│
-├── memory_agent_runs/              # Evaluation run outputs
+├── memory_agent_runs/
 │   ├── manifests/                  # Task manifests
 │   ├── summaries/                  # Per-split and combined results
+│   ├── react_reflexion_train/
+│   │   ├── knowledge_base.json     # Raw knowledge base entries
+│   │   ├── knowledge_base.csv      # CSV export of KB
+│   │   └── *.embeddings_cache.json # Cached embeddings
 │   └── {framework}_{split}/        # Per-framework, per-split runs
 │
 ├── misc/                           # Archives and miscellaneous
