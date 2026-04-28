@@ -198,10 +198,52 @@ def make_env(config_template: Dict[str, Any], task_dir: Path) -> Any:
     return AlfworldEnv(config, split="eval_out_of_distribution")
 
 
-def ensure_clean_dir(path: Path) -> None:
+def ensure_clean_dir(path: Path, resume: bool = False) -> None:
+    if resume:
+        path.mkdir(parents=True, exist_ok=True)
+        return
     if path.exists():
         shutil.rmtree(path)
     path.mkdir(parents=True, exist_ok=True)
+
+
+def load_completed_react_task_ids(run_dir: Path) -> set:
+    """Read trajectories.json (react baseline) to find task_ids already completed."""
+    completed = set()
+    traj_path = run_dir / "trajectories.json"
+    if not traj_path.exists():
+        return completed
+    try:
+        with open(traj_path, "r") as f:
+            trajectories = json.load(f)
+        for entry in trajectories:
+            tid = entry.get("task_id")
+            if tid:
+                completed.add(tid)
+    except (json.JSONDecodeError, ValueError):
+        pass
+    return completed
+
+
+def load_completed_memory_task_ids(run_dir: Path) -> set:
+    """Read agent_trajectories.jsonl to find task_ids already completed (memory variants)."""
+    completed = set()
+    traj_jsonl = run_dir / "agent_trajectories.jsonl"
+    if not traj_jsonl.exists():
+        return completed
+    with open(traj_jsonl, "r") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                entry = json.loads(line)
+                tid = entry.get("task_id")
+                if tid:
+                    completed.add(tid)
+            except json.JSONDecodeError:
+                pass
+    return completed
 
 
 def compute_metrics(
@@ -254,6 +296,7 @@ def run_react_baseline(
     config_template: Dict[str, Any],
     prompts: Dict[str, str],
     quiet: bool,
+    resume: bool = False,
 ) -> Dict[str, Any]:
     from src.frameworks.react import ReAct
 
@@ -262,10 +305,34 @@ def run_react_baseline(
     trajectories: List[Dict[str, Any]] = []
     world_log = run_dir / "world.log"
 
-    with open(world_log, "w") as wf:
+    # Resume: load existing trajectories and skip completed task_ids.
+    completed_ids: set = set()
+    if resume:
+        completed_ids = load_completed_react_task_ids(run_dir)
+        if completed_ids:
+            print(f"  Resuming: skipping {len(completed_ids)} already-completed tasks")
+            # Seed attempts and trajectories from existing file so metrics cover
+            # old + new results after the run.
+            traj_path = run_dir / "trajectories.json"
+            if traj_path.exists():
+                with open(traj_path, "r") as f:
+                    trajectories = json.load(f)
+                for t in trajectories:
+                    attempts.append({
+                        "task_id": t["task_id"],
+                        "trial_num": 1,
+                        "step_num": t.get("step_num", 0),
+                        "success": t["success"],
+                    })
+
+    log_mode = "a" if resume else "w"
+    with open(world_log, log_mode) as wf:
         wf.write("ReAct baseline run\n")
 
     for i, task in enumerate(task_infos):
+        if task.task_id in completed_ids:
+            continue
+
         success = False
         step_num = 0
         history_items: List[Dict[str, str]] = []
@@ -316,6 +383,7 @@ def run_react_baseline(
         with open(world_log, "a") as wf:
             wf.write(f"Task #{i}: {task.task_id} - {'SUCCESS' if success else 'FAIL'}\n")
 
+    # Write back the full (old + new) trajectories array atomically.
     with open(run_dir / "trajectories.json", "w") as f:
         json.dump(trajectories, f, indent=2)
 
@@ -334,6 +402,7 @@ def run_memory_agent_variant(
     quiet: bool,
     max_learnings: int = 25,
     min_valid_level: str = "",
+    resume: bool = False,
 ) -> Dict[str, Any]:
     from src.frameworks.memory_retrieval_v2.agents.memory_agent import MemoryAgent
     from src.frameworks.memory_retrieval_v2.agents.hard_neg_memory_agent import HardNegMemoryAgent
@@ -364,15 +433,49 @@ def run_memory_agent_variant(
     else:
         raise ValueError(f"Unsupported memory variant: {framework_id}")
 
-    attempts: List[Dict[str, Any]] = []
     world_log = run_dir / "world.log"
 
-    with open(world_log, "w") as wf:
+    # Resume: detect already-completed task_ids from agent_trajectories.jsonl.
+    # Seed attempts from the existing file so summary metrics cover old + new.
+    # Deduplicate by task_id (take first occurrence) to guard against duplicate
+    # lines that can appear if a prior run crashed mid-append.
+    completed_ids: set = set()
+    attempts: List[Dict[str, Any]] = []
+    if resume:
+        completed_ids = load_completed_memory_task_ids(run_dir)
+        if completed_ids:
+            print(f"  Resuming: skipping {len(completed_ids)} already-completed tasks")
+            traj_jsonl = run_dir / "agent_trajectories.jsonl"
+            seen_ids: set = set()
+            with open(traj_jsonl, "r") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        entry = json.loads(line)
+                        tid = entry.get("task_id")
+                        if tid and tid not in seen_ids:
+                            seen_ids.add(tid)
+                            attempts.append({
+                                "task_id": tid,
+                                "trial_num": 1,
+                                "step_num": entry.get("step_num", 0),
+                                "success": bool(entry.get("success", False)),
+                            })
+                    except json.JSONDecodeError:
+                        pass
+
+    log_mode = "a" if resume else "w"
+    with open(world_log, log_mode) as wf:
         wf.write(f"{framework_id} run\n")
         wf.write(f"memory_bank={memory_bank_path}\n")
         wf.write(f"hard_negative={use_hard_neg}\n")
 
     for i, task in enumerate(task_infos):
+        if task.task_id in completed_ids:
+            continue
+
         success = False
         step_num = 0
         env = make_env(config_template, task.task_dir)
@@ -667,6 +770,7 @@ def run_framework(
     prompts: Dict[str, str],
     memory_bank_path: Path,
     quiet: bool,
+    resume: bool = False,
 ) -> Dict[str, Any]:
     if framework_id == "react":
         return run_react_baseline(
@@ -676,8 +780,10 @@ def run_framework(
             config_template=config_template,
             prompts=prompts,
             quiet=quiet,
+            resume=resume,
         )
     if framework_id == "react_reflexion":
+        # Reflexion resume is not yet implemented; run fresh (reflexion isn't gappy).
         return run_reflexion(
             task_infos=task_infos,
             run_dir=run_dir,
@@ -697,6 +803,7 @@ def run_framework(
             prompts=prompts,
             memory_bank_path=memory_bank_path,
             quiet=quiet,
+            resume=resume,
         )
     raise ValueError(f"Unknown framework id: {framework_id}")
 
@@ -776,6 +883,16 @@ def main() -> None:
         "--quiet",
         action="store_true",
         help="Reduce per-step framework print output",
+    )
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help=(
+            "Resume a previously interrupted run. Skips already-completed tasks "
+            "detected from existing trajectory files; appends to world.log rather "
+            "than wiping it. Supported for: react, react_cr, react_tr, react_cr_tr, "
+            "react_hard_neg_cr_tr. Not supported for react_reflexion (runs fresh)."
+        ),
     )
     parser.add_argument(
         "--seed",
@@ -908,7 +1025,7 @@ def main() -> None:
 
         for framework_id in selected_frameworks:
             run_dir = runs_root / split_alias / framework_id / seed_tag
-            ensure_clean_dir(run_dir)
+            ensure_clean_dir(run_dir, resume=args.resume)
 
             print(
                 f"Running split={split} framework={framework_id} seed={args.seed} "
@@ -924,6 +1041,7 @@ def main() -> None:
                 prompts=prompts,
                 memory_bank_path=memory_bank_path,
                 quiet=args.quiet,
+                resume=args.resume,
             )
 
             row = {

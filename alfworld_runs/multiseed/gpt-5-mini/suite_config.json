@@ -1,11 +1,11 @@
 {
-  "created_at": "2026-04-27T12:46:05.475148",
+  "created_at": "2026-04-27T18:16:56.260497",
   "num_tasks": 134,
   "splits": [
     "valid_unseen"
   ],
   "frameworks": [
-    "react_hard_neg_cr_tr"
+    "react"
   ],
   "max_trials": 7,
   "model": "gpt-5-mini",

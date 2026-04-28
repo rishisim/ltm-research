@@ -1,2 +1,2 @@
 framework,success_total,accuracy,avg_steps_per_trial,avg_steps_per_task,gain_from_base_react
-ReAct + Tool Retrieval (TR),55 / 134,0.4104,26.1194,26.1194,0.4104
+ReAct,58 / 134,0.4328,28.7985,28.7985,0.0000

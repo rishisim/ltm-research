@@ -337,8 +337,9 @@ def run_react_baseline(
             history_items = history.to_json()
             step_num = count_action_steps(history_items)
         except Exception as e:
-            if not quiet:
-                print(f"[react] Task failed with error ({task.task_id_str}): {e}")
+            # Always log to stderr so silent-exception paths are visible even
+            # under --quiet. Diagnostic for the trajectory-gap issue.
+            print(f"[react] Task failed with error ({task.task_id_str}): {type(e).__name__}: {e}", file=sys.stderr, flush=True)
             success = False
             reward = 0.0
             step_num = 0
@@ -386,6 +387,27 @@ def run_react_baseline(
     return metrics
 
 
+def load_completed_memory_task_ids(run_dir: Path) -> set:
+    """Read agent_trajectories.jsonl to find task_ids already completed (for memory variant resume)."""
+    completed = set()
+    traj_jsonl = run_dir / "agent_trajectories.jsonl"
+    if not traj_jsonl.exists():
+        return completed
+    with open(traj_jsonl, "r") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                entry = json.loads(line)
+                tid = entry.get("task_id")
+                if tid:
+                    completed.add(tid)
+            except json.JSONDecodeError:
+                pass
+    return completed
+
+
 def run_memory_agent_variant(
     framework_id: str,
     task_infos: Sequence[TaskInfo],
@@ -398,6 +420,7 @@ def run_memory_agent_variant(
     quiet: bool,
     max_learnings: int = 25,
     min_valid_level: str = "",
+    resume: bool = False,
 ) -> Dict[str, Any]:
     from src.frameworks.memory_retrieval_v2.agents.memory_agent import MemoryAgent
     from src.frameworks.memory_retrieval_v2.agents.hard_neg_memory_agent import HardNegMemoryAgent
@@ -441,14 +464,52 @@ def run_memory_agent_variant(
     )
     base_prompt = sql_instructions + base_prompt_examples
 
-    attempts: List[Dict[str, Any]] = []
     world_log = run_dir / "world.log"
 
-    with open(world_log, "w") as wf:
+    # Resume: detect already-completed task_ids from agent_trajectories.jsonl.
+    # Build attempts from the existing file so summary metrics include old results.
+    completed_ids: set = set()
+    attempts: List[Dict[str, Any]] = []
+    if resume:
+        completed_ids = load_completed_memory_task_ids(run_dir)
+        if completed_ids:
+            print(f"  Resuming: skipping {len(completed_ids)} already-completed tasks")
+            # Reconstruct attempt stubs from existing trajectories so metrics
+            # computed at the end reflect the full (old + new) result set.
+            # Use seen_ids to deduplicate: take only the first occurrence per
+            # task_id so duplicate lines in the JSONL don't bias metrics.
+            traj_jsonl = run_dir / "agent_trajectories.jsonl"
+            seen_ids: set = set()
+            with open(traj_jsonl, "r") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        entry = json.loads(line)
+                        tid = entry.get("task_id")
+                        if tid and tid not in seen_ids:
+                            seen_ids.add(tid)
+                            attempts.append({
+                                "task_id": tid,
+                                "task_index": entry.get("task_index", 0),
+                                "trial_num": 1,
+                                "step_num": entry.get("step_num", 0),
+                                "success": bool(entry.get("success", False)),
+                                "reward": float(entry.get("reward", 0)),
+                            })
+                    except json.JSONDecodeError:
+                        pass
+
+    log_mode = "a" if resume else "w"
+    with open(world_log, log_mode) as wf:
         wf.write(f"{framework_id} run (InterCode SQL)\n")
         wf.write(f"memory_bank={memory_bank_path}\n")
 
     for i, task in enumerate(task_infos):
+        if task.task_id_str in completed_ids:
+            continue
+
         success = False
         reward = 0.0
         step_num = 0
@@ -475,8 +536,8 @@ def run_memory_agent_variant(
             success = reward >= reward_threshold
             step_num = count_action_steps(history.to_json())
         except Exception as e:
-            if not quiet:
-                print(f"[{framework_id}] Task failed with error ({task.task_id_str}): {e}")
+            # Always log to stderr — see note in run_react_baseline.
+            print(f"[{framework_id}] Task failed with error ({task.task_id_str}): {type(e).__name__}: {e}", file=sys.stderr, flush=True)
             success = False
             reward = 0.0
             step_num = 0
@@ -886,6 +947,7 @@ def run_framework(
             memory_bank_path=memory_bank_path,
             reward_threshold=reward_threshold,
             quiet=quiet,
+            resume=resume,
         )
     raise ValueError(f"Unknown framework id: {framework_id}")
 
@@ -966,7 +1028,14 @@ def main() -> None:
     parser.add_argument(
         "--resume",
         action="store_true",
-        help="Resume from where a previous run left off (skip completed tasks)",
+        help=(
+            "Resume a previously interrupted run. Skips already-completed tasks "
+            "detected from existing trajectory files (agent_trajectories.jsonl for "
+            "memory variants; trajectories.json for react baseline); appends to "
+            "world.log rather than wiping it. Supported for: react, react_cr, "
+            "react_tr, react_cr_tr, react_hard_neg_cr_tr. Reflexion resume is "
+            "also supported via trajectories.jsonl."
+        ),
     )
     parser.add_argument(
         "--seed",

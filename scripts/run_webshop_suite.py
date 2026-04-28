@@ -1333,6 +1333,11 @@ def main() -> None:
     print("All done! Summaries written to:")
     print(f"  {summaries_dir}")
     print(f"{'='*60}")
+    sys.stdout.flush()
+    sys.stderr.flush()
+    # WebShop's full catalog keeps millions of product/goal objects in memory;
+    # normal interpreter teardown can burn minutes after outputs are written.
+    os._exit(0)
 
 
 if __name__ == "__main__":

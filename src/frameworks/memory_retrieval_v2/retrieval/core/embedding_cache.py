@@ -15,7 +15,13 @@ from typing import List, Dict, Any, Optional, Tuple
 from pathlib import Path
 from datetime import datetime
 from dotenv import load_dotenv
-from google import genai
+
+# NOTE: google.genai is NOT imported at module level.  It is imported lazily
+# inside _get_genai_client() so that containers / environments that don't have
+# the google-genai package (e.g. the WebShop amd64 Docker image) can import
+# this module without errors.  The import will only fail if someone actually
+# tries to *use* Gemini embeddings in an environment where google-genai is not
+# installed — which will never happen in WebShop runs.
 
 # Load environment variables
 env_path = Path(__file__).resolve().parent.parent.parent.parent.parent.parent / '.env'
@@ -32,13 +38,21 @@ load_dotenv(env_path, override=True)
 
 _EMBEDDING_PROVIDER = os.environ.get("LTM_EMBEDDING_PROVIDER", "gemini").lower()
 
-# Gemini client — only instantiated when needed
+# Gemini client — only instantiated when needed (lazy import of google.genai)
 _genai_client: Optional[Any] = None
 
 def _get_genai_client() -> Any:
     global _genai_client
     if _genai_client is None:
-        _genai_client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+        try:
+            from google import genai as _genai_mod  # type: ignore
+        except ImportError as exc:
+            raise ImportError(
+                "google-genai is not installed.  Install it with: pip install google-genai\n"
+                "If you are running inside the WebShop container, set "
+                "LTM_EMBEDDING_PROVIDER=openai instead."
+            ) from exc
+        _genai_client = _genai_mod.Client(api_key=os.environ.get("GEMINI_API_KEY"))
     return _genai_client
 
 # OpenAI client — only instantiated when needed
