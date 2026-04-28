@@ -1,0 +1,16 @@
+dataset,model,split,seed,run,framework,success_total,accuracy,avg_reward,avg_steps_per_trial,avg_steps_per_task,gain_from_base_react,attempt_count,run_dir
+SQL,gpt-5-mini,test,0,Run_1,ReAct,117 / 200,0.5850,0.6171,8.3500,8.3500,0.0000,200,intercode_sql_runs/multiseed/gpt-5-mini/test/react/seed_0
+SQL,gpt-5-mini,test,1,Run_2,ReAct,117 / 200,0.5850,0.6109,8.7400,8.7400,0.0000,200,intercode_sql_runs/multiseed/gpt-5-mini/test/react/seed_1
+SQL,gpt-5-mini,test,2,Run_3,ReAct,112 / 200,0.5600,0.5859,8.5200,8.5200,0.0000,200,intercode_sql_runs/multiseed/gpt-5-mini/test/react/seed_2
+SQL,gpt-5-mini,test,0,Run_1,ReAct + Context Retrieval (CR),88 / 200,0.4400,0.3185,11.3700,11.3700,-0.1450,200,intercode_sql_runs/multiseed/gpt-5-mini/test/react_cr/seed_0
+SQL,gpt-5-mini,test,1,Run_2,ReAct + Context Retrieval (CR),104 / 200,0.5200,0.0300,10.8550,10.8550,-0.0650,200,intercode_sql_runs/multiseed/gpt-5-mini/test/react_cr/seed_1
+SQL,gpt-5-mini,test,2,Run_3,ReAct + Context Retrieval (CR),93 / 200,0.4650,0.4911,10.4250,10.4250,-0.0950,200,intercode_sql_runs/multiseed/gpt-5-mini/test/react_cr/seed_2
+SQL,gpt-5-mini,test,0,Run_1,ReAct + Tool Retrieval (TR),111 / 200,0.5550,0.4473,9.3500,9.3500,-0.0300,200,intercode_sql_runs/multiseed/gpt-5-mini/test/react_tr/seed_0
+SQL,gpt-5-mini,test,1,Run_2,ReAct + Tool Retrieval (TR),119 / 200,0.5950,0.6248,9.5600,9.5600,0.0100,200,intercode_sql_runs/multiseed/gpt-5-mini/test/react_tr/seed_1
+SQL,gpt-5-mini,test,2,Run_3,ReAct + Tool Retrieval (TR),110 / 200,0.5500,0.5800,9.0000,9.0000,-0.0100,200,intercode_sql_runs/multiseed/gpt-5-mini/test/react_tr/seed_2
+SQL,gpt-5-mini,test,0,Run_1,react + CR + TR,81 / 200,0.4050,0.4235,11.7250,11.7250,-0.1800,200,intercode_sql_runs/multiseed/gpt-5-mini/test/react_cr_tr/seed_0
+SQL,gpt-5-mini,test,1,Run_2,react + CR + TR,80 / 200,0.4000,0.4331,11.2700,11.2700,-0.1850,200,intercode_sql_runs/multiseed/gpt-5-mini/test/react_cr_tr/seed_1
+SQL,gpt-5-mini,test,2,Run_3,react + CR + TR,87 / 200,0.4350,0.3417,12.3650,12.3650,-0.1250,200,intercode_sql_runs/multiseed/gpt-5-mini/test/react_cr_tr/seed_2
+SQL,gpt-5-mini,test,0,Run_1,react + hard_neg CR + TR,82 / 200,0.4100,0.4254,11.7550,11.7550,-0.1750,200,intercode_sql_runs/multiseed/gpt-5-mini/test/react_hard_neg_cr_tr/seed_0
+SQL,gpt-5-mini,test,1,Run_2,react + hard_neg CR + TR,78 / 200,0.3900,0.4139,11.7950,11.7950,-0.1950,200,intercode_sql_runs/multiseed/gpt-5-mini/test/react_hard_neg_cr_tr/seed_1
+SQL,gpt-5-mini,test,2,Run_3,react + hard_neg CR + TR,82 / 200,0.4100,0.4345,12.0850,12.0850,-0.1500,200,intercode_sql_runs/multiseed/gpt-5-mini/test/react_hard_neg_cr_tr/seed_2

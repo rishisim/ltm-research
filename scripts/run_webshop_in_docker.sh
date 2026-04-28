@@ -110,15 +110,23 @@ echo "[run_webshop_in_docker] Args: ${PASS_ARGS[*]:-<none>}"
 # --rm          : clean up container after run
 # --platform    : force amd64 emulation (key fix for SIGBUS on M-series Macs)
 # -v /repo      : mount host repo read-write so script/data/output are accessible
-# --memory      : raise JVM heap ceiling (Docker Desktop default is 2 GB)
 # --shm-size    : prevent /dev/shm OOM for torch DataLoader workers
+#
+# NOTE: We do NOT set --memory here.  WebShop's load_products() parses a 5.5 GB
+# JSON file and builds ~1.18M product dicts; peak RSS on the host is ~11 GB.
+# Under QEMU amd64 emulation the overhead is higher still.  Any hard memory cap
+# (e.g. --memory=12g or --memory=20g) causes the container to be OOM-killed
+# mid-load (exit 137).  Docker Desktop on Mac shares the host's physical RAM;
+# leave --memory unset so the container can use as much as it needs.
+# Required: Docker Desktop must have ≥20 GB RAM allocated (Preferences →
+# Resources → Memory).  Recommended: ≥22 GB for comfortable headroom.
 docker run \
     --rm \
     --platform=linux/amd64 \
     -v "${REPO_ROOT}:/repo" \
     ${OPENROUTER_MOUNT} \
     "${ENV_FLAGS[@]}" \
-    --memory=8g \
-    --shm-size=512m \
+    -e PYTHONUNBUFFERED=1 \
+    --shm-size=4g \
     "${IMAGE_NAME}" \
-    python /repo/scripts/run_webshop_suite.py "${PASS_ARGS[@]:-}"
+    python -u /repo/scripts/run_webshop_suite.py "${PASS_ARGS[@]:-}"

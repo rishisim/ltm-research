@@ -4,13 +4,13 @@
   "split": "test",
   "num_tasks": 200,
   "metrics": {
-    "success": 20,
+    "success": 87,
     "total": 200,
-    "success_total": "20 / 200",
-    "accuracy": 0.1,
-    "avg_reward": 0.1028,
-    "avg_steps_per_trial": 2.915,
-    "avg_steps_per_task": 2.915,
+    "success_total": "87 / 200",
+    "accuracy": 0.435,
+    "avg_reward": 0.34165,
+    "avg_steps_per_trial": 12.365,
+    "avg_steps_per_task": 12.365,
     "attempt_count": 200
   }
 }

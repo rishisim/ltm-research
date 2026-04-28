@@ -1,0 +1,16 @@
+dataset,model,split,seed,run,framework,success_total,accuracy,avg_reward,avg_steps_per_trial,avg_steps_per_task,gain_from_base_react,attempt_count,run_dir
+SQL,gemini-2.5-flash,test,0,Run_1,ReAct,176 / 200,0.8800,0.8803,8.7200,8.7200,0.0000,200,intercode_sql_runs/multiseed/gemini-2.5-flash/test/react/seed_0
+SQL,gemini-2.5-flash,test,1,Run_2,ReAct,176 / 200,0.8800,0.8803,8.5250,8.5250,0.0000,200,intercode_sql_runs/multiseed/gemini-2.5-flash/test/react/seed_1
+SQL,gemini-2.5-flash,test,2,Run_3,ReAct,179 / 200,0.8950,0.8953,8.3400,8.3400,0.0000,200,intercode_sql_runs/multiseed/gemini-2.5-flash/test/react/seed_2
+SQL,gemini-2.5-flash,test,0,Run_1,ReAct + Context Retrieval (CR),154 / 200,0.7700,0.7751,9.6500,9.6500,-0.1100,200,intercode_sql_runs/multiseed/gemini-2.5-flash/test/react_cr/seed_0
+SQL,gemini-2.5-flash,test,1,Run_2,ReAct + Context Retrieval (CR),151 / 200,0.7550,0.7668,10.0800,10.0800,-0.1250,200,intercode_sql_runs/multiseed/gemini-2.5-flash/test/react_cr/seed_1
+SQL,gemini-2.5-flash,test,2,Run_3,ReAct + Context Retrieval (CR),159 / 200,0.7950,0.8009,9.7750,9.7750,-0.1000,200,intercode_sql_runs/multiseed/gemini-2.5-flash/test/react_cr/seed_2
+SQL,gemini-2.5-flash,test,0,Run_1,ReAct + Tool Retrieval (TR),162 / 200,0.8100,0.8160,8.8850,8.8850,-0.0700,200,intercode_sql_runs/multiseed/gemini-2.5-flash/test/react_tr/seed_0
+SQL,gemini-2.5-flash,test,1,Run_2,ReAct + Tool Retrieval (TR),170 / 200,0.8500,0.8610,9.3150,9.3150,-0.0300,200,intercode_sql_runs/multiseed/gemini-2.5-flash/test/react_tr/seed_1
+SQL,gemini-2.5-flash,test,2,Run_3,ReAct + Tool Retrieval (TR),166 / 200,0.8300,0.8330,8.9450,8.9450,-0.0650,200,intercode_sql_runs/multiseed/gemini-2.5-flash/test/react_tr/seed_2
+SQL,gemini-2.5-flash,test,0,Run_1,react + CR + TR,154 / 200,0.7700,0.7763,10.3450,10.3450,-0.1100,200,intercode_sql_runs/multiseed/gemini-2.5-flash/test/react_cr_tr/seed_0
+SQL,gemini-2.5-flash,test,1,Run_2,react + CR + TR,157 / 200,0.7850,0.7950,10.3500,10.3500,-0.0950,200,intercode_sql_runs/multiseed/gemini-2.5-flash/test/react_cr_tr/seed_1
+SQL,gemini-2.5-flash,test,2,Run_3,react + CR + TR,153 / 200,0.7650,0.7710,9.8000,9.8000,-0.1300,200,intercode_sql_runs/multiseed/gemini-2.5-flash/test/react_cr_tr/seed_2
+SQL,gemini-2.5-flash,test,0,Run_1,react + hard_neg CR + TR,160 / 200,0.8000,0.8069,9.9400,9.9400,-0.0800,200,intercode_sql_runs/multiseed/gemini-2.5-flash/test/react_hard_neg_cr_tr/seed_0
+SQL,gemini-2.5-flash,test,1,Run_2,react + hard_neg CR + TR,158 / 200,0.7900,0.7946,10.6100,10.6100,-0.0900,200,intercode_sql_runs/multiseed/gemini-2.5-flash/test/react_hard_neg_cr_tr/seed_1
+SQL,gemini-2.5-flash,test,2,Run_3,react + hard_neg CR + TR,162 / 200,0.8100,0.8120,10.4800,10.4800,-0.0850,200,intercode_sql_runs/multiseed/gemini-2.5-flash/test/react_hard_neg_cr_tr/seed_2

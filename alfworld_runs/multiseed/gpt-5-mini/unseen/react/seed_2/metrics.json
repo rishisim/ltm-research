@@ -4,12 +4,12 @@
   "split": "valid_unseen",
   "num_tasks": 134,
   "metrics": {
-    "success": 58,
+    "success": 55,
     "total": 134,
-    "success_total": "58 / 134",
-    "accuracy": 0.43283582089552236,
-    "avg_steps_per_trial": 28.79850746268657,
-    "avg_steps_per_task": 28.79850746268657,
+    "success_total": "55 / 134",
+    "accuracy": 0.41044776119402987,
+    "avg_steps_per_trial": 28.58955223880597,
+    "avg_steps_per_task": 28.58955223880597,
     "attempt_count": 134
   }
 }

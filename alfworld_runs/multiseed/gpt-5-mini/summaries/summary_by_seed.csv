@@ -1,0 +1,16 @@
+dataset,model,split,seed,run,framework,success_total,accuracy,avg_steps_per_trial,avg_steps_per_task,gain_from_base_react,attempt_count,run_dir
+ALFWorld,gpt-5-mini,valid_unseen,0,Run_1,ReAct,60 / 134,0.4478,29.4254,29.4254,0.0000,134,alfworld_runs/multiseed/gpt-5-mini/unseen/react/seed_0
+ALFWorld,gpt-5-mini,valid_unseen,1,Run_2,ReAct,64 / 134,0.4776,31.1194,31.1194,0.0000,134,alfworld_runs/multiseed/gpt-5-mini/unseen/react/seed_1
+ALFWorld,gpt-5-mini,valid_unseen,2,Run_3,ReAct,55 / 134,0.4104,28.5896,28.5896,0.0000,134,alfworld_runs/multiseed/gpt-5-mini/unseen/react/seed_2
+ALFWorld,gpt-5-mini,valid_unseen,0,Run_1,ReAct + Context Retrieval (CR),75 / 134,0.5597,18.4254,18.4254,0.1119,134,alfworld_runs/multiseed/gpt-5-mini/unseen/react_cr/seed_0
+ALFWorld,gpt-5-mini,valid_unseen,1,Run_2,ReAct + Context Retrieval (CR),62 / 134,0.4627,20.3731,20.3731,-0.0149,134,alfworld_runs/multiseed/gpt-5-mini/unseen/react_cr/seed_1
+ALFWorld,gpt-5-mini,valid_unseen,2,Run_3,ReAct + Context Retrieval (CR),77 / 134,0.5746,19.0522,19.0522,0.1642,134,alfworld_runs/multiseed/gpt-5-mini/unseen/react_cr/seed_2
+ALFWorld,gpt-5-mini,valid_unseen,0,Run_1,ReAct + Tool Retrieval (TR),59 / 134,0.4403,23.7388,23.7388,-0.0075,134,alfworld_runs/multiseed/gpt-5-mini/unseen/react_tr/seed_0
+ALFWorld,gpt-5-mini,valid_unseen,1,Run_2,ReAct + Tool Retrieval (TR),55 / 134,0.4104,26.1194,26.1194,-0.0672,134,alfworld_runs/multiseed/gpt-5-mini/unseen/react_tr/seed_1
+ALFWorld,gpt-5-mini,valid_unseen,2,Run_3,ReAct + Tool Retrieval (TR),50 / 134,0.3731,23.8657,23.8657,-0.0373,134,alfworld_runs/multiseed/gpt-5-mini/unseen/react_tr/seed_2
+ALFWorld,gpt-5-mini,valid_unseen,0,Run_1,react + CR + TR,71 / 134,0.5299,20.4254,20.4254,0.0821,134,alfworld_runs/multiseed/gpt-5-mini/unseen/react_cr_tr/seed_0
+ALFWorld,gpt-5-mini,valid_unseen,1,Run_2,react + CR + TR,81 / 134,0.6045,18.0821,18.0821,0.1269,134,alfworld_runs/multiseed/gpt-5-mini/unseen/react_cr_tr/seed_1
+ALFWorld,gpt-5-mini,valid_unseen,2,Run_3,react + CR + TR,70 / 134,0.5224,18.1716,18.1716,0.1119,134,alfworld_runs/multiseed/gpt-5-mini/unseen/react_cr_tr/seed_2
+ALFWorld,gpt-5-mini,valid_unseen,0,Run_1,react + hard_neg CR + TR,29 / 134,0.2164,27.2313,27.2313,-0.2313,134,alfworld_runs/multiseed/gpt-5-mini/unseen/react_hard_neg_cr_tr/seed_0
+ALFWorld,gpt-5-mini,valid_unseen,1,Run_2,react + hard_neg CR + TR,40 / 134,0.2985,25.0522,25.0522,-0.1791,134,alfworld_runs/multiseed/gpt-5-mini/unseen/react_hard_neg_cr_tr/seed_1
+ALFWorld,gpt-5-mini,valid_unseen,2,Run_3,react + hard_neg CR + TR,31 / 134,0.2313,24.6866,24.6866,-0.1791,134,alfworld_runs/multiseed/gpt-5-mini/unseen/react_hard_neg_cr_tr/seed_2

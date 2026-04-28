@@ -1,0 +1,11 @@
+dataset,model,split,seed,run,framework,success_total,accuracy,avg_steps_per_trial,avg_steps_per_task,gain_from_base_react,attempt_count,run_dir
+ALFWorld,gemini-2.5-flash,valid_unseen,1,Run_2,ReAct,92 / 134,0.6866,22.0970,22.0970,0.0000,134,alfworld_runs/multiseed/gemini-2.5-flash/unseen/react/seed_1
+ALFWorld,gemini-2.5-flash,valid_unseen,2,Run_3,ReAct,86 / 134,0.6418,23.0448,23.0448,0.0000,134,alfworld_runs/multiseed/gemini-2.5-flash/unseen/react/seed_2
+ALFWorld,gemini-2.5-flash,valid_unseen,1,Run_2,ReAct + Context Retrieval (CR),105 / 134,0.7836,22.3955,22.3955,0.0970,134,alfworld_runs/multiseed/gemini-2.5-flash/unseen/react_cr/seed_1
+ALFWorld,gemini-2.5-flash,valid_unseen,2,Run_3,ReAct + Context Retrieval (CR),103 / 134,0.7687,23.6045,23.6045,0.1269,134,alfworld_runs/multiseed/gemini-2.5-flash/unseen/react_cr/seed_2
+ALFWorld,gemini-2.5-flash,valid_unseen,1,Run_2,ReAct + Tool Retrieval (TR),87 / 134,0.6493,23.3134,23.3134,-0.0373,134,alfworld_runs/multiseed/gemini-2.5-flash/unseen/react_tr/seed_1
+ALFWorld,gemini-2.5-flash,valid_unseen,2,Run_3,ReAct + Tool Retrieval (TR),92 / 134,0.6866,24.4851,24.4851,0.0448,134,alfworld_runs/multiseed/gemini-2.5-flash/unseen/react_tr/seed_2
+ALFWorld,gemini-2.5-flash,valid_unseen,1,Run_2,react + CR + TR,109 / 134,0.8134,24.3209,24.3209,0.1269,134,alfworld_runs/multiseed/gemini-2.5-flash/unseen/react_cr_tr/seed_1
+ALFWorld,gemini-2.5-flash,valid_unseen,2,Run_3,react + CR + TR,104 / 134,0.7761,23.1045,23.1045,0.1343,134,alfworld_runs/multiseed/gemini-2.5-flash/unseen/react_cr_tr/seed_2
+ALFWorld,gemini-2.5-flash,valid_unseen,1,Run_2,react + hard_neg CR + TR,66 / 134,0.4925,31.7164,31.7164,-0.1940,134,alfworld_runs/multiseed/gemini-2.5-flash/unseen/react_hard_neg_cr_tr/seed_1
+ALFWorld,gemini-2.5-flash,valid_unseen,2,Run_3,react + hard_neg CR + TR,73 / 134,0.5448,30.5448,30.5448,-0.0970,134,alfworld_runs/multiseed/gemini-2.5-flash/unseen/react_hard_neg_cr_tr/seed_2

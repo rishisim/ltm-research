@@ -151,6 +151,8 @@ webshop_mini/
 
 # WebShop cloned repo (large, has its own git)
 webshop/
+# But keep our Apple-Silicon-workaround Dockerfile in version control
+!webshop/Dockerfile.amd64
 
 # Claude Code agent worktrees and local settings
 .claude/

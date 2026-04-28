@@ -1079,7 +1079,7 @@ def main() -> None:
     )
     parser.add_argument(
         "--memory-bank", type=str,
-        default="webshop_runs/memory_retrieval_v2/knowledge_base/knowledge_base.json",
+        default="webshop_runs/memory_retrieval_v2/memory_agent_runs/react_reflexion_train/knowledge_base.json",
         help="Path to memory bank JSON",
     )
     parser.add_argument(
