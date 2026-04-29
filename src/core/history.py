@@ -39,6 +39,8 @@ class EnvironmentHistory:
                 s += f'[human edit]: {item["value"]}'
             if i != len(self._history) - 1:
                 s += '\n'
+        if self._history:
+            s += '\n'
         return s
 
     def _get_base_query(self, base_query: str, start_info: str, memory: List[str]) -> str:
