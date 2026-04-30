@@ -37,18 +37,6 @@ from src.frameworks.memory_retrieval_v2.retrieval.core.tool_retrieval import (
 HELP_PATTERN = re.compile(r'help\s*\[\s*["\'](.+?)["\']\s*\]', re.IGNORECASE)
 
 
-_WEBSHOP_ACTION_FORMAT_INSTRUCTIONS = """You are an AI agent playing WebShop, a text-based shopping environment.
-Follow the exact action format shown in the examples. Output exactly one next action and nothing else.
-
-Valid action forms:
-- think: brief reasoning
-- search[query]
-- click[element]
-- help["specific issue"]
-
-Never answer the shopper in prose. Never ask clarifying questions. Never say you lack web access; use the WebShop actions to inspect the environment."""
-
-
 # ---------------------------------------------------------------------------
 # Per-environment help-tool instruction strings
 # ---------------------------------------------------------------------------
@@ -313,9 +301,6 @@ The following learnings are from previous tasks similar to yours. Use them to av
         # Add help tool instructions
         help_instructions = self._get_help_instructions()
         enhanced_prompt = f"{enhanced_prompt}\n\n{help_instructions}"
-
-        if self.env_kind == "webshop":
-            enhanced_prompt = f"{_WEBSHOP_ACTION_FORMAT_INSTRUCTIONS}\n\n{enhanced_prompt}"
 
         # Store the stable prefix for prompt caching.
         # This string (system instructions + few-shots + retrieved context +

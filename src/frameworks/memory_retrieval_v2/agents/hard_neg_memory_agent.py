@@ -175,12 +175,6 @@ The following learnings are from previous tasks similar to yours. Use them to av
         help_instructions = self._get_help_instructions()
         enhanced_prompt = f"{enhanced_prompt}\n\n{help_instructions}"
 
-        if self.env_kind == "webshop":
-            from src.frameworks.memory_retrieval_v2.agents.memory_agent import (
-                _WEBSHOP_ACTION_FORMAT_INSTRUCTIONS,
-            )
-            enhanced_prompt = f"{_WEBSHOP_ACTION_FORMAT_INSTRUCTIONS}\n\n{enhanced_prompt}"
-
         # Store the stable prefix for prompt caching (identical across all turns).
         self._stable_system_prompt = enhanced_prompt
 

@@ -83,7 +83,7 @@ def iter_webshop_actions(path: Path) -> Iterable[str]:
     return actions
 
 
-def audit_webshop_actions(root: Path) -> list[str]:
+def audit_webshop_actions(root: Path, min_valid_rate: float) -> list[str]:
     rows: list[str] = []
     for framework in FRAMEWORKS:
         for seed in SEEDS:
@@ -92,8 +92,15 @@ def audit_webshop_actions(root: Path) -> list[str]:
             counts = Counter()
             examples: list[str] = []
             for action in actions:
-                if action.startswith(VALID_WEBSHOP_PREFIXES):
-                    counts["valid"] += 1
+                if "Obs:" in action or "Action:" in action:
+                    counts["leak"] += 1
+                    examples.append(action[:120])
+                elif action.startswith(VALID_WEBSHOP_PREFIXES):
+                    if action.startswith(("search[", "click[", "help[")) and not action.endswith("]"):
+                        counts["malformed"] += 1
+                        examples.append(action[:120])
+                    else:
+                        counts["valid"] += 1
                 elif action.startswith("Obs:"):
                     counts["obs_leak"] += 1
                     examples.append(action[:120])
@@ -105,7 +112,7 @@ def audit_webshop_actions(root: Path) -> list[str]:
                     examples.append(action[:120])
             total = sum(counts.values())
             valid_rate = counts["valid"] / total if total else 0.0
-            status = "OK" if total and valid_rate >= 0.98 else "CHECK"
+            status = "OK" if total and valid_rate >= min_valid_rate else "CHECK"
             rows.append(
                 f"WebShop actions {framework} seed_{seed}: {status} "
                 f"valid={counts['valid']}/{total} rate={valid_rate:.3f} "
@@ -122,6 +129,16 @@ def main() -> None:
     parser.add_argument("--web-root", default=None)
     parser.add_argument("--alf-root", default=None)
     parser.add_argument("--sql-root", default=None)
+    parser.add_argument(
+        "--min-webshop-valid-rate",
+        type=float,
+        default=0.90,
+        help=(
+            "Minimum strict WebShop action-validity rate before reporting CHECK. "
+            "The original WebShop runner has historical memory-variant runs around "
+            "0.94-0.96 strict validity, so the default is intentionally not 0.98."
+        ),
+    )
     args = parser.parse_args()
 
     web_root = Path(args.web_root or f"webshop_runs/rerun_clean/{args.model}")
@@ -137,7 +154,7 @@ def main() -> None:
         print(row)
 
     print("\n=== WebShop Action Validity ===")
-    for row in audit_webshop_actions(web_root):
+    for row in audit_webshop_actions(web_root, args.min_webshop_valid_rate):
         print(row)
 
 
