@@ -16,7 +16,7 @@ from typing import List, Tuple, Any, Dict, Optional
 from src.core.base import Framework, BaseEnv
 from src.core.history import EnvironmentHistory
 from src.core.llm import get_chat, Model
-from src.frameworks.react import ReAct
+from src.frameworks.react import ReAct, clean_action_text
 
 # Import HARD NEGATIVE retrieval modules
 from src.frameworks.memory_retrieval_v2.retrieval.variants.hard_neg_context_retrieval import (
@@ -204,7 +204,7 @@ The following learnings are from previous tasks similar to yours. Use them to av
                 stop=['\n'],
                 system_prompt=self._stable_system_prompt,
             )
-            action = action_text.strip()
+            action = clean_action_text(action_text)
             
             step_input_tokens = usage.get("input_tokens", 0)
             step_output_tokens = usage.get("output_tokens", 0)
@@ -216,11 +216,6 @@ The following learnings are from previous tasks similar to yours. Use them to av
             total_tokens += step_total_tokens
             total_cached_tokens += step_cached_tokens
             
-            if action.startswith('Action:'):
-                action = action[7:].strip()
-            if action.startswith('>'):
-                action = action[1:].strip()
-
             env_history.add("action", action)
             
             help_query = self._parse_help_action(action)

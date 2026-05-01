@@ -4,6 +4,28 @@ from src.core.base import Framework, BaseEnv
 from src.core.history import EnvironmentHistory
 from src.core.llm import get_chat, Model
 
+
+def clean_action_text(action_text: str) -> str:
+    """Return exactly the next action from a model completion.
+
+    Providers do not always honor stop sequences for reasoning models. Keep the
+    agent/environment contract stable by stripping prompt labels and truncating
+    any generated continuation before it reaches env.step().
+    """
+    action = (action_text or "").strip()
+    if action.startswith("Action:"):
+        action = action[len("Action:"):].strip()
+    if action.startswith(">"):
+        action = action[1:].strip()
+
+    earliest = len(action)
+    for marker in ("\r", "\n", "Obs:", "Observation:", "Action:"):
+        idx = action.find(marker)
+        if idx != -1 and idx < earliest:
+            earliest = idx
+    return action[:earliest].strip()
+
+
 class ReAct(Framework):
     def __init__(self, model: Model = "gemini-2.5-flash", to_print: bool = True):
         self.model = model
@@ -58,13 +80,7 @@ class ReAct(Framework):
         cur_step = 0
         while cur_step < 49:
             action_text, _usage = self._llm(str(env_history) + "Action:", stop=['\n'])
-            action = action_text.strip()
-            
-            # Clean up action
-            if action.startswith('Action:'):
-                action = action[7:].strip()
-            if action.startswith('>'):
-                action = action[1:].strip()
+            action = clean_action_text(action_text)
             
             env_history.add("action", action)
             

@@ -6,7 +6,7 @@ from typing import List, Tuple, Any, Dict
 from src.core.base import Framework, BaseEnv
 from src.core.history import EnvironmentHistory
 from src.core.llm import get_chat, Model
-from src.frameworks.react import ReAct
+from src.frameworks.react import ReAct, clean_action_text
 
 
 class MemoryAllocationReflexion(ReAct):
@@ -58,13 +58,7 @@ class MemoryAllocationReflexion(ReAct):
         while cur_step < 49:
             # Choose action
             action_text, _usage = self._llm(str(env_history) + "Action:", stop=['\n'])
-            action = action_text.strip()
-            
-            # Clean up action
-            if action.startswith('Action:'):
-                action = action[7:].strip()
-            if action.startswith('>'):
-                action = action[1:].strip()
+            action = clean_action_text(action_text)
 
             env_history.add("action", action)
             
