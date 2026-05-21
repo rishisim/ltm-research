@@ -144,21 +144,29 @@ fi
 if phase_enabled sql; then
   echo "[run] phase 3: SQL"
   for seed in ${SEEDS}; do
-    echo "[run] refreshing SQL Docker before SQL seed ${seed}"
-    docker compose -f data/intercode_sql/docker/docker-compose.yml restart
-    run_logged "sql_seed_${seed}" \
-      .venv/bin/python scripts/run_intercode_sql_suite.py \
-        --num-tasks "${SQL_NUM_TASKS}" \
-        --splits "${SQL_SPLITS}" \
-        --frameworks "${FRAMEWORKS}" \
-        --model "${MODEL}" \
-        --seed "${seed}" \
-        --runs-root "${SQL_ROOT}" \
-        --memory-bank "${SQL_KB_SANITIZED}" \
-        --max-learnings "${SQL_MAX_LEARNINGS}" \
-        --min-valid-level "${SQL_MIN_VALID_LEVEL}" \
-        --quiet \
-        --resume
+    IFS=',' read -r -a SQL_FRAMEWORK_LIST <<< "${FRAMEWORKS}"
+    for framework in "${SQL_FRAMEWORK_LIST[@]}"; do
+      framework="${framework//[[:space:]]/}"
+      if [[ -z "${framework}" ]]; then
+        continue
+      fi
+      echo "[run] refreshing SQL Docker before SQL seed ${seed} framework ${framework}"
+      docker compose -f data/intercode_sql/docker/docker-compose.yml restart
+      sleep 5
+      run_logged "sql_seed_${seed}_${framework}" \
+        .venv/bin/python scripts/run_intercode_sql_suite.py \
+          --num-tasks "${SQL_NUM_TASKS}" \
+          --splits "${SQL_SPLITS}" \
+          --frameworks "${framework}" \
+          --model "${MODEL}" \
+          --seed "${seed}" \
+          --runs-root "${SQL_ROOT}" \
+          --memory-bank "${SQL_KB_SANITIZED}" \
+          --max-learnings "${SQL_MAX_LEARNINGS}" \
+          --min-valid-level "${SQL_MIN_VALID_LEVEL}" \
+          --quiet \
+          --resume
+    done
   done
 fi
 
