@@ -119,6 +119,12 @@ class InterCodeSQLEnv(BaseEnv):
         InterCodeSQLEnv._shared_env = self.env
         InterCodeSQLEnv._shared_env_data_path = self.data_path
 
+    def _refresh_shared_env(self) -> None:
+        """Recreate the shared SQL client after a stale connection failure."""
+        InterCodeSQLEnv.close_shared()
+        self.env = None
+        self._init_env()
+
     # Maximum retry attempts and base backoff (seconds) for the preprocess race.
     _RESET_MAX_RETRIES: int = 5
     _RESET_BACKOFF_BASE: float = 1.0
@@ -149,6 +155,10 @@ class InterCodeSQLEnv(BaseEnv):
                 if "Preprocess command failed" not in str(exc):
                     raise  # unrelated error — don't swallow
                 last_exc = exc
+                try:
+                    self._refresh_shared_env()
+                except Exception:
+                    logger.exception("Failed to refresh InterCode SQL environment")
                 wait = self._RESET_BACKOFF_BASE * (2 ** attempt)
                 logger.warning(
                     "[InterCodeSQLEnv] Retrying preprocess (attempt %d/%d, "
@@ -222,7 +232,15 @@ class InterCodeSQLEnv(BaseEnv):
         if action.startswith("think:"):
             return "OK.", 0.0, False, {}
 
-        observation, reward, done, info = self.env.step(action)
+        try:
+            observation, reward, done, info = self.env.step(action)
+        except RuntimeError as exc:
+            if "Commands out of sync" not in str(exc):
+                raise
+            observation = f"Error executing query: {exc}"
+            reward = 0.0
+            done = True
+            info = {"terminal_error": "commands_out_of_sync"}
 
         # Normalize observation to string
         if observation is None:
@@ -239,6 +257,15 @@ class InterCodeSQLEnv(BaseEnv):
 
         reward = float(reward) if reward else 0.0
         self.last_reward = reward
+
+        if "Commands out of sync" in observation:
+            logger.warning(
+                "InterCode SQL connection entered commands-out-of-sync state; "
+                "ending current task and refreshing the shared client."
+            )
+            InterCodeSQLEnv.close_shared()
+            self.env = None
+            return observation, 0.0, True, {"terminal_error": "commands_out_of_sync"}
 
         return observation, reward, done, info
 

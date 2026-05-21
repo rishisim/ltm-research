@@ -17,7 +17,12 @@ from typing import List, Tuple, Any, Dict, Optional
 from src.core.base import Framework, BaseEnv
 from src.core.history import EnvironmentHistory
 from src.core.llm import get_chat, Model
-from src.frameworks.react import ReAct, action_stop_sequences, clean_action_text
+from src.frameworks.react import (
+    ReAct,
+    action_stop_sequences,
+    clean_action_text,
+    should_auto_submit_repeated_sql,
+)
 
 # Import retrieval modules
 from src.frameworks.memory_retrieval_v2.retrieval.core.context_retrieval import (
@@ -308,27 +313,15 @@ The following learnings are from previous tasks similar to yours. Use them to av
         help_instructions = self._get_help_instructions()
         enhanced_prompt = f"{enhanced_prompt}\n\n{help_instructions}"
 
-        # Store the stable prefix for prompt caching.
-        # This string (system instructions + few-shots + retrieved context +
-        # help instructions) is identical across ALL turns of this task.
-        # It is passed as the system_prompt argument to _llm so that:
-        #   - Anthropic/Claude (via OpenRouter): cache_control is attached and
-        #     the prefix is cached server-side (TTL 5 min, min 1024 tokens).
-        #   - OpenAI/GPT (direct or via OpenRouter): automatic prefix caching
-        #     fires because the system message is byte-identical every call.
-        #   - Gemini (via OpenRouter): implicit caching applies to the repeated
-        #     prefix automatically; no payload change needed.
-        self._stable_system_prompt = enhanced_prompt
+        # Keep InterCode SQL prompt placement identical to the ReAct baseline.
+        # GPT-style SQL models are sensitive to the examples living in the
+        # system role: they start emitting multiple SQL commands per action and
+        # skip the submit action. Other environments keep the cached prefix path.
+        use_system_prompt_cache = self.env_kind != "intercode_sql"
+        self._stable_system_prompt = enhanced_prompt if use_system_prompt_cache else None
 
-        # IMPORTANT: pass an EMPTY base_query to EnvironmentHistory so the
-        # stable prefix lives ONLY in system_prompt and is NOT duplicated in
-        # the user message. Verified failure mode: when the same enhanced
-        # prompt appeared in both system and the user-message prefix, Claude
-        # treated the duplication as a conversational frame and stopped
-        # emitting valid ALFWorld commands. Gemini happened to tolerate the
-        # duplication but the experiment is cleaner with a single source.
         env_history = EnvironmentHistory(
-            "",
+            "" if use_system_prompt_cache else enhanced_prompt,
             start_ob,
             memory[-3:] if len(memory) > 3 else memory
         )
@@ -355,7 +348,7 @@ The following learnings are from previous tasks similar to yours. Use them to av
             action_text, usage = self._llm(
                 str(env_history) + "Action:",
                 stop=action_stop_sequences(allow_newlines),
-                system_prompt=self._stable_system_prompt,
+                system_prompt=self._stable_system_prompt if use_system_prompt_cache else None,
             )
             action = clean_action_text(action_text, allow_newlines=allow_newlines)
             
@@ -440,6 +433,25 @@ The following learnings are from previous tasks similar to yours. Use them to av
             if done:
                 break
             elif env_history.check_is_exhausted():
+                if should_auto_submit_repeated_sql(action, allow_newlines):
+                    observation, reward, done, info = env.step("submit")
+                    env_history.add("action", "submit")
+                    env_history.add("observation", observation)
+                    steps.append({
+                        "step": cur_step + 2,
+                        "action": "submit",
+                        "observation": observation,
+                        "is_help_call": False,
+                        "token_usage": {
+                            "input_tokens": 0,
+                            "output_tokens": 0,
+                            "total_tokens": 0,
+                            "cached_tokens": 0,
+                        }
+                    })
+                    if self.to_print:
+                        print(f'Action: submit\nObs: {observation}')
+                        sys.stdout.flush()
                 break
             
             cur_step += 1

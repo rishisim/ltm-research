@@ -10,6 +10,7 @@ _SQL_START_RE = re.compile(
     r"^(select|with|show|describe|desc|explain|insert|update|delete|create|drop|alter|submit)\b",
     re.IGNORECASE,
 )
+_SQL_FINAL_QUERY_RE = re.compile(r"^(select|with)\b", re.IGNORECASE)
 _EMBEDDED_SQL_ACTION_RE = re.compile(
     r"(?<=[A-Za-z0-9_`'\")\]])"
     r"(?=(?:SHOW\s+COLUMNS\s+FROM|SHOW\s+TABLES|SELECT|WITH|DESCRIBE|DESC|EXPLAIN|submit)\b)",
@@ -39,6 +40,33 @@ def _paren_balance(text: str) -> int:
         elif char == ")":
             balance = max(0, balance - 1)
     return balance
+
+
+def _truncate_after_first_sql_statement(text: str) -> str:
+    """Keep one SQL statement; drop leaked same-line follow-up actions."""
+    quote = ""
+    escape = False
+    balance = 0
+    for i, char in enumerate(text):
+        if escape:
+            escape = False
+            continue
+        if char == "\\":
+            escape = True
+            continue
+        if quote:
+            if char == quote:
+                quote = ""
+            continue
+        if char in {"'", '"', "`"}:
+            quote = char
+        elif char == "(":
+            balance += 1
+        elif char == ")":
+            balance = max(0, balance - 1)
+        elif char == ";" and balance == 0:
+            return text[: i + 1].strip()
+    return text.strip()
 
 
 def _clean_multiline_sql_action(action: str) -> str:
@@ -76,7 +104,8 @@ def _clean_multiline_sql_action(action: str) -> str:
             break
         kept.append(line)
 
-    return " ".join(" ".join(kept).split())
+    statement = " ".join(" ".join(kept).split())
+    return _truncate_after_first_sql_statement(statement)
 
 
 def clean_action_text(action_text: str, allow_newlines: bool = False) -> str:
@@ -137,6 +166,13 @@ def action_stop_sequences(allow_newlines: bool) -> List[str]:
             "\nSUBMIT",
         ]
     return ["\n"]
+
+
+def should_auto_submit_repeated_sql(action: str, allow_newlines: bool) -> bool:
+    """Treat repeated final-looking SQL as ready to submit."""
+    if not allow_newlines:
+        return False
+    return bool(_SQL_FINAL_QUERY_RE.match((action or "").strip()))
 
 
 class ReAct(Framework):
@@ -213,6 +249,14 @@ class ReAct(Framework):
             if done:
                 return env_history, True
             elif env_history.check_is_exhausted():
+                if should_auto_submit_repeated_sql(action, allow_newlines):
+                    env_history.add("action", "submit")
+                    observation, reward, done, info = env.step("submit")
+                    env_history.add("observation", observation)
+                    if self.to_print:
+                        print(f'Action: submit\nObs: {observation}')
+                        sys.stdout.flush()
+                    return env_history, done
                 return env_history, False
             
             cur_step += 1
