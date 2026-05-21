@@ -286,7 +286,9 @@ The following learnings are from previous tasks similar to yours. Use them to av
             
             cur_step += 1
 
-        is_success = reward > 0
+        # SQL/WebShop can return partial rewards, so treat only full reward as
+        # success in trajectory logs used by resume.
+        is_success = reward >= 1.0 if self.env_kind in {"intercode_sql", "webshop"} else reward > 0
         
         if self.to_print:
             print(f"\nTask {'SUCCESS' if is_success else 'FAILURE'}")

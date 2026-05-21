@@ -122,8 +122,13 @@ def build_sql_instructions() -> str:
         "You are an AI agent interacting with a MySQL database to answer questions using SQL.\n"
         "You can execute SQL queries as actions. The observation will show the query results.\n"
         "Use SHOW TABLES and SHOW COLUMNS FROM <table> to explore the schema.\n"
-        "To finish, first execute the SQL query whose result answers the question, then issue "
-        "the action exactly as 'submit' on its own line.\n"
+        "To finish, execute the final SQL query whose result answers the question, then issue "
+        "the action exactly as 'submit' on its own line immediately after that final query.\n"
+        "If you run any exploratory or verification query after a candidate answer query, "
+        "rerun the final answer query before submitting so the grader sees the correct result.\n"
+        "The final SQL query must return exactly the columns requested by the question; "
+        "do not include helper columns such as counts or ids unless the question asks for them.\n"
+        "Each action must be a complete SQL statement, even when using subqueries or CTEs.\n"
         "Do not put the answer, SQL, punctuation, or explanation after 'submit'; the runner "
         "grades the most recent SQL result.\n"
         "Use think: to reason about the problem before acting.\n\n"
@@ -496,7 +501,7 @@ def run_memory_agent_variant(
                                 "task_index": entry.get("task_index", 0),
                                 "trial_num": 1,
                                 "step_num": entry.get("step_num", 0),
-                                "success": bool(entry.get("success", False)),
+                                "success": float(entry.get("reward", 0) or 0) >= reward_threshold,
                                 "reward": float(entry.get("reward", 0)),
                             })
                     except json.JSONDecodeError:

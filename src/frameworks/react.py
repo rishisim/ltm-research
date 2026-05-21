@@ -17,6 +17,30 @@ _EMBEDDED_SQL_ACTION_RE = re.compile(
 )
 
 
+def _paren_balance(text: str) -> int:
+    balance = 0
+    quote = ""
+    escape = False
+    for char in text:
+        if escape:
+            escape = False
+            continue
+        if char == "\\":
+            escape = True
+            continue
+        if quote:
+            if char == quote:
+                quote = ""
+            continue
+        if char in {"'", '"', "`"}:
+            quote = char
+        elif char == "(":
+            balance += 1
+        elif char == ")":
+            balance = max(0, balance - 1)
+    return balance
+
+
 def _clean_multiline_sql_action(action: str) -> str:
     """Normalize one SQL action while dropping leaked follow-up actions.
 
@@ -44,7 +68,11 @@ def _clean_multiline_sql_action(action: str) -> str:
             break
         if lower.startswith(("submit ", "obs:", "observation:", "action:")):
             break
-        if _SQL_START_RE.match(line):
+        # A continuation line may legitimately start with SELECT/WITH inside a
+        # subquery, e.g. HAVING COUNT(*) = (\nSELECT MIN(...). Only treat a new
+        # SQL-looking line as a leaked next action when the current statement is
+        # not inside open parentheses.
+        if _SQL_START_RE.match(line) and _paren_balance("\n".join(kept)) == 0:
             break
         kept.append(line)
 

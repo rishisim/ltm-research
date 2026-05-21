@@ -171,9 +171,11 @@ intercode_sql_runs/run_status.txt
 alfworld_runs/gates/
 alfworld_runs/preflight_*/
 alfworld_runs/rerun_clean/
+intercode_sql_runs/gates/
 intercode_sql_runs/gate_*/
 intercode_sql_runs/preflight_*/
 intercode_sql_runs/rerun_clean/
+webshop_runs/gates/
 webshop_runs/audit_*/
 webshop_runs/preflight_*/
 webshop_runs/rerun_clean/

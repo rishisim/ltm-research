@@ -116,18 +116,21 @@ help["GROUP BY clause missing after using COUNT aggregation"]
 help["column name does not exist in table, need to check schema"]
 help["subquery returns multiple rows but scalar expected"]
 help["wrong aggregation column causes incorrect total"]
-help["schema exploration needed before writing the query"]
 
 Examples of BAD queries:
 help["how to write SQL"] (Too vague)
 help["table singer_id is wrong"] (Too specific to one schema)
 help["what do i do next"] (Not specific to an issue)
+help["schema exploration needed before writing the query"] (Routine schema inspection is not a failure)
 
 Use this tool when you:
 - Get a SQL error or unexpected result
 - Are unsure about column names or table relationships
-- Need to verify schema structure before querying
 - Keep getting the wrong result set
+
+Do not use help for routine schema exploration at the start of a task. First
+inspect tables normally with SHOW TABLES / SHOW COLUMNS, and call help only
+after a concrete SQL error, logical mismatch, or repeated wrong result.
 """
 
 
@@ -441,8 +444,9 @@ The following learnings are from previous tasks similar to yours. Use them to av
             
             cur_step += 1
 
-        # Determine success
-        is_success = reward > 0
+        # Determine success. SQL/WebShop can return partial rewards, so treat
+        # only full reward as success in trajectory logs used by resume.
+        is_success = reward >= 1.0 if self.env_kind in {"intercode_sql", "webshop"} else reward > 0
         
         if self.to_print:
             print(f"\nTask {'SUCCESS' if is_success else 'FAILURE'}")
