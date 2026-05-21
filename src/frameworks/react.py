@@ -1,16 +1,66 @@
 import sys
+import re
 from typing import List, Tuple, Any, Dict
 from src.core.base import Framework, BaseEnv
 from src.core.history import EnvironmentHistory
 from src.core.llm import get_chat, Model
 
 
-def clean_action_text(action_text: str) -> str:
+_SQL_START_RE = re.compile(
+    r"^(select|with|show|describe|desc|explain|insert|update|delete|create|drop|alter|submit)\b",
+    re.IGNORECASE,
+)
+_EMBEDDED_SQL_ACTION_RE = re.compile(
+    r"(?<=[A-Za-z0-9_`'\")\]])"
+    r"(?=(?:SHOW\s+COLUMNS\s+FROM|SHOW\s+TABLES|SELECT|WITH|DESCRIBE|DESC|EXPLAIN|submit)\b)",
+    re.IGNORECASE,
+)
+
+
+def _clean_multiline_sql_action(action: str) -> str:
+    """Normalize one SQL action while dropping leaked follow-up actions.
+
+    InterCode SQL accepts one action per turn. The action can be a multi-line
+    SQL statement, but model completions sometimes continue with the next turn
+    (`submit`, another SQL query, or a prompt label). Keep the first statement
+    and normalize it to a single line for the environment.
+    """
+    action = _EMBEDDED_SQL_ACTION_RE.sub("\n", action)
+    lines = [line.strip() for line in action.replace("\r\n", "\n").replace("\r", "\n").split("\n")]
+    lines = [line for line in lines if line]
+    if not lines:
+        return ""
+
+    first_lower = lines[0].lower()
+    if first_lower.startswith("think:") or first_lower.startswith("help["):
+        return lines[0]
+    if first_lower == "submit" or first_lower.startswith("submit "):
+        return "submit"
+
+    kept = [lines[0]]
+    for line in lines[1:]:
+        lower = line.lower()
+        if lower in {"submit", "obs:", "observation:", "action:"}:
+            break
+        if lower.startswith(("submit ", "obs:", "observation:", "action:")):
+            break
+        if _SQL_START_RE.match(line):
+            break
+        kept.append(line)
+
+    return " ".join(" ".join(kept).split())
+
+
+def clean_action_text(action_text: str, allow_newlines: bool = False) -> str:
     """Return exactly the next action from a model completion.
 
     Providers do not always honor stop sequences for reasoning models. Keep the
     agent/environment contract stable by stripping prompt labels and truncating
     any generated continuation before it reaches env.step().
+
+    Most environments use one-line actions, but InterCode SQL can validly use
+    multi-line SQL statements. In that mode we keep the whole SQL statement and
+    normalize internal whitespace, while still stripping prompt-label leakage.
     """
     action = (action_text or "").strip()
     if action.startswith("Action:"):
@@ -18,12 +68,47 @@ def clean_action_text(action_text: str) -> str:
     if action.startswith(">"):
         action = action[1:].strip()
 
+    single_line_action = (
+        not allow_newlines
+        or action.lower().startswith("think:")
+        or action.lower().startswith("help[")
+    )
     earliest = len(action)
-    for marker in ("\r", "\n", "Obs:", "Observation:", "Action:"):
+    markers = (
+        ("\r", "\n", "Obs:", "Observation:", "Action:")
+        if single_line_action
+        else (
+            "\nObs:", "\nObservation:", "\nAction:",
+            "\rObs:", "\rObservation:", "\rAction:",
+            "Obs:", "Observation:", "Action:",
+        )
+    )
+    for marker in markers:
         idx = action.find(marker)
         if idx != -1 and idx < earliest:
             earliest = idx
-    return action[:earliest].strip()
+    action = action[:earliest].strip()
+    if allow_newlines and not single_line_action:
+        action = _clean_multiline_sql_action(action)
+    return action
+
+
+def allow_multiline_actions_for_env(env: BaseEnv) -> bool:
+    """InterCode SQL is the only current env where multiline actions are valid."""
+    return env.__class__.__name__ == "InterCodeSQLEnv"
+
+
+def action_stop_sequences(allow_newlines: bool) -> List[str]:
+    if allow_newlines:
+        return [
+            "\nObs:",
+            "\nObservation:",
+            "\nAction:",
+            "\nsubmit",
+            "\nSubmit",
+            "\nSUBMIT",
+        ]
+    return ["\n"]
 
 
 class ReAct(Framework):
@@ -78,9 +163,11 @@ class ReAct(Framework):
             sys.stdout.flush()
 
         cur_step = 0
+        allow_newlines = allow_multiline_actions_for_env(env)
+        stop_sequences = action_stop_sequences(allow_newlines)
         while cur_step < 49:
-            action_text, _usage = self._llm(str(env_history) + "Action:", stop=['\n'])
-            action = clean_action_text(action_text)
+            action_text, _usage = self._llm(str(env_history) + "Action:", stop=stop_sequences)
+            action = clean_action_text(action_text, allow_newlines=allow_newlines)
             
             env_history.add("action", action)
             

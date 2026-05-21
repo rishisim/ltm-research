@@ -197,13 +197,24 @@ def compute_metrics(
     reward_threshold: float = 1.0,
 ) -> Dict[str, Any]:
     total_tasks = len(task_ids)
+    task_id_set = set(task_ids)
     if final_success_override is not None:
         success_count = final_success_override
     else:
-        success_count = sum(
-            1 for r in attempt_records
-            if r.get("success") or r.get("reward", 0) >= reward_threshold
-        )
+        success_task_ids = {
+            r.get("task_id")
+            for r in attempt_records
+            if r.get("task_id") in task_id_set
+            and float(r.get("reward", 0) or 0) >= reward_threshold
+        }
+        success_count = len(success_task_ids)
+
+    purchase_done_task_ids = {
+        r.get("task_id")
+        for r in attempt_records
+        if r.get("task_id") in task_id_set and bool(r.get("purchase_done", False))
+    }
+    purchase_done_count = len(purchase_done_task_ids)
 
     accuracy = (success_count / total_tasks) if total_tasks else 0.0
     avg_steps_per_trial = (
@@ -228,6 +239,8 @@ def compute_metrics(
         "success": int(success_count),
         "total": int(total_tasks),
         "success_total": f"{int(success_count)} / {int(total_tasks)}",
+        "purchase_done": int(purchase_done_count),
+        "purchase_done_total": f"{int(purchase_done_count)} / {int(total_tasks)}",
         "accuracy": float(accuracy),
         "avg_reward": float(avg_reward),
         "avg_steps_per_trial": float(avg_steps_per_trial),
@@ -273,7 +286,15 @@ def run_react_baseline(
             except json.JSONDecodeError:
                 recovered = recover_trajectories_from_jsonl(run_dir / "trajectories.jsonl")
                 if recovered:
-                    attempts = [{"task_id": e["task_id"], "reward": e.get("reward", 0), "success": e.get("success", False)} for e in recovered]
+                    attempts = [
+                        {
+                            "task_id": e["task_id"],
+                            "reward": e.get("reward", 0),
+                            "success": float(e.get("reward", 0) or 0) >= reward_threshold,
+                            "purchase_done": e.get("purchase_done", False),
+                        }
+                        for e in recovered
+                    ]
                     completed_task_ids = {a["task_id"] for a in attempts}
                     atomic_json_dump(attempts, attempts_path)
                     print(f"[react] Recovered {len(attempts)} attempts from JSONL backup")
@@ -319,6 +340,7 @@ def run_react_baseline(
         env = make_env(task.task_id, webshop_path, num_products=None, server=shared_server)
 
         success = False
+        purchase_done = False
         reward = 0.0
         step_num = 0
         task_desc = ""
@@ -331,6 +353,7 @@ def run_react_baseline(
             history, raw_success = agent.run(
                 env=env, base_prompt=base_prompt, memory=[], start_ob=ob,
             )
+            purchase_done = bool(raw_success)
             history_items = history.to_json()
             step_num = count_action_steps(history_items)
 
@@ -343,19 +366,21 @@ def run_react_baseline(
                         reward = float(score_str)
                     except ValueError:
                         pass
-            success = raw_success or (reward >= reward_threshold)
+            success = reward >= reward_threshold
         except Exception as e:
             if not quiet:
                 print(f"[react] Task failed with error ({task.task_id_str}): {e}")
 
         attempt = {
             "task_id": task.task_id_str, "task_id_int": task.task_id,
-            "trial_num": 1, "step_num": step_num, "reward": reward, "success": success,
+            "trial_num": 1, "step_num": step_num, "reward": reward,
+            "success": success, "reward_success": success, "purchase_done": purchase_done,
         }
         traj = {
             "task_id": task.task_id_str, "task_id_int": task.task_id,
             "task_desc": task_desc, "trial_num": 1, "steps": history_items,
-            "success": success, "reward": reward, "step_num": step_num,
+            "success": success, "reward_success": success,
+            "purchase_done": purchase_done, "reward": reward, "step_num": step_num,
             "split": task.split,
         }
 
@@ -367,7 +392,10 @@ def run_react_baseline(
             append_jsonl(traj, run_dir / "trajectories.jsonl")
             with open(world_log, "a") as wf:
                 status = "SUCCESS" if success else "FAIL"
-                wf.write(f"Task #{task_idx}: {task.task_id_str} - {status} (reward={reward:.4f}, steps={step_num})\n")
+                wf.write(
+                    f"Task #{task_idx}: {task.task_id_str} - {status} "
+                    f"(reward={reward:.4f}, purchase_done={purchase_done}, steps={step_num})\n"
+                )
 
         return attempt
 
@@ -459,7 +487,15 @@ def run_memory_agent_variant(
             except json.JSONDecodeError:
                 recovered = recover_trajectories_from_jsonl(run_dir / "trajectories.jsonl")
                 if recovered:
-                    attempts = [{"task_id": e["task_id"], "reward": e.get("reward", 0), "success": e.get("success", False)} for e in recovered]
+                    attempts = [
+                        {
+                            "task_id": e["task_id"],
+                            "reward": e.get("reward", 0),
+                            "success": float(e.get("reward", 0) or 0) >= reward_threshold,
+                            "purchase_done": e.get("purchase_done", False),
+                        }
+                        for e in recovered
+                    ]
                     completed_task_ids = {a["task_id"] for a in attempts}
                     atomic_json_dump(attempts, attempts_path)
                     print(f"[{framework_id}] Recovered {len(attempts)} attempts from JSONL backup")
@@ -508,6 +544,7 @@ def run_memory_agent_variant(
         env = make_env(task.task_id, webshop_path, num_products=None, server=shared_server)
 
         success = False
+        purchase_done = False
         reward = 0.0
         step_num = 0
         task_desc = ""
@@ -527,6 +564,7 @@ def run_memory_agent_variant(
                 max_learnings=max_learnings, min_valid_level=min_valid_level,
                 split=task.split,
             )
+            purchase_done = bool(raw_success)
             history_items = history.to_json()
             step_num = count_action_steps(history_items)
 
@@ -539,19 +577,21 @@ def run_memory_agent_variant(
                         reward = float(score_str)
                     except ValueError:
                         pass
-            success = raw_success or (reward >= reward_threshold)
+            success = reward >= reward_threshold
         except Exception as e:
             if not quiet:
                 print(f"[{framework_id}] Task failed ({task.task_id_str}): {e}")
 
         attempt = {
             "task_id": task.task_id_str, "task_id_int": task.task_id,
-            "trial_num": 1, "step_num": step_num, "reward": reward, "success": success,
+            "trial_num": 1, "step_num": step_num, "reward": reward,
+            "success": success, "reward_success": success, "purchase_done": purchase_done,
         }
         traj = {
             "task_id": task.task_id_str, "task_id_int": task.task_id,
             "task_desc": task_desc, "trial_num": 1, "steps": history_items,
-            "success": success, "reward": reward, "step_num": step_num,
+            "success": success, "reward_success": success,
+            "purchase_done": purchase_done, "reward": reward, "step_num": step_num,
             "split": task.split,
         }
 
@@ -563,7 +603,10 @@ def run_memory_agent_variant(
             append_jsonl(traj, run_dir / "trajectories.jsonl")
             with open(world_log, "a") as wf:
                 status = "SUCCESS" if success else "FAIL"
-                wf.write(f"Task #{task_idx}: {task.task_id_str} - {status} (reward={reward:.4f}, steps={step_num})\n")
+                wf.write(
+                    f"Task #{task_idx}: {task.task_id_str} - {status} "
+                    f"(reward={reward:.4f}, purchase_done={purchase_done}, steps={step_num})\n"
+                )
 
         return attempt
 
@@ -646,9 +689,8 @@ def run_reflexion(
                 if tid not in state:
                     continue
                 reward = float(entry.get("reward", 0))
-                success = bool(entry.get("success", False))
                 state[tid]["best_reward"] = max(state[tid]["best_reward"], reward)
-                if success or reward >= reward_threshold:
+                if reward >= reward_threshold:
                     state[tid]["is_success"] = True
 
             # Reload reflexions into memory
@@ -743,6 +785,7 @@ def run_reflexion(
             env = make_env(task.task_id, webshop_path, num_products=None, server=shared_server)
 
             success = False
+            purchase_done = False
             reward = 0.0
             history_items = []
 
@@ -758,6 +801,7 @@ def run_reflexion(
                     trial_num=trial_idx + 1, log_dir=str(run_dir),
                     task_desc=task_desc,
                 )
+                purchase_done = bool(raw_success)
 
                 history_items = _history.to_json()
                 reward = 0.0
@@ -769,13 +813,14 @@ def run_reflexion(
                             reward = float(score_str)
                         except ValueError:
                             pass
-                success = raw_success or (reward >= reward_threshold)
+                success = reward >= reward_threshold
 
                 # Fix #4: include split in reflexion trajectory entries.
                 traj_entry = {
                     "task_id": task.task_id_str, "task_type": task.task_id_str,
                     "task_desc": task_desc, "trial_num": trial_idx + 1,
-                    "steps": [], "success": success, "reward": reward,
+                    "steps": [], "success": success, "reward_success": success,
+                    "purchase_done": purchase_done, "reward": reward,
                     "step_num": len(history_items) // 2 + 1 if history_items else 0,
                     "split": task.split,
                 }
@@ -806,7 +851,10 @@ def run_reflexion(
             with lock:
                 with open(world_log, "a") as wf:
                     status = "SUCCESS" if success else "FAIL"
-                    wf.write(f"Task #{task_idx} Trial #{trial_idx}: {status} (reward={reward:.4f})\n")
+                    wf.write(
+                        f"Task #{task_idx} Trial #{trial_idx}: {status} "
+                        f"(reward={reward:.4f}, purchase_done={purchase_done})\n"
+                    )
 
             return success
 
@@ -889,7 +937,8 @@ def run_reflexion(
                 "trial_num": int(entry.get("trial_num", 0)),
                 "step_num": int(entry.get("step_num", 0)),
                 "reward": float(entry.get("reward", 0)),
-                "success": bool(entry.get("success", False)),
+                "success": float(entry.get("reward", 0) or 0) >= reward_threshold,
+                "purchase_done": bool(entry.get("purchase_done", False)),
             })
 
     final_success = sum(1 for item in state.values() if item["is_success"])
@@ -928,6 +977,7 @@ def write_split_summaries(
     csv_columns = [
         "framework",
         "success_total",
+        "purchase_done_total",
         "accuracy",
         "avg_reward",
         "avg_steps_per_trial",
@@ -941,6 +991,7 @@ def write_split_summaries(
             writer.writerow({
                 "framework": row["framework"],
                 "success_total": row["success_total"],
+                "purchase_done_total": row.get("purchase_done_total", "0 / 0"),
                 "accuracy": f"{row['accuracy']:.4f}",
                 "avg_reward": f"{row['avg_reward']:.4f}",
                 "avg_steps_per_trial": f"{row['avg_steps_per_trial']:.4f}",
@@ -950,11 +1001,12 @@ def write_split_summaries(
 
     with open(md_path, "w") as f:
         f.write(f"# WebShop Summary ({split})\n\n")
-        f.write("| Framework | Success / Total | Accuracy | Avg Reward | Avg Steps/Trial | Avg Steps/Task | Gain from ReAct |\n")
-        f.write("|---|---:|---:|---:|---:|---:|---:|\n")
+        f.write("| Framework | Reward Success / Total | Purchase Done / Total | Accuracy | Avg Reward | Avg Steps/Trial | Avg Steps/Task | Gain from ReAct |\n")
+        f.write("|---|---:|---:|---:|---:|---:|---:|---:|\n")
         for row in rows:
             f.write(
-                f"| {row['framework']} | {row['success_total']} | {row['accuracy']:.4f} | "
+                f"| {row['framework']} | {row['success_total']} | "
+                f"{row.get('purchase_done_total', '0 / 0')} | {row['accuracy']:.4f} | "
                 f"{row['avg_reward']:.4f} | {row['avg_steps_per_trial']:.4f} | "
                 f"{row['avg_steps_per_task']:.4f} | {row['gain_from_base_react']:+.4f} |\n"
             )
@@ -968,7 +1020,7 @@ def write_combined_summary(all_rows: List[Dict[str, Any]], summaries_dir: Path) 
         writer = csv.DictWriter(
             f,
             fieldnames=[
-                "split", "framework", "success_total", "accuracy",
+                "split", "framework", "success_total", "purchase_done_total", "accuracy",
                 "avg_reward", "avg_steps_per_trial", "avg_steps_per_task",
                 "gain_from_base_react",
             ],
@@ -979,6 +1031,7 @@ def write_combined_summary(all_rows: List[Dict[str, Any]], summaries_dir: Path) 
                 "split": row["split"],
                 "framework": row["framework"],
                 "success_total": row["success_total"],
+                "purchase_done_total": row.get("purchase_done_total", "0 / 0"),
                 "accuracy": f"{row['accuracy']:.4f}",
                 "avg_reward": f"{row['avg_reward']:.4f}",
                 "avg_steps_per_trial": f"{row['avg_steps_per_trial']:.4f}",
@@ -1083,6 +1136,16 @@ def main() -> None:
         help="Path to memory bank JSON",
     )
     parser.add_argument(
+        "--sanitized-memory-bank",
+        type=str,
+        default="",
+        help=(
+            "Optional sanitized memory bank JSON for CR/TR variants. "
+            "When set, this path is used for retrieval while --memory-bank is "
+            "kept in suite_config as the original source."
+        ),
+    )
+    parser.add_argument(
         "--runs-root", type=str,
         default="webshop_runs/memory_retrieval_v2/memory_agent_runs",
         help="Root output directory",
@@ -1176,11 +1239,22 @@ def main() -> None:
     prompts_path = base_dir / "data" / "webshop" / "prompts" / "webshop_prompts.json"
     runs_root = (base_dir / args.runs_root).resolve()
     misc_archive_root = (base_dir / args.misc_archive_root).resolve()
-    memory_bank_path = (base_dir / args.memory_bank).resolve()
+    original_memory_bank_path = (base_dir / args.memory_bank).resolve()
+    memory_bank_path = (
+        (base_dir / args.sanitized_memory_bank).resolve()
+        if args.sanitized_memory_bank
+        else original_memory_bank_path
+    )
     manifest_dir = (base_dir / args.manifest_dir).resolve()
 
     selected_splits = parse_list_arg(args.splits)
     selected_frameworks = parse_list_arg(args.frameworks)
+    needs_memory_bank = any(
+        framework_id in {"react_cr", "react_tr", "react_cr_tr", "react_hard_neg_cr_tr"}
+        for framework_id in selected_frameworks
+    )
+    if needs_memory_bank and not memory_bank_path.exists():
+        raise FileNotFoundError(f"Memory bank not found: {memory_bank_path}")
 
     for framework_id in selected_frameworks:
         if framework_id not in FRAMEWORK_DISPLAY:
@@ -1221,6 +1295,10 @@ def main() -> None:
             "model": args.model,
             "embedding_provider": embedding_provider,
             "memory_bank": str(memory_bank_path),
+            "original_memory_bank": str(original_memory_bank_path),
+            "sanitized_memory_bank": str(memory_bank_path) if args.sanitized_memory_bank else "",
+            "max_learnings": args.max_learnings,
+            "min_valid_level": args.min_valid_level,
             "seed": args.seed,
             "prepare_only": args.prepare_only,
         },
@@ -1305,7 +1383,8 @@ def main() -> None:
             split_rows.append(row)
             all_rows.append(row)
 
-            print(f"\n  Results: {metrics['success_total']} success, "
+            print(f"\n  Results: {metrics['success_total']} reward success, "
+                  f"{metrics.get('purchase_done_total', '0 / 0')} purchase_done, "
                   f"accuracy={metrics['accuracy']:.4f}, "
                   f"avg_reward={metrics['avg_reward']:.4f}")
 

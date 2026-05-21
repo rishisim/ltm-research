@@ -31,7 +31,7 @@ from src.frameworks.memory_retrieval_v2.retrieval.core.tool_retrieval import (
     load_issue_embeddings,
     format_help_response,
     save_as_csv,
-    VALID_LEVEL_WEIGHT
+    VALID_LEVEL_PRIORITY,
 )
 
 # Global cache for BM25 (re-implementing here to avoid sharing state with core if run in same process)
@@ -42,7 +42,8 @@ _cached_kb_path_hn = None
 def help_tool(
     issue: str,
     memory_bank_path: str,
-    top_k: int = 3
+    top_k: int = 3,
+    min_valid_level: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
     Hard Negative Help Tool.
@@ -54,6 +55,7 @@ def help_tool(
         issue: The issue description
         memory_bank_path: Path to knowledge_base.json
         top_k: Number of results to return
+        min_valid_level: Optional minimum validation level for returned memories.
         
     Returns:
         Dictionary with query and results (irrelevant ones)
@@ -146,11 +148,16 @@ def help_tool(
         if entry_index < len(memory_bank):
             full_entry = memory_bank[entry_index]
             valid_level = full_entry.get("valid_level", "CANDIDATE")
-            valid_weight = VALID_LEVEL_WEIGHT.get(valid_level, 1.0)
+            valid_priority = VALID_LEVEL_PRIORITY.get(valid_level, 0)
+            if min_valid_level is not None:
+                min_priority = VALID_LEVEL_PRIORITY.get(min_valid_level, 0)
+                if valid_priority < min_priority:
+                    continue
             
-            # Weighted Score
-            # We use the SAME formula as core
-            tr_rank_score = (0.7 * cos_norm + 0.3 * bm25_norm) * valid_weight
+            # Use raw relevance for hard-negative ranking. Validation quality is
+            # preserved via filtering/tie-breaks rather than inverted by the
+            # ascending sort.
+            tr_rank_score = 0.7 * cos_norm + 0.3 * bm25_norm
             
             result_entry = {
                 "TR_rank_score": tr_rank_score,
@@ -168,8 +175,14 @@ def help_tool(
             }
             scored_entries.append(result_entry)
             
-    # Sort by TR_rank_score ASCENDING (Lowest score first)
-    scored_entries.sort(key=lambda x: x["TR_rank_score"], reverse=False)
+    # Sort by relevance ASCENDING (lowest score first), with stronger
+    # validation as a tie-breaker so hard-neg differs by relevance only.
+    scored_entries.sort(
+        key=lambda x: (
+            x["TR_rank_score"],
+            -VALID_LEVEL_PRIORITY.get(x.get("valid_level", "CANDIDATE"), 0),
+        )
+    )
     
     # Step 5: Return top_k (which are the lowest scoring ones)
     return {

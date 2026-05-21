@@ -13,6 +13,12 @@
 #   ./scripts/run_webshop_in_docker.sh \
 #       --num-tasks 1 --frameworks react --model gemini-2.5-flash \
 #       --seed 0 --runs-root /tmp/webshop_smoke
+#
+# Sanitized KB example:
+#   ./scripts/run_webshop_in_docker.sh \
+#       --frameworks react_cr,react_tr,react_cr_tr,react_hard_neg_cr_tr \
+#       --sanitized-memory-bank webshop_runs/.../knowledge_base.sanitized.json \
+#       --max-learnings 3 --min-valid-level VALID_NEXT_TRIAL
 
 set -euo pipefail
 

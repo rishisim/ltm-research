@@ -165,3 +165,20 @@ intercode_sql_runs/smoke_final_verify/
 intercode_sql_runs/*.log
 intercode_sql_runs/RUNS_COMPLETE
 intercode_sql_runs/run_status.txt
+
+# Local diagnostic gates and rerun scratch outputs. Keep canonical multiseed
+# results explicitly tracked, but do not surface one-off preflights in status.
+alfworld_runs/gates/
+alfworld_runs/preflight_*/
+alfworld_runs/rerun_clean/
+intercode_sql_runs/gate_*/
+intercode_sql_runs/preflight_*/
+intercode_sql_runs/rerun_clean/
+webshop_runs/audit_*/
+webshop_runs/preflight_*/
+webshop_runs/rerun_clean/
+
+# Generated KB audit/sanitization outputs. Scripts regenerate these from the
+# tracked source KBs before reruns.
+webshop_runs/memory_retrieval_v2/memory_agent_runs/react_reflexion_train/knowledge_base.audit.*
+webshop_runs/memory_retrieval_v2/memory_agent_runs/react_reflexion_train/knowledge_base.sanitized*.json

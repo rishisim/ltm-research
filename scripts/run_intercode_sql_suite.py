@@ -117,6 +117,20 @@ def make_env(task_index: int, data_path: str, image_name: str = "docker-env-sql-
     )
 
 
+def build_sql_instructions() -> str:
+    return (
+        "You are an AI agent interacting with a MySQL database to answer questions using SQL.\n"
+        "You can execute SQL queries as actions. The observation will show the query results.\n"
+        "Use SHOW TABLES and SHOW COLUMNS FROM <table> to explore the schema.\n"
+        "To finish, first execute the SQL query whose result answers the question, then issue "
+        "the action exactly as 'submit' on its own line.\n"
+        "Do not put the answer, SQL, punctuation, or explanation after 'submit'; the runner "
+        "grades the most recent SQL result.\n"
+        "Use think: to reason about the problem before acting.\n\n"
+        "Here are some examples:\n\n"
+    )
+
+
 def ensure_clean_dir(path: Path, resume: bool = False) -> None:
     if resume:
         path.mkdir(parents=True, exist_ok=True)
@@ -175,9 +189,12 @@ def compute_metrics(
     if final_success_override is not None:
         success_count = final_success_override
     else:
+        # InterCode SQL rewards are continuous/partial-match. A logged agent
+        # boolean may mean "non-zero reward" for generic agents, so SQL metrics
+        # must use the canonical exact-match threshold.
         success_count = sum(
             1 for r in attempt_records
-            if r.get("success") or r.get("reward", 0) >= reward_threshold
+            if float(r.get("reward", 0) or 0) >= reward_threshold
         )
 
     accuracy = (success_count / total_tasks) if total_tasks else 0.0
@@ -296,15 +313,7 @@ def run_react_baseline(
     base_prompt = "\n\n".join(all_prompts) if all_prompts else ""
 
     # Prepend SQL-specific instructions
-    sql_instructions = (
-        "You are an AI agent interacting with a MySQL database to answer questions using SQL.\n"
-        "You can execute SQL queries as actions. The observation will show the query results.\n"
-        "Use SHOW TABLES and SHOW COLUMNS FROM <table> to explore the schema.\n"
-        "When you are confident in your answer, type 'submit' to submit.\n"
-        "Use think: to reason about the problem before acting.\n\n"
-        "Here are some examples:\n\n"
-    )
-    base_prompt = sql_instructions + base_prompt
+    base_prompt = build_sql_instructions() + base_prompt
 
     log_mode = "a" if resume else "w"
     with open(world_log, log_mode) as wf:
@@ -454,15 +463,7 @@ def run_memory_agent_variant(
             all_prompts.append(prompts[key])
     base_prompt_examples = "\n\n".join(all_prompts) if all_prompts else ""
 
-    sql_instructions = (
-        "You are an AI agent interacting with a MySQL database to answer questions using SQL.\n"
-        "You can execute SQL queries as actions. The observation will show the query results.\n"
-        "Use SHOW TABLES and SHOW COLUMNS FROM <table> to explore the schema.\n"
-        "When you are confident in your answer, type 'submit' to submit.\n"
-        "Use think: to reason about the problem before acting.\n\n"
-        "Here are some examples:\n\n"
-    )
-    base_prompt = sql_instructions + base_prompt_examples
+    base_prompt = build_sql_instructions() + base_prompt_examples
 
     world_log = run_dir / "world.log"
 
@@ -596,15 +597,7 @@ def run_reflexion(
             all_prompts.append(prompts[key])
     base_prompt_examples = "\n\n".join(all_prompts) if all_prompts else ""
 
-    sql_instructions = (
-        "You are an AI agent interacting with a MySQL database to answer questions using SQL.\n"
-        "You can execute SQL queries as actions. The observation will show the query results.\n"
-        "Use SHOW TABLES and SHOW COLUMNS FROM <table> to explore the schema.\n"
-        "When you are confident in your answer, type 'submit' to submit.\n"
-        "Use think: to reason about the problem before acting.\n\n"
-        "Here are some examples:\n\n"
-    )
-    base_prompt = sql_instructions + base_prompt_examples
+    base_prompt = build_sql_instructions() + base_prompt_examples
 
     state: Dict[str, Dict[str, Any]] = {
         task.task_id_str: {"memory": [], "is_success": False, "skip": False}
@@ -912,6 +905,8 @@ def run_framework(
     reward_threshold: float,
     quiet: bool,
     resume: bool = False,
+    max_learnings: int = 25,
+    min_valid_level: str = "",
 ) -> Dict[str, Any]:
     if framework_id == "react":
         return run_react_baseline(
@@ -948,6 +943,8 @@ def run_framework(
             reward_threshold=reward_threshold,
             quiet=quiet,
             resume=resume,
+            max_learnings=max_learnings,
+            min_valid_level=min_valid_level,
         )
     raise ValueError(f"Unknown framework id: {framework_id}")
 
@@ -998,9 +995,14 @@ def main() -> None:
     parser.add_argument(
         "--memory-bank",
         type=str,
-        default="intercode_sql_runs/memory_agent_runs/train/react_reflexion/knowledge_base.json",
-        help="Path to memory bank JSON. Default points to the Phase-3 KB built "
-             "from train/react_reflexion trajectories per intercode_sql_runs/README.md.",
+        default=(
+            "intercode_sql_runs/memory_agent_runs/train/react_reflexion/"
+            "knowledge_base.sql_sanitized.json"
+        ),
+        help=(
+            "Path to memory bank JSON. Default points to the sanitized SQL KB "
+            "created by scripts/utils/sql_memory_sanitizer.py."
+        ),
     )
     parser.add_argument(
         "--data-dir",
@@ -1036,6 +1038,19 @@ def main() -> None:
             "react_tr, react_cr_tr, react_hard_neg_cr_tr. Reflexion resume is "
             "also supported via trajectories.jsonl."
         ),
+    )
+    parser.add_argument(
+        "--max-learnings",
+        type=int,
+        default=25,
+        help="Max learnings to retrieve for context (default: 25).",
+    )
+    parser.add_argument(
+        "--min-valid-level",
+        type=str,
+        default="",
+        choices=["", "CANDIDATE", "VALID_SAME_TRIAL", "VALID_NEXT_TRIAL"],
+        help="Minimum validation level for retrieved learnings (default: no filter).",
     )
     parser.add_argument(
         "--seed",
@@ -1088,7 +1103,10 @@ def main() -> None:
     memory_frameworks = {"react_cr", "react_tr", "react_cr_tr", "react_hard_neg_cr_tr"}
     if memory_frameworks & set(selected_frameworks) and not memory_bank_path.exists():
         print(f"Warning: Memory bank not found at {memory_bank_path}")
-        print("Memory-based frameworks will fail. Run KB construction first.")
+        print(
+            "Memory-based frameworks will fail. Run KB construction first, then:\n"
+            "  python3 scripts/utils/sql_memory_sanitizer.py"
+        )
 
     runs_root.mkdir(parents=True, exist_ok=True)
     summaries_dir = runs_root / "summaries"
@@ -1116,6 +1134,8 @@ def main() -> None:
             "model": args.model,
             "embedding_provider": embedding_provider,
             "memory_bank": str(memory_bank_path),
+            "max_learnings": args.max_learnings,
+            "min_valid_level": args.min_valid_level,
             "data_path": data_path,
             "reward_threshold": args.reward_threshold,
             "seed": args.seed,
@@ -1156,6 +1176,8 @@ def main() -> None:
                 reward_threshold=args.reward_threshold,
                 quiet=args.quiet,
                 resume=args.resume,
+                max_learnings=args.max_learnings,
+                min_valid_level=args.min_valid_level,
             )
 
             row = {

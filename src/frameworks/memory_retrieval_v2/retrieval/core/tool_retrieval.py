@@ -36,6 +36,12 @@ VALID_LEVEL_WEIGHT = {
     "CANDIDATE": 0.6,
 }
 
+VALID_LEVEL_PRIORITY = {
+    "CANDIDATE": 0,
+    "VALID_SAME_TRIAL": 1,
+    "VALID_NEXT_TRIAL": 2,
+}
+
 # Global cache for issue_text embeddings (loaded once per knowledge base)
 _issue_embeddings_cache = None
 _cached_kb_path = None
@@ -151,7 +157,8 @@ def load_issue_embeddings(memory_bank_path: str, force_rebuild: bool = False) ->
 def help_tool(
     issue: str,
     memory_bank_path: str,
-    top_k: int = 3
+    top_k: int = 3,
+    min_valid_level: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
     Help tool for agents to retrieve relevant learnings when struggling.
@@ -160,6 +167,7 @@ def help_tool(
         issue: The issue description from the agent (e.g., "cannot find tomato")
         memory_bank_path: Path to the knowledge_base.json file
         top_k: Number of top similar issues to retrieve (default: 3)
+        min_valid_level: Optional minimum validation level for returned memories.
         
     Returns:
         Dictionary containing:
@@ -275,6 +283,11 @@ def help_tool(
         if entry_index < len(memory_bank):
             full_entry = memory_bank[entry_index]
             valid_level = full_entry.get("valid_level", "CANDIDATE")
+            if min_valid_level is not None:
+                min_priority = VALID_LEVEL_PRIORITY.get(min_valid_level, 0)
+                valid_priority = VALID_LEVEL_PRIORITY.get(valid_level, 0)
+                if valid_priority < min_priority:
+                    continue
             valid_weight = VALID_LEVEL_WEIGHT.get(valid_level, 1)
             
             # Final Score

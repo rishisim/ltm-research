@@ -771,6 +771,8 @@ def run_framework(
     memory_bank_path: Path,
     quiet: bool,
     resume: bool = False,
+    max_learnings: int = 25,
+    min_valid_level: str = "",
 ) -> Dict[str, Any]:
     if framework_id == "react":
         return run_react_baseline(
@@ -804,6 +806,8 @@ def run_framework(
             memory_bank_path=memory_bank_path,
             quiet=quiet,
             resume=resume,
+            max_learnings=max_learnings,
+            min_valid_level=min_valid_level,
         )
     raise ValueError(f"Unknown framework id: {framework_id}")
 
@@ -856,6 +860,19 @@ def main() -> None:
         type=str,
         default="alfworld_runs/memory_retrieval_v2/knowledge_base/knowledge_base.json",
         help="Path to memory bank JSON",
+    )
+    parser.add_argument(
+        "--max-learnings",
+        type=int,
+        default=25,
+        help="Max learnings to retrieve for context (default: 25).",
+    )
+    parser.add_argument(
+        "--min-valid-level",
+        type=str,
+        default="",
+        choices=["", "CANDIDATE", "VALID_SAME_TRIAL", "VALID_NEXT_TRIAL"],
+        help="Minimum validation level for retrieved learnings/help (default: no filter).",
     )
     parser.add_argument(
         "--runs-root",
@@ -990,6 +1007,8 @@ def main() -> None:
             "model": args.model,
             "embedding_provider": embedding_provider,
             "memory_bank": str(memory_bank_path),
+            "max_learnings": args.max_learnings,
+            "min_valid_level": args.min_valid_level,
             "seed": args.seed,
             "prepare_only": args.prepare_only,
         },
@@ -1042,6 +1061,8 @@ def main() -> None:
                 memory_bank_path=memory_bank_path,
                 quiet=args.quiet,
                 resume=args.resume,
+                max_learnings=args.max_learnings,
+                min_valid_level=args.min_valid_level,
             )
 
             row = {

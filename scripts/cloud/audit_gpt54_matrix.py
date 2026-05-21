@@ -10,14 +10,14 @@ from pathlib import Path
 from typing import Iterable
 
 
-FRAMEWORKS = [
+DEFAULT_FRAMEWORKS = [
     "react",
     "react_cr",
     "react_tr",
     "react_cr_tr",
     "react_hard_neg_cr_tr",
 ]
-SEEDS = [0, 1, 2]
+DEFAULT_SEEDS = [0, 1, 2]
 VALID_WEBSHOP_PREFIXES = ("think:", "search[", "click[", "help[")
 
 
@@ -57,10 +57,25 @@ def trajectory_count(run_dir: Path) -> int:
     return count_jsonl(run_dir / "agent_trajectories.jsonl")
 
 
-def audit_matrix(root: Path, split: str, expected: int, label: str) -> list[str]:
+def parse_csv(value: str) -> list[str]:
+    return [part.strip() for part in value.split(",") if part.strip()]
+
+
+def parse_seeds(value: str) -> list[int]:
+    return [int(part) for part in value.replace(",", " ").split() if part.strip()]
+
+
+def audit_matrix(
+    root: Path,
+    split: str,
+    expected: int,
+    label: str,
+    frameworks: list[str],
+    seeds: list[int],
+) -> list[str]:
     rows: list[str] = []
-    for framework in FRAMEWORKS:
-        for seed in SEEDS:
+    for framework in frameworks:
+        for seed in seeds:
             run_dir = root / split / framework / f"seed_{seed}"
             n = trajectory_count(run_dir)
             status = "OK" if n == expected else f"GAP({n}/{expected})"
@@ -83,11 +98,17 @@ def iter_webshop_actions(path: Path) -> Iterable[str]:
     return actions
 
 
-def audit_webshop_actions(root: Path, min_valid_rate: float) -> list[str]:
+def audit_webshop_actions(
+    root: Path,
+    split: str,
+    min_valid_rate: float,
+    frameworks: list[str],
+    seeds: list[int],
+) -> list[str]:
     rows: list[str] = []
-    for framework in FRAMEWORKS:
-        for seed in SEEDS:
-            run_dir = root / "test" / framework / f"seed_{seed}"
+    for framework in frameworks:
+        for seed in seeds:
+            run_dir = root / split / framework / f"seed_{seed}"
             actions = list(iter_webshop_actions(run_dir / "trajectories.json"))
             counts = Counter()
             examples: list[str] = []
@@ -129,6 +150,14 @@ def main() -> None:
     parser.add_argument("--web-root", default=None)
     parser.add_argument("--alf-root", default=None)
     parser.add_argument("--sql-root", default=None)
+    parser.add_argument("--phases", default="webshop,alfworld,sql")
+    parser.add_argument("--frameworks", default=",".join(DEFAULT_FRAMEWORKS))
+    parser.add_argument("--seeds", default=" ".join(str(seed) for seed in DEFAULT_SEEDS))
+    parser.add_argument("--web-split", default="test")
+    parser.add_argument("--sql-split", default="test")
+    parser.add_argument("--web-expected", type=int, default=200)
+    parser.add_argument("--alf-expected", type=int, default=134)
+    parser.add_argument("--sql-expected", type=int, default=200)
     parser.add_argument(
         "--min-webshop-valid-rate",
         type=float,
@@ -144,18 +173,31 @@ def main() -> None:
     web_root = Path(args.web_root or f"webshop_runs/rerun_clean/{args.model}")
     alf_root = Path(args.alf_root or f"alfworld_runs/rerun_clean/{args.model}")
     sql_root = Path(args.sql_root or f"intercode_sql_runs/rerun_clean/{args.model}")
+    phases = set(parse_csv(args.phases))
+    frameworks = parse_csv(args.frameworks)
+    seeds = parse_seeds(args.seeds)
 
     print("=== Completeness ===")
-    for row in audit_matrix(web_root, "test", 200, "WebShop"):
-        print(row)
-    for row in audit_matrix(alf_root, "unseen", 134, "ALFWorld"):
-        print(row)
-    for row in audit_matrix(sql_root, "test", 200, "SQL"):
-        print(row)
+    if "webshop" in phases:
+        for row in audit_matrix(web_root, args.web_split, args.web_expected, "WebShop", frameworks, seeds):
+            print(row)
+    if "alfworld" in phases:
+        for row in audit_matrix(alf_root, "unseen", args.alf_expected, "ALFWorld", frameworks, seeds):
+            print(row)
+    if "sql" in phases:
+        for row in audit_matrix(sql_root, args.sql_split, args.sql_expected, "SQL", frameworks, seeds):
+            print(row)
 
-    print("\n=== WebShop Action Validity ===")
-    for row in audit_webshop_actions(web_root, args.min_webshop_valid_rate):
-        print(row)
+    if "webshop" in phases:
+        print("\n=== WebShop Action Validity ===")
+        for row in audit_webshop_actions(
+            web_root,
+            args.web_split,
+            args.min_webshop_valid_rate,
+            frameworks,
+            seeds,
+        ):
+            print(row)
 
 
 if __name__ == "__main__":

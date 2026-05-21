@@ -16,7 +16,7 @@ from typing import List, Tuple, Any, Dict, Optional
 from src.core.base import Framework, BaseEnv
 from src.core.history import EnvironmentHistory
 from src.core.llm import get_chat, Model
-from src.frameworks.react import ReAct, clean_action_text
+from src.frameworks.react import ReAct, action_stop_sequences, clean_action_text
 
 # Import HARD NEGATIVE retrieval modules
 from src.frameworks.memory_retrieval_v2.retrieval.variants.hard_neg_context_retrieval import (
@@ -53,6 +53,7 @@ class HardNegMemoryAgent(ReAct):
         super().__init__(model, to_print)
         self.memory_bank_path: Optional[str] = None
         self.env_kind: str = env_kind
+        self.min_valid_level: Optional[str] = None
 
     def _get_help_instructions(self) -> str:
         """
@@ -88,7 +89,8 @@ class HardNegMemoryAgent(ReAct):
             result = help_tool(
                 issue=query,
                 memory_bank_path=self.memory_bank_path,
-                top_k=3
+                top_k=3,
+                min_valid_level=self.min_valid_level,
             )
             return format_help_response(result)
         except Exception as e:
@@ -110,6 +112,7 @@ class HardNegMemoryAgent(ReAct):
         split: str = "",
     ) -> Tuple[EnvironmentHistory, bool]:
         self.memory_bank_path = memory_bank_path
+        self.min_valid_level = min_valid_level or None
         
         steps: List[Dict[str, Any]] = []
         help_calls: List[Dict[str, str]] = []
@@ -199,12 +202,13 @@ The following learnings are from previous tasks similar to yours. Use them to av
         total_cached_tokens = 0
 
         while cur_step < 49:
+            allow_newlines = self.env_kind == "intercode_sql"
             action_text, usage = self._llm(
                 str(env_history) + "Action:",
-                stop=['\n'],
+                stop=action_stop_sequences(allow_newlines),
                 system_prompt=self._stable_system_prompt,
             )
-            action = clean_action_text(action_text)
+            action = clean_action_text(action_text, allow_newlines=allow_newlines)
             
             step_input_tokens = usage.get("input_tokens", 0)
             step_output_tokens = usage.get("output_tokens", 0)
@@ -298,6 +302,7 @@ The following learnings are from previous tasks similar to yours. Use them to av
                 embedding_model_used=embedding_model_used,
                 cached_tokens=total_cached_tokens,
                 split=split,
+                reward=reward,
             )
 
         return env_history, is_success
@@ -319,6 +324,7 @@ The following learnings are from previous tasks similar to yours. Use them to av
         embedding_model_used: str = "",
         cached_tokens: int = 0,
         split: str = "",
+        reward: float = 0.0,
     ) -> None:
         """Log the complete trajectory to trajectories.json"""
         task_type = task_id.split('-')[0] if task_id else ""
@@ -332,6 +338,7 @@ The following learnings are from previous tasks similar to yours. Use them to av
             "context_from_retrieval": context_learnings or [],
             "steps": steps,
             "success": success,
+            "reward": float(reward),
             "help_calls": help_calls or [],
             "help_call_count": len(help_calls) if help_calls else 0,
             "step_num": len(steps),

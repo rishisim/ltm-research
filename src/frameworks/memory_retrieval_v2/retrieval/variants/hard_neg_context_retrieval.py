@@ -181,27 +181,25 @@ def _build_knowledge_retrieval_base(
     return retrieval_base
 
 
-def _rerank_by_weighted_score_ascending(retrieval_base: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+def _rerank_by_lowest_similarity(retrieval_base: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """
-    Re-rank retrieval base using weighted score, but sort ASCENDING.
-    We want the items with LOWEST scores (lowest similarity * valid_weight).
+    Re-rank by lowest task similarity while preserving validation quality.
+
+    The hard-negative control should differ from regular CR in relevance, not
+    by preferentially selecting lower-validation CANDIDATE memories. Validation
+    level is therefore used only as a tie-breaker after the low-similarity
+    ranking direction has been established.
     """
-    weights = {
-        "VALID_NEXT_TRIAL": 1.0,
-        "VALID_SAME_TRIAL": 0.9,
-        "CANDIDATE": 0.6
-    }
-    default_weight = 0.6
-    
     for row in retrieval_base:
-        valid_level = row.get("valid_level", "CANDIDATE")
-        weight = weights.get(valid_level, default_weight)
         similarity = row.get("similarity_score", 0.0)
-        
-        row["ranking_score"] = similarity * weight
+        row["ranking_score"] = similarity
     
-    # Sort by ranking_score ASCENDING (Lowest score first)
-    retrieval_base.sort(key=lambda x: x["ranking_score"], reverse=False)
+    retrieval_base.sort(
+        key=lambda x: (
+            x["ranking_score"],
+            -VALID_LEVEL_PRIORITY.get(x.get("valid_level", "CANDIDATE"), 0),
+        )
+    )
     
     return retrieval_base
 
@@ -254,10 +252,8 @@ def retrieve_context(
         knowledge_base
     )
     
-    # Step 3.4: Re-rank ASCENDING (get worst of the worst)
-    knowledge_retrieval_base = _rerank_by_weighted_score_ascending(knowledge_retrieval_base)
-
-    # Step 3.4b: Filter by minimum validation level
+    # Step 3.4: Filter by minimum validation level before ranking so the hard
+    # negative baseline remains comparable to regular retrieval.
     if min_valid_level is not None:
         min_priority = VALID_LEVEL_PRIORITY.get(min_valid_level, 0)
         knowledge_retrieval_base = [
@@ -265,7 +261,20 @@ def retrieve_context(
             if VALID_LEVEL_PRIORITY.get(row.get("valid_level", "CANDIDATE"), 0) >= min_priority
         ]
 
-    # Step 3.5: Select top pick_learning_count (which are the lowest scored ones)
+    # Step 3.5: Re-rank ASCENDING by relevance only.
+    knowledge_retrieval_base = _rerank_by_lowest_similarity(knowledge_retrieval_base)
+
+    # Step 3.6: Deduplicate by learning_text like the regular CR path.
+    seen_learning_texts = set()
+    deduped_base = []
+    for row in knowledge_retrieval_base:
+        learning_text = row.get("learning_text", "")
+        if learning_text not in seen_learning_texts:
+            seen_learning_texts.add(learning_text)
+            deduped_base.append(row)
+    knowledge_retrieval_base = deduped_base
+
+    # Step 3.7: Select top pick_learning_count (the lowest-similarity rows)
     selected_rows = knowledge_retrieval_base[:pick_learning_count]
     
     # Format

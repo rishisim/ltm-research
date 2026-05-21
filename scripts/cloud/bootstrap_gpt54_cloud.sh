@@ -46,23 +46,24 @@ echo "[bootstrap] installing Python requirements"
 .venv/bin/python -m pip install --upgrade pip setuptools wheel
 .venv/bin/python -m pip install -r requirements.txt
 
-if [[ -f webshop/requirements.txt ]]; then
-  .venv/bin/python -m pip install -r webshop/requirements.txt
-fi
-
 echo "[bootstrap] verifying API env file presence"
 if [[ ! -f .env ]]; then
   echo "[bootstrap] WARNING: .env is missing. Sync it before running the matrix." >&2
 fi
 
 echo "[bootstrap] building WebShop Docker image"
-docker build \
+DOCKER_CMD=(docker)
+if ! docker info >/dev/null 2>&1 && command -v sudo >/dev/null 2>&1; then
+  DOCKER_CMD=(sudo docker)
+fi
+
+"${DOCKER_CMD[@]}" build \
   --platform=linux/amd64 \
   -t ltm-webshop-amd64 \
   -f webshop/Dockerfile.amd64 \
   webshop
 
 echo "[bootstrap] starting SQL Docker"
-docker compose -f data/intercode_sql/docker/docker-compose.yml up -d
+"${DOCKER_CMD[@]}" compose -f data/intercode_sql/docker/docker-compose.yml up -d
 
 echo "[bootstrap] done"
