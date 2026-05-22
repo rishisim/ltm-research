@@ -1,10 +1,11 @@
 \begin{table*}[t]
 \centering
-\caption{WebShop development set results (200 tasks). CR = Context Retrieval, TR = Tool Retrieval. \textbf{Bold} = best accuracy.}
+\caption{WebShop development set results (200 tasks) under corrected strict-success scoring. CR = Context Retrieval, TR = Tool Retrieval. \textbf{Bold} = best strict success.}
 \label{tab:webshop-dev}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lccccc}
 \toprule
-Framework & Success / Total & Accuracy & Steps/Trial & Steps/Task & Gain \\
+Framework & Success / Total & Strict Success (\%) & Steps/Trial & Steps/Task & Gain \\
 \midrule
 ReAct                             & 112 / 200 & 56.00 & 24.44 & 24.44 & --- \\
 ReAct + Reflexion$^\dagger$       & 134 / 200 & \textbf{67.00} & 24.64 & 85.13 & $+$11.00 \\
@@ -13,7 +14,8 @@ ReAct + TR                        &  69 / 200 & 34.50 & 23.51 & 23.51 & $-$21.50
 ReAct + CR + TR                   &  51 / 200 & 25.50 & 30.52 & 30.52 & $-$30.50 \\
 ReAct + hard-neg CR + TR$^*$      &  87 / 200 & 43.50 & 28.66 & 28.66 & $-$12.50 \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \vspace{2pt}
 
 {\footnotesize $^\dagger$Max 7 trials; Steps/Task reflects cumulative cost across all trials. $^*$Ablation control retrieving \emph{least}-similar entries.}

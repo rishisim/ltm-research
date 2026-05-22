@@ -4,20 +4,25 @@ LLM-based agents are increasingly augmented with episodic memory: systems that s
 Recent work has demonstrated impressive gains from such augmentation (Voyager~\citep{wang2023voyager}, GITM~\citep{zhu2023gitm}, MemoryBank~\citep{zhong2024memorybank}, and Generative Agents~\citep{park2023generative}) under the implicit assumption that storing and retrieving past experience will improve performance.
 But does it always?
 
-We investigate this question through a controlled comparative study across two interactive environments: ALFWorld~\citep{shridhar2021alfworld}, a structured household task environment with compositional goals and a fixed action grammar, and WebShop~\citep{yao2022webshop}, an open-ended e-commerce environment with free-form navigation.
-In our experiments, the answer depended critically on environment properties.
+We argue for a stronger, more conditional thesis: episodic memory improves agents when the environment supports transfer through high task compositionality, regular action spaces, and broad learning transfer radius. When those conditions do not hold, retrieval can make the agent worse by injecting memories that are semantically similar but operationally wrong.
+
+We investigate this thesis through a controlled comparative study across two interactive environments: ALFWorld~\citep{shridhar2021alfworld}, a structured household task environment with compositional goals and a fixed action grammar, and WebShop~\citep{yao2022webshop}, an open-ended e-commerce environment with free-form navigation.
+We then add SQL as a diagnostic stress test: SQL has a highly regular syntax, but many tasks hinge on brittle semantic choices such as duplicate handling, join inclusivity, output shape, and set semantics.
+Together, these settings separate \emph{retrieval relevance} from \emph{transfer utility}.
 On ALFWorld, our memory system improves over the ReAct~\citep{yao2023react} baseline by up to $+19.4$pp on unseen tasks, nearly matching Reflexion~\citep{shinn2023reflexion} ($+21.6$pp) at roughly one-third the step cost.
-On WebShop, the \emph{same} memory system \emph{degrades} performance by up to $30.5$pp.
+On WebShop, the \emph{same} memory system \emph{degrades} corrected strict success by up to $30.5$pp.
 Strikingly, a hard-negative control that retrieves maximally \emph{irrelevant} experiences ($-12.5$pp) outperforms the properly configured system ($-30.5$pp), revealing that semantically similar but non-transferable memories are more harmful than obviously irrelevant ones in this setting.
 This ${\sim}47$pp swing, consistent across development and held-out splits, is the central empirical finding of this paper.
+The SQL diagnostic provides additional evidence for the same mechanism: in a trusted GPT-5.4 gate, ReAct solves 43/50 tasks, while CR, TR, CR+TR, and hard-negative CR+TR solve 41/50, 42/50, 39/50, and 41/50 respectively.
 
-Our analysis attributes this divergence to three environment properties: \emph{task compositionality} (shared sub-goals vs.\ unique tasks), \emph{action space regularity} (fixed grammar vs.\ free-form), and \emph{learning transfer radius} (one learning benefiting many tasks vs.\ near-zero reuse). In the two environments we study, when all three favored transfer, memory yielded substantial gains; when they did not, retrieved experiences actively misled the agent. Our results suggest that high-similarity retrieval alone does not guarantee performance gains, as retrieved trajectories may lack transferability to the current task — though the generality of this pattern awaits validation in further settings.
-This points to a potentially important distinction between retrieval relevance and actionable utility, one that deserves greater attention in future work on memory-augmented agents.
+Our analysis attributes these outcomes to three environment properties: \emph{task compositionality} (shared sub-goals vs.\ unique tasks), \emph{action space regularity} (fixed grammar vs.\ free-form), and \emph{learning transfer radius} (one learning benefiting many tasks vs.\ narrow reuse). When all three favor transfer, memory yields substantial gains; when one or more fails, retrieved experiences can actively mislead the agent. SQL sharpens the point: a regular action language does not guarantee transfer if superficially similar memories alter task-specific semantic policies.
+This points to a practical distinction between retrieval relevance and actionable utility, one that memory-augmented agents must model explicitly.
 Accordingly, the novelty of this work is primarily empirical and diagnostic: rather than proposing a fundamentally new memory architecture, we use a controlled episodic-memory setup to study when retrieval transfer helps and when it fails.
 
 In summary, our contributions are:
 \begin{enumerate}
-    \item A \textbf{controlled empirical study} showing opposite effects of the same memory system: $+19.4$pp on ALFWorld vs.\ $-30.5$pp on WebShop, with hard-negative ablations revealing that ``relevant'' but non-transferable memories cause more harm than irrelevant ones.
-    \item \textbf{A diagnostic framework for retrieval transfer}, based on three environment properties: task compositionality, action space regularity, and learning transfer radius, that characterize when episodic memory is likely to help or hurt LLM agents.
-    \item A \textbf{memory-centric agent framework} with outcome-validated episodic memory and two retrieval mechanisms (proactive CR and on-demand TR), evaluated across two diverse environments.
+    \item A \textbf{conditional thesis for episodic memory}: memory helps when task compositionality, action space regularity, and learning transfer radius jointly support reuse; it can hurt when similarity retrieves plausible but non-transferable advice.
+    \item A \textbf{controlled empirical study} showing opposite effects of the same memory system: $+19.4$pp on ALFWorld vs.\ $-30.5$pp strict-success degradation on WebShop, with hard-negative ablations revealing that ``relevant'' but non-transferable memories can cause more harm than irrelevant ones.
+    \item \textbf{SQL diagnostic evidence} showing that syntactic regularity alone is insufficient: on a trusted GPT-5.4 SQL gate, memory variants underperform ReAct because near-miss memories shift duplicate handling, join inclusivity, output shape, and set semantics.
+    \item A \textbf{diagnostic framework for retrieval transfer}, based on task compositionality, action space regularity, and learning transfer radius, that characterizes when episodic memory is likely to help or hurt LLM agents.
 \end{enumerate}

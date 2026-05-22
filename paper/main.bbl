@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{13}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Alzubi et~al.(2026)Alzubi, Provenzano, Bingham, Chen, and
@@ -54,6 +54,14 @@ Guanzhi Wang, Yuqi Xie, Yunfan Jiang, Ajay Mandlekar, Chaowei Xiao, Yuke Zhu,
   Linxi Fan, and Anima Anandkumar. 2023.
 \newblock Voyager: An open-ended embodied agent with large language models.
 \newblock \emph{arXiv preprint arXiv:2305.16291}.
+
+\bibitem[{Wang et~al.(2022)Wang, Jansen, C{\^o}t{\'e}, and
+  Ammanabrolu}]{wang2022scienceworld}
+Ruoyao Wang, Peter Jansen, Marc-Alexandre C{\^o}t{\'e}, and Prithviraj
+  Ammanabrolu. 2022.
+\newblock {ScienceWorld}: Is your agent smarter than a 5th grader?
+\newblock In \emph{Proceedings of the 2022 Conference on Empirical Methods in
+  Natural Language Processing (EMNLP)}.
 
 \bibitem[{Xu et~al.(2025)Xu, Liang, Mei, Gao, Tan, and Zhang}]{xu2025amem}
 Wujiang Xu, Zujie Liang, Kai Mei, Hang Gao, Juntao Tan, and Yongfeng Zhang.

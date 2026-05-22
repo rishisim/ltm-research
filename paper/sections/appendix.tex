@@ -80,6 +80,9 @@ The full ALFWorld dataset~\citep{shridhar2021alfworld} comprises 3{,}827 games s
 \paragraph{WebShop.}
 We partition the WebShop environment~\citep{yao2022webshop} into a development split (200 tasks) and a held-out test split (200 tasks). The knowledge base is extracted from Reflexion training trajectories on a separate set of training tasks with no overlap with either evaluation split, yielding approximately 677 issue--learning entries.
 
+\paragraph{SQL diagnostic gate.}
+We include a paired SQL diagnostic gate of 50 tasks run with GPT-5.4 to probe transfer behavior in a formally regular action space. This gate is used as diagnostic evidence rather than as a full third benchmark. The paired run contains zero retrieved-help calls across memory variants and no environment-error matches in world logs, isolating memory and prompt effects from runner instability. Summary outputs are stored in the SQL transfer-radius experiment report directory.
+
 \subsection{Framework Variants}
 
 We evaluate six framework variants in each environment:
@@ -95,8 +98,8 @@ All memory-augmented variants (CR, TR, CR+TR) execute a single trial per task, w
 
 \subsection{Evaluation Metrics}
 
-\paragraph{Accuracy (success rate).}
-The fraction of tasks completed successfully, computed as a binary outcome per task.
+\paragraph{Task success.}
+The fraction of tasks completed successfully, computed as a binary outcome per task. For WebShop, this is corrected strict success.
 
 \paragraph{Average Steps per Trial.}
 The mean number of thought--action--observation steps per individual trial attempt. For Reflexion, this reflects the average length of a single trial, irrespective of retry count.
@@ -105,7 +108,10 @@ The mean number of thought--action--observation steps per individual trial attem
 The mean total steps per task across all trials. For single-trial methods, this equals Steps/Trial. For Reflexion, this accumulates steps across all retry trials (up to 7), capturing the full computational cost.
 
 \paragraph{Gain from ReAct.}
-The percentage-point difference between a variant's accuracy and the ReAct baseline accuracy on the same split.
+The percentage-point difference between a variant's task success and the ReAct baseline task success on the same split.
+
+\paragraph{SQL reward and regressions.}
+For the SQL diagnostic, we report exact task success, average environment reward, and paired regressions or improvements relative to ReAct on the same 50 tasks.
 
 \subsection{Hyperparameters}
 \label{app:hyperparameters}

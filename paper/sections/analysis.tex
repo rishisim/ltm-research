@@ -1,7 +1,7 @@
 \section{Analysis and Discussion}
 \label{sec:analysis}
 
-We trace the divergence between environments to three structural properties and synthesize them into a diagnostic framework.
+We trace the divergence between environments to three structural properties and synthesize them into a diagnostic framework. SQL then probes an important boundary case: high syntactic regularity with brittle semantic transfer.
 
 % ----------------------------------------------------------------------------
 \subsection{Task Compositionality}
@@ -28,38 +28,50 @@ We define the \emph{learning transfer radius} as the number of distinct future t
 \paragraph{Principle.} Episodic memory is most effective when the learning transfer radius is high.
 
 % ----------------------------------------------------------------------------
+\subsection{SQL: Regular Syntax, Brittle Semantics}
+\label{sec:sql-diagnostic}
+
+SQL initially appears favorable for episodic memory because its action space is constrained by a formal grammar. The diagnostic gate shows why this is insufficient. SQL memories often transfer at the level of syntax while failing at the level of denotation: a plausible prior learning can change whether duplicate rows are preserved, whether a join should include zero-count entities, whether exclusion applies to rows or grouped entities, which output columns the grader expects, or whether literal date strings should be normalized.
+
+The strongest regressions are near-miss transfers. In one count query, memories about empty tables and count verification push the agent toward a left join, adding zero-concert stadiums that the reference query excludes. In another, a memory about countries that do not speak English transfers to TV-channel rows and collapses valid duplicate \texttt{(aspect ratio, country)} rows with \texttt{DISTINCT}. A third case adds a plausible explanatory \texttt{note} column even though the task asks only for death and injury values. These are not syntax failures; they are semantic policy shifts with large reward consequences.
+
+The SQL hard-negative control performs closer to ReAct than CR+TR (41/50 vs.\ 39/50), echoing the WebShop pattern at smaller scale. Irrelevant memories are often easier to ignore than adjacent memories that look applicable but carry the wrong latent policy. SQL therefore strengthens the framework rather than weakening it: action space regularity is necessary but not sufficient. Memory helps when regular actions are embedded in compositional tasks whose learnings have broad transfer radius.
+
+\paragraph{Principle.} Syntactic regularity does not guarantee memory transfer; the reusable unit must also preserve the task's semantic policy.
+
+% ----------------------------------------------------------------------------
 \subsection{Efficiency--Accuracy Trade-off}
 \label{sec:efficiency}
 
-Figure~\ref{fig:accuracy-cost} plots accuracy against computational cost (steps per task) on held-out splits, revealing a key practical distinction. On ALFWorld, CR+TR occupies an efficient frontier: it achieves near-Reflexion accuracy ($+19.4$pp vs.\ $+21.6$pp) at roughly one-third the step cost (${\sim}$23 vs.\ ${\sim}$79 steps/task), making it the preferred choice when compute budgets are constrained. On WebShop, memory variants shift the agent into a strictly dominated region: accuracy degrades without any compensating reduction in cost. Reflexion improves accuracy in both environments but consistently incurs 3--4$\times$ the baseline step cost.
+Figure~\ref{fig:accuracy-cost} plots task success against computational cost (steps per task) on held-out splits, revealing a key practical distinction. On ALFWorld, CR+TR occupies an efficient frontier: it achieves near-Reflexion accuracy ($+19.4$pp vs.\ $+21.6$pp) at roughly one-third the step cost (${\sim}$23 vs.\ ${\sim}$79 steps/task), making it the preferred choice when compute budgets are constrained. On WebShop, memory variants shift the agent into a strictly dominated region: strict success degrades without any compensating reduction in cost. Reflexion improves success in both environments but consistently incurs 3--4$\times$ the baseline step cost.
 
 \subsection{Diagnostic Framework}
 \label{sec:framework}
 
-Table~\ref{tab:framework} summarizes how the two environments differ along these dimensions.
+Table~\ref{tab:framework} summarizes how the evaluated settings differ along these dimensions.
 
 \begin{table}[t]
 \centering
 \small
-\caption{Diagnostic framework for episodic memory effectiveness. Effect sizes relative to ReAct baseline (seen/unseen for ALFWorld, dev/test for WebShop).}
+\caption{Diagnostic framework for episodic memory effectiveness. Effect sizes are relative to ReAct baseline (seen/unseen for ALFWorld, dev/test for WebShop, trusted GPT-5.4 gate for SQL).}
 \label{tab:framework}
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{lcc}
+\begin{tabular}{lccc}
 \toprule
-\textbf{Property} & \textbf{ALFWorld} & \textbf{WebShop} \\
+\textbf{Property} & \textbf{ALFWorld} & \textbf{WebShop} & \textbf{SQL} \\
 \midrule
-Task Compositionality & High (shared sub-goals) & Low (unique products) \\
-Action Space Regularity & High (fixed, ${\sim}$15 verbs) & Low (free-form) \\
-Learning Transfer Radius & High (1 $\rightarrow$ many tasks) & Near-zero \\
+Task Compositionality & High (shared sub-goals) & Low (unique products) & Medium (query motifs) \\
+Action Space Regularity & High (fixed, ${\sim}$15 verbs) & Low (free-form) & High (formal grammar) \\
+Learning Transfer Radius & High (1 $\rightarrow$ many tasks) & Near-zero & Narrow (semantic policy) \\
 \midrule
-Memory Effect (CR+TR) & $+16.4$/$+19.4$pp & $-30.5$/$-27.5$pp \\
-Hard-neg Effect$^*$ & $-5.7$/$-17.2$pp & $-12.5$/$-15.0$pp \\
+Memory Effect (CR+TR) & $+16.4$/$+19.4$pp & $-30.5$/$-27.5$pp & $-4$/50 \\
+Hard-neg Effect$^*$ & $-5.7$/$-17.2$pp & $-12.5$/$-15.0$pp & $-2$/50 \\
 \bottomrule
 \end{tabular}%
 }
 \vspace{2pt}
 
-{\footnotesize $^*$Hard-neg \emph{outperforms} proper retrieval on WebShop ($-12.5$ vs.\ $-30.5$pp), indicating semantic similarity is counterproductive when transfer radius is near zero.}
+{\footnotesize $^*$Hard-neg \emph{outperforms} proper retrieval on WebShop and SQL, indicating semantic similarity can be counterproductive when transfer radius is narrow.}
 \end{table}
 
-When all three properties favor transfer, memory provides substantial gains; when they do not, retrieved experiences actively mislead the agent. Before deploying a memory system, practitioners should assess their target environment along these dimensions: task compositionality, action space regularity, and learning transfer radius. When these properties are unfavorable, alternatives such as intra-task self-correction or memory systems with explicit gating mechanisms may be more appropriate.
+When all three properties favor transfer, memory provides substantial gains; when they do not, retrieved experiences can actively mislead the agent. Before deploying a memory system, practitioners should assess their target environment along these dimensions: task compositionality, action space regularity, and learning transfer radius. When these properties are unfavorable or mixed, alternatives such as intra-task self-correction or memory systems with explicit transfer gating may be more appropriate.

@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering
+\caption{SQL transfer-radius diagnostic on the trusted GPT-5.4 gate (50 tasks). Success is exact task success; reward is the environment reward. Help calls are retrieved-tool calls, which are zero in this gate, so TR primarily measures a prompt/tool-availability perturbation rather than useful on-demand retrieval.}
+\label{tab:sql-diagnostic}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+Framework & Success / Total & Reward & Avg. Steps & Regressions vs.\ ReAct & Improvements vs.\ ReAct & Help Calls \\
+\midrule
+ReAct                         & 43 / 50 & 0.8999 & 7.48 & --- & --- & --- \\
+ReAct + CR                    & 41 / 50 & 0.8688 & 5.56 & 3 & 1 & 0 \\
+ReAct + TR                    & 42 / 50 & 0.8911 & 5.82 & 1 & 0 & 0 \\
+ReAct + CR + TR               & 39 / 50 & 0.8361 & 5.72 & 4 & 0 & 0 \\
+ReAct + hard-neg CR + TR      & 41 / 50 & 0.8811 & 5.94 & 2 & 0 & 0 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

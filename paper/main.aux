@@ -25,8 +25,6 @@
 \citation{yao2022webshop}
 \citation{lewis2020rag}
 \citation{shridhar2021alfworld}
-\citation{yao2022webshop}
-\citation{yao2023react}
 \def\@LN@column{2}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Tool-augmented and memory-augmented agents.}{2}{section*.1}\protected@file@percent }
@@ -35,33 +33,31 @@
 \@writefile{toc}{\contentsline {paragraph}{Retrieval-augmented generation.}{2}{section*.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}Methodology}{2}{section.3}\protected@file@percent }
 \newlabel{sec:methodology}{{3}{2}{Methodology}{section.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Environments}{2}{subsection.3.1}\protected@file@percent }
-\newlabel{sec:environments}{{3.1}{2}{Environments}{subsection.3.1}{}}
-\@writefile{toc}{\contentsline {paragraph}{ALFWorld.}{2}{section*.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{WebShop.}{2}{section*.5}\protected@file@percent }
+\citation{yao2022webshop}
+\citation{yao2023react}
 \citation{robertson2009bm25}
 \citation{shinn2023reflexion}
 \def\@LN@column{2}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Environments}{3}{subsection.3.1}\protected@file@percent }
+\newlabel{sec:environments}{{3.1}{3}{Environments}{subsection.3.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{ALFWorld.}{3}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{WebShop.}{3}{section*.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Base Agent: ReAct}{3}{subsection.3.2}\protected@file@percent }
 \newlabel{sec:react}{{3.2}{3}{Base Agent: ReAct}{subsection.3.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Memory Systems}{3}{subsection.3.3}\protected@file@percent }
 \newlabel{sec:memory-systems}{{3.3}{3}{Memory Systems}{subsection.3.3}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Knowledge Base Construction}{3}{subsubsection.3.3.1}\protected@file@percent }
 \newlabel{sec:kb-construction}{{3.3.1}{3}{Knowledge Base Construction}{subsubsection.3.3.1}{}}
+\def\@LN@column{1}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Context Retrieval (CR)}{3}{subsubsection.3.3.2}\protected@file@percent }
 \newlabel{sec:context-retrieval}{{3.3.2}{3}{Context Retrieval (CR)}{subsubsection.3.3.2}{}}
 \newlabel{eq:cr-score}{{1}{3}{Context Retrieval (CR)}{equation.1}{}}
 \@writefile{toc}{\contentsline {paragraph}{Dynamic context sizing.}{3}{section*.7}\protected@file@percent }
-\def\@LN@column{1}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Tool Retrieval (TR)}{3}{subsubsection.3.3.3}\protected@file@percent }
 \newlabel{sec:tool-retrieval}{{3.3.3}{3}{Tool Retrieval (TR)}{subsubsection.3.3.3}{}}
 \newlabel{eq:tr-score}{{3}{3}{Tool Retrieval (TR)}{equation.3}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4}Hard Negative Control}{3}{subsubsection.3.3.4}\protected@file@percent }
 \newlabel{sec:hard-neg}{{3.3.4}{3}{Hard Negative Control}{subsubsection.3.3.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Reflexion Baseline}{3}{subsection.3.4}\protected@file@percent }
-\newlabel{sec:reflexion}{{3.4}{3}{Reflexion Baseline}{subsection.3.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Experimental Setup}{3}{section.4}\protected@file@percent }
-\newlabel{sec:experimental-setup}{{4}{3}{Experimental Setup}{section.4}{}}
 \newlabel{fig:kb-generation}{{1a}{4}{Offline KB construction from training trajectories}{figure.caption.6}{}}
 \newlabel{sub@fig:kb-generation}{{a}{4}{Offline KB construction from training trajectories}{figure.caption.6}{}}
 \newlabel{fig:cr-tr-inference}{{1b}{4}{Inference-time retrieval via CR and TR}{figure.caption.6}{}}
@@ -70,116 +66,132 @@
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:system-overview}{{1}{4}{Overview of the episodic memory framework. (a)~Training trajectories with reflexions are processed by an LLM to extract per-task issue--learning pairs with validation levels. (b)~Context Retrieval (CR) provides task-level learnings at the start; Tool Retrieval (TR) provides issue-level solutions on demand during execution}{figure.caption.6}{}}
 \def\@LN@column{2}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Reflexion Baseline}{4}{subsection.3.4}\protected@file@percent }
+\newlabel{sec:reflexion}{{3.4}{4}{Reflexion Baseline}{subsection.3.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Experimental Setup}{4}{section.4}\protected@file@percent }
+\newlabel{sec:experimental-setup}{{4}{4}{Experimental Setup}{section.4}{}}
 \@writefile{toc}{\contentsline {paragraph}{Tasks and splits.}{4}{section*.8}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Framework variants.}{4}{section*.9}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Metrics.}{4}{section*.10}\protected@file@percent }
+\def\@LN@column{1}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Results}{4}{section.5}\protected@file@percent }
 \newlabel{sec:results}{{5}{4}{Results}{section.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}ALFWorld: Memory Helps}{4}{subsection.5.1}\protected@file@percent }
 \newlabel{sec:results-alfworld}{{5.1}{4}{ALFWorld: Memory Helps}{subsection.5.1}{}}
 \@writefile{toc}{\contentsline {paragraph}{Context Retrieval drives large gains.}{4}{section*.13}\protected@file@percent }
-\def\@LN@column{1}
 \@writefile{toc}{\contentsline {paragraph}{Tool Retrieval complements CR, especially on unseen tasks.}{4}{section*.14}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{CR+TR approaches Reflexion at one-third the cost.}{4}{section*.15}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Hard-negative control confirms relevance matters.}{4}{section*.16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}WebShop: Memory Hurts}{4}{subsection.5.2}\protected@file@percent }
-\newlabel{sec:results-webshop}{{5.2}{4}{WebShop: Memory Hurts}{subsection.5.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{All memory variants degrade performance.}{4}{section*.20}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The hard-negative paradox.}{4}{section*.21}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces ALFWorld validation-seen results (140 tasks). CR = Context Retrieval, TR = Tool Retrieval. \textbf  {Bold} = best accuracy.}}{5}{table.caption.11}\protected@file@percent }
 \newlabel{tab:alfworld-seen}{{1}{5}{ALFWorld validation-seen results (140 tasks). CR = Context Retrieval, TR = Tool Retrieval. \textbf {Bold} = best accuracy}{table.caption.11}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces ALFWorld validation-unseen results (134 tasks). CR = Context Retrieval, TR = Tool Retrieval. \textbf  {Bold} = best accuracy.}}{5}{table.caption.12}\protected@file@percent }
 \newlabel{tab:alfworld-unseen}{{2}{5}{ALFWorld validation-unseen results (134 tasks). CR = Context Retrieval, TR = Tool Retrieval. \textbf {Bold} = best accuracy}{table.caption.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Accuracy vs.\ computational cost (steps/task) on held-out splits. CR+TR achieves near-Reflexion accuracy on ALFWorld at ${\sim }$1/3 the cost. On WebShop, memory degrades accuracy without reducing cost.}}{5}{figure.caption.17}\protected@file@percent }
-\newlabel{fig:accuracy-cost}{{2}{5}{Accuracy vs.\ computational cost (steps/task) on held-out splits. CR+TR achieves near-Reflexion accuracy on ALFWorld at ${\sim }$1/3 the cost. On WebShop, memory degrades accuracy without reducing cost}{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Task success vs.\ computational cost (steps/task) on held-out splits. CR+TR achieves near-Reflexion success on ALFWorld at ${\sim }$1/3 the cost. On WebShop, memory degrades strict success without reducing cost.}}{5}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:accuracy-cost}{{2}{5}{Task success vs.\ computational cost (steps/task) on held-out splits. CR+TR achieves near-Reflexion success on ALFWorld at ${\sim }$1/3 the cost. On WebShop, memory degrades strict success without reducing cost}{figure.caption.17}{}}
 \def\@LN@column{2}
-\@writefile{toc}{\contentsline {paragraph}{Only Reflexion improves, at high cost.}{5}{section*.22}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}WebShop: Memory Hurts}{5}{subsection.5.2}\protected@file@percent }
+\newlabel{sec:results-webshop}{{5.2}{5}{WebShop: Memory Hurts}{subsection.5.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{All memory variants degrade strict success.}{5}{section*.20}\protected@file@percent }
 \def\@LN@column{1}
+\@writefile{toc}{\contentsline {paragraph}{The hard-negative paradox.}{5}{section*.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Only Reflexion improves, at high cost.}{5}{section*.22}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Test-set confirmation.}{5}{section*.23}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Cross-Environment Comparison}{5}{subsection.5.3}\protected@file@percent }
 \newlabel{sec:cross-env}{{5.3}{5}{Cross-Environment Comparison}{subsection.5.3}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces WebShop development set results (200 tasks). CR = Context Retrieval, TR = Tool Retrieval. \textbf  {Bold} = best accuracy.}}{6}{table.caption.18}\protected@file@percent }
-\newlabel{tab:webshop-dev}{{3}{6}{WebShop development set results (200 tasks). CR = Context Retrieval, TR = Tool Retrieval. \textbf {Bold} = best accuracy}{table.caption.18}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces WebShop test set results (200 tasks). CR = Context Retrieval, TR = Tool Retrieval. \textbf  {Bold} = best accuracy.}}{6}{table.caption.19}\protected@file@percent }
-\newlabel{tab:webshop-test}{{4}{6}{WebShop test set results (200 tasks). CR = Context Retrieval, TR = Tool Retrieval. \textbf {Bold} = best accuracy}{table.caption.19}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces WebShop development set results (200 tasks) under corrected strict-success scoring. CR = Context Retrieval, TR = Tool Retrieval. \textbf  {Bold} = best strict success.}}{6}{table.caption.18}\protected@file@percent }
+\newlabel{tab:webshop-dev}{{3}{6}{WebShop development set results (200 tasks) under corrected strict-success scoring. CR = Context Retrieval, TR = Tool Retrieval. \textbf {Bold} = best strict success}{table.caption.18}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces WebShop test set results (200 tasks) under corrected strict-success scoring. CR = Context Retrieval, TR = Tool Retrieval. \textbf  {Bold} = best strict success.}}{6}{table.caption.19}\protected@file@percent }
+\newlabel{tab:webshop-test}{{4}{6}{WebShop test set results (200 tasks) under corrected strict-success scoring. CR = Context Retrieval, TR = Tool Retrieval. \textbf {Bold} = best strict success}{table.caption.19}{}}
 \def\@LN@column{2}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Analysis and Discussion}{6}{section.6}\protected@file@percent }
-\newlabel{sec:analysis}{{6}{6}{Analysis and Discussion}{section.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Task Compositionality}{6}{subsection.6.1}\protected@file@percent }
-\newlabel{sec:compositionality}{{6.1}{6}{Task Compositionality}{subsection.6.1}{}}
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {paragraph}{Principle.}{6}{section*.26}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Action Space Regularity}{6}{subsection.6.2}\protected@file@percent }
-\newlabel{sec:action-space}{{6.2}{6}{Action Space Regularity}{subsection.6.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{Principle.}{6}{section*.27}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Learning Transfer Radius}{6}{subsection.6.3}\protected@file@percent }
-\newlabel{sec:transfer-radius}{{6.3}{6}{Learning Transfer Radius}{subsection.6.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Accuracy across framework variants with paired splits: development (ALFWorld seen vs.\ WebShop dev) and held-out (ALFWorld unseen vs.\ WebShop test). Dashed lines indicate ReAct baselines.}}{7}{figure.caption.24}\protected@file@percent }
-\newlabel{fig:accuracy-comparison}{{3}{7}{Accuracy across framework variants with paired splits: development (ALFWorld seen vs.\ WebShop dev) and held-out (ALFWorld unseen vs.\ WebShop test). Dashed lines indicate ReAct baselines}{figure.caption.24}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}SQL Diagnostic Gate}{6}{subsection.5.4}\protected@file@percent }
+\newlabel{sec:results-sql}{{5.4}{6}{SQL Diagnostic Gate}{subsection.5.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Task success across framework variants with paired splits: development (ALFWorld seen vs.\ WebShop dev) and held-out (ALFWorld unseen vs.\ WebShop test). Dashed lines indicate ReAct baselines.}}{7}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:accuracy-comparison}{{3}{7}{Task success across framework variants with paired splits: development (ALFWorld seen vs.\ WebShop dev) and held-out (ALFWorld unseen vs.\ WebShop test). Dashed lines indicate ReAct baselines}{figure.caption.24}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces SQL transfer-radius diagnostic on the trusted GPT-5.4 gate (50 tasks). Success is exact task success; reward is the environment reward. Help calls are retrieved-tool calls, which are zero in this gate, so TR primarily measures a prompt/tool-availability perturbation rather than useful on-demand retrieval.}}{7}{table.caption.26}\protected@file@percent }
+\newlabel{tab:sql-diagnostic}{{5}{7}{SQL transfer-radius diagnostic on the trusted GPT-5.4 gate (50 tasks). Success is exact task success; reward is the environment reward. Help calls are retrieved-tool calls, which are zero in this gate, so TR primarily measures a prompt/tool-availability perturbation rather than useful on-demand retrieval}{table.caption.26}{}}
 \def\@LN@column{2}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Analysis and Discussion}{7}{section.6}\protected@file@percent }
+\newlabel{sec:analysis}{{6}{7}{Analysis and Discussion}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Task Compositionality}{7}{subsection.6.1}\protected@file@percent }
+\newlabel{sec:compositionality}{{6.1}{7}{Task Compositionality}{subsection.6.1}{}}
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {paragraph}{Principle.}{7}{section*.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Action Space Regularity}{7}{subsection.6.2}\protected@file@percent }
+\newlabel{sec:action-space}{{6.2}{7}{Action Space Regularity}{subsection.6.2}{}}
 \@writefile{toc}{\contentsline {paragraph}{Principle.}{7}{section*.28}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Efficiency--Accuracy Trade-off}{7}{subsection.6.4}\protected@file@percent }
-\newlabel{sec:efficiency}{{6.4}{7}{Efficiency--Accuracy Trade-off}{subsection.6.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Diagnostic Framework}{7}{subsection.6.5}\protected@file@percent }
-\newlabel{sec:framework}{{6.5}{7}{Diagnostic Framework}{subsection.6.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Diagnostic framework for episodic memory effectiveness. Effect sizes relative to ReAct baseline (seen/unseen for ALFWorld, dev/test for WebShop).}}{7}{table.caption.29}\protected@file@percent }
-\newlabel{tab:framework}{{5}{7}{Diagnostic framework for episodic memory effectiveness. Effect sizes relative to ReAct baseline (seen/unseen for ALFWorld, dev/test for WebShop)}{table.caption.29}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Learning Transfer Radius}{7}{subsection.6.3}\protected@file@percent }
+\newlabel{sec:transfer-radius}{{6.3}{7}{Learning Transfer Radius}{subsection.6.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Gain from ReAct baseline (percentage points) for each memory variant across all four evaluation splits. Green/blue indicates improvement; orange/red indicates degradation. Development splits (ALFWorld seen, WebShop dev) and held-out splits (ALFWorld unseen, WebShop test) show consistent patterns, confirming that the ${\sim }47$pp swing between environments is robust.}}{8}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:gain-baseline}{{4}{8}{Gain from ReAct baseline (percentage points) for each memory variant across all four evaluation splits. Green/blue indicates improvement; orange/red indicates degradation. Development splits (ALFWorld seen, WebShop dev) and held-out splits (ALFWorld unseen, WebShop test) show consistent patterns, confirming that the ${\sim }47$pp swing between environments is robust}{figure.caption.25}{}}
+\def\@LN@column{2}
+\@writefile{toc}{\contentsline {paragraph}{Principle.}{8}{section*.29}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}SQL: Regular Syntax, Brittle Semantics}{8}{subsection.6.4}\protected@file@percent }
+\newlabel{sec:sql-diagnostic}{{6.4}{8}{SQL: Regular Syntax, Brittle Semantics}{subsection.6.4}{}}
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Limitations}{7}{section.7}\protected@file@percent }
-\newlabel{sec:limitations}{{7}{7}{Limitations}{section.7}{}}
+\@writefile{toc}{\contentsline {paragraph}{Principle.}{8}{section*.30}\protected@file@percent }
+\citation{wang2022scienceworld}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Diagnostic framework for episodic memory effectiveness. Effect sizes are relative to ReAct baseline (seen/unseen for ALFWorld, dev/test for WebShop, trusted GPT-5.4 gate for SQL).}}{9}{table.caption.31}\protected@file@percent }
+\newlabel{tab:framework}{{6}{9}{Diagnostic framework for episodic memory effectiveness. Effect sizes are relative to ReAct baseline (seen/unseen for ALFWorld, dev/test for WebShop, trusted GPT-5.4 gate for SQL)}{table.caption.31}{}}
+\def\@LN@column{2}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Efficiency--Accuracy Trade-off}{9}{subsection.6.5}\protected@file@percent }
+\newlabel{sec:efficiency}{{6.5}{9}{Efficiency--Accuracy Trade-off}{subsection.6.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6}Diagnostic Framework}{9}{subsection.6.6}\protected@file@percent }
+\newlabel{sec:framework}{{6.6}{9}{Diagnostic Framework}{subsection.6.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Limitations}{9}{section.7}\protected@file@percent }
+\newlabel{sec:limitations}{{7}{9}{Limitations}{section.7}{}}
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{9}{section.8}\protected@file@percent }
+\newlabel{sec:conclusion}{{8}{9}{Conclusion}{section.8}{}}
 \bibdata{references}
 \bibcite{alzubi2026evoskill}{{1}{2026}{{Alzubi et~al.}}{{Alzubi, Provenzano, Bingham, Chen, and Vu}}}
 \bibcite{lewis2020rag}{{2}{2020}{{Lewis et~al.}}{{Lewis, Perez, Piktus, Petroni, Karpukhin, Goyal, K{\"u}ttler, Lewis, Yih, Rockt{\"a}schel, Riedel, and Kiela}}}
 \bibcite{park2023generative}{{3}{2023}{{Park et~al.}}{{Park, O'Brien, Cai, Morris, Liang, and Bernstein}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Gain from ReAct baseline (percentage points) for each memory variant across all four evaluation splits. Green/blue indicates improvement; orange/red indicates degradation. Development splits (ALFWorld seen, WebShop dev) and held-out splits (ALFWorld unseen, WebShop test) show consistent patterns, confirming that the ${\sim }47$pp swing between environments is robust.}}{8}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:gain-baseline}{{4}{8}{Gain from ReAct baseline (percentage points) for each memory variant across all four evaluation splits. Green/blue indicates improvement; orange/red indicates degradation. Development splits (ALFWorld seen, WebShop dev) and held-out splits (ALFWorld unseen, WebShop test) show consistent patterns, confirming that the ${\sim }47$pp swing between environments is robust}{figure.caption.25}{}}
-\def\@LN@column{2}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{8}{section.8}\protected@file@percent }
-\newlabel{sec:conclusion}{{8}{8}{Conclusion}{section.8}{}}
-\def\@LN@column{1}
-\@writefile{toc}{\contentsline {paragraph}{AI Disclosure.}{8}{section*.30}\protected@file@percent }
 \bibcite{robertson2009bm25}{{4}{2009}{{Robertson and Zaragoza}}{{}}}
 \bibcite{shinn2023reflexion}{{5}{2023}{{Shinn et~al.}}{{Shinn, Cassano, Gopinath, Narasimhan, and Yao}}}
 \bibcite{shridhar2021alfworld}{{6}{2021}{{Shridhar et~al.}}{{Shridhar, Yuan, C{\^o}t{\'e}, Bisk, Trischler, and Hausknecht}}}
 \bibcite{wang2023voyager}{{7}{2023}{{Wang et~al.}}{{Wang, Xie, Jiang, Mandlekar, Xiao, Zhu, Fan, and Anandkumar}}}
-\bibcite{xu2025amem}{{8}{2025}{{Xu et~al.}}{{Xu, Liang, Mei, Gao, Tan, and Zhang}}}
-\bibcite{yao2022webshop}{{9}{2022}{{Yao et~al.}}{{Yao, Chen, Yang, and Narasimhan}}}
-\bibcite{yao2023react}{{10}{2023}{{Yao et~al.}}{{Yao, Zhao, Yu, Du, Shafran, Narasimhan, and Cao}}}
-\bibcite{zhong2024memorybank}{{11}{2024}{{Zhong et~al.}}{{Zhong, Guo, Gao, Ye, and Wang}}}
-\bibcite{zhu2023gitm}{{12}{2023}{{Zhu et~al.}}{{Zhu, Chen, Tian, Tao, Su, Yang, Huang, Li, Lu, Wang, Qiao, Zhang, and Dai}}}
+\bibcite{wang2022scienceworld}{{8}{2022}{{Wang et~al.}}{{Wang, Jansen, C{\^o}t{\'e}, and Ammanabrolu}}}
+\bibcite{xu2025amem}{{9}{2025}{{Xu et~al.}}{{Xu, Liang, Mei, Gao, Tan, and Zhang}}}
+\bibcite{yao2022webshop}{{10}{2022}{{Yao et~al.}}{{Yao, Chen, Yang, and Narasimhan}}}
+\bibcite{yao2023react}{{11}{2023}{{Yao et~al.}}{{Yao, Zhao, Yu, Du, Shafran, Narasimhan, and Cao}}}
+\bibcite{zhong2024memorybank}{{12}{2024}{{Zhong et~al.}}{{Zhong, Guo, Gao, Ye, and Wang}}}
+\bibcite{zhu2023gitm}{{13}{2023}{{Zhu et~al.}}{{Zhu, Chen, Tian, Tao, Su, Yang, Huang, Li, Lu, Wang, Qiao, Zhang, and Dai}}}
 \def\@LN@column{2}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Retrieval Algorithms}{9}{appendix.A}\protected@file@percent }
-\newlabel{app:algorithms}{{A}{9}{Retrieval Algorithms}{appendix.A}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Context Retrieval from Knowledge Base}}{9}{algorithm.1}\protected@file@percent }
-\newlabel{alg:context-retrieval}{{1}{9}{Context Retrieval from Knowledge Base}{algorithm.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{AI Disclosure.}{10}{section*.32}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Knowledge Base Schema}{9}{appendix.B}\protected@file@percent }
-\newlabel{app:kb-schema}{{B}{9}{Knowledge Base Schema}{appendix.B}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Retrieval Algorithms}{10}{appendix.A}\protected@file@percent }
+\newlabel{app:algorithms}{{A}{10}{Retrieval Algorithms}{appendix.A}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Context Retrieval from Knowledge Base}}{10}{algorithm.1}\protected@file@percent }
+\newlabel{alg:context-retrieval}{{1}{10}{Context Retrieval from Knowledge Base}{algorithm.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Knowledge Base Schema}{10}{appendix.B}\protected@file@percent }
+\newlabel{app:kb-schema}{{B}{10}{Knowledge Base Schema}{appendix.B}{}}
 \citation{shridhar2021alfworld}
 \citation{yao2022webshop}
 \citation{yao2023react}
 \citation{shinn2023reflexion}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Hybrid Tool Retrieval}}{10}{algorithm.2}\protected@file@percent }
-\newlabel{alg:tool-retrieval}{{2}{10}{Hybrid Tool Retrieval}{algorithm.2}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Hybrid Tool Retrieval}}{11}{algorithm.2}\protected@file@percent }
+\newlabel{alg:tool-retrieval}{{2}{11}{Hybrid Tool Retrieval}{algorithm.2}{}}
 \def\@LN@column{2}
-\@writefile{toc}{\contentsline {section}{\numberline {C}Experimental Details}{10}{appendix.C}\protected@file@percent }
-\newlabel{app:experimental-details}{{C}{10}{Experimental Details}{appendix.C}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.1}Dataset Statistics}{10}{subsection.C.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{ALFWorld.}{10}{section*.33}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{WebShop.}{10}{section*.34}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {C}Experimental Details}{11}{appendix.C}\protected@file@percent }
+\newlabel{app:experimental-details}{{C}{11}{Experimental Details}{appendix.C}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.1}Dataset Statistics}{11}{subsection.C.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{ALFWorld.}{11}{section*.35}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.2}Framework Variants}{10}{subsection.C.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.3}Evaluation Metrics}{10}{subsection.C.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Accuracy (success rate).}{10}{section*.35}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Average Steps per Trial.}{10}{section*.36}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Average Steps per Task.}{10}{section*.37}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Gain from ReAct.}{10}{section*.38}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.4}Hyperparameters}{10}{subsection.C.4}\protected@file@percent }
-\newlabel{app:hyperparameters}{{C.4}{10}{Hyperparameters}{subsection.C.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Hyperparameters used across all experiments.}}{11}{table.caption.39}\protected@file@percent }
-\newlabel{tab:hyperparameters}{{6}{11}{Hyperparameters used across all experiments}{table.caption.39}{}}
+\@writefile{toc}{\contentsline {paragraph}{WebShop.}{11}{section*.36}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{SQL diagnostic gate.}{11}{section*.37}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.2}Framework Variants}{11}{subsection.C.2}\protected@file@percent }
 \def\@LN@column{2}
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.5}Implementation Details}{11}{subsection.C.5}\protected@file@percent }
-\newlabel{app:implementation-details}{{C.5}{11}{Implementation Details}{subsection.C.5}{}}
-\def\@LN@column{1}
-\gdef \@abspage@last{11}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.3}Evaluation Metrics}{12}{subsection.C.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Task success.}{12}{section*.38}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Average Steps per Trial.}{12}{section*.39}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Average Steps per Task.}{12}{section*.40}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Gain from ReAct.}{12}{section*.41}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{SQL reward and regressions.}{12}{section*.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.4}Hyperparameters}{12}{subsection.C.4}\protected@file@percent }
+\newlabel{app:hyperparameters}{{C.4}{12}{Hyperparameters}{subsection.C.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.5}Implementation Details}{12}{subsection.C.5}\protected@file@percent }
+\newlabel{app:implementation-details}{{C.5}{12}{Implementation Details}{subsection.C.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Hyperparameters used across all experiments.}}{12}{table.caption.43}\protected@file@percent }
+\newlabel{tab:hyperparameters}{{7}{12}{Hyperparameters used across all experiments}{table.caption.43}{}}
+\gdef \@abspage@last{12}

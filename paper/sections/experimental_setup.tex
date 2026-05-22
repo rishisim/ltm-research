@@ -10,4 +10,4 @@ For ALFWorld, the knowledge base is constructed from \emph{alfworld-mini}, a cur
 We evaluate six variants per environment: ReAct (baseline), ReAct + Reflexion (up to 7 trials), ReAct + CR, ReAct + TR, ReAct + CR + TR, and a hard-negative ablation control. All memory variants execute a single trial per task.
 
 \paragraph{Metrics.}
-We report accuracy (binary success rate), average steps per trial and per task (capturing Reflexion's cumulative retry cost), and gain from the ReAct baseline in percentage points. Full metric definitions are in Appendix~\ref{app:experimental-details}. All hyperparameters and implementation details are in Appendix~\ref{app:hyperparameters} and~\ref{app:implementation-details}.
+We report task success, average steps per trial and per task (capturing Reflexion's cumulative retry cost), and gain from the ReAct baseline in percentage points. For WebShop, success refers to corrected strict success. Full metric definitions are in Appendix~\ref{app:experimental-details}. All hyperparameters and implementation details are in Appendix~\ref{app:hyperparameters} and~\ref{app:implementation-details}.
