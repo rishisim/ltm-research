@@ -1,0 +1,5 @@
+variant,regressions,reward_drops,improvements,reward_gains,changed_final_sql,help_calls
+CR,3,0,1,0,41,0
+TR,1,0,0,0,41,0
+CR+TR,4,0,0,0,39,0
+hard-neg CR+TR,2,0,0,0,40,0

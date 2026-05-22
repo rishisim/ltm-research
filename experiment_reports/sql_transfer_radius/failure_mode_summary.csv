@@ -1,0 +1,10 @@
+variant,failure_mode,count,tasks
+CR,join inclusivity / zero-row inclusion,1,sql_66
+CR,set granularity / duplicate collapse,1,sql_120
+CR,spurious temporal normalization,1,sql_49
+TR,prompt-only join inclusivity drift,1,sql_66
+CR+TR,join inclusivity / zero-row inclusion,2,"sql_66, sql_117"
+CR+TR,output column drift,1,sql_185
+CR+TR,set granularity / duplicate collapse,1,sql_120
+hard-neg CR+TR,duplicate policy drift,1,sql_38
+hard-neg CR+TR,prompt-only join inclusivity drift,1,sql_66
