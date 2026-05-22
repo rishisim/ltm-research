@@ -13,8 +13,14 @@ class MemoryAllocationReflexion(ReAct):
     """
     A framework that logs complete trajectories and generates reflexions for failed tasks.
     """
-    def __init__(self, model: Model = "gemini-2.5-flash", to_print: bool = True):
+    def __init__(
+        self,
+        model: Model = "gemini-2.5-flash",
+        to_print: bool = True,
+        success_threshold: float = 0.0,
+    ):
         super().__init__(model, to_print)
+        self.success_threshold = success_threshold
         # Load few-shot examples for reflexion
         self.few_shot_examples = ""
         repo_root = Path(__file__).resolve().parents[4]
@@ -88,7 +94,7 @@ class MemoryAllocationReflexion(ReAct):
             cur_step += 1
 
         # Determine success
-        is_success = reward > 0
+        is_success = reward >= self.success_threshold if self.success_threshold > 0 else reward > 0
         
         if self.to_print:
             print(f"\nTask {'SUCCESS' if is_success else 'FAILURE'}")

@@ -53,7 +53,7 @@ class ScienceWorldEnv(BaseEnv):
         self.simplification_str = simplification_str
         self.jar_path = jar_path
         self.env_step_limit = env_step_limit
-        self.max_valid_actions = max_valid_actions
+        self.max_valid_actions = max_valid_actions if max_valid_actions and max_valid_actions > 0 else None
         self.include_valid_actions = include_valid_actions
         self._shared_env = scienceworld_env
         self.env = scienceworld_env
@@ -183,7 +183,14 @@ class ScienceWorldEnv(BaseEnv):
     @staticmethod
     def get_task_description(observation: str) -> str:
         """Extract the task description from a formatted observation."""
-        for line in observation.splitlines():
+        lines = observation.splitlines()
+        for idx, line in enumerate(lines):
             if line.startswith("Task:"):
-                return line.split("Task:", 1)[1].strip()
+                task_text = line.split("Task:", 1)[1].strip()
+                if task_text and task_text != "Task Description:":
+                    return task_text
+                if idx + 1 < len(lines):
+                    next_line = lines[idx + 1].strip()
+                    if next_line:
+                        return next_line
         return observation.strip().splitlines()[0].strip() if observation.strip() else ""

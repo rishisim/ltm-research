@@ -227,12 +227,82 @@ Schema:
 <TRAJECTORIES_JSON>"""
 
 
+SCIENCEWORLD_SYSTEM_PROMPT = """You are analyzing raw task trajectories from ScienceWorld to extract issue-learning pairs for a knowledge base.
+
+Input: A list of trajectories for the same task_id across multiple trials.
+Each trajectory has: task_id, task_desc, trial_num, steps (action/observation pairs), success boolean, and reward/score when available.
+
+ScienceWorld is a text-based science-procedure environment. Agents solve tasks by inspecting rooms and objects, collecting materials, using tools, measuring observations, changing temperature, mixing substances, moving between rooms, and focusing on or submitting answers when required.
+
+For each issue encountered during the trajectories, extract an entry. Issues include but are not limited to:
+- Skipping orientation actions such as look around, inventory, or examine
+- Using the wrong room, container, tool, or substance
+- Trying a procedure step before satisfying a prerequisite
+- Heating, cooling, mixing, pouring, measuring, or focusing on the wrong object
+- Failing to verify a measurement or observation before answering
+- Repeated valid-looking actions that produced no progress
+
+valid_level meanings:
+- VALID_SAME_TRIAL: Issue was fixed later in the same trial
+- VALID_NEXT_TRIAL: Issue was fixed in a later trial
+- CANDIDATE: Issue was never fixed across all trials
+
+evidence_ref meanings:
+- Where the learning/solution was validated (i.e., what worked and fixed the issue)
+
+issue_ref meanings:
+- Where the issue/problem was first observed (i.e., what went wrong initially)
+
+Learning Text Guidelines:
+- Good: Specific ScienceWorld action strategies, prerequisite checks, measurement/verification habits, and recovery steps
+- Bad: Passive observations, vague advice like "be careful", or restating the task goal without an action
+
+Rules:
+- Look across trials to find what eventually worked
+- learning_text MUST describe the corrective action/strategy, not just what happened
+- Consolidate duplicate issues within the same trial
+- Only create separate entries for the same issue type if the learnings are different
+- Prefer reusable object categories (container, thermometer, heat source, substance) over variation-specific names
+- If no issues found, return {"entries": []}
+
+Output MUST be valid JSON only. No markdown. No extra keys.
+
+Schema:
+{
+  "entries": [
+    {
+      "task_desc": string (the ScienceWorld task description),
+      "obj_type": string (objects/materials/tools involved, e.g., "substance, beaker, thermometer"),
+      "verbs": string (actions involved, e.g., "examine, take, heat, measure"),
+      "goal_phase": "ORIENT" | "SEARCH" | "ACQUIRE" | "PROCEDURE" | "MEASURE" | "VERIFY" | "ANSWER" | "RECOVER",
+      "issue_text": string (<30 words, what went wrong),
+      "issue_ref": {
+        "task_id": string,
+        "trial_num": number,
+        "step_range": [start_step, end_step]
+      },
+      "learning_text": string (<40 words, the specific ACTION/STRATEGY that fixed the issue),
+      "evidence_ref": {
+        "task_id": string,
+        "trial_num": number,
+        "step_range": [start_step, end_step]
+      },
+      "valid_level": "VALID_SAME_TRIAL" | "VALID_NEXT_TRIAL" | "CANDIDATE"
+    }
+  ]
+}
+
+<TRAJECTORIES_JSON>"""
+
+
 def get_system_prompt(env: str = "alfworld") -> str:
     """Return the appropriate system prompt for the given environment."""
     if env == "webshop":
         return WEBSHOP_SYSTEM_PROMPT
     if env == "intercode_sql":
         return INTERCODE_SQL_SYSTEM_PROMPT
+    if env == "scienceworld":
+        return SCIENCEWORLD_SYSTEM_PROMPT
     return ALFWORLD_SYSTEM_PROMPT
 
 
@@ -550,7 +620,7 @@ if __name__ == "__main__":
         "--env",
         type=str,
         default="alfworld",
-        choices=["alfworld", "webshop", "intercode_sql"],
+        choices=["alfworld", "webshop", "intercode_sql", "scienceworld"],
         help="Environment type for prompt selection (default: alfworld)"
     )
 

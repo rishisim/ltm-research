@@ -39,6 +39,7 @@ FRAMEWORK_ORDER = [
 
 FRAMEWORK_DISPLAY = {
     "react": "ReAct",
+    "react_reflexion": "React + Reflexion (final trials)",
     "react_cr": "ReAct + Context Retrieval (CR)",
     "react_tr": "ReAct + Tool Retrieval (TR)",
     "react_cr_tr": "ReAct + CR + TR",
@@ -110,6 +111,7 @@ def discover_tasks_for_split(
     split: str,
     num_tasks: int,
     simplification_str: str,
+    max_variations_per_task: int = 0,
 ) -> List[TaskInfo]:
     task_infos: List[TaskInfo] = []
     for task_spec in task_specs:
@@ -117,7 +119,9 @@ def discover_tasks_for_split(
         task_name = getattr(env, "taskName", task_spec)
         variations = get_split_variations(env, split)
 
-        for variation_idx in variations:
+        for variation_count, variation_idx in enumerate(variations):
+            if max_variations_per_task > 0 and variation_count >= max_variations_per_task:
+                break
             task_infos.append(
                 TaskInfo(
                     split=split,
@@ -413,6 +417,152 @@ def run_memory_agent_variant(
     return metrics
 
 
+def _latest_reflexion_for_trial(run_dir: Path, task_id: str, trial_num: int) -> str:
+    reflexions_path = run_dir / "reflexions.json"
+    if not reflexions_path.exists():
+        return ""
+    try:
+        with open(reflexions_path, "r") as f:
+            reflexions = json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return ""
+    for entry in reversed(reflexions):
+        if entry.get("task_id") == task_id and int(entry.get("trial_num", 0) or 0) == int(trial_num):
+            return entry.get("reflexion", "") or ""
+    return ""
+
+
+def run_reflexion(
+    task_infos: Sequence[TaskInfo],
+    run_dir: Path,
+    model: str,
+    prompts: Dict[str, str],
+    shared_env: Any,
+    simplification_str: str,
+    jar_path: Optional[str],
+    env_step_limit: int,
+    max_valid_actions: int,
+    reward_threshold: float,
+    quiet: bool,
+    max_trials: int,
+) -> Dict[str, Any]:
+    from src.frameworks.memory_retrieval_v2.agents.memory_allocation import MemoryAllocationReflexion
+
+    agent = MemoryAllocationReflexion(
+        model=model,
+        to_print=not quiet,
+        success_threshold=reward_threshold,
+    )
+    base_prompt = build_scienceworld_prompt(prompts)
+    task_states: Dict[str, Dict[str, Any]] = {
+        task.task_id_str: {
+            "memory": [],
+            "is_success": False,
+            "final_attempt": None,
+        }
+        for task in task_infos
+    }
+    all_trajectories: List[Dict[str, Any]] = []
+    world_log = run_dir / "world.log"
+
+    with open(world_log, "w") as wf:
+        wf.write("Reflexion run (ScienceWorld)\n")
+        wf.write(f"max_trials={max_trials}, reward_threshold={reward_threshold}\n")
+
+    for trial_num in range(1, max_trials + 1):
+        pending_tasks = [t for t in task_infos if not task_states[t.task_id_str]["is_success"]]
+        if not pending_tasks:
+            break
+
+        with open(world_log, "a") as wf:
+            wf.write(f"Trial {trial_num}: {len(pending_tasks)} pending tasks\n")
+
+        for i, task in enumerate(pending_tasks):
+            state = task_states[task.task_id_str]
+            env = make_env(task, shared_env, simplification_str, jar_path, env_step_limit, max_valid_actions)
+            success = False
+            reward = 0.0
+            step_num = 0
+            task_desc = ""
+            history_items: List[Dict[str, str]] = []
+            try:
+                ob, _info = env.reset()
+                task_desc = extract_task_desc(ob)
+                history, _raw_success = agent.run(
+                    env=env,
+                    base_prompt=base_prompt,
+                    memory=state["memory"],
+                    start_ob=ob,
+                    task_id=task.task_id_str,
+                    trial_num=trial_num,
+                    log_dir=str(run_dir),
+                    task_desc=task_desc,
+                )
+                history_items = history.to_json()
+                step_num = count_action_steps(history_items)
+                reward = env.last_score
+                success = reward >= reward_threshold
+            except Exception as exc:
+                print(
+                    f"[react_reflexion] Task failed with error ({task.task_id_str}): "
+                    f"{type(exc).__name__}: {exc}",
+                    file=sys.stderr,
+                    flush=True,
+                )
+            finally:
+                env.close()
+
+            attempt = {
+                "task_id": task.task_id_str,
+                "task_name": task.task_name,
+                "variation_idx": task.variation_idx,
+                "trial_num": trial_num,
+                "step_num": step_num,
+                "reward": reward,
+                "success": success,
+            }
+            trajectory = {
+                **attempt,
+                "task_desc": task_desc,
+                "steps": history_items,
+                "split": task.split,
+            }
+            all_trajectories.append(trajectory)
+            state["final_attempt"] = attempt
+            state["is_success"] = success
+
+            if not success:
+                reflexion = _latest_reflexion_for_trial(run_dir, task.task_id_str, trial_num)
+                if reflexion:
+                    state["memory"].append(reflexion)
+
+            with open(world_log, "a") as wf:
+                wf.write(
+                    f"Trial {trial_num} task #{i}: {task.task_id_str} - "
+                    f"{'SUCCESS' if success else 'FAIL'} "
+                    f"(score={reward:.2f}, steps={step_num})\n"
+                )
+
+    final_attempts: List[Dict[str, Any]] = []
+    for task in task_infos:
+        attempt = task_states[task.task_id_str].get("final_attempt")
+        if attempt is None:
+            attempt = {
+                "task_id": task.task_id_str,
+                "task_name": task.task_name,
+                "variation_idx": task.variation_idx,
+                "trial_num": 0,
+                "step_num": 0,
+                "reward": 0.0,
+                "success": False,
+            }
+        final_attempts.append(attempt)
+
+    save_json(run_dir / "attempts.json", final_attempts)
+    save_json(run_dir / "trajectories.json", all_trajectories)
+    return compute_metrics([t.task_id_str for t in task_infos], final_attempts, reward_threshold)
+
+
 def run_framework(
     framework_id: str,
     task_infos: Sequence[TaskInfo],
@@ -429,6 +579,7 @@ def run_framework(
     quiet: bool,
     max_learnings: int,
     min_valid_level: str,
+    max_trials: int,
 ) -> Dict[str, Any]:
     if framework_id == "react":
         return run_react_baseline(
@@ -443,6 +594,21 @@ def run_framework(
             max_valid_actions,
             reward_threshold,
             quiet,
+        )
+    if framework_id == "react_reflexion":
+        return run_reflexion(
+            task_infos,
+            run_dir,
+            model,
+            prompts,
+            shared_env,
+            simplification_str,
+            jar_path,
+            env_step_limit,
+            max_valid_actions,
+            reward_threshold,
+            quiet,
+            max_trials,
         )
     return run_memory_agent_variant(
         framework_id,
@@ -556,6 +722,7 @@ def main() -> None:
     parser.add_argument("--splits", type=str, default="dev", help="Comma-separated splits: train,dev,test")
     parser.add_argument("--task-ids", type=str, default="1-1,1-2,1-3", help="Comma-separated ScienceWorld task IDs or names")
     parser.add_argument("--frameworks", type=str, default=",".join(FRAMEWORK_ORDER), help="Comma-separated framework IDs")
+    parser.add_argument("--max-variations-per-task", type=int, default=0, help="Optional cap on variations selected from each ScienceWorld task spec")
     parser.add_argument("--model", type=str, default="gemini-2.5-flash", help="Chat model name")
     parser.add_argument("--embedding-provider", type=str, default="", choices=["", "gemini", "openai"], help="Embedding provider for retrieval")
     parser.add_argument("--memory-bank", type=str, default="data/scienceworld/knowledge_base_seed.json", help="Path to memory bank JSON")
@@ -570,6 +737,7 @@ def main() -> None:
     parser.add_argument("--resume", action="store_true", help="Preserve existing run dirs instead of wiping")
     parser.add_argument("--prepare-only", action="store_true", help="Discover tasks and write config without running")
     parser.add_argument("--max-learnings", type=int, default=10, help="Max learnings for CR")
+    parser.add_argument("--max-trials", type=int, default=7, help="Max trials for Reflexion runs")
     parser.add_argument(
         "--min-valid-level",
         type=str,
@@ -623,6 +791,7 @@ def main() -> None:
                 split,
                 args.num_tasks,
                 args.simplifications,
+                args.max_variations_per_task,
             )
             all_split_tasks[split] = tasks
             print(f"Split '{split}': {len(tasks)} tasks")
@@ -635,6 +804,7 @@ def main() -> None:
                 "num_tasks": args.num_tasks,
                 "splits": selected_splits,
                 "task_ids": task_specs,
+                "max_variations_per_task": args.max_variations_per_task,
                 "frameworks": selected_frameworks,
                 "model": args.model,
                 "embedding_provider": embedding_provider,
@@ -643,6 +813,7 @@ def main() -> None:
                 "env_step_limit": args.env_step_limit,
                 "max_valid_actions": args.max_valid_actions,
                 "reward_threshold": args.reward_threshold,
+                "max_trials": args.max_trials,
                 "seed": args.seed,
                 "prepare_only": args.prepare_only,
             },
@@ -679,6 +850,7 @@ def main() -> None:
                     quiet=args.quiet,
                     max_learnings=args.max_learnings,
                     min_valid_level=args.min_valid_level,
+                    max_trials=args.max_trials,
                 )
                 save_json(run_dir / "metrics.json", metrics)
                 row = {
