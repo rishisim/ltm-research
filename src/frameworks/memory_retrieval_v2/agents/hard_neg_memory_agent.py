@@ -72,11 +72,14 @@ class HardNegMemoryAgent(ReAct):
             _HELP_INSTRUCTIONS_SQL,
             _HELP_INSTRUCTIONS_WEBSHOP,
             _HELP_INSTRUCTIONS_ALFWORLD,
+            _HELP_INSTRUCTIONS_SCIENCEWORLD,
         )
         if self.env_kind == "intercode_sql":
             return _HELP_INSTRUCTIONS_SQL
         if self.env_kind == "webshop":
             return _HELP_INSTRUCTIONS_WEBSHOP
+        if self.env_kind == "scienceworld":
+            return _HELP_INSTRUCTIONS_SCIENCEWORLD
         return _HELP_INSTRUCTIONS_ALFWORLD
 
     def _parse_help_action(self, action: str) -> Optional[str]:
@@ -314,7 +317,7 @@ The following learnings are from previous tasks similar to yours. Use them to av
 
         # SQL/WebShop can return partial rewards, so treat only full reward as
         # success in trajectory logs used by resume.
-        is_success = reward >= 1.0 if self.env_kind in {"intercode_sql", "webshop"} else reward > 0
+        is_success = reward >= 1.0 if self.env_kind in {"intercode_sql", "webshop", "scienceworld"} else reward > 0
         
         if self.to_print:
             print(f"\nTask {'SUCCESS' if is_success else 'FAILURE'}")

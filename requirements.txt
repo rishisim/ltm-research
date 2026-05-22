@@ -91,3 +91,4 @@ wrapt==2.0.1
 yarl==1.22.0
 rank-bm25
 intercode-bench
+scienceworld==1.2.3
