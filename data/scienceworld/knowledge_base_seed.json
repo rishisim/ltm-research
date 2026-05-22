@@ -1,0 +1,62 @@
+[
+  {
+    "task_desc": "boil a substance by following a heat-transfer procedure.",
+    "obj_type": "substance, container, heat source",
+    "verbs": "take, put, activate, heat, examine",
+    "goal_phase": "PROCEDURE",
+    "learning_text": "For state-change tasks, first identify the target substance and a usable container or heat source before trying to heat it.",
+    "valid_level": "VALID_SAME_TRIAL",
+    "issue_ref": {
+      "text": "The agent tried procedure actions before locating the target substance and heat source.",
+      "task_id": "scienceworld_seed_boil",
+      "trial_num": "1",
+      "step_range": "1-4"
+    },
+    "evidence_ref": {
+      "task_id": "scienceworld_seed_boil",
+      "trial_num": "1",
+      "step_range": "5-8"
+    },
+    "unique_id": "scienceworld_seed_1"
+  },
+  {
+    "task_desc": "melt or freeze a material by changing its temperature.",
+    "obj_type": "material, thermometer, heat source, cold source",
+    "verbs": "examine, measure, heat, cool, activate",
+    "goal_phase": "MEASURE",
+    "learning_text": "When a ScienceWorld task asks for a state change, use examine or measurement actions to verify the current state before and after changing temperature.",
+    "valid_level": "VALID_SAME_TRIAL",
+    "issue_ref": {
+      "text": "The agent changed temperature but did not verify whether the material had changed state.",
+      "task_id": "scienceworld_seed_state_change",
+      "trial_num": "1",
+      "step_range": "1-6"
+    },
+    "evidence_ref": {
+      "task_id": "scienceworld_seed_state_change",
+      "trial_num": "1",
+      "step_range": "7-10"
+    },
+    "unique_id": "scienceworld_seed_2"
+  },
+  {
+    "task_desc": "complete a science procedure involving tools and observations.",
+    "obj_type": "tool, target object, room",
+    "verbs": "look around, inventory, examine, take, focus",
+    "goal_phase": "ORIENT",
+    "learning_text": "At the start of ScienceWorld tasks, look around, inspect inventory, and use the task description to identify the target object and required tool before taking irreversible actions.",
+    "valid_level": "VALID_SAME_TRIAL",
+    "issue_ref": {
+      "text": "The agent guessed actions without first orienting to the room, inventory, and target procedure.",
+      "task_id": "scienceworld_seed_orient",
+      "trial_num": "1",
+      "step_range": "1-3"
+    },
+    "evidence_ref": {
+      "task_id": "scienceworld_seed_orient",
+      "trial_num": "1",
+      "step_range": "4-6"
+    },
+    "unique_id": "scienceworld_seed_3"
+  }
+]

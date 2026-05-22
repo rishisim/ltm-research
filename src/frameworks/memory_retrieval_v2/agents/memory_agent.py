@@ -138,6 +138,35 @@ inspect tables normally with SHOW TABLES / SHOW COLUMNS, and call help only
 after a concrete SQL error, logical mismatch, or repeated wrong result.
 """
 
+_HELP_INSTRUCTIONS_SCIENCEWORLD = """
+IMPORTANT: You have access to a help tool when you're struggling or need guidance.
+To use it, output an action in this format:
+help["your issue here"]
+
+CRITICAL: Your query must match the style of issues in your memory bank to get the best results.
+Query Style Guidelines:
+1. Describe the FAILURE or OBSTACLE, not just the science goal.
+2. Mention the procedure step or action that failed (e.g. "heating", "mixing", "measuring", "placing").
+3. Mention the missing precondition or uncertainty (e.g. "container closed", "wrong substance", "need thermometer reading").
+4. Do not include specific object IDs or variation details; use general objects and materials.
+
+Examples of GOOD queries:
+help["cannot heat the substance because container is missing"]
+help["thermometer reading is needed before comparing melting points"]
+help["mixing materials gives no reaction and may need a different container"]
+help["plant growth task stalls after watering and needs next procedure step"]
+
+Examples of BAD queries:
+help["how to win"] (Too vague)
+help["what do i do next"] (Not specific to an issue)
+help["substance 7 in variation 42 is wrong"] (Too specific)
+
+Use this tool when you:
+- Are unsure which science procedure step comes next
+- Need help recovering from a failed action
+- Keep getting observations that show no progress
+"""
+
 
 class MemoryAgent(ReAct):
     """
@@ -146,7 +175,7 @@ class MemoryAgent(ReAct):
     2. Provides a help["query"] tool that agents can call during execution
     """
 
-    # Supported env_kind values: "alfworld", "webshop", "intercode_sql"
+    # Supported env_kind values: "alfworld", "webshop", "intercode_sql", "scienceworld"
     def __init__(
         self,
         model: Model = "gemini-2.5-flash",
@@ -168,6 +197,8 @@ class MemoryAgent(ReAct):
             return _HELP_INSTRUCTIONS_SQL
         if self.env_kind == "webshop":
             return _HELP_INSTRUCTIONS_WEBSHOP
+        if self.env_kind == "scienceworld":
+            return _HELP_INSTRUCTIONS_SCIENCEWORLD
         return _HELP_INSTRUCTIONS_ALFWORLD
 
     def _parse_help_action(self, action: str) -> Optional[str]:
@@ -458,7 +489,7 @@ The following learnings are from previous tasks similar to yours. Use them to av
 
         # Determine success. SQL/WebShop can return partial rewards, so treat
         # only full reward as success in trajectory logs used by resume.
-        is_success = reward >= 1.0 if self.env_kind in {"intercode_sql", "webshop"} else reward > 0
+        is_success = reward >= 1.0 if self.env_kind in {"intercode_sql", "webshop", "scienceworld"} else reward > 0
         
         if self.to_print:
             print(f"\nTask {'SUCCESS' if is_success else 'FAILURE'}")
