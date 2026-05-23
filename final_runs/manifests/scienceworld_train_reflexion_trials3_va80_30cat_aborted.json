@@ -1,0 +1,34 @@
+{
+  "status": "ABORTED_DO_NOT_USE",
+  "artifact_type": "partial_scienceworld_kb_rebuild",
+  "branch": "final/scienceworld-kb-rebuild",
+  "worktree": "/Users/rishisim/Documents/research/ltm-scienceworld-kb-rebuild",
+  "base_commit": "861aa83ece7b1e530f19d82c5571b6730e43addd",
+  "stop_timestamp": "2026-05-23T14:41:58-0700",
+  "partial_run_dir": "final_runs/kb/scienceworld_train_reflexion_trials3_va80_30cat/train/react_reflexion/seed_0",
+  "canonical_kb_dir": "final_runs/kb/scienceworld_train_reflexion_trials3_va80_30cat",
+  "safe_for_eval": false,
+  "promoted": false,
+  "reason": "User stopped Phase 2.5 trials3 ScienceWorld rebuild after protocol change. Partial artifacts are preserved as aborted/legacy only.",
+  "intended_settings": {
+    "split": "train",
+    "frameworks": ["react_reflexion"],
+    "model": "gemini-2.5-flash",
+    "embedding_provider": "gemini",
+    "seed": 0,
+    "max_trials": 3,
+    "max_valid_actions": 80,
+    "max_variations_per_task": 1,
+    "intended_categories": 30
+  },
+  "partial_status": {
+    "world_log_last_completed": "Trial 1 task #17: scienceworld_lifespan-longest-lived_var_0 - SUCCESS (score=1.00, steps=9)",
+    "reflexion_entries": 18,
+    "unique_reflexion_task_ids": 18,
+    "trial_numbers_present": [1],
+    "has_trajectories_json": false,
+    "has_attempts_json": false,
+    "has_metrics_json": false,
+    "has_knowledge_base_json": false
+  }
+}
