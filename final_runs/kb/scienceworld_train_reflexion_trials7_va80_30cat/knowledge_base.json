@@ -1,0 +1,3356 @@
+[
+  {
+    "task_desc": "Your task is to boil water. For compounds without a boiling point, combusting the substance is also acceptable. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent attempts to 'take metal pot' which is not a valid action.",
+    "issue_ref": {
+      "task_id": "scienceworld_boil_var_0",
+      "trial_num": 1,
+      "step_range": [
+        8,
+        8
+      ]
+    },
+    "learning_text": "Identify interactable objects from 'look around' output and use correct 'take' action.",
+    "evidence_ref": {
+      "task_id": "scienceworld_boil_var_0",
+      "trial_num": 1,
+      "step_range": [
+        47,
+        47
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "1"
+  },
+  {
+    "task_desc": "Your task is to boil water. For compounds without a boiling point, combusting the substance is also acceptable. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container, water, sink",
+    "verbs": "fill, put",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly tries invalid 'fill' or 'put' actions to get water into a container.",
+    "issue_ref": {
+      "task_id": "scienceworld_boil_var_0",
+      "trial_num": 1,
+      "step_range": [
+        12,
+        45
+      ]
+    },
+    "learning_text": "To fill a container, first 'put container in sink', then 'activate sink'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_boil_var_0",
+      "trial_num": 2,
+      "step_range": [
+        22,
+        26
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "2"
+  },
+  {
+    "task_desc": "Your task is to boil water. For compounds without a boiling point, combusting the substance is also acceptable. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent uses incorrect object name 'glass cup' instead of 'cup containing nothing' for 'take' action.",
+    "issue_ref": {
+      "task_id": "scienceworld_boil_var_0",
+      "trial_num": 2,
+      "step_range": [
+        6,
+        6
+      ]
+    },
+    "learning_text": "Use the exact object name from the observation for 'take' actions.",
+    "evidence_ref": {
+      "task_id": "scienceworld_boil_var_0",
+      "trial_num": 2,
+      "step_range": [
+        12,
+        12
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "3"
+  },
+  {
+    "task_desc": "Your task is to boil water. For compounds without a boiling point, combusting the substance is also acceptable. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container, sink",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent uses incorrect object name 'glass cup' instead of 'cup containing water' for 'take' action from sink.",
+    "issue_ref": {
+      "task_id": "scienceworld_boil_var_0",
+      "trial_num": 2,
+      "step_range": [
+        28,
+        28
+      ]
+    },
+    "learning_text": "Use the exact object name from the observation for 'take' actions, especially after object state changes.",
+    "evidence_ref": {
+      "task_id": "scienceworld_boil_var_0",
+      "trial_num": 2,
+      "step_range": [
+        32,
+        32
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "4"
+  },
+  {
+    "task_desc": "Your task is to boil water. For compounds without a boiling point, combusting the substance is also acceptable. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "task completion",
+    "verbs": "submit",
+    "goal_phase": "ANSWER",
+    "issue_text": "Agent attempts to submit 'Solution: The task is complete.' after task completion.",
+    "issue_ref": {
+      "task_id": "scienceworld_boil_var_0",
+      "trial_num": 2,
+      "step_range": [
+        38,
+        38
+      ]
+    },
+    "learning_text": "The task is complete when the score increases after the final required action; no explicit submission is needed.",
+    "evidence_ref": {
+      "task_id": "scienceworld_boil_var_0",
+      "trial_num": 6,
+      "step_range": [
+        11,
+        11
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "5"
+  },
+  {
+    "task_desc": "Your task is to boil water. For compounds without a boiling point, combusting the substance is also acceptable. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent uses incorrect object name 'cup containing nothing from table' for 'take' action.",
+    "issue_ref": {
+      "task_id": "scienceworld_boil_var_0",
+      "trial_num": 3,
+      "step_range": [
+        2,
+        2
+      ]
+    },
+    "learning_text": "Use the exact object name from the observation for 'take' actions, without specifying location.",
+    "evidence_ref": {
+      "task_id": "scienceworld_boil_var_0",
+      "trial_num": 3,
+      "step_range": [
+        8,
+        8
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "6"
+  },
+  {
+    "task_desc": "Your task is to boil water. For compounds without a boiling point, combusting the substance is also acceptable. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container, sink",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent uses incorrect object name 'cup containing water from sink' for 'take' action from sink.",
+    "issue_ref": {
+      "task_id": "scienceworld_boil_var_0",
+      "trial_num": 3,
+      "step_range": [
+        14,
+        14
+      ]
+    },
+    "learning_text": "Use the exact object name from the observation for 'take' actions, without specifying location.",
+    "evidence_ref": {
+      "task_id": "scienceworld_boil_var_0",
+      "trial_num": 3,
+      "step_range": [
+        18,
+        18
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "7"
+  },
+  {
+    "task_desc": "Your task is to use chemistry to create green paint. When you are done, focus on the green paint.",
+    "obj_type": "paint, cup, jug",
+    "verbs": "take, pour",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempted to 'take' paint from a cup, which is not a valid action.",
+    "issue_ref": {
+      "task_id": "scienceworld_chemistry-mix-paint-secondary-color_var_0",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        6
+      ]
+    },
+    "learning_text": "To transfer liquids like paint, use the 'pour [substance] into [container]' action instead of 'take'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_chemistry-mix-paint-secondary-color_var_0",
+      "trial_num": 1,
+      "step_range": [
+        8,
+        8
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "8"
+  },
+  {
+    "task_desc": "Your task is to use chemistry to create green-blue paint. When you are part-way done, focus on the intermediate (secondary color) paint you created.  When you are completely done, focus on the green paint.",
+    "obj_type": "container",
+    "verbs": "take, move",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly attempts to pick up an empty cup using incorrect or ambiguous object names.",
+    "issue_ref": {
+      "task_id": "scienceworld_chemistry-mix-paint-tertiary-color_var_0",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        49
+      ]
+    },
+    "learning_text": "When picking up an object, use the exact object name as it appears in the valid actions list, or select the correct option from ambiguous requests.",
+    "evidence_ref": {
+      "task_id": "scienceworld_chemistry-mix-paint-tertiary-color_var_0",
+      "trial_num": 3,
+      "step_range": [
+        47,
+        49
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "9"
+  },
+  {
+    "task_desc": "Your task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.",
+    "obj_type": "instructions",
+    "verbs": "examine, read",
+    "goal_phase": "SEARCH",
+    "issue_text": "Used 'examine' instead of 'read' to get recipe content.",
+    "issue_ref": {
+      "task_id": "scienceworld_chemistry-mix_var_0",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        7
+      ]
+    },
+    "learning_text": "Use 'read' action to view the content of instructions or recipes.",
+    "evidence_ref": {
+      "task_id": "scienceworld_chemistry-mix_var_0",
+      "trial_num": 1,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "10"
+  },
+  {
+    "task_desc": "Your task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.",
+    "obj_type": "substance, container",
+    "verbs": "take, open",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempted to take sodium chloride directly without opening its container.",
+    "issue_ref": {
+      "task_id": "scienceworld_chemistry-mix_var_0",
+      "trial_num": 1,
+      "step_range": [
+        14,
+        15
+      ]
+    },
+    "learning_text": "If an item cannot be taken directly, check if it's inside an openable container.",
+    "evidence_ref": {
+      "task_id": "scienceworld_chemistry-mix_var_0",
+      "trial_num": 1,
+      "step_range": [
+        26,
+        27
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "11"
+  },
+  {
+    "task_desc": "Your task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.",
+    "obj_type": "container, water",
+    "verbs": "fill, put",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempted to fill a cup with water without placing it in the sink first.",
+    "issue_ref": {
+      "task_id": "scienceworld_chemistry-mix_var_0",
+      "trial_num": 1,
+      "step_range": [
+        36,
+        37
+      ]
+    },
+    "learning_text": "To fill a container with water from a sink, first place the container in the sink.",
+    "evidence_ref": {
+      "task_id": "scienceworld_chemistry-mix_var_0",
+      "trial_num": 1,
+      "step_range": [
+        44,
+        45
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "12"
+  },
+  {
+    "task_desc": "Your task is to find a(n) animal. First, focus on the thing. Then, move it to the red box in the kitchen.",
+    "obj_type": "animal",
+    "verbs": "focus",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly tried to 'focus on bee X' when 'bee X' was not a valid direct focus target.",
+    "issue_ref": {
+      "task_id": "scienceworld_find-animal_var_0",
+      "trial_num": 1,
+      "step_range": [
+        101,
+        125
+      ]
+    },
+    "learning_text": "To focus on an animal within a container, first open the container, then look inside to reveal the specific animal object.",
+    "evidence_ref": {
+      "task_id": "scienceworld_find-animal_var_0",
+      "trial_num": 4,
+      "step_range": [
+        101,
+        105
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "13"
+  },
+  {
+    "task_desc": "Your task is to find a(n) animal. First, focus on the thing. Then, move it to the red box in the kitchen.",
+    "obj_type": "animal, container",
+    "verbs": "take, move",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent attempted to 'take adult bee in greenhouse' but the bee was not added to inventory.",
+    "issue_ref": {
+      "task_id": "scienceworld_find-animal_var_0",
+      "trial_num": 2,
+      "step_range": [
+        109,
+        111
+      ]
+    },
+    "learning_text": "The 'take' action for an animal might not add it to inventory; check if it becomes a global movable object.",
+    "evidence_ref": {
+      "task_id": "scienceworld_find-animal_var_0",
+      "trial_num": 4,
+      "step_range": [
+        107,
+        109
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "14"
+  },
+  {
+    "task_desc": "Your task is to find a(n) animal. First, focus on the thing. Then, move it to the red box in the kitchen.",
+    "obj_type": "animal, container",
+    "verbs": "move",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent repeatedly tried to 'move adult bee to red box' or 'put adult bee in red box' when it was not a valid action.",
+    "issue_ref": {
+      "task_id": "scienceworld_find-animal_var_0",
+      "trial_num": 4,
+      "step_range": [
+        121,
+        135
+      ]
+    },
+    "learning_text": "After focusing on an animal, the 'move [animal] to [container]' action is the correct way to transfer it.",
+    "evidence_ref": {
+      "task_id": "scienceworld_find-animal_var_0",
+      "trial_num": 6,
+      "step_range": [
+        201,
+        203
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "15"
+  },
+  {
+    "task_desc": "Your task is to find a(n) animal. First, focus on the thing. Then, move it to the red box in the kitchen.",
+    "obj_type": "animal, container",
+    "verbs": "move",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent repeatedly tried to move bee to inventory or directly to kitchen, but it was not a valid action.",
+    "issue_ref": {
+      "task_id": "scienceworld_find-animal_var_0",
+      "trial_num": 3,
+      "step_range": [
+        101,
+        115
+      ]
+    },
+    "learning_text": "Some animals are not directly movable to inventory or other rooms; they may require a specific container or interaction.",
+    "evidence_ref": {
+      "task_id": "scienceworld_find-animal_var_0",
+      "trial_num": 4,
+      "step_range": [
+        101,
+        105
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "16"
+  },
+  {
+    "task_desc": "Your task is to find a(n) animal. First, focus on the thing. Then, move it to the red box in the kitchen.",
+    "obj_type": "animal, container",
+    "verbs": "move",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent repeatedly tried to move bee to jug or shovel, but it was not a valid action.",
+    "issue_ref": {
+      "task_id": "scienceworld_find-animal_var_0",
+      "trial_num": 6,
+      "step_range": [
+        177,
+        185
+      ]
+    },
+    "learning_text": "Not all tools can be used to move animals; check valid actions for direct animal-to-container transfers.",
+    "evidence_ref": {
+      "task_id": "scienceworld_find-animal_var_0",
+      "trial_num": 6,
+      "step_range": [
+        201,
+        203
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "17"
+  },
+  {
+    "task_desc": "Your task is to find a(n) living thing. First, focus on the thing. Then, move it to the red box in the kitchen.",
+    "obj_type": "living thing, red box",
+    "verbs": "focus, move, take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempted to move an object that was focused on but not in inventory.",
+    "issue_ref": {
+      "task_id": "scienceworld_find-living-thing_var_0",
+      "trial_num": 1,
+      "step_range": [
+        12,
+        13
+      ]
+    },
+    "learning_text": "After focusing on an object, use 'take' to add it to inventory before attempting to move it to another location.",
+    "evidence_ref": {
+      "task_id": "scienceworld_find-living-thing_var_0",
+      "trial_num": 1,
+      "step_range": [
+        16,
+        17
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "18"
+  },
+  {
+    "task_desc": "Your task is to find a(n) non-living thing. First, focus on the thing. Then, move it to the red box in the kitchen.",
+    "obj_type": "non-living thing, container",
+    "verbs": "focus on, take, move",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempted to move an object to a container without first taking it into inventory.",
+    "issue_ref": {
+      "task_id": "scienceworld_find-non-living-thing_var_0",
+      "trial_num": 1,
+      "step_range": [
+        7,
+        8
+      ]
+    },
+    "learning_text": "Always take an object into inventory before attempting to move it to a container.",
+    "evidence_ref": {
+      "task_id": "scienceworld_find-non-living-thing_var_0",
+      "trial_num": 1,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "19"
+  },
+  {
+    "task_desc": "Your task is to find a(n) plant. First, focus on the thing. Then, move it to the red box in the kitchen.",
+    "obj_type": "plant, red box",
+    "verbs": "focus, move, take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempted to move a plant that was not in inventory.",
+    "issue_ref": {
+      "task_id": "scienceworld_find-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        11,
+        11
+      ]
+    },
+    "learning_text": "Always take an object into inventory before attempting to move it to a new location.",
+    "evidence_ref": {
+      "task_id": "scienceworld_find-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        17,
+        17
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "20"
+  },
+  {
+    "task_desc": "Your task is to freeze water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "substance, jug, freezer",
+    "verbs": "take, move, close, open, focus",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent repeatedly tries to freeze water with invalid actions like 'freeze substance in jug' or 'activate water'.",
+    "issue_ref": {
+      "task_id": "scienceworld_freeze_var_0",
+      "trial_num": 2,
+      "step_range": [
+        25,
+        49
+      ]
+    },
+    "learning_text": "To freeze water, place the jug in the freezer, close the freezer, then open it again. The state change happens implicitly.",
+    "evidence_ref": {
+      "task_id": "scienceworld_freeze_var_0",
+      "trial_num": 6,
+      "step_range": [
+        37,
+        40
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "21"
+  },
+  {
+    "task_desc": "Your task is to freeze water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "jug, sink",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent attempts to 'take jug from sink' while in a different room.",
+    "issue_ref": {
+      "task_id": "scienceworld_freeze_var_0",
+      "trial_num": 1,
+      "step_range": [
+        37,
+        37
+      ]
+    },
+    "learning_text": "Ensure agent is in the same room as the object before attempting to take it.",
+    "evidence_ref": {
+      "task_id": "scienceworld_freeze_var_0",
+      "trial_num": 1,
+      "step_range": [
+        43,
+        43
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "22"
+  },
+  {
+    "task_desc": "Your task is to freeze water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "freezer",
+    "verbs": "look in",
+    "goal_phase": "VERIFY",
+    "issue_text": "Agent tries to look inside a closed freezer.",
+    "issue_ref": {
+      "task_id": "scienceworld_freeze_var_0",
+      "trial_num": 3,
+      "step_range": [
+        37,
+        37
+      ]
+    },
+    "learning_text": "Open containers before attempting to look inside them.",
+    "evidence_ref": {
+      "task_id": "scienceworld_freeze_var_0",
+      "trial_num": 3,
+      "step_range": [
+        38,
+        38
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "23"
+  },
+  {
+    "task_desc": "Your task is to freeze water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "substance, jug",
+    "verbs": "look at",
+    "goal_phase": "VERIFY",
+    "issue_text": "Agent tries to look at substance in jug while freezer is closed.",
+    "issue_ref": {
+      "task_id": "scienceworld_freeze_var_0",
+      "trial_num": 5,
+      "step_range": [
+        37,
+        37
+      ]
+    },
+    "learning_text": "Open containers before attempting to look at contents.",
+    "evidence_ref": {
+      "task_id": "scienceworld_freeze_var_0",
+      "trial_num": 5,
+      "step_range": [
+        39,
+        39
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "24"
+  },
+  {
+    "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+    "obj_type": "room, object",
+    "verbs": "look around, look at, open, look in, go to",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent repeatedly searches rooms and containers without finding relevant information.",
+    "issue_ref": {
+      "task_id": "scienceworld_identify-life-stages-1_var_0",
+      "trial_num": 1,
+      "step_range": [
+        0,
+        200
+      ]
+    },
+    "learning_text": "Adopt a systematic search strategy, focusing on text, diagrams, or sequences of images in each room.",
+    "evidence_ref": {
+      "task_id": "scienceworld_identify-life-stages-1_var_0",
+      "trial_num": 5,
+      "step_range": [
+        0,
+        1
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "25"
+  },
+  {
+    "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+    "obj_type": "bee, bee hive",
+    "verbs": "look at, open, look in",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent examines bees and bee hive, but they are not relevant to turtle life stages.",
+    "issue_ref": {
+      "task_id": "scienceworld_identify-life-stages-1_var_0",
+      "trial_num": 2,
+      "step_range": [
+        2,
+        10
+      ]
+    },
+    "learning_text": "Filter search results for direct relevance to the task's subject (turtles), ignoring similar but unrelated items.",
+    "evidence_ref": {
+      "task_id": "scienceworld_identify-life-stages-1_var_0",
+      "trial_num": 2,
+      "step_range": [
+        11,
+        12
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "26"
+  },
+  {
+    "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+    "obj_type": "room",
+    "verbs": "go to",
+    "goal_phase": "RECOVER",
+    "issue_text": "Agent attempts to go to a room directly without first returning to the hallway.",
+    "issue_ref": {
+      "task_id": "scienceworld_identify-life-stages-1_var_0",
+      "trial_num": 5,
+      "step_range": [
+        108,
+        108
+      ]
+    },
+    "learning_text": "Always return to the hallway before attempting to navigate to a different room.",
+    "evidence_ref": {
+      "task_id": "scienceworld_identify-life-stages-1_var_0",
+      "trial_num": 5,
+      "step_range": [
+        110,
+        110
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "27"
+  },
+  {
+    "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+    "obj_type": "object",
+    "verbs": "look at",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent attempts to examine a specific object (white pillow) that is part of another object's description.",
+    "issue_ref": {
+      "task_id": "scienceworld_identify-life-stages-1_var_0",
+      "trial_num": 5,
+      "step_range": [
+        120,
+        120
+      ]
+    },
+    "learning_text": "Only examine objects explicitly listed as interactable; nested descriptions are not separate objects.",
+    "evidence_ref": {
+      "task_id": "scienceworld_identify-life-stages-1_var_0",
+      "trial_num": 5,
+      "step_range": [
+        122,
+        122
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "28"
+  },
+  {
+    "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+    "obj_type": "object",
+    "verbs": "look at",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent attempts to examine a specific object (red apple) that is part of a container's contents.",
+    "issue_ref": {
+      "task_id": "scienceworld_identify-life-stages-1_var_0",
+      "trial_num": 7,
+      "step_range": [
+        108,
+        108
+      ]
+    },
+    "learning_text": "Only examine objects explicitly listed as interactable; contents of containers are not separate objects.",
+    "evidence_ref": {
+      "task_id": "scienceworld_identify-life-stages-1_var_0",
+      "trial_num": 7,
+      "step_range": [
+        110,
+        110
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "29"
+  },
+  {
+    "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+    "obj_type": "apple plant, flower pot",
+    "verbs": "focus",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent focuses on a flower pot containing an apple seed, not an apple plant.",
+    "issue_ref": {
+      "task_id": "scienceworld_identify-life-stages-2_var_0",
+      "trial_num": 1,
+      "step_range": [
+        8,
+        8
+      ]
+    },
+    "learning_text": "Identify the earliest *plant* stage (seedling) and focus on the object containing it, not just the seed.",
+    "evidence_ref": {
+      "task_id": "scienceworld_identify-life-stages-2_var_0",
+      "trial_num": 7,
+      "step_range": [
+        8,
+        8
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "30"
+  },
+  {
+    "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+    "obj_type": "apple plant, flower pot",
+    "verbs": "focus",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent focuses on a flower pot containing a seedling, but it's not the first stage.",
+    "issue_ref": {
+      "task_id": "scienceworld_identify-life-stages-2_var_0",
+      "trial_num": 2,
+      "step_range": [
+        5,
+        5
+      ]
+    },
+    "learning_text": "The earliest life stage of an apple *plant* is the seedling, but the task requires starting from the earliest *life stage*, which includes the apple seed.",
+    "evidence_ref": {
+      "task_id": "scienceworld_identify-life-stages-2_var_0",
+      "trial_num": 3,
+      "step_range": [
+        13,
+        13
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "31"
+  },
+  {
+    "task_desc": "Your task is to determine which of the two inclined planes (C, B) has the shallowest angle. After completing your experiment, focus on the inclined plane with the shallowest angle.",
+    "obj_type": "inclined plane, block",
+    "verbs": "move, look around",
+    "goal_phase": "MEASURE",
+    "issue_text": "Agent moved block to inclined planes but did not observe the result immediately.",
+    "issue_ref": {
+      "task_id": "scienceworld_inclined-plane-determine-angle_var_0",
+      "trial_num": 1,
+      "step_range": [
+        10,
+        13
+      ]
+    },
+    "learning_text": "After moving an object to an inclined plane, use 'look around' to observe if the object slid.",
+    "evidence_ref": {
+      "task_id": "scienceworld_inclined-plane-determine-angle_var_0",
+      "trial_num": 1,
+      "step_range": [
+        14,
+        15
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "32"
+  },
+  {
+    "task_desc": "Your task is to determine which of the two inclined planes (paper, cloth) has the most friction. After completing your experiment, focus on the inclined plane with the most friction.",
+    "obj_type": "room",
+    "verbs": "go to",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent searched multiple incorrect rooms before finding the correct one.",
+    "issue_ref": {
+      "task_id": "scienceworld_inclined-plane-friction-named-surfaces_var_0",
+      "trial_num": 1,
+      "step_range": [
+        2,
+        22
+      ]
+    },
+    "learning_text": "Systematically explore all available rooms until the required objects are found.",
+    "evidence_ref": {
+      "task_id": "scienceworld_inclined-plane-friction-named-surfaces_var_0",
+      "trial_num": 1,
+      "step_range": [
+        23,
+        24
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "33"
+  },
+  {
+    "task_desc": "Your task is to determine which of the two inclined planes (unknown material C, unknown material H) has the most friction. After completing your experiment, focus on the inclined plane with the most friction.",
+    "obj_type": "switch, inclined plane",
+    "verbs": "activate, look at",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Activating the switch did not affect the inclined plane's block movement.",
+    "issue_ref": {
+      "task_id": "scienceworld_inclined-plane-friction-unnamed-surfaces_var_0",
+      "trial_num": 1,
+      "step_range": [
+        9,
+        10
+      ]
+    },
+    "learning_text": "Observe the inclined plane directly after placing the block to determine if it slides, rather than activating a switch.",
+    "evidence_ref": {
+      "task_id": "scienceworld_inclined-plane-friction-unnamed-surfaces_var_0",
+      "trial_num": 1,
+      "step_range": [
+        11,
+        12
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "34"
+  },
+  {
+    "task_desc": "Your task is to find the animal with the longest life span.  The animals are in the 'outside' location.  Focus on the animal with the longest life span.",
+    "obj_type": "animal",
+    "verbs": "look at, examine, focus on",
+    "goal_phase": "MEASURE",
+    "issue_text": "Agent used 'look at' and 'examine' to find lifespan information, which did not work.",
+    "issue_ref": {
+      "task_id": "scienceworld_lifespan-longest-lived_var_0",
+      "trial_num": 1,
+      "step_range": [
+        13,
+        16
+      ]
+    },
+    "learning_text": "Use 'focus on' action to retrieve specific information about an object, such as an animal's lifespan.",
+    "evidence_ref": {
+      "task_id": "scienceworld_lifespan-longest-lived_var_0",
+      "trial_num": 1,
+      "step_range": [
+        17,
+        17
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "35"
+  },
+  {
+    "task_desc": "Your task is to find the animal with the longest life span, then the shortest life span. First, focus on the animal with the longest life span.  Then, focus on the animal with the shortest life span. The animals are in the 'outside' location.",
+    "obj_type": "animal",
+    "verbs": "examine, focus on",
+    "goal_phase": "MEASURE",
+    "issue_text": "Used 'examine' instead of 'focus on' to get animal lifespan information.",
+    "issue_ref": {
+      "task_id": "scienceworld_lifespan-longest-lived-then-shortest-lived_var_0",
+      "trial_num": 1,
+      "step_range": [
+        10,
+        10
+      ]
+    },
+    "learning_text": "Use the 'focus on' action to retrieve specific information about an object, such as an animal's lifespan.",
+    "evidence_ref": {
+      "task_id": "scienceworld_lifespan-longest-lived-then-shortest-lived_var_0",
+      "trial_num": 1,
+      "step_range": [
+        12,
+        12
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "36"
+  },
+  {
+    "task_desc": "Your task is to find the animal with the longest life span, then the shortest life span. First, focus on the animal with the longest life span.  Then, focus on the animal with the shortest life span. The animals are in the 'outside' location.",
+    "obj_type": "animal",
+    "verbs": "look at, examine, focus on",
+    "goal_phase": "MEASURE",
+    "issue_text": "Repeatedly used 'look at' and 'examine' actions, which did not provide lifespan information.",
+    "issue_ref": {
+      "task_id": "scienceworld_lifespan-longest-lived-then-shortest-lived_var_0",
+      "trial_num": 2,
+      "step_range": [
+        14,
+        20
+      ]
+    },
+    "learning_text": "When 'look at' or 'examine' don't provide needed info, try 'focus on' or consult general knowledge.",
+    "evidence_ref": {
+      "task_id": "scienceworld_lifespan-longest-lived-then-shortest-lived_var_0",
+      "trial_num": 2,
+      "step_range": [
+        21,
+        24
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "37"
+  },
+  {
+    "task_desc": "Your task is to find the animal with the shortest life span.  The animals are in the 'outside' location.  Focus on the animal with the shortest life span.",
+    "obj_type": "animal",
+    "verbs": "look at, examine, focus on",
+    "goal_phase": "MEASURE",
+    "issue_text": "Using 'look at' or 'examine' on an animal does not provide lifespan information.",
+    "issue_ref": {
+      "task_id": "scienceworld_lifespan-shortest-lived_var_0",
+      "trial_num": 1,
+      "step_range": [
+        13,
+        16
+      ]
+    },
+    "learning_text": "Use 'focus on [animal]' to retrieve detailed information, including lifespan, for an animal.",
+    "evidence_ref": {
+      "task_id": "scienceworld_lifespan-shortest-lived_var_0",
+      "trial_num": 1,
+      "step_range": [
+        17,
+        17
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "38"
+  },
+  {
+    "task_desc": "Your task is to measure the melting point of chocolate, which is located around the kitchen. First, focus on the thermometer. Next, focus on the chocolate. If the melting point of chocolate is above -10.0 degrees celsius, focus on the blue box. If the melting point of chocolate is below -10.0 degrees celsius, focus on the orange box. The boxes are located around the kitchen.",
+    "obj_type": "chocolate",
+    "verbs": "focus on",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Attempted to 'focus on chocolate' directly, which is not a valid action.",
+    "issue_ref": {
+      "task_id": "scienceworld_measure-melting-point-known-substance_var_0",
+      "trial_num": 1,
+      "step_range": [
+        5,
+        15
+      ]
+    },
+    "learning_text": "The task instruction 'focus on chocolate' is conceptual; the melting point is read from the thermometer after focusing on it.",
+    "evidence_ref": {
+      "task_id": "scienceworld_measure-melting-point-known-substance_var_0",
+      "trial_num": 2,
+      "step_range": [
+        3,
+        5
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "39"
+  },
+  {
+    "task_desc": "Your task is to measure the melting point of chocolate, which is located around the kitchen. First, focus on the thermometer. Next, focus on the chocolate. If the melting point of chocolate is above -10.0 degrees celsius, focus on the blue box. If the melting point of chocolate is below -10.0 degrees celsius, focus on the orange box. The boxes are located around the kitchen.",
+    "obj_type": "thermometer",
+    "verbs": "look at",
+    "goal_phase": "MEASURE",
+    "issue_text": "Failed to explicitly 'look at thermometer' to get the temperature reading after focusing on it.",
+    "issue_ref": {
+      "task_id": "scienceworld_measure-melting-point-known-substance_var_0",
+      "trial_num": 2,
+      "step_range": [
+        3,
+        5
+      ]
+    },
+    "learning_text": "After focusing on a measurement tool like a thermometer, explicitly 'look at' it to get the reading.",
+    "evidence_ref": {
+      "task_id": "scienceworld_measure-melting-point-known-substance_var_0",
+      "trial_num": 3,
+      "step_range": [
+        8,
+        9
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "40"
+  },
+  {
+    "task_desc": "Your task is to measure the melting point of solid unknown substance C, which is located around the kitchen. First, focus on the thermometer. Next, focus on the solid unknown substance C. If the melting point of solid unknown substance C is above 150.0 degrees celsius, focus on the orange box. If the melting point of solid unknown substance C is below 150.0 degrees celsius, focus on the yellow box. The boxes are located around the kitchen.",
+    "obj_type": "thermometer, solid unknown substance",
+    "verbs": "focus, use",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent focused on substance and thermometer but did not measure melting point.",
+    "issue_ref": {
+      "task_id": "scienceworld_measure-melting-point-unknown-substance_var_0",
+      "trial_num": 1,
+      "step_range": [
+        4,
+        7
+      ]
+    },
+    "learning_text": "After focusing on the thermometer and substance, use the thermometer on the substance to measure its melting point.",
+    "evidence_ref": {
+      "task_id": "scienceworld_measure-melting-point-unknown-substance_var_0",
+      "trial_num": 2,
+      "step_range": [
+        8,
+        9
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "41"
+  },
+  {
+    "task_desc": "Your task is to measure the melting point of solid unknown substance C, which is located around the kitchen. First, focus on the thermometer. Next, focus on the solid unknown substance C. If the melting point of solid unknown substance C is above 150.0 degrees celsius, focus on the orange box. If the melting point of solid unknown substance C is below 150.0 degrees celsius, focus on the yellow box. The boxes are located around the kitchen.",
+    "obj_type": "solid unknown substance",
+    "verbs": "think",
+    "goal_phase": "MEASURE",
+    "issue_text": "Agent incorrectly assumed melting point without measurement.",
+    "issue_ref": {
+      "task_id": "scienceworld_measure-melting-point-unknown-substance_var_0",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        7
+      ]
+    },
+    "learning_text": "Do not assume the melting point; always perform the measurement action with the thermometer.",
+    "evidence_ref": {
+      "task_id": "scienceworld_measure-melting-point-unknown-substance_var_0",
+      "trial_num": 2,
+      "step_range": [
+        8,
+        9
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "42"
+  },
+  {
+    "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "seed, flower pot",
+    "verbs": "plant",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Attempted to plant seed with incorrect action phrasing.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        10,
+        16
+      ]
+    },
+    "learning_text": "Use the action 'put [seed] in [flower pot]' to plant seeds.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        18,
+        19
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "43"
+  },
+  {
+    "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "jug, sink, water",
+    "verbs": "fill",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempted to fill jug with water using incorrect action phrasing.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        22,
+        47
+      ]
+    },
+    "learning_text": "To fill the jug, first 'activate sink', then 'put jug in sink', then 'take jug'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+      "trial_num": 2,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "44"
+  },
+  {
+    "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "jug, flower pot, water",
+    "verbs": "water, pour",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Attempted to water plant with incorrect action phrasing.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+      "trial_num": 2,
+      "step_range": [
+        14,
+        20
+      ]
+    },
+    "learning_text": "Use the action 'pour jug into [flower pot]' to water the plant.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+      "trial_num": 4,
+      "step_range": [
+        28,
+        29
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "45"
+  },
+  {
+    "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "jug, flower pot",
+    "verbs": "move, take",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Incorrectly used 'move jug to flower pot' to water, then struggled to retrieve it.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+      "trial_num": 2,
+      "step_range": [
+        22,
+        23
+      ]
+    },
+    "learning_text": "Do not 'move jug to flower pot' to water; use 'pour jug into flower pot'. To retrieve an item from a container, use 'take [item]'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+      "trial_num": 4,
+      "step_range": [
+        28,
+        29
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "46"
+  },
+  {
+    "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "plant, flower pot",
+    "verbs": "look around, look at",
+    "goal_phase": "VERIFY",
+    "issue_text": "Repeatedly checked plant growth without advancing game state sufficiently.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+      "trial_num": 2,
+      "step_range": [
+        26,
+        49
+      ]
+    },
+    "learning_text": "Repeated 'look around' or 'look at [object]' actions are needed to advance the game state and allow plants to grow.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+      "trial_num": 4,
+      "step_range": [
+        46,
+        49
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "47"
+  },
+  {
+    "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "shovel, adult plant, flower pot, seeds",
+    "verbs": "use, harvest, take, dig up",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempted to harvest seeds using incorrect action phrasing.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+      "trial_num": 5,
+      "step_range": [
+        40,
+        49
+      ]
+    },
+    "learning_text": "To harvest seeds from an adult plant in a flower pot, use the action 'take seeds from [adult plant]'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+      "trial_num": 6,
+      "step_range": [
+        36,
+        37
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "48"
+  },
+  {
+    "task_desc": "Your task is to turn on the red light bulb. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+    "obj_type": "wire, battery, light bulb",
+    "verbs": "connect",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent incorrectly connects wires to battery instead of gas generator.",
+    "issue_ref": {
+      "task_id": "scienceworld_power-component_var_0",
+      "trial_num": 1,
+      "step_range": [
+        40,
+        47
+      ]
+    },
+    "learning_text": "Identify the correct power source (gas generator) and connect wires to its anode and cathode.",
+    "evidence_ref": {
+      "task_id": "scienceworld_power-component_var_0",
+      "trial_num": 1,
+      "step_range": [
+        48,
+        49
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "49"
+  },
+  {
+    "task_desc": "Your task is to turn on the red light bulb. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+    "obj_type": "wire",
+    "verbs": "disconnect",
+    "goal_phase": "RECOVER",
+    "issue_text": "Agent attempts to disconnect wires using incorrect syntax.",
+    "issue_ref": {
+      "task_id": "scienceworld_power-component_var_0",
+      "trial_num": 1,
+      "step_range": [
+        48,
+        48
+      ]
+    },
+    "learning_text": "Use the 'take [wire]' action to disconnect a wire from its current connection.",
+    "evidence_ref": {
+      "task_id": "scienceworld_power-component_var_0",
+      "trial_num": 3,
+      "step_range": [
+        40,
+        41
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "50"
+  },
+  {
+    "task_desc": "Your task is to turn on the red light bulb. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+    "obj_type": "wire, gas generator, light bulb",
+    "verbs": "connect, activate",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent connects wires to gas generator but light bulb remains off.",
+    "issue_ref": {
+      "task_id": "scienceworld_power-component_var_0",
+      "trial_num": 2,
+      "step_range": [
+        10,
+        13
+      ]
+    },
+    "learning_text": "Ensure both terminals of the wire are connected to the correct components (power source and light bulb).",
+    "evidence_ref": {
+      "task_id": "scienceworld_power-component_var_0",
+      "trial_num": 2,
+      "step_range": [
+        28,
+        31
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "51"
+  },
+  {
+    "task_desc": "Your task is to turn on the red light bulb. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+    "obj_type": "wire, battery, switch, light bulb",
+    "verbs": "connect, activate",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent connects battery to switch, switch to light bulb, but light bulb remains off.",
+    "issue_ref": {
+      "task_id": "scienceworld_power-component_var_0",
+      "trial_num": 5,
+      "step_range": [
+        30,
+        37
+      ]
+    },
+    "learning_text": "Verify all connections are correct and that the power source is active. Consider testing components individually.",
+    "evidence_ref": {
+      "task_id": "scienceworld_power-component_var_0",
+      "trial_num": 5,
+      "step_range": [
+        48,
+        49
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "52"
+  },
+  {
+    "task_desc": "Your task is to turn on the red light bulb. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+    "obj_type": "wire, light bulb",
+    "verbs": "connect",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent attempts to connect wire to switch without specifying anode/cathode.",
+    "issue_ref": {
+      "task_id": "scienceworld_power-component_var_0",
+      "trial_num": 4,
+      "step_range": [
+        40,
+        40
+      ]
+    },
+    "learning_text": "When connecting to polarized components, specify 'anode in [component]' or 'cathode in [component]'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_power-component_var_0",
+      "trial_num": 4,
+      "step_range": [
+        42,
+        43
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "53"
+  },
+  {
+    "task_desc": "Your task is to turn on the red light bulb by powering it using a renewable power source. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+    "obj_type": "wire, solar panel, light bulb",
+    "verbs": "connect",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent tried to connect wire to component without specifying terminal numbers.",
+    "issue_ref": {
+      "task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+      "trial_num": 1,
+      "step_range": [
+        13,
+        13
+      ]
+    },
+    "learning_text": "Always specify terminal numbers (e.g., 'terminal 1', 'terminal 2') when connecting wires to electrical components.",
+    "evidence_ref": {
+      "task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+      "trial_num": 1,
+      "step_range": [
+        16,
+        16
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "54"
+  },
+  {
+    "task_desc": "Your task is to turn on the red light bulb by powering it using a renewable power source. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+    "obj_type": "solar panel",
+    "verbs": "activate",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent tried to activate the solar panel directly, which is not a valid action.",
+    "issue_ref": {
+      "task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+      "trial_num": 1,
+      "step_range": [
+        25,
+        25
+      ]
+    },
+    "learning_text": "Solar panels are activated by being placed in a location with light, not by a direct 'activate' command.",
+    "evidence_ref": {
+      "task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+      "trial_num": 2,
+      "step_range": [
+        40,
+        40
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "55"
+  },
+  {
+    "task_desc": "Your task is to turn on the red light bulb by powering it using a renewable power source. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+    "obj_type": "solar panel",
+    "verbs": "move",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent tried to move a connected solar panel to another room without disconnecting wires first.",
+    "issue_ref": {
+      "task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+      "trial_num": 1,
+      "step_range": [
+        29,
+        29
+      ]
+    },
+    "learning_text": "To move connected electrical components, first disconnect all wires, then take the component.",
+    "evidence_ref": {
+      "task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+      "trial_num": 1,
+      "step_range": [
+        37,
+        37
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "56"
+  },
+  {
+    "task_desc": "Your task is to turn on the red light bulb by powering it using a renewable power source. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+    "obj_type": "wire",
+    "verbs": "disconnect",
+    "goal_phase": "RECOVER",
+    "issue_text": "Agent tried to disconnect wires using an invalid 'disconnect' command.",
+    "issue_ref": {
+      "task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+      "trial_num": 1,
+      "step_range": [
+        31,
+        31
+      ]
+    },
+    "learning_text": "To disconnect a wire, use the 'take [wire]' action, which implicitly disconnects it.",
+    "evidence_ref": {
+      "task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+      "trial_num": 1,
+      "step_range": [
+        37,
+        37
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "57"
+  },
+  {
+    "task_desc": "Your task is to turn on the red light bulb by powering it using a renewable power source. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+    "obj_type": "wire, solar panel",
+    "verbs": "connect",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent tried to connect wires to objects in different rooms.",
+    "issue_ref": {
+      "task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+      "trial_num": 1,
+      "step_range": [
+        45,
+        45
+      ]
+    },
+    "learning_text": "All components of an electrical circuit must be in the same room to be connected.",
+    "evidence_ref": {
+      "task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+      "trial_num": 2,
+      "step_range": [
+        10,
+        10
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "58"
+  },
+  {
+    "task_desc": "Your task is to turn on the red light bulb by powering it using a renewable power source. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+    "obj_type": "solar panel, light bulb",
+    "verbs": "put",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Moving connected components from inventory to environment disconnects them.",
+    "issue_ref": {
+      "task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+      "trial_num": 2,
+      "step_range": [
+        20,
+        20
+      ]
+    },
+    "learning_text": "Place all components in the desired location first, then connect them with wires.",
+    "evidence_ref": {
+      "task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+      "trial_num": 2,
+      "step_range": [
+        24,
+        24
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "59"
+  },
+  {
+    "task_desc": "Your task is to turn on the red light bulb by powering it using a renewable power source. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+    "obj_type": "wire, solar panel",
+    "verbs": "connect",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent repeatedly failed to connect wires using incorrect syntax, despite previous success.",
+    "issue_ref": {
+      "task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+      "trial_num": 5,
+      "step_range": [
+        29,
+        29
+      ]
+    },
+    "learning_text": "Use the exact phrasing 'connect [wire] terminal [number] to [anode/cathode] in [component]' for connections.",
+    "evidence_ref": {
+      "task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+      "trial_num": 6,
+      "step_range": [
+        20,
+        20
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "60"
+  },
+  {
+    "task_desc": "Your task is to determine if aluminum foil is electrically conductive. The aluminum foil is located around the workshop. First, focus on the aluminum foil. If it is electrically conductive, place it in the red box. If it is electrically nonconductive, place it in the green box.",
+    "obj_type": "wire, aluminum foil",
+    "verbs": "disconnect",
+    "goal_phase": "RECOVER",
+    "issue_text": "Incorrect syntax for disconnecting wires from aluminum foil.",
+    "issue_ref": {
+      "task_id": "scienceworld_test-conductivity_var_0",
+      "trial_num": 1,
+      "step_range": [
+        20,
+        23
+      ]
+    },
+    "learning_text": "The 'disconnect' action requires specifying the wire and the object it's connected to, without terminals for non-polarized objects.",
+    "evidence_ref": {
+      "task_id": "scienceworld_test-conductivity_var_0",
+      "trial_num": 3,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "61"
+  },
+  {
+    "task_desc": "Your task is to determine if aluminum foil is electrically conductive. The aluminum foil is located around the workshop. First, focus on the aluminum foil. If it is electrically conductive, place it in the red box. If it is electrically nonconductive, place it in the green box.",
+    "obj_type": "wire, battery",
+    "verbs": "connect",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Failed to specify terminal when connecting wire to battery.",
+    "issue_ref": {
+      "task_id": "scienceworld_test-conductivity_var_0",
+      "trial_num": 2,
+      "step_range": [
+        6,
+        6
+      ]
+    },
+    "learning_text": "When connecting wires to polarized components like a battery, specify the terminal (e.g., 'terminal 1 to battery cathode').",
+    "evidence_ref": {
+      "task_id": "scienceworld_test-conductivity_var_0",
+      "trial_num": 2,
+      "step_range": [
+        8,
+        8
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "62"
+  },
+  {
+    "task_desc": "Your task is to determine if aluminum foil is electrically conductive. The aluminum foil is located around the workshop. First, focus on the aluminum foil. If it is electrically conductive, place it in the red box. If it is electrically nonconductive, place it in the green box.",
+    "obj_type": "aluminum foil, light bulb",
+    "verbs": "observe, place",
+    "goal_phase": "VERIFY",
+    "issue_text": "Incorrectly concluded aluminum foil was non-conductive based on light bulb not lighting up.",
+    "issue_ref": {
+      "task_id": "scienceworld_test-conductivity_var_0",
+      "trial_num": 3,
+      "step_range": [
+        16,
+        17
+      ]
+    },
+    "learning_text": "Rely on scientific knowledge (aluminum foil is conductive) rather than potentially faulty experimental setup observations.",
+    "evidence_ref": {
+      "task_id": "scienceworld_test-conductivity_var_0",
+      "trial_num": 4,
+      "step_range": [
+        5,
+        7
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "63"
+  },
+  {
+    "task_desc": "Your task is to determine if unknown substance B is electrically conductive. The unknown substance B is located around the workshop. First, focus on the unknown substance B. If it is electrically conductive, place it in the red box. If it is electrically nonconductive, place it in the green box.",
+    "obj_type": "wire, battery, substance",
+    "verbs": "connect",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Attempted to connect wire to battery without specifying terminal.",
+    "issue_ref": {
+      "task_id": "scienceworld_test-conductivity-of-unknown-substances_var_0",
+      "trial_num": 1,
+      "step_range": [
+        7,
+        7
+      ]
+    },
+    "learning_text": "Specify the terminal (e.g., terminal 1, terminal 2, anode, cathode) when connecting electrical components.",
+    "evidence_ref": {
+      "task_id": "scienceworld_test-conductivity-of-unknown-substances_var_0",
+      "trial_num": 1,
+      "step_range": [
+        10,
+        10
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "64"
+  },
+  {
+    "task_desc": "Your task is to measure the temperature of unknown substance B, which is located around the living room. First, focus on the thermometer. Next, focus on the unknown substance B. If the unknown substance B temperature is above 100.0 degrees celsius, place it in the red box. If the unknown substance B temperature is below 100.0 degrees celsius, place it in the green box. The boxes are located around the bathroom.",
+    "obj_type": "drawer",
+    "verbs": "look in, open",
+    "goal_phase": "SEARCH",
+    "issue_text": "Attempted to look inside a closed drawer.",
+    "issue_ref": {
+      "task_id": "scienceworld_use-thermometer_var_0",
+      "trial_num": 1,
+      "step_range": [
+        5,
+        5
+      ]
+    },
+    "learning_text": "Always open containers before attempting to look inside them.",
+    "evidence_ref": {
+      "task_id": "scienceworld_use-thermometer_var_0",
+      "trial_num": 1,
+      "step_range": [
+        7,
+        7
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "65"
+  },
+  {
+    "task_desc": "Your task is to measure the temperature of unknown substance B, which is located around the living room. First, focus on the thermometer. Next, focus on the unknown substance B. If the unknown substance B temperature is above 100.0 degrees celsius, place it in the red box. If the unknown substance B temperature is below 100.0 degrees celsius, place it in the green box. The boxes are located around the bathroom.",
+    "obj_type": "thermometer, unknown substance",
+    "verbs": "use, take",
+    "goal_phase": "MEASURE",
+    "issue_text": "Attempted to use a tool on an object without taking the tool first.",
+    "issue_ref": {
+      "task_id": "scienceworld_use-thermometer_var_0",
+      "trial_num": 1,
+      "step_range": [
+        21,
+        21
+      ]
+    },
+    "learning_text": "Take tools into inventory before attempting to use them on other objects.",
+    "evidence_ref": {
+      "task_id": "scienceworld_use-thermometer_var_0",
+      "trial_num": 1,
+      "step_range": [
+        27,
+        27
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "66"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Incorrectly specifying object name when taking a container.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 1,
+      "step_range": [
+        10,
+        16
+      ]
+    },
+    "learning_text": "Use the exact object name from the observation, e.g., 'take cup containing nothing in table'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 1,
+      "step_range": [
+        18,
+        19
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "67"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container, sink, water",
+    "verbs": "fill",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempting to fill a container directly from inventory with an activated sink.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 1,
+      "step_range": [
+        22,
+        37
+      ]
+    },
+    "learning_text": "Place the container in the activated sink to fill it with water.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 1,
+      "step_range": [
+        38,
+        39
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "68"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container, freezer",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Incorrectly specifying object name when taking a container from a freezer.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 1,
+      "step_range": [
+        45,
+        48
+      ]
+    },
+    "learning_text": "Use the exact object name from the observation, e.g., 'take cup containing water'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 1,
+      "step_range": [
+        49,
+        50
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "69"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Incorrectly specifying object name when taking a container.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 5,
+      "step_range": [
+        6,
+        7
+      ]
+    },
+    "learning_text": "Use the exact object name from the observation, e.g., 'take cup containing nothing'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 5,
+      "step_range": [
+        8,
+        9
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "70"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container, sink, water",
+    "verbs": "fill",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempting to fill a container directly from inventory with an activated sink.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 5,
+      "step_range": [
+        12,
+        17
+      ]
+    },
+    "learning_text": "Place the container in the activated sink to fill it with water.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 5,
+      "step_range": [
+        18,
+        19
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "71"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container, freezer",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Incorrectly specifying object name when taking a container from a freezer.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 5,
+      "step_range": [
+        22,
+        23
+      ]
+    },
+    "learning_text": "Use the exact object name from the observation, e.g., 'take cup containing water'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 5,
+      "step_range": [
+        24,
+        25
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "72"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "substance, freezer",
+    "verbs": "focus",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Attempting to focus on a substance inside a closed container/appliance.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 6,
+      "step_range": [
+        34,
+        35
+      ]
+    },
+    "learning_text": "Open the container/appliance before attempting to focus on the substance inside.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 6,
+      "step_range": [
+        36,
+        39
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "73"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Incorrectly specifying object name when taking a container.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 6,
+      "step_range": [
+        4,
+        5
+      ]
+    },
+    "learning_text": "Use the exact object name from the observation, e.g., 'take glass cup from table'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 6,
+      "step_range": [
+        6,
+        7
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "74"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container, sink, water",
+    "verbs": "fill",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempting to fill a container directly from inventory with an activated sink.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 6,
+      "step_range": [
+        10,
+        15
+      ]
+    },
+    "learning_text": "Place the container in the activated sink to fill it with water.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 6,
+      "step_range": [
+        16,
+        17
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "75"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container, freezer",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Incorrectly specifying object name when taking a container from a freezer.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 6,
+      "step_range": [
+        20,
+        21
+      ]
+    },
+    "learning_text": "Use the exact object name from the observation, e.g., 'take cup containing water'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 6,
+      "step_range": [
+        22,
+        23
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "76"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Incorrectly specifying object name when taking a container.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 7,
+      "step_range": [
+        4,
+        5
+      ]
+    },
+    "learning_text": "Use the exact object name from the observation, e.g., 'take cup containing nothing'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 7,
+      "step_range": [
+        6,
+        7
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "77"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container, sink, water",
+    "verbs": "fill",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempting to fill a container directly from inventory with an activated sink.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 7,
+      "step_range": [
+        10,
+        15
+      ]
+    },
+    "learning_text": "Place the container in the activated sink to fill it with water.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 7,
+      "step_range": [
+        16,
+        17
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "78"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container, freezer",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Incorrectly specifying object name when taking a container from a freezer.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 7,
+      "step_range": [
+        20,
+        21
+      ]
+    },
+    "learning_text": "Use the exact object name from the observation, e.g., 'take cup containing water'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 7,
+      "step_range": [
+        22,
+        23
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "79"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "substance, freezer",
+    "verbs": "focus",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Attempting to focus on a substance inside a closed container/appliance.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 7,
+      "step_range": [
+        34,
+        35
+      ]
+    },
+    "learning_text": "Open the container/appliance before attempting to focus on the substance inside.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 7,
+      "step_range": [
+        36,
+        39
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "80"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container, metal pot, water",
+    "verbs": "pour",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Incorrectly specifying pour action to transfer water between containers.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 7,
+      "step_range": [
+        46,
+        51
+      ]
+    },
+    "learning_text": "The game does not support direct 'pour' actions between containers. Place the substance in the target container.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 7,
+      "step_range": [
+        52,
+        53
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "81"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "substance, freezer",
+    "verbs": "activate, focus",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Repeatedly activating freezer and focusing on water without state change.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 1,
+      "step_range": [
+        60,
+        65
+      ]
+    },
+    "learning_text": "The game may require a different method or a specific 'freeze' action not yet discovered.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 1,
+      "step_range": [
+        60,
+        65
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "82"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container, sink, water",
+    "verbs": "fill",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Repeatedly attempting to fill a cup from the sink using invalid commands.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 2,
+      "step_range": [
+        12,
+        48
+      ]
+    },
+    "learning_text": "The correct method to fill a cup from the sink is to first activate the sink, then put the cup in the sink.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 3,
+      "step_range": [
+        14,
+        15
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "83"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container, sink, water",
+    "verbs": "fill",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Repeatedly attempting to fill a cup from the sink using invalid commands.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 3,
+      "step_range": [
+        8,
+        11
+      ]
+    },
+    "learning_text": "The correct method to fill a cup from the sink is to first activate the sink, then put the cup in the sink.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 3,
+      "step_range": [
+        14,
+        15
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "84"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "substance, freezer",
+    "verbs": "activate, focus",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Repeatedly activating freezer and focusing on water without state change.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 4,
+      "step_range": [
+        38,
+        48
+      ]
+    },
+    "learning_text": "The game may require a different method or a specific 'freeze' action not yet discovered.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 4,
+      "step_range": [
+        38,
+        48
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "85"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "substance, stove",
+    "verbs": "activate, focus",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Repeatedly activating stove and focusing on water without state change.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 5,
+      "step_range": [
+        40,
+        49
+      ]
+    },
+    "learning_text": "The game may require a different method or a specific 'boil' action not yet discovered.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 5,
+      "step_range": [
+        40,
+        49
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "86"
+  },
+  {
+    "task_desc": "Your task is to grow a apple. This will require growing several plants, and them being crosspollinated to produce fruit.  Seeds can be found in the kitchen. To complete the task, focus on the grown apple.",
+    "obj_type": "seed, container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent failed to correctly take an apple seed from the seed jar due to ambiguous request handling.",
+    "issue_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        11
+      ]
+    },
+    "learning_text": "When prompted with an ambiguous request for multiple identical items, enter the corresponding number (e.g., '0') as a separate action immediately after the prompt.",
+    "evidence_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 1,
+      "step_range": [
+        12,
+        13
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "87"
+  },
+  {
+    "task_desc": "Your task is to grow a apple. This will require growing several plants, and them being crosspollinated to produce fruit.  Seeds can be found in the kitchen. To complete the task, focus on the grown apple.",
+    "obj_type": "jug, sink, water",
+    "verbs": "fill, activate",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent attempted to fill a jug with water before activating the sink.",
+    "issue_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 1,
+      "step_range": [
+        20,
+        21
+      ]
+    },
+    "learning_text": "Activate the sink before attempting to fill a container with water from it.",
+    "evidence_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 1,
+      "step_range": [
+        22,
+        23
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "88"
+  },
+  {
+    "task_desc": "Your task is to grow a apple. This will require growing several plants, and them being crosspollinated to produce fruit.  Seeds can be found in the kitchen. To complete the task, focus on the grown apple.",
+    "obj_type": "jug, water, sink",
+    "verbs": "fill",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent repeatedly tried invalid commands to fill a jug from an activated sink.",
+    "issue_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 1,
+      "step_range": [
+        24,
+        33
+      ]
+    },
+    "learning_text": "To fill a container from a water source, first place the container in the source, then check its contents.",
+    "evidence_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 1,
+      "step_range": [
+        34,
+        39
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "89"
+  },
+  {
+    "task_desc": "Your task is to grow a apple. This will require growing several plants, and them being crosspollinated to produce fruit.  Seeds can be found in the kitchen. To complete the task, focus on the grown apple.",
+    "obj_type": "jug, flower pot, water",
+    "verbs": "pour",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent used incorrect phrasing to pour water from a jug into a flower pot.",
+    "issue_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 1,
+      "step_range": [
+        44,
+        45
+      ]
+    },
+    "learning_text": "To pour contents from a container into another, use the format 'pour [container] into [destination]'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 1,
+      "step_range": [
+        46,
+        47
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "90"
+  },
+  {
+    "task_desc": "Your task is to grow a apple. This will require growing several plants, and them being crosspollinated to produce fruit.  Seeds can be found in the kitchen. To complete the task, focus on the grown apple.",
+    "obj_type": "seed, container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly failed to correctly take an apple seed from the seed jar due to ambiguous request handling.",
+    "issue_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 2,
+      "step_range": [
+        4,
+        30
+      ]
+    },
+    "learning_text": "When prompted with an ambiguous request for multiple identical items, enter the corresponding number (e.g., '0') as a separate action immediately after the prompt.",
+    "evidence_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 2,
+      "step_range": [
+        31,
+        32
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "91"
+  },
+  {
+    "task_desc": "Your task is to grow a apple. This will require growing several plants, and them being crosspollinated to produce fruit.  Seeds can be found in the kitchen. To complete the task, focus on the grown apple.",
+    "obj_type": "seed, container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly failed to correctly take an apple seed from the seed jar due to ambiguous request handling.",
+    "issue_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 3,
+      "step_range": [
+        10,
+        48
+      ]
+    },
+    "learning_text": "The game's disambiguation mechanism for taking multiple identical items is broken, preventing task completion.",
+    "evidence_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 3,
+      "step_range": [
+        48,
+        48
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "92"
+  },
+  {
+    "task_desc": "Your task is to grow a apple. This will require growing several plants, and them being crosspollinated to produce fruit.  Seeds can be found in the kitchen. To complete the task, focus on the grown apple.",
+    "obj_type": "seed, container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly failed to correctly take an apple seed from the seed jar due to ambiguous request handling.",
+    "issue_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 4,
+      "step_range": [
+        1,
+        48
+      ]
+    },
+    "learning_text": "The game's disambiguation mechanism for taking multiple identical items is broken, preventing task completion.",
+    "evidence_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 4,
+      "step_range": [
+        48,
+        48
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "93"
+  },
+  {
+    "task_desc": "Your task is to grow a apple. This will require growing several plants, and them being crosspollinated to produce fruit.  Seeds can be found in the kitchen. To complete the task, focus on the grown apple.",
+    "obj_type": "seed, container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly failed to correctly take an apple seed from the seed jar due to ambiguous request handling.",
+    "issue_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 5,
+      "step_range": [
+        1,
+        40
+      ]
+    },
+    "learning_text": "The game's disambiguation mechanism for taking multiple identical items is broken, preventing task completion.",
+    "evidence_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 5,
+      "step_range": [
+        40,
+        40
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "94"
+  },
+  {
+    "task_desc": "Your task is to grow a apple. This will require growing several plants, and them being crosspollinated to produce fruit.  Seeds can be found in the kitchen. To complete the task, focus on the grown apple.",
+    "obj_type": "seed, container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly failed to correctly take an apple seed from the seed jar due to ambiguous request handling.",
+    "issue_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 6,
+      "step_range": [
+        1,
+        49
+      ]
+    },
+    "learning_text": "The game's disambiguation mechanism for taking multiple identical items is broken, preventing task completion.",
+    "evidence_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 6,
+      "step_range": [
+        49,
+        49
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "95"
+  },
+  {
+    "task_desc": "Your task is to grow a apple. This will require growing several plants, and them being crosspollinated to produce fruit.  Seeds can be found in the kitchen. To complete the task, focus on the grown apple.",
+    "obj_type": "seed, container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly failed to correctly take an apple seed from the seed jar due to ambiguous request handling.",
+    "issue_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 7,
+      "step_range": [
+        1,
+        35
+      ]
+    },
+    "learning_text": "The game's disambiguation mechanism for taking multiple identical items is broken, preventing task completion.",
+    "evidence_ref": {
+      "task_id": "scienceworld_grow-fruit_var_0",
+      "trial_num": 7,
+      "step_range": [
+        35,
+        35
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "96"
+  },
+  {
+    "task_desc": "Your task is to grow a apple plant from seed. Seeds can be found in the kitchen. First, focus on a seed. Then, make changes to the environment that grow the plant until it reaches the reproduction life stage.",
+    "obj_type": "seed, container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly failed to correctly specify the object to take from a container, leading to 'No known action matches that input' or ambiguous requests.",
+    "issue_ref": {
+      "task_id": "scienceworld_grow-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        14
+      ]
+    },
+    "learning_text": "When taking an item from a container, use the format 'take [item] in [container]' or select the correct number from ambiguous request options.",
+    "evidence_ref": {
+      "task_id": "scienceworld_grow-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        18,
+        20
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "97"
+  },
+  {
+    "task_desc": "Your task is to grow a apple plant from seed. Seeds can be found in the kitchen. First, focus on a seed. Then, make changes to the environment that grow the plant until it reaches the reproduction life stage.",
+    "obj_type": "seed",
+    "verbs": "focus",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent failed to correctly respond to an ambiguous request when focusing on an object in inventory.",
+    "issue_ref": {
+      "task_id": "scienceworld_grow-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        23,
+        24
+      ]
+    },
+    "learning_text": "When an ambiguous request appears, enter the corresponding number for the intended action immediately.",
+    "evidence_ref": {
+      "task_id": "scienceworld_grow-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        27,
+        28
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "98"
+  },
+  {
+    "task_desc": "Your task is to grow a apple plant from seed. Seeds can be found in the kitchen. First, focus on a seed. Then, make changes to the environment that grow the plant until it reaches the reproduction life stage.",
+    "obj_type": "thermometer",
+    "verbs": "look at",
+    "goal_phase": "MEASURE",
+    "issue_text": "Agent attempted to look at a thermometer in the current room when it was located in another room.",
+    "issue_ref": {
+      "task_id": "scienceworld_grow-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        37,
+        37
+      ]
+    },
+    "learning_text": "Verify the location of measurement tools before attempting to use them; go to the correct room if necessary.",
+    "evidence_ref": {
+      "task_id": "scienceworld_grow-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        40,
+        44
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "99"
+  },
+  {
+    "task_desc": "Your task is to grow a apple plant from seed. Seeds can be found in the kitchen. First, focus on a seed. Then, make changes to the environment that grow the plant until it reaches the reproduction life stage.",
+    "obj_type": "sink",
+    "verbs": "activate",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent attempted to activate a sink to increase temperature, which is not a valid heating method.",
+    "issue_ref": {
+      "task_id": "scienceworld_grow-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        47,
+        47
+      ]
+    },
+    "learning_text": "Identify appropriate heat sources for temperature control; activating a sink does not increase room temperature.",
+    "evidence_ref": {
+      "task_id": "scienceworld_grow-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        48,
+        48
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "100"
+  },
+  {
+    "task_desc": "Your task is to grow a apple plant from seed. Seeds can be found in the kitchen. First, focus on a seed. Then, make changes to the environment that grow the plant until it reaches the reproduction life stage.",
+    "obj_type": "door",
+    "verbs": "close",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent attempted to close doors to increase room temperature, which is ineffective in this environment.",
+    "issue_ref": {
+      "task_id": "scienceworld_grow-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        51,
+        52
+      ]
+    },
+    "learning_text": "Closing doors does not affect room temperature; seek explicit heating mechanisms.",
+    "evidence_ref": {
+      "task_id": "scienceworld_grow-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        56,
+        56
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "101"
+  },
+  {
+    "task_desc": "Your task is to grow a apple plant from seed. Seeds can be found in the kitchen. First, focus on a seed. Then, make changes to the environment that grow the plant until it reaches the reproduction life stage.",
+    "obj_type": "seed",
+    "verbs": "pick up",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly failed to correctly respond to ambiguous requests when picking up a seed.",
+    "issue_ref": {
+      "task_id": "scienceworld_grow-plant_var_0",
+      "trial_num": 2,
+      "step_range": [
+        5,
+        48
+      ]
+    },
+    "learning_text": "When an ambiguous request appears, enter the corresponding number for the intended action immediately, without any intervening actions or blank lines.",
+    "evidence_ref": {
+      "task_id": "scienceworld_grow-plant_var_0",
+      "trial_num": 5,
+      "step_range": [
+        45,
+        46
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "102"
+  },
+  {
+    "task_desc": "Your task is to grow a apple plant from seed. Seeds can be found in the kitchen. First, focus on a seed. Then, make changes to the environment that grow the plant until it reaches the reproduction life stage.",
+    "obj_type": "seed",
+    "verbs": "focus",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent repeatedly failed to correctly respond to ambiguous requests when focusing on a seed.",
+    "issue_ref": {
+      "task_id": "scienceworld_grow-plant_var_0",
+      "trial_num": 5,
+      "step_range": [
+        49,
+        49
+      ]
+    },
+    "learning_text": "When an ambiguous request appears, enter the corresponding number for the intended action immediately, without any intervening actions or blank lines.",
+    "evidence_ref": {
+      "task_id": "scienceworld_grow-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        27,
+        28
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "103"
+  },
+  {
+    "task_desc": "Your task is to melt water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly tries to 'take metal pot' or 'take ceramic cup' when not directly available.",
+    "issue_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 1,
+      "step_range": [
+        20,
+        25
+      ]
+    },
+    "learning_text": "Use 'take <object name>' only when the object is explicitly listed as a direct 'take' action. Otherwise, use 'take <object name> from <location>'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 1,
+      "step_range": [
+        26,
+        27
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "104"
+  },
+  {
+    "task_desc": "Your task is to melt water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container, water source",
+    "verbs": "fill",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly tries to 'fill <container> with water from sink' without placing container in sink first.",
+    "issue_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 1,
+      "step_range": [
+        28,
+        31
+      ]
+    },
+    "learning_text": "To fill a container from a water source like a sink, first 'put <container> in <water source>', then activate the water source.",
+    "evidence_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 1,
+      "step_range": [
+        32,
+        33
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "105"
+  },
+  {
+    "task_desc": "Your task is to melt water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "water, freezer",
+    "verbs": "put, wait",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent attempts to put water in freezer without opening it first.",
+    "issue_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 2,
+      "step_range": [
+        28,
+        28
+      ]
+    },
+    "learning_text": "Always open a container (like a freezer) before attempting to put items inside it.",
+    "evidence_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 2,
+      "step_range": [
+        30,
+        31
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "106"
+  },
+  {
+    "task_desc": "Your task is to melt water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "water, freezer",
+    "verbs": "wait, look in",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent does not wait long enough for water to freeze into ice in the freezer.",
+    "issue_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 2,
+      "step_range": [
+        32,
+        33
+      ]
+    },
+    "learning_text": "After placing a substance in a freezer, wait for multiple turns and check the object's state to confirm freezing.",
+    "evidence_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 3,
+      "step_range": [
+        46,
+        47
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "107"
+  },
+  {
+    "task_desc": "Your task is to melt water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly tries to 'take <container>' without specifying location or using exact object name.",
+    "issue_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 3,
+      "step_range": [
+        3,
+        8
+      ]
+    },
+    "learning_text": "When taking an object, use the exact object name as seen in 'look around' or 'look in' observations.",
+    "evidence_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 3,
+      "step_range": [
+        12,
+        13
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "108"
+  },
+  {
+    "task_desc": "Your task is to melt water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "sink, container",
+    "verbs": "activate, fill",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent attempts to fill a container from the sink without activating the sink first.",
+    "issue_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 2,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "learning_text": "Activate the water source (sink) before attempting to fill a container from it.",
+    "evidence_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 2,
+      "step_range": [
+        12,
+        13
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "109"
+  },
+  {
+    "task_desc": "Your task is to melt water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "sink, container",
+    "verbs": "fill",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly tries to 'fill <container> with water' while container is in inventory, not in sink.",
+    "issue_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 2,
+      "step_range": [
+        16,
+        17
+      ]
+    },
+    "learning_text": "To fill a container from a water source, the container must be placed in the water source, not in inventory.",
+    "evidence_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 2,
+      "step_range": [
+        20,
+        21
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "110"
+  },
+  {
+    "task_desc": "Your task is to melt water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "substance",
+    "verbs": "focus",
+    "goal_phase": "ORIENT",
+    "issue_text": "Agent attempts to focus on 'water' when it is not explicitly present or interactable.",
+    "issue_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 4,
+      "step_range": [
+        40,
+        41
+      ]
+    },
+    "learning_text": "Only focus on substances that are explicitly mentioned in the environment description as being present and interactable.",
+    "evidence_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 2,
+      "step_range": [
+        24,
+        25
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "111"
+  },
+  {
+    "task_desc": "Your task is to melt water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container, substance",
+    "verbs": "take, focus",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent attempts to take or focus on 'cup containing orange juice' when it is not explicitly available.",
+    "issue_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 5,
+      "step_range": [
+        28,
+        31
+      ]
+    },
+    "learning_text": "Verify the exact name and location of an object before attempting to take or focus on it.",
+    "evidence_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 5,
+      "step_range": [
+        40,
+        41
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "112"
+  },
+  {
+    "task_desc": "Your task is to melt water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "stove, container",
+    "verbs": "put, activate",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent puts cup on stove and activates stove, but then expects cup to remain on stove.",
+    "issue_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 7,
+      "step_range": [
+        4,
+        7
+      ]
+    },
+    "learning_text": "After activating a heat source, the heated object may disappear or change state, indicating progress or completion.",
+    "evidence_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 7,
+      "step_range": [
+        8,
+        9
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "113"
+  },
+  {
+    "task_desc": "Your task is to melt water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "substance",
+    "verbs": "focus",
+    "goal_phase": "ANSWER",
+    "issue_text": "Agent attempts to focus on 'orange juice' or 'cup containing orange juice' after it has melted.",
+    "issue_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 7,
+      "step_range": [
+        10,
+        13
+      ]
+    },
+    "learning_text": "If a substance has changed state and is no longer interactable, the task may be complete, or a different object needs to be focused on.",
+    "evidence_ref": {
+      "task_id": "scienceworld_melt_var_0",
+      "trial_num": 7,
+      "step_range": [
+        14,
+        15
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "114"
+  },
+  {
+    "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "seed, flower pot",
+    "verbs": "take, put",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent attempts to take seed with 'from seed jar' qualifier, which is not a valid action.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        8,
+        8
+      ]
+    },
+    "learning_text": "To take an item from a container, use 'take [item]' if the container is the current location or implied.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        10,
+        10
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "115"
+  },
+  {
+    "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "seed, flower pot",
+    "verbs": "take, put",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent attempts to take seed with 'from seed jar' qualifier, which is not a valid action.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        16,
+        16
+      ]
+    },
+    "learning_text": "To take an item from a container, use 'take [item]' if the container is the current location or implied.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        18,
+        18
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "116"
+  },
+  {
+    "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "jug, water, sink",
+    "verbs": "fill",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly tries invalid 'fill jug with water from sink' action.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        30,
+        30
+      ]
+    },
+    "learning_text": "To fill a container from a source, first put the container in the source, then take the container.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        44,
+        44
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "117"
+  },
+  {
+    "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "jug, water, flower pot",
+    "verbs": "pour",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent repeatedly tries invalid 'pour water from jug into flower pot' action.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        46,
+        46
+      ]
+    },
+    "learning_text": "To pour contents from one container to another, use 'pour [source container] into [destination container]'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        52,
+        52
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "118"
+  },
+  {
+    "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "seed, flower pot",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent attempts to take seed with 'from seed jar' qualifier, which is not a valid action.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 2,
+      "step_range": [
+        20,
+        20
+      ]
+    },
+    "learning_text": "To take an item from a container, use 'take [item]' if the container is the current location or implied.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 2,
+      "step_range": [
+        22,
+        22
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "119"
+  },
+  {
+    "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "jug, water, sink",
+    "verbs": "fill",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly tries invalid 'fill jug with water from sink' action.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 3,
+      "step_range": [
+        10,
+        10
+      ]
+    },
+    "learning_text": "To fill a container from a source, first put the container in the source, then take the container.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 3,
+      "step_range": [
+        24,
+        24
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "120"
+  },
+  {
+    "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "jug, water, flower pot",
+    "verbs": "pour",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent repeatedly tries invalid 'pour water from jug into flower pot' action.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 3,
+      "step_range": [
+        26,
+        26
+      ]
+    },
+    "learning_text": "To pour contents from one container to another, use 'pour [source container] into [destination container]'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 3,
+      "step_range": [
+        30,
+        30
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "121"
+  },
+  {
+    "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "jug, water, sink",
+    "verbs": "fill",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly tries invalid 'fill jug with water from sink' action.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 4,
+      "step_range": [
+        10,
+        10
+      ]
+    },
+    "learning_text": "To fill a container from a source, first put the container in the source, then take the container.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 4,
+      "step_range": [
+        30,
+        30
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "122"
+  },
+  {
+    "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "jug, water, flower pot",
+    "verbs": "pour",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent repeatedly tries invalid 'pour water from jug into flower pot' action.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 4,
+      "step_range": [
+        32,
+        32
+      ]
+    },
+    "learning_text": "To pour contents from one container to another, use 'pour [source container] into [destination container]'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 4,
+      "step_range": [
+        36,
+        36
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "123"
+  },
+  {
+    "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "jug, water, sink",
+    "verbs": "fill",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly tries invalid 'fill jug with water from sink' action.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 5,
+      "step_range": [
+        10,
+        10
+      ]
+    },
+    "learning_text": "To fill a container from a source, first put the container in the source, then take the container.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 6,
+      "step_range": [
+        44,
+        44
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "124"
+  },
+  {
+    "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "jug, water, flower pot",
+    "verbs": "pour",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent repeatedly tries invalid 'pour water from jug into flower pot' action.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 5,
+      "step_range": [
+        46,
+        46
+      ]
+    },
+    "learning_text": "To pour contents from one container to another, use 'pour [source container] into [destination container]'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        52,
+        52
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "125"
+  },
+  {
+    "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "jug, water, sink",
+    "verbs": "fill",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly tries invalid 'fill jug with water from sink' action.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 6,
+      "step_range": [
+        30,
+        30
+      ]
+    },
+    "learning_text": "To fill a container from a source, first put the container in the source, then take the container.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 6,
+      "step_range": [
+        44,
+        44
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "126"
+  },
+  {
+    "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "jug, water, flower pot",
+    "verbs": "pour",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent repeatedly tries invalid 'pour water from jug into flower pot' action.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 6,
+      "step_range": [
+        46,
+        46
+      ]
+    },
+    "learning_text": "To pour contents from one container to another, use 'pour [source container] into [destination container]'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        52,
+        52
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "127"
+  },
+  {
+    "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "jug, water, sink",
+    "verbs": "fill",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly tries invalid 'fill jug with water from sink' action.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 7,
+      "step_range": [
+        10,
+        10
+      ]
+    },
+    "learning_text": "To fill a container from a source, first put the container in the source, then take the container.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 6,
+      "step_range": [
+        44,
+        44
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "128"
+  },
+  {
+    "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "obj_type": "jug, water, flower pot",
+    "verbs": "pour",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent repeatedly tries invalid 'pour water from jug into flower pot' action.",
+    "issue_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 7,
+      "step_range": [
+        46,
+        46
+      ]
+    },
+    "learning_text": "To pour contents from one container to another, use 'pour [source container] into [destination container]'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        52,
+        52
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "129"
+  }
+]

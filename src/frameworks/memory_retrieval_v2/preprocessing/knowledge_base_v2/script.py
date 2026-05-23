@@ -377,7 +377,14 @@ def process_task_trajectories(task_id: str, trajectories: List[Dict[str, Any]], 
             # reasoning={"effort": "none"} is a Gemini-specific OpenRouter extension.
             # Pass it only for Gemini models so non-Gemini models don't fail.
             _reasoning = {"effort": "none"} if model.startswith("gemini") else None
-            response_text, _usage = get_chat(prompt, model=model, max_tokens=2048, reasoning=_reasoning, request_timeout=180)
+            max_tokens = 8192 if env == "scienceworld" else 2048
+            response_text, _usage = get_chat(
+                prompt,
+                model=model,
+                max_tokens=max_tokens,
+                reasoning=_reasoning,
+                request_timeout=180,
+            )
             
             # Clean up response
             response_text = response_text.strip()

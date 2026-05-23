@@ -1,0 +1,26 @@
+{
+  "initial_extraction_pass": {
+    "entries_extracted_before_repair": 66,
+    "json_parse_retry_events": 11,
+    "task_groups_failed_after_retries": [
+      "scienceworld_change-the-state-of-matter-of_var_0",
+      "scienceworld_grow-fruit_var_0",
+      "scienceworld_grow-plant_var_0",
+      "scienceworld_melt_var_0",
+      "scienceworld_mendelian-genetics-known-plant_var_0"
+    ],
+    "task_group_failure_count": 5
+  },
+  "repair": {
+    "change": "Raised ScienceWorld extractor max_tokens from 2048 to 8192 and retried only failed task groups.",
+    "retried_task_groups": [
+      "scienceworld_change-the-state-of-matter-of_var_0",
+      "scienceworld_grow-fruit_var_0",
+      "scienceworld_grow-plant_var_0",
+      "scienceworld_melt_var_0",
+      "scienceworld_mendelian-genetics-known-plant_var_0"
+    ],
+    "entries_added_by_targeted_repair": 63,
+    "unresolved_task_group_failures": []
+  }
+}
