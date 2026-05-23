@@ -1,0 +1,264 @@
+{
+  "artifact_id": "kb_trials7_protocol_comparison",
+  "status": "phase2_5_trials7_kbs_promoted_with_caveats",
+  "phase3_started": false,
+  "created_at": "2026-05-23T23:37:00Z",
+  "integration_branch": "final/integration-kb-state",
+  "integration_worktree": "/Users/rishisim/Documents/research/ltm-research",
+  "integration_merge_commit_before_report": "ca8f95365cceffb49e31650c5e5a33aff51d80f4",
+  "report_commit": "recorded_by_git_after_commit",
+  "common_offline_kb_protocol": {
+    "split": "train",
+    "framework": "react_reflexion",
+    "framework_list": [
+      "react_reflexion"
+    ],
+    "max_trials": 7,
+    "model": "gemini-2.5-flash",
+    "embedding_provider": "gemini",
+    "max_learnings": "N/A for offline KB generation",
+    "min_valid_level": "N/A for offline KB generation"
+  },
+  "planned_online_eval_protocol_not_run": {
+    "split": "held-out eval only",
+    "framework_list": [
+      "react",
+      "react_cr",
+      "react_tr",
+      "react_cr_tr",
+      "react_hard_neg_cr_tr"
+    ],
+    "single_trial": true,
+    "model": "gemini-2.5-flash",
+    "embedding_provider": "gemini",
+    "min_valid_level": "VALID_NEXT_TRIAL",
+    "max_learnings": 5,
+    "seeds": [
+      0,
+      1,
+      2
+    ]
+  },
+  "source_branches": {
+    "alfworld": {
+      "branch": "final/alfworld-kb-trials7",
+      "worktree": "/Users/rishisim/Documents/research/ltm-alfworld-kb-trials7",
+      "commit": "8964d5fe626bb6ed3042ef0de26fa2af8814ffc2"
+    },
+    "sql": {
+      "branch": "final/sql-kb-trials7",
+      "worktree": "/Users/rishisim/Documents/research/ltm-sql-kb-trials7",
+      "commit": "077252e2ecb6e6ae71ab8b3fdf0473cca8254a38"
+    },
+    "scienceworld": {
+      "branch": "final/scienceworld-kb-trials7",
+      "worktree": "/Users/rishisim/Documents/research/ltm-scienceworld-kb-trials7",
+      "commit": "99c31b803caaf10bf1bae431ab6f5e19bd785eae"
+    }
+  },
+  "environments": {
+    "alfworld": {
+      "status": "promoted",
+      "safe_for_phase3_eval": true,
+      "final_kb_path": "final_runs/kb/alfworld_train_reflexion_trials7/knowledge_base.json",
+      "run_directory": "final_runs/kb/alfworld_train_reflexion_trials7",
+      "manifest_path": "final_runs/manifests/alfworld_train_reflexion_trials7.json",
+      "report_path": "experiment_reports/final/alfworld_kb_trials7_report.md",
+      "source_run_directory": "alfworld_runs/memory_retrieval_v2/knowledge_base/memory_allocation_runs",
+      "source_kb_path": "alfworld_runs/memory_retrieval_v2/knowledge_base/knowledge_base.json",
+      "seed": "not_recorded_in_legacy_source",
+      "train_only_audit": {
+        "method": "official ALFWorld cache walk with base-task fallback for legacy refs",
+        "official_available": true,
+        "trajectory_train_count": 115,
+        "trajectory_valid_seen_overlap": 0,
+        "trajectory_valid_unseen_overlap": 0,
+        "promoted_non_train_ref_count": 0
+      },
+      "coverage": {
+        "intended_train_games": 120,
+        "observed_unique_trajectory_task_ids": 115,
+        "coverage_complete": false
+      },
+      "trajectory_audit": {
+        "trajectory_rows": 251,
+        "max_trial": 7,
+        "trial_counts": {
+          "1": 115,
+          "2": 49,
+          "3": 28,
+          "4": 23,
+          "5": 15,
+          "6": 12,
+          "7": 9
+        }
+      },
+      "kb_audit": {
+        "promoted_memories": 373,
+        "valid_level_counts": {
+          "VALID_SAME_TRIAL": 256,
+          "VALID_NEXT_TRIAL": 101,
+          "CANDIDATE": 16
+        },
+        "quarantined_rows": 31,
+        "max_ref_trial": 7
+      },
+      "caveats": [
+        "Original fixed 120-game train manifest is absent; promoted legacy trajectories cover 115/120 intended train games.",
+        "Observed coverage is uneven across task types.",
+        "Legacy seed is not recorded in source artifacts."
+      ]
+    },
+    "sql": {
+      "status": "promoted_sanitized",
+      "safe_for_phase3_eval": true,
+      "final_kb_path": "final_runs/kb/sql_train_reflexion_trials7_sanitized/knowledge_base.sql_sanitized.json",
+      "run_directory": "final_runs/build/sql_train_reflexion_trials7/train/react_reflexion/seed_0",
+      "build_directory": "final_runs/build/sql_train_reflexion_trials7",
+      "manifest_path": "final_runs/manifests/sql_train_reflexion_trials7_sanitized.json",
+      "report_path": "experiment_reports/final/sql_kb_trials7_report.md",
+      "source_trials3_run_directory": "/Users/rishisim/Documents/research/ltm-research/intercode_sql_runs/memory_agent_runs/train/react_reflexion",
+      "seed": 0,
+      "resume_behavior": {
+        "source_trials3_unique_tasks": 516,
+        "source_trials3_max_trial": 3,
+        "source_trials3_duplicate_task_trial_pairs": 0,
+        "dry_check_existing_pairs_skipped": 851,
+        "dry_check_already_succeeded_tasks": 371,
+        "new_attempts_added": 520,
+        "tasks_newly_solved_by_trials4_to7": 25,
+        "final_trial_counts": {
+          "1": 516,
+          "2": 179,
+          "3": 156,
+          "4": 145,
+          "5": 130,
+          "6": 124,
+          "7": 121
+        }
+      },
+      "train_only_audit": {
+        "run_unique_task_ids": 516,
+        "expected_train_task_count": 516,
+        "dev_overlap_count": 0,
+        "test_overlap_count": 0,
+        "trajectory_split_values": [
+          "train"
+        ]
+      },
+      "trajectory_audit": {
+        "attempt_rows": 1371,
+        "unique_task_trial_pairs": 1371,
+        "duplicate_task_trial_pairs": 0,
+        "max_trial": 7,
+        "success_tasks": 396,
+        "remaining_unsolved_tasks": 120,
+        "reward_min": -1.0,
+        "reward_max": 1.0
+      },
+      "kb_audit": {
+        "raw_memories": 445,
+        "promoted_memories": 415,
+        "valid_level_counts": {
+          "VALID_SAME_TRIAL": 299,
+          "VALID_NEXT_TRIAL": 92,
+          "CANDIDATE": 24
+        },
+        "total_quarantined_memories": 30,
+        "protocol_contamination_after_sanitizer": 0,
+        "malformed_extraction_failure_count": 2,
+        "issue_embeddings_entry_count": 415,
+        "learning_counts_total_learning_count": 415
+      },
+      "caveats": [
+        "Fresh extraction had malformed JSON failures for sql_547 and sql_704; those tasks produced zero memories in the extraction pass.",
+        "One post-sanitizer row with evidence_ref.trial_num=8 was quarantined before promotion.",
+        "The original trials3 run was preserved and unmodified; only the copied trials7 build directory was modified."
+      ]
+    },
+    "scienceworld": {
+      "status": "PASS_PROMOTED_MINIMUM_VARIATION_COVERAGE",
+      "safe_for_phase3_eval": true,
+      "final_kb_path": "final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat/knowledge_base.json",
+      "run_directory": "final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat/train/react_reflexion/seed_0",
+      "manifest_path": "final_runs/manifests/scienceworld_train_reflexion_trials7_va80_30cat.json",
+      "report_path": "experiment_reports/final/scienceworld_kb_trials7_report.md",
+      "seed": 0,
+      "max_valid_actions": 80,
+      "coverage": {
+        "intended_categories": 30,
+        "covered_categories": 30,
+        "covered_variations": 30,
+        "variations_per_category": 1,
+        "preferred_3_variations_available": true,
+        "preferred_3_variation_task_count_available": 90
+      },
+      "resume_validation": {
+        "synthetic_validation": "passed",
+        "real_copied_smoke_resume": "passed",
+        "duplicate_task_variation_trial_count": 0
+      },
+      "train_only_audit": {
+        "split_counts": {
+          "train": 125
+        },
+        "eval_test_leakage_splits": []
+      },
+      "trajectory_audit": {
+        "trajectory_count": 125,
+        "attempt_count": 30,
+        "unique_task_count": 30,
+        "max_trial": 7,
+        "trial_counts": {
+          "1": 30,
+          "2": 19,
+          "3": 16,
+          "4": 16,
+          "5": 15,
+          "6": 15,
+          "7": 14
+        },
+        "final_success_count": 16,
+        "final_total_count": 30,
+        "reward_min": -1.0,
+        "reward_max": 1.0
+      },
+      "kb_audit": {
+        "promoted_memories": 129,
+        "valid_level_counts": {
+          "VALID_SAME_TRIAL": 80,
+          "VALID_NEXT_TRIAL": 34,
+          "CANDIDATE": 15
+        },
+        "malformed_row_count": 0,
+        "reference_error_count": 0,
+        "initial_malformed_task_group_count": 5,
+        "unresolved_malformed_task_group_count": 0,
+        "issue_embeddings_entry_count": 129,
+        "learning_counts_total_learning_count": 129
+      },
+      "caveats": [
+        "This is the minimum acceptable headline KB: 1 train variation per category across all 30 categories.",
+        "Prepare/count confirmed 90 train tasks are available for 3 variations/category, but that preferred setting was not run in this remediation pass.",
+        "Both GEMINI_API_KEY and GOOGLE_API_KEY were present in the sibling .env; Gemini embeddings were selected through LTM_EMBEDDING_PROVIDER=gemini."
+      ]
+    }
+  },
+  "orchestrator_commands": [
+    "git worktree add -b final/alfworld-kb-trials7 /Users/rishisim/Documents/research/ltm-alfworld-kb-trials7 final/integration-kb-state",
+    "git worktree add -b final/sql-kb-trials7 /Users/rishisim/Documents/research/ltm-sql-kb-trials7 final/integration-kb-state",
+    "git worktree add -b final/scienceworld-kb-trials7 /Users/rishisim/Documents/research/ltm-scienceworld-kb-trials7 final/integration-kb-state",
+    "git merge --no-ff final/alfworld-kb-trials7 -m \"Merge ALFWorld trials7 KB promotion\"",
+    "git merge --no-ff final/sql-kb-trials7 -m \"Merge SQL trials7 sanitized KB promotion\"",
+    "git merge --no-ff final/scienceworld-kb-trials7 -m \"Merge ScienceWorld trials7 KB promotion\""
+  ],
+  "phase3_gate": {
+    "status": "awaiting_user_approval",
+    "safe_to_run_next": "Phase 3 eval may begin only after explicit user approval.",
+    "recommended_phase3_inputs": {
+      "alfworld_kb": "final_runs/kb/alfworld_train_reflexion_trials7/knowledge_base.json",
+      "sql_kb": "final_runs/kb/sql_train_reflexion_trials7_sanitized/knowledge_base.sql_sanitized.json",
+      "scienceworld_kb": "final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat/knowledge_base.json"
+    }
+  }
+}
