@@ -1,0 +1,416 @@
+{
+  "artifact_name": "scienceworld_train_reflexion_trials7_va80_30cat",
+  "status": "PASS_PROMOTED_MINIMUM_VARIATION_COVERAGE",
+  "branch": "final/scienceworld-kb-trials7",
+  "worktree": "/Users/rishisim/Documents/research/ltm-scienceworld-kb-trials7",
+  "git_commit_at_generation_start": "9f9e395b6e6f4334757d9db7dd0a382075232688",
+  "commands": {
+    "prepare_count": "/tmp/ltm-scienceworld-kb-venv/bin/python scripts/run_scienceworld_suite.py --splits train --task-ids <30 ScienceWorld task specs> --num-tasks 90 --frameworks react_reflexion --max-variations-per-task 3 --model gemini-2.5-flash --embedding-provider gemini --runs-root /tmp/ltm-sw-prepare-count-trials7 --max-valid-actions 80 --env-step-limit 100 --max-trials 7 --seed 0 --prepare-only --quiet (via runpy after loading ../ltm-research/.env)",
+    "smoke_run": "/tmp/ltm-scienceworld-kb-venv/bin/python scripts/run_scienceworld_suite.py --splits train --task-ids boil --num-tasks 1 --frameworks react_reflexion --max-variations-per-task 1 --model gemini-2.5-flash --embedding-provider gemini --runs-root /tmp/ltm-sw-smoke-trials7 --max-valid-actions 80 --env-step-limit 100 --max-trials 1 --seed 0 --quiet (via runpy after loading ../ltm-research/.env)",
+    "resume_validation_synthetic": "python3 synthetic in-process fake-agent validation of run_reflexion resume; asserted only missing trial pairs appended and duplicate count stayed zero.",
+    "resume_validation_real_copy": "/tmp/ltm-scienceworld-kb-venv/bin/python scripts/run_scienceworld_suite.py --splits train --task-ids boil --num-tasks 1 --frameworks react_reflexion --max-variations-per-task 1 --model gemini-2.5-flash --embedding-provider gemini --runs-root /tmp/ltm-sw-smoke-resume-copy --max-valid-actions 80 --env-step-limit 100 --max-trials 2 --seed 0 --resume --quiet (via runpy after loading ../ltm-research/.env)",
+    "seed_existing_trials3": "cp selected raw run files from /Users/rishisim/Documents/research/ltm-research/scienceworld_runs/memory_retrieval_v2/kb_train_reflexion_trials3_va80/train/react_reflexion/seed_0 into final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat/train/react_reflexion/seed_0",
+    "trials7_resume_fill": "/tmp/ltm-scienceworld-kb-venv/bin/python scripts/run_scienceworld_suite.py --splits train --task-ids <30 ScienceWorld task specs> --num-tasks 30 --frameworks react_reflexion --max-variations-per-task 1 --model gemini-2.5-flash --embedding-provider gemini --runs-root final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat --max-valid-actions 80 --env-step-limit 100 --max-trials 7 --seed 0 --resume --quiet (via runpy after loading ../ltm-research/.env)",
+    "initial_kb_extract": "/tmp/ltm-scienceworld-kb-venv/bin/python -m src.frameworks.memory_retrieval_v2.preprocessing.knowledge_base_v2.script --log_dir final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat/train/react_reflexion/seed_0 --env scienceworld (via runpy after loading ../ltm-research/.env)",
+    "targeted_extraction_repair": "/tmp/ltm-scienceworld-kb-venv/bin/python -m src.frameworks.memory_retrieval_v2.preprocessing.knowledge_base_v2.script --log_dir final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat/train/react_reflexion/seed_0 --env scienceworld --task_ids <5 initially malformed groups> (via runpy after loading ../ltm-research/.env)",
+    "cache_build": "/tmp/ltm-scienceworld-kb-venv/bin/python - <<'PY' load ../ltm-research/.env; LTM_EMBEDDING_PROVIDER=gemini; create_knowledge_base_embeddings(..., embed_field='issue_text', force=True); build_learning_counts_table(..., force=True) PY",
+    "py_compile": "python3 -m py_compile scripts/run_scienceworld_suite.py src/frameworks/memory_retrieval_v2/preprocessing/knowledge_base_v2/script.py"
+  },
+  "config": {
+    "split": "train",
+    "framework": "react_reflexion",
+    "framework_list": [
+      "react_reflexion"
+    ],
+    "model": "gemini-2.5-flash",
+    "embedding_provider": "gemini",
+    "seed": 0,
+    "max_trials": 7,
+    "max_valid_actions": 80,
+    "max_variations_per_task": 1,
+    "max_learnings": "N/A_KB_GENERATION",
+    "min_valid_level": "N/A_KB_GENERATION",
+    "reward_threshold": 1.0,
+    "simplifications": "easy"
+  },
+  "paths": {
+    "kb_dir": "/Users/rishisim/Documents/research/ltm-scienceworld-kb-trials7/final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat",
+    "kb_path": "/Users/rishisim/Documents/research/ltm-scienceworld-kb-trials7/final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat/knowledge_base.json",
+    "raw_run_dir": "/Users/rishisim/Documents/research/ltm-scienceworld-kb-trials7/final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat/train/react_reflexion/seed_0",
+    "audit_summary": "/Users/rishisim/Documents/research/ltm-scienceworld-kb-trials7/final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat/audit_summary.json",
+    "manifest": "/Users/rishisim/Documents/research/ltm-scienceworld-kb-trials7/final_runs/manifests/scienceworld_train_reflexion_trials7_va80_30cat.json",
+    "report": "/Users/rishisim/Documents/research/ltm-scienceworld-kb-trials7/experiment_reports/final/scienceworld_kb_trials7_report.md"
+  },
+  "file_hashes": {
+    "extraction_repair_summary.json": {
+      "sha256": "206f8d76df3de567f5096dac9777f7acb72720069d37d6e17462f89ad62885e7",
+      "bytes": 907
+    },
+    "knowledge_base.csv": {
+      "sha256": "193710311b96a87a5469af857b5ad07a69ebeae2e4e5324b05b49767e907a4d3",
+      "bytes": 67757
+    },
+    "knowledge_base.issue_embeddings_cache.json": {
+      "sha256": "e6d367f99fdd637b574a3ae0519001c701c9b445d761e1013baef191f881e45a",
+      "bytes": 5473751
+    },
+    "knowledge_base.json": {
+      "sha256": "c582db91617ddf567ec2ddfbdb28191661e1623a3ebcc565a3397bdd6bf5c0b1",
+      "bytes": 118323
+    },
+    "knowledge_base.mem_learning_counts.json": {
+      "sha256": "aad1f9af3bad7668fd535efb3388f27ca4948059d7adf96d7667f68bb6f228e5",
+      "bytes": 1278904
+    },
+    "knowledge_base_progress.json": {
+      "sha256": "f7f19418288f015691e92a627eadd5dbe9a665c860aa2e6ac8a714f55f7a3846",
+      "bytes": 1467
+    },
+    "suite_config.json": {
+      "sha256": "7e8e28e4470794aa1aec88e8431247995ae0989e0026d96958713c90b9247cde",
+      "bytes": 1570
+    },
+    "summaries/summary_train.csv": {
+      "sha256": "14c6e2d1c6c2ec6e2d5e94410169e7d8bd2e0dc408e52d9f88a4bbaeecf724a6",
+      "bytes": 183
+    },
+    "summaries/summary_train.json": {
+      "sha256": "4856036828d07bef3b385ba39939205a686b5bc9dc1f44f50f8d1692005aa521",
+      "bytes": 656
+    },
+    "summaries/summary_train.md": {
+      "sha256": "fa914296d3ce924db49721d201f773155b78e5848a239e2b7e764ec7be2631a3",
+      "bytes": 271
+    },
+    "train/react_reflexion/seed_0/attempts.json": {
+      "sha256": "cb992270f11167e1c3e9187fbc69f51b701892ac76d2c95370b517ae12bd17fe",
+      "bytes": 6584
+    },
+    "train/react_reflexion/seed_0/knowledge_base.csv": {
+      "sha256": "193710311b96a87a5469af857b5ad07a69ebeae2e4e5324b05b49767e907a4d3",
+      "bytes": 67757
+    },
+    "train/react_reflexion/seed_0/knowledge_base.json": {
+      "sha256": "c582db91617ddf567ec2ddfbdb28191661e1623a3ebcc565a3397bdd6bf5c0b1",
+      "bytes": 118323
+    },
+    "train/react_reflexion/seed_0/knowledge_base_progress.json": {
+      "sha256": "f7f19418288f015691e92a627eadd5dbe9a665c860aa2e6ac8a714f55f7a3846",
+      "bytes": 1467
+    },
+    "train/react_reflexion/seed_0/metrics.json": {
+      "sha256": "6138311ed8dae86766f809e7324b80adb979d03b2f1d012aa02f7f7cdee1b78f",
+      "bytes": 232
+    },
+    "train/react_reflexion/seed_0/reflexions.json": {
+      "sha256": "e1c9e7a55d52a1880e94784c1cd7de9dc9fec68f1501063c5ee4bf654ff5d210",
+      "bytes": 158004
+    },
+    "train/react_reflexion/seed_0/reflexions.jsonl": {
+      "sha256": "9e4d4d81ab10c1d2bc3e7833e59fd2da0db9a58ed2640b53ead2d1677fe6f742",
+      "bytes": 154252
+    },
+    "train/react_reflexion/seed_0/trajectories.json": {
+      "sha256": "682ed29f0c8309dd536795e3311bf3ea70bd49eb95918f6cdb4d3542a17048c7",
+      "bytes": 7772570
+    },
+    "train/react_reflexion/seed_0/trajectories.jsonl": {
+      "sha256": "f17d06de5c5299601959a6fc45d638f25f6425497e381a2977ca8c8af200f149",
+      "bytes": 6289519
+    },
+    "train/react_reflexion/seed_0/world.log": {
+      "sha256": "7463cac58f5370c582e3b7c46327d85d8ffd10e9b0e83e65c4ae2b8e0fd1bad3",
+      "bytes": 11826
+    }
+  },
+  "coverage": {
+    "intended_categories": 30,
+    "covered_categories": 30,
+    "covered_category_names": [
+      "boil",
+      "change-the-state-of-matter-of",
+      "chemistry-mix",
+      "chemistry-mix-paint-secondary-color",
+      "chemistry-mix-paint-tertiary-color",
+      "find-animal",
+      "find-living-thing",
+      "find-non-living-thing",
+      "find-plant",
+      "freeze",
+      "grow-fruit",
+      "grow-plant",
+      "identify-life-stages-1",
+      "identify-life-stages-2",
+      "inclined-plane-determine-angle",
+      "inclined-plane-friction-named-surfaces",
+      "inclined-plane-friction-unnamed-surfaces",
+      "lifespan-longest-lived",
+      "lifespan-longest-lived-then-shortest-lived",
+      "lifespan-shortest-lived",
+      "measure-melting-point-known-substance",
+      "measure-melting-point-unknown-substance",
+      "melt",
+      "mendelian-genetics-known-plant",
+      "mendelian-genetics-unknown-plant",
+      "power-component",
+      "power-component-renewable-vs-nonrenewable-energy",
+      "test-conductivity",
+      "test-conductivity-of-unknown-substances",
+      "use-thermometer"
+    ],
+    "missing_categories": [],
+    "covered_variations": 30,
+    "selected_variation_pairs": [
+      {
+        "task_name": "boil",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "change-the-state-of-matter-of",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "chemistry-mix",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "chemistry-mix-paint-secondary-color",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "chemistry-mix-paint-tertiary-color",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "find-animal",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "find-living-thing",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "find-non-living-thing",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "find-plant",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "freeze",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "grow-fruit",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "grow-plant",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "identify-life-stages-1",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "identify-life-stages-2",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "inclined-plane-determine-angle",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "inclined-plane-friction-named-surfaces",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "inclined-plane-friction-unnamed-surfaces",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "lifespan-longest-lived",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "lifespan-longest-lived-then-shortest-lived",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "lifespan-shortest-lived",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "measure-melting-point-known-substance",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "measure-melting-point-unknown-substance",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "melt",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "mendelian-genetics-known-plant",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "mendelian-genetics-unknown-plant",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "power-component",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "power-component-renewable-vs-nonrenewable-energy",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "test-conductivity",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "test-conductivity-of-unknown-substances",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "use-thermometer",
+        "variation_idx": 0
+      }
+    ],
+    "preferred_3_variations_available": true,
+    "preferred_3_variation_task_count_available": 90,
+    "train_variation_counts_by_category": {
+      "boil": 14,
+      "change-the-state-of-matter-of": 14,
+      "chemistry-mix": 16,
+      "chemistry-mix-paint-secondary-color": 18,
+      "chemistry-mix-paint-tertiary-color": 18,
+      "find-animal": 150,
+      "find-living-thing": 150,
+      "find-non-living-thing": 150,
+      "find-plant": 150,
+      "freeze": 14,
+      "grow-fruit": 62,
+      "grow-plant": 62,
+      "identify-life-stages-1": 6,
+      "identify-life-stages-2": 4,
+      "inclined-plane-determine-angle": 84,
+      "inclined-plane-friction-named-surfaces": 692,
+      "inclined-plane-friction-unnamed-surfaces": 80,
+      "lifespan-longest-lived": 62,
+      "lifespan-longest-lived-then-shortest-lived": 62,
+      "lifespan-shortest-lived": 62,
+      "measure-melting-point-known-substance": 218,
+      "measure-melting-point-unknown-substance": 150,
+      "melt": 14,
+      "mendelian-genetics-known-plant": 60,
+      "mendelian-genetics-unknown-plant": 240,
+      "power-component": 10,
+      "power-component-renewable-vs-nonrenewable-energy": 10,
+      "test-conductivity": 450,
+      "test-conductivity-of-unknown-substances": 300,
+      "use-thermometer": 270
+    }
+  },
+  "trajectory_audit": {
+    "trajectory_count": 125,
+    "attempt_count": 30,
+    "reflexion_count": 125,
+    "unique_task_count": 30,
+    "trial_counts": {
+      "1": 30,
+      "2": 19,
+      "3": 16,
+      "4": 16,
+      "5": 15,
+      "6": 15,
+      "7": 14
+    },
+    "max_trial": 7,
+    "duplicate_task_variation_trial_count": 0,
+    "duplicate_task_variation_trial_keys": [],
+    "split_counts": {
+      "train": 125
+    },
+    "eval_test_leakage_splits": [],
+    "success_flag_mismatches": [],
+    "reward_min": -1.0,
+    "reward_max": 1.0,
+    "final_success_count": 16,
+    "final_total_count": 30,
+    "final_accuracy": 0.5333333333333333,
+    "final_avg_reward": 0.47
+  },
+  "kb_audit": {
+    "total_memories": 129,
+    "valid_level_counts": {
+      "VALID_SAME_TRIAL": 80,
+      "VALID_NEXT_TRIAL": 34,
+      "CANDIDATE": 15
+    },
+    "valid_next_trial_count": 34,
+    "kb_ref_task_id_count": 30,
+    "missing_kb_ref_task_ids": [],
+    "malformed_row_count": 0,
+    "malformed_rows": [],
+    "reference_error_count": 0,
+    "reference_errors": [],
+    "knowledge_base_progress_task_count": 30
+  },
+  "cache_validity": {
+    "issue_embeddings_cache": {
+      "path": "final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat/knowledge_base.issue_embeddings_cache.json",
+      "entry_count": 129,
+      "embedding_model": "gemini-embedding-001",
+      "embed_field": "issue_text",
+      "source_hash_matches": true,
+      "source_hash_algorithm": "md5"
+    },
+    "mem_learning_counts_cache": {
+      "path": "final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat/knowledge_base.mem_learning_counts.json",
+      "unique_task_count": 30,
+      "total_learning_count": 129,
+      "embedding_model": "gemini-embedding-001",
+      "source_hash_matches": true,
+      "source_hash_algorithm": "md5"
+    }
+  },
+  "extraction_repair_summary": {
+    "initial_extraction_pass": {
+      "entries_extracted_before_repair": 66,
+      "json_parse_retry_events": 11,
+      "task_groups_failed_after_retries": [
+        "scienceworld_change-the-state-of-matter-of_var_0",
+        "scienceworld_grow-fruit_var_0",
+        "scienceworld_grow-plant_var_0",
+        "scienceworld_melt_var_0",
+        "scienceworld_mendelian-genetics-known-plant_var_0"
+      ],
+      "task_group_failure_count": 5
+    },
+    "repair": {
+      "change": "Raised ScienceWorld extractor max_tokens from 2048 to 8192 and retried only failed task groups.",
+      "retried_task_groups": [
+        "scienceworld_change-the-state-of-matter-of_var_0",
+        "scienceworld_grow-fruit_var_0",
+        "scienceworld_grow-plant_var_0",
+        "scienceworld_melt_var_0",
+        "scienceworld_mendelian-genetics-known-plant_var_0"
+      ],
+      "entries_added_by_targeted_repair": 63,
+      "unresolved_task_group_failures": []
+    }
+  },
+  "safe_for_phase3_eval": true,
+  "caveats": [
+    "Built the minimum acceptable headline coverage: 1 train variation per category across all 30 ScienceWorld categories. Prepare/count confirmed 3 train variations per category are available, but the full preferred 90-task KB was not run to limit runtime/cost in this remediation pass.",
+    "The initial KB extraction pass had malformed JSON for five long 7-trial groups; after increasing ScienceWorld extraction max_tokens and retrying those groups, unresolved malformed extraction failures are zero.",
+    "Both GEMINI_API_KEY and GOOGLE_API_KEY were present in the sibling .env; the Gemini embedding client reported GOOGLE_API_KEY as selected while LTM_EMBEDDING_PROVIDER was set to gemini.",
+    "git_commit_at_generation_start records the branch base before this subagent commit; the final pushed commit containing code and artifacts is reported by the subagent final response."
+  ]
+}

@@ -25,7 +25,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 from statistics import mean
-from typing import Any, Dict, List, Optional, Sequence
+from typing import Any, Dict, List, Optional, Sequence, Set, Tuple
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
@@ -432,6 +432,154 @@ def _latest_reflexion_for_trial(run_dir: Path, task_id: str, trial_num: int) -> 
     return ""
 
 
+def _load_json_list(path: Path) -> List[Dict[str, Any]]:
+    if not path.exists():
+        return []
+    try:
+        with open(path, "r") as f:
+            payload = json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return []
+    return payload if isinstance(payload, list) else []
+
+
+def _load_jsonl_list(path: Path) -> List[Dict[str, Any]]:
+    rows: List[Dict[str, Any]] = []
+    if not path.exists():
+        return rows
+    try:
+        with open(path, "r") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    payload = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                if isinstance(payload, dict):
+                    rows.append(payload)
+    except OSError:
+        return rows
+    return rows
+
+
+def _trajectory_key(entry: Dict[str, Any]) -> Optional[Tuple[str, int, int]]:
+    task_id = str(entry.get("task_id") or "")
+    if not task_id:
+        return None
+    try:
+        variation_idx = int(entry.get("variation_idx", -1))
+        trial_num = int(entry.get("trial_num", 0))
+    except (TypeError, ValueError):
+        return None
+    if trial_num <= 0:
+        return None
+    return (task_id, variation_idx, trial_num)
+
+
+def _task_trial_key(task: TaskInfo, trial_num: int) -> Tuple[str, int, int]:
+    return (task.task_id_str, int(task.variation_idx), int(trial_num))
+
+
+def _dedupe_trajectories(
+    trajectories: Sequence[Dict[str, Any]],
+) -> Tuple[List[Dict[str, Any]], int]:
+    ordered_keys: List[Tuple[str, int, int]] = []
+    by_key: Dict[Tuple[str, int, int], Dict[str, Any]] = {}
+    duplicates = 0
+    for entry in trajectories:
+        key = _trajectory_key(entry)
+        if key is None:
+            continue
+        if key in by_key:
+            duplicates += 1
+        else:
+            ordered_keys.append(key)
+        by_key[key] = entry
+    return [by_key[key] for key in ordered_keys], duplicates
+
+
+def _attempt_from_trajectory(entry: Dict[str, Any], reward_threshold: float) -> Dict[str, Any]:
+    reward = float(entry.get("reward", 0) or 0)
+    success = reward >= reward_threshold
+    return {
+        "task_id": entry.get("task_id"),
+        "task_name": entry.get("task_name"),
+        "variation_idx": entry.get("variation_idx"),
+        "trial_num": int(entry.get("trial_num", 0) or 0),
+        "step_num": int(entry.get("step_num", 0) or 0),
+        "reward": reward,
+        "success": success,
+    }
+
+
+def _load_reflexions_for_resume(run_dir: Path) -> List[Dict[str, Any]]:
+    jsonl_rows = _load_jsonl_list(run_dir / "reflexions.jsonl")
+    if jsonl_rows:
+        return jsonl_rows
+    return _load_json_list(run_dir / "reflexions.json")
+
+
+def _reconstruct_reflexion_resume_state(
+    run_dir: Path,
+    task_infos: Sequence[TaskInfo],
+    reward_threshold: float,
+) -> Tuple[
+    Dict[str, Dict[str, Any]],
+    List[Dict[str, Any]],
+    Set[Tuple[str, int, int]],
+    Dict[str, Any],
+]:
+    task_states: Dict[str, Dict[str, Any]] = {
+        task.task_id_str: {
+            "memory": [],
+            "is_success": False,
+            "final_attempt": None,
+        }
+        for task in task_infos
+    }
+
+    raw_trajectories = _load_json_list(run_dir / "trajectories.json")
+    raw_trajectories.extend(_load_jsonl_list(run_dir / "trajectories.jsonl"))
+    trajectories, duplicate_count = _dedupe_trajectories(raw_trajectories)
+    trajectories.sort(key=lambda row: (int(row.get("trial_num", 0) or 0), str(row.get("task_id", ""))))
+
+    completed_pairs: Set[Tuple[str, int, int]] = set()
+    for entry in trajectories:
+        key = _trajectory_key(entry)
+        if key is not None:
+            completed_pairs.add(key)
+        task_id = str(entry.get("task_id") or "")
+        if task_id not in task_states:
+            continue
+        attempt = _attempt_from_trajectory(entry, reward_threshold)
+        task_states[task_id]["final_attempt"] = attempt
+        if attempt["success"]:
+            task_states[task_id]["is_success"] = True
+
+    reflexions = _load_reflexions_for_resume(run_dir)
+    reflexions.sort(key=lambda row: (str(row.get("task_id", "")), int(row.get("trial_num", 0) or 0)))
+    for entry in reflexions:
+        task_id = str(entry.get("task_id") or "")
+        if task_id not in task_states:
+            continue
+        reflexion = str(entry.get("reflexion") or "")
+        if reflexion:
+            task_states[task_id]["memory"].append(reflexion)
+
+    resume_info = {
+        "raw_trajectory_count": len(raw_trajectories),
+        "trajectory_count": len(trajectories),
+        "duplicate_trajectory_count": duplicate_count,
+        "completed_pair_count": len(completed_pairs),
+        "reflexion_count": len(reflexions),
+        "tasks_already_succeeded": sum(1 for state in task_states.values() if state["is_success"]),
+        "tasks_with_memory": sum(1 for state in task_states.values() if state["memory"]),
+    }
+    return task_states, trajectories, completed_pairs, resume_info
+
+
 def run_reflexion(
     task_infos: Sequence[TaskInfo],
     run_dir: Path,
@@ -445,6 +593,7 @@ def run_reflexion(
     reward_threshold: float,
     quiet: bool,
     max_trials: int,
+    resume: bool = False,
 ) -> Dict[str, Any]:
     from src.frameworks.memory_retrieval_v2.agents.memory_allocation import MemoryAllocationReflexion
 
@@ -454,18 +603,36 @@ def run_reflexion(
         success_threshold=reward_threshold,
     )
     base_prompt = build_scienceworld_prompt(prompts)
-    task_states: Dict[str, Dict[str, Any]] = {
-        task.task_id_str: {
-            "memory": [],
-            "is_success": False,
-            "final_attempt": None,
+    if resume:
+        task_states, all_trajectories, completed_pairs, resume_info = _reconstruct_reflexion_resume_state(
+            run_dir,
+            task_infos,
+            reward_threshold,
+        )
+        print(
+            "  Resuming reflexion: "
+            f"{resume_info['completed_pair_count']} (task,variation,trial) pairs already done, "
+            f"{resume_info['tasks_already_succeeded']} tasks already succeeded, "
+            f"{resume_info['tasks_with_memory']} tasks with reconstructed memory, "
+            f"{resume_info['duplicate_trajectory_count']} duplicate trajectory rows ignored"
+        )
+    else:
+        task_states = {
+            task.task_id_str: {
+                "memory": [],
+                "is_success": False,
+                "final_attempt": None,
+            }
+            for task in task_infos
         }
-        for task in task_infos
-    }
-    all_trajectories: List[Dict[str, Any]] = []
+        all_trajectories = []
+        completed_pairs: Set[Tuple[str, int, int]] = set()
     world_log = run_dir / "world.log"
 
-    with open(world_log, "w") as wf:
+    log_mode = "a" if resume and world_log.exists() else "w"
+    with open(world_log, log_mode) as wf:
+        if resume and world_log.exists():
+            wf.write("\n")
         wf.write("Reflexion run (ScienceWorld)\n")
         wf.write(f"max_trials={max_trials}, reward_threshold={reward_threshold}\n")
 
@@ -473,11 +640,19 @@ def run_reflexion(
         pending_tasks = [t for t in task_infos if not task_states[t.task_id_str]["is_success"]]
         if not pending_tasks:
             break
+        runnable_tasks = [
+            task
+            for task in pending_tasks
+            if _task_trial_key(task, trial_num) not in completed_pairs
+        ]
 
         with open(world_log, "a") as wf:
-            wf.write(f"Trial {trial_num}: {len(pending_tasks)} pending tasks\n")
+            wf.write(
+                f"Trial {trial_num}: {len(pending_tasks)} pending tasks, "
+                f"{len(runnable_tasks)} runnable after resume skips\n"
+            )
 
-        for i, task in enumerate(pending_tasks):
+        for i, task in enumerate(runnable_tasks):
             state = task_states[task.task_id_str]
             env = make_env(task, shared_env, simplification_str, jar_path, env_step_limit, max_valid_actions)
             success = False
@@ -528,6 +703,9 @@ def run_reflexion(
                 "split": task.split,
             }
             all_trajectories.append(trajectory)
+            completed_pairs.add(_task_trial_key(task, trial_num))
+            with open(run_dir / "trajectories.jsonl", "a") as f:
+                f.write(json.dumps(trajectory, separators=(",", ":")) + "\n")
             state["final_attempt"] = attempt
             state["is_success"] = success
 
@@ -558,6 +736,7 @@ def run_reflexion(
             }
         final_attempts.append(attempt)
 
+    all_trajectories, _final_duplicate_count = _dedupe_trajectories(all_trajectories)
     save_json(run_dir / "attempts.json", final_attempts)
     save_json(run_dir / "trajectories.json", all_trajectories)
     return compute_metrics([t.task_id_str for t in task_infos], final_attempts, reward_threshold)
@@ -580,6 +759,7 @@ def run_framework(
     max_learnings: int,
     min_valid_level: str,
     max_trials: int,
+    resume: bool,
 ) -> Dict[str, Any]:
     if framework_id == "react":
         return run_react_baseline(
@@ -609,6 +789,7 @@ def run_framework(
             reward_threshold,
             quiet,
             max_trials,
+            resume,
         )
     return run_memory_agent_variant(
         framework_id,
@@ -853,6 +1034,7 @@ def main() -> None:
                     max_learnings=args.max_learnings,
                     min_valid_level=args.min_valid_level,
                     max_trials=args.max_trials,
+                    resume=args.resume,
                 )
                 save_json(run_dir / "metrics.json", metrics)
                 row = {
