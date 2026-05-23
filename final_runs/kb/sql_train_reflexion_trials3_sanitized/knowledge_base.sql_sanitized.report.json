@@ -1,0 +1,43 @@
+{
+  "created_at": "2026-05-21T15:44:12.232141",
+  "input_path": "intercode_sql_runs/memory_agent_runs/train/react_reflexion/knowledge_base.json",
+  "output_path": "intercode_sql_runs/memory_agent_runs/train/react_reflexion/knowledge_base.sql_sanitized.json",
+  "quarantine_path": "intercode_sql_runs/memory_agent_runs/train/react_reflexion/knowledge_base.sql_sanitized.quarantine.json",
+  "total_memories": 359,
+  "kept_memories": 336,
+  "quarantined_memories": 23,
+  "reason_counts": {
+    "answer_after_submit_protocol": 3,
+    "data_insufficiency_answer_protocol": 2,
+    "final_answer_protocol": 7,
+    "non_sql_answer_protocol": 12,
+    "runner_evaluation_artifact": 2,
+    "submit_answer_protocol": 20,
+    "submit_colon_empty_protocol": 2
+  },
+  "quarantined_unique_ids": [
+    "21",
+    "26",
+    "45",
+    "72",
+    "114",
+    "115",
+    "116",
+    "124",
+    "131",
+    "146",
+    "160",
+    "213",
+    "253",
+    "270",
+    "273",
+    "278",
+    "282",
+    "294",
+    "303",
+    "313",
+    "317",
+    "326",
+    "351"
+  ]
+}

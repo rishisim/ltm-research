@@ -1,0 +1,238 @@
+{
+  "created_at": "2026-05-23T21:09:04.191501+00:00",
+  "branch": "final/sql-kb",
+  "worktree": "/Users/rishisim/Documents/research/ltm-final-sql-kb",
+  "code_commit_at_packaging": "5d1fcf2e2a4c8d841ee101ccea44f1c1d6853eac",
+  "source_checkout_commit_at_audit": "91da9006684cb044ca8d4e67ed35383e20ef96ac",
+  "source_run_dir": "/Users/rishisim/Documents/research/ltm-research/intercode_sql_runs/memory_agent_runs/train/react_reflexion",
+  "final_kb_dir": "final_runs/kb/sql_train_reflexion_trials3_sanitized",
+  "manifest_path": "final_runs/manifests/sql_train_reflexion_trials3_sanitized.json",
+  "report_path": "experiment_reports/final/sql_kb_report.md",
+  "source_generation_commands": {
+    "train_reflexion_from_run_readme": "python scripts/run_intercode_sql_suite.py --splits train --frameworks react_reflexion --num-tasks 516 --max-trials 3 --model gemini-2.5-flash --runs-root intercode_sql_runs/memory_agent_runs",
+    "kb_extraction_from_run_readme": "PYTHONPATH=. python src/frameworks/memory_retrieval_v2/preprocessing/knowledge_base_v2/script.py --log_dir intercode_sql_runs/memory_agent_runs/train/react_reflexion --env intercode_sql --resume",
+    "sanitizer_reproduction": "python3 scripts/utils/sql_memory_sanitizer.py --input /Users/rishisim/Documents/research/ltm-research/intercode_sql_runs/memory_agent_runs/train/react_reflexion/knowledge_base.json --output /tmp/sql_kb_sanitizer_repro.json",
+    "final_packaging": "copy sanitized KB, sanitizer report, quarantine, and Gemini embedding helper files into final_runs/kb/sql_train_reflexion_trials3_sanitized/"
+  },
+  "source_suite_config": {
+    "created_at": "2026-04-06T10:44:57.792776",
+    "num_tasks": 516,
+    "splits": [
+      "train"
+    ],
+    "frameworks": [
+      "react_reflexion"
+    ],
+    "max_trials": 3,
+    "model": "gemini-2.5-flash",
+    "memory_bank": "/Users/rishisim/Documents/research/ltm-research/intercode_sql_runs/knowledge_base/knowledge_base.json",
+    "data_path": "data/intercode_sql/ic_spider_dev.json",
+    "reward_threshold": 1.0
+  },
+  "metrics": {
+    "framework_id": "react_reflexion",
+    "framework": "React + Reflexion (final trials, max 7)",
+    "split": "train",
+    "num_tasks": 516,
+    "metrics": {
+      "success": 371,
+      "total": 516,
+      "success_total": "371 / 516",
+      "accuracy": 0.7189922480620154,
+      "avg_reward": 0.47440993788819874,
+      "avg_steps_per_trial": 10.438307873090482,
+      "avg_steps_per_task": 17.21511627906977,
+      "attempt_count": 851,
+      "trials_executed": 3
+    }
+  },
+  "provenance": {
+    "model": "gemini-2.5-flash",
+    "embedding_provider": "gemini",
+    "embedding_model": "gemini-embedding-001",
+    "seed": "not recorded in legacy source suite_config; task order is canonical train manifest order",
+    "split": "train",
+    "framework": "react_reflexion",
+    "framework_list": [
+      "react_reflexion"
+    ],
+    "max_trials": 3,
+    "max_learnings": "N/A - KB artifact; eval-time retrieval cap",
+    "min_valid_level": "N/A - KB artifact; eval-time retrieval filter",
+    "kb_path": "final_runs/kb/sql_train_reflexion_trials3_sanitized/knowledge_base.sql_sanitized.json",
+    "source_kb_path": "/Users/rishisim/Documents/research/ltm-research/intercode_sql_runs/memory_agent_runs/train/react_reflexion/knowledge_base.sql_sanitized.json",
+    "run_directory": "/Users/rishisim/Documents/research/ltm-research/intercode_sql_runs/memory_agent_runs/train/react_reflexion"
+  },
+  "split_audit": {
+    "train_manifest_tasks": 516,
+    "train_manifest_task_indices": 516,
+    "dev_manifest_tasks": 200,
+    "test_manifest_tasks": 200,
+    "train_dev_task_index_overlap": 0,
+    "train_test_task_index_overlap": 0,
+    "dev_test_task_index_overlap": 0,
+    "trajectory_rows": 851,
+    "trajectory_unique_task_ids": 516,
+    "trajectory_unique_task_indices": 516,
+    "trajectory_missing_train_ids": [],
+    "trajectory_extra_vs_train_ids": [],
+    "trajectory_overlap_dev_ids": 0,
+    "trajectory_overlap_test_ids": 0,
+    "progress_entries": 516,
+    "progress_unique_ids": 516,
+    "progress_missing_train_ids": [],
+    "progress_extra_vs_train_ids": [],
+    "reflexion_rows": 851,
+    "reflexion_unique_task_ids": 516,
+    "reflexion_overlap_dev_ids": 0,
+    "reflexion_overlap_test_ids": 0,
+    "trajectory_rows_with_split_key": 0,
+    "trajectory_unique_split_values": [],
+    "split_tag_caveat": "Consolidated source trajectories lack split tags; train-only status was verified by run directory/config plus task_id and task_index membership against train/dev/test manifests."
+  },
+  "trajectory_audit": {
+    "trial_counts": {
+      "1": 516,
+      "2": 179,
+      "3": 156
+    },
+    "max_trial": 3,
+    "tasks_with_more_than_3_attempts": 0,
+    "success_rows": 371,
+    "reward_ge_1_rows": 371,
+    "success_flag_reward_threshold_mismatches": 0,
+    "reward_min": -1.0,
+    "reward_max": 1.0,
+    "step_num_min": 2,
+    "step_num_max": 49
+  },
+  "kb_audit": {
+    "raw_memories": 359,
+    "sanitized_memories": 336,
+    "quarantined_memories": 23,
+    "sanitizer_report": {
+      "created_at": "2026-05-21T15:44:12.232141",
+      "input_path": "intercode_sql_runs/memory_agent_runs/train/react_reflexion/knowledge_base.json",
+      "output_path": "intercode_sql_runs/memory_agent_runs/train/react_reflexion/knowledge_base.sql_sanitized.json",
+      "quarantine_path": "intercode_sql_runs/memory_agent_runs/train/react_reflexion/knowledge_base.sql_sanitized.quarantine.json",
+      "total_memories": 359,
+      "kept_memories": 336,
+      "quarantined_memories": 23,
+      "reason_counts": {
+        "answer_after_submit_protocol": 3,
+        "data_insufficiency_answer_protocol": 2,
+        "final_answer_protocol": 7,
+        "non_sql_answer_protocol": 12,
+        "runner_evaluation_artifact": 2,
+        "submit_answer_protocol": 20,
+        "submit_colon_empty_protocol": 2
+      },
+      "quarantined_unique_ids": [
+        "21",
+        "26",
+        "45",
+        "72",
+        "114",
+        "115",
+        "116",
+        "124",
+        "131",
+        "146",
+        "160",
+        "213",
+        "253",
+        "270",
+        "273",
+        "278",
+        "282",
+        "294",
+        "303",
+        "313",
+        "317",
+        "326",
+        "351"
+      ]
+    },
+    "sanitized_valid_level_counts": {
+      "CANDIDATE": 32,
+      "VALID_NEXT_TRIAL": 67,
+      "VALID_SAME_TRIAL": 237
+    },
+    "raw_valid_level_counts": {
+      "CANDIDATE": 41,
+      "VALID_NEXT_TRIAL": 76,
+      "VALID_SAME_TRIAL": 242
+    },
+    "quarantine_valid_level_counts": {
+      "CANDIDATE": 9,
+      "VALID_NEXT_TRIAL": 9,
+      "VALID_SAME_TRIAL": 5
+    },
+    "sanitized_goal_phase_counts": {
+      "EXPLORE": 22,
+      "QUERY": 201,
+      "REFINE": 109,
+      "VERIFY": 4
+    },
+    "sanitized_unique_id_duplicates": 0,
+    "sanitized_issue_ref_task_overlap_dev": 0,
+    "sanitized_issue_ref_task_overlap_test": 0,
+    "sanitized_evidence_ref_task_overlap_dev": 0,
+    "sanitized_evidence_ref_task_overlap_test": 0,
+    "contamination_audit_sanitized_quarantined_memories": 0,
+    "sanitizer_reproduced_sanitized_kb_byte_for_byte": true,
+    "sanitizer_reproduced_quarantine_byte_for_byte": true,
+    "mem_learning_counts_unique_task_count": 180,
+    "mem_learning_counts_total_learning_count": 336,
+    "issue_embeddings_entry_count": 336
+  },
+  "files": {
+    "source_sha256": {
+      "knowledge_base.json": "aa14a2555f0e1397bf88e9d17484a68b22ebd1c9e15c1b66d6c08903ee7512f4",
+      "knowledge_base.sql_sanitized.json": "5870c3d8db646d8771256de0ffd52aba85df6d6cc32218d57585860f90d07f63",
+      "knowledge_base.sql_sanitized.report.json": "5cbfe0acedf6b932bbed640bce62f352601eddc86dcaf8f7c044afe688f42397",
+      "knowledge_base.sql_sanitized.quarantine.json": "7ebd369a5f9d3740bdc15b1d410058919a4fc5f2a0bcbb3035abd458ddc6bd05",
+      "knowledge_base.sql_sanitized.mem_learning_counts.json": "61c9a5a9860526c9a8fdf19547c0ff12aa3fe88f0a0f09f6f57b9fd93b033115",
+      "knowledge_base.sql_sanitized.issue_embeddings_cache.json": "762683a3dd9eeea83fe2c371a2d5fe6ed6c829ac2f3269f54d1114fb1fb3b59b",
+      "knowledge_base_progress.json": "3e769d403c1c50c17f4688ef6dfa17cbb8ed312ad366b7e1d67f28bff72348e6",
+      "trajectories.json": "69377456905fddd681f34e221a30941c1e9b59e7edb7d6908897dc6189468306",
+      "reflexions.json": "070767760ee545631958e34656fc379e8b4e60d541401017d6ac95e6362e100d",
+      "metrics.json": "96779ac2dc3a430b59550659a59a32eea58c82cd392656d42d4d8679ee79678f",
+      "world.log": "d236f6c1cc032db55ecdb6520901cc85899aa73b85a11278f7b4bb3d113af0d5"
+    },
+    "final_sha256": {
+      "knowledge_base.sql_sanitized.quarantine.json": "7ebd369a5f9d3740bdc15b1d410058919a4fc5f2a0bcbb3035abd458ddc6bd05",
+      "knowledge_base.sql_sanitized.report.json": "5cbfe0acedf6b932bbed640bce62f352601eddc86dcaf8f7c044afe688f42397",
+      "knowledge_base.sql_sanitized.mem_learning_counts.json": "61c9a5a9860526c9a8fdf19547c0ff12aa3fe88f0a0f09f6f57b9fd93b033115",
+      "knowledge_base.sql_sanitized.issue_embeddings_cache.json": "762683a3dd9eeea83fe2c371a2d5fe6ed6c829ac2f3269f54d1114fb1fb3b59b",
+      "knowledge_base.sql_sanitized.json": "5870c3d8db646d8771256de0ffd52aba85df6d6cc32218d57585860f90d07f63"
+    },
+    "final_files": [
+      "knowledge_base.sql_sanitized.issue_embeddings_cache.json",
+      "knowledge_base.sql_sanitized.json",
+      "knowledge_base.sql_sanitized.mem_learning_counts.json",
+      "knowledge_base.sql_sanitized.quarantine.json",
+      "knowledge_base.sql_sanitized.report.json"
+    ]
+  },
+  "commands_run_for_phase2_audit": [
+    "git status --short --branch",
+    "git rev-parse HEAD",
+    "ls -la intercode_sql_runs/memory_agent_runs/train/react_reflexion",
+    "find /Users/rishisim/Documents/research/ltm-research/intercode_sql_runs/memory_agent_runs/train/react_reflexion -maxdepth 2 -type f",
+    "sed -n '1,240p' scripts/utils/sql_memory_sanitizer.py",
+    "sed -n '1,260p' scripts/analysis/audit_intercode_sql_memory_contamination.py",
+    "python3 scripts/analysis/audit_intercode_sql_memory_contamination.py --memory-bank /Users/rishisim/Documents/research/ltm-research/intercode_sql_runs/memory_agent_runs/train/react_reflexion/knowledge_base.sql_sanitized.json",
+    "python3 scripts/analysis/audit_intercode_sql_memory_contamination.py --memory-bank /Users/rishisim/Documents/research/ltm-research/intercode_sql_runs/memory_agent_runs/train/react_reflexion/knowledge_base.json",
+    "python3 scripts/utils/sql_memory_sanitizer.py --input /Users/rishisim/Documents/research/ltm-research/intercode_sql_runs/memory_agent_runs/train/react_reflexion/knowledge_base.json --output /tmp/sql_kb_sanitizer_repro.json",
+    "cmp -s /tmp/sql_kb_sanitizer_repro.json /Users/rishisim/Documents/research/ltm-research/intercode_sql_runs/memory_agent_runs/train/react_reflexion/knowledge_base.sql_sanitized.json",
+    "cmp -s /tmp/sql_kb_sanitizer_repro.quarantine.json /Users/rishisim/Documents/research/ltm-research/intercode_sql_runs/memory_agent_runs/train/react_reflexion/knowledge_base.sql_sanitized.quarantine.json",
+    "python3 -m py_compile scripts/utils/sql_memory_sanitizer.py scripts/analysis/audit_intercode_sql_memory_contamination.py"
+  ],
+  "safe_for_eval_use": true,
+  "caveats": [
+    "Source consolidated trajectories do not include split fields; train-only provenance was verified from suite_config/run path and exact task_id/task_index membership in the canonical train manifest with zero dev/test overlap.",
+    "The legacy source suite_config does not record seed or embedding_provider; seed is treated as not recorded for KB generation, and Gemini embedding provenance comes from the copied embedding caches (gemini-embedding-001).",
+    "max_learnings and min_valid_level are eval-time retrieval parameters, so they are N/A for this KB artifact; Phase 3 should use max_learnings=5 and min_valid_level=VALID_NEXT_TRIAL."
+  ]
+}
