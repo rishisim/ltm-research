@@ -1,0 +1,164 @@
+{
+  "artifact_id": "alfworld_train_reflexion_trials7",
+  "status": "promoted",
+  "safe_for_eval": true,
+  "generated_at_utc": "2026-05-23T21:53:11Z",
+  "branch": "final/alfworld-kb-trials7",
+  "worktree": "/Users/rishisim/Documents/research/ltm-alfworld-kb-trials7",
+  "generation_git_commit": "70626b99e0376bf97afbe39aeb703c4ca56f4cdc",
+  "generation_git_status_short": "?? final_runs/kb/alfworld_train_reflexion_trials7/",
+  "commands": [
+    "python3 scripts/analysis/promote_alfworld_trials7_kb.py"
+  ],
+  "protocol": {
+    "environment": "ALFWorld",
+    "split": "train",
+    "framework": "react_reflexion",
+    "framework_list": [
+      "react_reflexion"
+    ],
+    "max_trials": 7,
+    "model": "gemini-2.5-flash",
+    "embedding_provider": "gemini",
+    "embedding_model": "gemini-embedding-001",
+    "seed": "not_recorded_in_legacy_source",
+    "max_learnings": "N/A_KB_generation_eval_fixed_later",
+    "min_valid_level": "N/A_KB_generation_eval_uses_VALID_NEXT_TRIAL_later"
+  },
+  "source": {
+    "run_directory": "alfworld_runs/memory_retrieval_v2/knowledge_base/memory_allocation_runs",
+    "kb_path": "alfworld_runs/memory_retrieval_v2/knowledge_base/knowledge_base.json",
+    "trajectories_path": "alfworld_runs/memory_retrieval_v2/knowledge_base/memory_allocation_runs/trajectories.json",
+    "reflexions_path": "alfworld_runs/memory_retrieval_v2/knowledge_base/memory_allocation_runs/reflexions.json",
+    "progress_path": "alfworld_runs/memory_retrieval_v2/knowledge_base/memory_allocation_runs/knowledge_base_progress.json",
+    "issue_embeddings_cache_path": "alfworld_runs/memory_retrieval_v2/knowledge_base/knowledge_base.issue_embeddings_cache.json",
+    "learning_counts_cache_path": "alfworld_runs/memory_retrieval_v2/knowledge_base/knowledge_base.mem_learning_counts.json"
+  },
+  "final": {
+    "run_directory": "final_runs/kb/alfworld_train_reflexion_trials7",
+    "kb_path": "final_runs/kb/alfworld_train_reflexion_trials7/knowledge_base.json",
+    "manifest_path": "final_runs/manifests/alfworld_train_reflexion_trials7.json",
+    "report_path": "experiment_reports/final/alfworld_kb_trials7_report.md",
+    "audit_summary_path": "final_runs/kb/alfworld_train_reflexion_trials7/audit_summary.json",
+    "provenance_path": "final_runs/kb/alfworld_train_reflexion_trials7/provenance.json",
+    "quarantine_path": "final_runs/kb/alfworld_train_reflexion_trials7/knowledge_base.quarantine.json"
+  },
+  "audit_summary": {
+    "generated_at_utc": "2026-05-23T21:53:11Z",
+    "source": {
+      "kb_entries": 404,
+      "valid_level_counts": {
+        "VALID_SAME_TRIAL": 259,
+        "VALID_NEXT_TRIAL": 103,
+        "CANDIDATE": 41,
+        "": 1
+      },
+      "max_ref_trial": 7,
+      "ref_split_counts": {
+        "train": 770,
+        "ambiguous": 12,
+        "unknown": 1,
+        "missing": 25
+      },
+      "sha256": {
+        "knowledge_base.json": "bf7e8b96ba7aa76f63b0b9ace6b5a9ccb44b8bd8536d05980ace9b3fa14d0ed8",
+        "trajectories.json": "04fd3f0702553c35c7706238a0acc9bf3bdd65de61961492db1bfaf323c573d2",
+        "reflexions.json": "37a5af85c51c962a20d017e07979ebac7b862bf66bcfa506e6c14ed1daeaa6d8",
+        "knowledge_base_progress.json": "e65cac775b46526bff92fec93205a7a61eebf68d96e728a2069ec0cbbf11a38f",
+        "knowledge_base.issue_embeddings_cache.json": "e9772787390675c11e9410a17026c3e7c5bb4499e0986ff87deb44f6d0ac0d2d",
+        "knowledge_base.mem_learning_counts.json": "08578f12e3a4e24d7fd4b9f16ec7df20d339eab3145efabb0390c58c842c481b"
+      }
+    },
+    "promoted": {
+      "kb_entries": 373,
+      "valid_level_counts": {
+        "VALID_SAME_TRIAL": 256,
+        "VALID_NEXT_TRIAL": 101,
+        "CANDIDATE": 16
+      },
+      "max_ref_trial": 7,
+      "ref_split_counts": {
+        "train": 746
+      },
+      "sha256": {
+        "knowledge_base.json": "6763e9089277f863a746dcfef63938e4070b561f9fee12db7a4c60d6d624b768",
+        "knowledge_base.quarantine.json": "5b72b132680da2757887e7858b39e653abf83e26d3668dc87c35b23abb11870a"
+      },
+      "cache_files": {
+        "issue_embeddings_cache": "final_runs/kb/alfworld_train_reflexion_trials7/knowledge_base.issue_embeddings_cache.json",
+        "mem_learning_counts": "final_runs/kb/alfworld_train_reflexion_trials7/knowledge_base.mem_learning_counts.json"
+      }
+    },
+    "quarantine": {
+      "row_count": 31,
+      "reason_counts": {
+        "issue_ref_split_ambiguous": 6,
+        "evidence_ref_split_ambiguous": 6,
+        "evidence_ref_split_unknown": 1,
+        "missing_evidence_ref_trial_num": 24,
+        "missing_task_desc": 1,
+        "non_informative_learning_text": 5,
+        "invalid_valid_level": 1,
+        "missing_issue_ref_task_id": 1,
+        "missing_issue_ref_trial_num": 1,
+        "missing_evidence_ref_task_id": 24,
+        "evidence_ref_trial_out_of_range": 1
+      },
+      "path": "final_runs/kb/alfworld_train_reflexion_trials7/knowledge_base.quarantine.json"
+    },
+    "coverage": {
+      "intended_train_games": 120,
+      "observed_unique_trajectory_task_ids": 115,
+      "coverage_complete": false,
+      "observed_by_task_type": {
+        "look_at_obj_in_light": 20,
+        "pick_and_place_simple": 19,
+        "pick_clean_then_place_in_recep": 20,
+        "pick_cool_then_place_in_recep": 19,
+        "pick_heat_then_place_in_recep": 17,
+        "pick_two_obj_and_place": 20
+      },
+      "trajectory_rows": 251,
+      "trajectory_trial_counts": {
+        "1": 115,
+        "2": 49,
+        "3": 28,
+        "4": 23,
+        "5": 15,
+        "6": 12,
+        "7": 9
+      },
+      "trajectory_success_counts": {
+        "false": 251
+      },
+      "reflexion_rows": 251,
+      "progress_entries": 155
+    },
+    "split_audit": {
+      "method": "official ALFWorld cache walk with base-task fallback for legacy refs",
+      "official_split_root": "/Users/rishisim/.cache/alfworld/json_2.1.1",
+      "official_available": true,
+      "official_counts": {
+        "train": 3553,
+        "valid_seen": 140,
+        "valid_unseen": 134
+      },
+      "trajectory_unique_task_ids": 115,
+      "trajectory_train_count": 115,
+      "trajectory_split_counts": {
+        "train": 115
+      },
+      "trajectory_valid_seen_overlap": 0,
+      "trajectory_valid_unseen_overlap": 0,
+      "promoted_non_train_ref_count": 0,
+      "promoted_ref_split_counts": {
+        "train": 746
+      },
+      "limitation": "Original sampled 120-game train manifest is absent; exact missing game IDs cannot be reconstructed from repo-local artifacts. Split membership is verified against the official ALFWorld cache."
+    }
+  },
+  "caveats": [
+    "The original fixed 120-game train manifest is not present in repo-local artifacts; legacy trajectories cover 115/120 intended train games.",
+    "Observed coverage is uneven across task types; see coverage table."
+  ]
+}
