@@ -1,0 +1,41 @@
+framework,task_id,react_success,variant_success,react_score,variant_score,score_delta,react_steps,variant_steps
+CR,scienceworld_boil_var_14,0,0,0.03,0.40,0.37,49,49
+CR,scienceworld_change-the-state-of-matter-of_var_14,0,0,0.04,0.04,0.00,49,39
+CR,scienceworld_chemistry-mix_var_16,0,0,0.25,0.50,0.25,6,49
+CR,scienceworld_chemistry-mix-paint-secondary-color_var_18,0,0,0.30,0.30,0.00,49,49
+CR,scienceworld_chemistry-mix-paint-tertiary-color_var_18,0,0,0.13,0.13,0.00,21,49
+CR,scienceworld_find-animal_var_150,0,0,0.25,0.25,0.00,49,49
+CR,scienceworld_find-living-thing_var_150,0,1,-1.00,1.00,2.00,10,32
+CR,scienceworld_find-non-living-thing_var_150,0,1,0.17,1.00,0.83,27,6
+CR,scienceworld_find-plant_var_150,1,1,1.00,1.00,0.00,13,25
+CR,scienceworld_freeze_var_14,0,0,0.10,0.48,0.38,49,49
+TR,scienceworld_boil_var_14,0,0,0.03,0.40,0.37,49,44
+TR,scienceworld_change-the-state-of-matter-of_var_14,0,0,0.04,-1.00,-1.04,49,22
+TR,scienceworld_chemistry-mix_var_16,0,0,0.25,0.42,0.17,6,49
+TR,scienceworld_chemistry-mix-paint-secondary-color_var_18,0,0,0.30,0.30,0.00,49,49
+TR,scienceworld_chemistry-mix-paint-tertiary-color_var_18,0,0,0.13,-1.00,-1.13,21,10
+TR,scienceworld_find-animal_var_150,0,0,0.25,0.25,0.00,49,49
+TR,scienceworld_find-living-thing_var_150,0,0,-1.00,-1.00,0.00,10,5
+TR,scienceworld_find-non-living-thing_var_150,0,1,0.17,1.00,0.83,27,5
+TR,scienceworld_find-plant_var_150,1,0,1.00,-1.00,-2.00,13,12
+TR,scienceworld_freeze_var_14,0,0,0.10,0.10,0.00,49,49
+CR+TR,scienceworld_boil_var_14,0,0,0.03,0.03,0.00,49,49
+CR+TR,scienceworld_change-the-state-of-matter-of_var_14,0,0,0.04,0.04,0.00,49,46
+CR+TR,scienceworld_chemistry-mix_var_16,0,0,0.25,0.33,0.08,6,43
+CR+TR,scienceworld_chemistry-mix-paint-secondary-color_var_18,0,0,0.30,0.30,0.00,49,49
+CR+TR,scienceworld_chemistry-mix-paint-tertiary-color_var_18,0,0,0.13,-1.00,-1.13,21,38
+CR+TR,scienceworld_find-animal_var_150,0,0,0.25,0.25,0.00,49,34
+CR+TR,scienceworld_find-living-thing_var_150,0,1,-1.00,1.00,2.00,10,40
+CR+TR,scienceworld_find-non-living-thing_var_150,0,1,0.17,1.00,0.83,27,8
+CR+TR,scienceworld_find-plant_var_150,1,1,1.00,1.00,0.00,13,25
+CR+TR,scienceworld_freeze_var_14,0,0,0.10,0.10,0.00,49,49
+hard-neg CR+TR,scienceworld_boil_var_14,0,0,0.03,0.05,0.02,49,49
+hard-neg CR+TR,scienceworld_change-the-state-of-matter-of_var_14,0,0,0.04,-1.00,-1.04,49,20
+hard-neg CR+TR,scienceworld_chemistry-mix_var_16,0,0,0.25,0.33,0.08,6,49
+hard-neg CR+TR,scienceworld_chemistry-mix-paint-secondary-color_var_18,0,0,0.30,0.30,0.00,49,33
+hard-neg CR+TR,scienceworld_chemistry-mix-paint-tertiary-color_var_18,0,0,0.13,-1.00,-1.13,21,22
+hard-neg CR+TR,scienceworld_find-animal_var_150,0,0,0.25,0.75,0.50,49,49
+hard-neg CR+TR,scienceworld_find-living-thing_var_150,0,0,-1.00,-1.00,0.00,10,3
+hard-neg CR+TR,scienceworld_find-non-living-thing_var_150,0,1,0.17,1.00,0.83,27,6
+hard-neg CR+TR,scienceworld_find-plant_var_150,1,1,1.00,1.00,0.00,13,30
+hard-neg CR+TR,scienceworld_freeze_var_14,0,0,0.10,0.10,0.00,49,49
