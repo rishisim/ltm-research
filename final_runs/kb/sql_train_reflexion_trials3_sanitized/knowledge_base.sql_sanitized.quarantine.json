@@ -1,0 +1,763 @@
+[
+  {
+    "task_desc": "What are the names of tournaments that have more than 10 matches?",
+    "obj_type": "submission format",
+    "verbs": "submit",
+    "goal_phase": "VERIFY",
+    "issue_text": "Incorrect submission format when stating insufficient data to answer the question.",
+    "issue_ref": {
+      "task_id": "sql_75",
+      "trial_num": 2,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "learning_text": "When data is insufficient, submit the concise natural language statement directly as the answer, not 'submit' followed by the statement.",
+    "evidence_ref": {
+      "task_id": "sql_75",
+      "trial_num": 3,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "21",
+    "_sanitizer": {
+      "source_index": 20,
+      "reasons": [
+        "submit_answer_protocol",
+        "answer_after_submit_protocol",
+        "non_sql_answer_protocol",
+        "data_insufficiency_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "What is the name of the winner with the most rank points who participated in the Australian Open tournament?",
+    "obj_type": "SQL syntax",
+    "verbs": "submit",
+    "goal_phase": "VERIFY",
+    "issue_text": "Incorrect syntax when submitting an answer with text after 'submit'.",
+    "issue_ref": {
+      "task_id": "sql_94",
+      "trial_num": 1,
+      "step_range": [
+        45,
+        45
+      ]
+    },
+    "learning_text": "The 'submit' command should be followed only by the final answer, not additional SQL or text on the same line.",
+    "evidence_ref": {
+      "task_id": "sql_94",
+      "trial_num": 1,
+      "step_range": [
+        47,
+        47
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "26",
+    "_sanitizer": {
+      "source_index": 25,
+      "reasons": [
+        "submit_answer_protocol",
+        "answer_after_submit_protocol",
+        "final_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "What is the department description for the one whose name has the word computer?",
+    "obj_type": "submit command",
+    "verbs": "submit",
+    "goal_phase": "VERIFY",
+    "issue_text": "Incorrect use of 'submit' command by including explanations, causing SQL syntax errors.",
+    "issue_ref": {
+      "task_id": "sql_140",
+      "trial_num": 2,
+      "step_range": [
+        12,
+        13
+      ]
+    },
+    "learning_text": "The 'submit' command should only contain the final answer text, without additional explanations.",
+    "evidence_ref": {
+      "task_id": "sql_140",
+      "trial_num": 3,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "45",
+    "_sanitizer": {
+      "source_index": 44,
+      "reasons": [
+        "submit_answer_protocol",
+        "final_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "Find the highest rank of losers in all matches.",
+    "obj_type": "Database schema, matches table, rankings table",
+    "verbs": "SELECT",
+    "goal_phase": "VERIFY",
+    "issue_text": "Inability to answer the question due to insufficient data in relevant columns.",
+    "issue_ref": {
+      "task_id": "sql_199",
+      "trial_num": 1,
+      "step_range": [
+        32,
+        33
+      ]
+    },
+    "learning_text": "If data is consistently NULL or unjoinable, conclude data insufficiency and submit an appropriate message.",
+    "evidence_ref": {
+      "task_id": "sql_199",
+      "trial_num": 2,
+      "step_range": [
+        15,
+        16
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "72",
+    "_sanitizer": {
+      "source_index": 71,
+      "reasons": [
+        "data_insufficiency_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "Which countries have greater area than that of any country in Europe?",
+    "obj_type": "country table, SurfaceArea column, Continent column",
+    "verbs": "SELECT, MAX, WHERE",
+    "goal_phase": "QUERY",
+    "issue_text": "The initial query correctly identifies no countries, but the agent fails to submit an empty result set correctly.",
+    "issue_ref": {
+      "task_id": "sql_350",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        7
+      ]
+    },
+    "learning_text": "When a query returns an empty result set, submit an empty string or nothing after the 'submit:' command.",
+    "evidence_ref": {
+      "task_id": "sql_350",
+      "trial_num": 3,
+      "step_range": [
+        6,
+        7
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "114",
+    "_sanitizer": {
+      "source_index": 113,
+      "reasons": [
+        "submit_answer_protocol",
+        "submit_colon_empty_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "Which countries have greater area than that of any country in Europe?",
+    "obj_type": "N/A",
+    "verbs": "submit",
+    "goal_phase": "VERIFY",
+    "issue_text": "Agent attempts to submit natural language explanations or incorrect syntax for an empty result set.",
+    "issue_ref": {
+      "task_id": "sql_350",
+      "trial_num": 2,
+      "step_range": [
+        6,
+        7
+      ]
+    },
+    "learning_text": "The 'submit' action expects the actual query result, not natural language explanations or incorrect syntax.",
+    "evidence_ref": {
+      "task_id": "sql_350",
+      "trial_num": 3,
+      "step_range": [
+        6,
+        7
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "115",
+    "_sanitizer": {
+      "source_index": 114,
+      "reasons": [
+        "submit_answer_protocol",
+        "non_sql_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "Find the arriving date and the departing date of the dogs that received a treatment.",
+    "obj_type": "dogs table, treatments table, date_arrived column, date_departed column, dog_id column",
+    "verbs": "SELECT, JOIN",
+    "goal_phase": "VERIFY",
+    "issue_text": "The submitted query returned correct results but was marked as incorrect.",
+    "issue_ref": {
+      "task_id": "sql_356",
+      "trial_num": 1,
+      "step_range": [
+        13,
+        18
+      ]
+    },
+    "learning_text": "The query logic was correct, but the system marked it as incorrect. No SQL correction needed.",
+    "evidence_ref": {
+      "task_id": "sql_356",
+      "trial_num": 1,
+      "step_range": [
+        13,
+        18
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "116",
+    "_sanitizer": {
+      "source_index": 115,
+      "reasons": [
+        "runner_evaluation_artifact"
+      ]
+    }
+  },
+  {
+    "task_desc": "Which year had the most matches?",
+    "obj_type": "N/A",
+    "verbs": "submit",
+    "goal_phase": "VERIFY",
+    "issue_text": "Incorrectly attempted to submit a descriptive sentence as the final answer.",
+    "issue_ref": {
+      "task_id": "sql_371",
+      "trial_num": 1,
+      "step_range": [
+        19,
+        20
+      ]
+    },
+    "learning_text": "The 'submit' action expects only the final answer value, not descriptive text or explanations.",
+    "evidence_ref": {
+      "task_id": "sql_371",
+      "trial_num": 2,
+      "step_range": [
+        7,
+        8
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "124",
+    "_sanitizer": {
+      "source_index": 123,
+      "reasons": [
+        "submit_answer_protocol",
+        "non_sql_answer_protocol",
+        "final_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "find the code of the country where has the greatest number of players.",
+    "obj_type": "players table",
+    "verbs": "SUBMIT",
+    "goal_phase": "VERIFY",
+    "issue_text": "Submitting an empty result set when the table is empty was initially incorrect.",
+    "issue_ref": {
+      "task_id": "sql_387",
+      "trial_num": 1,
+      "step_range": [
+        17,
+        17
+      ]
+    },
+    "learning_text": "When no data exists, submit an empty string or empty result set as the answer.",
+    "evidence_ref": {
+      "task_id": "sql_387",
+      "trial_num": 3,
+      "step_range": [
+        11,
+        11
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "131",
+    "_sanitizer": {
+      "source_index": 130,
+      "reasons": [
+        "submit_answer_protocol",
+        "submit_colon_empty_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "What is the code of the country with the most players?",
+    "obj_type": "submission format",
+    "verbs": "submit",
+    "goal_phase": "VERIFY",
+    "issue_text": "Incorrect submission format for textual answer.",
+    "issue_ref": {
+      "task_id": "sql_418",
+      "trial_num": 2,
+      "step_range": [
+        14,
+        14
+      ]
+    },
+    "learning_text": "The 'submit' command should be on its own line, followed by the answer.",
+    "evidence_ref": {
+      "task_id": "sql_418",
+      "trial_num": 3,
+      "step_range": [
+        6,
+        6
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "146",
+    "_sanitizer": {
+      "source_index": 145,
+      "reasons": [
+        "submit_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "Find the number of matches happened in each year.",
+    "obj_type": "Submission format",
+    "verbs": "submit",
+    "goal_phase": "VERIFY",
+    "issue_text": "Attempted to submit a natural language string as an answer, resulting in SQL syntax error.",
+    "issue_ref": {
+      "task_id": "sql_463",
+      "trial_num": 3,
+      "step_range": [
+        10,
+        10
+      ]
+    },
+    "learning_text": "The 'submit' action expects a valid SQL query or a result that can be interpreted as a SQL query's output.",
+    "evidence_ref": {
+      "task_id": "sql_463",
+      "trial_num": 3,
+      "step_range": [
+        22,
+        22
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "160",
+    "_sanitizer": {
+      "source_index": 159,
+      "reasons": [
+        "submit_answer_protocol",
+        "non_sql_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "What are the first names and country codes for players who won both the WTA Championships and the Australian Open?",
+    "obj_type": "submission",
+    "verbs": "submit",
+    "goal_phase": "VERIFY",
+    "issue_text": "Attempting to submit natural language as a SQL query.",
+    "issue_ref": {
+      "task_id": "sql_671",
+      "trial_num": 1,
+      "step_range": [
+        21,
+        21
+      ]
+    },
+    "learning_text": "Submit only valid SQL or use the 'submit' command without arguments for empty results.",
+    "evidence_ref": {
+      "task_id": "sql_671",
+      "trial_num": 1,
+      "step_range": [
+        29,
+        29
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "213",
+    "_sanitizer": {
+      "source_index": 212,
+      "reasons": [
+        "submit_answer_protocol",
+        "non_sql_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "Find the total ranking points for each player and their first name.",
+    "obj_type": "system interaction",
+    "verbs": "submit",
+    "goal_phase": "VERIFY",
+    "issue_text": "Attempted to submit a natural language explanation instead of a SQL query.",
+    "issue_ref": {
+      "task_id": "sql_770",
+      "trial_num": 3,
+      "step_range": [
+        22,
+        22
+      ]
+    },
+    "learning_text": "Submitting requires a valid SQL query; textual explanations are not accepted as direct answers.",
+    "evidence_ref": {
+      "task_id": "sql_770",
+      "trial_num": 3,
+      "step_range": [
+        28,
+        28
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "253",
+    "_sanitizer": {
+      "source_index": 252,
+      "reasons": [
+        "submit_answer_protocol",
+        "non_sql_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "What is the first name and country code of the player with the most tours?",
+    "obj_type": "System interaction",
+    "verbs": "submit",
+    "goal_phase": "VERIFY",
+    "issue_text": "Attempting to submit descriptive text instead of a query result or specific answer format.",
+    "issue_ref": {
+      "task_id": "sql_787",
+      "trial_num": 2,
+      "step_range": [
+        26,
+        27
+      ]
+    },
+    "learning_text": "The `submit` command expects a query result or a specific answer, not descriptive text about data absence.",
+    "evidence_ref": {
+      "task_id": "sql_787",
+      "trial_num": 2,
+      "step_range": [
+        28,
+        29
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "270",
+    "_sanitizer": {
+      "source_index": 269,
+      "reasons": [
+        "submit_answer_protocol",
+        "non_sql_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "How is the math course described?",
+    "obj_type": "submit command",
+    "verbs": "submit",
+    "goal_phase": "VERIFY",
+    "issue_text": "Incorrect usage of the 'submit' command, leading to SQL syntax errors.",
+    "issue_ref": {
+      "task_id": "sql_808",
+      "trial_num": 1,
+      "step_range": [
+        16,
+        17
+      ]
+    },
+    "learning_text": "The 'submit' command expects the final answer directly, not as part of a SQL statement.",
+    "evidence_ref": {
+      "task_id": "sql_808",
+      "trial_num": 1,
+      "step_range": [
+        18,
+        19
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "273",
+    "_sanitizer": {
+      "source_index": 272,
+      "reasons": [
+        "submit_answer_protocol",
+        "non_sql_answer_protocol",
+        "final_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "find the names of loser and winner who played in the match with greatest number of minutes.",
+    "obj_type": "submit command",
+    "verbs": "submit",
+    "goal_phase": "VERIFY",
+    "issue_text": "Incorrectly attempting to submit a string as an SQL query.",
+    "issue_ref": {
+      "task_id": "sql_824",
+      "trial_num": 2,
+      "step_range": [
+        7,
+        8
+      ]
+    },
+    "learning_text": "The 'submit' action expects the final answer as a string, not an SQL command.",
+    "evidence_ref": {
+      "task_id": "sql_824",
+      "trial_num": 2,
+      "step_range": [
+        9,
+        10
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "278",
+    "_sanitizer": {
+      "source_index": 277,
+      "reasons": [
+        "submit_answer_protocol",
+        "final_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "Find the name of tourney that has more than 10 matches.",
+    "obj_type": "SQL syntax",
+    "verbs": "submit",
+    "goal_phase": "VERIFY",
+    "issue_text": "Attempting to submit natural language instead of a valid SQL query or 'submit' keyword.",
+    "issue_ref": {
+      "task_id": "sql_834",
+      "trial_num": 3,
+      "step_range": [
+        15,
+        16
+      ]
+    },
+    "learning_text": "Use only valid SQL or the 'submit' keyword for final submission, not natural language explanations.",
+    "evidence_ref": {
+      "task_id": "sql_834",
+      "trial_num": 3,
+      "step_range": [
+        21,
+        22
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "282",
+    "_sanitizer": {
+      "source_index": 281,
+      "reasons": [
+        "submit_answer_protocol",
+        "answer_after_submit_protocol",
+        "non_sql_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "What is the average rank for winners in all matches?",
+    "obj_type": "submit command",
+    "verbs": "submit",
+    "goal_phase": "VERIFY",
+    "issue_text": "Misunderstood 'submit' command, attempting to execute 'submit 0' as a SQL query.",
+    "issue_ref": {
+      "task_id": "sql_868",
+      "trial_num": 2,
+      "step_range": [
+        14,
+        14
+      ]
+    },
+    "learning_text": "The 'submit' command is a special agent instruction, not a SQL query. Use it to provide the final answer directly.",
+    "evidence_ref": {
+      "task_id": "sql_868",
+      "trial_num": 2,
+      "step_range": [
+        15,
+        15
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "294",
+    "_sanitizer": {
+      "source_index": 293,
+      "reasons": [
+        "submit_answer_protocol",
+        "final_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "find the number of players for each country.",
+    "obj_type": "players table",
+    "verbs": "SUBMIT",
+    "goal_phase": "VERIFY",
+    "issue_text": "Incorrectly submitted a single value (0,) instead of an empty result set.",
+    "issue_ref": {
+      "task_id": "sql_898",
+      "trial_num": 1,
+      "step_range": [
+        13,
+        13
+      ]
+    },
+    "learning_text": "When a query yields no results and the table is empty, submit an empty result set.",
+    "evidence_ref": {
+      "task_id": "sql_898",
+      "trial_num": 3,
+      "step_range": [
+        10,
+        10
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "303",
+    "_sanitizer": {
+      "source_index": 302,
+      "reasons": [
+        "submit_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "What is the first name and country code of the oldest player?",
+    "obj_type": "submit action",
+    "verbs": "submit",
+    "goal_phase": "VERIFY",
+    "issue_text": "Incorrectly using 'submit' with a descriptive sentence instead of the answer.",
+    "issue_ref": {
+      "task_id": "sql_917",
+      "trial_num": 2,
+      "step_range": [
+        14,
+        15
+      ]
+    },
+    "learning_text": "The 'submit' action expects the final answer, not a descriptive sentence.",
+    "evidence_ref": {
+      "task_id": "sql_917",
+      "trial_num": 3,
+      "step_range": [
+        6,
+        7
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "313",
+    "_sanitizer": {
+      "source_index": 312,
+      "reasons": [
+        "submit_answer_protocol",
+        "non_sql_answer_protocol",
+        "final_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "Find the name of the winner who has the highest rank points and participated in the Australian Open tourney.",
+    "obj_type": "submission mechanism",
+    "verbs": "submit",
+    "goal_phase": "VERIFY",
+    "issue_text": "Attempting to submit a textual explanation instead of a SQL query resulted in syntax errors.",
+    "issue_ref": {
+      "task_id": "sql_937",
+      "trial_num": 1,
+      "step_range": [
+        36,
+        37
+      ]
+    },
+    "learning_text": "Understand the submission mechanism: only SQL queries or empty submissions are accepted.",
+    "evidence_ref": {
+      "task_id": "sql_937",
+      "trial_num": 2,
+      "step_range": [
+        20,
+        21
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "317",
+    "_sanitizer": {
+      "source_index": 316,
+      "reasons": [
+        "submit_answer_protocol",
+        "non_sql_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "What are the names of the winner and loser who played in the longest match?",
+    "obj_type": "submission format",
+    "verbs": "submit",
+    "goal_phase": "VERIFY",
+    "issue_text": "Attempting to submit natural language text instead of a SQL query.",
+    "issue_ref": {
+      "task_id": "sql_944",
+      "trial_num": 1,
+      "step_range": [
+        13,
+        13
+      ]
+    },
+    "learning_text": "Submit the final SQL query that produces the answer, even if it's an empty set.",
+    "evidence_ref": {
+      "task_id": "sql_944",
+      "trial_num": 1,
+      "step_range": [
+        31,
+        31
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "326",
+    "_sanitizer": {
+      "source_index": 325,
+      "reasons": [
+        "submit_answer_protocol",
+        "non_sql_answer_protocol"
+      ]
+    }
+  },
+  {
+    "task_desc": "Find the city with the largest population that uses English.",
+    "obj_type": "city, country, countrylanguage tables",
+    "verbs": "SELECT, JOIN, WHERE, ORDER BY, LIMIT",
+    "goal_phase": "VERIFY",
+    "issue_text": "The submitted query returned the correct city but the task was marked as unsuccessful.",
+    "issue_ref": {
+      "task_id": "sql_1016",
+      "trial_num": 1,
+      "step_range": [
+        22,
+        23
+      ]
+    },
+    "learning_text": "The query logic was correct, but the system marked it as incorrect. This indicates an issue with the evaluation system, not the query itself.",
+    "evidence_ref": {
+      "task_id": "sql_1016",
+      "trial_num": 1,
+      "step_range": [
+        18,
+        19
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "351",
+    "_sanitizer": {
+      "source_index": 350,
+      "reasons": [
+        "runner_evaluation_artifact"
+      ]
+    }
+  }
+]
