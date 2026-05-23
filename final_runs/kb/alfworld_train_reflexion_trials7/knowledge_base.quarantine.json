@@ -1,0 +1,848 @@
+[
+  {
+    "source_index": 105,
+    "reasons": [
+      "issue_ref_split_ambiguous",
+      "evidence_ref_split_ambiguous"
+    ],
+    "row": {
+      "task_desc": "put a clean ladle in countertop.",
+      "obj_type": "ladle",
+      "verbs": "pick",
+      "goal_phase": "SEARCH",
+      "learning_text": "Systematically search all possible locations, including less obvious ones like countertops, to locate the object.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "issue_ref": {
+        "text": "Ladle not found in initial search locations like sinkbasin, drawers, or cabinets.",
+        "task_id": "pick_clean_then_place_in_recep-Ladle-None-CounterTop-8",
+        "trial_num": "1",
+        "step_range": "2-10"
+      },
+      "evidence_ref": {
+        "task_id": "pick_clean_then_place_in_recep-Ladle-None-CounterTop-8",
+        "trial_num": "6",
+        "step_range": "45-46"
+      },
+      "unique_id": "106"
+    }
+  },
+  {
+    "source_index": 106,
+    "reasons": [
+      "issue_ref_split_ambiguous",
+      "evidence_ref_split_ambiguous"
+    ],
+    "row": {
+      "task_desc": "put a clean ladle in countertop.",
+      "obj_type": "cabinet",
+      "verbs": "go, open",
+      "goal_phase": "SEARCH",
+      "learning_text": "If 'go to' yields 'Nothing happens', attempt to 'open' the container if it's a plausible storage location.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "issue_ref": {
+        "text": "The 'go to cabinet 9' action resulted in an ambiguous 'Nothing happens' observation.",
+        "task_id": "pick_clean_then_place_in_recep-Ladle-None-CounterTop-8",
+        "trial_num": "2",
+        "step_range": "38-38"
+      },
+      "evidence_ref": {
+        "task_id": "pick_clean_then_place_in_recep-Ladle-None-CounterTop-8",
+        "trial_num": "2",
+        "step_range": "39-39"
+      },
+      "unique_id": "107"
+    }
+  },
+  {
+    "source_index": 107,
+    "reasons": [
+      "issue_ref_split_ambiguous",
+      "evidence_ref_split_ambiguous"
+    ],
+    "row": {
+      "task_desc": "put a clean ladle in countertop.",
+      "obj_type": "cabinet",
+      "verbs": "go",
+      "goal_phase": "SEARCH",
+      "learning_text": "When 'go to' yields 'Nothing happens' repeatedly, re-evaluate the action or try an alternative command like 'open'.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Repeated 'go to cabinet 9' action resulted in 'Nothing happens' observation, leading to a loop.",
+        "task_id": "pick_clean_then_place_in_recep-Ladle-None-CounterTop-8",
+        "trial_num": "5",
+        "step_range": "27-28"
+      },
+      "evidence_ref": {
+        "task_id": "pick_clean_then_place_in_recep-Ladle-None-CounterTop-8",
+        "trial_num": "5",
+        "step_range": "28-28"
+      },
+      "unique_id": "108"
+    }
+  },
+  {
+    "source_index": 180,
+    "reasons": [
+      "evidence_ref_split_unknown",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "cool some pan and put it in diningtable.",
+      "obj_type": "pot",
+      "verbs": "put, take",
+      "goal_phase": "RECOVER",
+      "learning_text": "No specific learning found.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Agent entered a contradictory loop, believing the object vanished after a failed 'put' action and incorrect inventory assumptions.",
+        "task_id": "pick_cool_then_place_in_recep-Pan-None-DiningTable-11",
+        "trial_num": "7",
+        "step_range": "16-22"
+      },
+      "evidence_ref": {
+        "task_id": "N/A",
+        "trial_num": "-1",
+        "step_range": "-1--1"
+      },
+      "unique_id": "181"
+    }
+  },
+  {
+    "source_index": 181,
+    "reasons": [
+      "missing_task_desc",
+      "non_informative_learning_text",
+      "invalid_valid_level",
+      "missing_issue_ref_task_id",
+      "missing_issue_ref_trial_num",
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "",
+      "obj_type": "",
+      "verbs": "",
+      "goal_phase": "",
+      "learning_text": "",
+      "valid_level": "",
+      "issue_ref": {
+        "text": "",
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "182"
+    }
+  },
+  {
+    "source_index": 186,
+    "reasons": [
+      "issue_ref_split_ambiguous",
+      "evidence_ref_split_ambiguous"
+    ],
+    "row": {
+      "task_desc": "cool some plate and put it in cabinet.",
+      "obj_type": "plate, cabinet",
+      "verbs": "pick, cool, place",
+      "goal_phase": "SEARCH",
+      "learning_text": "To find objects, go to specific locations and observe contents, or open containers to check inside.",
+      "valid_level": "VALID_NEXT_TRIAL",
+      "issue_ref": {
+        "text": "Agent repeatedly used 'look around' command which had no effect on finding objects.",
+        "task_id": "pick_cool_then_place_in_recep-Plate-None-Cabinet-7",
+        "trial_num": "1",
+        "step_range": "3-4"
+      },
+      "evidence_ref": {
+        "task_id": "pick_cool_then_place_in_recep-Plate-None-Cabinet-7",
+        "trial_num": "2",
+        "step_range": "2-3"
+      },
+      "unique_id": "187"
+    }
+  },
+  {
+    "source_index": 187,
+    "reasons": [
+      "issue_ref_split_ambiguous",
+      "evidence_ref_split_ambiguous"
+    ],
+    "row": {
+      "task_desc": "cool some plate and put it in cabinet.",
+      "obj_type": "plate, cabinet",
+      "verbs": "pick, cool, place",
+      "goal_phase": "SEARCH",
+      "learning_text": "Open closed containers before attempting to search or interact with their contents.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "issue_ref": {
+        "text": "Agent arrived at a closed cabinet, blocking the ability to search for items inside.",
+        "task_id": "pick_cool_then_place_in_recep-Plate-None-Cabinet-7",
+        "trial_num": "2",
+        "step_range": "2-2"
+      },
+      "evidence_ref": {
+        "task_id": "pick_cool_then_place_in_recep-Plate-None-Cabinet-7",
+        "trial_num": "2",
+        "step_range": "3-3"
+      },
+      "unique_id": "188"
+    }
+  },
+  {
+    "source_index": 188,
+    "reasons": [
+      "issue_ref_split_ambiguous",
+      "evidence_ref_split_ambiguous"
+    ],
+    "row": {
+      "task_desc": "cool some plate and put it in cabinet.",
+      "obj_type": "plate, cabinet",
+      "verbs": "pick, cool, place",
+      "goal_phase": "SEARCH",
+      "learning_text": "Go to the specific location of a container before attempting to open or interact with it.",
+      "valid_level": "VALID_SAME_TRIAL",
+      "issue_ref": {
+        "text": "Agent attempted to open a cabinet from a different location, resulting in no action.",
+        "task_id": "pick_cool_then_place_in_recep-Plate-None-Cabinet-7",
+        "trial_num": "2",
+        "step_range": "28-28"
+      },
+      "evidence_ref": {
+        "task_id": "pick_cool_then_place_in_recep-Plate-None-Cabinet-7",
+        "trial_num": "2",
+        "step_range": "30-31"
+      },
+      "unique_id": "189"
+    }
+  },
+  {
+    "source_index": 196,
+    "reasons": [
+      "non_informative_learning_text",
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "cool some tomato and put it in garbagecan.",
+      "obj_type": "cabinet, drawer",
+      "verbs": "open",
+      "goal_phase": "SEARCH",
+      "learning_text": "N/A",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "An 'open' action was reported as successful but immediately followed by a contradictory 'Nothing happens' observation.",
+        "task_id": "pick_cool_then_place_in_recep-Tomato-None-GarbageCan-5",
+        "trial_num": "5",
+        "step_range": "33-47"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "197"
+    }
+  },
+  {
+    "source_index": 199,
+    "reasons": [
+      "non_informative_learning_text",
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "cool some tomato and put it in garbagecan.",
+      "obj_type": "countertop",
+      "verbs": "look",
+      "goal_phase": "SEARCH",
+      "learning_text": "N/A",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Using the 'look around' command on a surface resulted in 'Nothing happens'.",
+        "task_id": "pick_cool_then_place_in_recep-Tomato-None-GarbageCan-5",
+        "trial_num": "7",
+        "step_range": "44-47"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "200"
+    }
+  },
+  {
+    "source_index": 200,
+    "reasons": [
+      "non_informative_learning_text",
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "cool some tomato and put it in garbagecan.",
+      "obj_type": "tomato",
+      "verbs": "pick",
+      "goal_phase": "SEARCH",
+      "learning_text": "N/A",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "The target object 'tomato' was not found after extensive systematic searching across all trials.",
+        "task_id": "pick_cool_then_place_in_recep-Tomato-None-GarbageCan-5",
+        "trial_num": "1",
+        "step_range": "1-6"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "201"
+    }
+  },
+  {
+    "source_index": 219,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "put a hot apple in fridge.",
+      "obj_type": "apple, stoveburner",
+      "verbs": "heat, put",
+      "goal_phase": "TRANSFORM",
+      "learning_text": "Place the item in a suitable container (e.g., pot, pan) before heating on a stoveburner.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Failed to heat apple directly on a stoveburner without a container.",
+        "task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+        "trial_num": "2",
+        "step_range": "14-14"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "220"
+    }
+  },
+  {
+    "source_index": 221,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "put a hot apple in fridge.",
+      "obj_type": "apple",
+      "verbs": "put, take",
+      "goal_phase": "PLACE",
+      "learning_text": "No successful action or strategy was found to resolve this issue.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Heated apple became un-interactable after successful heating in microwave.",
+        "task_id": "pick_heat_then_place_in_recep-Apple-None-Fridge-6/trial_T20190908_153716_620298",
+        "trial_num": "7",
+        "step_range": "36-36"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "222"
+    }
+  },
+  {
+    "source_index": 258,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "put a hot mug in shelf.",
+      "obj_type": "pan, stoveburner",
+      "verbs": "take",
+      "goal_phase": "RECOVER",
+      "learning_text": "Some items on stoveburners are irremovable, blocking their use for heating.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Cannot remove blocking item (pan) from stoveburner.",
+        "task_id": "pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242",
+        "trial_num": "3",
+        "step_range": "19-19"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "259"
+    }
+  },
+  {
+    "source_index": 259,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "put a hot mug in shelf.",
+      "obj_type": "mug, stoveburner",
+      "verbs": "put, heat",
+      "goal_phase": "TRANSFORM",
+      "learning_text": "Heating on a stoveburner requires placing the item within a suitable container like a pan.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Attempted to heat mug directly on stoveburner without a container.",
+        "task_id": "pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242",
+        "trial_num": "3",
+        "step_range": "22-22"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "260"
+    }
+  },
+  {
+    "source_index": 260,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "put a hot mug in shelf.",
+      "obj_type": "pan, countertop",
+      "verbs": "take",
+      "goal_phase": "RECOVER",
+      "learning_text": "Some objects on countertops are irremovable and cannot be acquired.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Cannot take pan from countertop, it is irremovable.",
+        "task_id": "pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242",
+        "trial_num": "3",
+        "step_range": "26-26"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "261"
+    }
+  },
+  {
+    "source_index": 262,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "put a hot mug in shelf.",
+      "obj_type": "mug",
+      "verbs": "take",
+      "goal_phase": "ACQUIRE",
+      "learning_text": "Release the currently held item before attempting to pick up a new one.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Cannot pick up a new mug while already holding an item.",
+        "task_id": "pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242",
+        "trial_num": "4",
+        "step_range": "12-12"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "263"
+    }
+  },
+  {
+    "source_index": 263,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "put a hot mug in shelf.",
+      "obj_type": "mug, countertop",
+      "verbs": "put, drop",
+      "goal_phase": "RECOVER",
+      "learning_text": "Verify environmental conditions or alternative drop points if an item cannot be released.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Unable to put down or drop the currently held mug on any surface.",
+        "task_id": "pick_heat_then_place_in_recep-Mug-None-Shelf-20/trial_T20190907_054036_412242",
+        "trial_num": "4",
+        "step_range": "16-33"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "264"
+    }
+  },
+  {
+    "source_index": 268,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "put a hot plate in cabinet.",
+      "obj_type": "plate, stoveburner, pan",
+      "verbs": "put",
+      "goal_phase": "TRANSFORM",
+      "learning_text": "Find an empty stoveburner or clear an occupied one to place the plate.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Unable to place a plate on a stoveburner that is already occupied.",
+        "task_id": "pick_heat_then_place_in_recep-Plate-None-Cabinet-28/trial_T20190907_035752_332060",
+        "trial_num": "2",
+        "step_range": "7-7"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "269"
+    }
+  },
+  {
+    "source_index": 269,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "put a hot plate in cabinet.",
+      "obj_type": "plate, microwave",
+      "verbs": "put",
+      "goal_phase": "TRANSFORM",
+      "learning_text": "Plates cannot be placed inside the microwave; they must be heated while held.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Unable to place a plate inside an open microwave.",
+        "task_id": "pick_heat_then_place_in_recep-Plate-None-Cabinet-28/trial_T20190907_035752_332060",
+        "trial_num": "2",
+        "step_range": "11-11"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "270"
+    }
+  },
+  {
+    "source_index": 270,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "put a hot plate in cabinet.",
+      "obj_type": "plate, cabinet, countertop",
+      "verbs": "heat, put",
+      "goal_phase": "PLACE",
+      "learning_text": "Avoid heating plates while holding them, as it leads to an unrecoverable state where they cannot be placed.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "After heating a plate while holding it, the plate becomes unplaceable.",
+        "task_id": "pick_heat_then_place_in_recep-Plate-None-Cabinet-28/trial_T20190907_035752_332060",
+        "trial_num": "2",
+        "step_range": "15-24"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "271"
+    }
+  },
+  {
+    "source_index": 271,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "put a hot plate in cabinet.",
+      "obj_type": "plate",
+      "verbs": "take",
+      "goal_phase": "ACQUIRE",
+      "learning_text": "Ensure the currently held item can be placed before attempting to acquire new items.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Unable to pick up new items while holding an unplaceable heated plate.",
+        "task_id": "pick_heat_then_place_in_recep-Plate-None-Cabinet-28/trial_T20190907_035752_332060",
+        "trial_num": "2",
+        "step_range": "27-27"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "272"
+    }
+  },
+  {
+    "source_index": 272,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "put a hot plate in cabinet.",
+      "obj_type": "stoveburner, pan, pot, plate",
+      "verbs": "take",
+      "goal_phase": "TRANSFORM",
+      "learning_text": "Place down the currently held item before attempting to clear an occupied stoveburner.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Unable to take items from occupied stoveburners while holding another item.",
+        "task_id": "pick_heat_then_place_in_recep-Plate-None-Cabinet-28/trial_T20190907_035752_332060",
+        "trial_num": "3",
+        "step_range": "12-21"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "273"
+    }
+  },
+  {
+    "source_index": 273,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "put a hot plate in cabinet.",
+      "obj_type": "microwave, plate",
+      "verbs": "close",
+      "goal_phase": "TRANSFORM",
+      "learning_text": "Place down the held item before attempting to close the microwave.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Unable to close the microwave door while holding an item.",
+        "task_id": "pick_heat_then_place_in_recep-Plate-None-Cabinet-28/trial_T20190907_035752_332060",
+        "trial_num": "4",
+        "step_range": "27-31"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "274"
+    }
+  },
+  {
+    "source_index": 274,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "put a hot plate in cabinet.",
+      "obj_type": "plate, stoveburner",
+      "verbs": "heat",
+      "goal_phase": "TRANSFORM",
+      "learning_text": "Place the plate on an empty stoveburner before heating it.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Heating a plate with a stoveburner while holding it fails.",
+        "task_id": "pick_heat_then_place_in_recep-Plate-None-Cabinet-28/trial_T20190907_035752_332060",
+        "trial_num": "4",
+        "step_range": "34-34"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "275"
+    }
+  },
+  {
+    "source_index": 278,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "heat some plate and put it in countertop.",
+      "obj_type": "plate, stoveburner",
+      "verbs": "heat, turn on, toggle",
+      "goal_phase": "TRANSFORM",
+      "learning_text": "The stoveburner is not an activatable appliance for heating plates; do not attempt to use it.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Failed to activate stoveburner, suggesting it is not an activatable appliance for plates.",
+        "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-1/trial_T20190909_115633_911483",
+        "trial_num": "1",
+        "step_range": "21-23"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "279"
+    }
+  },
+  {
+    "source_index": 282,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "heat some plate and put it in countertop.",
+      "obj_type": "cabinet",
+      "verbs": "open",
+      "goal_phase": "SEARCH",
+      "learning_text": "Some cabinets are not interactive or openable; skip them if 'open' command fails.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Failed to open cabinet 4, suggesting it is not an openable container.",
+        "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-1/trial_T20190909_115633_911483",
+        "trial_num": "2",
+        "step_range": "38-39"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "283"
+    }
+  },
+  {
+    "source_index": 283,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "heat some plate and put it in countertop.",
+      "obj_type": "drawer",
+      "verbs": "open",
+      "goal_phase": "SEARCH",
+      "learning_text": "Drawers are not openable containers; do not attempt to open them.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Failed to open multiple drawers, suggesting they are not openable containers.",
+        "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-1/trial_T20190909_115633_911483",
+        "trial_num": "4",
+        "step_range": "4-5"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "284"
+    }
+  },
+  {
+    "source_index": 284,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "heat some plate and put it in countertop.",
+      "obj_type": "fridge",
+      "verbs": "open",
+      "goal_phase": "SEARCH",
+      "learning_text": "The fridge is not an openable container; do not attempt to open it.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Failed to open fridge, suggesting it is not an openable container.",
+        "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-1/trial_T20190909_115633_911483",
+        "trial_num": "4",
+        "step_range": "20-20"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "285"
+    }
+  },
+  {
+    "source_index": 285,
+    "reasons": [
+      "missing_evidence_ref_task_id",
+      "missing_evidence_ref_trial_num"
+    ],
+    "row": {
+      "task_desc": "heat some plate and put it in countertop.",
+      "obj_type": "shelf",
+      "verbs": "open",
+      "goal_phase": "SEARCH",
+      "learning_text": "Shelves are not openable containers; do not attempt to open them.",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Failed to open multiple shelves, suggesting they are not openable containers.",
+        "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-1/trial_T20190909_115633_911483",
+        "trial_num": "4",
+        "step_range": "21-23"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "",
+        "step_range": ""
+      },
+      "unique_id": "286"
+    }
+  },
+  {
+    "source_index": 290,
+    "reasons": [
+      "non_informative_learning_text",
+      "missing_evidence_ref_task_id",
+      "evidence_ref_trial_out_of_range"
+    ],
+    "row": {
+      "task_desc": "put a hot plate in countertop.",
+      "obj_type": "cabinet",
+      "verbs": "open",
+      "goal_phase": "SEARCH",
+      "learning_text": "",
+      "valid_level": "CANDIDATE",
+      "issue_ref": {
+        "text": "Tried to open a cabinet that was not an openable container.",
+        "task_id": "pick_heat_then_place_in_recep-Plate-None-CounterTop-28/trial_T20190907_180330_211175",
+        "trial_num": "3",
+        "step_range": "21-26"
+      },
+      "evidence_ref": {
+        "task_id": "",
+        "trial_num": "0",
+        "step_range": "0-0"
+      },
+      "unique_id": "291"
+    }
+  }
+]
