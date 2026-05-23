@@ -1,0 +1,32 @@
+{
+  "status": "aborted_superseded_do_not_use",
+  "created_at": "2026-05-23T21:41:44Z",
+  "branch": "final/sql-eval",
+  "worktree": "/Users/rishisim/Documents/research/ltm-sql-final-eval",
+  "base_commit_at_launch": "861aa83ece7b1e530f19d82c5571b6730e43addd",
+  "reason": "Protocol changed to require trials7 SQL KB generation before final SQL evaluation. This trials3-KB eval was stopped and must not be promoted.",
+  "partial_eval_root": "final_runs/eval/sql_gemini_flash_k5_next_trial_sanitized",
+  "partial_suite_root": "final_runs/eval/sql_gemini_flash_k5_next_trial_sanitized/seed_0_suite",
+  "kb_path_used_by_aborted_run": "final_runs/kb/sql_train_reflexion_trials3_sanitized/knowledge_base.sql_sanitized.json",
+  "model": "gemini-2.5-flash",
+  "embedding_provider": "gemini",
+  "seed_started": 0,
+  "split": "test",
+  "frameworks_requested": [
+    "react",
+    "react_cr",
+    "react_tr",
+    "react_cr_tr",
+    "react_hard_neg_cr_tr"
+  ],
+  "max_learnings": 5,
+  "min_valid_level": "VALID_NEXT_TRIAL",
+  "num_tasks_requested": 200,
+  "partial_status": {
+    "react_seed_0_task_log_lines": 96,
+    "metrics_files_completed": 0,
+    "trajectory_files_completed": 0,
+    "memory_frameworks_started": false
+  },
+  "superseded_command": "/Users/rishisim/Documents/research/ltm-research/.venv/bin/dotenv -f /Users/rishisim/Documents/research/ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python scripts/run_intercode_sql_suite.py --num-tasks 200 --splits test --frameworks react,react_cr,react_tr,react_cr_tr,react_hard_neg_cr_tr --model gemini-2.5-flash --embedding-provider gemini --memory-bank final_runs/kb/sql_train_reflexion_trials3_sanitized/knowledge_base.sql_sanitized.json --runs-root final_runs/eval/sql_gemini_flash_k5_next_trial_sanitized/seed_0_suite --reward-threshold 1.0 --max-learnings 5 --min-valid-level VALID_NEXT_TRIAL --seed 0 --quiet"
+}
