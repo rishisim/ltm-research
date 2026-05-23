@@ -1,0 +1,38 @@
+[
+  {
+    "task_desc": "What are the name, independence year, and surface area of the country with the smallest population?",
+    "obj_type": "country table, Population column",
+    "verbs": "SELECT, ORDER BY, LIMIT",
+    "goal_phase": "QUERY",
+    "issue_text": "The initial query incorrectly identifies Antarctica as the country with the smallest population.",
+    "issue_ref": {
+      "task_id": "sql_987",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        7
+      ]
+    },
+    "learning_text": "Filter out countries with 0 population before ordering to find the true smallest population.",
+    "evidence_ref": {
+      "task_id": "sql_987",
+      "trial_num": 8,
+      "step_range": [
+        6,
+        7
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "421",
+    "_post_sanitizer_repair": {
+      "source_index": 392,
+      "reasons": [
+        {
+          "ref": "evidence_ref",
+          "trial_num": 8
+        }
+      ],
+      "action": "quarantined invalid trial reference for max_trials=7 audit"
+    }
+  }
+]
