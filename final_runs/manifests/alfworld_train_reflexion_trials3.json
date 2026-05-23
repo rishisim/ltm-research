@@ -1,0 +1,110 @@
+{
+  "artifact_id": "alfworld_train_reflexion_trials3",
+  "status": "blocked_not_promoted",
+  "safe_for_eval": false,
+  "generated_at_utc": "2026-05-23T21:08:25Z",
+  "audit_branch": "final/alfworld-kb",
+  "audit_worktree": "/Users/rishisim/Documents/research/ltm-final-alfworld-kb",
+  "audit_base_git_commit": "5d1fcf2e2a4c8d841ee101ccea44f1c1d6853eac",
+  "source": {
+    "kb_path": "alfworld_runs/memory_retrieval_v2/knowledge_base/knowledge_base.json",
+    "csv_path": "alfworld_runs/memory_retrieval_v2/knowledge_base/knowledge_base.csv",
+    "memory_counts_path": "alfworld_runs/memory_retrieval_v2/knowledge_base/knowledge_base.mem_learning_counts.json",
+    "issue_embeddings_cache_path": "alfworld_runs/memory_retrieval_v2/knowledge_base/knowledge_base.issue_embeddings_cache.json",
+    "trajectories_path": "alfworld_runs/memory_retrieval_v2/knowledge_base/memory_allocation_runs/trajectories.json",
+    "reflexions_path": "alfworld_runs/memory_retrieval_v2/knowledge_base/memory_allocation_runs/reflexions.json",
+    "progress_path": "alfworld_runs/memory_retrieval_v2/knowledge_base/memory_allocation_runs/knowledge_base_progress.json",
+    "sha256": {
+      "knowledge_base.json": "bf7e8b96ba7aa76f63b0b9ace6b5a9ccb44b8bd8536d05980ace9b3fa14d0ed8",
+      "knowledge_base.csv": "de8745ac9b1ab91dc0cfec3d6381f813ae6b38a8c8a523647b1d5d1b9ce13395",
+      "knowledge_base.mem_learning_counts.json": "08578f12e3a4e24d7fd4b9f16ec7df20d339eab3145efabb0390c58c842c481b",
+      "knowledge_base.issue_embeddings_cache.json": "e9772787390675c11e9410a17026c3e7c5bb4499e0986ff87deb44f6d0ac0d2d",
+      "trajectories.json": "04fd3f0702553c35c7706238a0acc9bf3bdd65de61961492db1bfaf323c573d2",
+      "reflexions.json": "37a5af85c51c962a20d017e07979ebac7b862bf66bcfa506e6c14ed1daeaa6d8",
+      "knowledge_base_progress.json": "e65cac775b46526bff92fec93205a7a61eebf68d96e728a2069ec0cbbf11a38f"
+    }
+  },
+  "required_final_provenance": {
+    "model": "gemini-2.5-flash",
+    "embedding_provider": "gemini",
+    "embedding_model": "gemini-embedding-001",
+    "seed": "not_recorded_in_source",
+    "split": "train",
+    "framework": "react_reflexion",
+    "framework_list": [
+      "react_reflexion"
+    ],
+    "max_trials_required": 3,
+    "max_learnings": "N/A_KB_construction_eval_only",
+    "min_valid_level": "N/A_KB_construction_eval_only"
+  },
+  "observed_source_provenance": {
+    "model": "gemini-2.5-flash inferred from scripts/legacy/run_memory_allocation.py",
+    "embedding_provider": "gemini inferred from gemini-embedding-001 caches",
+    "seed": "not_recorded",
+    "split_tags_present_in_trajectories": false,
+    "split_verification": "115/115 trajectory task IDs map to official ALFWorld train and 0 map to valid_seen or valid_unseen",
+    "framework": "MemoryAllocationReflexion / react_reflexion inferred",
+    "max_trials_observed": 7
+  },
+  "audit_summary": {
+    "kb_entries": 404,
+    "valid_level_counts": {
+      "VALID_SAME_TRIAL": 259,
+      "VALID_NEXT_TRIAL": 103,
+      "CANDIDATE": 41,
+      "": 1
+    },
+    "duplicate_unique_ids": 0,
+    "blank_valid_level_unique_ids": [
+      "182"
+    ],
+    "empty_learning_text_count": 2,
+    "no_specific_learning_count": 1,
+    "empty_task_desc_count": 1,
+    "empty_evidence_task_id_count": 24,
+    "trajectory_rows": 251,
+    "trajectory_unique_task_ids": 115,
+    "trajectory_trial_counts": {
+      "1": 115,
+      "2": 49,
+      "3": 28,
+      "4": 23,
+      "5": 15,
+      "6": 12,
+      "7": 9
+    },
+    "trajectory_success_counts": {
+      "true": 106,
+      "false": 145
+    },
+    "trajectory_unique_task_type_counts": {
+      "look_at_obj_in_light": 20,
+      "pick_and_place_simple": 19,
+      "pick_clean_then_place_in_recep": 20,
+      "pick_cool_then_place_in_recep": 19,
+      "pick_heat_then_place_in_recep": 17,
+      "pick_two_obj_and_place": 20
+    },
+    "reflexion_rows": 251,
+    "reflexion_unique_task_ids": 115,
+    "progress_total": 155,
+    "progress_full_task_ids": 115,
+    "progress_base_task_ids": 40,
+    "entries_with_any_ref_trial_gt_3": 85,
+    "valid_next_trial_entries_with_max_ref_trial_le_3": 56,
+    "valid_next_trial_entries_with_max_ref_trial_gt_3": 47,
+    "official_cache_train_overlap": 115,
+    "official_cache_valid_seen_overlap": 0,
+    "official_cache_valid_unseen_overlap": 0,
+    "original_untracked_alfworld_mini_train_overlap": 5
+  },
+  "promotion_decision": {
+    "promoted": false,
+    "reason": "The source KB is train-only against the official split map, but it does not satisfy final campaign requirements for alfworld_train_reflexion_trials3: only 115 unique trajectory task IDs are present, source trajectories/reflexions run through trial 7, 85 KB entries cite trials after trial 3, split tags are missing, seed/task-sample provenance is not recorded, and several malformed/empty KB rows are present."
+  },
+  "rebuild_status": {
+    "attempted": false,
+    "reason": "A clean rebuild requires a fixed 120-game train manifest and up to 120 x 3 ALFWorld LLM trials. The gitignored alfworld_mini sample is not present in this worktree, and the current untracked sample in /Users/rishisim/Documents/research/ltm-research/alfworld_mini differs from the source KB sample. Rebuilding was not feasible without cost/runtime approval and a stable train manifest."
+  }
+}

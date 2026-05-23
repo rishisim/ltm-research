@@ -1,0 +1,226 @@
+{
+  "created_at": "2026-05-23T14:09:16.693299",
+  "artifact_name": "scienceworld_train_reflexion_trials3_va80",
+  "git_commit": "5d1fcf2e2a4c8d841ee101ccea44f1c1d6853eac",
+  "branch": "final/scienceworld-kb",
+  "worktree": "/Users/rishisim/Documents/research/ltm-final-scienceworld-kb",
+  "final_kb_dir": "/Users/rishisim/Documents/research/ltm-final-scienceworld-kb/final_runs/kb/scienceworld_train_reflexion_trials3_va80",
+  "final_kb_path": "/Users/rishisim/Documents/research/ltm-final-scienceworld-kb/final_runs/kb/scienceworld_train_reflexion_trials3_va80/knowledge_base.json",
+  "audit_summary_path": "/Users/rishisim/Documents/research/ltm-final-scienceworld-kb/final_runs/kb/scienceworld_train_reflexion_trials3_va80/audit_summary.json",
+  "source_run_dir": "/Users/rishisim/Documents/research/ltm-research/scienceworld_runs/memory_retrieval_v2/kb_train_reflexion_trials3_va80/train/react_reflexion/seed_0",
+  "source_suite_config": "/Users/rishisim/Documents/research/ltm-research/scienceworld_runs/memory_retrieval_v2/kb_train_reflexion_trials3_va80/suite_config.json",
+  "source_original_checkout_git_commit": "91da9006684cb044ca8d4e67ed35383e20ef96ac",
+  "source_command_reconstructed_from_suite_config": "python3 scripts/run_scienceworld_suite.py --splits train --task-ids boil,change-the-state-of-matter-of,chemistry-mix,chemistry-mix-paint-secondary-color,chemistry-mix-paint-tertiary-color,find-animal,find-living-thing,find-non-living-thing,find-plant,freeze --num-tasks 10 --frameworks react_reflexion --max-variations-per-task 1 --model gemini-2.5-flash --embedding-provider gemini --runs-root scienceworld_runs/memory_retrieval_v2/kb_train_reflexion_trials3_va80 --max-valid-actions 80 --max-trials 3 --seed 0",
+  "promotion_command": "python3 - <<'PY'  # one-off audit/promote script recorded in shell history for this run",
+  "config": {
+    "split": [
+      "train"
+    ],
+    "frameworks": [
+      "react_reflexion"
+    ],
+    "model": "gemini-2.5-flash",
+    "embedding_provider": "gemini",
+    "seed": 0,
+    "max_trials": 3,
+    "max_valid_actions": 80,
+    "max_variations_per_task": 1,
+    "reward_threshold": 1.0,
+    "max_learnings": "N/A_KB_GENERATION",
+    "min_valid_level": "N/A_KB_GENERATION"
+  },
+  "framework_list": [
+    "react_reflexion"
+  ],
+  "coverage": {
+    "intended_task_categories": 30,
+    "covered_task_categories": 10,
+    "covered_task_category_names": [
+      "boil",
+      "change-the-state-of-matter-of",
+      "chemistry-mix",
+      "chemistry-mix-paint-secondary-color",
+      "chemistry-mix-paint-tertiary-color",
+      "find-animal",
+      "find-living-thing",
+      "find-non-living-thing",
+      "find-plant",
+      "freeze"
+    ],
+    "missing_task_categories": [
+      "grow-fruit",
+      "grow-plant",
+      "identify-life-stages-1",
+      "identify-life-stages-2",
+      "inclined-plane-determine-angle",
+      "inclined-plane-friction-named-surfaces",
+      "inclined-plane-friction-unnamed-surfaces",
+      "lifespan-longest-lived",
+      "lifespan-longest-lived-then-shortest-lived",
+      "lifespan-shortest-lived",
+      "measure-melting-point-known-substance",
+      "measure-melting-point-unknown-substance",
+      "melt",
+      "mendelian-genetics-known-plant",
+      "mendelian-genetics-unknown-plant",
+      "power-component",
+      "power-component-renewable-vs-nonrenewable-energy",
+      "test-conductivity",
+      "test-conductivity-of-unknown-substances",
+      "use-thermometer"
+    ],
+    "covered_variations": 10,
+    "covered_variation_pairs": [
+      {
+        "task_name": "boil",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "change-the-state-of-matter-of",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "chemistry-mix",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "chemistry-mix-paint-secondary-color",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "chemistry-mix-paint-tertiary-color",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "find-animal",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "find-living-thing",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "find-non-living-thing",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "find-plant",
+        "variation_idx": 0
+      },
+      {
+        "task_name": "freeze",
+        "variation_idx": 0
+      }
+    ],
+    "trajectory_task_ids": [
+      "scienceworld_boil_var_0",
+      "scienceworld_change-the-state-of-matter-of_var_0",
+      "scienceworld_chemistry-mix-paint-secondary-color_var_0",
+      "scienceworld_chemistry-mix-paint-tertiary-color_var_0",
+      "scienceworld_chemistry-mix_var_0",
+      "scienceworld_find-animal_var_0",
+      "scienceworld_find-living-thing_var_0",
+      "scienceworld_find-non-living-thing_var_0",
+      "scienceworld_find-plant_var_0",
+      "scienceworld_freeze_var_0"
+    ],
+    "attempt_task_ids": [
+      "scienceworld_boil_var_0",
+      "scienceworld_change-the-state-of-matter-of_var_0",
+      "scienceworld_chemistry-mix-paint-secondary-color_var_0",
+      "scienceworld_chemistry-mix-paint-tertiary-color_var_0",
+      "scienceworld_chemistry-mix_var_0",
+      "scienceworld_find-animal_var_0",
+      "scienceworld_find-living-thing_var_0",
+      "scienceworld_find-non-living-thing_var_0",
+      "scienceworld_find-plant_var_0",
+      "scienceworld_freeze_var_0"
+    ]
+  },
+  "kb_counts": {
+    "total_memories": 23,
+    "valid_level_counts": {
+      "VALID_SAME_TRIAL": 13,
+      "VALID_NEXT_TRIAL": 7,
+      "CANDIDATE": 3
+    },
+    "valid_next_trial_count": 7,
+    "kb_ref_task_ids": [
+      "scienceworld_change-the-state-of-matter-of_var_0",
+      "scienceworld_chemistry-mix-paint-secondary-color_var_0",
+      "scienceworld_chemistry-mix-paint-tertiary-color_var_0",
+      "scienceworld_chemistry-mix_var_0",
+      "scienceworld_find-animal_var_0",
+      "scienceworld_find-living-thing_var_0",
+      "scienceworld_find-non-living-thing_var_0",
+      "scienceworld_find-plant_var_0",
+      "scienceworld_freeze_var_0"
+    ],
+    "kb_ref_task_id_count": 9
+  },
+  "audit_result": "PASS_WITH_COVERAGE_LIMITATION",
+  "safe_for_eval_use": "YES_AS_TRAIN_ONLY_10_CATEGORY_KB__NO_AS_COMPLETE_30_CATEGORY_HEADLINE_KB",
+  "caveats": [
+    "Covers 10 of 30 intended ScienceWorld categories; use only with explicit coverage caveat or rerun all 30 categories before headline ScienceWorld claims.",
+    "Existing preprocessing artifacts do not record malformed extraction retry counts.",
+    "Current worktree cannot rebuild ScienceWorld: python3 cannot import scienceworld, and Gemini/OpenAI API key environment variables are unset."
+  ],
+  "file_hashes": {
+    "attempts.json": {
+      "sha256": "ff03b53d16a11ec81256ff23db8fe853f02e295d91c85d8cb7b1c7ded5689723",
+      "bytes": 2082
+    },
+    "audit_summary.json": {
+      "sha256": "ac4c204fe3a85e041c91d590e3b72a78148e72102ca0e42827f4c4ab745b7134",
+      "bytes": 6149
+    },
+    "knowledge_base.csv": {
+      "sha256": "6be64e0ba64122ad4d88e4b9ce17fe8c7adf4b84edee4b9a554a0b2fe4659df5",
+      "bytes": 11167
+    },
+    "knowledge_base.issue_embeddings_cache.json": {
+      "sha256": "0752216294b65616d7fab1b46c3fecab9e176d01ec8bc55fab7729211ca34514",
+      "bytes": 976201
+    },
+    "knowledge_base.json": {
+      "sha256": "e0bad23603380013f4a2a87f6f49d6eff82cc48772f132f33a06ee909222cc34",
+      "bytes": 20049
+    },
+    "knowledge_base.mem_learning_counts.json": {
+      "sha256": "b7914cc742ae0f0bd92ef8417708ded2ab4aa6564c338a88c6acfaad95307b77",
+      "bytes": 383350
+    },
+    "knowledge_base_progress.json": {
+      "sha256": "cc882fa945b03a9a93689f02724cd620975c26233a8eec51fd1d82d2d0465349",
+      "bytes": 432
+    },
+    "metrics.json": {
+      "sha256": "30521788326336d538ad2905bb142c9dafb4d03f204d828dae37db53dac7878f",
+      "bytes": 188
+    },
+    "reflexions.json": {
+      "sha256": "d47d8148a2025d7d89deacfdf772c88b4954a4b3c638134337c2b1d736e5a977",
+      "bytes": 27716
+    },
+    "reflexions.jsonl": {
+      "sha256": "c0b0c89107dd9276d7e8f69b1112ec08729bec766fbddec0b11bb99e1f368c0a",
+      "bytes": 27114
+    },
+    "source_suite_config.json": {
+      "sha256": "b3a680d5ad73fc6ac2090be6904981ded39225b96cfdac672108800ee423565f",
+      "bytes": 796
+    },
+    "suite_config.json": {
+      "sha256": "8970aba13747089e32d6f41c8edbaed0053468faed606ce6f8e4ebc439402d2a",
+      "bytes": 1639
+    },
+    "trajectories.json": {
+      "sha256": "82d2a3f015f2f256bd84100b0415f4843698305c329717a77ba184cb3910247d",
+      "bytes": 1231204
+    },
+    "world.log": {
+      "sha256": "e8530ddc1e4a34dfe43e31b5e39a69effb1dca93ed5904b0f85cdcb0e2271851",
+      "bytes": 1844
+    }
+  }
+}
