@@ -814,6 +814,8 @@ def main() -> None:
                 "max_valid_actions": args.max_valid_actions,
                 "reward_threshold": args.reward_threshold,
                 "max_trials": args.max_trials,
+                "max_learnings": args.max_learnings,
+                "min_valid_level": args.min_valid_level,
                 "seed": args.seed,
                 "prepare_only": args.prepare_only,
             },
