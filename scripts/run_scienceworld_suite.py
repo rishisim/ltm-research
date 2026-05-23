@@ -227,6 +227,7 @@ def run_react_baseline(
     max_valid_actions: int,
     reward_threshold: float,
     quiet: bool,
+    resume: bool = False,
 ) -> Dict[str, Any]:
     from src.frameworks.react import ReAct
 
@@ -235,11 +236,28 @@ def run_react_baseline(
     attempts: List[Dict[str, Any]] = []
     trajectories: List[Dict[str, Any]] = []
     world_log = run_dir / "world.log"
+    completed_task_ids: Set[str] = set()
 
-    with open(world_log, "w") as wf:
+    if resume:
+        attempts = _load_json_list(run_dir / "attempts.json")
+        trajectories = _load_json_list(run_dir / "trajectories.json")
+        completed_task_ids = {
+            str(row.get("task_id") or "")
+            for row in attempts
+            if row.get("task_id")
+        }
+
+    log_mode = "a" if resume and world_log.exists() else "w"
+    with open(world_log, log_mode) as wf:
+        if resume and world_log.exists():
+            wf.write("\n")
         wf.write("ReAct baseline run (ScienceWorld)\n")
+        if resume:
+            wf.write(f"resume_completed_tasks={len(completed_task_ids)}\n")
 
     for i, task in enumerate(task_infos):
+        if task.task_id_str in completed_task_ids:
+            continue
         env = make_env(task, shared_env, simplification_str, jar_path, env_step_limit, max_valid_actions)
         success = False
         reward = 0.0
@@ -307,6 +325,7 @@ def run_memory_agent_variant(
     quiet: bool,
     max_learnings: int,
     min_valid_level: str,
+    resume: bool = False,
 ) -> Dict[str, Any]:
     from src.frameworks.memory_retrieval_v2.agents.hard_neg_memory_agent import HardNegMemoryAgent
     from src.frameworks.memory_retrieval_v2.agents.memory_agent import MemoryAgent
@@ -337,12 +356,29 @@ def run_memory_agent_variant(
     attempts: List[Dict[str, Any]] = []
     trajectories: List[Dict[str, Any]] = []
     world_log = run_dir / "world.log"
+    completed_task_ids: Set[str] = set()
 
-    with open(world_log, "w") as wf:
+    if resume:
+        attempts = _load_json_list(run_dir / "attempts.json")
+        trajectories = _load_json_list(run_dir / "trajectories.json")
+        completed_task_ids = {
+            str(row.get("task_id") or "")
+            for row in attempts
+            if row.get("task_id")
+        }
+
+    log_mode = "a" if resume and world_log.exists() else "w"
+    with open(world_log, log_mode) as wf:
+        if resume and world_log.exists():
+            wf.write("\n")
         wf.write(f"{framework_id} run (ScienceWorld)\n")
         wf.write(f"memory_bank={memory_bank_path}\n")
+        if resume:
+            wf.write(f"resume_completed_tasks={len(completed_task_ids)}\n")
 
     for i, task in enumerate(task_infos):
+        if task.task_id_str in completed_task_ids:
+            continue
         env = make_env(task, shared_env, simplification_str, jar_path, env_step_limit, max_valid_actions)
         success = False
         reward = 0.0
@@ -774,6 +810,7 @@ def run_framework(
             max_valid_actions,
             reward_threshold,
             quiet,
+            resume,
         )
     if framework_id == "react_reflexion":
         return run_reflexion(
@@ -807,6 +844,7 @@ def run_framework(
         quiet,
         max_learnings,
         min_valid_level,
+        resume,
     )
 
 
