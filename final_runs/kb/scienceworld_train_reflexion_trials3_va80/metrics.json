@@ -1,0 +1,10 @@
+{
+  "success": 5,
+  "total": 10,
+  "success_total": "5 / 10",
+  "accuracy": 0.5,
+  "avg_reward": 0.598,
+  "avg_steps_per_trial": 28.6,
+  "avg_steps_per_task": 28.6,
+  "attempt_count": 10
+}

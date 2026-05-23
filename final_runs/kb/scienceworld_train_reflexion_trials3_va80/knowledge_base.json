@@ -1,0 +1,600 @@
+[
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent struggles to take a cup from the table due to incorrect object naming.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 1,
+      "step_range": [
+        10,
+        22
+      ]
+    },
+    "learning_text": "Use the exact object name as described in the observation, including its contents and location (e.g., 'cup containing nothing in table').",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 1,
+      "step_range": [
+        23,
+        24
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "1"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container, water source",
+    "verbs": "fill",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly attempts to fill a cup with water using incorrect 'fill' action syntax.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 1,
+      "step_range": [
+        27,
+        40
+      ]
+    },
+    "learning_text": "To fill a container from an activated water source, first put the container into the water source, then the container will be automatically filled.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 1,
+      "step_range": [
+        41,
+        42
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "2"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent struggles to take a filled cup from the sink due to incorrect object naming.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 1,
+      "step_range": [
+        47,
+        52
+      ]
+    },
+    "learning_text": "Use the exact object name as described in the observation, including its contents (e.g., 'cup containing water').",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 1,
+      "step_range": [
+        53,
+        54
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "3"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "freezer",
+    "verbs": "activate",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent places water in freezer but fails to activate the freezer to freeze the water.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 1,
+      "step_range": [
+        65,
+        68
+      ]
+    },
+    "learning_text": "After placing an object in a temperature-changing appliance, activate the appliance to initiate the process.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 2,
+      "step_range": [
+        1,
+        1
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "4"
+  },
+  {
+    "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container, water source",
+    "verbs": "fill",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly attempts to fill a cup with water using incorrect 'fill' action syntax.",
+    "issue_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 2,
+      "step_range": [
+        20,
+        48
+      ]
+    },
+    "learning_text": "To fill a container from an activated water source, first put the container into the water source, then the container will be automatically filled.",
+    "evidence_ref": {
+      "task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+      "trial_num": 3,
+      "step_range": [
+        14,
+        15
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "5"
+  },
+  {
+    "task_desc": "Your task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.",
+    "obj_type": "instructions",
+    "verbs": "examine, read",
+    "goal_phase": "SEARCH",
+    "issue_text": "Used 'examine' instead of 'read' to get recipe content.",
+    "issue_ref": {
+      "task_id": "scienceworld_chemistry-mix_var_0",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        7
+      ]
+    },
+    "learning_text": "Use 'read' action to view the content of instructions or recipes.",
+    "evidence_ref": {
+      "task_id": "scienceworld_chemistry-mix_var_0",
+      "trial_num": 1,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "6"
+  },
+  {
+    "task_desc": "Your task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.",
+    "obj_type": "substance, container",
+    "verbs": "take, open",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempted to take sodium chloride directly without opening its container.",
+    "issue_ref": {
+      "task_id": "scienceworld_chemistry-mix_var_0",
+      "trial_num": 1,
+      "step_range": [
+        14,
+        15
+      ]
+    },
+    "learning_text": "If an item cannot be taken directly, check if it's inside an openable container.",
+    "evidence_ref": {
+      "task_id": "scienceworld_chemistry-mix_var_0",
+      "trial_num": 1,
+      "step_range": [
+        26,
+        27
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "7"
+  },
+  {
+    "task_desc": "Your task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.",
+    "obj_type": "container, water",
+    "verbs": "fill, put",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempted to fill a cup with water without placing it in the sink first.",
+    "issue_ref": {
+      "task_id": "scienceworld_chemistry-mix_var_0",
+      "trial_num": 1,
+      "step_range": [
+        36,
+        37
+      ]
+    },
+    "learning_text": "To fill a container with water from a sink, first place the container in the sink.",
+    "evidence_ref": {
+      "task_id": "scienceworld_chemistry-mix_var_0",
+      "trial_num": 1,
+      "step_range": [
+        44,
+        45
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "8"
+  },
+  {
+    "task_desc": "Your task is to use chemistry to create green paint. When you are done, focus on the green paint.",
+    "obj_type": "paint, cup, jug",
+    "verbs": "take, pour",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempted to 'take' paint from a cup, which is not a valid action.",
+    "issue_ref": {
+      "task_id": "scienceworld_chemistry-mix-paint-secondary-color_var_0",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        6
+      ]
+    },
+    "learning_text": "To transfer liquids like paint, use the 'pour [substance] into [container]' action instead of 'take'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_chemistry-mix-paint-secondary-color_var_0",
+      "trial_num": 1,
+      "step_range": [
+        8,
+        8
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "9"
+  },
+  {
+    "task_desc": "Your task is to use chemistry to create green-blue paint. When you are part-way done, focus on the intermediate (secondary color) paint you created.  When you are completely done, focus on the green paint.",
+    "obj_type": "cup",
+    "verbs": "take, move",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly attempts to 'take' an empty cup using various incorrect names.",
+    "issue_ref": {
+      "task_id": "scienceworld_chemistry-mix-paint-tertiary-color_var_0",
+      "trial_num": 1,
+      "step_range": [
+        6,
+        48
+      ]
+    },
+    "learning_text": "To pick up an object, use the 'move [object] to inventory' action with the exact object name from valid actions.",
+    "evidence_ref": {
+      "task_id": "scienceworld_chemistry-mix-paint-tertiary-color_var_0",
+      "trial_num": 2,
+      "step_range": [
+        2,
+        49
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "10"
+  },
+  {
+    "task_desc": "Your task is to use chemistry to create green-blue paint. When you are part-way done, focus on the intermediate (secondary color) paint you created.  When you are completely done, focus on the green paint.",
+    "obj_type": "cup",
+    "verbs": "take, move",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly attempts to 'pick up' an empty cup using various incorrect names.",
+    "issue_ref": {
+      "task_id": "scienceworld_chemistry-mix-paint-tertiary-color_var_0",
+      "trial_num": 2,
+      "step_range": [
+        6,
+        48
+      ]
+    },
+    "learning_text": "To pick up an object, use the 'move [object] to inventory' action with the exact object name from valid actions.",
+    "evidence_ref": {
+      "task_id": "scienceworld_chemistry-mix-paint-tertiary-color_var_0",
+      "trial_num": 3,
+      "step_range": [
+        2,
+        49
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "11"
+  },
+  {
+    "task_desc": "Your task is to use chemistry to create green-blue paint. When you are part-way done, focus on the intermediate (secondary color) paint you created.  When you are completely done, focus on the green paint.",
+    "obj_type": "cup",
+    "verbs": "move",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly attempts to 'move [object] to inventory' with incorrect object names for an empty cup.",
+    "issue_ref": {
+      "task_id": "scienceworld_chemistry-mix-paint-tertiary-color_var_0",
+      "trial_num": 3,
+      "step_range": [
+        4,
+        48
+      ]
+    },
+    "learning_text": "Carefully examine the full list of valid actions to identify the precise object name for 'move to inventory'.",
+    "evidence_ref": {
+      "task_id": "scienceworld_chemistry-mix-paint-tertiary-color_var_0",
+      "trial_num": 3,
+      "step_range": [
+        4,
+        48
+      ]
+    },
+    "valid_level": "CANDIDATE",
+    "unique_id": "12"
+  },
+  {
+    "task_desc": "Your task is to find a(n) animal. First, focus on the thing. Then, move it to the red box in the kitchen.",
+    "obj_type": "animal",
+    "verbs": "focus on",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly attempts to 'focus on' a bee, but the action fails.",
+    "issue_ref": {
+      "task_id": "scienceworld_find-animal_var_0",
+      "trial_num": 1,
+      "step_range": [
+        40,
+        48
+      ]
+    },
+    "learning_text": "The 'focus on' action is not directly applicable to bees. The task requires a different interaction to acquire the animal.",
+    "evidence_ref": {
+      "task_id": "scienceworld_find-animal_var_0",
+      "trial_num": 2,
+      "step_range": [
+        40,
+        49
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "13"
+  },
+  {
+    "task_desc": "Your task is to find a(n) animal. First, focus on the thing. Then, move it to the red box in the kitchen.",
+    "obj_type": "animal, bee hive",
+    "verbs": "open, take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent attempts to 'focus on' or 'look at' bees directly, which are not valid actions.",
+    "issue_ref": {
+      "task_id": "scienceworld_find-animal_var_0",
+      "trial_num": 2,
+      "step_range": [
+        30,
+        38
+      ]
+    },
+    "learning_text": "To interact with bees, first open the bee hive, then use 'take adult bee in greenhouse' to acquire it.",
+    "evidence_ref": {
+      "task_id": "scienceworld_find-animal_var_0",
+      "trial_num": 2,
+      "step_range": [
+        39,
+        49
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "14"
+  },
+  {
+    "task_desc": "Your task is to find a(n) animal. First, focus on the thing. Then, move it to the red box in the kitchen.",
+    "obj_type": "animal, inventory",
+    "verbs": "move",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent attempts to move an 'adult bee' to the red box, but it's not in inventory.",
+    "issue_ref": {
+      "task_id": "scienceworld_find-animal_var_0",
+      "trial_num": 2,
+      "step_range": [
+        50,
+        58
+      ]
+    },
+    "learning_text": "Verify inventory contents after 'take' actions; if an item isn't listed, it wasn't acquired.",
+    "evidence_ref": {
+      "task_id": "scienceworld_find-animal_var_0",
+      "trial_num": 3,
+      "step_range": [
+        40,
+        49
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "15"
+  },
+  {
+    "task_desc": "Your task is to find a(n) animal. First, focus on the thing. Then, move it to the red box in the kitchen.",
+    "obj_type": "animal, bee",
+    "verbs": "focus on, take, move",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent repeatedly attempts to 'focus on', 'take', or 'move to inventory' bees, but actions fail.",
+    "issue_ref": {
+      "task_id": "scienceworld_find-animal_var_0",
+      "trial_num": 3,
+      "step_range": [
+        30,
+        38
+      ]
+    },
+    "learning_text": "If direct interaction with an animal fails, consider if a tool or container is needed to acquire it.",
+    "evidence_ref": {
+      "task_id": "scienceworld_find-animal_var_0",
+      "trial_num": 3,
+      "step_range": [
+        40,
+        49
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "16"
+  },
+  {
+    "task_desc": "Your task is to find a(n) living thing. First, focus on the thing. Then, move it to the red box in the kitchen.",
+    "obj_type": "living thing, red box",
+    "verbs": "focus, move, take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempted to move an object that was focused on but not in inventory.",
+    "issue_ref": {
+      "task_id": "scienceworld_find-living-thing_var_0",
+      "trial_num": 1,
+      "step_range": [
+        12,
+        13
+      ]
+    },
+    "learning_text": "After focusing on an object, use 'take' to add it to inventory before attempting to move it to another location.",
+    "evidence_ref": {
+      "task_id": "scienceworld_find-living-thing_var_0",
+      "trial_num": 1,
+      "step_range": [
+        16,
+        17
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "17"
+  },
+  {
+    "task_desc": "Your task is to find a(n) non-living thing. First, focus on the thing. Then, move it to the red box in the kitchen.",
+    "obj_type": "non-living thing, container",
+    "verbs": "focus on, take, move",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempted to move an object to a container without first taking it into inventory.",
+    "issue_ref": {
+      "task_id": "scienceworld_find-non-living-thing_var_0",
+      "trial_num": 1,
+      "step_range": [
+        7,
+        8
+      ]
+    },
+    "learning_text": "Always take an object into inventory before attempting to move it to a container.",
+    "evidence_ref": {
+      "task_id": "scienceworld_find-non-living-thing_var_0",
+      "trial_num": 1,
+      "step_range": [
+        10,
+        11
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "18"
+  },
+  {
+    "task_desc": "Your task is to find a(n) plant. First, focus on the thing. Then, move it to the red box in the kitchen.",
+    "obj_type": "plant, red box",
+    "verbs": "focus, move, take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Attempted to move a plant that was not in inventory.",
+    "issue_ref": {
+      "task_id": "scienceworld_find-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        11,
+        11
+      ]
+    },
+    "learning_text": "Always take an object into inventory before attempting to move it to a new location.",
+    "evidence_ref": {
+      "task_id": "scienceworld_find-plant_var_0",
+      "trial_num": 1,
+      "step_range": [
+        17,
+        17
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "19"
+  },
+  {
+    "task_desc": "Your task is to freeze water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "room",
+    "verbs": "go to",
+    "goal_phase": "SEARCH",
+    "issue_text": "Agent searches for water in kitchen before greenhouse.",
+    "issue_ref": {
+      "task_id": "scienceworld_freeze_var_0",
+      "trial_num": 1,
+      "step_range": [
+        2,
+        18
+      ]
+    },
+    "learning_text": "Prioritize searching for water in the greenhouse first, as it contains a sink that can be activated.",
+    "evidence_ref": {
+      "task_id": "scienceworld_freeze_var_0",
+      "trial_num": 2,
+      "step_range": [
+        2,
+        3
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "20"
+  },
+  {
+    "task_desc": "Your task is to freeze water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "container",
+    "verbs": "take",
+    "goal_phase": "ACQUIRE",
+    "issue_text": "Agent attempts to take jug from sink while in a different room.",
+    "issue_ref": {
+      "task_id": "scienceworld_freeze_var_0",
+      "trial_num": 1,
+      "step_range": [
+        40,
+        41
+      ]
+    },
+    "learning_text": "Ensure agent is in the same room as the object before attempting to take it.",
+    "evidence_ref": {
+      "task_id": "scienceworld_freeze_var_0",
+      "trial_num": 1,
+      "step_range": [
+        46,
+        47
+      ]
+    },
+    "valid_level": "VALID_SAME_TRIAL",
+    "unique_id": "21"
+  },
+  {
+    "task_desc": "Your task is to freeze water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "substance, freezer",
+    "verbs": "freeze",
+    "goal_phase": "PROCEDURE",
+    "issue_text": "Agent repeatedly tries invalid 'freeze' actions on water/jug/substance.",
+    "issue_ref": {
+      "task_id": "scienceworld_freeze_var_0",
+      "trial_num": 2,
+      "step_range": [
+        24,
+        25
+      ]
+    },
+    "learning_text": "Freezing occurs automatically when water is placed in an activated freezer and the freezer is closed. No explicit 'freeze' action is needed.",
+    "evidence_ref": {
+      "task_id": "scienceworld_freeze_var_0",
+      "trial_num": 3,
+      "step_range": [
+        20,
+        21
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "22"
+  },
+  {
+    "task_desc": "Your task is to freeze water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "obj_type": "freezer",
+    "verbs": "look at",
+    "goal_phase": "VERIFY",
+    "issue_text": "Agent repeatedly checks freezer and substance without state change.",
+    "issue_ref": {
+      "task_id": "scienceworld_freeze_var_0",
+      "trial_num": 1,
+      "step_range": [
+        48,
+        49
+      ]
+    },
+    "learning_text": "After placing water in the freezer and closing it, 'look at freezer' is the action that triggers the state change and increases score.",
+    "evidence_ref": {
+      "task_id": "scienceworld_freeze_var_0",
+      "trial_num": 3,
+      "step_range": [
+        48,
+        49
+      ]
+    },
+    "valid_level": "VALID_NEXT_TRIAL",
+    "unique_id": "23"
+  }
+]
