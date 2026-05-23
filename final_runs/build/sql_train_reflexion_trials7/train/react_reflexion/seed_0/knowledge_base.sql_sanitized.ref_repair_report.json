@@ -1,0 +1,10 @@
+{
+  "input_path": "final_runs/build/sql_train_reflexion_trials7/train/react_reflexion/seed_0/knowledge_base.sql_sanitized.json",
+  "output_path": "final_runs/build/sql_train_reflexion_trials7/train/react_reflexion/seed_0/knowledge_base.sql_sanitized.json",
+  "max_allowed_trial": 7,
+  "kept_memories": 415,
+  "ref_repair_quarantined_memories": 1,
+  "quarantined_unique_ids": [
+    "421"
+  ]
+}

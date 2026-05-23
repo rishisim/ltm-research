@@ -1,0 +1,18 @@
+{
+  "split": "train",
+  "rows": [
+    {
+      "split": "train",
+      "framework_id": "react_reflexion",
+      "framework": "React + Reflexion (final trials, max 7)",
+      "success_total": "396 / 516",
+      "accuracy": 0.7674418604651163,
+      "avg_reward": 0.34097704143656005,
+      "avg_steps_per_trial": 10.155361050328228,
+      "avg_steps_per_task": 26.982558139534884,
+      "attempt_count": 1371,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-sql-kb-trials7/final_runs/build/sql_train_reflexion_trials7/train/react_reflexion/seed_0",
+      "gain_from_base_react": 0.7674418604651163
+    }
+  ]
+}
