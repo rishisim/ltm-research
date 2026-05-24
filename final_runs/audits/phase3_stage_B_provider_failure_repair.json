@@ -1,0 +1,139 @@
+{
+  "archive_root": "final_runs/eval/scienceworld_trials7_gemini/diagnostics/stageB_seed2_openrouter_402",
+  "audit_json": "final_runs/audits/phase3_stage_B_audit.json",
+  "created_at": "2026-05-24T15:41:17.613320+00:00",
+  "env": "scienceworld",
+  "run_count": 3,
+  "runs": [
+    {
+      "applied": true,
+      "archive_dir": "final_runs/eval/scienceworld_trials7_gemini/diagnostics/stageB_seed2_openrouter_402/20260524T154117Z/react_cr_tr/seed_2",
+      "bad_task_ids": [
+        "scienceworld_find-plant_var_225",
+        "scienceworld_freeze_var_21",
+        "scienceworld_grow-fruit_var_93",
+        "scienceworld_grow-plant_var_93",
+        "scienceworld_identify-life-stages-1_var_9",
+        "scienceworld_identify-life-stages-2_var_6",
+        "scienceworld_inclined-plane-determine-angle_var_126"
+      ],
+      "files": [
+        {
+          "after": 8,
+          "before": 15,
+          "path": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_cr_tr/seed_2/attempts.json",
+          "removed": 7
+        },
+        {
+          "after": 8,
+          "before": 15,
+          "path": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_cr_tr/seed_2/trajectories.json",
+          "removed": 7
+        },
+        {
+          "after": 8,
+          "before": 15,
+          "path": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_cr_tr/seed_2/agent_trajectories.jsonl",
+          "removed": 7
+        },
+        {
+          "after": 8,
+          "before": 15,
+          "path": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_cr_tr/seed_2/knowledge_retrieval_bases.json",
+          "removed": 7
+        },
+        {
+          "after": 8,
+          "before": 15,
+          "path": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_cr_tr/seed_2/knowledge_retrieval_bases.jsonl",
+          "removed": 7
+        }
+      ],
+      "framework": "react_cr_tr",
+      "run_dir": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_cr_tr/seed_2",
+      "seed": "seed_2"
+    },
+    {
+      "applied": true,
+      "archive_dir": "final_runs/eval/scienceworld_trials7_gemini/diagnostics/stageB_seed2_openrouter_402/20260524T154117Z/react_hard_neg_cr_tr/seed_2",
+      "bad_task_ids": [
+        "scienceworld_find-plant_var_225",
+        "scienceworld_freeze_var_21",
+        "scienceworld_grow-fruit_var_93",
+        "scienceworld_grow-plant_var_93",
+        "scienceworld_identify-life-stages-1_var_9",
+        "scienceworld_identify-life-stages-2_var_6",
+        "scienceworld_inclined-plane-determine-angle_var_126"
+      ],
+      "files": [
+        {
+          "after": 8,
+          "before": 15,
+          "path": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_hard_neg_cr_tr/seed_2/attempts.json",
+          "removed": 7
+        },
+        {
+          "after": 8,
+          "before": 15,
+          "path": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_hard_neg_cr_tr/seed_2/trajectories.json",
+          "removed": 7
+        },
+        {
+          "after": 8,
+          "before": 15,
+          "path": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_hard_neg_cr_tr/seed_2/agent_trajectories.jsonl",
+          "removed": 7
+        },
+        {
+          "after": 8,
+          "before": 15,
+          "path": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_hard_neg_cr_tr/seed_2/knowledge_retrieval_bases.json",
+          "removed": 7
+        },
+        {
+          "after": 8,
+          "before": 15,
+          "path": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_hard_neg_cr_tr/seed_2/knowledge_retrieval_bases.jsonl",
+          "removed": 7
+        }
+      ],
+      "framework": "react_hard_neg_cr_tr",
+      "run_dir": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_hard_neg_cr_tr/seed_2",
+      "seed": "seed_2"
+    },
+    {
+      "applied": true,
+      "archive_dir": "final_runs/eval/scienceworld_trials7_gemini/diagnostics/stageB_seed2_openrouter_402/20260524T154117Z/react_tr/seed_2",
+      "bad_task_ids": [
+        "scienceworld_grow-plant_var_93",
+        "scienceworld_identify-life-stages-1_var_9",
+        "scienceworld_identify-life-stages-2_var_6",
+        "scienceworld_inclined-plane-determine-angle_var_126"
+      ],
+      "files": [
+        {
+          "after": 11,
+          "before": 15,
+          "path": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_tr/seed_2/attempts.json",
+          "removed": 4
+        },
+        {
+          "after": 11,
+          "before": 15,
+          "path": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_tr/seed_2/trajectories.json",
+          "removed": 4
+        },
+        {
+          "after": 11,
+          "before": 15,
+          "path": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_tr/seed_2/agent_trajectories.jsonl",
+          "removed": 4
+        }
+      ],
+      "framework": "react_tr",
+      "run_dir": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_tr/seed_2",
+      "seed": "seed_2"
+    }
+  ],
+  "seed": "2"
+}

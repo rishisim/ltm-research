@@ -1,6 +1,6 @@
 # Phase 3 Stage B Report
 
-Gate status: FAIL
+Gate status: PASS
 
 This stage is a corruption/trend gate only, not final science.
 
@@ -14,14 +14,8 @@ This stage is a corruption/trend gate only, not final science.
 
 ## Gate Checks
 
-- Errors: 3
+- Errors: 0
 - Warnings: 3
-
-### Errors
-
-- scienceworld/react_tr/seed_2 has 4 suspected LLM/provider failure records: ['scienceworld_grow-plant_var_93', 'scienceworld_identify-life-stages-1_var_9', 'scienceworld_identify-life-stages-2_var_6', 'scienceworld_inclined-plane-determine-angle_var_126']
-- scienceworld/react_cr_tr/seed_2 has 7 suspected LLM/provider failure records: ['scienceworld_find-plant_var_225', 'scienceworld_freeze_var_21', 'scienceworld_grow-fruit_var_93', 'scienceworld_grow-plant_var_93', 'scienceworld_identify-life-stages-1_var_9', 'scienceworld_identify-life-stages-2_var_6', 'scienceworld_inclined-plane-determine-angle_var_126']
-- scienceworld/react_hard_neg_cr_tr/seed_2 has 7 suspected LLM/provider failure records: ['scienceworld_find-plant_var_225', 'scienceworld_freeze_var_21', 'scienceworld_grow-fruit_var_93', 'scienceworld_grow-plant_var_93', 'scienceworld_identify-life-stages-1_var_9', 'scienceworld_identify-life-stages-2_var_6', 'scienceworld_inclined-plane-determine-angle_var_126']
 
 ### Warnings
 
@@ -71,15 +65,15 @@ This stage is a corruption/trend gate only, not final science.
 | scienceworld | react_cr | 2 | 15 | 4 | 0.0653 | 0 | 0 | 30 |
 | scienceworld | react_tr | 0 | 15 | 4 | 0.2740 | 0 | 0 | 0 |
 | scienceworld | react_tr | 1 | 15 | 4 | 0.1193 | 0 | 0 | 0 |
-| scienceworld | react_tr | 2 | 15 | 1 | 0.2253 | 0 | 0 | 0 |
+| scienceworld | react_tr | 2 | 15 | 2 | 0.1600 | 0 | 0 | 0 |
 | scienceworld | react_cr_tr | 0 | 15 | 3 | 0.1933 | 0 | 0 | 30 |
 | scienceworld | react_cr_tr | 1 | 15 | 4 | 0.3080 | 0 | 0 | 30 |
-| scienceworld | react_cr_tr | 2 | 15 | 3 | 0.1707 | 0 | 0 | 30 |
+| scienceworld | react_cr_tr | 2 | 15 | 4 | 0.1873 | 0 | 0 | 30 |
 | scienceworld | react_hard_neg_cr_tr | 0 | 15 | 3 | -0.0480 | 0 | 0 | 30 |
 | scienceworld | react_hard_neg_cr_tr | 1 | 15 | 3 | 0.2940 | 0 | 0 | 30 |
-| scienceworld | react_hard_neg_cr_tr | 2 | 15 | 3 | 0.1820 | 0 | 0 | 30 |
+| scienceworld | react_hard_neg_cr_tr | 2 | 15 | 5 | 0.1887 | 0 | 0 | 30 |
 
 ## Continuation Decision
 
-Continue to the next stage only after this report passes all hard gates.
+The stage passed the hard gates and is safe to continue to the next stage.
 

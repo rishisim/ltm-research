@@ -255,7 +255,7 @@
     },
     "scienceworld": {
       "config": {
-        "created_at": "2026-05-24T07:38:24.431102",
+        "created_at": "2026-05-24T08:41:52.312670",
         "embedding_provider": "gemini",
         "env_step_limit": 100,
         "frameworks": [
@@ -422,7 +422,7 @@
           "unique_task_count": 15
         },
         "react_cr_tr/seed_2": {
-          "avg_reward": 0.17066666666666666,
+          "avg_reward": 0.18733333333333332,
           "context_memory_count": 0,
           "duplicate_task_ids": [],
           "help_call_count": 0,
@@ -431,17 +431,9 @@
           "retrieval_record_count": 30,
           "retrieval_selected_count": 128,
           "run_dir": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_cr_tr/seed_2",
-          "success_count": 3,
-          "suspected_llm_failure_count": 7,
-          "suspected_llm_failure_task_ids": [
-            "scienceworld_find-plant_var_225",
-            "scienceworld_freeze_var_21",
-            "scienceworld_grow-fruit_var_93",
-            "scienceworld_grow-plant_var_93",
-            "scienceworld_identify-life-stages-1_var_9",
-            "scienceworld_identify-life-stages-2_var_6",
-            "scienceworld_inclined-plane-determine-angle_var_126"
-          ],
+          "success_count": 4,
+          "suspected_llm_failure_count": 0,
+          "suspected_llm_failure_task_ids": [],
           "unique_task_count": 15
         },
         "react_hard_neg_cr_tr/seed_0": {
@@ -475,7 +467,7 @@
           "unique_task_count": 15
         },
         "react_hard_neg_cr_tr/seed_2": {
-          "avg_reward": 0.182,
+          "avg_reward": 0.18866666666666668,
           "context_memory_count": 0,
           "duplicate_task_ids": [],
           "help_call_count": 0,
@@ -484,17 +476,9 @@
           "retrieval_record_count": 30,
           "retrieval_selected_count": 124,
           "run_dir": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_hard_neg_cr_tr/seed_2",
-          "success_count": 3,
-          "suspected_llm_failure_count": 7,
-          "suspected_llm_failure_task_ids": [
-            "scienceworld_find-plant_var_225",
-            "scienceworld_freeze_var_21",
-            "scienceworld_grow-fruit_var_93",
-            "scienceworld_grow-plant_var_93",
-            "scienceworld_identify-life-stages-1_var_9",
-            "scienceworld_identify-life-stages-2_var_6",
-            "scienceworld_inclined-plane-determine-angle_var_126"
-          ],
+          "success_count": 5,
+          "suspected_llm_failure_count": 0,
+          "suspected_llm_failure_task_ids": [],
           "unique_task_count": 15
         },
         "react_tr/seed_0": {
@@ -528,7 +512,7 @@
           "unique_task_count": 15
         },
         "react_tr/seed_2": {
-          "avg_reward": 0.22533333333333333,
+          "avg_reward": 0.16,
           "context_memory_count": 0,
           "duplicate_task_ids": [],
           "help_call_count": 0,
@@ -537,14 +521,9 @@
           "retrieval_record_count": 0,
           "retrieval_selected_count": 0,
           "run_dir": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_tr/seed_2",
-          "success_count": 1,
-          "suspected_llm_failure_count": 4,
-          "suspected_llm_failure_task_ids": [
-            "scienceworld_grow-plant_var_93",
-            "scienceworld_identify-life-stages-1_var_9",
-            "scienceworld_identify-life-stages-2_var_6",
-            "scienceworld_inclined-plane-determine-angle_var_126"
-          ],
+          "success_count": 2,
+          "suspected_llm_failure_count": 0,
+          "suspected_llm_failure_task_ids": [],
           "unique_task_count": 15
         }
       }
@@ -804,12 +783,8 @@
       }
     }
   },
-  "errors": [
-    "scienceworld/react_tr/seed_2 has 4 suspected LLM/provider failure records: ['scienceworld_grow-plant_var_93', 'scienceworld_identify-life-stages-1_var_9', 'scienceworld_identify-life-stages-2_var_6', 'scienceworld_inclined-plane-determine-angle_var_126']",
-    "scienceworld/react_cr_tr/seed_2 has 7 suspected LLM/provider failure records: ['scienceworld_find-plant_var_225', 'scienceworld_freeze_var_21', 'scienceworld_grow-fruit_var_93', 'scienceworld_grow-plant_var_93', 'scienceworld_identify-life-stages-1_var_9', 'scienceworld_identify-life-stages-2_var_6', 'scienceworld_inclined-plane-determine-angle_var_126']",
-    "scienceworld/react_hard_neg_cr_tr/seed_2 has 7 suspected LLM/provider failure records: ['scienceworld_find-plant_var_225', 'scienceworld_freeze_var_21', 'scienceworld_grow-fruit_var_93', 'scienceworld_grow-plant_var_93', 'scienceworld_identify-life-stages-1_var_9', 'scienceworld_identify-life-stages-2_var_6', 'scienceworld_inclined-plane-determine-angle_var_126']"
-  ],
-  "passed": false,
+  "errors": [],
+  "passed": true,
   "stage": "B",
   "targets": {
     "alfworld": 67,

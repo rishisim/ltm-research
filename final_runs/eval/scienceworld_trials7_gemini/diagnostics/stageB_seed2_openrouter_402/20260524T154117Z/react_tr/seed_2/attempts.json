@@ -1,82 +1,82 @@
 [
   {
-    "reward": 0.0,
-    "step_num": 49,
-    "success": false,
     "task_id": "scienceworld_boil_var_21",
     "task_name": "boil",
+    "variation_idx": 21,
     "trial_num": 1,
-    "variation_idx": 21
+    "step_num": 49,
+    "reward": 0.37,
+    "success": false
   },
   {
-    "reward": 0.03,
-    "step_num": 49,
-    "success": false,
     "task_id": "scienceworld_change-the-state-of-matter-of_var_21",
     "task_name": "change-the-state-of-matter-of",
+    "variation_idx": 21,
     "trial_num": 1,
-    "variation_idx": 21
+    "step_num": 49,
+    "reward": 0.69,
+    "success": false
   },
   {
-    "reward": 1.0,
-    "step_num": 31,
-    "success": true,
     "task_id": "scienceworld_chemistry-mix_var_24",
     "task_name": "chemistry-mix",
+    "variation_idx": 24,
     "trial_num": 1,
-    "variation_idx": 24
+    "step_num": 49,
+    "reward": 0.33,
+    "success": false
   },
   {
-    "reward": 0.2,
-    "step_num": 49,
-    "success": false,
     "task_id": "scienceworld_chemistry-mix-paint-secondary-color_var_27",
     "task_name": "chemistry-mix-paint-secondary-color",
+    "variation_idx": 27,
     "trial_num": 1,
-    "variation_idx": 27
+    "step_num": 49,
+    "reward": 0.2,
+    "success": false
   },
   {
-    "reward": -1.0,
-    "step_num": 30,
-    "success": false,
     "task_id": "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
     "task_name": "chemistry-mix-paint-tertiary-color",
+    "variation_idx": 27,
     "trial_num": 1,
-    "variation_idx": 27
+    "step_num": 49,
+    "reward": 0.07,
+    "success": false
   },
   {
-    "reward": 0.25,
-    "step_num": 49,
-    "success": false,
     "task_id": "scienceworld_find-animal_var_225",
     "task_name": "find-animal",
+    "variation_idx": 225,
     "trial_num": 1,
-    "variation_idx": 225
+    "step_num": 49,
+    "reward": 0.25,
+    "success": false
   },
   {
-    "reward": 1.0,
-    "step_num": 36,
-    "success": true,
     "task_id": "scienceworld_find-living-thing_var_225",
     "task_name": "find-living-thing",
+    "variation_idx": 225,
     "trial_num": 1,
-    "variation_idx": 225
+    "step_num": 17,
+    "reward": -1.0,
+    "success": false
   },
   {
-    "reward": 1.0,
-    "step_num": 14,
-    "success": true,
     "task_id": "scienceworld_find-non-living-thing_var_225",
     "task_name": "find-non-living-thing",
+    "variation_idx": 225,
     "trial_num": 1,
-    "variation_idx": 225
+    "step_num": 49,
+    "reward": 0.75,
+    "success": false
   },
   {
     "task_id": "scienceworld_find-plant_var_225",
     "task_name": "find-plant",
     "variation_idx": 225,
     "trial_num": 1,
-    "step_num": 38,
+    "step_num": 23,
     "reward": 1.0,
     "success": true
   },
@@ -86,7 +86,7 @@
     "variation_idx": 21,
     "trial_num": 1,
     "step_num": 49,
-    "reward": 0.0,
+    "reward": 0.48,
     "success": false
   },
   {
@@ -94,8 +94,8 @@
     "task_name": "grow-fruit",
     "variation_idx": 93,
     "trial_num": 1,
-    "step_num": 49,
-    "reward": 0.27,
+    "step_num": 28,
+    "reward": 0.18,
     "success": false
   },
   {
@@ -103,8 +103,8 @@
     "task_name": "grow-plant",
     "variation_idx": 93,
     "trial_num": 1,
-    "step_num": 49,
-    "reward": 0.08,
+    "step_num": 1,
+    "reward": 0.06,
     "success": false
   },
   {
@@ -112,8 +112,8 @@
     "task_name": "identify-life-stages-1",
     "variation_idx": 9,
     "trial_num": 1,
-    "step_num": 35,
-    "reward": -1.0,
+    "step_num": 1,
+    "reward": 0.0,
     "success": false
   },
   {
@@ -121,8 +121,8 @@
     "task_name": "identify-life-stages-2",
     "variation_idx": 6,
     "trial_num": 1,
-    "step_num": 6,
-    "reward": -1.0,
+    "step_num": 1,
+    "reward": 0.0,
     "success": false
   },
   {
@@ -130,8 +130,8 @@
     "task_name": "inclined-plane-determine-angle",
     "variation_idx": 126,
     "trial_num": 1,
-    "step_num": 23,
-    "reward": 1.0,
-    "success": true
+    "step_num": 1,
+    "reward": 0.0,
+    "success": false
   }
 ]
