@@ -1,0 +1,74 @@
+[
+  {
+    "task_id": "scienceworld_boil_var_21",
+    "task_name": "boil",
+    "variation_idx": 21,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.0,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_change-the-state-of-matter-of_var_21",
+    "task_name": "change-the-state-of-matter-of",
+    "variation_idx": 21,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.69,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_chemistry-mix_var_24",
+    "task_name": "chemistry-mix",
+    "variation_idx": 24,
+    "trial_num": 1,
+    "step_num": 31,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+    "task_name": "chemistry-mix-paint-secondary-color",
+    "variation_idx": 27,
+    "trial_num": 1,
+    "step_num": 34,
+    "reward": 0.2,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+    "task_name": "chemistry-mix-paint-tertiary-color",
+    "variation_idx": 27,
+    "trial_num": 1,
+    "step_num": 13,
+    "reward": -1.0,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_find-animal_var_225",
+    "task_name": "find-animal",
+    "variation_idx": 225,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.25,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_find-living-thing_var_225",
+    "task_name": "find-living-thing",
+    "variation_idx": 225,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.75,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_find-non-living-thing_var_225",
+    "task_name": "find-non-living-thing",
+    "variation_idx": 225,
+    "trial_num": 1,
+    "step_num": 19,
+    "reward": 1.0,
+    "success": true
+  }
+]

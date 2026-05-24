@@ -1,0 +1,80 @@
+{
+  "split": "test",
+  "rows": [
+    {
+      "split": "test",
+      "framework_id": "react",
+      "framework": "ReAct",
+      "run_dir": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react/seed_2",
+      "success": 2,
+      "total": 8,
+      "success_total": "2 / 8",
+      "accuracy": 0.25,
+      "avg_reward": 0.27375,
+      "avg_steps_per_trial": 33.125,
+      "avg_steps_per_task": 33.125,
+      "attempt_count": 8,
+      "gain_from_base_react": 0.0
+    },
+    {
+      "split": "test",
+      "framework_id": "react_cr",
+      "framework": "ReAct + Context Retrieval (CR)",
+      "run_dir": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_cr/seed_2",
+      "success": 2,
+      "total": 8,
+      "success_total": "2 / 8",
+      "accuracy": 0.25,
+      "avg_reward": -0.09375,
+      "avg_steps_per_trial": 27.125,
+      "avg_steps_per_task": 27.125,
+      "attempt_count": 8,
+      "gain_from_base_react": 0.0
+    },
+    {
+      "split": "test",
+      "framework_id": "react_tr",
+      "framework": "ReAct + Tool Retrieval (TR)",
+      "run_dir": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_tr/seed_2",
+      "success": 0,
+      "total": 8,
+      "success_total": "0 / 8",
+      "accuracy": 0.0,
+      "avg_reward": 0.2075,
+      "avg_steps_per_trial": 45.0,
+      "avg_steps_per_task": 45.0,
+      "attempt_count": 8,
+      "gain_from_base_react": -0.25
+    },
+    {
+      "split": "test",
+      "framework_id": "react_cr_tr",
+      "framework": "ReAct + CR + TR",
+      "run_dir": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_cr_tr/seed_2",
+      "success": 3,
+      "total": 8,
+      "success_total": "3 / 8",
+      "accuracy": 0.375,
+      "avg_reward": 0.28875,
+      "avg_steps_per_trial": 32.75,
+      "avg_steps_per_task": 32.75,
+      "attempt_count": 8,
+      "gain_from_base_react": 0.125
+    },
+    {
+      "split": "test",
+      "framework_id": "react_hard_neg_cr_tr",
+      "framework": "ReAct + hard_neg CR + TR",
+      "run_dir": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/scienceworld_trials7_gemini/test/react_hard_neg_cr_tr/seed_2",
+      "success": 3,
+      "total": 8,
+      "success_total": "3 / 8",
+      "accuracy": 0.375,
+      "avg_reward": 0.31,
+      "avg_steps_per_trial": 38.375,
+      "avg_steps_per_task": 38.375,
+      "attempt_count": 8,
+      "gain_from_base_react": 0.125
+    }
+  ]
+}

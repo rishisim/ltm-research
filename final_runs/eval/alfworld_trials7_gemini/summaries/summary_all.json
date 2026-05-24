@@ -1,0 +1,64 @@
+{
+  "rows": [
+    {
+      "split": "valid_unseen",
+      "framework_id": "react",
+      "framework": "ReAct",
+      "success_total": "15 / 34",
+      "accuracy": 0.4411764705882353,
+      "avg_steps_per_trial": 20.88235294117647,
+      "avg_steps_per_task": 20.88235294117647,
+      "attempt_count": 34,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/alfworld_trials7_gemini/unseen/react/seed_2",
+      "gain_from_base_react": 0.0
+    },
+    {
+      "split": "valid_unseen",
+      "framework_id": "react_cr",
+      "framework": "ReAct + Context Retrieval (CR)",
+      "success_total": "21 / 34",
+      "accuracy": 0.6176470588235294,
+      "avg_steps_per_trial": 25.91176470588235,
+      "avg_steps_per_task": 25.91176470588235,
+      "attempt_count": 34,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/alfworld_trials7_gemini/unseen/react_cr/seed_2",
+      "gain_from_base_react": 0.17647058823529416
+    },
+    {
+      "split": "valid_unseen",
+      "framework_id": "react_tr",
+      "framework": "ReAct + Tool Retrieval (TR)",
+      "success_total": "26 / 34",
+      "accuracy": 0.7647058823529411,
+      "avg_steps_per_trial": 24.852941176470587,
+      "avg_steps_per_task": 24.852941176470587,
+      "attempt_count": 34,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/alfworld_trials7_gemini/unseen/react_tr/seed_2",
+      "gain_from_base_react": 0.32352941176470584
+    },
+    {
+      "split": "valid_unseen",
+      "framework_id": "react_cr_tr",
+      "framework": "react + CR + TR",
+      "success_total": "31 / 34",
+      "accuracy": 0.9117647058823529,
+      "avg_steps_per_trial": 24.970588235294116,
+      "avg_steps_per_task": 24.970588235294116,
+      "attempt_count": 34,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/alfworld_trials7_gemini/unseen/react_cr_tr/seed_2",
+      "gain_from_base_react": 0.47058823529411764
+    },
+    {
+      "split": "valid_unseen",
+      "framework_id": "react_hard_neg_cr_tr",
+      "framework": "react + hard_neg CR + TR",
+      "success_total": "17 / 34",
+      "accuracy": 0.5,
+      "avg_steps_per_trial": 33.35294117647059,
+      "avg_steps_per_task": 33.35294117647059,
+      "attempt_count": 34,
+      "run_dir": "/Users/rishisim/Documents/research/ltm-phase3-staged-eval/final_runs/eval/alfworld_trials7_gemini/unseen/react_hard_neg_cr_tr/seed_2",
+      "gain_from_base_react": 0.05882352941176472
+    }
+  ]
+}

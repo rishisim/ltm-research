@@ -1,0 +1,6 @@
+split,framework,success_total,accuracy,avg_steps_per_trial,avg_steps_per_task,gain_from_base_react
+valid_unseen,ReAct,15 / 34,0.4412,20.8824,20.8824,0.0000
+valid_unseen,ReAct + Context Retrieval (CR),21 / 34,0.6176,25.9118,25.9118,0.1765
+valid_unseen,ReAct + Tool Retrieval (TR),26 / 34,0.7647,24.8529,24.8529,0.3235
+valid_unseen,react + CR + TR,31 / 34,0.9118,24.9706,24.9706,0.4706
+valid_unseen,react + hard_neg CR + TR,17 / 34,0.5000,33.3529,33.3529,0.0588

@@ -1,0 +1,4372 @@
+[
+  {
+    "task_id": "sql_6",
+    "task_index": 6,
+    "task_type": "intercode_sql",
+    "task_desc": "For each hometown, how many teachers are there?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to count the number of teachers for each hometown. I should look at the `teacher` table to find information about teachers and their hometowns."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM teacher"
+      },
+      {
+        "label": "observation",
+        "value": "('Teacher_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Name', 'text', 'YES', '', None, '')\n('Age', 'text', 'YES', '', None, '')\n('Hometown', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `teacher` table has a `Hometown` column and `Teacher_ID` which can be used to count teachers. I will group by `Hometown` and count the `Teacher_ID` for each group."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Hometown, COUNT(Teacher_ID) AS NumberOfTeachers FROM teacher GROUP BY Hometown"
+      },
+      {
+        "label": "observation",
+        "value": "('Blackrod Urban District', 1)\n('Bolton County Borough', 1)\n('Farnworth Municipal Borough', 1)\n('Horwich Urban District', 1)\n('Kearsley Urban District', 1)\n('Little Lever Urban District', 1)\n('Turton Urban District', 1)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query successfully returned the count of teachers for each hometown. This seems to be the correct answer."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Hometown, COUNT(Teacher_ID) AS NumberOfTeachers FROM teacher GROUP BY Hometown"
+      },
+      {
+        "label": "observation",
+        "value": "('Blackrod Urban District', 1)\n('Bolton County Borough', 1)\n('Farnworth Municipal Borough', 1)\n('Horwich Urban District', 1)\n('Kearsley Urban District', 1)\n('Little Lever Urban District', 1)\n('Turton Urban District', 1)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Blackrod Urban District', 1)\n('Bolton County Borough', 1)\n('Farnworth Municipal Borough', 1)\n('Horwich Urban District', 1)\n('Kearsley Urban District', 1)\n('Little Lever Urban District', 1)\n('Turton Urban District', 1)"
+      }
+    ],
+    "success": true,
+    "step_num": 7,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_10",
+    "task_index": 10,
+    "task_type": "intercode_sql",
+    "task_desc": "List the title of all cartoons in alphabetical order.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the titles of all cartoons and order them alphabetically. I should check the `cartoon` table schema to see the column names."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM cartoon"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'double', 'NO', 'PRI', None, '')\n('Title', 'text', 'YES', '', None, '')\n('Directed_by', 'text', 'YES', '', None, '')\n('Written_by', 'text', 'YES', '', None, '')\n('Original_air_date', 'text', 'YES', '', None, '')\n('Production_code', 'double', 'YES', '', None, '')\n('Channel', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `cartoon` table has a `Title` column. I can select this column and order the results by `Title` alphabetically."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Title FROM cartoon ORDER BY Title ASC"
+      },
+      {
+        "label": "observation",
+        "value": "('Dawn of the Dead Man!',)\n('Day of the Dark Knight!',)\n('Deep Cover for Batman!',)\n('Enter the Outsiders!',)\n('Evil Under the Sea!',)\n('Fall of the Blue Beetle!',)\n('Invasion of the Secret Santas!',)\n('Journey to the Center of the Bat!',)\n('Return of the Fearsome Fangs!',)\n('Terror on Dinosaur Island!',)\n('The Eyes of Despero!',)\n('The Rise of the Blue Beetle!',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I have retrieved the titles of all cartoons and ordered them alphabetically. The result seems correct."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Title FROM cartoon ORDER BY Title ASC"
+      },
+      {
+        "label": "observation",
+        "value": "('Dawn of the Dead Man!',)\n('Day of the Dark Knight!',)\n('Deep Cover for Batman!',)\n('Enter the Outsiders!',)\n('Evil Under the Sea!',)\n('Fall of the Blue Beetle!',)\n('Invasion of the Secret Santas!',)\n('Journey to the Center of the Bat!',)\n('Return of the Fearsome Fangs!',)\n('Terror on Dinosaur Island!',)\n('The Eyes of Despero!',)\n('The Rise of the Blue Beetle!',)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Dawn of the Dead Man!',)\n('Day of the Dark Knight!',)\n('Deep Cover for Batman!',)\n('Enter the Outsiders!',)\n('Evil Under the Sea!',)\n('Fall of the Blue Beetle!',)\n('Invasion of the Secret Santas!',)\n('Journey to the Center of the Bat!',)\n('Return of the Fearsome Fangs!',)\n('Terror on Dinosaur Island!',)\n('The Eyes of Despero!',)\n('The Rise of the Blue Beetle!',)"
+      }
+    ],
+    "success": true,
+    "step_num": 7,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_15",
+    "task_index": 15,
+    "task_type": "intercode_sql",
+    "task_desc": "What are the names of the teachers ordered by ascending age?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to retrieve the names of teachers and order them by age in ascending order. I should check the `teacher` table to see if it contains both name and age information."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM teacher"
+      },
+      {
+        "label": "observation",
+        "value": "('Teacher_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Name', 'text', 'YES', '', None, '')\n('Age', 'text', 'YES', '', None, '')\n('Hometown', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `teacher` table has `Name` and `Age` columns. I can select the `Name` column and order by the `Age` column in ascending order."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Name FROM teacher ORDER BY Age ASC"
+      },
+      {
+        "label": "observation",
+        "value": "('Vicente Carretero',)\n('Gustaaf Deloor',)\n('Joseph Huts',)\n('John Deloor',)\n('Lucy Wong',)\n('Anne Walker',)\n('Kearsley Brown',)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query returned the names of teachers ordered by age in ascending order. This looks correct."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Vicente Carretero',)\n('Gustaaf Deloor',)\n('Joseph Huts',)\n('John Deloor',)\n('Lucy Wong',)\n('Anne Walker',)\n('Kearsley Brown',)"
+      }
+    ],
+    "success": true,
+    "step_num": 6,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_19",
+    "task_index": 19,
+    "task_type": "intercode_sql",
+    "task_desc": "What are flight numbers of flights arriving at City \"Aberdeen\"?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the flight numbers of flights arriving at 'Aberdeen'."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('airlines',)\n('airports',)\n('flights',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join the `flights` table with the `airports` table to filter by arrival city. I'll start by looking at the `airports` table to find the column that stores the city name."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM airports"
+      },
+      {
+        "label": "observation",
+        "value": "('City', 'text', 'YES', '', None, '')\n('AirportCode', 'varchar(255)', 'NO', 'PRI', None, '')\n('AirportName', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('CountryAbbrev', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `airports` table has a `City` column. I can use this to filter for 'Aberdeen'. Now I need to see how `airports` connects to `flights`. I'll check the `flights` table schema."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM flights"
+      },
+      {
+        "label": "observation",
+        "value": "('Airline', 'int', 'NO', 'PRI', None, '')\n('FlightNo', 'int', 'NO', 'PRI', None, '')\n('SourceAirport', 'varchar(255)', 'YES', 'MUL', None, '')\n('DestAirport', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `flights` table has `DestAirport` which likely corresponds to `AirportCode` in the `airports` table. I can join `flights` and `airports` on `flights.DestAirport = airports.AirportCode` and filter `airports.City = 'Aberdeen'`. Then I will select `flights.FlightNo`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.FlightNo FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport = T2.AirportCode WHERE T2.City = 'Aberdeen'"
+      },
+      {
+        "label": "observation",
+        "value": "(empty result set)"
+      },
+      {
+        "label": "action",
+        "value": "think: The previous query returned an empty result set. This could mean there are no flights to Aberdeen, or there might be a case sensitivity issue, or the city name is stored differently. Let me check the distinct city names in the `airports` table to verify the exact spelling and case of 'Aberdeen'."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT DISTINCT City FROM airports WHERE City LIKE '%Aberdeen%'"
+      },
+      {
+        "label": "observation",
+        "value": "('Aberdeen ',)"
+      },
+      {
+        "label": "action",
+        "value": "think: It seems there is a trailing space in 'Aberdeen '. I need to use the exact string 'Aberdeen ' in my WHERE clause."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.FlightNo FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport = T2.AirportCode WHERE T2.City = 'Aberdeen '"
+      },
+      {
+        "label": "observation",
+        "value": "(empty result set)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query still returns an empty result set. This is unexpected. Let me double check the `flights` table to see if there are any flights at all, and also check the `airports` table for the `AirportCode` for 'Aberdeen '. It's possible there are no flights to that specific airport code, or the data is sparse. I will first check the `AirportCode` for 'Aberdeen '."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT AirportCode FROM airports WHERE City = 'Aberdeen '"
+      },
+      {
+        "label": "observation",
+        "value": "('ABR',)\n('APG',)"
+      },
+      {
+        "label": "action",
+        "value": "think: Okay, there are two airport codes for 'Aberdeen ': 'ABR' and 'APG'. Now I need to see if any flights in the `flights` table have 'ABR' or 'APG' as their `DestAirport`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.FlightNo FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport = T2.AirportCode WHERE T2.City = 'Aberdeen '"
+      },
+      {
+        "label": "observation",
+        "value": "(empty result set)"
+      },
+      {
+        "label": "action",
+        "value": "think: I have already tried the query with the correct city name 'Aberdeen ' and it returned an empty result set. This suggests that there are no flights in the `flights` table that have 'ABR' or 'APG' as their `DestAirport`. I will verify this by directly querying the `flights` table for these `DestAirport` values."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT FlightNo FROM flights WHERE DestAirport IN (SELECT AirportCode FROM airports WHERE City = 'Aberdeen ')"
+      },
+      {
+        "label": "observation",
+        "value": "(empty result set)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query still returns an empty result set. This confirms that there are no flights in the `flights` table that arrive at any airport in 'Aberdeen '. Given the question asks for flight numbers, and there are none, the correct answer should be an empty set. I will submit the last query as it correctly reflects this."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.FlightNo FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport = T2.AirportCode WHERE T2.City = 'Aberdeen '"
+      },
+      {
+        "label": "observation",
+        "value": "(empty result set)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "(empty result set)"
+      }
+    ],
+    "success": true,
+    "step_num": 21,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_28",
+    "task_index": 28,
+    "task_type": "intercode_sql",
+    "task_desc": "Which abbreviation corresponds to Jetblue Airways?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the abbreviation for 'Jetblue Airways'. I should look for a table that contains airline names and their abbreviations. The `airlines` table seems like the most relevant one. I will check its schema."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM airlines"
+      },
+      {
+        "label": "observation",
+        "value": "('uid', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Airline', 'text', 'YES', '', None, '')\n('Abbreviation', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `airlines` table has 'Airline' and 'Abbreviation' columns. I can query this table to find the abbreviation for 'Jetblue Airways'."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Abbreviation FROM airlines WHERE Airline = 'Jetblue Airways'"
+      },
+      {
+        "label": "observation",
+        "value": "('JetBlue',)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('JetBlue',)"
+      }
+    ],
+    "success": true,
+    "step_num": 5,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_30",
+    "task_index": 30,
+    "task_type": "intercode_sql",
+    "task_desc": "What is the ship id and name that caused most total injuries?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the ship that caused the most total injuries."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('battle',)\n('death',)\n('ship',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join the tables to get the ship name and total injuries. I'll start by looking at the schema for each table."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM ship"
+      },
+      {
+        "label": "observation",
+        "value": "('lost_in_battle', 'int', 'YES', 'MUL', None, '')\n('id', 'int', 'NO', 'PRI', None, 'auto_increment')\n('name', 'text', 'YES', '', None, '')\n('tonnage', 'text', 'YES', '', None, '')\n('ship_type', 'text', 'YES', '', None, '')\n('location', 'text', 'YES', '', None, '')\n('disposition_of_ship', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM battle"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'int', 'NO', 'PRI', None, 'auto_increment')\n('name', 'text', 'YES', '', None, '')\n('date', 'text', 'YES', '', None, '')\n('bulgarian_commander', 'text', 'YES', '', None, '')\n('latin_commander', 'text', 'YES', '', None, '')\n('result', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM death"
+      },
+      {
+        "label": "observation",
+        "value": "('caused_by_ship_id', 'int', 'YES', 'MUL', None, '')\n('id', 'int', 'NO', 'PRI', None, 'auto_increment')\n('note', 'text', 'YES', '', None, '')\n('killed', 'int', 'YES', '', None, '')\n('injured', 'int', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `death` table has `injured` and `caused_by_ship_id`. The `ship` table has `id` and `name`. I need to sum the `injured` column from the `death` table, grouped by `caused_by_ship_id`, and then join with the `ship` table to get the ship name. Finally, I'll order by the total injuries in descending order and take the top one."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.id, T1.name FROM ship AS T1 JOIN death AS T2 ON T1.id = T2.caused_by_ship_id GROUP BY T1.id ORDER BY SUM(T2.injured) DESC LIMIT 1"
+      },
+      {
+        "label": "observation",
+        "value": "(4, 'HMS Avon')"
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.id, T1.name FROM ship AS T1 JOIN death AS T2 ON T1.id = T2.caused_by_ship_id GROUP BY T1.id ORDER BY SUM(T2.injured) DESC LIMIT 1"
+      },
+      {
+        "label": "observation",
+        "value": "(4, 'HMS Avon')"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "(4, 'HMS Avon')"
+      }
+    ],
+    "success": false,
+    "step_num": 10,
+    "reward": 0.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_31",
+    "task_index": 31,
+    "task_type": "intercode_sql",
+    "task_desc": "How many flights arriving in Aberdeen city?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to count the number of flights arriving in Aberdeen city."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('airlines',)\n('airports',)\n('flights',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to find the airport ID for Aberdeen city from the `airports` table, and then count the flights arriving at that airport from the `flights` table."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM airports"
+      },
+      {
+        "label": "observation",
+        "value": "('City', 'text', 'YES', '', None, '')\n('AirportCode', 'varchar(255)', 'NO', 'PRI', None, '')\n('AirportName', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('CountryAbbrev', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `airports` table has `City` and `AirportCode`. I can find the `AirportCode` for 'Aberdeen' city."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT AirportCode FROM airports WHERE City = 'Aberdeen'"
+      },
+      {
+        "label": "observation",
+        "value": "('ABR',)\n('APG',)"
+      },
+      {
+        "label": "action",
+        "value": "think: There are two airport codes for Aberdeen. I need to check the `flights` table to see which one is used or if both are used. I will count flights for both."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM flights"
+      },
+      {
+        "label": "observation",
+        "value": "('Airline', 'int', 'NO', 'PRI', None, '')\n('FlightNo', 'int', 'NO', 'PRI', None, '')\n('SourceAirport', 'varchar(255)', 'YES', 'MUL', None, '')\n('DestAirport', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `flights` table has `DestAirport` which corresponds to `AirportCode` in the `airports` table. I need to count the flights where `DestAirport` is 'ABR' or 'APG'."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT COUNT(*) FROM flights WHERE DestAirport IN (SELECT AirportCode FROM airports WHERE City = 'Aberdeen')"
+      },
+      {
+        "label": "observation",
+        "value": "(0,)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query returned 0. This means there are no flights arriving in Aberdeen city based on the provided data. This seems correct given the previous steps."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT COUNT(*) FROM flights WHERE DestAirport IN (SELECT AirportCode FROM airports WHERE City = 'Aberdeen')"
+      },
+      {
+        "label": "observation",
+        "value": "(0,)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "(0,)"
+      }
+    ],
+    "success": true,
+    "step_num": 13,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_38",
+    "task_index": 38,
+    "task_type": "intercode_sql",
+    "task_desc": "List the name and date the battle that has lost the ship named 'Lettice' and the ship named 'HMS Atalanta'",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the battle name and date for battles where ships named 'Lettice' and 'HMS Atalanta' were lost."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('battle',)\n('death',)\n('ship',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join the `battle`, `death`, and `ship` tables."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM battle"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'int', 'NO', 'PRI', None, 'auto_increment')\n('name', 'text', 'YES', '', None, '')\n('date', 'text', 'YES', '', None, '')\n('bulgarian_commander', 'text', 'YES', '', None, '')\n('latin_commander', 'text', 'YES', '', None, '')\n('result', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `battle` table has `name` and `date`. I need to link this to `death` and `ship`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM death"
+      },
+      {
+        "label": "observation",
+        "value": "('caused_by_ship_id', 'int', 'YES', 'MUL', None, '')\n('id', 'int', 'NO', 'PRI', None, 'auto_increment')\n('note', 'text', 'YES', '', None, '')\n('killed', 'int', 'YES', '', None, '')\n('injured', 'int', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `death` table has `caused_by_ship_id` which links to the `ship` table. It also has `id` which I assume is the battle ID. Let me check the `ship` table."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM ship"
+      },
+      {
+        "label": "observation",
+        "value": "('lost_in_battle', 'int', 'YES', 'MUL', None, '')\n('id', 'int', 'NO', 'PRI', None, 'auto_increment')\n('name', 'text', 'YES', '', None, '')\n('tonnage', 'text', 'YES', '', None, '')\n('ship_type', 'text', 'YES', '', None, '')\n('location', 'text', 'YES', '', None, '')\n('disposition_of_ship', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `ship` table has `lost_in_battle` which links to the `battle` table's `id`. I can join `battle` and `ship` on `battle.id = ship.lost_in_battle` and filter by ship names 'Lettice' and 'HMS Atalanta'."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.name, T1.date FROM battle AS T1 JOIN ship AS T2 ON T1.id = T2.lost_in_battle WHERE T2.name = 'Lettice' INTERSECT SELECT T1.name, T1.date FROM battle AS T1 JOIN ship AS T2 ON T1.id = T2.lost_in_battle WHERE T2.name = 'HMS Atalanta'"
+      },
+      {
+        "label": "observation",
+        "value": "('Siege of Constantinople', '1235')"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Siege of Constantinople', '1235')"
+      }
+    ],
+    "success": true,
+    "step_num": 11,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_39",
+    "task_index": 39,
+    "task_type": "intercode_sql",
+    "task_desc": "List all singer names in concerts in year 2014.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the names of singers who performed in concerts in the year 2014."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('concert',)\n('singer',)\n('singer_in_concert',)\n('stadium',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join the `singer`, `singer_in_concert`, and `concert` tables."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM singer"
+      },
+      {
+        "label": "observation",
+        "value": "('Singer_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Name', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('Song_Name', 'text', 'YES', '', None, '')\n('Song_release_year', 'text', 'YES', '', None, '')\n('Age', 'int', 'YES', '', None, '')\n('Is_male', 'varchar(255)', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `singer` table has `Name` and `Singer_ID`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM concert"
+      },
+      {
+        "label": "observation",
+        "value": "('concert_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('concert_Name', 'text', 'YES', '', None, '')\n('Theme', 'text', 'YES', '', None, '')\n('Stadium_ID', 'int', 'YES', 'MUL', None, '')\n('Year', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `concert` table has `concert_ID` and `Year`. I need to filter by `Year` = '2014'."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM singer_in_concert"
+      },
+      {
+        "label": "observation",
+        "value": "('concert_ID', 'int', 'NO', 'PRI', None, '')\n('Singer_ID', 'int', 'NO', 'PRI', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `singer_in_concert` table links `singer` and `concert` tables using `Singer_ID` and `concert_ID`. I can join these three tables and filter by the year 2014."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.Name FROM singer AS T1 JOIN singer_in_concert AS T2 ON T1.Singer_ID = T2.Singer_ID JOIN concert AS T3 ON T2.concert_ID = T3.concert_ID WHERE T3.Year = '2014'"
+      },
+      {
+        "label": "observation",
+        "value": "('Timbaland',)\n('Justin Brown',)\n('John Nizinik',)\n('Justin Brown',)\n('Tribal King',)\n('Rose White',)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Timbaland',)\n('Justin Brown',)\n('John Nizinik',)\n('Justin Brown',)\n('Tribal King',)\n('Rose White',)"
+      }
+    ],
+    "success": true,
+    "step_num": 11,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_42",
+    "task_index": 42,
+    "task_type": "intercode_sql",
+    "task_desc": "What country is Jetblue Airways affiliated with?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the country associated with 'Jetblue Airways'. I should look at the `airlines` table first to see if it contains country information or a way to link to it."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM airlines"
+      },
+      {
+        "label": "observation",
+        "value": "('uid', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Airline', 'text', 'YES', '', None, '')\n('Abbreviation', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `airlines` table has a 'Country' column. I can directly query this table to find the country for 'Jetblue Airways'."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Country FROM airlines WHERE Airline = 'Jetblue Airways'"
+      },
+      {
+        "label": "observation",
+        "value": "('USA',)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query returned 'USA' as the country for 'Jetblue Airways'. This seems correct."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('USA',)"
+      }
+    ],
+    "success": true,
+    "step_num": 6,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_49",
+    "task_index": 49,
+    "task_type": "intercode_sql",
+    "task_desc": "list all cartoon titles and their directors ordered by their air date",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to list cartoon titles and their directors, ordered by air date. I should check the `cartoon` table for title and director information, and potentially `tv_series` for air date if it's not in `cartoon`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('cartoon',)\n('tv_channel',)\n('tv_series',)"
+      },
+      {
+        "label": "action",
+        "value": "think: Okay, I see the tables. Now I need to check the schema of the `cartoon` table and `tv_series` table to find the relevant columns."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM cartoon"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'double', 'NO', 'PRI', None, '')\n('Title', 'text', 'YES', '', None, '')\n('Directed_by', 'text', 'YES', '', None, '')\n('Written_by', 'text', 'YES', '', None, '')\n('Original_air_date', 'text', 'YES', '', None, '')\n('Production_code', 'double', 'YES', '', None, '')\n('Channel', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `cartoon` table has `Title`, `Directed_by`, and `Original_air_date`. This seems to contain all the information I need. I can directly query this table and order by `Original_air_date`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Title, Directed_by FROM cartoon ORDER BY Original_air_date"
+      },
+      {
+        "label": "observation",
+        "value": "('Invasion of the Secret Santas!', 'Brandon Vietti')\n('Evil Under the Sea!', 'Michael Chang')\n('Return of the Fearsome Fangs!', 'Brandon Vietti')\n('Deep Cover for Batman!', 'Michael Chang')\n('The Eyes of Despero!', 'Ben Jones')\n('Dawn of the Dead Man!', 'Ben Jones')\n('Day of the Dark Knight!', 'Ben Jones')\n('Fall of the Blue Beetle!', 'Brandon Vietti')\n('Journey to the Center of the Bat!', 'Michael Chang')\n('Enter the Outsiders!', 'Michael Chang')\n('The Rise of the Blue Beetle!', 'Ben Jones')\n('Terror on Dinosaur Island!', 'Brandon Vietti')"
+      },
+      {
+        "label": "action",
+        "value": "think: I have the cartoon titles and directors, ordered by their original air date. The question asks for \"air date\", and `Original_air_date` seems to be the correct column for that. The result looks correct."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Title, Directed_by FROM cartoon ORDER BY Original_air_date"
+      },
+      {
+        "label": "observation",
+        "value": "('Invasion of the Secret Santas!', 'Brandon Vietti')\n('Evil Under the Sea!', 'Michael Chang')\n('Return of the Fearsome Fangs!', 'Brandon Vietti')\n('Deep Cover for Batman!', 'Michael Chang')\n('The Eyes of Despero!', 'Ben Jones')\n('Dawn of the Dead Man!', 'Ben Jones')\n('Day of the Dark Knight!', 'Ben Jones')\n('Fall of the Blue Beetle!', 'Brandon Vietti')\n('Journey to the Center of the Bat!', 'Michael Chang')\n('Enter the Outsiders!', 'Michael Chang')\n('The Rise of the Blue Beetle!', 'Ben Jones')\n('Terror on Dinosaur Island!', 'Brandon Vietti')"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Invasion of the Secret Santas!', 'Brandon Vietti')\n('Evil Under the Sea!', 'Michael Chang')\n('Return of the Fearsome Fangs!', 'Brandon Vietti')\n('Deep Cover for Batman!', 'Michael Chang')\n('The Eyes of Despero!', 'Ben Jones')\n('Dawn of the Dead Man!', 'Ben Jones')\n('Day of the Dark Knight!', 'Ben Jones')\n('Fall of the Blue Beetle!', 'Brandon Vietti')\n('Journey to the Center of the Bat!', 'Michael Chang')\n('Enter the Outsiders!', 'Michael Chang')\n('The Rise of the Blue Beetle!', 'Ben Jones')\n('Terror on Dinosaur Island!', 'Brandon Vietti')"
+      }
+    ],
+    "success": true,
+    "step_num": 9,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_52",
+    "task_index": 52,
+    "task_type": "intercode_sql",
+    "task_desc": "What are the names of all cartoons directed by Ben Jones?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the names of cartoons directed by 'Ben Jones'. I should check the `cartoon` table to see if it contains director information."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM cartoon"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'double', 'NO', 'PRI', None, '')\n('Title', 'text', 'YES', '', None, '')\n('Directed_by', 'text', 'YES', '', None, '')\n('Written_by', 'text', 'YES', '', None, '')\n('Original_air_date', 'text', 'YES', '', None, '')\n('Production_code', 'double', 'YES', '', None, '')\n('Channel', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `cartoon` table has a `Directed_by` column. I can filter this column for 'Ben Jones' and select the `Title`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Title FROM cartoon WHERE Directed_by = 'Ben Jones'"
+      },
+      {
+        "label": "observation",
+        "value": "('The Rise of the Blue Beetle!',)\n('Day of the Dark Knight!',)\n('Dawn of the Dead Man!',)\n('The Eyes of Despero!',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I have retrieved the titles of cartoons directed by Ben Jones. The result seems correct."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('The Rise of the Blue Beetle!',)\n('Day of the Dark Knight!',)\n('Dawn of the Dead Man!',)\n('The Eyes of Despero!',)"
+      }
+    ],
+    "success": true,
+    "step_num": 6,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_63",
+    "task_index": 63,
+    "task_type": "intercode_sql",
+    "task_desc": "Which country has the most of TV Channels? List the country and number of TV Channels it has.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the country with the most TV channels. I should look at the `tv_channel` table to find information about channels and their countries."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM tv_channel"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'varchar(255)', 'NO', 'PRI', None, '')\n('series_name', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('Language', 'text', 'YES', '', None, '')\n('Content', 'text', 'YES', '', None, '')\n('Pixel_aspect_ratio_PAR', 'text', 'YES', '', None, '')\n('Hight_definition_TV', 'text', 'YES', '', None, '')\n('Pay_per_view_PPV', 'text', 'YES', '', None, '')\n('Package_Option', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `tv_channel` table has a `Country` column. I can count the number of channels for each country and then find the country with the maximum count."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Country, COUNT(*) AS num_channels FROM tv_channel GROUP BY Country ORDER BY num_channels DESC LIMIT 1"
+      },
+      {
+        "label": "observation",
+        "value": "('Italy', 12)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query returned 'Italy' with 12 channels, which is the country with the most TV channels. This looks correct."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Country, COUNT(*) AS num_channels FROM tv_channel GROUP BY Country ORDER BY num_channels DESC LIMIT 1"
+      },
+      {
+        "label": "observation",
+        "value": "('Italy', 12)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Italy', 12)"
+      }
+    ],
+    "success": true,
+    "step_num": 7,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_65",
+    "task_index": 65,
+    "task_type": "intercode_sql",
+    "task_desc": "What are the names of the singers who performed in a concert in 2014?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the names of singers who performed in a concert in 2014."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('concert',)\n('singer',)\n('singer_in_concert',)\n('stadium',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join `singer`, `singer_in_concert`, and `concert` tables."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM singer"
+      },
+      {
+        "label": "observation",
+        "value": "('Singer_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Name', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('Song_Name', 'text', 'YES', '', None, '')\n('Song_release_year', 'text', 'YES', '', None, '')\n('Age', 'int', 'YES', '', None, '')\n('Is_male', 'varchar(255)', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM concert"
+      },
+      {
+        "label": "observation",
+        "value": "('concert_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('concert_Name', 'text', 'YES', '', None, '')\n('Theme', 'text', 'YES', '', None, '')\n('Stadium_ID', 'int', 'YES', 'MUL', None, '')\n('Year', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `concert` table has a `Year` column, and the `singer` table has `Name`. The `singer_in_concert` table links `Singer_ID` and `concert_ID`. I need to join these three tables and filter by `Year = '2014'`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.Name FROM singer AS T1 JOIN singer_in_concert AS T2 ON T1.Singer_ID = T2.Singer_ID JOIN concert AS T3 ON T2.concert_ID = T3.concert_ID WHERE T3.Year = '2014'"
+      },
+      {
+        "label": "observation",
+        "value": "('Timbaland',)\n('Justin Brown',)\n('John Nizinik',)\n('Justin Brown',)\n('Tribal King',)\n('Rose White',)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Timbaland',)\n('Justin Brown',)\n('John Nizinik',)\n('Justin Brown',)\n('Tribal King',)\n('Rose White',)"
+      }
+    ],
+    "success": true,
+    "step_num": 8,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_66",
+    "task_index": 66,
+    "task_type": "intercode_sql",
+    "task_desc": "Show the stadium name and the number of concerts in each stadium.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to show the stadium name and the number of concerts in each stadium."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('concert',)\n('singer',)\n('singer_in_concert',)\n('stadium',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join the `concert` table with the `stadium` table to get the stadium names. Then I will count the concerts for each stadium. Let me check the schema of `concert` and `stadium` tables."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM concert"
+      },
+      {
+        "label": "observation",
+        "value": "('concert_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('concert_Name', 'text', 'YES', '', None, '')\n('Theme', 'text', 'YES', '', None, '')\n('Stadium_ID', 'int', 'YES', 'MUL', None, '')\n('Year', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM stadium"
+      },
+      {
+        "label": "observation",
+        "value": "('Stadium_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Location', 'text', 'YES', '', None, '')\n('Name', 'text', 'YES', '', None, '')\n('Capacity', 'int', 'YES', '', None, '')\n('Highest', 'int', 'YES', '', None, '')\n('Lowest', 'int', 'YES', '', None, '')\n('Average', 'int', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `concert` table has `Stadium_ID` which can be used to join with `stadium` table's `Stadium_ID`. The `stadium` table has `Name` for stadium name. I can group by `stadium.Name` and count the concerts."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T2.Name, COUNT(T1.concert_ID) FROM concert AS T1 JOIN stadium AS T2 ON T1.Stadium_ID = T2.Stadium_ID GROUP BY T2.Name"
+      },
+      {
+        "label": "observation",
+        "value": "(\"Stark's Park\", 1)\n('Somerset Park', 2)\n('Recreation Park', 1)\n('Balmoor', 1)\n('Glebe Park', 1)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query returns the stadium name and the count of concerts for each stadium. This looks correct."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "(\"Stark's Park\", 1)\n('Somerset Park', 2)\n('Recreation Park', 1)\n('Balmoor', 1)\n('Glebe Park', 1)"
+      }
+    ],
+    "success": true,
+    "step_num": 9,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_72",
+    "task_index": 72,
+    "task_type": "intercode_sql",
+    "task_desc": "What is the average, minimum, and maximum age of all singers from France?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the average, minimum, and maximum age of singers from France. I should look at the `singer` table to get the age and country information."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM singer"
+      },
+      {
+        "label": "observation",
+        "value": "('Singer_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Name', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('Song_Name', 'text', 'YES', '', None, '')\n('Song_release_year', 'text', 'YES', '', None, '')\n('Age', 'int', 'YES', '', None, '')\n('Is_male', 'varchar(255)', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `singer` table has `Age` and `Country` columns. I can filter by `Country = 'France'` and then calculate the average, minimum, and maximum age."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT AVG(Age), MIN(Age), MAX(Age) FROM singer WHERE Country = 'France'"
+      },
+      {
+        "label": "observation",
+        "value": "(Decimal('34.5000'), 25, 43)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query returned the average, minimum, and maximum age for singers from France. This looks correct."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "(Decimal('34.5000'), 25, 43)"
+      }
+    ],
+    "success": true,
+    "step_num": 6,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_73",
+    "task_index": 73,
+    "task_type": "intercode_sql",
+    "task_desc": "How many flights depart from City 'Aberdeen' and have destination City 'Ashley'?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to count the number of flights that depart from 'Aberdeen' and arrive at 'Ashley'."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('airlines',)\n('airports',)\n('flights',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join the `flights` table with the `airports` table twice, once for the departure airport and once for the arrival airport, to filter by city names."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM flights"
+      },
+      {
+        "label": "observation",
+        "value": "('Airline', 'int', 'NO', 'PRI', None, '')\n('FlightNo', 'int', 'NO', 'PRI', None, '')\n('SourceAirport', 'varchar(255)', 'YES', 'MUL', None, '')\n('DestAirport', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `flights` table has `SourceAirport` and `DestAirport` which are airport codes. I need to link these to the `airports` table to get the city names."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM airports"
+      },
+      {
+        "label": "observation",
+        "value": "('City', 'text', 'YES', '', None, '')\n('AirportCode', 'varchar(255)', 'NO', 'PRI', None, '')\n('AirportName', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('CountryAbbrev', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: I have the schema for `flights` and `airports`. I need to join `flights` with `airports` twice, once for the source airport and once for the destination airport, using `AirportCode` to match `SourceAirport` and `DestAirport` respectively. Then I will filter by `City` for 'Aberdeen' as the source and 'Ashley' as the destination. Finally, I will count the results."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT COUNT(*) FROM flights AS f JOIN airports AS sa ON f.SourceAirport = sa.AirportCode JOIN airports AS da ON f.DestAirport = da.AirportCode WHERE sa.City = 'Aberdeen' AND da.City = 'Ashley';"
+      },
+      {
+        "label": "observation",
+        "value": "(1,)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "(1,)"
+      }
+    ],
+    "success": true,
+    "step_num": 9,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_81",
+    "task_index": 81,
+    "task_type": "intercode_sql",
+    "task_desc": "Find all airlines that have flights from both airports 'APG' and 'CVO'.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find airlines that have flights from two specific airports, 'APG' and 'CVO'. This means I need to join the `airlines` table with the `flights` table, and then filter by the `Source_airport` and `Airline_ID`. I will need to ensure that the airline has flights from *both* airports."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.Airline_Name FROM airlines AS T1 JOIN flights AS T2 ON T1.Airline_ID = T2.Airline_ID WHERE T2.Source_airport = 'APG' INTERSECT SELECT T1.Airline_Name FROM airlines AS T1 JOIN flights AS T2 ON T1.Airline_ID = T2.Airline_ID WHERE T2.Source_airport = 'CVO'"
+      },
+      {
+        "label": "observation",
+        "value": "Error executing query: Unknown column 'T1.Airline_Name' in 'field list'"
+      },
+      {
+        "label": "action",
+        "value": "think: My previous query failed because `Airline_Name` is not in the `airlines` table. I need to check the schema of the `airlines` table to confirm the column names."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM airlines"
+      },
+      {
+        "label": "observation",
+        "value": "('uid', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Airline', 'text', 'YES', '', None, '')\n('Abbreviation', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `airlines` table has a column named `Airline` for the airline name. I should use `T1.Airline` instead of `T1.Airline_Name`. I will correct the query and try again."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.Airline FROM airlines AS T1 JOIN flights AS T2 ON T1.uid = T2.Airline_ID WHERE T2.Source_airport = 'APG' INTERSECT SELECT T1.Airline FROM airlines AS T1 JOIN flights AS T2 ON T1.uid = T2.Airline_ID WHERE T2.Source_airport = 'CVO'"
+      },
+      {
+        "label": "observation",
+        "value": "Error executing query: Unknown column 'T2.Source_airport' in 'where clause'"
+      },
+      {
+        "label": "action",
+        "value": "think: My previous query failed because `Source_airport` is not in the `flights` table. I need to check the schema of the `flights` table to confirm the column names."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM flights"
+      },
+      {
+        "label": "observation",
+        "value": "('Airline', 'int', 'NO', 'PRI', None, '')\n('FlightNo', 'int', 'NO', 'PRI', None, '')\n('SourceAirport', 'varchar(255)', 'YES', 'MUL', None, '')\n('DestAirport', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `flights` table has a column named `SourceAirport`. I should use `T2.SourceAirport` instead of `T2.Source_airport`. Also, the `airlines` table has `uid` as the primary key, which I correctly used in the join. I will correct the query and try again."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.Airline FROM airlines AS T1 JOIN flights AS T2 ON T1.uid = T2.Airline FROM flights AS T2 WHERE T2.SourceAirport = 'APG' INTERSECT SELECT T1.Airline FROM airlines AS T1 JOIN flights AS T2 ON T1.uid = T2.Airline WHERE T2.SourceAirport = 'CVO'"
+      },
+      {
+        "label": "observation",
+        "value": "Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM flights AS T2 WHERE T2.SourceAirport = 'APG' INTERSECT SELECT T1.Airline FR' at line 1"
+      },
+      {
+        "label": "action",
+        "value": "think: I made a syntax error in the previous query. I had `FROM flights AS T2` twice in the first part of the INTERSECT query. The `FROM` clause should only appear once per `SELECT` statement. I need to correct the `FROM` clause."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.Airline FROM airlines AS T1 JOIN flights AS T2 ON T1.uid = T2.Airline WHERE T2.SourceAirport = 'APG' INTERSECT SELECT T1.Airline FROM airlines AS T1 JOIN flights AS T2 ON T1.uid = T2.Airline WHERE T2.SourceAirport = 'CVO'"
+      },
+      {
+        "label": "observation",
+        "value": "(empty result set)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query executed successfully but returned an empty result set. This means there are no airlines that have flights from both 'APG' and 'CVO'. The question asks to \"Find all airlines\", and an empty set is a valid answer if no such airlines exist. I will submit this result."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "(empty result set)"
+      }
+    ],
+    "success": true,
+    "step_num": 14,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_84",
+    "task_index": 84,
+    "task_type": "intercode_sql",
+    "task_desc": "List the language used least number of TV Channel. List language and number of TV Channel.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the language that is used by the least number of TV channels."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('cartoon',)\n('tv_channel',)\n('tv_series',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to find the language used by the least number of TV channels. I should check the `tv_channel` table to see if it contains language information."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM tv_channel"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'varchar(255)', 'NO', 'PRI', None, '')\n('series_name', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('Language', 'text', 'YES', '', None, '')\n('Content', 'text', 'YES', '', None, '')\n('Pixel_aspect_ratio_PAR', 'text', 'YES', '', None, '')\n('Hight_definition_TV', 'text', 'YES', '', None, '')\n('Pay_per_view_PPV', 'text', 'YES', '', None, '')\n('Package_Option', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `tv_channel` table has a `Language` column. I can count the number of channels for each language, order them in ascending order, and then pick the language with the minimum count."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Language, COUNT(*) AS num_channels FROM tv_channel GROUP BY Language ORDER BY num_channels ASC LIMIT 1"
+      },
+      {
+        "label": "observation",
+        "value": "('English', 3)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('English', 3)"
+      }
+    ],
+    "success": true,
+    "step_num": 7,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_91",
+    "task_index": 91,
+    "task_type": "intercode_sql",
+    "task_desc": "What are the package options and the name of the series for the TV Channel that supports high definition TV?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the package options and series names for TV Channels that support high definition TV."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('cartoon',)\n('tv_channel',)\n('tv_series',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join tv_channel and tv_series tables. First, I'll check the schema of tv_channel to find the 'High_Definition_TV' column and the package options. Then I'll check tv_series for the series name."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM tv_channel"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'varchar(255)', 'NO', 'PRI', None, '')\n('series_name', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('Language', 'text', 'YES', '', None, '')\n('Content', 'text', 'YES', '', None, '')\n('Pixel_aspect_ratio_PAR', 'text', 'YES', '', None, '')\n('Hight_definition_TV', 'text', 'YES', '', None, '')\n('Pay_per_view_PPV', 'text', 'YES', '', None, '')\n('Package_Option', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: I see `Hight_definition_TV` and `Package_Option` in the `tv_channel` table. I need to filter for `Hight_definition_TV` = 'Yes'. The `series_name` column is also in `tv_channel`. So I only need to query the `tv_channel` table."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Package_Option, series_name FROM tv_channel WHERE Hight_definition_TV = 'Yes'"
+      },
+      {
+        "label": "observation",
+        "value": "('Sky Famiglia + Sky HD', 'MTV Live HD')"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Sky Famiglia + Sky HD', 'MTV Live HD')"
+      }
+    ],
+    "success": true,
+    "step_num": 7,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_98",
+    "task_index": 98,
+    "task_type": "intercode_sql",
+    "task_desc": "What are the titles of all cartoons directed by Ben Jones or Brandon Vietti?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the titles of cartoons directed by 'Ben Jones' or 'Brandon Vietti'. I should check the `cartoon` table to see if it contains director information and the cartoon title."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM cartoon"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'double', 'NO', 'PRI', None, '')\n('Title', 'text', 'YES', '', None, '')\n('Directed_by', 'text', 'YES', '', None, '')\n('Written_by', 'text', 'YES', '', None, '')\n('Original_air_date', 'text', 'YES', '', None, '')\n('Production_code', 'double', 'YES', '', None, '')\n('Channel', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `cartoon` table has `Title` and `Directed_by` columns. I can filter by `Directed_by` for 'Ben Jones' or 'Brandon Vietti' and select the `Title`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Title FROM cartoon WHERE Directed_by = 'Ben Jones' OR Directed_by = 'Brandon Vietti'"
+      },
+      {
+        "label": "observation",
+        "value": "('The Rise of the Blue Beetle!',)\n('Terror on Dinosaur Island!',)\n('Day of the Dark Knight!',)\n('Invasion of the Secret Santas!',)\n('Dawn of the Dead Man!',)\n('Fall of the Blue Beetle!',)\n('The Eyes of Despero!',)\n('Return of the Fearsome Fangs!',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I have retrieved the titles of cartoons directed by Ben Jones or Brandon Vietti. The result seems correct."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Title FROM cartoon WHERE Directed_by = 'Ben Jones' OR Directed_by = 'Brandon Vietti'"
+      },
+      {
+        "label": "observation",
+        "value": "('The Rise of the Blue Beetle!',)\n('Terror on Dinosaur Island!',)\n('Day of the Dark Knight!',)\n('Invasion of the Secret Santas!',)\n('Dawn of the Dead Man!',)\n('Fall of the Blue Beetle!',)\n('The Eyes of Despero!',)\n('Return of the Fearsome Fangs!',)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('The Rise of the Blue Beetle!',)\n('Terror on Dinosaur Island!',)\n('Day of the Dark Knight!',)\n('Invasion of the Secret Santas!',)\n('Dawn of the Dead Man!',)\n('Fall of the Blue Beetle!',)\n('The Eyes of Despero!',)\n('Return of the Fearsome Fangs!',)"
+      }
+    ],
+    "success": true,
+    "step_num": 7,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_113",
+    "task_index": 113,
+    "task_type": "intercode_sql",
+    "task_desc": "Show name, country, age for all singers ordered by age from the oldest to the youngest.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to retrieve the name, country, and age of singers, ordered by age in descending order (oldest to youngest). I should check the `singer` table schema to confirm the column names."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM singer"
+      },
+      {
+        "label": "observation",
+        "value": "('Singer_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Name', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('Song_Name', 'text', 'YES', '', None, '')\n('Song_release_year', 'text', 'YES', '', None, '')\n('Age', 'int', 'YES', '', None, '')\n('Is_male', 'varchar(255)', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `singer` table has `Name`, `Country`, and `Age` columns. I can select these columns and order by `Age` in descending order."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Name, Country, Age FROM singer ORDER BY Age DESC"
+      },
+      {
+        "label": "observation",
+        "value": "('Joe Sharp', 'Netherlands', 52)\n('John Nizinik', 'France', 43)\n('Rose White', 'France', 41)\n('Timbaland', 'United States', 32)\n('Justin Brown', 'France', 29)\n('Tribal King', 'France', 25)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query returned the name, country, and age of singers, ordered from oldest to youngest. This looks correct."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Joe Sharp', 'Netherlands', 52)\n('John Nizinik', 'France', 43)\n('Rose White', 'France', 41)\n('Timbaland', 'United States', 32)\n('Justin Brown', 'France', 29)\n('Tribal King', 'France', 25)"
+      }
+    ],
+    "success": true,
+    "step_num": 6,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_117",
+    "task_index": 117,
+    "task_type": "intercode_sql",
+    "task_desc": "Which airlines have less than 200 flights?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find airlines that have less than 200 flights. I will need to join the `airlines` table with the `flights` table. First, I'll inspect the `airlines` table to see how to identify airlines. Then I'll inspect the `flights` table to see how to count flights per airline."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM airlines"
+      },
+      {
+        "label": "observation",
+        "value": "('uid', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Airline', 'text', 'YES', '', None, '')\n('Abbreviation', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `airlines` table has an `Airline` column which seems to be the name of the airline. Now I need to check the `flights` table to see how to link flights to airlines and count them."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM flights"
+      },
+      {
+        "label": "observation",
+        "value": "('Airline', 'int', 'NO', 'PRI', None, '')\n('FlightNo', 'int', 'NO', 'PRI', None, '')\n('SourceAirport', 'varchar(255)', 'YES', 'MUL', None, '')\n('DestAirport', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `flights` table has an `Airline` column which is an `int`. This `Airline` column in `flights` is likely a foreign key referencing the `uid` in the `airlines` table. I need to join these two tables on `airlines.uid = flights.Airline`. Then I can group by `airlines.Airline` and count the flights, filtering for counts less than 200."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.Airline FROM airlines AS T1 JOIN flights AS T2 ON T1.uid = T2.Airline GROUP BY T1.Airline HAVING COUNT(T2.FlightNo) < 200"
+      },
+      {
+        "label": "observation",
+        "value": "('US Airways',)\n('Southwest Airlines',)\n('Delta Airlines',)\n('American Airlines',)\n('United Airlines',)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('US Airways',)\n('Southwest Airlines',)\n('Delta Airlines',)\n('American Airlines',)\n('United Airlines',)"
+      }
+    ],
+    "success": true,
+    "step_num": 7,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_120",
+    "task_index": 120,
+    "task_type": "intercode_sql",
+    "task_desc": "find the pixel aspect ratio and nation of the tv channels that do not use English.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the pixel aspect ratio and nation of tv channels that do not use English."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM tv_channel"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'varchar(255)', 'NO', 'PRI', None, '')\n('series_name', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('Language', 'text', 'YES', '', None, '')\n('Content', 'text', 'YES', '', None, '')\n('Pixel_aspect_ratio_PAR', 'text', 'YES', '', None, '')\n('Hight_definition_TV', 'text', 'YES', '', None, '')\n('Pay_per_view_PPV', 'text', 'YES', '', None, '')\n('Package_Option', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `tv_channel` table contains `Pixel_aspect_ratio_PAR`, `Country` (which I assume is the nation), and `Language`. I need to filter for `Language` not equal to 'English'."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Pixel_aspect_ratio_PAR, Country FROM tv_channel WHERE Language != 'English'"
+      },
+      {
+        "label": "observation",
+        "value": "('4:3', 'Italy')\n('4:3', 'Italy')\n('4:3 / 16:9', 'Italy')\n('16:9', 'Italy')\n('4:3', 'Italy')\n('16:9', 'Italy')\n('4:3', 'Italy')\n('16:9', 'Italy')\n('4:3 / 16:9', 'Italy')\n('4:3 / 16:9', 'Italy')\n('4:3', 'Italy')\n('4:3', 'Italy')"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('4:3', 'Italy')\n('4:3', 'Italy')\n('4:3 / 16:9', 'Italy')\n('16:9', 'Italy')\n('4:3', 'Italy')\n('16:9', 'Italy')\n('4:3', 'Italy')\n('16:9', 'Italy')\n('4:3 / 16:9', 'Italy')\n('4:3 / 16:9', 'Italy')\n('4:3', 'Italy')\n('4:3', 'Italy')"
+      }
+    ],
+    "success": true,
+    "step_num": 5,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_127",
+    "task_index": 127,
+    "task_type": "intercode_sql",
+    "task_desc": "What is the name and capacity of the stadium with the most concerts after 2013 ?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the stadium with the most concerts after 2013."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('concert',)\n('singer',)\n('singer_in_concert',)\n('stadium',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join the `concert` and `stadium` tables. First, I'll check the schema for both tables to understand their columns."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM concert"
+      },
+      {
+        "label": "observation",
+        "value": "('concert_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('concert_Name', 'text', 'YES', '', None, '')\n('Theme', 'text', 'YES', '', None, '')\n('Stadium_ID', 'int', 'YES', 'MUL', None, '')\n('Year', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `concert` table has `Stadium_ID` and `Year`. I need to filter concerts after 2013."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM stadium"
+      },
+      {
+        "label": "observation",
+        "value": "('Stadium_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Location', 'text', 'YES', '', None, '')\n('Name', 'text', 'YES', '', None, '')\n('Capacity', 'int', 'YES', '', None, '')\n('Highest', 'int', 'YES', '', None, '')\n('Lowest', 'int', 'YES', '', None, '')\n('Average', 'int', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `stadium` table has `Name` and `Capacity`. I need to count concerts per stadium after 2013, order by the count in descending order, and then pick the top one."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T2.Name, T2.Capacity FROM concert AS T1 JOIN stadium AS T2 ON T1.Stadium_ID = T2.Stadium_ID WHERE T1.Year > '2013' GROUP BY T2.Stadium_ID ORDER BY COUNT(T1.concert_ID) DESC LIMIT 1"
+      },
+      {
+        "label": "observation",
+        "value": "('Somerset Park', 11998)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Somerset Park', 11998)"
+      }
+    ],
+    "success": true,
+    "step_num": 9,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_131",
+    "task_index": 131,
+    "task_type": "intercode_sql",
+    "task_desc": "Find the number of cartoons directed by each of the listed directors.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to count the number of cartoons directed by each director. I should look at the `cartoon` table to find director information and then count the cartoons."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM cartoon"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'double', 'NO', 'PRI', None, '')\n('Title', 'text', 'YES', '', None, '')\n('Directed_by', 'text', 'YES', '', None, '')\n('Written_by', 'text', 'YES', '', None, '')\n('Original_air_date', 'text', 'YES', '', None, '')\n('Production_code', 'double', 'YES', '', None, '')\n('Channel', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `cartoon` table has a `Directed_by` column. I can group by this column and count the number of cartoons for each director."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Directed_by, COUNT(*) AS num_cartoons FROM cartoon GROUP BY Directed_by"
+      },
+      {
+        "label": "observation",
+        "value": "('Ben Jones', 4)\n('Brandon Vietti', 4)\n('Michael Chang', 4)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Ben Jones', 4)\n('Brandon Vietti', 4)\n('Michael Chang', 4)"
+      }
+    ],
+    "success": false,
+    "step_num": 5,
+    "reward": 0.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_139",
+    "task_index": 139,
+    "task_type": "intercode_sql",
+    "task_desc": "What is the age and hometown of every teacher?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to retrieve the age and hometown of every teacher. I should look at the `teacher` table to find this information."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM teacher"
+      },
+      {
+        "label": "observation",
+        "value": "('Teacher_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Name', 'text', 'YES', '', None, '')\n('Age', 'text', 'YES', '', None, '')\n('Hometown', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `teacher` table contains 'Age' and 'Hometown' columns. I can directly select these columns along with the teacher's name to answer the question."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Name, Age, Hometown FROM teacher"
+      },
+      {
+        "label": "observation",
+        "value": "('Joseph Huts', '32', 'Blackrod Urban District')\n('Gustaaf Deloor', '29', 'Bolton County Borough')\n('Vicente Carretero', '26', 'Farnworth Municipal Borough')\n('John Deloor', '33', 'Horwich Urban District')\n('Kearsley Brown', '45', 'Kearsley Urban District')\n('Anne Walker', '41', 'Little Lever Urban District')\n('Lucy Wong', '39', 'Turton Urban District')"
+      },
+      {
+        "label": "action",
+        "value": "think: The query returned the name, age, and hometown for each teacher, which directly answers the question."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Name, Age, Hometown FROM teacher"
+      },
+      {
+        "label": "observation",
+        "value": "('Joseph Huts', '32', 'Blackrod Urban District')\n('Gustaaf Deloor', '29', 'Bolton County Borough')\n('Vicente Carretero', '26', 'Farnworth Municipal Borough')\n('John Deloor', '33', 'Horwich Urban District')\n('Kearsley Brown', '45', 'Kearsley Urban District')\n('Anne Walker', '41', 'Little Lever Urban District')\n('Lucy Wong', '39', 'Turton Urban District')"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Joseph Huts', '32', 'Blackrod Urban District')\n('Gustaaf Deloor', '29', 'Bolton County Borough')\n('Vicente Carretero', '26', 'Farnworth Municipal Borough')\n('John Deloor', '33', 'Horwich Urban District')\n('Kearsley Brown', '45', 'Kearsley Urban District')\n('Anne Walker', '41', 'Little Lever Urban District')\n('Lucy Wong', '39', 'Turton Urban District')"
+      }
+    ],
+    "success": false,
+    "step_num": 7,
+    "reward": 0.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_144",
+    "task_index": 144,
+    "task_type": "intercode_sql",
+    "task_desc": "Which city is the most frequent source airport?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the city that is the most frequent source airport. This means I need to count the occurrences of each source airport and then find the city corresponding to the airport with the highest count."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T2.City FROM Flights AS T1 JOIN Airports AS T2 ON T1.Source_airport = T2.Airport_ID GROUP BY T2.City ORDER BY COUNT(T1.Source_airport) DESC LIMIT 1"
+      },
+      {
+        "label": "observation",
+        "value": "Error executing query: Unknown column 'T1.Source_airport' in 'on clause'"
+      },
+      {
+        "label": "action",
+        "value": "think: The previous query failed because `Source_airport` is not in the `Flights` table. I need to check the schema of the `Flights` and `Airports` tables to understand the column names and relationships."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM Flights"
+      },
+      {
+        "label": "observation",
+        "value": "('Airline', 'int', 'NO', 'PRI', None, '')\n('FlightNo', 'int', 'NO', 'PRI', None, '')\n('SourceAirport', 'varchar(255)', 'YES', 'MUL', None, '')\n('DestAirport', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: I made a mistake in the previous query. The `Flights` table has `SourceAirport` and `DestAirport` columns, not `Source_airport`. The `Airports` table has `Airport_ID` and `City`. I need to join `Flights` and `Airports` on `Flights.SourceAirport = Airports.Airport_ID`, then group by `Airports.City` and count the flights. Finally, order by the count in descending order and take the top one."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T2.City FROM Flights AS T1 JOIN Airports AS T2 ON T1.SourceAirport = T2.Airport_ID GROUP BY T2.City ORDER BY COUNT(T1.SourceAirport) DESC LIMIT 1"
+      },
+      {
+        "label": "observation",
+        "value": "Error executing query: Unknown column 'T2.Airport_ID' in 'on clause'"
+      },
+      {
+        "label": "action",
+        "value": "think: I made another mistake. I need to check the schema of the `Airports` table to confirm the column name for the airport ID."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM Airports"
+      },
+      {
+        "label": "observation",
+        "value": "('City', 'text', 'YES', '', None, '')\n('AirportCode', 'varchar(255)', 'NO', 'PRI', None, '')\n('AirportName', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('CountryAbbrev', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: Okay, the `Airports` table has `AirportCode` as the primary key, which should be used to join with `Flights.SourceAirport`. I will correct the join condition."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T2.City FROM Flights AS T1 JOIN Airports AS T2 ON T1.SourceAirport = T2.AirportCode GROUP BY T2.City ORDER BY COUNT(T1.SourceAirport) DESC LIMIT 1"
+      },
+      {
+        "label": "observation",
+        "value": "('Athens ',)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Athens ',)"
+      }
+    ],
+    "success": true,
+    "step_num": 11,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_146",
+    "task_index": 146,
+    "task_type": "intercode_sql",
+    "task_desc": "What is the name and capacity for the stadium with the highest average attendance?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the stadium with the highest average attendance."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('concert',)\n('singer',)\n('singer_in_concert',)\n('stadium',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join the `concert` and `stadium` tables to get the stadium name and capacity, and calculate the average attendance. First, I'll check the schema for `concert` and `stadium`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM concert"
+      },
+      {
+        "label": "observation",
+        "value": "('concert_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('concert_Name', 'text', 'YES', '', None, '')\n('Theme', 'text', 'YES', '', None, '')\n('Stadium_ID', 'int', 'YES', 'MUL', None, '')\n('Year', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `concert` table has `Stadium_ID`. Now I need to check the `stadium` table."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM stadium"
+      },
+      {
+        "label": "observation",
+        "value": "('Stadium_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Location', 'text', 'YES', '', None, '')\n('Name', 'text', 'YES', '', None, '')\n('Capacity', 'int', 'YES', '', None, '')\n('Highest', 'int', 'YES', '', None, '')\n('Lowest', 'int', 'YES', '', None, '')\n('Average', 'int', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `stadium` table has `Name`, `Capacity`, and `Average` (which seems to be average attendance). I can directly query the `stadium` table to find the stadium with the highest `Average` attendance."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Name, Capacity FROM stadium ORDER BY Average DESC LIMIT 1"
+      },
+      {
+        "label": "observation",
+        "value": "(\"Stark's Park\", 10104)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query returned the name and capacity of the stadium with the highest average attendance. This looks correct."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "(\"Stark's Park\", 10104)"
+      }
+    ],
+    "success": true,
+    "step_num": 10,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_147",
+    "task_index": 147,
+    "task_type": "intercode_sql",
+    "task_desc": "List the title of all  Cartoons showed on TV Channel with series name \"Sky Radio\".",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the titles of cartoons that are shown on a TV Channel with the series name \"Sky Radio\"."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('cartoon',)\n('tv_channel',)\n('tv_series',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join these tables to link cartoons to tv channels via tv series."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM cartoon"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'double', 'NO', 'PRI', None, '')\n('Title', 'text', 'YES', '', None, '')\n('Directed_by', 'text', 'YES', '', None, '')\n('Written_by', 'text', 'YES', '', None, '')\n('Original_air_date', 'text', 'YES', '', None, '')\n('Production_code', 'double', 'YES', '', None, '')\n('Channel', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `cartoon` table has a `Channel` column. I need to see how this relates to `tv_channel` and `tv_series`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM tv_channel"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'varchar(255)', 'NO', 'PRI', None, '')\n('series_name', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('Language', 'text', 'YES', '', None, '')\n('Content', 'text', 'YES', '', None, '')\n('Pixel_aspect_ratio_PAR', 'text', 'YES', '', None, '')\n('Hight_definition_TV', 'text', 'YES', '', None, '')\n('Pay_per_view_PPV', 'text', 'YES', '', None, '')\n('Package_Option', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `tv_channel` table has `id` and `series_name`. The `cartoon` table has `Channel`. It seems `cartoon.Channel` refers to `tv_channel.id`. I need to join `cartoon` and `tv_channel` on these columns and filter by `tv_channel.series_name = 'Sky Radio'`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.Title FROM cartoon AS T1 JOIN tv_channel AS T2 ON T1.Channel = T2.id WHERE T2.series_name = 'Sky Radio'"
+      },
+      {
+        "label": "observation",
+        "value": "('The Rise of the Blue Beetle!',)\n('Return of the Fearsome Fangs!',)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('The Rise of the Blue Beetle!',)\n('Return of the Fearsome Fangs!',)"
+      }
+    ],
+    "success": true,
+    "step_num": 9,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_148",
+    "task_index": 148,
+    "task_type": "intercode_sql",
+    "task_desc": "What are the opening year and staff number of the museum named Plaza Museum?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the opening year and staff number for the museum named 'Plaza Museum'. I should look at the `museum` table."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM museum"
+      },
+      {
+        "label": "observation",
+        "value": "('Museum_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Name', 'text', 'YES', '', None, '')\n('Num_of_Staff', 'int', 'YES', '', None, '')\n('Open_Year', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `museum` table has `Name`, `Num_of_Staff`, and `Open_Year` columns. I can filter by `Name = 'Plaza Museum'` and select the `Open_Year` and `Num_of_Staff`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Open_Year, Num_of_Staff FROM museum WHERE Name = 'Plaza Museum'"
+      },
+      {
+        "label": "observation",
+        "value": "('2000', 62)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query returned the opening year and staff number for 'Plaza Museum'. This looks correct."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('2000', 62)"
+      }
+    ],
+    "success": false,
+    "step_num": 6,
+    "reward": 0.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_162",
+    "task_index": 162,
+    "task_type": "intercode_sql",
+    "task_desc": "What are the ids of the TV channels that do not have any cartoons directed by Ben Jones?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the `id` of `tv_channel`s that do not have any cartoons directed by 'Ben Jones'."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('cartoon',)\n('tv_channel',)\n('tv_series',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join `tv_channel` with `tv_series` and `cartoon` to filter by director. First, let me check the schema of `tv_channel`, `tv_series`, and `cartoon`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM tv_channel"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'varchar(255)', 'NO', 'PRI', None, '')\n('series_name', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('Language', 'text', 'YES', '', None, '')\n('Content', 'text', 'YES', '', None, '')\n('Pixel_aspect_ratio_PAR', 'text', 'YES', '', None, '')\n('Hight_definition_TV', 'text', 'YES', '', None, '')\n('Pay_per_view_PPV', 'text', 'YES', '', None, '')\n('Package_Option', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `tv_channel` table has an `id` column. Now let's check `tv_series`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM tv_series"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'double', 'NO', 'PRI', None, '')\n('Episode', 'text', 'YES', '', None, '')\n('Air_Date', 'text', 'YES', '', None, '')\n('Rating', 'text', 'YES', '', None, '')\n('Share', 'double', 'YES', '', None, '')\n('18_49_Rating_Share', 'text', 'YES', '', None, '')\n('Viewers_m', 'text', 'YES', '', None, '')\n('Weekly_Rank', 'double', 'YES', '', None, '')\n('Channel', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `tv_series` table has a `Channel` column which seems to be a foreign key to `tv_channel.id`. Now let's check the `cartoon` table."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM cartoon"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'double', 'NO', 'PRI', None, '')\n('Title', 'text', 'YES', '', None, '')\n('Directed_by', 'text', 'YES', '', None, '')\n('Written_by', 'text', 'YES', '', None, '')\n('Original_air_date', 'text', 'YES', '', None, '')\n('Production_code', 'double', 'YES', '', None, '')\n('Channel', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `cartoon` table also has a `Channel` column, which likely links to `tv_channel.id`. I need to find `tv_channel.id`s that are NOT associated with any cartoon directed by 'Ben Jones'. I can do this by finding all `tv_channel.id`s that ARE associated with cartoons directed by 'Ben Jones' and then selecting all `tv_channel.id`s that are NOT in that set."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT id FROM tv_channel EXCEPT SELECT T1.id FROM tv_channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.Directed_by = 'Ben Jones'"
+      },
+      {
+        "label": "observation",
+        "value": "('701',)\n('703',)\n('705',)\n('706',)\n('708',)\n('709',)\n('713',)\n('714',)\n('715',)\n('717',)\n('719',)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query returns the IDs of TV channels that do not have any cartoons directed by Ben Jones. This seems correct."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT id FROM tv_channel EXCEPT SELECT T1.id FROM tv_channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.Directed_by = 'Ben Jones'"
+      },
+      {
+        "label": "observation",
+        "value": "('701',)\n('703',)\n('705',)\n('706',)\n('708',)\n('709',)\n('713',)\n('714',)\n('715',)\n('717',)\n('719',)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('701',)\n('703',)\n('705',)\n('706',)\n('708',)\n('709',)\n('713',)\n('714',)\n('715',)\n('717',)\n('719',)"
+      }
+    ],
+    "success": true,
+    "step_num": 13,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_163",
+    "task_index": 163,
+    "task_type": "intercode_sql",
+    "task_desc": "Which city has most number of arriving flights?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the city with the most arriving flights."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('airlines',)\n('airports',)\n('flights',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join the `flights` table with the `airports` table to get the city names. I'll count the number of arriving flights for each city. Arriving flights means the `dest_airport_id` in the `flights` table."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM flights"
+      },
+      {
+        "label": "observation",
+        "value": "('Airline', 'int', 'NO', 'PRI', None, '')\n('FlightNo', 'int', 'NO', 'PRI', None, '')\n('SourceAirport', 'varchar(255)', 'YES', 'MUL', None, '')\n('DestAirport', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `flights` table has `DestAirport` which is the destination airport ID. I need to link this to the `airports` table to get the city name."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM airports"
+      },
+      {
+        "label": "observation",
+        "value": "('City', 'text', 'YES', '', None, '')\n('AirportCode', 'varchar(255)', 'NO', 'PRI', None, '')\n('AirportName', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('CountryAbbrev', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: I have the `flights` table with `DestAirport` and the `airports` table with `AirportCode` and `City`. I can join these two tables on `flights.DestAirport = airports.AirportCode`. Then I will group by `City` and count the number of flights for each city, and finally order by the count in descending order to find the city with the most arriving flights."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T2.City FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport = T2.AirportCode GROUP BY T2.City ORDER BY COUNT(T1.FlightNo) DESC LIMIT 1"
+      },
+      {
+        "label": "observation",
+        "value": "('Anchorage ',)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Anchorage ',)"
+      }
+    ],
+    "success": true,
+    "step_num": 9,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_181",
+    "task_index": 181,
+    "task_type": "intercode_sql",
+    "task_desc": "Which city has the most frequent destination airport?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the city that is the destination airport for the most flights."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('airlines',)\n('airports',)\n('flights',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join `flights` and `airports` tables. The `flights` table has `dest_airport_id` and the `airports` table has `airport_id` and `city`. I will count the occurrences of each `dest_airport_id`, join with `airports` to get the city, and then find the city with the maximum count."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T2.city FROM flights AS T1 JOIN airports AS T2 ON T1.dest_airport_id = T2.airport_id GROUP BY T2.city ORDER BY COUNT(T1.flight_id) DESC LIMIT 1"
+      },
+      {
+        "label": "observation",
+        "value": "Error executing query: Unknown column 'T1.dest_airport_id' in 'on clause'"
+      },
+      {
+        "label": "action",
+        "value": "think: My previous query failed because `flights` table does not have `dest_airport_id`. I need to check the schema of the `flights` table to find the correct column name for destination airport."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM flights"
+      },
+      {
+        "label": "observation",
+        "value": "('Airline', 'int', 'NO', 'PRI', None, '')\n('FlightNo', 'int', 'NO', 'PRI', None, '')\n('SourceAirport', 'varchar(255)', 'YES', 'MUL', None, '')\n('DestAirport', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `flights` table has `DestAirport` which seems to be the destination airport. I will use this column to join with the `airports` table's `airport_id` column. Then I will group by city and count the flights, ordering by the count in descending order to find the city with the most frequent destination airport."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T2.city FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport = T2.airport_id GROUP BY T2.city ORDER BY COUNT(T1.FlightNo) DESC LIMIT 1"
+      },
+      {
+        "label": "observation",
+        "value": "Error executing query: Unknown column 'T2.airport_id' in 'on clause'"
+      },
+      {
+        "label": "action",
+        "value": "think: My previous query failed again. It seems `airports` table does not have `airport_id` column. I need to check the schema of the `airports` table to find the correct column name for airport ID."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM airports"
+      },
+      {
+        "label": "observation",
+        "value": "('City', 'text', 'YES', '', None, '')\n('AirportCode', 'varchar(255)', 'NO', 'PRI', None, '')\n('AirportName', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('CountryAbbrev', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `airports` table has `AirportCode` which is the primary key and seems to be the airport ID. I will use `AirportCode` to join with `flights.DestAirport`. Then I will group by `City` from the `airports` table and count the flights, ordering by the count in descending order to find the city with the most frequent destination airport."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T2.City FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport = T2.AirportCode GROUP BY T2.City ORDER BY COUNT(T1.FlightNo) DESC LIMIT 1"
+      },
+      {
+        "label": "observation",
+        "value": "('Anchorage ',)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Anchorage ',)"
+      }
+    ],
+    "success": true,
+    "step_num": 13,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_185",
+    "task_index": 185,
+    "task_type": "intercode_sql",
+    "task_desc": "What are the death and injury situations caused by the ship with tonnage 't'?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the death and injury situations caused by ships with a specific tonnage."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('battle',)\n('death',)\n('ship',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join the tables to get the information. I will start by looking at the schema of each table."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM battle"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'int', 'NO', 'PRI', None, 'auto_increment')\n('name', 'text', 'YES', '', None, '')\n('date', 'text', 'YES', '', None, '')\n('bulgarian_commander', 'text', 'YES', '', None, '')\n('latin_commander', 'text', 'YES', '', None, '')\n('result', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM death"
+      },
+      {
+        "label": "observation",
+        "value": "('caused_by_ship_id', 'int', 'YES', 'MUL', None, '')\n('id', 'int', 'NO', 'PRI', None, 'auto_increment')\n('note', 'text', 'YES', '', None, '')\n('killed', 'int', 'YES', '', None, '')\n('injured', 'int', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `death` table contains `killed` and `injured` columns, which are the \"death and injury situations\". It also has `caused_by_ship_id`. The `ship` table should contain the tonnage information. I need to join `death` and `ship` tables."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM ship"
+      },
+      {
+        "label": "observation",
+        "value": "('lost_in_battle', 'int', 'YES', 'MUL', None, '')\n('id', 'int', 'NO', 'PRI', None, 'auto_increment')\n('name', 'text', 'YES', '', None, '')\n('tonnage', 'text', 'YES', '', None, '')\n('ship_type', 'text', 'YES', '', None, '')\n('location', 'text', 'YES', '', None, '')\n('disposition_of_ship', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `ship` table has `tonnage` and `id`. I can join `death` and `ship` on `death.caused_by_ship_id = ship.id` and filter by `ship.tonnage = 't'`. Then I need to select `killed` and `injured` from the `death` table."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.killed, T1.injured FROM death AS T1 JOIN ship AS T2 ON T1.caused_by_ship_id = T2.id WHERE T2.tonnage = 't'"
+      },
+      {
+        "label": "observation",
+        "value": "(8, 0)\n(29, 0)\n(3, 0)\n(0, 0)\n(2, 0)\n(0, 0)\n(25, 0)\n(0, 0)\n(4, 5)\n(14, 0)\n(0, 0)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "(8, 0)\n(29, 0)\n(3, 0)\n(0, 0)\n(2, 0)\n(0, 0)\n(25, 0)\n(0, 0)\n(4, 5)\n(14, 0)\n(0, 0)"
+      }
+    ],
+    "success": true,
+    "step_num": 10,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_186",
+    "task_index": 186,
+    "task_type": "intercode_sql",
+    "task_desc": "How many flights does airline 'JetBlue Airways' have?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to count the number of flights for 'JetBlue Airways'."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('airlines',)\n('airports',)\n('flights',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join the `airlines` table with the `flights` table to filter by airline name and then count the flights. First, I'll check the schema of `airlines` and `flights`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM airlines"
+      },
+      {
+        "label": "observation",
+        "value": "('uid', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Airline', 'text', 'YES', '', None, '')\n('Abbreviation', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `airlines` table has the `Airline` column which I can use to filter for 'JetBlue Airways'. Now I need to check the `flights` table to see how it links to `airlines` and if it has an airline ID."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM flights"
+      },
+      {
+        "label": "observation",
+        "value": "('Airline', 'int', 'NO', 'PRI', None, '')\n('FlightNo', 'int', 'NO', 'PRI', None, '')\n('SourceAirport', 'varchar(255)', 'YES', 'MUL', None, '')\n('DestAirport', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `flights` table has an `Airline` column which is an `int`. This suggests it's a foreign key to the `airlines` table. The `airlines` table has a `uid` column which is an `int` and a primary key. So, I should join `airlines.uid` with `flights.Airline`. Then I can filter by `airlines.Airline = 'JetBlue Airways'` and count the flights."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT COUNT(T1.FlightNo) FROM flights AS T1 JOIN airlines AS T2 ON T1.Airline = T2.uid WHERE T2.Airline = 'JetBlue Airways'"
+      },
+      {
+        "label": "observation",
+        "value": "(0,)"
+      },
+      {
+        "label": "action",
+        "value": "think: The previous query returned 0, which seems unlikely for an airline. Let me re-examine the schema."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM flights"
+      },
+      {
+        "label": "observation",
+        "value": "('Airline', 'int', 'NO', 'PRI', None, '')\n('FlightNo', 'int', 'NO', 'PRI', None, '')\n('SourceAirport', 'varchar(255)', 'YES', 'MUL', None, '')\n('DestAirport', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: I see the problem. The `flights` table has a column named `Airline` which is an `int` and is part of the primary key. This `Airline` column in the `flights` table is likely the foreign key referencing the `uid` in the `airlines` table. My previous query was correct in its join condition. The issue might be with the data itself or a misunderstanding of the schema. Let me re-check the `airlines` table to ensure 'JetBlue Airways' exists and what its `uid` is."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT uid FROM airlines WHERE Airline = 'JetBlue Airways'"
+      },
+      {
+        "label": "observation",
+        "value": "(8,)"
+      },
+      {
+        "label": "action",
+        "value": "think: 'JetBlue Airways' has a `uid` of 8. Now I can use this `uid` to count the flights directly from the `flights` table, or re-run the join query. The join query should work. Let me re-run the join query to be sure."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT COUNT(T1.FlightNo) FROM flights AS T1 JOIN airlines AS T2 ON T1.Airline = T2.uid WHERE T2.Airline = 'JetBlue Airways'"
+      },
+      {
+        "label": "observation",
+        "value": "(0,)"
+      },
+      {
+        "label": "action",
+        "value": "think: It still returns 0. This is very strange. Let me check the `flights` table directly to see if there are any flights associated with `Airline` ID 8."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT COUNT(*) FROM flights WHERE Airline = 8"
+      },
+      {
+        "label": "observation",
+        "value": "(0,)"
+      },
+      {
+        "label": "action",
+        "value": "think: This is still returning 0. It seems there are no flights in the `flights` table associated with `Airline` ID 8, which corresponds to 'JetBlue Airways'. This could mean the database is empty or the data is not as expected. However, I must provide an answer based on the available data. If there are no flights, the count is 0."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT COUNT(T1.FlightNo) FROM flights AS T1 JOIN airlines AS T2 ON T1.Airline = T2.uid WHERE T2.Airline = 'JetBlue Airways'"
+      },
+      {
+        "label": "observation",
+        "value": "(0,)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "(0,)"
+      }
+    ],
+    "success": true,
+    "step_num": 19,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_193",
+    "task_index": 193,
+    "task_type": "intercode_sql",
+    "task_desc": "List each language and the number of TV Channels using it.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to list each language and the number of TV Channels using it."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('cartoon',)\n('tv_channel',)\n('tv_series',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I see three tables: cartoon, tv_channel, and tv_series. I need to find language information and count TV channels. I should check the `tv_channel` table first to see if it contains language information."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM tv_channel"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'varchar(255)', 'NO', 'PRI', None, '')\n('series_name', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('Language', 'text', 'YES', '', None, '')\n('Content', 'text', 'YES', '', None, '')\n('Pixel_aspect_ratio_PAR', 'text', 'YES', '', None, '')\n('Hight_definition_TV', 'text', 'YES', '', None, '')\n('Pay_per_view_PPV', 'text', 'YES', '', None, '')\n('Package_Option', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `tv_channel` table has a `Language` column. I can group by `Language` and count the number of channels for each language."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Language, COUNT(id) AS NumberOfChannels FROM tv_channel GROUP BY Language"
+      },
+      {
+        "label": "observation",
+        "value": "('Italian', 12)\n('English', 3)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Italian', 12)\n('English', 3)"
+      }
+    ],
+    "success": true,
+    "step_num": 7,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_204",
+    "task_index": 204,
+    "task_type": "intercode_sql",
+    "task_desc": "which countries' tv channels are not playing any cartoon written by Todd Casey?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find countries whose TV channels are not playing any cartoon written by 'Todd Casey'."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('cartoon',)\n('tv_channel',)\n('tv_series',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join these tables to link cartoons to TV channels and then filter by writer."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM cartoon"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'double', 'NO', 'PRI', None, '')\n('Title', 'text', 'YES', '', None, '')\n('Directed_by', 'text', 'YES', '', None, '')\n('Written_by', 'text', 'YES', '', None, '')\n('Original_air_date', 'text', 'YES', '', None, '')\n('Production_code', 'double', 'YES', '', None, '')\n('Channel', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `cartoon` table has `Written_by` and `Channel` columns. The `Channel` column in `cartoon` table seems to link to `tv_channel` table. Let me check the `tv_channel` table."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM tv_channel"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'varchar(255)', 'NO', 'PRI', None, '')\n('series_name', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('Language', 'text', 'YES', '', None, '')\n('Content', 'text', 'YES', '', None, '')\n('Pixel_aspect_ratio_PAR', 'text', 'YES', '', None, '')\n('Hight_definition_TV', 'text', 'YES', '', None, '')\n('Pay_per_view_PPV', 'text', 'YES', '', None, '')\n('Package_Option', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `tv_channel` table has `Country` and `id` columns. The `id` column in `tv_channel` seems to be the channel identifier."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.Country FROM tv_channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.Written_by != 'Todd Casey' EXCEPT SELECT T1.Country FROM tv_channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.Written_by = 'Todd Casey'"
+      },
+      {
+        "label": "observation",
+        "value": "(empty result set)"
+      },
+      {
+        "label": "action",
+        "value": "think: The previous query was incorrect. I need to find countries where *none* of their channels play cartoons by Todd Casey."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.Country FROM tv_channel AS T1 WHERE T1.Country NOT IN ( SELECT T2.Country FROM tv_channel AS T2 JOIN cartoon AS T3 ON T2.id = T3.Channel WHERE T3.Written_by = 'Todd Casey' )"
+      },
+      {
+        "label": "observation",
+        "value": "('Poland',)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query returns 'Poland'. This means that Poland is the only country whose TV channels are not playing any cartoon written by Todd Casey. This seems correct."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.Country FROM tv_channel AS T1 WHERE T1.Country NOT IN ( SELECT T2.Country FROM tv_channel AS T2 JOIN cartoon AS T3 ON T2.id = T3.Channel WHERE T3.Written_by = 'Todd Casey' )"
+      },
+      {
+        "label": "observation",
+        "value": "('Poland',)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Poland',)"
+      }
+    ],
+    "success": true,
+    "step_num": 13,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_205",
+    "task_index": 205,
+    "task_type": "intercode_sql",
+    "task_desc": "How many flights land in Aberdeen or Abilene?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to count the number of flights that land in either Aberdeen or Abilene."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM flights"
+      },
+      {
+        "label": "observation",
+        "value": "('Airline', 'int', 'NO', 'PRI', None, '')\n('FlightNo', 'int', 'NO', 'PRI', None, '')\n('SourceAirport', 'varchar(255)', 'YES', 'MUL', None, '')\n('DestAirport', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `flights` table has `DestAirport` which I can use to filter. I need to find the airport codes for 'Aberdeen' and 'Abilene' from the `airports` table."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM airports"
+      },
+      {
+        "label": "observation",
+        "value": "('City', 'text', 'YES', '', None, '')\n('AirportCode', 'varchar(255)', 'NO', 'PRI', None, '')\n('AirportName', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('CountryAbbrev', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join `flights` and `airports` tables. First, I will find the `AirportCode` for 'Aberdeen' and 'Abilene' from the `airports` table. Then I will use these codes to filter the `flights` table and count the number of flights."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT COUNT(T1.FlightNo) FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport = T2.AirportCode WHERE T2.City = 'Aberdeen' OR T2.City = 'Abilene'"
+      },
+      {
+        "label": "observation",
+        "value": "(0,)"
+      },
+      {
+        "label": "action",
+        "value": "think: The previous query returned 0. This might be because the `City` column in the `airports` table might not contain 'Aberdeen' or 'Abilene' exactly, or there are no flights to these specific cities. Let me check the distinct cities in the `airports` table that start with 'Aberdeen' or 'Abilene' to verify the city names."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT DISTINCT City FROM airports WHERE City LIKE 'Aberdeen%' OR City LIKE 'Abilene%'"
+      },
+      {
+        "label": "observation",
+        "value": "('Abilene ',)\n('Aberdeen ',)"
+      },
+      {
+        "label": "action",
+        "value": "think: It seems the city names have trailing spaces. I should use `TRIM(T2.City)` in my WHERE clause to match correctly."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT COUNT(T1.FlightNo) FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport = T2.AirportCode WHERE TRIM(T2.City) = 'Aberdeen' OR TRIM(T2.City) = 'Abilene'"
+      },
+      {
+        "label": "observation",
+        "value": "(0,)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query still returns 0. This is unexpected. Let me check if there are any flights at all in the `flights` table and if the `DestAirport` codes actually link to the `airports` table. I will also check the `AirportCode` for 'Aberdeen' and 'Abilene' to make sure they exist."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT AirportCode FROM airports WHERE TRIM(City) = 'Aberdeen' OR TRIM(City) = 'Abilene'"
+      },
+      {
+        "label": "observation",
+        "value": "('ABI',)\n('ABR',)\n('APG',)\n('DYS',)"
+      },
+      {
+        "label": "action",
+        "value": "think: Okay, I have the airport codes for Aberdeen and Abilene. Now I need to count the flights where `DestAirport` matches these codes. The previous query was correct in its structure, but it returned 0. Let me re-run the query with the correct airport codes."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT COUNT(T1.FlightNo) FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport = T2.AirportCode WHERE T2.AirportCode IN ('ABI', 'ABR', 'APG', 'DYS')"
+      },
+      {
+        "label": "observation",
+        "value": "(0,)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query still returns 0. This is very strange. It's possible that there are no flights to these airports in the `flights` table. Let me check if there are any flights at all in the `flights` table. Also, I will check if the `DestAirport` values in `flights` actually correspond to `AirportCode` values in `airports`. I will try to find some common `DestAirport` values from `flights` and see if they exist in `airports`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT COUNT(*) FROM flights"
+      },
+      {
+        "label": "observation",
+        "value": "(50,)"
+      },
+      {
+        "label": "action",
+        "value": "think: There are 50 flights in the `flights` table. So the table is not empty. Now I need to verify if any of these flights land in Aberdeen or Abilene. I have the airport codes for Aberdeen and Abilene: 'ABI', 'ABR', 'APG', 'DYS'. I will try to count flights where `DestAirport` is one of these codes."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT COUNT(*) FROM flights WHERE DestAirport IN (SELECT AirportCode FROM airports WHERE TRIM(City) = 'Aberdeen' OR TRIM(City) = 'Abilene')"
+      },
+      {
+        "label": "observation",
+        "value": "(0,)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query still returns 0. This is very puzzling. I have confirmed that there are flights in the `flights` table and that the airport codes for Aberdeen and Abilene are correctly identified. It's possible that the `DestAirport` column in the `flights` table does not contain any of these specific airport codes. Let me check the distinct values of `DestAirport` in the `flights` table and see if any of the identified airport codes for Aberdeen or Abilene are present."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT DISTINCT T1.DestAirport FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport = T2.AirportCode WHERE TRIM(T2.City) = 'Aberdeen' OR TRIM(T2.City) = 'Abilene'"
+      },
+      {
+        "label": "observation",
+        "value": "(empty result set)"
+      },
+      {
+        "label": "action",
+        "value": "think: The previous query returned an empty result set, which means there are no flights in the `flights` table that have a `DestAirport` matching the airport codes of 'Aberdeen' or 'Abilene'. This confirms why the count is 0. The question asks \"How many flights land in Aberdeen or Abilene?\". Based on the data, the answer is 0."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT COUNT(T1.FlightNo) FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport = T2.AirportCode WHERE TRIM(T2.City) = 'Aberdeen' OR TRIM(T2.City) = 'Abilene'"
+      },
+      {
+        "label": "observation",
+        "value": "(0,)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "(0,)"
+      }
+    ],
+    "success": true,
+    "step_num": 23,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_208",
+    "task_index": 208,
+    "task_type": "intercode_sql",
+    "task_desc": "What are the names of the teachers whose courses have not been arranged?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the names of teachers whose courses have not been arranged."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('course',)\n('course_arrange',)\n('teacher',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join the `teacher`, `course`, and `course_arrange` tables."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM teacher"
+      },
+      {
+        "label": "observation",
+        "value": "('Teacher_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Name', 'text', 'YES', '', None, '')\n('Age', 'text', 'YES', '', None, '')\n('Hometown', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM course"
+      },
+      {
+        "label": "observation",
+        "value": "('Course_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Staring_Date', 'text', 'YES', '', None, '')\n('Course', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to link teachers to courses and then to course arrangements. The `teacher` table has `Teacher_ID` and `Name`. The `course` table has `Course_ID` and `Course`. I need to see how `teacher` and `course` are related. It seems there is no direct link between `teacher` and `course` in the schema. Let me check `course_arrange`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM course_arrange"
+      },
+      {
+        "label": "observation",
+        "value": "('Course_ID', 'int', 'NO', 'PRI', None, '')\n('Teacher_ID', 'int', 'NO', 'PRI', None, '')\n('Grade', 'int', 'NO', 'PRI', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `course_arrange` table links `Course_ID` and `Teacher_ID`. So, I can join `teacher` with `course_arrange` to find teachers who have arranged courses. To find teachers whose courses have *not* been arranged, I can find all teachers and then exclude those who appear in `course_arrange`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T2.Name FROM course_arrange AS T1 JOIN teacher AS T2 ON T1.Teacher_ID = T2.Teacher_ID WHERE T1.Course_ID NOT IN (SELECT Course_ID FROM course_arrange)"
+      },
+      {
+        "label": "observation",
+        "value": "(empty result set)"
+      },
+      {
+        "label": "action",
+        "value": "think: My previous query was incorrect. `WHERE T1.Course_ID NOT IN (SELECT Course_ID FROM course_arrange)` will always be false if T1 is from course_arrange. I need to find teachers who are not associated with any course arrangement. I can do this by selecting all teachers and then excluding those whose `Teacher_ID` exists in the `course_arrange` table."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Name FROM teacher WHERE Teacher_ID NOT IN (SELECT Teacher_ID FROM course_arrange)"
+      },
+      {
+        "label": "observation",
+        "value": "('Joseph Huts',)\n('John Deloor',)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Joseph Huts',)\n('John Deloor',)"
+      }
+    ],
+    "success": true,
+    "step_num": 12,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_213",
+    "task_index": 213,
+    "task_type": "intercode_sql",
+    "task_desc": "Give the city and country for the Alton airport.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the city and country for the 'Alton' airport. I should look at the 'airports' table to find this information."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM airports"
+      },
+      {
+        "label": "observation",
+        "value": "('City', 'text', 'YES', '', None, '')\n('AirportCode', 'varchar(255)', 'NO', 'PRI', None, '')\n('AirportName', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('CountryAbbrev', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The 'airports' table has 'City', 'Country', and 'AirportName' columns. I can filter by 'AirportName' for 'Alton' and select the 'City' and 'Country'."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT City, Country FROM airports WHERE AirportName = 'Alton'"
+      },
+      {
+        "label": "observation",
+        "value": "('Alton ', 'United States ')"
+      },
+      {
+        "label": "action",
+        "value": "think: The query returned the city and country for the Alton airport. This looks correct. Let me submit."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT City, Country FROM airports WHERE AirportName = 'Alton'"
+      },
+      {
+        "label": "observation",
+        "value": "('Alton ', 'United States ')"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Alton ', 'United States ')"
+      }
+    ],
+    "success": true,
+    "step_num": 7,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_224",
+    "task_index": 224,
+    "task_type": "intercode_sql",
+    "task_desc": "List the names of teachers in ascending order of age.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to list the names of teachers ordered by their age. I should check the `teacher` table to find the teacher names and ages."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM teacher"
+      },
+      {
+        "label": "observation",
+        "value": "('Teacher_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Name', 'text', 'YES', '', None, '')\n('Age', 'text', 'YES', '', None, '')\n('Hometown', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `teacher` table has `Name` and `Age` columns. I can select the `Name` and order by `Age` in ascending order. The `Age` column is of type `text`, so I should cast it to an integer for proper sorting."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT Name FROM teacher ORDER BY CAST(Age AS UNSIGNED) ASC"
+      },
+      {
+        "label": "observation",
+        "value": "('Vicente Carretero',)\n('Gustaaf Deloor',)\n('Joseph Huts',)\n('John Deloor',)\n('Lucy Wong',)\n('Anne Walker',)\n('Kearsley Brown',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I have retrieved the names of teachers ordered by their age. The result seems correct."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Vicente Carretero',)\n('Gustaaf Deloor',)\n('Joseph Huts',)\n('John Deloor',)\n('Lucy Wong',)\n('Anne Walker',)\n('Kearsley Brown',)"
+      }
+    ],
+    "success": true,
+    "step_num": 6,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_226",
+    "task_index": 226,
+    "task_type": "intercode_sql",
+    "task_desc": "How many airlines are from USA?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to count the number of airlines that are from USA. I should check the `airlines` table to see if there is a column indicating the country of origin."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM airlines"
+      },
+      {
+        "label": "observation",
+        "value": "('uid', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Airline', 'text', 'YES', '', None, '')\n('Abbreviation', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `airlines` table has a `Country` column. I can filter by `Country = 'USA'` and then count the distinct airlines."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT COUNT(*) FROM airlines WHERE Country = 'USA'"
+      },
+      {
+        "label": "observation",
+        "value": "(12,)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query returned 12, which is the count of airlines from USA. This seems correct."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "(12,)"
+      }
+    ],
+    "success": true,
+    "step_num": 6,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_229",
+    "task_index": 229,
+    "task_type": "intercode_sql",
+    "task_desc": "find the id of tv channels that do not play any cartoon directed by Ben Jones.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the `id` of `tv_channel` that do not play any cartoon directed by 'Ben Jones'."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('cartoon',)\n('tv_channel',)\n('tv_series',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join `tv_channel`, `tv_series`, and `cartoon` tables."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM tv_channel"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'varchar(255)', 'NO', 'PRI', None, '')\n('series_name', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('Language', 'text', 'YES', '', None, '')\n('Content', 'text', 'YES', '', None, '')\n('Pixel_aspect_ratio_PAR', 'text', 'YES', '', None, '')\n('Hight_definition_TV', 'text', 'YES', '', None, '')\n('Pay_per_view_PPV', 'text', 'YES', '', None, '')\n('Package_Option', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `tv_channel` table has an `id` column. I need to find the `id` of channels that do not play cartoons directed by 'Ben Jones'. I need to check the `tv_series` and `cartoon` tables to link channels to cartoons and directors."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM tv_series"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'double', 'NO', 'PRI', None, '')\n('Episode', 'text', 'YES', '', None, '')\n('Air_Date', 'text', 'YES', '', None, '')\n('Rating', 'text', 'YES', '', None, '')\n('Share', 'double', 'YES', '', None, '')\n('18_49_Rating_Share', 'text', 'YES', '', None, '')\n('Viewers_m', 'text', 'YES', '', None, '')\n('Weekly_Rank', 'double', 'YES', '', None, '')\n('Channel', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `tv_series` table has a `Channel` column which seems to link to `tv_channel.id`. Now I need to check the `cartoon` table to see how it links to `tv_series` and where the director information is."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM cartoon"
+      },
+      {
+        "label": "observation",
+        "value": "('id', 'double', 'NO', 'PRI', None, '')\n('Title', 'text', 'YES', '', None, '')\n('Directed_by', 'text', 'YES', '', None, '')\n('Written_by', 'text', 'YES', '', None, '')\n('Original_air_date', 'text', 'YES', '', None, '')\n('Production_code', 'double', 'YES', '', None, '')\n('Channel', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `cartoon` table has a `Directed_by` column and a `Channel` column. The `Channel` column in `cartoon` and `tv_series` seems to link to `tv_channel.id`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.id FROM tv_channel AS T1 EXCEPT SELECT T1.id FROM tv_channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.Directed_by = 'Ben Jones'"
+      },
+      {
+        "label": "observation",
+        "value": "('701',)\n('703',)\n('705',)\n('706',)\n('708',)\n('709',)\n('713',)\n('714',)\n('715',)\n('717',)\n('719',)"
+      },
+      {
+        "label": "action",
+        "value": "think: The previous query returns the ids of tv channels that do not play any cartoon directed by Ben Jones. This seems to be the correct answer."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.id FROM tv_channel AS T1 EXCEPT SELECT T1.id FROM tv_channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.Directed_by = 'Ben Jones'"
+      },
+      {
+        "label": "observation",
+        "value": "('701',)\n('703',)\n('705',)\n('706',)\n('708',)\n('709',)\n('713',)\n('714',)\n('715',)\n('717',)\n('719',)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('701',)\n('703',)\n('705',)\n('706',)\n('708',)\n('709',)\n('713',)\n('714',)\n('715',)\n('717',)\n('719',)"
+      }
+    ],
+    "success": true,
+    "step_num": 13,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_242",
+    "task_index": 242,
+    "task_type": "intercode_sql",
+    "task_desc": "What is the average and maximum capacities for all stadiums ?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the average and maximum capacities for all stadiums. I should look at the `stadium` table to find the capacity information."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM stadium"
+      },
+      {
+        "label": "observation",
+        "value": "('Stadium_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Location', 'text', 'YES', '', None, '')\n('Name', 'text', 'YES', '', None, '')\n('Capacity', 'int', 'YES', '', None, '')\n('Highest', 'int', 'YES', '', None, '')\n('Lowest', 'int', 'YES', '', None, '')\n('Average', 'int', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `stadium` table has a `Capacity` column. I can use `AVG()` and `MAX()` functions on this column to get the average and maximum capacities."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT AVG(Capacity), MAX(Capacity) FROM stadium"
+      },
+      {
+        "label": "observation",
+        "value": "(Decimal('10621.6667'), 52500)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query returned the average and maximum capacities. This looks correct. Let me submit."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT AVG(Capacity), MAX(Capacity) FROM stadium"
+      },
+      {
+        "label": "observation",
+        "value": "(Decimal('10621.6667'), 52500)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "(Decimal('10621.6667'), 52500)"
+      }
+    ],
+    "success": true,
+    "step_num": 7,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_245",
+    "task_index": 245,
+    "task_type": "intercode_sql",
+    "task_desc": "What airline serves the most flights?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the airline that serves the most flights."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('airlines',)\n('airports',)\n('flights',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join the `airlines` table with the `flights` table to get the airline names and count their flights. First, I'll check the schema of `airlines` and `flights`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM airlines"
+      },
+      {
+        "label": "observation",
+        "value": "('uid', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Airline', 'text', 'YES', '', None, '')\n('Abbreviation', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM flights"
+      },
+      {
+        "label": "observation",
+        "value": "('Airline', 'int', 'NO', 'PRI', None, '')\n('FlightNo', 'int', 'NO', 'PRI', None, '')\n('SourceAirport', 'varchar(255)', 'YES', 'MUL', None, '')\n('DestAirport', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `flights` table has an `Airline` column which seems to be a foreign key to the `airlines` table's `uid` column. I need to count the flights for each airline and then find the airline with the maximum count."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.Airline FROM airlines AS T1 JOIN flights AS T2 ON T1.uid = T2.Airline GROUP BY T1.Airline ORDER BY COUNT(T2.FlightNo) DESC LIMIT 1"
+      },
+      {
+        "label": "observation",
+        "value": "('Southwest Airlines',)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Southwest Airlines',)"
+      }
+    ],
+    "success": true,
+    "step_num": 8,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_248",
+    "task_index": 248,
+    "task_type": "intercode_sql",
+    "task_desc": "How many museums were opened after 2013 or before 2008?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to count the number of museums that opened after 2013 or before 2008. I should check the `museum` table to find the opening year."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM museum"
+      },
+      {
+        "label": "observation",
+        "value": "('Museum_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Name', 'text', 'YES', '', None, '')\n('Num_of_Staff', 'int', 'YES', '', None, '')\n('Open_Year', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `museum` table has an `Open_Year` column. I need to filter museums where `Open_Year` > 2013 or `Open_Year` < 2008 and then count them. The `Open_Year` column is of type `text`, so I should cast it to an integer for comparison."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT COUNT(*) FROM museum WHERE CAST(Open_Year AS UNSIGNED) > 2013 OR CAST(Open_Year AS UNSIGNED) < 2008"
+      },
+      {
+        "label": "observation",
+        "value": "(1,)"
+      },
+      {
+        "label": "action",
+        "value": "think: The query returned 1. This seems to be the correct count of museums that opened after 2013 or before 2008."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT COUNT(*) FROM museum WHERE CAST(Open_Year AS UNSIGNED) > 2013 OR CAST(Open_Year AS UNSIGNED) < 2008"
+      },
+      {
+        "label": "observation",
+        "value": "(1,)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "(1,)"
+      }
+    ],
+    "success": true,
+    "step_num": 7,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_251",
+    "task_index": 251,
+    "task_type": "intercode_sql",
+    "task_desc": "What is the average age of the visitors whose membership level is not higher than 4?",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to calculate the average age of visitors."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('museum',)\n('visit',)\n('visitor',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to find the average age of visitors with a membership level not higher than 4. I should check the 'visitor' table for age and membership level."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM visitor"
+      },
+      {
+        "label": "observation",
+        "value": "('ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Name', 'text', 'YES', '', None, '')\n('Level_of_membership', 'int', 'YES', '', None, '')\n('Age', 'int', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The 'visitor' table contains 'Age' and 'Level_of_membership'. I need to filter for 'Level_of_membership' <= 4 and then calculate the average 'Age'."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT AVG(Age) FROM visitor WHERE Level_of_membership <= 4"
+      },
+      {
+        "label": "observation",
+        "value": "(Decimal('36.0000'),)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "(Decimal('36.0000'),)"
+      }
+    ],
+    "success": true,
+    "step_num": 7,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_255",
+    "task_index": 255,
+    "task_type": "intercode_sql",
+    "task_desc": "Give the flight numbers of flights landing at APG.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to find the flight numbers of flights that land at the airport with code 'APG'."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('airlines',)\n('airports',)\n('flights',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join the `flights` table with the `airports` table to filter by the airport code. First, I'll check the schema of both tables to understand the join conditions and relevant columns."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM flights"
+      },
+      {
+        "label": "observation",
+        "value": "('Airline', 'int', 'NO', 'PRI', None, '')\n('FlightNo', 'int', 'NO', 'PRI', None, '')\n('SourceAirport', 'varchar(255)', 'YES', 'MUL', None, '')\n('DestAirport', 'varchar(255)', 'YES', 'MUL', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `flights` table has `DestAirport` which likely corresponds to the airport code. Now I need to check the `airports` table to confirm the airport code column."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM airports"
+      },
+      {
+        "label": "observation",
+        "value": "('City', 'text', 'YES', '', None, '')\n('AirportCode', 'varchar(255)', 'NO', 'PRI', None, '')\n('AirportName', 'text', 'YES', '', None, '')\n('Country', 'text', 'YES', '', None, '')\n('CountryAbbrev', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `airports` table has `AirportCode`. I can join `flights.DestAirport` with `airports.AirportCode` and filter where `airports.AirportCode` is 'APG'. Then I will select `flights.FlightNo`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.FlightNo FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport = T2.AirportCode WHERE T2.AirportCode = 'APG'"
+      },
+      {
+        "label": "observation",
+        "value": "(empty result set)"
+      },
+      {
+        "label": "action",
+        "value": "think: The previous query returned an empty result set. This might mean there are no flights landing at APG, or my understanding of the schema or join condition is incorrect. Let me double check the `airports` table to see if 'APG' exists as an `AirportCode`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT * FROM airports WHERE AirportCode = 'APG'"
+      },
+      {
+        "label": "observation",
+        "value": "('Aberdeen ', 'APG', 'Phillips AAF ', 'United States ', 'US ')"
+      },
+      {
+        "label": "action",
+        "value": "think: 'APG' does exist in the `airports` table. This means the issue is likely with the `flights` table not having any flights with `DestAirport` as 'APG'. Let me re-run the original query, as it is the correct way to answer the question, even if the result is empty."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.FlightNo FROM flights AS T1 JOIN airports AS T2 ON T1.DestAirport = T2.AirportCode WHERE T2.AirportCode = 'APG'"
+      },
+      {
+        "label": "observation",
+        "value": "(empty result set)"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "(empty result set)"
+      }
+    ],
+    "success": true,
+    "step_num": 13,
+    "reward": 1.0,
+    "split": "test"
+  },
+  {
+    "task_id": "sql_261",
+    "task_index": 261,
+    "task_type": "intercode_sql",
+    "task_desc": "Show names of teachers and the courses they are arranged to teach in ascending alphabetical order of the teacher's name.",
+    "trial_num": 1,
+    "steps": [
+      {
+        "label": "action",
+        "value": "think: I need to join the `teacher` table with the `course_arrange` table and the `course` table to get the teacher names and the course names they teach. Then I need to order the results by teacher name."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW TABLES"
+      },
+      {
+        "label": "observation",
+        "value": "('course',)\n('course_arrange',)\n('teacher',)"
+      },
+      {
+        "label": "action",
+        "value": "think: I need to join `teacher`, `course_arrange`, and `course` tables. Let me check the schema for each table to understand the join keys and relevant columns."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM teacher"
+      },
+      {
+        "label": "observation",
+        "value": "('Teacher_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Name', 'text', 'YES', '', None, '')\n('Age', 'text', 'YES', '', None, '')\n('Hometown', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `teacher` table has `Teacher_ID` and `Name`. Now let me check `course_arrange`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM course_arrange"
+      },
+      {
+        "label": "observation",
+        "value": "('Course_ID', 'int', 'NO', 'PRI', None, '')\n('Teacher_ID', 'int', 'NO', 'PRI', None, '')\n('Grade', 'int', 'NO', 'PRI', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `course_arrange` table has `Course_ID` and `Teacher_ID`. This will be used to join with `teacher` and `course`. Now let me check `course`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SHOW COLUMNS FROM course"
+      },
+      {
+        "label": "observation",
+        "value": "('Course_ID', 'int', 'NO', 'PRI', None, 'auto_increment')\n('Staring_Date', 'text', 'YES', '', None, '')\n('Course', 'text', 'YES', '', None, '')"
+      },
+      {
+        "label": "action",
+        "value": "think: The `course` table has `Course_ID` and `Course` (which is the course name). I can join `teacher` on `Teacher_ID` with `course_arrange`, and then join `course_arrange` on `Course_ID` with `course`. I need to select `teacher.Name` and `course.Course` and order by `teacher.Name`."
+      },
+      {
+        "label": "observation",
+        "value": "OK."
+      },
+      {
+        "label": "action",
+        "value": "SELECT T1.Name, T3.Course FROM teacher AS T1 JOIN course_arrange AS T2 ON T1.Teacher_ID = T2.Teacher_ID JOIN course AS T3 ON T2.Course_ID = T3.Course_ID ORDER BY T1.Name ASC"
+      },
+      {
+        "label": "observation",
+        "value": "('Anne Walker', 'History')\n('Anne Walker', 'Bible')\n('Gustaaf Deloor', 'Science')\n('Kearsley Brown', 'Math')\n('Lucy Wong', 'Music')\n('Vicente Carretero', 'Math')"
+      },
+      {
+        "label": "action",
+        "value": "submit"
+      },
+      {
+        "label": "observation",
+        "value": "('Anne Walker', 'History')\n('Anne Walker', 'Bible')\n('Gustaaf Deloor', 'Science')\n('Kearsley Brown', 'Math')\n('Lucy Wong', 'Music')\n('Vicente Carretero', 'Math')"
+      }
+    ],
+    "success": true,
+    "step_num": 11,
+    "reward": 1.0,
+    "split": "test"
+  }
+]
