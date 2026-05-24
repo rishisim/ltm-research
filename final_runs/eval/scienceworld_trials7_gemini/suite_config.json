@@ -1,6 +1,6 @@
 {
-  "created_at": "2026-05-23T23:39:03.165406",
-  "num_tasks": 8,
+  "created_at": "2026-05-24T07:38:24.431102",
+  "num_tasks": 15,
   "splits": [
     "test"
   ],
@@ -12,7 +12,14 @@
     "chemistry-mix-paint-tertiary-color",
     "find-animal",
     "find-living-thing",
-    "find-non-living-thing"
+    "find-non-living-thing",
+    "find-plant",
+    "freeze",
+    "grow-fruit",
+    "grow-plant",
+    "identify-life-stages-1",
+    "identify-life-stages-2",
+    "inclined-plane-determine-angle"
   ],
   "max_variations_per_task": 1,
   "frameworks": [

@@ -80,6 +80,7 @@ ENVIRONMENTS = {
 }
 
 VALID_LEVEL_PRIORITY = {"": 0, "CANDIDATE": 1, "VALID_SAME_TRIAL": 2, "VALID_NEXT_TRIAL": 3}
+LLM_ERROR_MARKERS = ("LLM Error", "RetryError", "Payment Required", "402 Client Error")
 
 
 def load_json(path: Path) -> Any:
@@ -133,6 +134,46 @@ def task_id(row: Dict[str, Any]) -> str:
     return str(row.get("task_id") or row.get("task_id_str") or "")
 
 
+def suspected_llm_failure(row: Dict[str, Any]) -> bool:
+    """Detect provider-failure records that still produced a final task row."""
+    steps = row.get("steps")
+    if not isinstance(steps, list) or not steps:
+        return False
+
+    total_tokens = 0
+    empty_model_actions = 0
+    empty_action_invalid_observation = 0
+    for step in steps:
+        if not isinstance(step, dict):
+            continue
+        action = str(step.get("action") or "")
+        observation = str(step.get("observation") or "")
+        if any(marker in action or marker in observation for marker in LLM_ERROR_MARKERS):
+            return True
+        usage = step.get("token_usage") if isinstance(step.get("token_usage"), dict) else {}
+        total_tokens += int(as_float(usage.get("total_tokens")) or 0)
+        if not action.strip() and int(as_float(usage.get("total_tokens")) or 0) == 0:
+            empty_model_actions += 1
+            if "No known action matches that input" in observation:
+                empty_action_invalid_observation += 1
+
+    row_tokens = int(as_float(row.get("total_tokens")) or 0)
+    one_empty_no_token_step = (
+        len(steps) == 1
+        and empty_model_actions == 1
+        and empty_action_invalid_observation == 1
+        and total_tokens == 0
+        and row_tokens == 0
+    )
+    all_empty_no_token_steps = (
+        empty_model_actions == len(steps)
+        and empty_action_invalid_observation > 0
+        and total_tokens == 0
+        and row_tokens == 0
+    )
+    return one_empty_no_token_step or all_empty_no_token_steps
+
+
 def run_rows(run_dir: Path) -> Tuple[List[Dict[str, Any]], str]:
     for name in ("attempts.json", "agent_trajectories.jsonl", "trajectories.jsonl", "trajectories.json"):
         path = run_dir / name
@@ -144,6 +185,21 @@ def run_rows(run_dir: Path) -> Tuple[List[Dict[str, Any]], str]:
         if isinstance(payload, list):
             return [row for row in payload if isinstance(row, dict)], name
     return [], ""
+
+
+def trajectory_rows(run_dir: Path) -> List[Dict[str, Any]]:
+    rows: List[Dict[str, Any]] = []
+    for name in ("agent_trajectories.jsonl", "trajectories.jsonl", "trajectories.json"):
+        path = run_dir / name
+        if not path.exists():
+            continue
+        if name.endswith(".jsonl"):
+            rows.extend(load_jsonl(path))
+            continue
+        payload = load_json_optional(path)
+        if isinstance(payload, list):
+            rows.extend(row for row in payload if isinstance(row, dict))
+    return rows
 
 
 def retrieval_records(run_dir: Path) -> List[Dict[str, Any]]:
@@ -257,6 +313,13 @@ def audit_run(
     retrieval_record_count = 0
     retrieval_selected_total = 0
     invalid_retrieval_levels = 0
+    suspected_llm_failure_tasks: List[str] = []
+
+    diagnostic_rows = trajectory_rows(run_dir) or rows
+    for row in diagnostic_rows:
+        if suspected_llm_failure(row):
+            suspected_llm_failure_tasks.append(task_id(row) or "<unknown>")
+    suspected_llm_failure_tasks = sorted(set(suspected_llm_failure_tasks))
 
     for row in rows:
         context = row.get("context_from_retrieval")
@@ -289,6 +352,11 @@ def audit_run(
         errors.append(
             f"{env_name}/{framework}/seed_{seed} retrieved {invalid_retrieval_levels} memories below {min_valid_level}"
         )
+    if suspected_llm_failure_tasks:
+        sample = suspected_llm_failure_tasks[:10]
+        errors.append(
+            f"{env_name}/{framework}/seed_{seed} has {len(suspected_llm_failure_tasks)} suspected LLM/provider failure records: {sample}"
+        )
 
     successes = 0
     for row in rows:
@@ -310,6 +378,8 @@ def audit_run(
         "help_call_count": help_total,
         "retrieval_record_count": retrieval_record_count,
         "retrieval_selected_count": retrieval_selected_total,
+        "suspected_llm_failure_count": len(suspected_llm_failure_tasks),
+        "suspected_llm_failure_task_ids": suspected_llm_failure_tasks,
     }
     return summary, errors, warnings
 

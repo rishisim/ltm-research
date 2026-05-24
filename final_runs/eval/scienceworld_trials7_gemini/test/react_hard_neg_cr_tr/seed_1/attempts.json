@@ -70,5 +70,68 @@
     "step_num": 20,
     "reward": 1.0,
     "success": true
+  },
+  {
+    "task_id": "scienceworld_find-plant_var_225",
+    "task_name": "find-plant",
+    "variation_idx": 225,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.83,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_freeze_var_21",
+    "task_name": "freeze",
+    "variation_idx": 21,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.1,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_grow-fruit_var_93",
+    "task_name": "grow-fruit",
+    "variation_idx": 93,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.25,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_grow-plant_var_93",
+    "task_name": "grow-plant",
+    "variation_idx": 93,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.08,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_identify-life-stages-1_var_9",
+    "task_name": "identify-life-stages-1",
+    "variation_idx": 9,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.41,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_identify-life-stages-2_var_6",
+    "task_name": "identify-life-stages-2",
+    "variation_idx": 6,
+    "trial_num": 1,
+    "step_num": 14,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "scienceworld_inclined-plane-determine-angle_var_126",
+    "task_name": "inclined-plane-determine-angle",
+    "variation_idx": 126,
+    "trial_num": 1,
+    "step_num": 10,
+    "reward": 0.2,
+    "success": false
   }
 ]

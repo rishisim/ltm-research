@@ -2198,5 +2198,152 @@
       }
     ],
     "split": "test"
+  },
+  {
+    "task_id": "scienceworld_find-plant_var_225",
+    "task_name": "find-plant",
+    "variation_idx": 225,
+    "trial_num": 1,
+    "step_num": 1,
+    "reward": 0.08,
+    "success": false,
+    "task_desc": "Your task is to find a(n) plant. First, focus on the thing. Then, move it to the orange box in the living room.",
+    "steps": [
+      {
+        "label": "action",
+        "value": ""
+      },
+      {
+        "label": "observation",
+        "value": "No known action matches that input.\n\nInventory: In your inventory, you see:\n\tan orange\n\nScore: 0.08\n\nValid actions:\n- open drawer\n- open cupboard\n- close door\n- go to door\n- go to hallway\n- look around\n- look at yellow paint on cup\n- look at drawer\n- look at red paint on wood cup\n- look at door\n- look at cup containing yellow paint in art studio\n- look at inventory\n- look at paint on cup containing yellow paint\n- look at art studio\n- look at cupboard\n- look at paint\n- look at cup containing red paint in art studio\n- look at cup containing blue paint in cupboard\n- look at cup containing blue paint in art studio\n- look at orange\n- look at blue paint in cup containing blue paint\n- look at table\n- look at cup containing red paint in cupboard\n- look at cup containing yellow paint in cupboard\n- look at air\n- look at red paint on cup containing red paint\n- look at hallway\n- look at bowl\n- look at agent\n- look in cup containing yellow paint in art studio\n- look in inventory\n- look in art studio\n- look in cup containing red paint in art studio\n- look in cup containing blue paint in cupboard\n- look in cup containing blue paint in art studio\n- look in table\n- look in cup containing red paint in cupboard\n- look in cup containing yellow paint in cupboard\n- look in hallway\n- look in bowl\n- eat orange\n- move drawer to cup containing yellow paint in art studio\n- move drawer to inventory\n- move drawer to art studio\n- move drawer to cup containing red paint in art studio\n- move drawer to cup containing blue paint in cupboard\n- move drawer to cup containing blue paint in art studio\n- move drawer to table\n- move drawer to cup containing red paint in cupboard\n- move drawer to cup containing yellow paint in cupboard\n- move drawer to hallway\n- move drawer to bowl\n- move cup containing yellow paint in art studio to inventory\n- move cup containing yellow paint in art studio to art studio\n- move cup containing yellow paint in art studio to cup containing red paint in art studio\n- move cup containing yellow paint in art studio to cup containing blue paint in cupboard\n- move cup containing yellow paint in art studio to cup containing blue paint in art studio\n- move cup containing yellow paint in art studio to table\n- move cup containing yellow paint in art studio to cup containing red paint in cupboard\n- move cup containing yellow paint in art studio to cup containing yellow paint in cupboard\n- move cup containing yellow paint in art studio to hallway\n- move cup containing yellow paint in art studio to bowl\n- move cupboard to cup containing yellow paint in art studio\n- move cupboard to inventory\n- move cupboard to art studio\n- move cupboard to cup containing red paint in art studio\n- move cupboard to cup containing blue paint in cupboard\n- move cupboard to cup containing blue paint in art studio\n- move cupboard to table\n- move cupboard to cup containing red paint in cupboard\n- move cupboard to cup containing yellow paint in cupboard\n- move cupboard to hallway\n- move cupboard to bowl\n- move cup containing red paint in art studio to cup containing yellow paint in art studio\n- move cup containing red paint in art studio to inventory\n- move cup containing red paint in art studio to art studio\n- move cup containing red paint in art studio to cup containing blue paint in cupboard\n- move cup containing red paint in art studio to cup containing blue paint in art studio\n- move cup containing red paint in art studio to table\n- move cup containing red paint in art studio to cup containing red paint in cupboard"
+      }
+    ],
+    "split": "test"
+  },
+  {
+    "task_id": "scienceworld_freeze_var_21",
+    "task_name": "freeze",
+    "variation_idx": 21,
+    "trial_num": 1,
+    "step_num": 1,
+    "reward": 0.0,
+    "success": false,
+    "task_desc": "Your task is to freeze lead. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "steps": [
+      {
+        "label": "action",
+        "value": ""
+      },
+      {
+        "label": "observation",
+        "value": "No known action matches that input.\n\nInventory: In your inventory, you see:\n\tan orange\n\nScore: 0.00\n\nValid actions:\n- close toilet drain\n- close bathtub drain\n- close sink drain\n- close door\n- go to kitchen\n- go to door\n- look around\n- look at substance in toilet\n- look at sewer\n- look at toilet drain\n- look at orange\n- look at bathtub\n- look at picture\n- look at bathtub drain\n- look at toilet\n- look at bathroom\n- look at air\n- look at inventory\n- look at sink drain\n- look at sink\n- look at agent\n- look at kitchen\n- look at cup\n- look at door\n- look in sewer\n- look in bathtub\n- look in toilet\n- look in bathroom\n- look in inventory\n- look in sink\n- look in kitchen\n- look in cup\n- activate bathtub\n- activate toilet\n- activate sink\n- eat orange\n- move sewer to bathtub\n- move sewer to toilet\n- move sewer to bathroom\n- move sewer to inventory\n- move sewer to sink\n- move sewer to kitchen\n- move sewer to cup\n- move orange to sewer\n- move orange to bathtub\n- move orange to toilet\n- move orange to bathroom\n- move orange to inventory\n- move orange to sink\n- move orange to kitchen\n- move orange to cup\n- move picture to sewer\n- move picture to bathtub\n- move picture to toilet\n- move picture to bathroom\n- move picture to inventory\n- move picture to sink\n- move picture to kitchen\n- move picture to cup\n- move cup to sewer\n- move cup to bathtub\n- move cup to toilet\n- move cup to bathroom\n- move cup to inventory\n- move cup to sink\n- move cup to kitchen\n- pour sewer into sewer\n- pour sewer into bathtub\n- pour sewer into toilet\n- pour sewer into bathroom\n- pour sewer into inventory\n- pour sewer into sink\n- pour sewer into kitchen\n- pour sewer into cup\n- pour cup into sewer\n- pour cup into bathtub\n- pour cup into toilet\n- pour cup into bathroom\n- pour cup into inventory\n- pour cup into sink"
+      }
+    ],
+    "split": "test"
+  },
+  {
+    "task_id": "scienceworld_grow-fruit_var_93",
+    "task_name": "grow-fruit",
+    "variation_idx": 93,
+    "trial_num": 1,
+    "step_num": 1,
+    "reward": 0.11,
+    "success": false,
+    "task_desc": "Your task is to grow a orange. This will require growing several plants, and them being crosspollinated to produce fruit.  Seeds can be found in the bathroom. To complete the task, focus on the grown orange.",
+    "steps": [
+      {
+        "label": "action",
+        "value": ""
+      },
+      {
+        "label": "observation",
+        "value": "No known action matches that input.\n\nInventory: In your inventory, you see:\n\tan orange\n\nScore: 0.11\n\nValid actions:\n- open bee hive\n- close door to hallway\n- close drain\n- close door to outside\n- go to door to hallway\n- go to door to outside\n- go to outside\n- go to hallway\n- look around\n- look at bee hive\n- look at door to hallway\n- look at soil in flower pot 1\n- look at greenhouse\n- look at jug\n- look at soil in flower pot 2\n- look at orange\n- look at flower pot 2\n- look at air\n- look at bee 1\n- look at bee 3\n- look at flower pot 1\n- look at flower pot 3\n- look at inventory\n- look at sewer\n- look at soil in flower pot 3\n- look at drain\n- look at sink\n- look at bee 4\n- look at door to outside\n- look at outside\n- look at hallway\n- look at bee 2\n- look at bee 0\n- look at agent\n- look in greenhouse\n- look in jug\n- look in flower pot 2\n- look in flower pot 1\n- look in flower pot 3\n- look in inventory\n- look in sewer\n- look in sink\n- look in outside\n- look in hallway\n- activate sink\n- eat orange\n- move bee hive to greenhouse\n- move bee hive to jug\n- move bee hive to flower pot 2\n- move bee hive to flower pot 1\n- move bee hive to flower pot 3\n- move bee hive to inventory\n- move bee hive to sewer\n- move bee hive to sink\n- move bee hive to outside\n- move bee hive to hallway\n- move soil in flower pot 1 to greenhouse\n- move soil in flower pot 1 to jug\n- move soil in flower pot 1 to flower pot 2\n- move soil in flower pot 1 to flower pot 1\n- move soil in flower pot 1 to flower pot 3\n- move soil in flower pot 1 to inventory\n- move soil in flower pot 1 to sewer\n- move soil in flower pot 1 to sink\n- move soil in flower pot 1 to outside\n- move soil in flower pot 1 to hallway\n- move jug to greenhouse\n- move jug to flower pot 2\n- move jug to flower pot 1\n- move jug to flower pot 3\n- move jug to inventory\n- move jug to sewer\n- move jug to sink\n- move jug to outside\n- move jug to hallway\n- move soil in flower pot 2 to greenhouse\n- move soil in flower pot 2 to jug\n- move soil in flower pot 2 to flower pot 2\n- move soil in flower pot 2 to flower pot 1\n- move soil in flower pot 2 to flower pot 3"
+      }
+    ],
+    "split": "test"
+  },
+  {
+    "task_id": "scienceworld_grow-plant_var_93",
+    "task_name": "grow-plant",
+    "variation_idx": 93,
+    "trial_num": 1,
+    "step_num": 1,
+    "reward": 0.06,
+    "success": false,
+    "task_desc": "Your task is to grow a orange plant from seed. Seeds can be found in the bathroom. First, focus on a seed. Then, make changes to the environment that grow the plant until it reaches the reproduction life stage.",
+    "steps": [
+      {
+        "label": "action",
+        "value": ""
+      },
+      {
+        "label": "observation",
+        "value": "No known action matches that input.\n\nInventory: In your inventory, you see:\n\tan orange\n\nScore: 0.06\n\nValid actions:\n- open bee hive\n- close door to outside\n- close drain\n- close door to hallway\n- go to hallway\n- go to outside\n- go to door to outside\n- go to door to hallway\n- look around\n- look at flower pot 2\n- look at jug\n- look at agent\n- look at bee 0\n- look at hallway\n- look at outside\n- look at bee 1\n- look at bee 4\n- look at bee hive\n- look at soil in flower pot 3\n- look at air\n- look at greenhouse\n- look at flower pot 3\n- look at soil in flower pot 1\n- look at orange\n- look at door to outside\n- look at flower pot 1\n- look at sink\n- look at inventory\n- look at soil in flower pot 2\n- look at drain\n- look at bee 2\n- look at sewer\n- look at bee 3\n- look at door to hallway\n- look in flower pot 2\n- look in jug\n- look in hallway\n- look in outside\n- look in greenhouse\n- look in flower pot 3\n- look in flower pot 1\n- look in sink\n- look in inventory\n- look in sewer\n- activate sink\n- eat orange\n- move flower pot 2 to jug\n- move flower pot 2 to hallway\n- move flower pot 2 to outside\n- move flower pot 2 to greenhouse\n- move flower pot 2 to flower pot 3\n- move flower pot 2 to flower pot 1\n- move flower pot 2 to sink\n- move flower pot 2 to inventory\n- move flower pot 2 to sewer\n- move jug to flower pot 2\n- move jug to hallway\n- move jug to outside\n- move jug to greenhouse\n- move jug to flower pot 3\n- move jug to flower pot 1\n- move jug to sink\n- move jug to inventory\n- move jug to sewer\n- move bee 0 to flower pot 2\n- move bee 0 to jug\n- move bee 0 to hallway\n- move bee 0 to outside\n- move bee 0 to greenhouse\n- move bee 0 to flower pot 3\n- move bee 0 to flower pot 1\n- move bee 0 to sink\n- move bee 0 to inventory\n- move bee 0 to sewer\n- move bee 1 to flower pot 2\n- move bee 1 to jug\n- move bee 1 to hallway\n- move bee 1 to outside\n- move bee 1 to greenhouse\n- move bee 1 to flower pot 3"
+      }
+    ],
+    "split": "test"
+  },
+  {
+    "task_id": "scienceworld_identify-life-stages-1_var_9",
+    "task_name": "identify-life-stages-1",
+    "variation_idx": 9,
+    "trial_num": 1,
+    "step_num": 1,
+    "reward": 0.0,
+    "success": false,
+    "task_desc": "Your task is to focus on the 4 life stages of the giant tortoise, starting from earliest to latest.",
+    "steps": [
+      {
+        "label": "action",
+        "value": ""
+      },
+      {
+        "label": "observation",
+        "value": "No known action matches that input.\n\nInventory: In your inventory, you see:\n\tan orange\n\nScore: 0.00\n\nValid actions:\n- open closet\n- close door\n- go to door\n- go to hallway\n- look around\n- look at orange\n- look at bedroom\n- look at agent\n- look at inventory\n- look at bed\n- look at air\n- look at table\n- look at picture\n- look at closet\n- look at cloth sittable\n- look at door\n- look at object\n- look at hallway\n- look in bedroom\n- look in inventory\n- look in bed\n- look in table\n- look in cloth sittable\n- look in hallway\n- eat orange\n- move orange to bedroom\n- move orange to inventory\n- move orange to bed\n- move orange to table\n- move orange to cloth sittable\n- move orange to hallway\n- move bed to bedroom\n- move bed to inventory\n- move bed to table\n- move bed to cloth sittable\n- move bed to hallway\n- move table to bedroom\n- move table to inventory\n- move table to bed\n- move table to cloth sittable\n- move table to hallway\n- move picture to bedroom\n- move picture to inventory\n- move picture to bed\n- move picture to table\n- move picture to cloth sittable\n- move picture to hallway\n- move closet to bedroom\n- move closet to inventory\n- move closet to bed\n- move closet to table\n- move closet to cloth sittable\n- move closet to hallway\n- move cloth sittable to bedroom\n- move cloth sittable to inventory\n- move cloth sittable to bed\n- move cloth sittable to table\n- move cloth sittable to hallway\n- move object to bedroom\n- move object to inventory\n- move object to bed\n- move object to table\n- move object to cloth sittable\n- move object to hallway\n- pour bed into bedroom\n- pour bed into inventory\n- pour bed into bed\n- pour bed into table\n- pour bed into cloth sittable\n- pour bed into hallway\n- pour table into bedroom\n- pour table into inventory\n- pour table into bed\n- pour table into table\n- pour table into cloth sittable\n- pour table into hallway\n- pour cloth sittable into bedroom\n- pour cloth sittable into inventory\n- pour cloth sittable into bed\n- pour cloth sittable into table"
+      }
+    ],
+    "split": "test"
+  },
+  {
+    "task_id": "scienceworld_identify-life-stages-2_var_6",
+    "task_name": "identify-life-stages-2",
+    "variation_idx": 6,
+    "trial_num": 1,
+    "step_num": 1,
+    "reward": 0.0,
+    "success": false,
+    "task_desc": "Your task is to focus on the life stages of the lemon plant, starting from earliest to latest. The plants are located outside.",
+    "steps": [
+      {
+        "label": "action",
+        "value": ""
+      },
+      {
+        "label": "observation",
+        "value": "No known action matches that input.\n\nInventory: In your inventory, you see:\n\tan orange\n\nScore: 0.00\n\nValid actions:\n- open bee hive\n- close door to outside\n- close drain\n- close door to hallway\n- go to door to outside\n- go to outside\n- go to hallway\n- go to door to hallway\n- look around\n- look at door to outside\n- look at bee 2\n- look at bee hive\n- look at agent\n- look at bee 0\n- look at inventory\n- look at air\n- look at bee 3\n- look at sewer\n- look at outside\n- look at hallway\n- look at greenhouse\n- look at jug\n- look at orange\n- look at shovel\n- look at bee 1\n- look at sink\n- look at drain\n- look at bee 4\n- look at door to hallway\n- look in inventory\n- look in sewer\n- look in outside\n- look in hallway\n- look in greenhouse\n- look in jug\n- look in sink\n- activate sink\n- eat orange\n- move bee 2 to inventory\n- move bee 2 to sewer\n- move bee 2 to outside\n- move bee 2 to hallway\n- move bee 2 to greenhouse\n- move bee 2 to jug\n- move bee 2 to sink\n- move bee hive to inventory\n- move bee hive to sewer\n- move bee hive to outside\n- move bee hive to hallway\n- move bee hive to greenhouse\n- move bee hive to jug\n- move bee hive to sink\n- move bee 0 to inventory\n- move bee 0 to sewer\n- move bee 0 to outside\n- move bee 0 to hallway\n- move bee 0 to greenhouse\n- move bee 0 to jug\n- move bee 0 to sink\n- move bee 3 to inventory\n- move bee 3 to sewer\n- move bee 3 to outside\n- move bee 3 to hallway\n- move bee 3 to greenhouse\n- move bee 3 to jug\n- move bee 3 to sink\n- move sewer to inventory\n- move sewer to outside\n- move sewer to hallway\n- move sewer to greenhouse\n- move sewer to jug\n- move sewer to sink\n- move jug to inventory\n- move jug to sewer\n- move jug to outside\n- move jug to hallway\n- move jug to greenhouse\n- move jug to sink\n- move orange to inventory\n- move orange to sewer"
+      }
+    ],
+    "split": "test"
+  },
+  {
+    "task_id": "scienceworld_inclined-plane-determine-angle_var_126",
+    "task_name": "inclined-plane-determine-angle",
+    "variation_idx": 126,
+    "trial_num": 1,
+    "step_num": 1,
+    "reward": 0.0,
+    "success": false,
+    "task_desc": "Your task is to determine which of the two inclined planes (B, H) has the shallowest angle. After completing your experiment, focus on the inclined plane with the shallowest angle.",
+    "steps": [
+      {
+        "label": "action",
+        "value": ""
+      },
+      {
+        "label": "observation",
+        "value": "No known action matches that input.\n\nInventory: In your inventory, you see:\n\tan orange\n\nScore: 0.00\n\nValid actions:\n- close door\n- go to hallway\n- go to door\n- look around\n- look at finger painting\n- look at orange\n- look at agent\n- look at table\n- look at inventory\n- look at book in shelf containing book (pride and prejudice) and book (sherlock holmes)\n- look at hallway\n- look at cloth sittable\n- look at door\n- look at chair\n- look at living room\n- look at book by arthur conan doyle\n- look at book (pride and prejudice)\n- look at air\n- look at object\n- look at book shelf\n- look in table\n- look in inventory\n- look in hallway\n- look in cloth sittable\n- look in chair\n- look in living room\n- look in book shelf\n- eat orange\n- move finger painting to table\n- move finger painting to inventory\n- move finger painting to hallway\n- move finger painting to cloth sittable\n- move finger painting to chair\n- move finger painting to living room\n- move finger painting to book shelf\n- move orange to table\n- move orange to inventory\n- move orange to hallway\n- move orange to cloth sittable\n- move orange to chair\n- move orange to living room\n- move orange to book shelf\n- move table to inventory\n- move table to hallway\n- move table to cloth sittable\n- move table to chair\n- move table to living room\n- move table to book shelf\n- move book in shelf containing book (pride and prejudice) and book (sherlock holmes) to table\n- move book in shelf containing book (pride and prejudice) and book (sherlock holmes) to inventory\n- move book in shelf containing book (pride and prejudice) and book (sherlock holmes) to hallway\n- move book in shelf containing book (pride and prejudice) and book (sherlock holmes) to cloth sittable\n- move book in shelf containing book (pride and prejudice) and book (sherlock holmes) to chair\n- move book in shelf containing book (pride and prejudice) and book (sherlock holmes) to living room\n- move book in shelf containing book (pride and prejudice) and book (sherlock holmes) to book shelf\n- move cloth sittable to table\n- move cloth sittable to inventory\n- move cloth sittable to hallway\n- move cloth sittable to chair\n- move cloth sittable to living room\n- move cloth sittable to book shelf\n- move chair to table\n- move chair to inventory\n- move chair to hallway\n- move chair to cloth sittable\n- move chair to living room\n- move chair to book shelf\n- move book by arthur conan doyle to table\n- move book by arthur conan doyle to inventory\n- move book by arthur conan doyle to hallway\n- move book by arthur conan doyle to cloth sittable\n- move book by arthur conan doyle to chair\n- move book by arthur conan doyle to living room\n- move book by arthur conan doyle to book shelf\n- move book (pride and prejudice) to table\n- move book (pride and prejudice) to inventory\n- move book (pride and prejudice) to hallway\n- move book (pride and prejudice) to cloth sittable\n- move book (pride and prejudice) to chair\n- move book (pride and prejudice) to living room"
+      }
+    ],
+    "split": "test"
   }
 ]
