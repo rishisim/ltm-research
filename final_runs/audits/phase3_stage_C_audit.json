@@ -39,7 +39,8 @@
           "success_count": 91,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 134
+          "unique_task_count": 134,
+          "usage_record_source": "trajectories.json"
         },
         "react/seed_1": {
           "avg_reward": null,
@@ -54,7 +55,8 @@
           "success_count": 91,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 134
+          "unique_task_count": 134,
+          "usage_record_source": "trajectories.json"
         },
         "react/seed_2": {
           "avg_reward": null,
@@ -69,7 +71,8 @@
           "success_count": 91,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 134
+          "unique_task_count": 134,
+          "usage_record_source": "trajectories.json"
         },
         "react_cr/seed_0": {
           "avg_reward": 0.6567164179104478,
@@ -84,7 +87,8 @@
           "success_count": 88,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 134
+          "unique_task_count": 134,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_cr/seed_1": {
           "avg_reward": 0.6268656716417911,
@@ -99,7 +103,8 @@
           "success_count": 84,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 134
+          "unique_task_count": 134,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_cr/seed_2": {
           "avg_reward": 0.6343283582089553,
@@ -114,7 +119,8 @@
           "success_count": 85,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 134
+          "unique_task_count": 134,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_cr_tr/seed_0": {
           "avg_reward": 0.8283582089552238,
@@ -129,7 +135,8 @@
           "success_count": 111,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 134
+          "unique_task_count": 134,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_cr_tr/seed_1": {
           "avg_reward": 0.8283582089552238,
@@ -144,7 +151,8 @@
           "success_count": 111,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 134
+          "unique_task_count": 134,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_cr_tr/seed_2": {
           "avg_reward": 0.8283582089552238,
@@ -159,7 +167,8 @@
           "success_count": 111,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 134
+          "unique_task_count": 134,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_hard_neg_cr_tr/seed_0": {
           "avg_reward": 0.5597014925373134,
@@ -174,7 +183,8 @@
           "success_count": 75,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 134
+          "unique_task_count": 134,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_hard_neg_cr_tr/seed_1": {
           "avg_reward": 0.5522388059701493,
@@ -189,7 +199,8 @@
           "success_count": 74,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 134
+          "unique_task_count": 134,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_hard_neg_cr_tr/seed_2": {
           "avg_reward": 0.5447761194029851,
@@ -204,7 +215,8 @@
           "success_count": 73,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 134
+          "unique_task_count": 134,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_tr/seed_0": {
           "avg_reward": 0.753731343283582,
@@ -219,7 +231,8 @@
           "success_count": 101,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 134
+          "unique_task_count": 134,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_tr/seed_1": {
           "avg_reward": 0.753731343283582,
@@ -234,7 +247,8 @@
           "success_count": 101,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 134
+          "unique_task_count": 134,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_tr/seed_2": {
           "avg_reward": 0.753731343283582,
@@ -249,7 +263,8 @@
           "success_count": 101,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 134
+          "unique_task_count": 134,
+          "usage_record_source": "agent_trajectories.jsonl"
         }
       }
     },
@@ -329,7 +344,8 @@
           "success_count": 10,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 30
+          "unique_task_count": 30,
+          "usage_record_source": "trajectories.json"
         },
         "react/seed_1": {
           "avg_reward": 0.3383333333333333,
@@ -344,7 +360,8 @@
           "success_count": 11,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 30
+          "unique_task_count": 30,
+          "usage_record_source": "trajectories.json"
         },
         "react/seed_2": {
           "avg_reward": -0.063,
@@ -359,11 +376,12 @@
           "success_count": 6,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 30
+          "unique_task_count": 30,
+          "usage_record_source": "trajectories.json"
         },
         "react_cr/seed_0": {
           "avg_reward": 0.10566666666666666,
-          "context_memory_count": 0,
+          "context_memory_count": 132,
           "duplicate_task_ids": [],
           "help_call_count": 0,
           "record_count": 30,
@@ -374,11 +392,12 @@
           "success_count": 8,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 30
+          "unique_task_count": 30,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_cr/seed_1": {
           "avg_reward": 0.19233333333333333,
-          "context_memory_count": 0,
+          "context_memory_count": 132,
           "duplicate_task_ids": [],
           "help_call_count": 0,
           "record_count": 30,
@@ -389,11 +408,12 @@
           "success_count": 7,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 30
+          "unique_task_count": 30,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_cr/seed_2": {
           "avg_reward": 0.215,
-          "context_memory_count": 0,
+          "context_memory_count": 132,
           "duplicate_task_ids": [],
           "help_call_count": 0,
           "record_count": 30,
@@ -404,13 +424,14 @@
           "success_count": 9,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 30
+          "unique_task_count": 30,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_cr_tr/seed_0": {
           "avg_reward": 0.21366666666666667,
-          "context_memory_count": 0,
+          "context_memory_count": 132,
           "duplicate_task_ids": [],
-          "help_call_count": 0,
+          "help_call_count": 25,
           "record_count": 30,
           "record_source": "attempts.json",
           "retrieval_record_count": 60,
@@ -419,13 +440,14 @@
           "success_count": 7,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 30
+          "unique_task_count": 30,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_cr_tr/seed_1": {
           "avg_reward": 0.345,
-          "context_memory_count": 0,
+          "context_memory_count": 132,
           "duplicate_task_ids": [],
-          "help_call_count": 0,
+          "help_call_count": 19,
           "record_count": 30,
           "record_source": "attempts.json",
           "retrieval_record_count": 60,
@@ -434,13 +456,14 @@
           "success_count": 11,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 30
+          "unique_task_count": 30,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_cr_tr/seed_2": {
           "avg_reward": 0.078,
-          "context_memory_count": 0,
+          "context_memory_count": 132,
           "duplicate_task_ids": [],
-          "help_call_count": 0,
+          "help_call_count": 18,
           "record_count": 30,
           "record_source": "attempts.json",
           "retrieval_record_count": 60,
@@ -449,13 +472,14 @@
           "success_count": 7,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 30
+          "unique_task_count": 30,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_hard_neg_cr_tr/seed_0": {
           "avg_reward": 0.088,
-          "context_memory_count": 0,
+          "context_memory_count": 125,
           "duplicate_task_ids": [],
-          "help_call_count": 0,
+          "help_call_count": 33,
           "record_count": 30,
           "record_source": "attempts.json",
           "retrieval_record_count": 60,
@@ -464,13 +488,14 @@
           "success_count": 7,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 30
+          "unique_task_count": 30,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_hard_neg_cr_tr/seed_1": {
           "avg_reward": 0.331,
-          "context_memory_count": 0,
+          "context_memory_count": 125,
           "duplicate_task_ids": [],
-          "help_call_count": 0,
+          "help_call_count": 29,
           "record_count": 30,
           "record_source": "attempts.json",
           "retrieval_record_count": 60,
@@ -479,13 +504,14 @@
           "success_count": 8,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 30
+          "unique_task_count": 30,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_hard_neg_cr_tr/seed_2": {
           "avg_reward": 0.36033333333333334,
-          "context_memory_count": 0,
+          "context_memory_count": 125,
           "duplicate_task_ids": [],
-          "help_call_count": 0,
+          "help_call_count": 32,
           "record_count": 30,
           "record_source": "attempts.json",
           "retrieval_record_count": 60,
@@ -494,13 +520,14 @@
           "success_count": 11,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 30
+          "unique_task_count": 30,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_tr/seed_0": {
           "avg_reward": 0.3476666666666667,
           "context_memory_count": 0,
           "duplicate_task_ids": [],
-          "help_call_count": 0,
+          "help_call_count": 42,
           "record_count": 30,
           "record_source": "attempts.json",
           "retrieval_record_count": 0,
@@ -509,13 +536,14 @@
           "success_count": 9,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 30
+          "unique_task_count": 30,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_tr/seed_1": {
           "avg_reward": 0.177,
           "context_memory_count": 0,
           "duplicate_task_ids": [],
-          "help_call_count": 0,
+          "help_call_count": 30,
           "record_count": 30,
           "record_source": "attempts.json",
           "retrieval_record_count": 0,
@@ -524,13 +552,14 @@
           "success_count": 8,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 30
+          "unique_task_count": 30,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_tr/seed_2": {
           "avg_reward": 0.24333333333333335,
           "context_memory_count": 0,
           "duplicate_task_ids": [],
-          "help_call_count": 0,
+          "help_call_count": 40,
           "record_count": 30,
           "record_source": "attempts.json",
           "retrieval_record_count": 0,
@@ -539,7 +568,8 @@
           "success_count": 7,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 30
+          "unique_task_count": 30,
+          "usage_record_source": "agent_trajectories.jsonl"
         }
       }
     },
@@ -583,7 +613,8 @@
           "success_count": 183,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 200
+          "unique_task_count": 200,
+          "usage_record_source": "trajectories.json"
         },
         "react/seed_1": {
           "avg_reward": 0.920275,
@@ -598,7 +629,8 @@
           "success_count": 183,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 200
+          "unique_task_count": 200,
+          "usage_record_source": "trajectories.json"
         },
         "react/seed_2": {
           "avg_reward": 0.920275,
@@ -613,7 +645,8 @@
           "success_count": 183,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 200
+          "unique_task_count": 200,
+          "usage_record_source": "trajectories.json"
         },
         "react_cr/seed_0": {
           "avg_reward": 0.888775,
@@ -628,7 +661,8 @@
           "success_count": 177,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 200
+          "unique_task_count": 200,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_cr/seed_1": {
           "avg_reward": 0.889675,
@@ -643,7 +677,8 @@
           "success_count": 177,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 200
+          "unique_task_count": 200,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_cr/seed_2": {
           "avg_reward": 0.889675,
@@ -658,7 +693,8 @@
           "success_count": 177,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 200
+          "unique_task_count": 200,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_cr_tr/seed_0": {
           "avg_reward": 0.921825,
@@ -673,7 +709,8 @@
           "success_count": 184,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 200
+          "unique_task_count": 200,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_cr_tr/seed_1": {
           "avg_reward": 0.921825,
@@ -688,7 +725,8 @@
           "success_count": 184,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 200
+          "unique_task_count": 200,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_cr_tr/seed_2": {
           "avg_reward": 0.921825,
@@ -703,7 +741,8 @@
           "success_count": 184,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 200
+          "unique_task_count": 200,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_hard_neg_cr_tr/seed_0": {
           "avg_reward": 0.9059462121212121,
@@ -718,7 +757,8 @@
           "success_count": 179,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 200
+          "unique_task_count": 200,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_hard_neg_cr_tr/seed_1": {
           "avg_reward": 0.9059462121212121,
@@ -733,7 +773,8 @@
           "success_count": 179,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 200
+          "unique_task_count": 200,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_hard_neg_cr_tr/seed_2": {
           "avg_reward": 0.9059462121212121,
@@ -748,7 +789,8 @@
           "success_count": 179,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 200
+          "unique_task_count": 200,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_tr/seed_0": {
           "avg_reward": 0.918925,
@@ -763,7 +805,8 @@
           "success_count": 182,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 200
+          "unique_task_count": 200,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_tr/seed_1": {
           "avg_reward": 0.918925,
@@ -778,7 +821,8 @@
           "success_count": 182,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 200
+          "unique_task_count": 200,
+          "usage_record_source": "agent_trajectories.jsonl"
         },
         "react_tr/seed_2": {
           "avg_reward": 0.913925,
@@ -793,12 +837,16 @@
           "success_count": 181,
           "suspected_llm_failure_count": 0,
           "suspected_llm_failure_task_ids": [],
-          "unique_task_count": 200
+          "unique_task_count": 200,
+          "usage_record_source": "agent_trajectories.jsonl"
         }
       }
     }
   },
   "errors": [],
+  "notes": [
+    "SQL react_cr task sql_288 emitted recovered bare code-fence actions in seeds 0, 1, 2; the environment rejected them as invalid SQL and the final task records still succeeded, so this is tracked as non-fatal model-formatting noise rather than metric corruption."
+  ],
   "passed": true,
   "stage": "C",
   "targets": {
@@ -806,9 +854,5 @@
     "scienceworld": 30,
     "sql": 200
   },
-  "warnings": [
-    "scienceworld/react_tr/seed_0 made zero help calls",
-    "scienceworld/react_tr/seed_1 made zero help calls",
-    "scienceworld/react_tr/seed_2 made zero help calls"
-  ]
+  "warnings": []
 }

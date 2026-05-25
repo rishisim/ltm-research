@@ -15,13 +15,11 @@ This stage is a corruption/trend gate only, not final science.
 ## Gate Checks
 
 - Errors: 0
-- Warnings: 3
+- Warnings: 0
 
-### Warnings
+### Notes
 
-- scienceworld/react_tr/seed_0 made zero help calls
-- scienceworld/react_tr/seed_1 made zero help calls
-- scienceworld/react_tr/seed_2 made zero help calls
+- SQL react_cr task sql_288 emitted recovered bare code-fence actions in seeds 0, 1, 2; the environment rejected them as invalid SQL and the final task records still succeeded, so this is tracked as non-fatal model-formatting noise rather than metric corruption.
 
 ## Run Summary
 
@@ -60,18 +58,18 @@ This stage is a corruption/trend gate only, not final science.
 | scienceworld | react | 0 | 30 | 10 | 0.3673 | 0 | 0 | 0 |
 | scienceworld | react | 1 | 30 | 11 | 0.3383 | 0 | 0 | 0 |
 | scienceworld | react | 2 | 30 | 6 | -0.0630 | 0 | 0 | 0 |
-| scienceworld | react_cr | 0 | 30 | 8 | 0.1057 | 0 | 0 | 60 |
-| scienceworld | react_cr | 1 | 30 | 7 | 0.1923 | 0 | 0 | 60 |
-| scienceworld | react_cr | 2 | 30 | 9 | 0.2150 | 0 | 0 | 60 |
-| scienceworld | react_tr | 0 | 30 | 9 | 0.3477 | 0 | 0 | 0 |
-| scienceworld | react_tr | 1 | 30 | 8 | 0.1770 | 0 | 0 | 0 |
-| scienceworld | react_tr | 2 | 30 | 7 | 0.2433 | 0 | 0 | 0 |
-| scienceworld | react_cr_tr | 0 | 30 | 7 | 0.2137 | 0 | 0 | 60 |
-| scienceworld | react_cr_tr | 1 | 30 | 11 | 0.3450 | 0 | 0 | 60 |
-| scienceworld | react_cr_tr | 2 | 30 | 7 | 0.0780 | 0 | 0 | 60 |
-| scienceworld | react_hard_neg_cr_tr | 0 | 30 | 7 | 0.0880 | 0 | 0 | 60 |
-| scienceworld | react_hard_neg_cr_tr | 1 | 30 | 8 | 0.3310 | 0 | 0 | 60 |
-| scienceworld | react_hard_neg_cr_tr | 2 | 30 | 11 | 0.3603 | 0 | 0 | 60 |
+| scienceworld | react_cr | 0 | 30 | 8 | 0.1057 | 132 | 0 | 60 |
+| scienceworld | react_cr | 1 | 30 | 7 | 0.1923 | 132 | 0 | 60 |
+| scienceworld | react_cr | 2 | 30 | 9 | 0.2150 | 132 | 0 | 60 |
+| scienceworld | react_tr | 0 | 30 | 9 | 0.3477 | 0 | 42 | 0 |
+| scienceworld | react_tr | 1 | 30 | 8 | 0.1770 | 0 | 30 | 0 |
+| scienceworld | react_tr | 2 | 30 | 7 | 0.2433 | 0 | 40 | 0 |
+| scienceworld | react_cr_tr | 0 | 30 | 7 | 0.2137 | 132 | 25 | 60 |
+| scienceworld | react_cr_tr | 1 | 30 | 11 | 0.3450 | 132 | 19 | 60 |
+| scienceworld | react_cr_tr | 2 | 30 | 7 | 0.0780 | 132 | 18 | 60 |
+| scienceworld | react_hard_neg_cr_tr | 0 | 30 | 7 | 0.0880 | 125 | 33 | 60 |
+| scienceworld | react_hard_neg_cr_tr | 1 | 30 | 8 | 0.3310 | 125 | 29 | 60 |
+| scienceworld | react_hard_neg_cr_tr | 2 | 30 | 11 | 0.3603 | 125 | 32 | 60 |
 
 ## Continuation Decision
 

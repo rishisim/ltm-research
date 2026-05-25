@@ -187,19 +187,58 @@ def run_rows(run_dir: Path) -> Tuple[List[Dict[str, Any]], str]:
     return [], ""
 
 
-def trajectory_rows(run_dir: Path) -> List[Dict[str, Any]]:
-    rows: List[Dict[str, Any]] = []
+def primary_trajectory_rows(run_dir: Path) -> Tuple[List[Dict[str, Any]], str]:
     for name in ("agent_trajectories.jsonl", "trajectories.jsonl", "trajectories.json"):
         path = run_dir / name
         if not path.exists():
             continue
         if name.endswith(".jsonl"):
-            rows.extend(load_jsonl(path))
-            continue
+            return load_jsonl(path), name
         payload = load_json_optional(path)
         if isinstance(payload, list):
-            rows.extend(row for row in payload if isinstance(row, dict))
-    return rows
+            return [row for row in payload if isinstance(row, dict)], name
+    return [], ""
+
+
+def latest_by_task(rows: Sequence[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+    latest: Dict[str, Tuple[int, int, Dict[str, Any]]] = {}
+    for index, row in enumerate(rows):
+        tid = task_id(row)
+        if not tid:
+            continue
+        try:
+            trial = int(row.get("trial_num") or 0)
+        except (TypeError, ValueError):
+            trial = 0
+        candidate = (trial, index, row)
+        if tid not in latest or candidate[:2] >= latest[tid][:2]:
+            latest[tid] = candidate
+    return {tid: item[2] for tid, item in latest.items()}
+
+
+def count_help_steps(row: Dict[str, Any]) -> int:
+    count = 0
+    for step in row.get("steps") or []:
+        if not isinstance(step, dict):
+            continue
+        action = str(step.get("action") or "").strip().lower()
+        if step.get("is_help_call") is True or action.startswith("help[") or action.startswith("help ["):
+            count += 1
+    return count
+
+
+def count_help_calls(row: Dict[str, Any]) -> int:
+    logged_count = row.get("help_call_count")
+    if logged_count is not None:
+        try:
+            return int(logged_count)
+        except (TypeError, ValueError):
+            pass
+
+    help_calls = row.get("help_calls")
+    if isinstance(help_calls, list):
+        return len(help_calls)
+    return count_help_steps(row)
 
 
 def retrieval_records(run_dir: Path) -> List[Dict[str, Any]]:
@@ -245,6 +284,25 @@ def selected_rows(record: Dict[str, Any], max_learnings: int) -> List[Dict[str, 
 
 def valid_level_ok(level: str, minimum: str) -> bool:
     return VALID_LEVEL_PRIORITY.get(level or "CANDIDATE", 0) >= VALID_LEVEL_PRIORITY[minimum]
+
+
+def sql_288_recovered_code_fence_seeds(root: Path, split_dir: str) -> List[str]:
+    recovered_seeds: List[str] = []
+    for seed in SEEDS:
+        run_dir = root / split_dir / "react_cr" / f"seed_{seed}"
+        rows, _ = primary_trajectory_rows(run_dir)
+        row = latest_by_task(rows).get("sql_288")
+        if not row:
+            continue
+        reward = as_float(row.get("reward"))
+        succeeded = bool(row.get("success")) or (reward is not None and reward >= 1.0)
+        if not succeeded:
+            continue
+        for step in row.get("steps") or []:
+            if isinstance(step, dict) and "```" in str(step.get("action") or ""):
+                recovered_seeds.append(seed)
+                break
+    return recovered_seeds
 
 
 def config_errors(env_name: str, cfg: Dict[str, Any], spec: Dict[str, Any], stage_target: int) -> List[str]:
@@ -315,14 +373,20 @@ def audit_run(
     invalid_retrieval_levels = 0
     suspected_llm_failure_tasks: List[str] = []
 
-    diagnostic_rows = trajectory_rows(run_dir) or rows
+    usage_rows, usage_source = primary_trajectory_rows(run_dir)
+    usage_by_task = latest_by_task(usage_rows)
+
+    diagnostic_rows = usage_rows or rows
     for row in diagnostic_rows:
         if suspected_llm_failure(row):
             suspected_llm_failure_tasks.append(task_id(row) or "<unknown>")
     suspected_llm_failure_tasks = sorted(set(suspected_llm_failure_tasks))
 
     for row in rows:
+        usage_row = usage_by_task.get(task_id(row), row)
         context = row.get("context_from_retrieval")
+        if not isinstance(context, list):
+            context = usage_row.get("context_from_retrieval")
         if isinstance(context, list):
             context_total += len(context)
             for memory in context:
@@ -330,9 +394,7 @@ def audit_run(
                     level = str(memory.get("valid_level") or "CANDIDATE")
                     if not valid_level_ok(level, min_valid_level):
                         invalid_retrieval_levels += 1
-        help_calls = row.get("help_calls")
-        if isinstance(help_calls, list):
-            help_total += len(help_calls)
+        help_total += count_help_calls(usage_row)
 
     records = retrieval_records(run_dir)
     retrieval_record_count = len(records)
@@ -369,6 +431,7 @@ def audit_run(
     summary = {
         "run_dir": str(run_dir),
         "record_source": source,
+        "usage_record_source": usage_source or source,
         "unique_task_count": len(counts),
         "record_count": len(rows),
         "duplicate_task_ids": duplicate_ids,
@@ -392,6 +455,7 @@ def audit_stage(stage: str, repo_root: Path) -> Dict[str, Any]:
         "passed": True,
         "errors": [],
         "warnings": [],
+        "notes": [],
         "environments": {},
     }
 
@@ -428,6 +492,18 @@ def audit_stage(stage: str, repo_root: Path) -> Dict[str, Any]:
                 report["warnings"].extend(warnings)
         report["environments"][env_name] = env_report
 
+    sql_spec = ENVIRONMENTS["sql"]
+    sql_code_fence_seeds = sql_288_recovered_code_fence_seeds(
+        repo_root / sql_spec["root"],
+        str(sql_spec["split_dir"]),
+    )
+    if stage == "C" and sql_code_fence_seeds:
+        seed_text = ", ".join(sql_code_fence_seeds)
+        report["notes"].append(
+            f"SQL react_cr task sql_288 emitted recovered bare code-fence actions in seeds {seed_text}; "
+            "the environment rejected them as invalid SQL and the final task records still succeeded, "
+            "so this is tracked as non-fatal model-formatting noise rather than metric corruption."
+        )
     report["passed"] = not report["errors"]
     return report
 
@@ -469,6 +545,12 @@ def format_md(report: Dict[str, Any]) -> str:
             lines.append(f"- {item}")
         if len(report["warnings"]) > 50:
             lines.append(f"- ... {len(report['warnings']) - 50} additional warnings")
+        lines.append("")
+    if report.get("notes"):
+        lines.append("### Notes")
+        lines.append("")
+        for item in report["notes"]:
+            lines.append(f"- {item}")
         lines.append("")
 
     lines.extend([
@@ -513,7 +595,7 @@ def main() -> None:
     report = audit_stage(args.stage, repo_root)
     write_json(args.output_json, report)
     args.output_md.parent.mkdir(parents=True, exist_ok=True)
-    args.output_md.write_text(format_md(report) + "\n")
+    args.output_md.write_text(format_md(report).rstrip() + "\n")
     print(json.dumps({"stage": args.stage, "passed": report["passed"], "errors": len(report["errors"]), "warnings": len(report["warnings"])}, indent=2))
     if not report["passed"]:
         raise SystemExit(1)

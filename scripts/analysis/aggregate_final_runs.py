@@ -83,13 +83,14 @@ def write_csv(path: Path, rows: Sequence[Dict[str, Any]], fieldnames: Optional[S
 
 def discover_suite_roots(paths: Sequence[Path]) -> List[Path]:
     roots: set[Path] = set()
+    ignored_parts = {"archive", "diagnostics", "misc"}
     for path in paths:
         resolved = path.resolve()
         if (resolved / "suite_config.json").exists():
             roots.add(resolved)
             continue
         for config_path in resolved.rglob("suite_config.json"):
-            if "archive" in config_path.parts or "misc" in config_path.parts:
+            if ignored_parts & set(config_path.parts):
                 continue
             roots.add(config_path.parent)
     return sorted(roots)
