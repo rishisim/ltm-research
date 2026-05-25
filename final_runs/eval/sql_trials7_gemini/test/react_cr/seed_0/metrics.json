@@ -2,15 +2,15 @@
   "framework_id": "react_cr",
   "framework": "ReAct + Context Retrieval (CR)",
   "split": "test",
-  "num_tasks": 100,
+  "num_tasks": 200,
   "metrics": {
-    "success": 90,
-    "total": 100,
-    "success_total": "90 / 100",
-    "accuracy": 0.9,
-    "avg_reward": 0.9057,
-    "avg_steps_per_trial": 9.6,
-    "avg_steps_per_task": 9.6,
-    "attempt_count": 100
+    "success": 177,
+    "total": 200,
+    "success_total": "177 / 200",
+    "accuracy": 0.885,
+    "avg_reward": 0.888775,
+    "avg_steps_per_trial": 8.935,
+    "avg_steps_per_task": 8.935,
+    "attempt_count": 200
   }
 }

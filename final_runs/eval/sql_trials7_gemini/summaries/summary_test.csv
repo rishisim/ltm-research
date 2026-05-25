@@ -1,6 +1,6 @@
 framework,success_total,accuracy,avg_reward,avg_steps_per_trial,avg_steps_per_task,gain_from_base_react
-ReAct,92 / 100,0.9200,0.9227,8.8400,8.8400,0.0000
-ReAct + Context Retrieval (CR),90 / 100,0.9000,0.9057,9.6000,9.6000,-0.0200
-ReAct + Tool Retrieval (TR),91 / 100,0.9100,0.9212,9.6600,9.6600,-0.0100
-react + CR + TR,93 / 100,0.9300,0.9300,9.3500,9.3500,0.0100
-react + hard_neg CR + TR,91 / 100,0.9100,0.9225,9.0400,9.0400,-0.0100
+ReAct,183 / 200,0.9150,0.9203,8.6700,8.6700,0.0000
+ReAct + Context Retrieval (CR),177 / 200,0.8850,0.8897,8.9350,8.9350,-0.0300
+ReAct + Tool Retrieval (TR),181 / 200,0.9050,0.9139,9.2300,9.2300,-0.0100
+react + CR + TR,184 / 200,0.9200,0.9218,9.1100,9.1100,0.0050
+react + hard_neg CR + TR,179 / 200,0.8950,0.9059,9.0300,9.0300,-0.0200

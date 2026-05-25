@@ -2,14 +2,14 @@
   "framework_id": "react_cr_tr",
   "framework": "react + CR + TR",
   "split": "valid_unseen",
-  "num_tasks": 67,
+  "num_tasks": 134,
   "metrics": {
-    "success": 58,
-    "total": 67,
-    "success_total": "58 / 67",
-    "accuracy": 0.8656716417910447,
-    "avg_steps_per_trial": 26.223880597014926,
-    "avg_steps_per_task": 26.223880597014926,
-    "attempt_count": 67
+    "success": 111,
+    "total": 134,
+    "success_total": "111 / 134",
+    "accuracy": 0.8283582089552238,
+    "avg_steps_per_trial": 26.37313432835821,
+    "avg_steps_per_task": 26.37313432835821,
+    "attempt_count": 134
   }
 }

@@ -1,0 +1,23 @@
+# Phase 3 Stage C Run Manifest
+
+## 2026-05-25T01:47:48Z
+
+- Branch: `final/phase3-staged-eval`
+- Git commit before launch: `80fdf122fd7cb3684b05fb3fdd343cd9e8124e32`
+- Model: `gemini-2.5-flash`
+- Embedding provider: `gemini`
+- Retrieval cap: `max_learnings=5`
+- Retrieval filter: `min_valid_level=VALID_NEXT_TRIAL`
+- Frameworks: `react,react_cr,react_tr,react_cr_tr,react_hard_neg_cr_tr`
+- SQL KB: `final_runs/kb/sql_train_reflexion_trials7_sanitized/knowledge_base.sql_sanitized.json`
+- ScienceWorld KB: `final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat/knowledge_base.json`
+- Active SQL continuation at this checkpoint:
+  `/Users/rishisim/Documents/research/ltm-research/.venv/bin/dotenv -f /Users/rishisim/Documents/research/ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python scripts/run_intercode_sql_suite.py --splits test --num-tasks 200 --frameworks react,react_cr,react_tr,react_cr_tr,react_hard_neg_cr_tr --model gemini-2.5-flash --embedding-provider gemini --memory-bank final_runs/kb/sql_train_reflexion_trials7_sanitized/knowledge_base.sql_sanitized.json --runs-root final_runs/eval/sql_trials7_gemini --max-learnings 5 --min-valid-level VALID_NEXT_TRIAL --seed 2 --resume --quiet`
+- ScienceWorld Stage C seed 0 launch command:
+  `/Users/rishisim/Documents/research/ltm-research/.venv/bin/dotenv -f /Users/rishisim/Documents/research/ltm-research/.env run -- /tmp/ltm-scienceworld-kb-venv/bin/python scripts/run_scienceworld_suite.py --splits test --task-ids boil,change-the-state-of-matter-of,chemistry-mix,chemistry-mix-paint-secondary-color,chemistry-mix-paint-tertiary-color,find-animal,find-living-thing,find-non-living-thing,find-plant,freeze,grow-fruit,grow-plant,identify-life-stages-1,identify-life-stages-2,inclined-plane-determine-angle,inclined-plane-friction-named-surfaces,inclined-plane-friction-unnamed-surfaces,lifespan-longest-lived,lifespan-longest-lived-then-shortest-lived,lifespan-shortest-lived,measure-melting-point-known-substance,measure-melting-point-unknown-substance,melt,mendelian-genetics-known-plant,mendelian-genetics-unknown-plant,power-component,power-component-renewable-vs-nonrenewable-energy,test-conductivity,test-conductivity-of-unknown-substances,use-thermometer --num-tasks 30 --frameworks react,react_cr,react_tr,react_cr_tr,react_hard_neg_cr_tr --max-variations-per-task 1 --model gemini-2.5-flash --embedding-provider gemini --memory-bank final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat/knowledge_base.json --runs-root final_runs/eval/scienceworld_trials7_gemini --max-valid-actions 80 --env-step-limit 100 --max-learnings 5 --min-valid-level VALID_NEXT_TRIAL --seed 0 --resume --quiet`
+
+## 2026-05-25T02:05:08Z
+
+- Git commit before launch: `80fdf122fd7cb3684b05fb3fdd343cd9e8124e32`
+- ScienceWorld Stage C seed 1 launch command:
+  `/Users/rishisim/Documents/research/ltm-research/.venv/bin/dotenv -f /Users/rishisim/Documents/research/ltm-research/.env run -- /tmp/ltm-scienceworld-kb-venv/bin/python scripts/run_scienceworld_suite.py --splits test --task-ids boil,change-the-state-of-matter-of,chemistry-mix,chemistry-mix-paint-secondary-color,chemistry-mix-paint-tertiary-color,find-animal,find-living-thing,find-non-living-thing,find-plant,freeze,grow-fruit,grow-plant,identify-life-stages-1,identify-life-stages-2,inclined-plane-determine-angle,inclined-plane-friction-named-surfaces,inclined-plane-friction-unnamed-surfaces,lifespan-longest-lived,lifespan-longest-lived-then-shortest-lived,lifespan-shortest-lived,measure-melting-point-known-substance,measure-melting-point-unknown-substance,melt,mendelian-genetics-known-plant,mendelian-genetics-unknown-plant,power-component,power-component-renewable-vs-nonrenewable-energy,test-conductivity,test-conductivity-of-unknown-substances,use-thermometer --num-tasks 30 --frameworks react,react_cr,react_tr,react_cr_tr,react_hard_neg_cr_tr --max-variations-per-task 1 --model gemini-2.5-flash --embedding-provider gemini --memory-bank final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat/knowledge_base.json --runs-root final_runs/eval/scienceworld_trials7_gemini --max-valid-actions 80 --env-step-limit 100 --max-learnings 5 --min-valid-level VALID_NEXT_TRIAL --seed 1 --resume --quiet`

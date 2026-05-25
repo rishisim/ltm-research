@@ -2,15 +2,15 @@
   "framework_id": "react_tr",
   "framework": "ReAct + Tool Retrieval (TR)",
   "split": "test",
-  "num_tasks": 100,
+  "num_tasks": 200,
   "metrics": {
-    "success": 92,
-    "total": 100,
-    "success_total": "92 / 100",
-    "accuracy": 0.92,
-    "avg_reward": 0.9312,
-    "avg_steps_per_trial": 9.67,
-    "avg_steps_per_task": 9.67,
-    "attempt_count": 100
+    "success": 182,
+    "total": 200,
+    "success_total": "182 / 200",
+    "accuracy": 0.91,
+    "avg_reward": 0.918925,
+    "avg_steps_per_trial": 9.235,
+    "avg_steps_per_task": 9.235,
+    "attempt_count": 200
   }
 }
