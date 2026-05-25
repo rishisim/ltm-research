@@ -1,0 +1,15 @@
+\begin{table*}[t]
+\centering
+\caption{Final train-only KB inventory for the trials7 protocol. VNT = \texttt{VALID\_NEXT\_TRIAL}.}
+\label{tab:final-kb-inventory}
+\small
+\begin{tabular}{@{}lp{0.20\linewidth}p{0.16\linewidth}cccp{0.22\linewidth}@{}}
+\toprule
+Environment & KB artifact & Coverage & Max trial & Memories & VNT & Audit note \\
+\midrule
+ALFWorld & \shortstack[l]{\texttt{alfworld\_train}\\\texttt{reflexion\_trials7}} & 115/120 observed train games & 7 & 373 & 101 & Train-only refs; no eval overlap; original 120-game manifest absent. \\
+SQL & \shortstack[l]{\texttt{sql\_train\_reflexion}\\\texttt{trials7\_sanitized}} & 516/516 train tasks & 7 & 415 & 92 & Sanitized; no dev/test overlap; protocol memories quarantined. \\
+ScienceWorld & \shortstack[l]{\texttt{scienceworld\_train}\\\texttt{reflexion\_trials7}\\\texttt{va80\_30cat}} & 30/30 categories, 30 variations & 7 & 129 & 34 & Train-only; 1 variation/category; failed extractions repaired. \\
+\bottomrule
+\end{tabular}
+\end{table*}

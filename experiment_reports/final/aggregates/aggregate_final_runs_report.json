@@ -1,0 +1,27 @@
+{
+  "audit": {
+    "command": "scripts/analysis/aggregate_final_runs.py --runs-root final_runs/eval --output-dir experiment_reports/final/aggregates",
+    "git_commit": "202f4f3b5fac8c446682a1d52c496ebf88c654aa",
+    "script": "/Users/rishisim/Documents/research/ltm-tables-figures/scripts/analysis/aggregate_final_runs.py",
+    "suite_roots": [
+      "/Users/rishisim/Documents/research/ltm-tables-figures/final_runs/eval/alfworld_trials7_gemini",
+      "/Users/rishisim/Documents/research/ltm-tables-figures/final_runs/eval/scienceworld_trials7_gemini",
+      "/Users/rishisim/Documents/research/ltm-tables-figures/final_runs/eval/sql_trials7_gemini"
+    ]
+  },
+  "counts": {
+    "framework_aggregate_rows": 15,
+    "paired_delta_rows": 36,
+    "per_seed_rows": 45,
+    "suite_roots": 3
+  },
+  "load_warnings": [],
+  "outputs": {
+    "framework_aggregate": "/Users/rishisim/Documents/research/ltm-tables-figures/experiment_reports/final/aggregates/final_run_framework_aggregate.csv",
+    "memory_usage": "/Users/rishisim/Documents/research/ltm-tables-figures/experiment_reports/final/aggregates/final_run_memory_usage.csv",
+    "paired_deltas": "/Users/rishisim/Documents/research/ltm-tables-figures/experiment_reports/final/aggregates/final_run_paired_deltas_vs_react.csv",
+    "paired_deltas_aggregate": "/Users/rishisim/Documents/research/ltm-tables-figures/experiment_reports/final/aggregates/final_run_paired_deltas_vs_react_aggregate.csv",
+    "per_seed_metrics": "/Users/rishisim/Documents/research/ltm-tables-figures/experiment_reports/final/aggregates/final_run_per_seed_metrics.csv",
+    "step_cost_token_summary": "/Users/rishisim/Documents/research/ltm-tables-figures/experiment_reports/final/aggregates/final_run_step_cost_token_summary.csv"
+  }
+}

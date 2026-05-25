@@ -1,0 +1,28 @@
+\begin{table*}[t]
+\centering
+\caption{Final memory usage and trajectory cost summaries from raw trajectories. Values are mean $\pm$ std over seeds.}
+\label{tab:final-memory-usage}
+\begin{tabular}{llrrrrr}
+\toprule
+Environment & Framework & Context tasks & Retrieved/task & Help calls & Help/task & Steps/task \\
+\midrule
+ALFWorld & ReAct & 0.0 $\pm$ 0.0 & 0.00 $\pm$ 0.00 & 0.0 $\pm$ 0.0 & 0.00 $\pm$ 0.00 & 21.00 $\pm$ 0.11 \\
+ALFWorld & ReAct + CR & 132.0 $\pm$ 0.0 & 4.05 $\pm$ 0.00 & 0.0 $\pm$ 0.0 & 0.00 $\pm$ 0.00 & 28.56 $\pm$ 0.26 \\
+ALFWorld & ReAct + TR & 0.0 $\pm$ 0.0 & 0.00 $\pm$ 0.00 & 302.3 $\pm$ 0.6 & 2.26 $\pm$ 0.00 & 27.69 $\pm$ 0.01 \\
+ALFWorld & ReAct + CR + TR & 132.0 $\pm$ 0.0 & 4.05 $\pm$ 0.00 & 206.0 $\pm$ 0.0 & 1.54 $\pm$ 0.00 & 26.38 $\pm$ 0.01 \\
+ALFWorld & Hard-neg CR + TR & 134.0 $\pm$ 0.0 & 4.67 $\pm$ 0.00 & 360.3 $\pm$ 6.4 & 2.69 $\pm$ 0.05 & 34.72 $\pm$ 0.08 \\
+\midrule
+SQL & ReAct & 0.0 $\pm$ 0.0 & 0.00 $\pm$ 0.00 & 0.0 $\pm$ 0.0 & 0.00 $\pm$ 0.00 & 8.67 $\pm$ 0.00 \\
+SQL & ReAct + CR & 178.0 $\pm$ 0.0 & 2.05 $\pm$ 0.00 & 0.0 $\pm$ 0.0 & 0.00 $\pm$ 0.00 & 8.94 $\pm$ 0.00 \\
+SQL & ReAct + TR & 0.0 $\pm$ 0.0 & 0.00 $\pm$ 0.00 & 23.0 $\pm$ 0.0 & 0.12 $\pm$ 0.00 & 9.23 $\pm$ 0.00 \\
+SQL & ReAct + CR + TR & 178.0 $\pm$ 0.0 & 2.05 $\pm$ 0.00 & 20.0 $\pm$ 0.0 & 0.10 $\pm$ 0.00 & 9.11 $\pm$ 0.01 \\
+SQL & Hard-neg CR + TR & 171.7 $\pm$ 0.6 & 1.68 $\pm$ 0.01 & 24.0 $\pm$ 0.0 & 0.12 $\pm$ 0.00 & 9.03 $\pm$ 0.00 \\
+\midrule
+ScienceWorld & ReAct & 0.0 $\pm$ 0.0 & 0.00 $\pm$ 0.00 & 0.0 $\pm$ 0.0 & 0.00 $\pm$ 0.00 & 30.96 $\pm$ 1.67 \\
+ScienceWorld & ReAct + CR & 30.0 $\pm$ 0.0 & 4.40 $\pm$ 0.00 & 0.0 $\pm$ 0.0 & 0.00 $\pm$ 0.00 & 30.48 $\pm$ 1.24 \\
+ScienceWorld & ReAct + TR & 0.0 $\pm$ 0.0 & 0.00 $\pm$ 0.00 & 37.3 $\pm$ 6.4 & 1.24 $\pm$ 0.21 & 34.19 $\pm$ 2.13 \\
+ScienceWorld & ReAct + CR + TR & 30.0 $\pm$ 0.0 & 4.40 $\pm$ 0.00 & 20.7 $\pm$ 3.8 & 0.69 $\pm$ 0.13 & 31.23 $\pm$ 1.99 \\
+ScienceWorld & Hard-neg CR + TR & 30.0 $\pm$ 0.0 & 4.17 $\pm$ 0.00 & 31.3 $\pm$ 2.1 & 1.04 $\pm$ 0.07 & 33.08 $\pm$ 0.37 \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -75,7 +75,7 @@ def write_csv(path: Path, rows: Sequence[Dict[str, Any]], fieldnames: Optional[S
                     ordered.append(key)
         fieldnames = ordered
     with path.open("w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=list(fieldnames), extrasaction="ignore")
+        writer = csv.DictWriter(f, fieldnames=list(fieldnames), extrasaction="ignore", lineterminator="\n")
         writer.writeheader()
         for row in rows:
             writer.writerow(row)

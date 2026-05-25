@@ -1,0 +1,30 @@
+\begin{table*}[t]
+\centering
+\caption{Final held-out Stage C results using train-only trials7 KBs, Gemini Flash, Gemini embeddings, \texttt{VALID\_NEXT\_TRIAL}, and \texttt{max\_learnings=5}. Values are mean $\pm$ std over three seeds.}
+\label{tab:final-main-results}
+\begin{tabular}{llrrrr}
+\toprule
+Environment & Framework & Tasks & Success (\%) & Score & $\Delta$ success (pp) \\
+\midrule
+ALFWorld & ReAct & 134 & 67.9 $\pm$ 0.0 & 0.679 $\pm$ 0.000 & \textemdash{} \\
+ALFWorld & ReAct + CR & 134 & 63.9 $\pm$ 1.6 & 0.639 $\pm$ 0.016 & -4.0 $\pm$ 1.6 \\
+ALFWorld & ReAct + TR & 134 & 75.4 $\pm$ 0.0 & 0.754 $\pm$ 0.000 & +7.5 $\pm$ 0.0 \\
+ALFWorld & ReAct + CR + TR & 134 & \textbf{82.8 $\pm$ 0.0} & 0.828 $\pm$ 0.000 & +14.9 $\pm$ 0.0 \\
+ALFWorld & Hard-neg CR + TR & 134 & 55.2 $\pm$ 0.7 & 0.552 $\pm$ 0.007 & -12.7 $\pm$ 0.7 \\
+\midrule
+SQL & ReAct & 200 & 91.5 $\pm$ 0.0 & 0.920 $\pm$ 0.000 & \textemdash{} \\
+SQL & ReAct + CR & 200 & 88.5 $\pm$ 0.0 & 0.889 $\pm$ 0.001 & -3.0 $\pm$ 0.0 \\
+SQL & ReAct + TR & 200 & 90.8 $\pm$ 0.3 & 0.917 $\pm$ 0.003 & -0.7 $\pm$ 0.3 \\
+SQL & ReAct + CR + TR & 200 & \textbf{92.0 $\pm$ 0.0} & 0.922 $\pm$ 0.000 & +0.5 $\pm$ 0.0 \\
+SQL & Hard-neg CR + TR & 200 & 89.5 $\pm$ 0.0 & 0.906 $\pm$ 0.000 & -2.0 $\pm$ 0.0 \\
+\midrule
+ScienceWorld & ReAct & 30 & \textbf{30.0 $\pm$ 8.8} & 0.214 $\pm$ 0.241 & \textemdash{} \\
+ScienceWorld & ReAct + CR & 30 & 26.7 $\pm$ 3.3 & 0.171 $\pm$ 0.058 & -3.3 $\pm$ 12.0 \\
+ScienceWorld & ReAct + TR & 30 & 26.7 $\pm$ 3.3 & 0.256 $\pm$ 0.086 & -3.3 $\pm$ 6.7 \\
+ScienceWorld & ReAct + CR + TR & 30 & 27.8 $\pm$ 7.7 & 0.212 $\pm$ 0.134 & -2.2 $\pm$ 6.9 \\
+ScienceWorld & Hard-neg CR + TR & 30 & 28.9 $\pm$ 6.9 & 0.260 $\pm$ 0.149 & -1.1 $\pm$ 15.4 \\
+\bottomrule
+\end{tabular}
+\vspace{2pt}
+{\footnotesize Score is average reward when logged; for ALFWorld ReAct, success rate is used because reward was not emitted in the final record.}
+\end{table*}

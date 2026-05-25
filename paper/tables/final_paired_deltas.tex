@@ -1,0 +1,25 @@
+\begin{table*}[t]
+\centering
+\caption{Paired task-level deltas against ReAct on the final held-out Stage C runs. Values are mean $\pm$ std over seeds.}
+\label{tab:final-paired-deltas}
+\begin{tabular}{llrrrrr}
+\toprule
+Environment & Framework & Common tasks & $\Delta$ success (pp) & $\Delta$ score & Improved & Regressed \\
+\midrule
+ALFWorld & ReAct + CR & 134 $\pm$ 0 & -4.0 $\pm$ 1.6 & \textemdash{} & 20.3 $\pm$ 1.5 & 25.7 $\pm$ 0.6 \\
+ALFWorld & ReAct + TR & 134 $\pm$ 0 & +7.5 $\pm$ 0.0 & \textemdash{} & 27.0 $\pm$ 0.0 & 17.0 $\pm$ 0.0 \\
+ALFWorld & ReAct + CR + TR & 134 $\pm$ 0 & +14.9 $\pm$ 0.0 & \textemdash{} & 33.0 $\pm$ 0.0 & 13.0 $\pm$ 0.0 \\
+ALFWorld & Hard-neg CR + TR & 134 $\pm$ 0 & -12.7 $\pm$ 0.7 & \textemdash{} & 18.7 $\pm$ 0.6 & 35.7 $\pm$ 0.6 \\
+\midrule
+SQL & ReAct + CR & 200 $\pm$ 0 & -3.0 $\pm$ 0.0 & -0.031 $\pm$ 0.001 & 2.0 $\pm$ 0.0 & 8.0 $\pm$ 0.0 \\
+SQL & ReAct + TR & 200 $\pm$ 0 & -0.7 $\pm$ 0.3 & -0.003 $\pm$ 0.003 & 2.0 $\pm$ 0.0 & 3.3 $\pm$ 0.6 \\
+SQL & ReAct + CR + TR & 200 $\pm$ 0 & +0.5 $\pm$ 0.0 & 0.002 $\pm$ 0.000 & 3.0 $\pm$ 0.0 & 2.0 $\pm$ 0.0 \\
+SQL & Hard-neg CR + TR & 200 $\pm$ 0 & -2.0 $\pm$ 0.0 & -0.014 $\pm$ 0.000 & 2.0 $\pm$ 0.0 & 6.0 $\pm$ 0.0 \\
+\midrule
+ScienceWorld & ReAct + CR & 30 $\pm$ 0 & -3.3 $\pm$ 12.0 & -0.043 $\pm$ 0.284 & 2.7 $\pm$ 1.2 & 3.7 $\pm$ 2.5 \\
+ScienceWorld & ReAct + TR & 30 $\pm$ 0 & -3.3 $\pm$ 6.7 & 0.042 $\pm$ 0.240 & 3.0 $\pm$ 1.0 & 4.0 $\pm$ 1.0 \\
+ScienceWorld & ReAct + CR + TR & 30 $\pm$ 0 & -2.2 $\pm$ 6.9 & -0.002 $\pm$ 0.148 & 2.0 $\pm$ 1.0 & 2.7 $\pm$ 1.2 \\
+ScienceWorld & Hard-neg CR + TR & 30 $\pm$ 0 & -1.1 $\pm$ 15.4 & 0.046 $\pm$ 0.354 & 4.3 $\pm$ 1.5 & 4.7 $\pm$ 3.2 \\
+\bottomrule
+\end{tabular}
+\end{table*}
