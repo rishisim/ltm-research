@@ -2953,5 +2953,3170 @@
         "ranking_score": 0.6161390888273105
       }
     ]
+  },
+  "scienceworld_inclined-plane-friction-named-surfaces_var_1038": {
+    "query": "Your task is to determine which of the two inclined planes (aluminum, platinum) has the most friction. After completing your experiment, focus on the inclined plane with the most friction.",
+    "metadata": {
+      "pick_learning_count": 5,
+      "max_learning_count": 5,
+      "actual_selected_count": 2,
+      "knowledge_retrieval_base_count": 2,
+      "top_similar_tasks": [
+        {
+          "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+          "similarity_score": 0.5368545203996821,
+          "learning_count": 5,
+          "validated_learning_count": 5
+        },
+        {
+          "task_desc": "Your task is to find the animal with the shortest life span.  The animals are in the 'outside' location.  Focus on the animal with the shortest life span.",
+          "similarity_score": 0.5796221775421813,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        },
+        {
+          "task_desc": "Your task is to turn on the red light bulb. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+          "similarity_score": 0.5829268580935318,
+          "learning_count": 5,
+          "validated_learning_count": 2
+        },
+        {
+          "task_desc": "Your task is to find the animal with the longest life span.  The animals are in the 'outside' location.  Focus on the animal with the longest life span.",
+          "similarity_score": 0.5837565960519275,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        },
+        {
+          "task_desc": "Your task is to find a(n) living thing. First, focus on the thing. Then, move it to the red box in the kitchen.",
+          "similarity_score": 0.5892028098362444,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+        "similarity_score": 0.5368545203996821,
+        "learning_count": 5,
+        "kb_index": 24,
+        "learning_text": "Adopt a systematic search strategy, focusing on text, diagrams, or sequences of images in each room.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "room, object",
+        "verbs": "look around, look at, open, look in, go to",
+        "goal_phase": "SEARCH",
+        "unique_id": "25",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly searches rooms and containers without finding relevant information.",
+          "issue_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            0,
+            200
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "evidence_trial_num": 5,
+          "evidence_step_range": [
+            0,
+            1
+          ]
+        },
+        "ranking_score": 0.5368545203996821
+      },
+      {
+        "task_desc": "Your task is to turn on the red light bulb. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+        "similarity_score": 0.5829268580935318,
+        "learning_count": 5,
+        "kb_index": 49,
+        "learning_text": "Use the 'take [wire]' action to disconnect a wire from its current connection.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "wire",
+        "verbs": "disconnect",
+        "goal_phase": "RECOVER",
+        "unique_id": "50",
+        "issue_ref": {
+          "issue_text": "Agent attempts to disconnect wires using incorrect syntax.",
+          "issue_task_id": "scienceworld_power-component_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            48,
+            48
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_power-component_var_0",
+          "evidence_trial_num": 3,
+          "evidence_step_range": [
+            40,
+            41
+          ]
+        },
+        "ranking_score": 0.5829268580935318
+      }
+    ]
+  },
+  "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120": {
+    "query": "Your task is to determine which of the two inclined planes (unknown material D, unknown material H) has the most friction. After completing your experiment, focus on the inclined plane with the most friction.",
+    "metadata": {
+      "pick_learning_count": 5,
+      "max_learning_count": 5,
+      "actual_selected_count": 2,
+      "knowledge_retrieval_base_count": 2,
+      "top_similar_tasks": [
+        {
+          "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+          "similarity_score": 0.5318223747209667,
+          "learning_count": 5,
+          "validated_learning_count": 5
+        },
+        {
+          "task_desc": "Your task is to find the animal with the longest life span.  The animals are in the 'outside' location.  Focus on the animal with the longest life span.",
+          "similarity_score": 0.5742615879595034,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        },
+        {
+          "task_desc": "Your task is to find the animal with the shortest life span.  The animals are in the 'outside' location.  Focus on the animal with the shortest life span.",
+          "similarity_score": 0.5799927863244063,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        },
+        {
+          "task_desc": "Your task is to turn on the red light bulb. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+          "similarity_score": 0.5826398844529291,
+          "learning_count": 5,
+          "validated_learning_count": 2
+        },
+        {
+          "task_desc": "Your task is to find the animal with the longest life span, then the shortest life span. First, focus on the animal with the longest life span.  Then, focus on the animal with the shortest life span. The animals are in the 'outside' location.",
+          "similarity_score": 0.5862653107561118,
+          "learning_count": 2,
+          "validated_learning_count": 2
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+        "similarity_score": 0.5318223747209667,
+        "learning_count": 5,
+        "kb_index": 24,
+        "learning_text": "Adopt a systematic search strategy, focusing on text, diagrams, or sequences of images in each room.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "room, object",
+        "verbs": "look around, look at, open, look in, go to",
+        "goal_phase": "SEARCH",
+        "unique_id": "25",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly searches rooms and containers without finding relevant information.",
+          "issue_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            0,
+            200
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "evidence_trial_num": 5,
+          "evidence_step_range": [
+            0,
+            1
+          ]
+        },
+        "ranking_score": 0.5318223747209667
+      },
+      {
+        "task_desc": "Your task is to turn on the red light bulb. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+        "similarity_score": 0.5826398844529291,
+        "learning_count": 5,
+        "kb_index": 49,
+        "learning_text": "Use the 'take [wire]' action to disconnect a wire from its current connection.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "wire",
+        "verbs": "disconnect",
+        "goal_phase": "RECOVER",
+        "unique_id": "50",
+        "issue_ref": {
+          "issue_text": "Agent attempts to disconnect wires using incorrect syntax.",
+          "issue_task_id": "scienceworld_power-component_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            48,
+            48
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_power-component_var_0",
+          "evidence_trial_num": 3,
+          "evidence_step_range": [
+            40,
+            41
+          ]
+        },
+        "ranking_score": 0.5826398844529291
+      }
+    ]
+  },
+  "scienceworld_lifespan-longest-lived_var_93": {
+    "query": "Your task is to find the animal with the longest life span.  The animals are in the 'outside' location.  Focus on the animal with the longest life span.",
+    "metadata": {
+      "pick_learning_count": 5,
+      "max_learning_count": 20,
+      "actual_selected_count": 5,
+      "knowledge_retrieval_base_count": 6,
+      "top_similar_tasks": [
+        {
+          "task_desc": "Your task is to determine which of the two inclined planes (paper, cloth) has the most friction. After completing your experiment, focus on the inclined plane with the most friction.",
+          "similarity_score": 0.5739000366992175,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        },
+        {
+          "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+          "similarity_score": 0.5742173615941771,
+          "learning_count": 20,
+          "validated_learning_count": 17
+        },
+        {
+          "task_desc": "Your task is to use chemistry to create green-blue paint. When you are part-way done, focus on the intermediate (secondary color) paint you created.  When you are completely done, focus on the green paint.",
+          "similarity_score": 0.5771521116297288,
+          "learning_count": 1,
+          "validated_learning_count": 0
+        },
+        {
+          "task_desc": "Your task is to determine which of the two inclined planes (unknown material C, unknown material H) has the most friction. After completing your experiment, focus on the inclined plane with the most friction.",
+          "similarity_score": 0.5799416614610531,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        },
+        {
+          "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+          "similarity_score": 0.5814065005439588,
+          "learning_count": 6,
+          "validated_learning_count": 6
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+        "similarity_score": 0.5742173615941771,
+        "learning_count": 20,
+        "kb_index": 82,
+        "learning_text": "The correct method to fill a cup from the sink is to first activate the sink, then put the cup in the sink.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "container, sink, water",
+        "verbs": "fill",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "83",
+        "issue_ref": {
+          "issue_text": "Repeatedly attempting to fill a cup from the sink using invalid commands.",
+          "issue_task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            12,
+            48
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+          "evidence_trial_num": 3,
+          "evidence_step_range": [
+            14,
+            15
+          ]
+        },
+        "ranking_score": 0.5742173615941771
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5814065005439588,
+        "learning_count": 6,
+        "kb_index": 43,
+        "learning_text": "To fill the jug, first 'activate sink', then 'put jug in sink', then 'take jug'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, sink, water",
+        "verbs": "fill",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "44",
+        "issue_ref": {
+          "issue_text": "Attempted to fill jug with water using incorrect action phrasing.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            22,
+            47
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 2,
+          "evidence_step_range": [
+            10,
+            11
+          ]
+        },
+        "ranking_score": 0.5814065005439588
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5814065005439588,
+        "learning_count": 6,
+        "kb_index": 44,
+        "learning_text": "Use the action 'pour jug into [flower pot]' to water the plant.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, flower pot, water",
+        "verbs": "water, pour",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "45",
+        "issue_ref": {
+          "issue_text": "Attempted to water plant with incorrect action phrasing.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            14,
+            20
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 4,
+          "evidence_step_range": [
+            28,
+            29
+          ]
+        },
+        "ranking_score": 0.5814065005439588
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5814065005439588,
+        "learning_count": 6,
+        "kb_index": 45,
+        "learning_text": "Do not 'move jug to flower pot' to water; use 'pour jug into flower pot'. To retrieve an item from a container, use 'take [item]'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, flower pot",
+        "verbs": "move, take",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "46",
+        "issue_ref": {
+          "issue_text": "Incorrectly used 'move jug to flower pot' to water, then struggled to retrieve it.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            22,
+            23
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 4,
+          "evidence_step_range": [
+            28,
+            29
+          ]
+        },
+        "ranking_score": 0.5814065005439588
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5814065005439588,
+        "learning_count": 6,
+        "kb_index": 46,
+        "learning_text": "Repeated 'look around' or 'look at [object]' actions are needed to advance the game state and allow plants to grow.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "plant, flower pot",
+        "verbs": "look around, look at",
+        "goal_phase": "VERIFY",
+        "unique_id": "47",
+        "issue_ref": {
+          "issue_text": "Repeatedly checked plant growth without advancing game state sufficiently.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            26,
+            49
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 4,
+          "evidence_step_range": [
+            46,
+            49
+          ]
+        },
+        "ranking_score": 0.5814065005439588
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5814065005439588,
+        "learning_count": 6,
+        "kb_index": 47,
+        "learning_text": "To harvest seeds from an adult plant in a flower pot, use the action 'take seeds from [adult plant]'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "shovel, adult plant, flower pot, seeds",
+        "verbs": "use, harvest, take, dig up",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "48",
+        "issue_ref": {
+          "issue_text": "Attempted to harvest seeds using incorrect action phrasing.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 5,
+          "issue_step_range": [
+            40,
+            49
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 6,
+          "evidence_step_range": [
+            36,
+            37
+          ]
+        },
+        "ranking_score": 0.5814065005439588
+      }
+    ]
+  },
+  "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93": {
+    "query": "Your task is to find the animal with the longest life span, then the shortest life span. First, focus on the animal with the longest life span.  Then, focus on the animal with the shortest life span. The animals are in the 'outside' location.",
+    "metadata": {
+      "pick_learning_count": 5,
+      "max_learning_count": 20,
+      "actual_selected_count": 5,
+      "knowledge_retrieval_base_count": 6,
+      "top_similar_tasks": [
+        {
+          "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+          "similarity_score": 0.5804033800399615,
+          "learning_count": 6,
+          "validated_learning_count": 6
+        },
+        {
+          "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+          "similarity_score": 0.5820793147415126,
+          "learning_count": 20,
+          "validated_learning_count": 17
+        },
+        {
+          "task_desc": "Your task is to use chemistry to create green-blue paint. When you are part-way done, focus on the intermediate (secondary color) paint you created.  When you are completely done, focus on the green paint.",
+          "similarity_score": 0.5869987282919372,
+          "learning_count": 1,
+          "validated_learning_count": 0
+        },
+        {
+          "task_desc": "Your task is to determine which of the two inclined planes (paper, cloth) has the most friction. After completing your experiment, focus on the inclined plane with the most friction.",
+          "similarity_score": 0.5876983361324841,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        },
+        {
+          "task_desc": "Your task is to determine which of the two inclined planes (unknown material C, unknown material H) has the most friction. After completing your experiment, focus on the inclined plane with the most friction.",
+          "similarity_score": 0.5917009263661082,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5804033800399615,
+        "learning_count": 6,
+        "kb_index": 43,
+        "learning_text": "To fill the jug, first 'activate sink', then 'put jug in sink', then 'take jug'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, sink, water",
+        "verbs": "fill",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "44",
+        "issue_ref": {
+          "issue_text": "Attempted to fill jug with water using incorrect action phrasing.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            22,
+            47
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 2,
+          "evidence_step_range": [
+            10,
+            11
+          ]
+        },
+        "ranking_score": 0.5804033800399615
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5804033800399615,
+        "learning_count": 6,
+        "kb_index": 44,
+        "learning_text": "Use the action 'pour jug into [flower pot]' to water the plant.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, flower pot, water",
+        "verbs": "water, pour",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "45",
+        "issue_ref": {
+          "issue_text": "Attempted to water plant with incorrect action phrasing.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            14,
+            20
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 4,
+          "evidence_step_range": [
+            28,
+            29
+          ]
+        },
+        "ranking_score": 0.5804033800399615
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5804033800399615,
+        "learning_count": 6,
+        "kb_index": 45,
+        "learning_text": "Do not 'move jug to flower pot' to water; use 'pour jug into flower pot'. To retrieve an item from a container, use 'take [item]'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, flower pot",
+        "verbs": "move, take",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "46",
+        "issue_ref": {
+          "issue_text": "Incorrectly used 'move jug to flower pot' to water, then struggled to retrieve it.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            22,
+            23
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 4,
+          "evidence_step_range": [
+            28,
+            29
+          ]
+        },
+        "ranking_score": 0.5804033800399615
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5804033800399615,
+        "learning_count": 6,
+        "kb_index": 46,
+        "learning_text": "Repeated 'look around' or 'look at [object]' actions are needed to advance the game state and allow plants to grow.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "plant, flower pot",
+        "verbs": "look around, look at",
+        "goal_phase": "VERIFY",
+        "unique_id": "47",
+        "issue_ref": {
+          "issue_text": "Repeatedly checked plant growth without advancing game state sufficiently.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            26,
+            49
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 4,
+          "evidence_step_range": [
+            46,
+            49
+          ]
+        },
+        "ranking_score": 0.5804033800399615
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5804033800399615,
+        "learning_count": 6,
+        "kb_index": 47,
+        "learning_text": "To harvest seeds from an adult plant in a flower pot, use the action 'take seeds from [adult plant]'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "shovel, adult plant, flower pot, seeds",
+        "verbs": "use, harvest, take, dig up",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "48",
+        "issue_ref": {
+          "issue_text": "Attempted to harvest seeds using incorrect action phrasing.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 5,
+          "issue_step_range": [
+            40,
+            49
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 6,
+          "evidence_step_range": [
+            36,
+            37
+          ]
+        },
+        "ranking_score": 0.5804033800399615
+      },
+      {
+        "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+        "similarity_score": 0.5820793147415126,
+        "learning_count": 20,
+        "kb_index": 82,
+        "learning_text": "The correct method to fill a cup from the sink is to first activate the sink, then put the cup in the sink.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "container, sink, water",
+        "verbs": "fill",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "83",
+        "issue_ref": {
+          "issue_text": "Repeatedly attempting to fill a cup from the sink using invalid commands.",
+          "issue_task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            12,
+            48
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+          "evidence_trial_num": 3,
+          "evidence_step_range": [
+            14,
+            15
+          ]
+        },
+        "ranking_score": 0.5820793147415126
+      }
+    ]
+  },
+  "scienceworld_lifespan-shortest-lived_var_93": {
+    "query": "Your task is to find the animal with the shortest life span.  The animals are in the 'outside' location.  Focus on the animal with the shortest life span.",
+    "metadata": {
+      "pick_learning_count": 5,
+      "max_learning_count": 20,
+      "actual_selected_count": 5,
+      "knowledge_retrieval_base_count": 6,
+      "top_similar_tasks": [
+        {
+          "task_desc": "Your task is to use chemistry to create green-blue paint. When you are part-way done, focus on the intermediate (secondary color) paint you created.  When you are completely done, focus on the green paint.",
+          "similarity_score": 0.5647579164826343,
+          "learning_count": 1,
+          "validated_learning_count": 0
+        },
+        {
+          "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+          "similarity_score": 0.5754252643313054,
+          "learning_count": 6,
+          "validated_learning_count": 6
+        },
+        {
+          "task_desc": "Your task is to determine which of the two inclined planes (paper, cloth) has the most friction. After completing your experiment, focus on the inclined plane with the most friction.",
+          "similarity_score": 0.5795970648476444,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        },
+        {
+          "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+          "similarity_score": 0.5805697820789425,
+          "learning_count": 20,
+          "validated_learning_count": 17
+        },
+        {
+          "task_desc": "Your task is to determine which of the two inclined planes (unknown material C, unknown material H) has the most friction. After completing your experiment, focus on the inclined plane with the most friction.",
+          "similarity_score": 0.5839075217757574,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5754252643313054,
+        "learning_count": 6,
+        "kb_index": 43,
+        "learning_text": "To fill the jug, first 'activate sink', then 'put jug in sink', then 'take jug'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, sink, water",
+        "verbs": "fill",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "44",
+        "issue_ref": {
+          "issue_text": "Attempted to fill jug with water using incorrect action phrasing.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            22,
+            47
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 2,
+          "evidence_step_range": [
+            10,
+            11
+          ]
+        },
+        "ranking_score": 0.5754252643313054
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5754252643313054,
+        "learning_count": 6,
+        "kb_index": 44,
+        "learning_text": "Use the action 'pour jug into [flower pot]' to water the plant.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, flower pot, water",
+        "verbs": "water, pour",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "45",
+        "issue_ref": {
+          "issue_text": "Attempted to water plant with incorrect action phrasing.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            14,
+            20
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 4,
+          "evidence_step_range": [
+            28,
+            29
+          ]
+        },
+        "ranking_score": 0.5754252643313054
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5754252643313054,
+        "learning_count": 6,
+        "kb_index": 45,
+        "learning_text": "Do not 'move jug to flower pot' to water; use 'pour jug into flower pot'. To retrieve an item from a container, use 'take [item]'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, flower pot",
+        "verbs": "move, take",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "46",
+        "issue_ref": {
+          "issue_text": "Incorrectly used 'move jug to flower pot' to water, then struggled to retrieve it.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            22,
+            23
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 4,
+          "evidence_step_range": [
+            28,
+            29
+          ]
+        },
+        "ranking_score": 0.5754252643313054
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5754252643313054,
+        "learning_count": 6,
+        "kb_index": 46,
+        "learning_text": "Repeated 'look around' or 'look at [object]' actions are needed to advance the game state and allow plants to grow.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "plant, flower pot",
+        "verbs": "look around, look at",
+        "goal_phase": "VERIFY",
+        "unique_id": "47",
+        "issue_ref": {
+          "issue_text": "Repeatedly checked plant growth without advancing game state sufficiently.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            26,
+            49
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 4,
+          "evidence_step_range": [
+            46,
+            49
+          ]
+        },
+        "ranking_score": 0.5754252643313054
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5754252643313054,
+        "learning_count": 6,
+        "kb_index": 47,
+        "learning_text": "To harvest seeds from an adult plant in a flower pot, use the action 'take seeds from [adult plant]'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "shovel, adult plant, flower pot, seeds",
+        "verbs": "use, harvest, take, dig up",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "48",
+        "issue_ref": {
+          "issue_text": "Attempted to harvest seeds using incorrect action phrasing.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 5,
+          "issue_step_range": [
+            40,
+            49
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 6,
+          "evidence_step_range": [
+            36,
+            37
+          ]
+        },
+        "ranking_score": 0.5754252643313054
+      },
+      {
+        "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+        "similarity_score": 0.5805697820789425,
+        "learning_count": 20,
+        "kb_index": 82,
+        "learning_text": "The correct method to fill a cup from the sink is to first activate the sink, then put the cup in the sink.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "container, sink, water",
+        "verbs": "fill",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "83",
+        "issue_ref": {
+          "issue_text": "Repeatedly attempting to fill a cup from the sink using invalid commands.",
+          "issue_task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            12,
+            48
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+          "evidence_trial_num": 3,
+          "evidence_step_range": [
+            14,
+            15
+          ]
+        },
+        "ranking_score": 0.5805697820789425
+      }
+    ]
+  },
+  "scienceworld_measure-melting-point-known-substance_var_327": {
+    "query": "Your task is to measure the melting point of tin, which is located around the kitchen. First, focus on the thermometer. Next, focus on the tin. If the melting point of tin is above 50.0 degrees celsius, focus on the red box. If the melting point of tin is below 50.0 degrees celsius, focus on the green box. The boxes are located around the kitchen.",
+    "metadata": {
+      "pick_learning_count": 5,
+      "max_learning_count": 5,
+      "actual_selected_count": 3,
+      "knowledge_retrieval_base_count": 3,
+      "top_similar_tasks": [
+        {
+          "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+          "similarity_score": 0.5912691941728888,
+          "learning_count": 5,
+          "validated_learning_count": 5
+        },
+        {
+          "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+          "similarity_score": 0.6378426922308957,
+          "learning_count": 2,
+          "validated_learning_count": 2
+        },
+        {
+          "task_desc": "Your task is to determine which of the two inclined planes (paper, cloth) has the most friction. After completing your experiment, focus on the inclined plane with the most friction.",
+          "similarity_score": 0.6553322624029824,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        },
+        {
+          "task_desc": "Your task is to find the animal with the shortest life span.  The animals are in the 'outside' location.  Focus on the animal with the shortest life span.",
+          "similarity_score": 0.6600546853366088,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        },
+        {
+          "task_desc": "Your task is to determine which of the two inclined planes (unknown material C, unknown material H) has the most friction. After completing your experiment, focus on the inclined plane with the most friction.",
+          "similarity_score": 0.6627172064811544,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+        "similarity_score": 0.5912691941728888,
+        "learning_count": 5,
+        "kb_index": 24,
+        "learning_text": "Adopt a systematic search strategy, focusing on text, diagrams, or sequences of images in each room.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "room, object",
+        "verbs": "look around, look at, open, look in, go to",
+        "goal_phase": "SEARCH",
+        "unique_id": "25",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly searches rooms and containers without finding relevant information.",
+          "issue_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            0,
+            200
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "evidence_trial_num": 5,
+          "evidence_step_range": [
+            0,
+            1
+          ]
+        },
+        "ranking_score": 0.5912691941728888
+      },
+      {
+        "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+        "similarity_score": 0.6378426922308957,
+        "learning_count": 2,
+        "kb_index": 29,
+        "learning_text": "Identify the earliest *plant* stage (seedling) and focus on the object containing it, not just the seed.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "apple plant, flower pot",
+        "verbs": "focus",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "30",
+        "issue_ref": {
+          "issue_text": "Agent focuses on a flower pot containing an apple seed, not an apple plant.",
+          "issue_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            8,
+            8
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "evidence_trial_num": 7,
+          "evidence_step_range": [
+            8,
+            8
+          ]
+        },
+        "ranking_score": 0.6378426922308957
+      },
+      {
+        "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+        "similarity_score": 0.6378426922308957,
+        "learning_count": 2,
+        "kb_index": 30,
+        "learning_text": "The earliest life stage of an apple *plant* is the seedling, but the task requires starting from the earliest *life stage*, which includes the apple seed.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "apple plant, flower pot",
+        "verbs": "focus",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "31",
+        "issue_ref": {
+          "issue_text": "Agent focuses on a flower pot containing a seedling, but it's not the first stage.",
+          "issue_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            5,
+            5
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "evidence_trial_num": 3,
+          "evidence_step_range": [
+            13,
+            13
+          ]
+        },
+        "ranking_score": 0.6378426922308957
+      }
+    ]
+  },
+  "scienceworld_measure-melting-point-unknown-substance_var_225": {
+    "query": "Your task is to measure the melting point of solid unknown substance Y, which is located around the kitchen. First, focus on the thermometer. Next, focus on the solid unknown substance Y. If the melting point of solid unknown substance Y is above 200.0 degrees celsius, focus on the blue box. If the melting point of solid unknown substance Y is below 200.0 degrees celsius, focus on the orange box. The boxes are located around the kitchen.",
+    "metadata": {
+      "pick_learning_count": 5,
+      "max_learning_count": 15,
+      "actual_selected_count": 5,
+      "knowledge_retrieval_base_count": 8,
+      "top_similar_tasks": [
+        {
+          "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+          "similarity_score": 0.5932895582136847,
+          "learning_count": 5,
+          "validated_learning_count": 5
+        },
+        {
+          "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+          "similarity_score": 0.6424069739255555,
+          "learning_count": 2,
+          "validated_learning_count": 2
+        },
+        {
+          "task_desc": "Your task is to turn on the red light bulb by powering it using a renewable power source. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+          "similarity_score": 0.6491040559969462,
+          "learning_count": 7,
+          "validated_learning_count": 7
+        },
+        {
+          "task_desc": "Your task is to find the animal with the shortest life span.  The animals are in the 'outside' location.  Focus on the animal with the shortest life span.",
+          "similarity_score": 0.6512584362396803,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        },
+        {
+          "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+          "similarity_score": 0.6532565162437316,
+          "learning_count": 15,
+          "validated_learning_count": 15
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+        "similarity_score": 0.5932895582136847,
+        "learning_count": 5,
+        "kb_index": 24,
+        "learning_text": "Adopt a systematic search strategy, focusing on text, diagrams, or sequences of images in each room.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "room, object",
+        "verbs": "look around, look at, open, look in, go to",
+        "goal_phase": "SEARCH",
+        "unique_id": "25",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly searches rooms and containers without finding relevant information.",
+          "issue_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            0,
+            200
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "evidence_trial_num": 5,
+          "evidence_step_range": [
+            0,
+            1
+          ]
+        },
+        "ranking_score": 0.5932895582136847
+      },
+      {
+        "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+        "similarity_score": 0.6424069739255555,
+        "learning_count": 2,
+        "kb_index": 29,
+        "learning_text": "Identify the earliest *plant* stage (seedling) and focus on the object containing it, not just the seed.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "apple plant, flower pot",
+        "verbs": "focus",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "30",
+        "issue_ref": {
+          "issue_text": "Agent focuses on a flower pot containing an apple seed, not an apple plant.",
+          "issue_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            8,
+            8
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "evidence_trial_num": 7,
+          "evidence_step_range": [
+            8,
+            8
+          ]
+        },
+        "ranking_score": 0.6424069739255555
+      },
+      {
+        "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+        "similarity_score": 0.6424069739255555,
+        "learning_count": 2,
+        "kb_index": 30,
+        "learning_text": "The earliest life stage of an apple *plant* is the seedling, but the task requires starting from the earliest *life stage*, which includes the apple seed.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "apple plant, flower pot",
+        "verbs": "focus",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "31",
+        "issue_ref": {
+          "issue_text": "Agent focuses on a flower pot containing a seedling, but it's not the first stage.",
+          "issue_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            5,
+            5
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "evidence_trial_num": 3,
+          "evidence_step_range": [
+            13,
+            13
+          ]
+        },
+        "ranking_score": 0.6424069739255555
+      },
+      {
+        "task_desc": "Your task is to turn on the red light bulb by powering it using a renewable power source. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+        "similarity_score": 0.6491040559969462,
+        "learning_count": 7,
+        "kb_index": 54,
+        "learning_text": "Solar panels are activated by being placed in a location with light, not by a direct 'activate' command.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "solar panel",
+        "verbs": "activate",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "55",
+        "issue_ref": {
+          "issue_text": "Agent tried to activate the solar panel directly, which is not a valid action.",
+          "issue_task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            25,
+            25
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+          "evidence_trial_num": 2,
+          "evidence_step_range": [
+            40,
+            40
+          ]
+        },
+        "ranking_score": 0.6491040559969462
+      },
+      {
+        "task_desc": "Your task is to turn on the red light bulb by powering it using a renewable power source. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+        "similarity_score": 0.6491040559969462,
+        "learning_count": 7,
+        "kb_index": 57,
+        "learning_text": "All components of an electrical circuit must be in the same room to be connected.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "wire, solar panel",
+        "verbs": "connect",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "58",
+        "issue_ref": {
+          "issue_text": "Agent tried to connect wires to objects in different rooms.",
+          "issue_task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            45,
+            45
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+          "evidence_trial_num": 2,
+          "evidence_step_range": [
+            10,
+            10
+          ]
+        },
+        "ranking_score": 0.6491040559969462
+      },
+      {
+        "task_desc": "Your task is to turn on the red light bulb by powering it using a renewable power source. First, focus on the red light bulb. Then, create an electrical circuit that powers it on.",
+        "similarity_score": 0.6491040559969462,
+        "learning_count": 7,
+        "kb_index": 59,
+        "learning_text": "Use the exact phrasing 'connect [wire] terminal [number] to [anode/cathode] in [component]' for connections.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "wire, solar panel",
+        "verbs": "connect",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "60",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly failed to connect wires using incorrect syntax, despite previous success.",
+          "issue_task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+          "issue_trial_num": 5,
+          "issue_step_range": [
+            29,
+            29
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_0",
+          "evidence_trial_num": 6,
+          "evidence_step_range": [
+            20,
+            20
+          ]
+        },
+        "ranking_score": 0.6491040559969462
+      },
+      {
+        "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.6532565162437316,
+        "learning_count": 15,
+        "kb_index": 123,
+        "learning_text": "To fill a container from a source, first put the container in the source, then take the container.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, water, sink",
+        "verbs": "fill",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "124",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly tries invalid 'fill jug with water from sink' action.",
+          "issue_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "issue_trial_num": 5,
+          "issue_step_range": [
+            10,
+            10
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "evidence_trial_num": 6,
+          "evidence_step_range": [
+            44,
+            44
+          ]
+        },
+        "ranking_score": 0.6532565162437316
+      },
+      {
+        "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.6532565162437316,
+        "learning_count": 15,
+        "kb_index": 124,
+        "learning_text": "To pour contents from one container to another, use 'pour [source container] into [destination container]'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, water, flower pot",
+        "verbs": "pour",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "125",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly tries invalid 'pour water from jug into flower pot' action.",
+          "issue_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "issue_trial_num": 5,
+          "issue_step_range": [
+            46,
+            46
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "evidence_trial_num": 1,
+          "evidence_step_range": [
+            52,
+            52
+          ]
+        },
+        "ranking_score": 0.6532565162437316
+      }
+    ]
+  },
+  "scienceworld_melt_var_21": {
+    "query": "Your task is to melt lead. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+    "metadata": {
+      "pick_learning_count": 5,
+      "max_learning_count": 15,
+      "actual_selected_count": 5,
+      "knowledge_retrieval_base_count": 7,
+      "top_similar_tasks": [
+        {
+          "task_desc": "Your task is to find the animal with the longest life span, then the shortest life span. First, focus on the animal with the longest life span.  Then, focus on the animal with the shortest life span. The animals are in the 'outside' location.",
+          "similarity_score": 0.5526904910078942,
+          "learning_count": 2,
+          "validated_learning_count": 2
+        },
+        {
+          "task_desc": "Your task is to find the animal with the longest life span.  The animals are in the 'outside' location.  Focus on the animal with the longest life span.",
+          "similarity_score": 0.5559616152521691,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        },
+        {
+          "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+          "similarity_score": 0.5583170849519863,
+          "learning_count": 6,
+          "validated_learning_count": 6
+        },
+        {
+          "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+          "similarity_score": 0.5603558819051959,
+          "learning_count": 15,
+          "validated_learning_count": 15
+        },
+        {
+          "task_desc": "Your task is to find the animal with the shortest life span.  The animals are in the 'outside' location.  Focus on the animal with the shortest life span.",
+          "similarity_score": 0.56310651480675,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5583170849519863,
+        "learning_count": 6,
+        "kb_index": 43,
+        "learning_text": "To fill the jug, first 'activate sink', then 'put jug in sink', then 'take jug'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, sink, water",
+        "verbs": "fill",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "44",
+        "issue_ref": {
+          "issue_text": "Attempted to fill jug with water using incorrect action phrasing.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            22,
+            47
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 2,
+          "evidence_step_range": [
+            10,
+            11
+          ]
+        },
+        "ranking_score": 0.5583170849519863
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5583170849519863,
+        "learning_count": 6,
+        "kb_index": 44,
+        "learning_text": "Use the action 'pour jug into [flower pot]' to water the plant.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, flower pot, water",
+        "verbs": "water, pour",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "45",
+        "issue_ref": {
+          "issue_text": "Attempted to water plant with incorrect action phrasing.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            14,
+            20
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 4,
+          "evidence_step_range": [
+            28,
+            29
+          ]
+        },
+        "ranking_score": 0.5583170849519863
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5583170849519863,
+        "learning_count": 6,
+        "kb_index": 45,
+        "learning_text": "Do not 'move jug to flower pot' to water; use 'pour jug into flower pot'. To retrieve an item from a container, use 'take [item]'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, flower pot",
+        "verbs": "move, take",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "46",
+        "issue_ref": {
+          "issue_text": "Incorrectly used 'move jug to flower pot' to water, then struggled to retrieve it.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            22,
+            23
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 4,
+          "evidence_step_range": [
+            28,
+            29
+          ]
+        },
+        "ranking_score": 0.5583170849519863
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5583170849519863,
+        "learning_count": 6,
+        "kb_index": 46,
+        "learning_text": "Repeated 'look around' or 'look at [object]' actions are needed to advance the game state and allow plants to grow.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "plant, flower pot",
+        "verbs": "look around, look at",
+        "goal_phase": "VERIFY",
+        "unique_id": "47",
+        "issue_ref": {
+          "issue_text": "Repeatedly checked plant growth without advancing game state sufficiently.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            26,
+            49
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 4,
+          "evidence_step_range": [
+            46,
+            49
+          ]
+        },
+        "ranking_score": 0.5583170849519863
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5583170849519863,
+        "learning_count": 6,
+        "kb_index": 47,
+        "learning_text": "To harvest seeds from an adult plant in a flower pot, use the action 'take seeds from [adult plant]'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "shovel, adult plant, flower pot, seeds",
+        "verbs": "use, harvest, take, dig up",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "48",
+        "issue_ref": {
+          "issue_text": "Attempted to harvest seeds using incorrect action phrasing.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 5,
+          "issue_step_range": [
+            40,
+            49
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 6,
+          "evidence_step_range": [
+            36,
+            37
+          ]
+        },
+        "ranking_score": 0.5583170849519863
+      },
+      {
+        "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5603558819051959,
+        "learning_count": 15,
+        "kb_index": 123,
+        "learning_text": "To fill a container from a source, first put the container in the source, then take the container.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, water, sink",
+        "verbs": "fill",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "124",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly tries invalid 'fill jug with water from sink' action.",
+          "issue_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "issue_trial_num": 5,
+          "issue_step_range": [
+            10,
+            10
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "evidence_trial_num": 6,
+          "evidence_step_range": [
+            44,
+            44
+          ]
+        },
+        "ranking_score": 0.5603558819051959
+      },
+      {
+        "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5603558819051959,
+        "learning_count": 15,
+        "kb_index": 124,
+        "learning_text": "To pour contents from one container to another, use 'pour [source container] into [destination container]'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, water, flower pot",
+        "verbs": "pour",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "125",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly tries invalid 'pour water from jug into flower pot' action.",
+          "issue_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "issue_trial_num": 5,
+          "issue_step_range": [
+            46,
+            46
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "evidence_trial_num": 1,
+          "evidence_step_range": [
+            52,
+            52
+          ]
+        },
+        "ranking_score": 0.5603558819051959
+      }
+    ]
+  },
+  "scienceworld_mendelian-genetics-known-plant_var_90": {
+    "query": "Your task is to determine whether round seed shape is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "metadata": {
+      "pick_learning_count": 5,
+      "max_learning_count": 20,
+      "actual_selected_count": 5,
+      "knowledge_retrieval_base_count": 6,
+      "top_similar_tasks": [
+        {
+          "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+          "similarity_score": 0.5498328619422195,
+          "learning_count": 20,
+          "validated_learning_count": 17
+        },
+        {
+          "task_desc": "Your task is to melt water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+          "similarity_score": 0.5535801364117847,
+          "learning_count": 11,
+          "validated_learning_count": 11
+        },
+        {
+          "task_desc": "Your task is to boil water. For compounds without a boiling point, combusting the substance is also acceptable. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+          "similarity_score": 0.5550218792214745,
+          "learning_count": 7,
+          "validated_learning_count": 7
+        },
+        {
+          "task_desc": "Your task is to freeze water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+          "similarity_score": 0.5576200019309177,
+          "learning_count": 4,
+          "validated_learning_count": 4
+        },
+        {
+          "task_desc": "Your task is to use chemistry to create the substance 'salt water'. A recipe and some of the ingredients might be found near the kitchen. When you are done, focus on the salt water.",
+          "similarity_score": 0.5707104384929486,
+          "learning_count": 3,
+          "validated_learning_count": 3
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+        "similarity_score": 0.5498328619422195,
+        "learning_count": 20,
+        "kb_index": 82,
+        "learning_text": "The correct method to fill a cup from the sink is to first activate the sink, then put the cup in the sink.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "container, sink, water",
+        "verbs": "fill",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "83",
+        "issue_ref": {
+          "issue_text": "Repeatedly attempting to fill a cup from the sink using invalid commands.",
+          "issue_task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            12,
+            48
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+          "evidence_trial_num": 3,
+          "evidence_step_range": [
+            14,
+            15
+          ]
+        },
+        "ranking_score": 0.5498328619422195
+      },
+      {
+        "task_desc": "Your task is to melt water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+        "similarity_score": 0.5535801364117847,
+        "learning_count": 11,
+        "kb_index": 106,
+        "learning_text": "After placing a substance in a freezer, wait for multiple turns and check the object's state to confirm freezing.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "water, freezer",
+        "verbs": "wait, look in",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "107",
+        "issue_ref": {
+          "issue_text": "Agent does not wait long enough for water to freeze into ice in the freezer.",
+          "issue_task_id": "scienceworld_melt_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            32,
+            33
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_melt_var_0",
+          "evidence_trial_num": 3,
+          "evidence_step_range": [
+            46,
+            47
+          ]
+        },
+        "ranking_score": 0.5535801364117847
+      },
+      {
+        "task_desc": "Your task is to melt water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+        "similarity_score": 0.5535801364117847,
+        "learning_count": 11,
+        "kb_index": 110,
+        "learning_text": "Only focus on substances that are explicitly mentioned in the environment description as being present and interactable.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "substance",
+        "verbs": "focus",
+        "goal_phase": "ORIENT",
+        "unique_id": "111",
+        "issue_ref": {
+          "issue_text": "Agent attempts to focus on 'water' when it is not explicitly present or interactable.",
+          "issue_task_id": "scienceworld_melt_var_0",
+          "issue_trial_num": 4,
+          "issue_step_range": [
+            40,
+            41
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_melt_var_0",
+          "evidence_trial_num": 2,
+          "evidence_step_range": [
+            24,
+            25
+          ]
+        },
+        "ranking_score": 0.5535801364117847
+      },
+      {
+        "task_desc": "Your task is to boil water. For compounds without a boiling point, combusting the substance is also acceptable. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+        "similarity_score": 0.5550218792214745,
+        "learning_count": 7,
+        "kb_index": 1,
+        "learning_text": "To fill a container, first 'put container in sink', then 'activate sink'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "container, water, sink",
+        "verbs": "fill, put",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "2",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly tries invalid 'fill' or 'put' actions to get water into a container.",
+          "issue_task_id": "scienceworld_boil_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            12,
+            45
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_boil_var_0",
+          "evidence_trial_num": 2,
+          "evidence_step_range": [
+            22,
+            26
+          ]
+        },
+        "ranking_score": 0.5550218792214745
+      },
+      {
+        "task_desc": "Your task is to boil water. For compounds without a boiling point, combusting the substance is also acceptable. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+        "similarity_score": 0.5550218792214745,
+        "learning_count": 7,
+        "kb_index": 4,
+        "learning_text": "The task is complete when the score increases after the final required action; no explicit submission is needed.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "task completion",
+        "verbs": "submit",
+        "goal_phase": "ANSWER",
+        "unique_id": "5",
+        "issue_ref": {
+          "issue_text": "Agent attempts to submit 'Solution: The task is complete.' after task completion.",
+          "issue_task_id": "scienceworld_boil_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            38,
+            38
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_boil_var_0",
+          "evidence_trial_num": 6,
+          "evidence_step_range": [
+            11,
+            11
+          ]
+        },
+        "ranking_score": 0.5550218792214745
+      },
+      {
+        "task_desc": "Your task is to freeze water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+        "similarity_score": 0.5576200019309177,
+        "learning_count": 4,
+        "kb_index": 20,
+        "learning_text": "To freeze water, place the jug in the freezer, close the freezer, then open it again. The state change happens implicitly.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "substance, jug, freezer",
+        "verbs": "take, move, close, open, focus",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "21",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly tries to freeze water with invalid actions like 'freeze substance in jug' or 'activate water'.",
+          "issue_task_id": "scienceworld_freeze_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            25,
+            49
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_freeze_var_0",
+          "evidence_trial_num": 6,
+          "evidence_step_range": [
+            37,
+            40
+          ]
+        },
+        "ranking_score": 0.5576200019309177
+      }
+    ]
+  },
+  "scienceworld_mendelian-genetics-unknown-plant_var_360": {
+    "query": "Your task is to determine whether spherical seed shape is a dominant or recessive trait in the unknown D plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+    "metadata": {
+      "pick_learning_count": 5,
+      "max_learning_count": 20,
+      "actual_selected_count": 5,
+      "knowledge_retrieval_base_count": 7,
+      "top_similar_tasks": [
+        {
+          "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+          "similarity_score": 0.5513141839931429,
+          "learning_count": 5,
+          "validated_learning_count": 5
+        },
+        {
+          "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+          "similarity_score": 0.5517000513289287,
+          "learning_count": 20,
+          "validated_learning_count": 17
+        },
+        {
+          "task_desc": "Your task is to melt water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+          "similarity_score": 0.5572829896184517,
+          "learning_count": 11,
+          "validated_learning_count": 11
+        },
+        {
+          "task_desc": "Your task is to freeze water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+          "similarity_score": 0.5579652776595334,
+          "learning_count": 4,
+          "validated_learning_count": 4
+        },
+        {
+          "task_desc": "Your task is to boil water. For compounds without a boiling point, combusting the substance is also acceptable. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+          "similarity_score": 0.5604899579719367,
+          "learning_count": 7,
+          "validated_learning_count": 7
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+        "similarity_score": 0.5513141839931429,
+        "learning_count": 5,
+        "kb_index": 24,
+        "learning_text": "Adopt a systematic search strategy, focusing on text, diagrams, or sequences of images in each room.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "room, object",
+        "verbs": "look around, look at, open, look in, go to",
+        "goal_phase": "SEARCH",
+        "unique_id": "25",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly searches rooms and containers without finding relevant information.",
+          "issue_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            0,
+            200
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "evidence_trial_num": 5,
+          "evidence_step_range": [
+            0,
+            1
+          ]
+        },
+        "ranking_score": 0.5513141839931429
+      },
+      {
+        "task_desc": "Your task is to change the state of matter of water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+        "similarity_score": 0.5517000513289287,
+        "learning_count": 20,
+        "kb_index": 82,
+        "learning_text": "The correct method to fill a cup from the sink is to first activate the sink, then put the cup in the sink.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "container, sink, water",
+        "verbs": "fill",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "83",
+        "issue_ref": {
+          "issue_text": "Repeatedly attempting to fill a cup from the sink using invalid commands.",
+          "issue_task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            12,
+            48
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_change-the-state-of-matter-of_var_0",
+          "evidence_trial_num": 3,
+          "evidence_step_range": [
+            14,
+            15
+          ]
+        },
+        "ranking_score": 0.5517000513289287
+      },
+      {
+        "task_desc": "Your task is to melt water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+        "similarity_score": 0.5572829896184517,
+        "learning_count": 11,
+        "kb_index": 106,
+        "learning_text": "After placing a substance in a freezer, wait for multiple turns and check the object's state to confirm freezing.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "water, freezer",
+        "verbs": "wait, look in",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "107",
+        "issue_ref": {
+          "issue_text": "Agent does not wait long enough for water to freeze into ice in the freezer.",
+          "issue_task_id": "scienceworld_melt_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            32,
+            33
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_melt_var_0",
+          "evidence_trial_num": 3,
+          "evidence_step_range": [
+            46,
+            47
+          ]
+        },
+        "ranking_score": 0.5572829896184517
+      },
+      {
+        "task_desc": "Your task is to melt water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+        "similarity_score": 0.5572829896184517,
+        "learning_count": 11,
+        "kb_index": 110,
+        "learning_text": "Only focus on substances that are explicitly mentioned in the environment description as being present and interactable.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "substance",
+        "verbs": "focus",
+        "goal_phase": "ORIENT",
+        "unique_id": "111",
+        "issue_ref": {
+          "issue_text": "Agent attempts to focus on 'water' when it is not explicitly present or interactable.",
+          "issue_task_id": "scienceworld_melt_var_0",
+          "issue_trial_num": 4,
+          "issue_step_range": [
+            40,
+            41
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_melt_var_0",
+          "evidence_trial_num": 2,
+          "evidence_step_range": [
+            24,
+            25
+          ]
+        },
+        "ranking_score": 0.5572829896184517
+      },
+      {
+        "task_desc": "Your task is to freeze water. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+        "similarity_score": 0.5579652776595334,
+        "learning_count": 4,
+        "kb_index": 20,
+        "learning_text": "To freeze water, place the jug in the freezer, close the freezer, then open it again. The state change happens implicitly.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "substance, jug, freezer",
+        "verbs": "take, move, close, open, focus",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "21",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly tries to freeze water with invalid actions like 'freeze substance in jug' or 'activate water'.",
+          "issue_task_id": "scienceworld_freeze_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            25,
+            49
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_freeze_var_0",
+          "evidence_trial_num": 6,
+          "evidence_step_range": [
+            37,
+            40
+          ]
+        },
+        "ranking_score": 0.5579652776595334
+      },
+      {
+        "task_desc": "Your task is to boil water. For compounds without a boiling point, combusting the substance is also acceptable. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+        "similarity_score": 0.5604899579719367,
+        "learning_count": 7,
+        "kb_index": 1,
+        "learning_text": "To fill a container, first 'put container in sink', then 'activate sink'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "container, water, sink",
+        "verbs": "fill, put",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "2",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly tries invalid 'fill' or 'put' actions to get water into a container.",
+          "issue_task_id": "scienceworld_boil_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            12,
+            45
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_boil_var_0",
+          "evidence_trial_num": 2,
+          "evidence_step_range": [
+            22,
+            26
+          ]
+        },
+        "ranking_score": 0.5604899579719367
+      },
+      {
+        "task_desc": "Your task is to boil water. For compounds without a boiling point, combusting the substance is also acceptable. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+        "similarity_score": 0.5604899579719367,
+        "learning_count": 7,
+        "kb_index": 4,
+        "learning_text": "The task is complete when the score increases after the final required action; no explicit submission is needed.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "task completion",
+        "verbs": "submit",
+        "goal_phase": "ANSWER",
+        "unique_id": "5",
+        "issue_ref": {
+          "issue_text": "Agent attempts to submit 'Solution: The task is complete.' after task completion.",
+          "issue_task_id": "scienceworld_boil_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            38,
+            38
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_boil_var_0",
+          "evidence_trial_num": 6,
+          "evidence_step_range": [
+            11,
+            11
+          ]
+        },
+        "ranking_score": 0.5604899579719367
+      }
+    ]
+  },
+  "scienceworld_power-component_var_15": {
+    "query": "Your task is to turn on the electric motor. First, focus on the electric motor. Then, create an electrical circuit that powers it on.",
+    "metadata": {
+      "pick_learning_count": 5,
+      "max_learning_count": 15,
+      "actual_selected_count": 5,
+      "knowledge_retrieval_base_count": 10,
+      "top_similar_tasks": [
+        {
+          "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+          "similarity_score": 0.5712500841067726,
+          "learning_count": 5,
+          "validated_learning_count": 5
+        },
+        {
+          "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+          "similarity_score": 0.5731957574240844,
+          "learning_count": 15,
+          "validated_learning_count": 15
+        },
+        {
+          "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+          "similarity_score": 0.589211658057057,
+          "learning_count": 6,
+          "validated_learning_count": 6
+        },
+        {
+          "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+          "similarity_score": 0.6007437499028105,
+          "learning_count": 2,
+          "validated_learning_count": 2
+        },
+        {
+          "task_desc": "Your task is to determine which of the two inclined planes (paper, cloth) has the most friction. After completing your experiment, focus on the inclined plane with the most friction.",
+          "similarity_score": 0.6066967947717093,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+        "similarity_score": 0.5712500841067726,
+        "learning_count": 5,
+        "kb_index": 24,
+        "learning_text": "Adopt a systematic search strategy, focusing on text, diagrams, or sequences of images in each room.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "room, object",
+        "verbs": "look around, look at, open, look in, go to",
+        "goal_phase": "SEARCH",
+        "unique_id": "25",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly searches rooms and containers without finding relevant information.",
+          "issue_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            0,
+            200
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "evidence_trial_num": 5,
+          "evidence_step_range": [
+            0,
+            1
+          ]
+        },
+        "ranking_score": 0.5712500841067726
+      },
+      {
+        "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5731957574240844,
+        "learning_count": 15,
+        "kb_index": 123,
+        "learning_text": "To fill a container from a source, first put the container in the source, then take the container.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, water, sink",
+        "verbs": "fill",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "124",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly tries invalid 'fill jug with water from sink' action.",
+          "issue_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "issue_trial_num": 5,
+          "issue_step_range": [
+            10,
+            10
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "evidence_trial_num": 6,
+          "evidence_step_range": [
+            44,
+            44
+          ]
+        },
+        "ranking_score": 0.5731957574240844
+      },
+      {
+        "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5731957574240844,
+        "learning_count": 15,
+        "kb_index": 124,
+        "learning_text": "To pour contents from one container to another, use 'pour [source container] into [destination container]'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, water, flower pot",
+        "verbs": "pour",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "125",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly tries invalid 'pour water from jug into flower pot' action.",
+          "issue_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "issue_trial_num": 5,
+          "issue_step_range": [
+            46,
+            46
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "evidence_trial_num": 1,
+          "evidence_step_range": [
+            52,
+            52
+          ]
+        },
+        "ranking_score": 0.5731957574240844
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.589211658057057,
+        "learning_count": 6,
+        "kb_index": 43,
+        "learning_text": "To fill the jug, first 'activate sink', then 'put jug in sink', then 'take jug'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, sink, water",
+        "verbs": "fill",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "44",
+        "issue_ref": {
+          "issue_text": "Attempted to fill jug with water using incorrect action phrasing.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            22,
+            47
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 2,
+          "evidence_step_range": [
+            10,
+            11
+          ]
+        },
+        "ranking_score": 0.589211658057057
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.589211658057057,
+        "learning_count": 6,
+        "kb_index": 44,
+        "learning_text": "Use the action 'pour jug into [flower pot]' to water the plant.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, flower pot, water",
+        "verbs": "water, pour",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "45",
+        "issue_ref": {
+          "issue_text": "Attempted to water plant with incorrect action phrasing.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            14,
+            20
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 4,
+          "evidence_step_range": [
+            28,
+            29
+          ]
+        },
+        "ranking_score": 0.589211658057057
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.589211658057057,
+        "learning_count": 6,
+        "kb_index": 45,
+        "learning_text": "Do not 'move jug to flower pot' to water; use 'pour jug into flower pot'. To retrieve an item from a container, use 'take [item]'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, flower pot",
+        "verbs": "move, take",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "46",
+        "issue_ref": {
+          "issue_text": "Incorrectly used 'move jug to flower pot' to water, then struggled to retrieve it.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            22,
+            23
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 4,
+          "evidence_step_range": [
+            28,
+            29
+          ]
+        },
+        "ranking_score": 0.589211658057057
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.589211658057057,
+        "learning_count": 6,
+        "kb_index": 46,
+        "learning_text": "Repeated 'look around' or 'look at [object]' actions are needed to advance the game state and allow plants to grow.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "plant, flower pot",
+        "verbs": "look around, look at",
+        "goal_phase": "VERIFY",
+        "unique_id": "47",
+        "issue_ref": {
+          "issue_text": "Repeatedly checked plant growth without advancing game state sufficiently.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            26,
+            49
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 4,
+          "evidence_step_range": [
+            46,
+            49
+          ]
+        },
+        "ranking_score": 0.589211658057057
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.589211658057057,
+        "learning_count": 6,
+        "kb_index": 47,
+        "learning_text": "To harvest seeds from an adult plant in a flower pot, use the action 'take seeds from [adult plant]'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "shovel, adult plant, flower pot, seeds",
+        "verbs": "use, harvest, take, dig up",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "48",
+        "issue_ref": {
+          "issue_text": "Attempted to harvest seeds using incorrect action phrasing.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 5,
+          "issue_step_range": [
+            40,
+            49
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 6,
+          "evidence_step_range": [
+            36,
+            37
+          ]
+        },
+        "ranking_score": 0.589211658057057
+      },
+      {
+        "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+        "similarity_score": 0.6007437499028105,
+        "learning_count": 2,
+        "kb_index": 29,
+        "learning_text": "Identify the earliest *plant* stage (seedling) and focus on the object containing it, not just the seed.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "apple plant, flower pot",
+        "verbs": "focus",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "30",
+        "issue_ref": {
+          "issue_text": "Agent focuses on a flower pot containing an apple seed, not an apple plant.",
+          "issue_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            8,
+            8
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "evidence_trial_num": 7,
+          "evidence_step_range": [
+            8,
+            8
+          ]
+        },
+        "ranking_score": 0.6007437499028105
+      },
+      {
+        "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+        "similarity_score": 0.6007437499028105,
+        "learning_count": 2,
+        "kb_index": 30,
+        "learning_text": "The earliest life stage of an apple *plant* is the seedling, but the task requires starting from the earliest *life stage*, which includes the apple seed.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "apple plant, flower pot",
+        "verbs": "focus",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "31",
+        "issue_ref": {
+          "issue_text": "Agent focuses on a flower pot containing a seedling, but it's not the first stage.",
+          "issue_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            5,
+            5
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "evidence_trial_num": 3,
+          "evidence_step_range": [
+            13,
+            13
+          ]
+        },
+        "ranking_score": 0.6007437499028105
+      }
+    ]
+  },
+  "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15": {
+    "query": "Your task is to turn on the electric motor by powering it using a nonrenewable power source. First, focus on the electric motor. Then, create an electrical circuit that powers it on.",
+    "metadata": {
+      "pick_learning_count": 5,
+      "max_learning_count": 15,
+      "actual_selected_count": 5,
+      "knowledge_retrieval_base_count": 10,
+      "top_similar_tasks": [
+        {
+          "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+          "similarity_score": 0.5621502621625599,
+          "learning_count": 5,
+          "validated_learning_count": 5
+        },
+        {
+          "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+          "similarity_score": 0.5635838083806995,
+          "learning_count": 15,
+          "validated_learning_count": 15
+        },
+        {
+          "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+          "similarity_score": 0.5786125004043082,
+          "learning_count": 6,
+          "validated_learning_count": 6
+        },
+        {
+          "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+          "similarity_score": 0.5875596175983369,
+          "learning_count": 2,
+          "validated_learning_count": 2
+        },
+        {
+          "task_desc": "Your task is to determine which of the two inclined planes (paper, cloth) has the most friction. After completing your experiment, focus on the inclined plane with the most friction.",
+          "similarity_score": 0.5985553030504481,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+        "similarity_score": 0.5621502621625599,
+        "learning_count": 5,
+        "kb_index": 24,
+        "learning_text": "Adopt a systematic search strategy, focusing on text, diagrams, or sequences of images in each room.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "room, object",
+        "verbs": "look around, look at, open, look in, go to",
+        "goal_phase": "SEARCH",
+        "unique_id": "25",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly searches rooms and containers without finding relevant information.",
+          "issue_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            0,
+            200
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "evidence_trial_num": 5,
+          "evidence_step_range": [
+            0,
+            1
+          ]
+        },
+        "ranking_score": 0.5621502621625599
+      },
+      {
+        "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5635838083806995,
+        "learning_count": 15,
+        "kb_index": 123,
+        "learning_text": "To fill a container from a source, first put the container in the source, then take the container.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, water, sink",
+        "verbs": "fill",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "124",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly tries invalid 'fill jug with water from sink' action.",
+          "issue_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "issue_trial_num": 5,
+          "issue_step_range": [
+            10,
+            10
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "evidence_trial_num": 6,
+          "evidence_step_range": [
+            44,
+            44
+          ]
+        },
+        "ranking_score": 0.5635838083806995
+      },
+      {
+        "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5635838083806995,
+        "learning_count": 15,
+        "kb_index": 124,
+        "learning_text": "To pour contents from one container to another, use 'pour [source container] into [destination container]'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, water, flower pot",
+        "verbs": "pour",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "125",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly tries invalid 'pour water from jug into flower pot' action.",
+          "issue_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "issue_trial_num": 5,
+          "issue_step_range": [
+            46,
+            46
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "evidence_trial_num": 1,
+          "evidence_step_range": [
+            52,
+            52
+          ]
+        },
+        "ranking_score": 0.5635838083806995
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5786125004043082,
+        "learning_count": 6,
+        "kb_index": 43,
+        "learning_text": "To fill the jug, first 'activate sink', then 'put jug in sink', then 'take jug'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, sink, water",
+        "verbs": "fill",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "44",
+        "issue_ref": {
+          "issue_text": "Attempted to fill jug with water using incorrect action phrasing.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            22,
+            47
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 2,
+          "evidence_step_range": [
+            10,
+            11
+          ]
+        },
+        "ranking_score": 0.5786125004043082
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5786125004043082,
+        "learning_count": 6,
+        "kb_index": 44,
+        "learning_text": "Use the action 'pour jug into [flower pot]' to water the plant.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, flower pot, water",
+        "verbs": "water, pour",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "45",
+        "issue_ref": {
+          "issue_text": "Attempted to water plant with incorrect action phrasing.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            14,
+            20
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 4,
+          "evidence_step_range": [
+            28,
+            29
+          ]
+        },
+        "ranking_score": 0.5786125004043082
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5786125004043082,
+        "learning_count": 6,
+        "kb_index": 45,
+        "learning_text": "Do not 'move jug to flower pot' to water; use 'pour jug into flower pot'. To retrieve an item from a container, use 'take [item]'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, flower pot",
+        "verbs": "move, take",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "46",
+        "issue_ref": {
+          "issue_text": "Incorrectly used 'move jug to flower pot' to water, then struggled to retrieve it.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            22,
+            23
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 4,
+          "evidence_step_range": [
+            28,
+            29
+          ]
+        },
+        "ranking_score": 0.5786125004043082
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5786125004043082,
+        "learning_count": 6,
+        "kb_index": 46,
+        "learning_text": "Repeated 'look around' or 'look at [object]' actions are needed to advance the game state and allow plants to grow.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "plant, flower pot",
+        "verbs": "look around, look at",
+        "goal_phase": "VERIFY",
+        "unique_id": "47",
+        "issue_ref": {
+          "issue_text": "Repeatedly checked plant growth without advancing game state sufficiently.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            26,
+            49
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 4,
+          "evidence_step_range": [
+            46,
+            49
+          ]
+        },
+        "ranking_score": 0.5786125004043082
+      },
+      {
+        "task_desc": "Your task is to determine whether blue seed color is a dominant or recessive trait in the unknown E plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.5786125004043082,
+        "learning_count": 6,
+        "kb_index": 47,
+        "learning_text": "To harvest seeds from an adult plant in a flower pot, use the action 'take seeds from [adult plant]'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "shovel, adult plant, flower pot, seeds",
+        "verbs": "use, harvest, take, dig up",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "48",
+        "issue_ref": {
+          "issue_text": "Attempted to harvest seeds using incorrect action phrasing.",
+          "issue_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "issue_trial_num": 5,
+          "issue_step_range": [
+            40,
+            49
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-unknown-plant_var_0",
+          "evidence_trial_num": 6,
+          "evidence_step_range": [
+            36,
+            37
+          ]
+        },
+        "ranking_score": 0.5786125004043082
+      },
+      {
+        "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+        "similarity_score": 0.5875596175983369,
+        "learning_count": 2,
+        "kb_index": 29,
+        "learning_text": "Identify the earliest *plant* stage (seedling) and focus on the object containing it, not just the seed.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "apple plant, flower pot",
+        "verbs": "focus",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "30",
+        "issue_ref": {
+          "issue_text": "Agent focuses on a flower pot containing an apple seed, not an apple plant.",
+          "issue_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            8,
+            8
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "evidence_trial_num": 7,
+          "evidence_step_range": [
+            8,
+            8
+          ]
+        },
+        "ranking_score": 0.5875596175983369
+      },
+      {
+        "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+        "similarity_score": 0.5875596175983369,
+        "learning_count": 2,
+        "kb_index": 30,
+        "learning_text": "The earliest life stage of an apple *plant* is the seedling, but the task requires starting from the earliest *life stage*, which includes the apple seed.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "apple plant, flower pot",
+        "verbs": "focus",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "31",
+        "issue_ref": {
+          "issue_text": "Agent focuses on a flower pot containing a seedling, but it's not the first stage.",
+          "issue_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            5,
+            5
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "evidence_trial_num": 3,
+          "evidence_step_range": [
+            13,
+            13
+          ]
+        },
+        "ranking_score": 0.5875596175983369
+      }
+    ]
+  },
+  "scienceworld_test-conductivity_var_675": {
+    "query": "Your task is to determine if sodium chloride is electrically conductive. The sodium chloride is located around the workshop. First, focus on the sodium chloride. If it is electrically conductive, place it in the red box. If it is electrically nonconductive, place it in the green box.",
+    "metadata": {
+      "pick_learning_count": 5,
+      "max_learning_count": 5,
+      "actual_selected_count": 3,
+      "knowledge_retrieval_base_count": 3,
+      "top_similar_tasks": [
+        {
+          "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+          "similarity_score": 0.5451759881339011,
+          "learning_count": 5,
+          "validated_learning_count": 5
+        },
+        {
+          "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+          "similarity_score": 0.5959835649986797,
+          "learning_count": 2,
+          "validated_learning_count": 2
+        },
+        {
+          "task_desc": "Your task is to find the animal with the shortest life span.  The animals are in the 'outside' location.  Focus on the animal with the shortest life span.",
+          "similarity_score": 0.6160123790210105,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        },
+        {
+          "task_desc": "Your task is to find the animal with the longest life span.  The animals are in the 'outside' location.  Focus on the animal with the longest life span.",
+          "similarity_score": 0.6229391264479293,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        },
+        {
+          "task_desc": "Your task is to find the animal with the longest life span, then the shortest life span. First, focus on the animal with the longest life span.  Then, focus on the animal with the shortest life span. The animals are in the 'outside' location.",
+          "similarity_score": 0.6268394576996708,
+          "learning_count": 2,
+          "validated_learning_count": 2
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+        "similarity_score": 0.5451759881339011,
+        "learning_count": 5,
+        "kb_index": 24,
+        "learning_text": "Adopt a systematic search strategy, focusing on text, diagrams, or sequences of images in each room.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "room, object",
+        "verbs": "look around, look at, open, look in, go to",
+        "goal_phase": "SEARCH",
+        "unique_id": "25",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly searches rooms and containers without finding relevant information.",
+          "issue_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            0,
+            200
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "evidence_trial_num": 5,
+          "evidence_step_range": [
+            0,
+            1
+          ]
+        },
+        "ranking_score": 0.5451759881339011
+      },
+      {
+        "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+        "similarity_score": 0.5959835649986797,
+        "learning_count": 2,
+        "kb_index": 29,
+        "learning_text": "Identify the earliest *plant* stage (seedling) and focus on the object containing it, not just the seed.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "apple plant, flower pot",
+        "verbs": "focus",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "30",
+        "issue_ref": {
+          "issue_text": "Agent focuses on a flower pot containing an apple seed, not an apple plant.",
+          "issue_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            8,
+            8
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "evidence_trial_num": 7,
+          "evidence_step_range": [
+            8,
+            8
+          ]
+        },
+        "ranking_score": 0.5959835649986797
+      },
+      {
+        "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+        "similarity_score": 0.5959835649986797,
+        "learning_count": 2,
+        "kb_index": 30,
+        "learning_text": "The earliest life stage of an apple *plant* is the seedling, but the task requires starting from the earliest *life stage*, which includes the apple seed.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "apple plant, flower pot",
+        "verbs": "focus",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "31",
+        "issue_ref": {
+          "issue_text": "Agent focuses on a flower pot containing a seedling, but it's not the first stage.",
+          "issue_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            5,
+            5
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "evidence_trial_num": 3,
+          "evidence_step_range": [
+            13,
+            13
+          ]
+        },
+        "ranking_score": 0.5959835649986797
+      }
+    ]
+  },
+  "scienceworld_test-conductivity-of-unknown-substances_var_450": {
+    "query": "Your task is to determine if unknown substance U is electrically conductive. The unknown substance U is located around the workshop. First, focus on the unknown substance U. If it is electrically conductive, place it in the red box. If it is electrically nonconductive, place it in the green box.",
+    "metadata": {
+      "pick_learning_count": 5,
+      "max_learning_count": 5,
+      "actual_selected_count": 3,
+      "knowledge_retrieval_base_count": 3,
+      "top_similar_tasks": [
+        {
+          "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+          "similarity_score": 0.5549273023314176,
+          "learning_count": 5,
+          "validated_learning_count": 5
+        },
+        {
+          "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+          "similarity_score": 0.6189240037704518,
+          "learning_count": 2,
+          "validated_learning_count": 2
+        },
+        {
+          "task_desc": "Your task is to find the animal with the shortest life span.  The animals are in the 'outside' location.  Focus on the animal with the shortest life span.",
+          "similarity_score": 0.6319457341560701,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        },
+        {
+          "task_desc": "Your task is to find the animal with the longest life span.  The animals are in the 'outside' location.  Focus on the animal with the longest life span.",
+          "similarity_score": 0.6319550396485327,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        },
+        {
+          "task_desc": "Your task is to determine which of the two inclined planes (paper, cloth) has the most friction. After completing your experiment, focus on the inclined plane with the most friction.",
+          "similarity_score": 0.6417799246411737,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+        "similarity_score": 0.5549273023314176,
+        "learning_count": 5,
+        "kb_index": 24,
+        "learning_text": "Adopt a systematic search strategy, focusing on text, diagrams, or sequences of images in each room.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "room, object",
+        "verbs": "look around, look at, open, look in, go to",
+        "goal_phase": "SEARCH",
+        "unique_id": "25",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly searches rooms and containers without finding relevant information.",
+          "issue_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            0,
+            200
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "evidence_trial_num": 5,
+          "evidence_step_range": [
+            0,
+            1
+          ]
+        },
+        "ranking_score": 0.5549273023314176
+      },
+      {
+        "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+        "similarity_score": 0.6189240037704518,
+        "learning_count": 2,
+        "kb_index": 29,
+        "learning_text": "Identify the earliest *plant* stage (seedling) and focus on the object containing it, not just the seed.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "apple plant, flower pot",
+        "verbs": "focus",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "30",
+        "issue_ref": {
+          "issue_text": "Agent focuses on a flower pot containing an apple seed, not an apple plant.",
+          "issue_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            8,
+            8
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "evidence_trial_num": 7,
+          "evidence_step_range": [
+            8,
+            8
+          ]
+        },
+        "ranking_score": 0.6189240037704518
+      },
+      {
+        "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+        "similarity_score": 0.6189240037704518,
+        "learning_count": 2,
+        "kb_index": 30,
+        "learning_text": "The earliest life stage of an apple *plant* is the seedling, but the task requires starting from the earliest *life stage*, which includes the apple seed.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "apple plant, flower pot",
+        "verbs": "focus",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "31",
+        "issue_ref": {
+          "issue_text": "Agent focuses on a flower pot containing a seedling, but it's not the first stage.",
+          "issue_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            5,
+            5
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "evidence_trial_num": 3,
+          "evidence_step_range": [
+            13,
+            13
+          ]
+        },
+        "ranking_score": 0.6189240037704518
+      }
+    ]
+  },
+  "scienceworld_use-thermometer_var_405": {
+    "query": "Your task is to measure the temperature of unknown substance B, which is located around the bathroom. First, focus on the thermometer. Next, focus on the unknown substance B. If the unknown substance B temperature is above 200.0 degrees celsius, place it in the yellow box. If the unknown substance B temperature is below 200.0 degrees celsius, place it in the purple box. The boxes are located around the bathroom.",
+    "metadata": {
+      "pick_learning_count": 5,
+      "max_learning_count": 15,
+      "actual_selected_count": 5,
+      "knowledge_retrieval_base_count": 5,
+      "top_similar_tasks": [
+        {
+          "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+          "similarity_score": 0.564922216326298,
+          "learning_count": 5,
+          "validated_learning_count": 5
+        },
+        {
+          "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+          "similarity_score": 0.609416186289717,
+          "learning_count": 2,
+          "validated_learning_count": 2
+        },
+        {
+          "task_desc": "Your task is to determine which of the two inclined planes (paper, cloth) has the most friction. After completing your experiment, focus on the inclined plane with the most friction.",
+          "similarity_score": 0.6271312989024482,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        },
+        {
+          "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+          "similarity_score": 0.627387251926868,
+          "learning_count": 15,
+          "validated_learning_count": 15
+        },
+        {
+          "task_desc": "Your task is to find the animal with the shortest life span.  The animals are in the 'outside' location.  Focus on the animal with the shortest life span.",
+          "similarity_score": 0.6350296538346469,
+          "learning_count": 1,
+          "validated_learning_count": 1
+        }
+      ]
+    },
+    "knowledge_retrieval_base": [
+      {
+        "task_desc": "Your task is to focus on the 4 life stages of the turtle, starting from earliest to latest.",
+        "similarity_score": 0.564922216326298,
+        "learning_count": 5,
+        "kb_index": 24,
+        "learning_text": "Adopt a systematic search strategy, focusing on text, diagrams, or sequences of images in each room.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "room, object",
+        "verbs": "look around, look at, open, look in, go to",
+        "goal_phase": "SEARCH",
+        "unique_id": "25",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly searches rooms and containers without finding relevant information.",
+          "issue_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            0,
+            200
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-1_var_0",
+          "evidence_trial_num": 5,
+          "evidence_step_range": [
+            0,
+            1
+          ]
+        },
+        "ranking_score": 0.564922216326298
+      },
+      {
+        "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+        "similarity_score": 0.609416186289717,
+        "learning_count": 2,
+        "kb_index": 29,
+        "learning_text": "Identify the earliest *plant* stage (seedling) and focus on the object containing it, not just the seed.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "apple plant, flower pot",
+        "verbs": "focus",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "30",
+        "issue_ref": {
+          "issue_text": "Agent focuses on a flower pot containing an apple seed, not an apple plant.",
+          "issue_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "issue_trial_num": 1,
+          "issue_step_range": [
+            8,
+            8
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "evidence_trial_num": 7,
+          "evidence_step_range": [
+            8,
+            8
+          ]
+        },
+        "ranking_score": 0.609416186289717
+      },
+      {
+        "task_desc": "Your task is to focus on the life stages of the apple plant, starting from earliest to latest. The plants are located outside.",
+        "similarity_score": 0.609416186289717,
+        "learning_count": 2,
+        "kb_index": 30,
+        "learning_text": "The earliest life stage of an apple *plant* is the seedling, but the task requires starting from the earliest *life stage*, which includes the apple seed.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "apple plant, flower pot",
+        "verbs": "focus",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "31",
+        "issue_ref": {
+          "issue_text": "Agent focuses on a flower pot containing a seedling, but it's not the first stage.",
+          "issue_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "issue_trial_num": 2,
+          "issue_step_range": [
+            5,
+            5
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_identify-life-stages-2_var_0",
+          "evidence_trial_num": 3,
+          "evidence_step_range": [
+            13,
+            13
+          ]
+        },
+        "ranking_score": 0.609416186289717
+      },
+      {
+        "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.627387251926868,
+        "learning_count": 15,
+        "kb_index": 123,
+        "learning_text": "To fill a container from a source, first put the container in the source, then take the container.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, water, sink",
+        "verbs": "fill",
+        "goal_phase": "ACQUIRE",
+        "unique_id": "124",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly tries invalid 'fill jug with water from sink' action.",
+          "issue_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "issue_trial_num": 5,
+          "issue_step_range": [
+            10,
+            10
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "evidence_trial_num": 6,
+          "evidence_step_range": [
+            44,
+            44
+          ]
+        },
+        "ranking_score": 0.627387251926868
+      },
+      {
+        "task_desc": "Your task is to determine whether tall plant height is a dominant or recessive trait in the pea plant. If the trait is dominant, focus on the red box. If the trait is recessive, focus on the green box.",
+        "similarity_score": 0.627387251926868,
+        "learning_count": 15,
+        "kb_index": 124,
+        "learning_text": "To pour contents from one container to another, use 'pour [source container] into [destination container]'.",
+        "valid_level": "VALID_NEXT_TRIAL",
+        "obj_type": "jug, water, flower pot",
+        "verbs": "pour",
+        "goal_phase": "PROCEDURE",
+        "unique_id": "125",
+        "issue_ref": {
+          "issue_text": "Agent repeatedly tries invalid 'pour water from jug into flower pot' action.",
+          "issue_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "issue_trial_num": 5,
+          "issue_step_range": [
+            46,
+            46
+          ]
+        },
+        "evidence_ref": {
+          "evidence_task_id": "scienceworld_mendelian-genetics-known-plant_var_0",
+          "evidence_trial_num": 1,
+          "evidence_step_range": [
+            52,
+            52
+          ]
+        },
+        "ranking_score": 0.627387251926868
+      }
+    ]
   }
 }

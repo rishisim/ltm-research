@@ -1,6 +1,6 @@
 {
-  "created_at": "2026-05-24T08:41:52.312670",
-  "num_tasks": 15,
+  "created_at": "2026-05-24T19:30:19.699802",
+  "num_tasks": 30,
   "splits": [
     "test"
   ],
@@ -19,7 +19,22 @@
     "grow-plant",
     "identify-life-stages-1",
     "identify-life-stages-2",
-    "inclined-plane-determine-angle"
+    "inclined-plane-determine-angle",
+    "inclined-plane-friction-named-surfaces",
+    "inclined-plane-friction-unnamed-surfaces",
+    "lifespan-longest-lived",
+    "lifespan-longest-lived-then-shortest-lived",
+    "lifespan-shortest-lived",
+    "measure-melting-point-known-substance",
+    "measure-melting-point-unknown-substance",
+    "melt",
+    "mendelian-genetics-known-plant",
+    "mendelian-genetics-unknown-plant",
+    "power-component",
+    "power-component-renewable-vs-nonrenewable-energy",
+    "test-conductivity",
+    "test-conductivity-of-unknown-substances",
+    "use-thermometer"
   ],
   "max_variations_per_task": 1,
   "frameworks": [

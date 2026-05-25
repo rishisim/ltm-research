@@ -1,10 +1,10 @@
 {
-  "success": 4,
-  "total": 15,
-  "success_total": "4 / 15",
-  "accuracy": 0.26666666666666666,
-  "avg_reward": 0.06533333333333333,
-  "avg_steps_per_trial": 28.333333333333332,
-  "avg_steps_per_task": 28.333333333333332,
-  "attempt_count": 15
+  "success": 9,
+  "total": 30,
+  "success_total": "9 / 30",
+  "accuracy": 0.3,
+  "avg_reward": 0.215,
+  "avg_steps_per_trial": 29.866666666666667,
+  "avg_steps_per_task": 29.866666666666667,
+  "attempt_count": 30
 }
