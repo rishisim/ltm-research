@@ -1,0 +1,310 @@
+{
+  "branch": "final/scienceworld-density-gate",
+  "cache_validity": {
+    "issue_embeddings_cache": {
+      "embed_field": "issue_text",
+      "embedding_model": "gemini-embedding-001",
+      "entry_count": 394,
+      "source_hash_algorithm": "md5",
+      "source_hash_matches": true
+    },
+    "mem_learning_counts_cache": {
+      "embedding_model": "gemini-embedding-001",
+      "source_hash_algorithm": "md5",
+      "source_hash_matches": true,
+      "total_learning_count": 394,
+      "unique_task_count": 60
+    }
+  },
+  "commands": {
+    "cache_build": "LTM_EMBEDDING_PROVIDER=gemini /Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python - <<'PY' create_knowledge_base_embeddings(kb, embed_field='issue_text', force=True); build_learning_counts_table(kb, force=True) PY",
+    "copy_seed_kb": "cp -a final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var; remove generated KB/cache/audit artifacts only inside the candidate copy",
+    "gate_a_eval": "/Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python scripts/run_scienceworld_suite.py --splits test --task-ids <first 15 categories> --num-tasks 15 --max-variations-per-task 1 --frameworks react,react_cr_tr,react_hard_neg_cr_tr --max-valid-actions 80 --max-learnings 5 --min-valid-level VALID_NEXT_TRIAL --model gemini-2.5-flash --embedding-provider gemini --memory-bank final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var/knowledge_base.json --runs-root final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate --seed 0 --resume --quiet",
+    "initial_extract": "/Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m src.frameworks.memory_retrieval_v2.preprocessing.knowledge_base_v2.script --log_dir final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var/train/react_reflexion/seed_0 --env scienceworld --resume",
+    "kb_resume_fill": "/Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python scripts/run_scienceworld_suite.py --splits train --task-ids <30 categories> --num-tasks 90 --max-variations-per-task 3 --frameworks react_reflexion --max-trials 7 --max-valid-actions 80 --model gemini-2.5-flash --embedding-provider gemini --runs-root final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var --seed 0 --resume --quiet",
+    "prepare_count": "/Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python scripts/run_scienceworld_suite.py --splits train --task-ids <30 categories> --num-tasks 90 --max-variations-per-task 3 --frameworks react_reflexion --max-trials 7 --max-valid-actions 80 --model gemini-2.5-flash --embedding-provider gemini --runs-root final_runs/phase4_1/prepare_count/scienceworld_train_3var_count --seed 0 --prepare-only --resume --quiet",
+    "targeted_extract_repair": "Removed scienceworld_find-animal_var_2 from candidate knowledge_base_progress.json, then reran extractor with --task_ids scienceworld_find-animal_var_2 --resume; retry succeeded and added 7 entries."
+  },
+  "commit_at_report": "076fc7ac143925cffd0faa3356d7bffd4b34c427",
+  "config": {
+    "embedding_provider": "gemini",
+    "eval_max_variations_per_task": 1,
+    "eval_split": "test",
+    "gate_a_frameworks": [
+      "react",
+      "react_cr_tr",
+      "react_hard_neg_cr_tr"
+    ],
+    "kb_frameworks": [
+      "react_reflexion"
+    ],
+    "kb_max_variations_per_task": 3,
+    "kb_split": "train",
+    "max_learnings": 5,
+    "max_trials": 7,
+    "max_valid_actions": 80,
+    "min_valid_level": "VALID_NEXT_TRIAL",
+    "model": "gemini-2.5-flash",
+    "seed": 0
+  },
+  "created_at": "2026-06-02T16:37:23.407653",
+  "decision": {
+    "hard_neg_below_react_cr_tr_avg_reward": true,
+    "hard_neg_below_react_cr_tr_success": false,
+    "interpretation": "Supports underbuilt-KB as a plausible contributor only weakly/ambiguously: denser KB improved react_cr_tr average reward versus both same-run ReAct and old 1-var react_cr_tr on the matched subset, but did not improve success count.",
+    "promising_signal": true,
+    "react_cr_tr_beats_react_avg_reward": true,
+    "react_cr_tr_beats_react_success": false,
+    "recommendation": "Run Gate B before promotion: all 30 categories, seeds 0/1/2, all five frameworks. For Phase 5 now, keep ScienceWorld as diagnostic with caveat until Gate B confirms."
+  },
+  "extraction_repair": {
+    "initial_json_parse_retry_events": 2,
+    "initial_unresolved_failures": [
+      "scienceworld_find-animal_var_2"
+    ],
+    "targeted_repair_entries_added": 7,
+    "targeted_repair_retry_events": 1,
+    "unresolved_failures_after_repair": []
+  },
+  "file_hashes": {
+    "gate_hard_neg_attempts.json": {
+      "bytes": 3172,
+      "sha256": "961ca4b4586c305a8c5a3b60329d256fb59a38c01c5396a17d41d09530e1f85a"
+    },
+    "gate_react_attempts.json": {
+      "bytes": 3170,
+      "sha256": "4ab3b141913ff6c4e90d0179edf00133c7465a1447c9437286b265d5086e30fe"
+    },
+    "gate_react_cr_tr_attempts.json": {
+      "bytes": 3170,
+      "sha256": "1dfb0d6e4c12a913be5ad3e2abf3f2bd84c44e6e172bc4302e4e20ce9cc429cf"
+    },
+    "knowledge_base.issue_embeddings_cache.json": {
+      "bytes": 16719020,
+      "sha256": "7a2affd2a70fc9799883dff1f0844fbc37462a2fd3c10f344b306444edca0930"
+    },
+    "knowledge_base.json": {
+      "bytes": 359360,
+      "sha256": "8be715487493d1eb45cfd65443a5ff7c33c4598337cdfbfa06d10f75c27d6152"
+    },
+    "knowledge_base.mem_learning_counts.json": {
+      "bytes": 2559372,
+      "sha256": "33aaad2198434bd52b9f6bdf27ad6247d42f88a6b98d218e356290f7fd45ab4c"
+    }
+  },
+  "gate_a_new_3var_metrics_raw_attempts": {
+    "react": {
+      "accuracy": 0.2,
+      "avg_reward": 0.015333333333333334,
+      "avg_steps": 34.2,
+      "success_count": 3,
+      "success_total": "3 / 15",
+      "task_count": 15,
+      "task_ids": [
+        "scienceworld_boil_var_21",
+        "scienceworld_change-the-state-of-matter-of_var_21",
+        "scienceworld_chemistry-mix_var_24",
+        "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+        "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+        "scienceworld_find-animal_var_225",
+        "scienceworld_find-living-thing_var_225",
+        "scienceworld_find-non-living-thing_var_225",
+        "scienceworld_find-plant_var_225",
+        "scienceworld_freeze_var_21",
+        "scienceworld_grow-fruit_var_93",
+        "scienceworld_grow-plant_var_93",
+        "scienceworld_identify-life-stages-1_var_9",
+        "scienceworld_identify-life-stages-2_var_6",
+        "scienceworld_inclined-plane-determine-angle_var_126"
+      ]
+    },
+    "react_cr_tr": {
+      "accuracy": 0.2,
+      "avg_reward": 0.22266666666666668,
+      "avg_steps": 33.13333333333333,
+      "success_count": 3,
+      "success_total": "3 / 15",
+      "task_count": 15,
+      "task_ids": [
+        "scienceworld_boil_var_21",
+        "scienceworld_change-the-state-of-matter-of_var_21",
+        "scienceworld_chemistry-mix_var_24",
+        "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+        "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+        "scienceworld_find-animal_var_225",
+        "scienceworld_find-living-thing_var_225",
+        "scienceworld_find-non-living-thing_var_225",
+        "scienceworld_find-plant_var_225",
+        "scienceworld_freeze_var_21",
+        "scienceworld_grow-fruit_var_93",
+        "scienceworld_grow-plant_var_93",
+        "scienceworld_identify-life-stages-1_var_9",
+        "scienceworld_identify-life-stages-2_var_6",
+        "scienceworld_inclined-plane-determine-angle_var_126"
+      ]
+    },
+    "react_hard_neg_cr_tr": {
+      "accuracy": 0.2,
+      "avg_reward": 0.15466666666666667,
+      "avg_steps": 37.06666666666667,
+      "success_count": 3,
+      "success_total": "3 / 15",
+      "task_count": 15,
+      "task_ids": [
+        "scienceworld_boil_var_21",
+        "scienceworld_change-the-state-of-matter-of_var_21",
+        "scienceworld_chemistry-mix_var_24",
+        "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+        "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+        "scienceworld_find-animal_var_225",
+        "scienceworld_find-living-thing_var_225",
+        "scienceworld_find-non-living-thing_var_225",
+        "scienceworld_find-plant_var_225",
+        "scienceworld_freeze_var_21",
+        "scienceworld_grow-fruit_var_93",
+        "scienceworld_grow-plant_var_93",
+        "scienceworld_identify-life-stages-1_var_9",
+        "scienceworld_identify-life-stages-2_var_6",
+        "scienceworld_inclined-plane-determine-angle_var_126"
+      ]
+    }
+  },
+  "kb_audit": {
+    "attempt_count": 90,
+    "bad_category_variation_sets": {},
+    "categories_covered": 30,
+    "duplicate_task_variation_trial_count": 0,
+    "eval_leakage_splits": [],
+    "expected_categories": 30,
+    "expected_train_variation_tasks": 90,
+    "final_train_avg_reward": 0.45755555555555555,
+    "final_train_success_count": 44,
+    "final_train_total_count": 90,
+    "kb_entry_count": 394,
+    "knowledge_base_progress_task_count": 90,
+    "malformed_row_count": 0,
+    "max_trial": 7,
+    "reference_error_count": 0,
+    "reflexion_count": 401,
+    "split_counts": {
+      "train": 401
+    },
+    "status": "PASS",
+    "train_variation_tasks_covered": 90,
+    "trajectory_count": 401,
+    "valid_level_counts": {
+      "CANDIDATE": 34,
+      "VALID_NEXT_TRIAL": 137,
+      "VALID_SAME_TRIAL": 223
+    },
+    "valid_next_trial_count": 137
+  },
+  "matched_old_1var_stage_c_metrics_raw_attempts": {
+    "react": {
+      "accuracy": 0.2,
+      "avg_reward": 0.3173333333333333,
+      "avg_steps": 38.4,
+      "success_count": 3,
+      "success_total": "3 / 15",
+      "task_count": 15,
+      "task_ids": [
+        "scienceworld_boil_var_21",
+        "scienceworld_change-the-state-of-matter-of_var_21",
+        "scienceworld_chemistry-mix_var_24",
+        "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+        "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+        "scienceworld_find-animal_var_225",
+        "scienceworld_find-living-thing_var_225",
+        "scienceworld_find-non-living-thing_var_225",
+        "scienceworld_find-plant_var_225",
+        "scienceworld_freeze_var_21",
+        "scienceworld_grow-fruit_var_93",
+        "scienceworld_grow-plant_var_93",
+        "scienceworld_identify-life-stages-1_var_9",
+        "scienceworld_identify-life-stages-2_var_6",
+        "scienceworld_inclined-plane-determine-angle_var_126"
+      ]
+    },
+    "react_cr_tr": {
+      "accuracy": 0.2,
+      "avg_reward": 0.19333333333333333,
+      "avg_steps": 36.666666666666664,
+      "success_count": 3,
+      "success_total": "3 / 15",
+      "task_count": 15,
+      "task_ids": [
+        "scienceworld_boil_var_21",
+        "scienceworld_change-the-state-of-matter-of_var_21",
+        "scienceworld_chemistry-mix_var_24",
+        "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+        "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+        "scienceworld_find-animal_var_225",
+        "scienceworld_find-living-thing_var_225",
+        "scienceworld_find-non-living-thing_var_225",
+        "scienceworld_find-plant_var_225",
+        "scienceworld_freeze_var_21",
+        "scienceworld_grow-fruit_var_93",
+        "scienceworld_grow-plant_var_93",
+        "scienceworld_identify-life-stages-1_var_9",
+        "scienceworld_identify-life-stages-2_var_6",
+        "scienceworld_inclined-plane-determine-angle_var_126"
+      ]
+    },
+    "react_hard_neg_cr_tr": {
+      "accuracy": 0.2,
+      "avg_reward": -0.048,
+      "avg_steps": 32.266666666666666,
+      "success_count": 3,
+      "success_total": "3 / 15",
+      "task_count": 15,
+      "task_ids": [
+        "scienceworld_boil_var_21",
+        "scienceworld_change-the-state-of-matter-of_var_21",
+        "scienceworld_chemistry-mix_var_24",
+        "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+        "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+        "scienceworld_find-animal_var_225",
+        "scienceworld_find-living-thing_var_225",
+        "scienceworld_find-non-living-thing_var_225",
+        "scienceworld_find-plant_var_225",
+        "scienceworld_freeze_var_21",
+        "scienceworld_grow-fruit_var_93",
+        "scienceworld_grow-plant_var_93",
+        "scienceworld_identify-life-stages-1_var_9",
+        "scienceworld_identify-life-stages-2_var_6",
+        "scienceworld_inclined-plane-determine-angle_var_126"
+      ]
+    }
+  },
+  "matched_task_ids": [
+    "scienceworld_boil_var_21",
+    "scienceworld_change-the-state-of-matter-of_var_21",
+    "scienceworld_chemistry-mix_var_24",
+    "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+    "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+    "scienceworld_find-animal_var_225",
+    "scienceworld_find-living-thing_var_225",
+    "scienceworld_find-non-living-thing_var_225",
+    "scienceworld_find-plant_var_225",
+    "scienceworld_freeze_var_21",
+    "scienceworld_grow-fruit_var_93",
+    "scienceworld_grow-plant_var_93",
+    "scienceworld_identify-life-stages-1_var_9",
+    "scienceworld_identify-life-stages-2_var_6",
+    "scienceworld_inclined-plane-determine-angle_var_126"
+  ],
+  "paths": {
+    "candidate_eval_dir": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate",
+    "candidate_kb_dir": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var",
+    "candidate_kb_path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var/knowledge_base.json",
+    "old_1var_eval_dir": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini",
+    "report_path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/experiment_reports/final/phase4_1_scienceworld_density_report.md",
+    "summary_path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/experiment_reports/final/phase4_1_scienceworld_density_summary.json"
+  },
+  "prepare_count": {
+    "bad_category_variation_sets": {},
+    "category_count": 30,
+    "selected_train_tasks": 90
+  },
+  "worktree": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate"
+}

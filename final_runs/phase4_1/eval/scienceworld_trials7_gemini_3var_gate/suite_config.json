@@ -1,0 +1,42 @@
+{
+  "created_at": "2026-06-02T16:04:28.516095",
+  "num_tasks": 15,
+  "splits": [
+    "test"
+  ],
+  "task_ids": [
+    "boil",
+    "change-the-state-of-matter-of",
+    "chemistry-mix",
+    "chemistry-mix-paint-secondary-color",
+    "chemistry-mix-paint-tertiary-color",
+    "find-animal",
+    "find-living-thing",
+    "find-non-living-thing",
+    "find-plant",
+    "freeze",
+    "grow-fruit",
+    "grow-plant",
+    "identify-life-stages-1",
+    "identify-life-stages-2",
+    "inclined-plane-determine-angle"
+  ],
+  "max_variations_per_task": 1,
+  "frameworks": [
+    "react",
+    "react_cr_tr",
+    "react_hard_neg_cr_tr"
+  ],
+  "model": "gemini-2.5-flash",
+  "embedding_provider": "gemini",
+  "memory_bank": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var/knowledge_base.json",
+  "simplifications": "easy",
+  "env_step_limit": 100,
+  "max_valid_actions": 80,
+  "reward_threshold": 1.0,
+  "max_trials": 7,
+  "max_learnings": 5,
+  "min_valid_level": "VALID_NEXT_TRIAL",
+  "seed": 0,
+  "prepare_only": false
+}

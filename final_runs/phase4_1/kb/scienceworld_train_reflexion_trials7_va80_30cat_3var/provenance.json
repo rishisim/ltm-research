@@ -1,0 +1,43 @@
+{
+  "branch": "final/scienceworld-density-gate",
+  "commands": {
+    "cache_build": "LTM_EMBEDDING_PROVIDER=gemini /Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python - <<'PY' create_knowledge_base_embeddings(kb, embed_field='issue_text', force=True); build_learning_counts_table(kb, force=True) PY",
+    "copy_seed_kb": "cp -a final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var; remove generated KB/cache/audit artifacts only inside the candidate copy",
+    "gate_a_eval": "/Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python scripts/run_scienceworld_suite.py --splits test --task-ids <first 15 categories> --num-tasks 15 --max-variations-per-task 1 --frameworks react,react_cr_tr,react_hard_neg_cr_tr --max-valid-actions 80 --max-learnings 5 --min-valid-level VALID_NEXT_TRIAL --model gemini-2.5-flash --embedding-provider gemini --memory-bank final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var/knowledge_base.json --runs-root final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate --seed 0 --resume --quiet",
+    "initial_extract": "/Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m src.frameworks.memory_retrieval_v2.preprocessing.knowledge_base_v2.script --log_dir final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var/train/react_reflexion/seed_0 --env scienceworld --resume",
+    "kb_resume_fill": "/Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python scripts/run_scienceworld_suite.py --splits train --task-ids <30 categories> --num-tasks 90 --max-variations-per-task 3 --frameworks react_reflexion --max-trials 7 --max-valid-actions 80 --model gemini-2.5-flash --embedding-provider gemini --runs-root final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var --seed 0 --resume --quiet",
+    "prepare_count": "/Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python scripts/run_scienceworld_suite.py --splits train --task-ids <30 categories> --num-tasks 90 --max-variations-per-task 3 --frameworks react_reflexion --max-trials 7 --max-valid-actions 80 --model gemini-2.5-flash --embedding-provider gemini --runs-root final_runs/phase4_1/prepare_count/scienceworld_train_3var_count --seed 0 --prepare-only --resume --quiet",
+    "targeted_extract_repair": "Removed scienceworld_find-animal_var_2 from candidate knowledge_base_progress.json, then reran extractor with --task_ids scienceworld_find-animal_var_2 --resume; retry succeeded and added 7 entries."
+  },
+  "commit_at_report": "076fc7ac143925cffd0faa3356d7bffd4b34c427",
+  "config": {
+    "embedding_provider": "gemini",
+    "eval_max_variations_per_task": 1,
+    "eval_split": "test",
+    "gate_a_frameworks": [
+      "react",
+      "react_cr_tr",
+      "react_hard_neg_cr_tr"
+    ],
+    "kb_frameworks": [
+      "react_reflexion"
+    ],
+    "kb_max_variations_per_task": 3,
+    "kb_split": "train",
+    "max_learnings": 5,
+    "max_trials": 7,
+    "max_valid_actions": 80,
+    "min_valid_level": "VALID_NEXT_TRIAL",
+    "model": "gemini-2.5-flash",
+    "seed": 0
+  },
+  "paths": {
+    "candidate_eval_dir": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate",
+    "candidate_kb_dir": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var",
+    "candidate_kb_path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var/knowledge_base.json",
+    "old_1var_eval_dir": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini",
+    "report_path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/experiment_reports/final/phase4_1_scienceworld_density_report.md",
+    "summary_path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/experiment_reports/final/phase4_1_scienceworld_density_summary.json"
+  },
+  "worktree": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate"
+}

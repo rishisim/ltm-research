@@ -1,0 +1,57 @@
+{
+  "cache_validity": {
+    "issue_embeddings_cache": {
+      "embed_field": "issue_text",
+      "embedding_model": "gemini-embedding-001",
+      "entry_count": 394,
+      "source_hash_algorithm": "md5",
+      "source_hash_matches": true
+    },
+    "mem_learning_counts_cache": {
+      "embedding_model": "gemini-embedding-001",
+      "source_hash_algorithm": "md5",
+      "source_hash_matches": true,
+      "total_learning_count": 394,
+      "unique_task_count": 60
+    }
+  },
+  "extraction_repair": {
+    "initial_json_parse_retry_events": 2,
+    "initial_unresolved_failures": [
+      "scienceworld_find-animal_var_2"
+    ],
+    "targeted_repair_entries_added": 7,
+    "targeted_repair_retry_events": 1,
+    "unresolved_failures_after_repair": []
+  },
+  "kb_audit": {
+    "attempt_count": 90,
+    "bad_category_variation_sets": {},
+    "categories_covered": 30,
+    "duplicate_task_variation_trial_count": 0,
+    "eval_leakage_splits": [],
+    "expected_categories": 30,
+    "expected_train_variation_tasks": 90,
+    "final_train_avg_reward": 0.45755555555555555,
+    "final_train_success_count": 44,
+    "final_train_total_count": 90,
+    "kb_entry_count": 394,
+    "knowledge_base_progress_task_count": 90,
+    "malformed_row_count": 0,
+    "max_trial": 7,
+    "reference_error_count": 0,
+    "reflexion_count": 401,
+    "split_counts": {
+      "train": 401
+    },
+    "status": "PASS",
+    "train_variation_tasks_covered": 90,
+    "trajectory_count": 401,
+    "valid_level_counts": {
+      "CANDIDATE": 34,
+      "VALID_NEXT_TRIAL": 137,
+      "VALID_SAME_TRIAL": 223
+    },
+    "valid_next_trial_count": 137
+  }
+}
