@@ -2,107 +2,123 @@
 
 ## Status
 
-`GATE_A_PROMISING_AMBIGUOUS`
+`GATE_B_COMPLETED_DIAGNOSTIC_ONLY`
 
-The 3-train-variation ScienceWorld KB was built in the isolated Phase 4.1 path and evaluated on the requested held-out Gate A subset. Gate A does not improve success count, but `react_cr_tr` improves average reward over same-run ReAct and hard-neg remains below `react_cr_tr` on average reward. This is enough to treat the density hypothesis as plausible but not proven.
+Gate B completed for all 30 ScienceWorld test categories, seeds 0/1/2, and all five frameworks using the Phase 4.1 3-var KB. The result does **not** promote ScienceWorld to a headline final result: `react_cr_tr` is below same-run ReAct on mean success and mean reward, and hard-neg beats or matches `react_cr_tr` on success in every seed.
 
 ## Branch and Paths
 
 - Branch: `final/scienceworld-density-gate`
 - Worktree: `/Users/rishisim/Documents/research/ltm-scienceworld-density-gate`
-- Report commit at generation: `076fc7ac143925cffd0faa3356d7bffd4b34c427`
+- Report commit at generation: `5509e00a0b61a0501466cc4fa9a096b5dd2fa22b`
 - Candidate KB: `/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var/knowledge_base.json`
-- Candidate eval: `/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate`
-- Old 1-var comparison source: `/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini`
+- Candidate eval root: `/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate`
+- Old 1-var Stage C source: `/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini`
 
 ## Commands
 
 ```text
-prepare/count: /Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python scripts/run_scienceworld_suite.py --splits train --task-ids <30 categories> --num-tasks 90 --max-variations-per-task 3 --frameworks react_reflexion --max-trials 7 --max-valid-actions 80 --model gemini-2.5-flash --embedding-provider gemini --runs-root final_runs/phase4_1/prepare_count/scienceworld_train_3var_count --seed 0 --prepare-only --resume --quiet
-copy/resume seed: cp -a final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var; remove generated KB/cache/audit artifacts only inside the candidate copy
-KB resume fill: /Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python scripts/run_scienceworld_suite.py --splits train --task-ids <30 categories> --num-tasks 90 --max-variations-per-task 3 --frameworks react_reflexion --max-trials 7 --max-valid-actions 80 --model gemini-2.5-flash --embedding-provider gemini --runs-root final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var --seed 0 --resume --quiet
-initial extraction: /Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m src.frameworks.memory_retrieval_v2.preprocessing.knowledge_base_v2.script --log_dir final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var/train/react_reflexion/seed_0 --env scienceworld --resume
-targeted extraction repair: Removed scienceworld_find-animal_var_2 from candidate knowledge_base_progress.json, then reran extractor with --task_ids scienceworld_find-animal_var_2 --resume; retry succeeded and added 7 entries.
-cache build: LTM_EMBEDDING_PROVIDER=gemini /Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python - <<'PY' create_knowledge_base_embeddings(kb, embed_field='issue_text', force=True); build_learning_counts_table(kb, force=True) PY
-Gate A eval: /Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python scripts/run_scienceworld_suite.py --splits test --task-ids <first 15 categories> --num-tasks 15 --max-variations-per-task 1 --frameworks react,react_cr_tr,react_hard_neg_cr_tr --max-valid-actions 80 --max-learnings 5 --min-valid-level VALID_NEXT_TRIAL --model gemini-2.5-flash --embedding-provider gemini --memory-bank final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var/knowledge_base.json --runs-root final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate --seed 0 --resume --quiet
+Seed 0: /Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python scripts/run_scienceworld_suite.py --splits test --task-ids <30 categories> --num-tasks 30 --max-variations-per-task 1 --frameworks react,react_cr,react_tr,react_cr_tr,react_hard_neg_cr_tr --max-valid-actions 80 --max-learnings 5 --min-valid-level VALID_NEXT_TRIAL --model gemini-2.5-flash --embedding-provider gemini --memory-bank final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var/knowledge_base.json --runs-root final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate --seed 0 --resume --quiet
+Seed 1: same command with --seed 1
+Seed 2: same command with --seed 2
+Audit: Recomputed metrics, deltas, retrieval counts, and old/new comparisons from raw attempts and retrieval JSON files.
 ```
 
-## Prepare Count
+## Config Audit
 
-- Selected train tasks: 90 / 90
-- Categories: 30 / 30
-- Each category selected variations `[0, 1, 2]`: True
+- Suite config points to 3-var KB: True
+- Split/test, 30 tasks, all five frameworks: True
+- Retrieval settings: max_learnings=5, min_valid_level=`VALID_NEXT_TRIAL`
+- Model/embedding: `gemini-2.5-flash`, `gemini`
+- Audit errors: `[]`
 
-## Candidate KB Audit
+## Metrics By Seed
 
-| Check | Value | Note |
-|---|---|---|
-| Train selected tasks | 90 | 90 expected |
-| Categories | 30 | 30 expected |
-| Trajectory rows | 401 | deduped raw trajectories |
-| Duplicate task/variation/trial keys | 0 | 0 expected |
-| Max trial | 7 | 7 expected |
-| Split counts | {'train': 401} | train only |
-| KB entries | 394 | after repair |
-| VALID_NEXT_TRIAL entries | 137 | retrieval threshold eligible |
-| Malformed rows | 0 | 0 expected |
-| Reference errors | 0 | 0 expected |
+Raw attempts are the source of truth.
 
-Valid-level counts: `{'VALID_SAME_TRIAL': 223, 'VALID_NEXT_TRIAL': 137, 'CANDIDATE': 34}`
+| Seed | Framework | Success | Accuracy | Avg Reward | Avg Steps |
+|---|---|---|---|---|---|
+| 0 | react | 11 / 30 | 0.3667 | 0.2787 | 31.70 |
+| 0 | react_cr | 7 / 30 | 0.2333 | 0.1043 | 28.53 |
+| 0 | react_tr | 11 / 30 | 0.3667 | 0.4193 | 33.83 |
+| 0 | react_cr_tr | 8 / 30 | 0.2667 | 0.1750 | 31.63 |
+| 0 | react_hard_neg_cr_tr | 11 / 30 | 0.3667 | 0.3163 | 32.70 |
+| 1 | react | 10 / 30 | 0.3333 | 0.2900 | 30.90 |
+| 1 | react_cr | 9 / 30 | 0.3000 | 0.2407 | 32.30 |
+| 1 | react_tr | 10 / 30 | 0.3333 | 0.3287 | 33.40 |
+| 1 | react_cr_tr | 8 / 30 | 0.2667 | 0.2737 | 32.13 |
+| 1 | react_hard_neg_cr_tr | 11 / 30 | 0.3667 | 0.2230 | 33.77 |
+| 2 | react | 9 / 30 | 0.3000 | 0.3207 | 33.90 |
+| 2 | react_cr | 8 / 30 | 0.2667 | 0.2740 | 29.87 |
+| 2 | react_tr | 8 / 30 | 0.2667 | 0.1770 | 34.13 |
+| 2 | react_cr_tr | 11 / 30 | 0.3667 | 0.3520 | 29.30 |
+| 2 | react_hard_neg_cr_tr | 11 / 30 | 0.3667 | 0.3753 | 35.93 |
 
-Cache validity:
+## Aggregate Mean/Std
 
-- Issue embeddings: 394 entries, `gemini-embedding-001`, source hash matches: True
-- Learning counts: 60 unique task descriptions, 394 learnings, `gemini-embedding-001`, source hash matches: True
+| Framework | Success Mean | Success Std | Accuracy Mean | Accuracy Std | Reward Mean | Reward Std |
+|---|---|---|---|---|---|---|
+| react | 10.00 | 1.00 | 0.3333 | 0.0333 | 0.2964 | 0.0217 |
+| react_cr | 8.00 | 1.00 | 0.2667 | 0.0333 | 0.2063 | 0.0899 |
+| react_tr | 9.67 | 1.53 | 0.3222 | 0.0509 | 0.3083 | 0.1224 |
+| react_cr_tr | 9.00 | 1.73 | 0.3000 | 0.0577 | 0.2669 | 0.0887 |
+| react_hard_neg_cr_tr | 11.00 | 0.00 | 0.3667 | 0.0000 | 0.3049 | 0.0768 |
 
-Extraction repair:
+## Paired Deltas Vs ReAct
 
-- Initial extraction: 2 JSON parse retries, unresolved group `scienceworld_find-animal_var_2`.
-- Targeted repair: removed only that failed id from candidate progress, reran targeted extraction with `--resume`, 1 retry, 7 entries added.
-- Unresolved failures after repair: none.
+Deltas are paired by seed and computed from raw attempts.
 
-## Gate A Metrics
-
-Metrics below are recomputed from raw `attempts.json` files, not summaries. The old 1-var rows are filtered to the identical 15 task ids used by the 3-var gate.
-
-| Framework | Source | Success | Avg Reward | Avg Steps |
+| Framework | Success Deltas s0/s1/s2 | Mean Success Delta | Reward Deltas s0/s1/s2 | Mean Reward Delta |
 |---|---|---|---|---|
-| react | old 1-var Stage C | 3 / 15 | 0.3173 | 38.40 |
-| react | new 3-var Gate A | 3 / 15 | 0.0153 | 34.20 |
-| react_cr_tr | old 1-var Stage C | 3 / 15 | 0.1933 | 36.67 |
-| react_cr_tr | new 3-var Gate A | 3 / 15 | 0.2227 | 33.13 |
-| react_hard_neg_cr_tr | old 1-var Stage C | 3 / 15 | -0.0480 | 32.27 |
-| react_hard_neg_cr_tr | new 3-var Gate A | 3 / 15 | 0.1547 | 37.07 |
+| react_cr | -4, -1, -1 | -2.00 | -0.1743, -0.0493, -0.0467 | -0.0901 |
+| react_tr | 0, 0, -1 | -0.33 | 0.1407, 0.0387, -0.1437 | 0.0119 |
+| react_cr_tr | -3, -2, 2 | -1.00 | -0.1037, -0.0163, 0.0313 | -0.0296 |
+| react_hard_neg_cr_tr | 0, 1, 2 | 1.00 | 0.0377, -0.0670, 0.0547 | 0.0084 |
 
-Matched task ids:
+## Old 1-var Vs New 3-var
 
-```text
-scienceworld_boil_var_21
-scienceworld_change-the-state-of-matter-of_var_21
-scienceworld_chemistry-mix_var_24
-scienceworld_chemistry-mix-paint-secondary-color_var_27
-scienceworld_chemistry-mix-paint-tertiary-color_var_27
-scienceworld_find-animal_var_225
-scienceworld_find-living-thing_var_225
-scienceworld_find-non-living-thing_var_225
-scienceworld_find-plant_var_225
-scienceworld_freeze_var_21
-scienceworld_grow-fruit_var_93
-scienceworld_grow-plant_var_93
-scienceworld_identify-life-stages-1_var_9
-scienceworld_identify-life-stages-2_var_6
-scienceworld_inclined-plane-determine-angle_var_126
-```
+Both sides use the same 30 categories and seeds 0/1/2. Metrics are recomputed from raw attempts.
+
+| Framework | Old Success Mean | Old Reward Mean | New Success Mean | New Reward Mean | Success Delta | Reward Delta |
+|---|---|---|---|---|---|---|
+| react | 9.00 | 0.2142 | 10.00 | 0.2964 | 1.00 | 0.0822 |
+| react_cr | 8.00 | 0.1710 | 8.00 | 0.2063 | 0.00 | 0.0353 |
+| react_tr | 8.00 | 0.2560 | 9.67 | 0.3083 | 1.67 | 0.0523 |
+| react_cr_tr | 8.33 | 0.2122 | 9.00 | 0.2669 | 0.67 | 0.0547 |
+| react_hard_neg_cr_tr | 8.67 | 0.2598 | 11.00 | 0.3049 | 2.33 | 0.0451 |
+
+## Retrieval Audit
+
+Context-memory variants retrieved memories for every task. All retrieved memories used `VALID_NEXT_TRIAL` rows. TR-only wrote 30 agent trajectory rows per seed but did not make help/tool calls, so no context retrieval file is expected for `react_tr`.
+
+| Seed | Framework | JSON Records | JSONL Records | Min Pool | Max Pool | Selected Count Dist | Valid Levels |
+|---|---|---|---|---|---|---|---|
+| 0 | react_cr | 30 | 30 | 1 | 39 | {5: 18, 2: 5, 1: 1, 4: 4, 3: 2} | {'VALID_NEXT_TRIAL': 323} |
+| 1 | react_cr | 30 | 30 | 1 | 39 | {5: 18, 2: 5, 1: 1, 4: 4, 3: 2} | {'VALID_NEXT_TRIAL': 323} |
+| 2 | react_cr | 30 | 30 | 1 | 39 | {5: 18, 2: 5, 1: 1, 4: 4, 3: 2} | {'VALID_NEXT_TRIAL': 323} |
+| 0 | react_cr_tr | 30 | 30 | 1 | 39 | {5: 18, 2: 5, 1: 1, 4: 4, 3: 2} | {'VALID_NEXT_TRIAL': 323} |
+| 1 | react_cr_tr | 30 | 30 | 1 | 39 | {5: 18, 2: 5, 1: 1, 4: 4, 3: 2} | {'VALID_NEXT_TRIAL': 323} |
+| 2 | react_cr_tr | 30 | 30 | 1 | 39 | {5: 18, 2: 5, 1: 1, 4: 4, 3: 2} | {'VALID_NEXT_TRIAL': 323} |
+| 0 | react_hard_neg_cr_tr | 30 | 30 | 3 | 38 | {5: 29, 3: 1} | {'VALID_NEXT_TRIAL': 307} |
+| 1 | react_hard_neg_cr_tr | 30 | 30 | 3 | 38 | {5: 29, 3: 1} | {'VALID_NEXT_TRIAL': 307} |
+| 2 | react_hard_neg_cr_tr | 30 | 30 | 3 | 38 | {5: 29, 3: 1} | {'VALID_NEXT_TRIAL': 307} |
 
 ## Decision
 
-- `react_cr_tr` beats same-run ReAct on success: False
-- `react_cr_tr` beats same-run ReAct on average reward: True
-- hard-neg below `react_cr_tr` on success: False
-- hard-neg below `react_cr_tr` on average reward: True
+- `react_cr_tr` beats ReAct on mean success: False
+- `react_cr_tr` beats ReAct on mean reward: False
+- hard-neg below `react_cr_tr` on mean success: False
+- hard-neg below `react_cr_tr` on mean reward: False
+- hard-neg beats or matches `react_cr_tr` on success: True
 
-Interpretation: Supports underbuilt-KB as a plausible contributor only weakly/ambiguously: denser KB improved react_cr_tr average reward versus both same-run ReAct and old 1-var react_cr_tr on the matched subset, but did not improve success count.
+Stability:
+
+- `react_cr_tr` success deltas vs ReAct by seed: [-3, -2, 2]
+- `react_cr_tr` reward deltas vs ReAct by seed: [-0.1037, -0.0163, 0.0313]
+- hard-neg minus `react_cr_tr` success by seed: [3, 3, 0]
+
+Interpretation: Gate B does not promote ScienceWorld: react_cr_tr is below ReAct on mean success and mean reward, and hard-neg beats or matches react_cr_tr on success in every seed. The 3-var KB slightly improves react_cr_tr over the old 1-var KB, but not enough to clear the same-run promotion gate.
 
 ## Phase 5 Recommendation
 
-Recommendation: keep ScienceWorld as a diagnostic with caveat for the Phase 5 rewrite unless a follow-up Gate B confirms the signal. Because Gate A is promising/ambiguous rather than a clear fail, the next approved experiment should be Gate B: all 30 categories, seeds 0/1/2, all five frameworks.
+Keep ScienceWorld as diagnostic evidence with a density caveat; do not make it a headline final result unless a later method changes the hard-neg/CR+TR ordering.

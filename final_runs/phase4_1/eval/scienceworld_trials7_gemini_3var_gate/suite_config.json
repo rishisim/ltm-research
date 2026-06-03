@@ -1,6 +1,6 @@
 {
-  "created_at": "2026-06-02T16:04:28.516095",
-  "num_tasks": 15,
+  "created_at": "2026-06-02T21:20:39.851360",
+  "num_tasks": 30,
   "splits": [
     "test"
   ],
@@ -19,11 +19,28 @@
     "grow-plant",
     "identify-life-stages-1",
     "identify-life-stages-2",
-    "inclined-plane-determine-angle"
+    "inclined-plane-determine-angle",
+    "inclined-plane-friction-named-surfaces",
+    "inclined-plane-friction-unnamed-surfaces",
+    "lifespan-longest-lived",
+    "lifespan-longest-lived-then-shortest-lived",
+    "lifespan-shortest-lived",
+    "measure-melting-point-known-substance",
+    "measure-melting-point-unknown-substance",
+    "melt",
+    "mendelian-genetics-known-plant",
+    "mendelian-genetics-unknown-plant",
+    "power-component",
+    "power-component-renewable-vs-nonrenewable-energy",
+    "test-conductivity",
+    "test-conductivity-of-unknown-substances",
+    "use-thermometer"
   ],
   "max_variations_per_task": 1,
   "frameworks": [
     "react",
+    "react_cr",
+    "react_tr",
     "react_cr_tr",
     "react_hard_neg_cr_tr"
   ],
@@ -37,6 +54,6 @@
   "max_trials": 7,
   "max_learnings": 5,
   "min_valid_level": "VALID_NEXT_TRIAL",
-  "seed": 0,
+  "seed": 2,
   "prepare_only": false
 }

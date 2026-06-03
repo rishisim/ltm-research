@@ -1,310 +1,1879 @@
 {
-  "branch": "final/scienceworld-density-gate",
-  "cache_validity": {
-    "issue_embeddings_cache": {
-      "embed_field": "issue_text",
-      "embedding_model": "gemini-embedding-001",
-      "entry_count": 394,
-      "source_hash_algorithm": "md5",
-      "source_hash_matches": true
+  "agent_trajectory_audit": {
+    "react_cr_tr": {
+      "0": {
+        "agent_trajectory_records": 30
+      },
+      "1": {
+        "agent_trajectory_records": 30
+      },
+      "2": {
+        "agent_trajectory_records": 30
+      }
     },
-    "mem_learning_counts_cache": {
-      "embedding_model": "gemini-embedding-001",
-      "source_hash_algorithm": "md5",
-      "source_hash_matches": true,
-      "total_learning_count": 394,
-      "unique_task_count": 60
+    "react_hard_neg_cr_tr": {
+      "0": {
+        "agent_trajectory_records": 30
+      },
+      "1": {
+        "agent_trajectory_records": 30
+      },
+      "2": {
+        "agent_trajectory_records": 30
+      }
+    },
+    "react_tr": {
+      "0": {
+        "agent_trajectory_records": 30
+      },
+      "1": {
+        "agent_trajectory_records": 30
+      },
+      "2": {
+        "agent_trajectory_records": 30
+      }
     }
   },
-  "commands": {
-    "cache_build": "LTM_EMBEDDING_PROVIDER=gemini /Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python - <<'PY' create_knowledge_base_embeddings(kb, embed_field='issue_text', force=True); build_learning_counts_table(kb, force=True) PY",
-    "copy_seed_kb": "cp -a final_runs/kb/scienceworld_train_reflexion_trials7_va80_30cat final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var; remove generated KB/cache/audit artifacts only inside the candidate copy",
-    "gate_a_eval": "/Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python scripts/run_scienceworld_suite.py --splits test --task-ids <first 15 categories> --num-tasks 15 --max-variations-per-task 1 --frameworks react,react_cr_tr,react_hard_neg_cr_tr --max-valid-actions 80 --max-learnings 5 --min-valid-level VALID_NEXT_TRIAL --model gemini-2.5-flash --embedding-provider gemini --memory-bank final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var/knowledge_base.json --runs-root final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate --seed 0 --resume --quiet",
-    "initial_extract": "/Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m src.frameworks.memory_retrieval_v2.preprocessing.knowledge_base_v2.script --log_dir final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var/train/react_reflexion/seed_0 --env scienceworld --resume",
-    "kb_resume_fill": "/Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python scripts/run_scienceworld_suite.py --splits train --task-ids <30 categories> --num-tasks 90 --max-variations-per-task 3 --frameworks react_reflexion --max-trials 7 --max-valid-actions 80 --model gemini-2.5-flash --embedding-provider gemini --runs-root final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var --seed 0 --resume --quiet",
-    "prepare_count": "/Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python scripts/run_scienceworld_suite.py --splits train --task-ids <30 categories> --num-tasks 90 --max-variations-per-task 3 --frameworks react_reflexion --max-trials 7 --max-valid-actions 80 --model gemini-2.5-flash --embedding-provider gemini --runs-root final_runs/phase4_1/prepare_count/scienceworld_train_3var_count --seed 0 --prepare-only --resume --quiet",
-    "targeted_extract_repair": "Removed scienceworld_find-animal_var_2 from candidate knowledge_base_progress.json, then reran extractor with --task_ids scienceworld_find-animal_var_2 --resume; retry succeeded and added 7 entries."
+  "aggregate_metrics": {
+    "react": {
+      "avg_reward_mean": 0.29644444444444445,
+      "avg_reward_std": 0.02172897025052379,
+      "avg_steps_mean": 32.166666666666664,
+      "avg_steps_std": 1.5534906930308057,
+      "success_mean": 10,
+      "success_rate_mean": 0.3333333333333333,
+      "success_rate_std": 0.033333333333333326,
+      "success_std": 1.0
+    },
+    "react_cr": {
+      "avg_reward_mean": 0.20633333333333334,
+      "avg_reward_std": 0.08989314644497531,
+      "avg_steps_mean": 30.233333333333334,
+      "avg_steps_std": 1.909915646770236,
+      "success_mean": 8,
+      "success_rate_mean": 0.26666666666666666,
+      "success_rate_std": 0.033333333333333326,
+      "success_std": 1.0
+    },
+    "react_cr_tr": {
+      "avg_reward_mean": 0.2668888888888889,
+      "avg_reward_std": 0.08869444009465138,
+      "avg_steps_mean": 31.022222222222222,
+      "avg_steps_std": 1.5122952876462437,
+      "success_mean": 9,
+      "success_rate_mean": 0.3,
+      "success_rate_std": 0.05773502691896257,
+      "success_std": 1.7320508075688772
+    },
+    "react_hard_neg_cr_tr": {
+      "avg_reward_mean": 0.3048888888888889,
+      "avg_reward_std": 0.07680880543656823,
+      "avg_steps_mean": 34.13333333333333,
+      "avg_steps_std": 1.64755711416765,
+      "success_mean": 11,
+      "success_rate_mean": 0.36666666666666664,
+      "success_rate_std": 0.0,
+      "success_std": 0.0
+    },
+    "react_tr": {
+      "avg_reward_mean": 0.30833333333333335,
+      "avg_reward_std": 0.12243955424798167,
+      "avg_steps_mean": 33.78888888888889,
+      "avg_steps_std": 0.36868133384526863,
+      "success_mean": 9.666666666666666,
+      "success_rate_mean": 0.3222222222222222,
+      "success_rate_std": 0.05091750772173154,
+      "success_std": 1.5275252316519468
+    }
   },
-  "commit_at_report": "076fc7ac143925cffd0faa3356d7bffd4b34c427",
-  "config": {
+  "audit_errors": [],
+  "branch": "final/scienceworld-density-gate",
+  "commands": {
+    "audit_report": "Recomputed metrics, deltas, retrieval counts, and old/new comparisons from raw attempts and retrieval JSON files.",
+    "seed_0": "/Users/rishisim/Documents/research/ltm-research/.venv/bin/python -m dotenv -f ../ltm-research/.env run -- /Users/rishisim/Documents/research/ltm-research/.venv/bin/python scripts/run_scienceworld_suite.py --splits test --task-ids <30 categories> --num-tasks 30 --max-variations-per-task 1 --frameworks react,react_cr,react_tr,react_cr_tr,react_hard_neg_cr_tr --max-valid-actions 80 --max-learnings 5 --min-valid-level VALID_NEXT_TRIAL --model gemini-2.5-flash --embedding-provider gemini --memory-bank final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var/knowledge_base.json --runs-root final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate --seed 0 --resume --quiet",
+    "seed_1": "same command with --seed 1",
+    "seed_2": "same command with --seed 2"
+  },
+  "commit_at_report": "5509e00a0b61a0501466cc4fa9a096b5dd2fa22b",
+  "config_checks": {
+    "embedding_provider_gemini": true,
+    "frameworks_all_five": true,
+    "max_learnings_5": true,
+    "max_valid_actions_80": true,
+    "max_variations_per_task_1": true,
+    "min_valid_level_valid_next_trial": true,
+    "model_gemini_2_5_flash": true,
+    "num_tasks_30": true,
+    "splits_test": true,
+    "suite_config_memory_bank_is_3var": true
+  },
+  "created_at": "2026-06-02T22:52:26.415421",
+  "decision": {
+    "crtr_beats_react_mean_reward": false,
+    "crtr_beats_react_mean_success": false,
+    "decision": "diagnostic_only",
+    "gate_b_completed": true,
+    "hardneg_beats_or_matches_crtr_success": true,
+    "hardneg_below_crtr_mean_reward": false,
+    "hardneg_below_crtr_mean_success": false,
+    "headline_candidate": false,
+    "interpretation": "Gate B does not promote ScienceWorld: react_cr_tr is below ReAct on mean success and mean reward, and hard-neg beats or matches react_cr_tr on success in every seed. The 3-var KB slightly improves react_cr_tr over the old 1-var KB, but not enough to clear the same-run promotion gate.",
+    "phase5_recommendation": "Keep ScienceWorld as diagnostic evidence with a density caveat; do not make it a headline final result unless a later method changes the hard-neg/CR+TR ordering.",
+    "stability_notes": {
+      "hard_neg_minus_react_cr_tr_reward_by_seed": [
+        0.14133333333333337,
+        -0.050666666666666665,
+        0.023333333333333373
+      ],
+      "hard_neg_minus_react_cr_tr_success_by_seed": [
+        3,
+        3,
+        0
+      ],
+      "react_cr_tr_reward_deltas_by_seed": [
+        -0.10366666666666668,
+        -0.01633333333333331,
+        0.031333333333333324
+      ],
+      "react_cr_tr_success_deltas_by_seed": [
+        -3,
+        -2,
+        2
+      ]
+    }
+  },
+  "file_hashes": {
+    "report": {
+      "bytes": 7473,
+      "sha256": "12295a5f46340490c95c1608c5a45fb2cfbc4df6e48d45593ae1af27ca3a77dc"
+    },
+    "suite_config.json": {
+      "bytes": 1692,
+      "sha256": "b1b501afced1fe19806a7500d1edb99fa89fe3bea0c860545a9c00dcac9a1b92"
+    },
+    "summary_test.json": {
+      "bytes": 2976,
+      "sha256": "8707dec7d31981e3fe6eb622d7c1a19b0d2418bdb934f0c640136925d5fd5880"
+    }
+  },
+  "gate_b_config": {
+    "created_at": "2026-06-02T21:20:39.851360",
     "embedding_provider": "gemini",
-    "eval_max_variations_per_task": 1,
-    "eval_split": "test",
-    "gate_a_frameworks": [
+    "env_step_limit": 100,
+    "frameworks": [
       "react",
+      "react_cr",
+      "react_tr",
       "react_cr_tr",
       "react_hard_neg_cr_tr"
     ],
-    "kb_frameworks": [
-      "react_reflexion"
-    ],
-    "kb_max_variations_per_task": 3,
-    "kb_split": "train",
     "max_learnings": 5,
     "max_trials": 7,
     "max_valid_actions": 80,
+    "max_variations_per_task": 1,
+    "memory_bank": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var/knowledge_base.json",
     "min_valid_level": "VALID_NEXT_TRIAL",
     "model": "gemini-2.5-flash",
-    "seed": 0
-  },
-  "created_at": "2026-06-02T16:37:23.407653",
-  "decision": {
-    "hard_neg_below_react_cr_tr_avg_reward": true,
-    "hard_neg_below_react_cr_tr_success": false,
-    "interpretation": "Supports underbuilt-KB as a plausible contributor only weakly/ambiguously: denser KB improved react_cr_tr average reward versus both same-run ReAct and old 1-var react_cr_tr on the matched subset, but did not improve success count.",
-    "promising_signal": true,
-    "react_cr_tr_beats_react_avg_reward": true,
-    "react_cr_tr_beats_react_success": false,
-    "recommendation": "Run Gate B before promotion: all 30 categories, seeds 0/1/2, all five frameworks. For Phase 5 now, keep ScienceWorld as diagnostic with caveat until Gate B confirms."
-  },
-  "extraction_repair": {
-    "initial_json_parse_retry_events": 2,
-    "initial_unresolved_failures": [
-      "scienceworld_find-animal_var_2"
+    "num_tasks": 30,
+    "prepare_only": false,
+    "reward_threshold": 1.0,
+    "seed": 2,
+    "simplifications": "easy",
+    "splits": [
+      "test"
     ],
-    "targeted_repair_entries_added": 7,
-    "targeted_repair_retry_events": 1,
-    "unresolved_failures_after_repair": []
+    "task_ids": [
+      "boil",
+      "change-the-state-of-matter-of",
+      "chemistry-mix",
+      "chemistry-mix-paint-secondary-color",
+      "chemistry-mix-paint-tertiary-color",
+      "find-animal",
+      "find-living-thing",
+      "find-non-living-thing",
+      "find-plant",
+      "freeze",
+      "grow-fruit",
+      "grow-plant",
+      "identify-life-stages-1",
+      "identify-life-stages-2",
+      "inclined-plane-determine-angle",
+      "inclined-plane-friction-named-surfaces",
+      "inclined-plane-friction-unnamed-surfaces",
+      "lifespan-longest-lived",
+      "lifespan-longest-lived-then-shortest-lived",
+      "lifespan-shortest-lived",
+      "measure-melting-point-known-substance",
+      "measure-melting-point-unknown-substance",
+      "melt",
+      "mendelian-genetics-known-plant",
+      "mendelian-genetics-unknown-plant",
+      "power-component",
+      "power-component-renewable-vs-nonrenewable-energy",
+      "test-conductivity",
+      "test-conductivity-of-unknown-substances",
+      "use-thermometer"
+    ]
   },
-  "file_hashes": {
-    "gate_hard_neg_attempts.json": {
-      "bytes": 3172,
-      "sha256": "961ca4b4586c305a8c5a3b60329d256fb59a38c01c5396a17d41d09530e1f85a"
-    },
-    "gate_react_attempts.json": {
-      "bytes": 3170,
-      "sha256": "4ab3b141913ff6c4e90d0179edf00133c7465a1447c9437286b265d5086e30fe"
-    },
-    "gate_react_cr_tr_attempts.json": {
-      "bytes": 3170,
-      "sha256": "1dfb0d6e4c12a913be5ad3e2abf3f2bd84c44e6e172bc4302e4e20ce9cc429cf"
-    },
-    "knowledge_base.issue_embeddings_cache.json": {
-      "bytes": 16719020,
-      "sha256": "7a2affd2a70fc9799883dff1f0844fbc37462a2fd3c10f344b306444edca0930"
-    },
-    "knowledge_base.json": {
-      "bytes": 359360,
-      "sha256": "8be715487493d1eb45cfd65443a5ff7c33c4598337cdfbfa06d10f75c27d6152"
-    },
-    "knowledge_base.mem_learning_counts.json": {
-      "bytes": 2559372,
-      "sha256": "33aaad2198434bd52b9f6bdf27ad6247d42f88a6b98d218e356290f7fd45ab4c"
-    }
-  },
-  "gate_a_new_3var_metrics_raw_attempts": {
+  "metrics_by_framework_seed_raw_attempts": {
     "react": {
-      "accuracy": 0.2,
-      "avg_reward": 0.015333333333333334,
-      "avg_steps": 34.2,
-      "success_count": 3,
-      "success_total": "3 / 15",
-      "task_count": 15,
-      "task_ids": [
-        "scienceworld_boil_var_21",
-        "scienceworld_change-the-state-of-matter-of_var_21",
-        "scienceworld_chemistry-mix_var_24",
-        "scienceworld_chemistry-mix-paint-secondary-color_var_27",
-        "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
-        "scienceworld_find-animal_var_225",
-        "scienceworld_find-living-thing_var_225",
-        "scienceworld_find-non-living-thing_var_225",
-        "scienceworld_find-plant_var_225",
-        "scienceworld_freeze_var_21",
-        "scienceworld_grow-fruit_var_93",
-        "scienceworld_grow-plant_var_93",
-        "scienceworld_identify-life-stages-1_var_9",
-        "scienceworld_identify-life-stages-2_var_6",
-        "scienceworld_inclined-plane-determine-angle_var_126"
-      ]
+      "0": {
+        "avg_reward": 0.2786666666666667,
+        "avg_steps": 31.7,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate/test/react/seed_0/attempts.json",
+        "success_count": 11,
+        "success_rate": 0.36666666666666664,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "1": {
+        "avg_reward": 0.29,
+        "avg_steps": 30.9,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate/test/react/seed_1/attempts.json",
+        "success_count": 10,
+        "success_rate": 0.3333333333333333,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "2": {
+        "avg_reward": 0.32066666666666666,
+        "avg_steps": 33.9,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate/test/react/seed_2/attempts.json",
+        "success_count": 9,
+        "success_rate": 0.3,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      }
+    },
+    "react_cr": {
+      "0": {
+        "avg_reward": 0.10433333333333333,
+        "avg_steps": 28.533333333333335,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate/test/react_cr/seed_0/attempts.json",
+        "success_count": 7,
+        "success_rate": 0.23333333333333334,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "1": {
+        "avg_reward": 0.24066666666666667,
+        "avg_steps": 32.3,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate/test/react_cr/seed_1/attempts.json",
+        "success_count": 9,
+        "success_rate": 0.3,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "2": {
+        "avg_reward": 0.274,
+        "avg_steps": 29.866666666666667,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate/test/react_cr/seed_2/attempts.json",
+        "success_count": 8,
+        "success_rate": 0.26666666666666666,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      }
     },
     "react_cr_tr": {
-      "accuracy": 0.2,
-      "avg_reward": 0.22266666666666668,
-      "avg_steps": 33.13333333333333,
-      "success_count": 3,
-      "success_total": "3 / 15",
-      "task_count": 15,
-      "task_ids": [
-        "scienceworld_boil_var_21",
-        "scienceworld_change-the-state-of-matter-of_var_21",
-        "scienceworld_chemistry-mix_var_24",
-        "scienceworld_chemistry-mix-paint-secondary-color_var_27",
-        "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
-        "scienceworld_find-animal_var_225",
-        "scienceworld_find-living-thing_var_225",
-        "scienceworld_find-non-living-thing_var_225",
-        "scienceworld_find-plant_var_225",
-        "scienceworld_freeze_var_21",
-        "scienceworld_grow-fruit_var_93",
-        "scienceworld_grow-plant_var_93",
-        "scienceworld_identify-life-stages-1_var_9",
-        "scienceworld_identify-life-stages-2_var_6",
-        "scienceworld_inclined-plane-determine-angle_var_126"
-      ]
+      "0": {
+        "avg_reward": 0.175,
+        "avg_steps": 31.633333333333333,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate/test/react_cr_tr/seed_0/attempts.json",
+        "success_count": 8,
+        "success_rate": 0.26666666666666666,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "1": {
+        "avg_reward": 0.27366666666666667,
+        "avg_steps": 32.13333333333333,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate/test/react_cr_tr/seed_1/attempts.json",
+        "success_count": 8,
+        "success_rate": 0.26666666666666666,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "2": {
+        "avg_reward": 0.352,
+        "avg_steps": 29.3,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate/test/react_cr_tr/seed_2/attempts.json",
+        "success_count": 11,
+        "success_rate": 0.36666666666666664,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      }
     },
     "react_hard_neg_cr_tr": {
-      "accuracy": 0.2,
-      "avg_reward": 0.15466666666666667,
-      "avg_steps": 37.06666666666667,
-      "success_count": 3,
-      "success_total": "3 / 15",
-      "task_count": 15,
-      "task_ids": [
-        "scienceworld_boil_var_21",
-        "scienceworld_change-the-state-of-matter-of_var_21",
-        "scienceworld_chemistry-mix_var_24",
-        "scienceworld_chemistry-mix-paint-secondary-color_var_27",
-        "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
-        "scienceworld_find-animal_var_225",
-        "scienceworld_find-living-thing_var_225",
-        "scienceworld_find-non-living-thing_var_225",
-        "scienceworld_find-plant_var_225",
-        "scienceworld_freeze_var_21",
-        "scienceworld_grow-fruit_var_93",
-        "scienceworld_grow-plant_var_93",
-        "scienceworld_identify-life-stages-1_var_9",
-        "scienceworld_identify-life-stages-2_var_6",
-        "scienceworld_inclined-plane-determine-angle_var_126"
-      ]
+      "0": {
+        "avg_reward": 0.31633333333333336,
+        "avg_steps": 32.7,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate/test/react_hard_neg_cr_tr/seed_0/attempts.json",
+        "success_count": 11,
+        "success_rate": 0.36666666666666664,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "1": {
+        "avg_reward": 0.223,
+        "avg_steps": 33.766666666666666,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate/test/react_hard_neg_cr_tr/seed_1/attempts.json",
+        "success_count": 11,
+        "success_rate": 0.36666666666666664,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "2": {
+        "avg_reward": 0.37533333333333335,
+        "avg_steps": 35.93333333333333,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate/test/react_hard_neg_cr_tr/seed_2/attempts.json",
+        "success_count": 11,
+        "success_rate": 0.36666666666666664,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      }
+    },
+    "react_tr": {
+      "0": {
+        "avg_reward": 0.41933333333333334,
+        "avg_steps": 33.833333333333336,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate/test/react_tr/seed_0/attempts.json",
+        "success_count": 11,
+        "success_rate": 0.36666666666666664,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "1": {
+        "avg_reward": 0.32866666666666666,
+        "avg_steps": 33.4,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate/test/react_tr/seed_1/attempts.json",
+        "success_count": 10,
+        "success_rate": 0.3333333333333333,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "2": {
+        "avg_reward": 0.177,
+        "avg_steps": 34.13333333333333,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate/test/react_tr/seed_2/attempts.json",
+        "success_count": 8,
+        "success_rate": 0.26666666666666666,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      }
     }
   },
-  "kb_audit": {
-    "attempt_count": 90,
-    "bad_category_variation_sets": {},
-    "categories_covered": 30,
-    "duplicate_task_variation_trial_count": 0,
-    "eval_leakage_splits": [],
-    "expected_categories": 30,
-    "expected_train_variation_tasks": 90,
-    "final_train_avg_reward": 0.45755555555555555,
-    "final_train_success_count": 44,
-    "final_train_total_count": 90,
-    "kb_entry_count": 394,
-    "knowledge_base_progress_task_count": 90,
-    "malformed_row_count": 0,
-    "max_trial": 7,
-    "reference_error_count": 0,
-    "reflexion_count": 401,
-    "split_counts": {
-      "train": 401
-    },
-    "status": "PASS",
-    "train_variation_tasks_covered": 90,
-    "trajectory_count": 401,
-    "valid_level_counts": {
-      "CANDIDATE": 34,
-      "VALID_NEXT_TRIAL": 137,
-      "VALID_SAME_TRIAL": 223
-    },
-    "valid_next_trial_count": 137
-  },
-  "matched_old_1var_stage_c_metrics_raw_attempts": {
+  "old_1var_aggregate_metrics": {
     "react": {
-      "accuracy": 0.2,
-      "avg_reward": 0.3173333333333333,
-      "avg_steps": 38.4,
-      "success_count": 3,
-      "success_total": "3 / 15",
-      "task_count": 15,
-      "task_ids": [
-        "scienceworld_boil_var_21",
-        "scienceworld_change-the-state-of-matter-of_var_21",
-        "scienceworld_chemistry-mix_var_24",
-        "scienceworld_chemistry-mix-paint-secondary-color_var_27",
-        "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
-        "scienceworld_find-animal_var_225",
-        "scienceworld_find-living-thing_var_225",
-        "scienceworld_find-non-living-thing_var_225",
-        "scienceworld_find-plant_var_225",
-        "scienceworld_freeze_var_21",
-        "scienceworld_grow-fruit_var_93",
-        "scienceworld_grow-plant_var_93",
-        "scienceworld_identify-life-stages-1_var_9",
-        "scienceworld_identify-life-stages-2_var_6",
-        "scienceworld_inclined-plane-determine-angle_var_126"
-      ]
+      "avg_reward_mean": 0.21422222222222223,
+      "avg_reward_std": 0.24051896052155716,
+      "avg_steps_mean": 30.955555555555556,
+      "avg_steps_std": 1.6667777740743204,
+      "success_mean": 9,
+      "success_rate_mean": 0.3,
+      "success_rate_std": 0.08819171036881966,
+      "success_std": 2.6457513110645907
+    },
+    "react_cr": {
+      "avg_reward_mean": 0.17099999999999999,
+      "avg_reward_std": 0.05770422668901974,
+      "avg_steps_mean": 30.477777777777778,
+      "avg_steps_std": 1.2357334004699532,
+      "success_mean": 8,
+      "success_rate_mean": 0.26666666666666666,
+      "success_rate_std": 0.033333333333333326,
+      "success_std": 1.0
     },
     "react_cr_tr": {
-      "accuracy": 0.2,
-      "avg_reward": 0.19333333333333333,
-      "avg_steps": 36.666666666666664,
-      "success_count": 3,
-      "success_total": "3 / 15",
-      "task_count": 15,
-      "task_ids": [
-        "scienceworld_boil_var_21",
-        "scienceworld_change-the-state-of-matter-of_var_21",
-        "scienceworld_chemistry-mix_var_24",
-        "scienceworld_chemistry-mix-paint-secondary-color_var_27",
-        "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
-        "scienceworld_find-animal_var_225",
-        "scienceworld_find-living-thing_var_225",
-        "scienceworld_find-non-living-thing_var_225",
-        "scienceworld_find-plant_var_225",
-        "scienceworld_freeze_var_21",
-        "scienceworld_grow-fruit_var_93",
-        "scienceworld_grow-plant_var_93",
-        "scienceworld_identify-life-stages-1_var_9",
-        "scienceworld_identify-life-stages-2_var_6",
-        "scienceworld_inclined-plane-determine-angle_var_126"
-      ]
+      "avg_reward_mean": 0.2122222222222222,
+      "avg_reward_std": 0.13350586060100436,
+      "avg_steps_mean": 31.233333333333334,
+      "avg_steps_std": 1.9910912697424108,
+      "success_mean": 8.333333333333334,
+      "success_rate_mean": 0.2777777777777778,
+      "success_rate_std": 0.07698003589195009,
+      "success_std": 2.309401076758503
     },
     "react_hard_neg_cr_tr": {
-      "accuracy": 0.2,
-      "avg_reward": -0.048,
-      "avg_steps": 32.266666666666666,
-      "success_count": 3,
-      "success_total": "3 / 15",
-      "task_count": 15,
-      "task_ids": [
-        "scienceworld_boil_var_21",
-        "scienceworld_change-the-state-of-matter-of_var_21",
-        "scienceworld_chemistry-mix_var_24",
-        "scienceworld_chemistry-mix-paint-secondary-color_var_27",
-        "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
-        "scienceworld_find-animal_var_225",
-        "scienceworld_find-living-thing_var_225",
-        "scienceworld_find-non-living-thing_var_225",
-        "scienceworld_find-plant_var_225",
-        "scienceworld_freeze_var_21",
-        "scienceworld_grow-fruit_var_93",
-        "scienceworld_grow-plant_var_93",
-        "scienceworld_identify-life-stages-1_var_9",
-        "scienceworld_identify-life-stages-2_var_6",
-        "scienceworld_inclined-plane-determine-angle_var_126"
-      ]
+      "avg_reward_mean": 0.2597777777777778,
+      "avg_reward_std": 0.1494851658687738,
+      "avg_steps_mean": 33.077777777777776,
+      "avg_steps_std": 0.365655170486765,
+      "success_mean": 8.666666666666666,
+      "success_rate_mean": 0.28888888888888886,
+      "success_rate_std": 0.06938886664887108,
+      "success_std": 2.0816659994661326
+    },
+    "react_tr": {
+      "avg_reward_mean": 0.256,
+      "avg_reward_std": 0.08603552237948645,
+      "avg_steps_mean": 34.18888888888889,
+      "avg_steps_std": 2.12663880162866,
+      "success_mean": 8,
+      "success_rate_mean": 0.26666666666666666,
+      "success_rate_std": 0.033333333333333326,
+      "success_std": 1.0
     }
   },
-  "matched_task_ids": [
-    "scienceworld_boil_var_21",
-    "scienceworld_change-the-state-of-matter-of_var_21",
-    "scienceworld_chemistry-mix_var_24",
-    "scienceworld_chemistry-mix-paint-secondary-color_var_27",
-    "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
-    "scienceworld_find-animal_var_225",
-    "scienceworld_find-living-thing_var_225",
-    "scienceworld_find-non-living-thing_var_225",
-    "scienceworld_find-plant_var_225",
-    "scienceworld_freeze_var_21",
-    "scienceworld_grow-fruit_var_93",
-    "scienceworld_grow-plant_var_93",
-    "scienceworld_identify-life-stages-1_var_9",
-    "scienceworld_identify-life-stages-2_var_6",
-    "scienceworld_inclined-plane-determine-angle_var_126"
-  ],
+  "old_1var_metrics_by_framework_seed_raw_attempts": {
+    "react": {
+      "0": {
+        "avg_reward": 0.36733333333333335,
+        "avg_steps": 32.63333333333333,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini/test/react/seed_0/attempts.json",
+        "success_count": 10,
+        "success_rate": 0.3333333333333333,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "1": {
+        "avg_reward": 0.3383333333333333,
+        "avg_steps": 30.933333333333334,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini/test/react/seed_1/attempts.json",
+        "success_count": 11,
+        "success_rate": 0.36666666666666664,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "2": {
+        "avg_reward": -0.063,
+        "avg_steps": 29.3,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini/test/react/seed_2/attempts.json",
+        "success_count": 6,
+        "success_rate": 0.2,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      }
+    },
+    "react_cr": {
+      "0": {
+        "avg_reward": 0.10566666666666666,
+        "avg_steps": 29.666666666666668,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini/test/react_cr/seed_0/attempts.json",
+        "success_count": 8,
+        "success_rate": 0.26666666666666666,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "1": {
+        "avg_reward": 0.19233333333333333,
+        "avg_steps": 31.9,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini/test/react_cr/seed_1/attempts.json",
+        "success_count": 7,
+        "success_rate": 0.23333333333333334,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "2": {
+        "avg_reward": 0.215,
+        "avg_steps": 29.866666666666667,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini/test/react_cr/seed_2/attempts.json",
+        "success_count": 9,
+        "success_rate": 0.3,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      }
+    },
+    "react_cr_tr": {
+      "0": {
+        "avg_reward": 0.21366666666666667,
+        "avg_steps": 33.5,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini/test/react_cr_tr/seed_0/attempts.json",
+        "success_count": 7,
+        "success_rate": 0.23333333333333334,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "1": {
+        "avg_reward": 0.345,
+        "avg_steps": 29.766666666666666,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini/test/react_cr_tr/seed_1/attempts.json",
+        "success_count": 11,
+        "success_rate": 0.36666666666666664,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "2": {
+        "avg_reward": 0.078,
+        "avg_steps": 30.433333333333334,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini/test/react_cr_tr/seed_2/attempts.json",
+        "success_count": 7,
+        "success_rate": 0.23333333333333334,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      }
+    },
+    "react_hard_neg_cr_tr": {
+      "0": {
+        "avg_reward": 0.088,
+        "avg_steps": 32.666666666666664,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini/test/react_hard_neg_cr_tr/seed_0/attempts.json",
+        "success_count": 7,
+        "success_rate": 0.23333333333333334,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "1": {
+        "avg_reward": 0.331,
+        "avg_steps": 33.36666666666667,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini/test/react_hard_neg_cr_tr/seed_1/attempts.json",
+        "success_count": 8,
+        "success_rate": 0.26666666666666666,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "2": {
+        "avg_reward": 0.36033333333333334,
+        "avg_steps": 33.2,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini/test/react_hard_neg_cr_tr/seed_2/attempts.json",
+        "success_count": 11,
+        "success_rate": 0.36666666666666664,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      }
+    },
+    "react_tr": {
+      "0": {
+        "avg_reward": 0.3476666666666667,
+        "avg_steps": 35.4,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini/test/react_tr/seed_0/attempts.json",
+        "success_count": 9,
+        "success_rate": 0.3,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "1": {
+        "avg_reward": 0.177,
+        "avg_steps": 31.733333333333334,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini/test/react_tr/seed_1/attempts.json",
+        "success_count": 8,
+        "success_rate": 0.26666666666666666,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      },
+      "2": {
+        "avg_reward": 0.24333333333333335,
+        "avg_steps": 35.43333333333333,
+        "duplicate_task_ids": [],
+        "path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini/test/react_tr/seed_2/attempts.json",
+        "success_count": 7,
+        "success_rate": 0.23333333333333334,
+        "task_count": 30,
+        "task_ids": [
+          "scienceworld_boil_var_21",
+          "scienceworld_change-the-state-of-matter-of_var_21",
+          "scienceworld_chemistry-mix_var_24",
+          "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+          "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+          "scienceworld_find-animal_var_225",
+          "scienceworld_find-living-thing_var_225",
+          "scienceworld_find-non-living-thing_var_225",
+          "scienceworld_find-plant_var_225",
+          "scienceworld_freeze_var_21",
+          "scienceworld_grow-fruit_var_93",
+          "scienceworld_grow-plant_var_93",
+          "scienceworld_identify-life-stages-1_var_9",
+          "scienceworld_identify-life-stages-2_var_6",
+          "scienceworld_inclined-plane-determine-angle_var_126",
+          "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+          "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+          "scienceworld_lifespan-longest-lived_var_93",
+          "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+          "scienceworld_lifespan-shortest-lived_var_93",
+          "scienceworld_measure-melting-point-known-substance_var_327",
+          "scienceworld_measure-melting-point-unknown-substance_var_225",
+          "scienceworld_melt_var_21",
+          "scienceworld_mendelian-genetics-known-plant_var_90",
+          "scienceworld_mendelian-genetics-unknown-plant_var_360",
+          "scienceworld_power-component_var_15",
+          "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+          "scienceworld_test-conductivity_var_675",
+          "scienceworld_test-conductivity-of-unknown-substances_var_450",
+          "scienceworld_use-thermometer_var_405"
+        ]
+      }
+    }
+  },
+  "old_1var_vs_new_3var": {
+    "react": {
+      "avg_reward_mean_delta_new_minus_old": 0.08222222222222222,
+      "new": {
+        "avg_reward_mean": 0.29644444444444445,
+        "avg_reward_std": 0.02172897025052379,
+        "avg_steps_mean": 32.166666666666664,
+        "avg_steps_std": 1.5534906930308057,
+        "success_mean": 10,
+        "success_rate_mean": 0.3333333333333333,
+        "success_rate_std": 0.033333333333333326,
+        "success_std": 1.0
+      },
+      "old": {
+        "avg_reward_mean": 0.21422222222222223,
+        "avg_reward_std": 0.24051896052155716,
+        "avg_steps_mean": 30.955555555555556,
+        "avg_steps_std": 1.6667777740743204,
+        "success_mean": 9,
+        "success_rate_mean": 0.3,
+        "success_rate_std": 0.08819171036881966,
+        "success_std": 2.6457513110645907
+      },
+      "success_mean_delta_new_minus_old": 1
+    },
+    "react_cr": {
+      "avg_reward_mean_delta_new_minus_old": 0.035333333333333355,
+      "new": {
+        "avg_reward_mean": 0.20633333333333334,
+        "avg_reward_std": 0.08989314644497531,
+        "avg_steps_mean": 30.233333333333334,
+        "avg_steps_std": 1.909915646770236,
+        "success_mean": 8,
+        "success_rate_mean": 0.26666666666666666,
+        "success_rate_std": 0.033333333333333326,
+        "success_std": 1.0
+      },
+      "old": {
+        "avg_reward_mean": 0.17099999999999999,
+        "avg_reward_std": 0.05770422668901974,
+        "avg_steps_mean": 30.477777777777778,
+        "avg_steps_std": 1.2357334004699532,
+        "success_mean": 8,
+        "success_rate_mean": 0.26666666666666666,
+        "success_rate_std": 0.033333333333333326,
+        "success_std": 1.0
+      },
+      "success_mean_delta_new_minus_old": 0
+    },
+    "react_cr_tr": {
+      "avg_reward_mean_delta_new_minus_old": 0.0546666666666667,
+      "new": {
+        "avg_reward_mean": 0.2668888888888889,
+        "avg_reward_std": 0.08869444009465138,
+        "avg_steps_mean": 31.022222222222222,
+        "avg_steps_std": 1.5122952876462437,
+        "success_mean": 9,
+        "success_rate_mean": 0.3,
+        "success_rate_std": 0.05773502691896257,
+        "success_std": 1.7320508075688772
+      },
+      "old": {
+        "avg_reward_mean": 0.2122222222222222,
+        "avg_reward_std": 0.13350586060100436,
+        "avg_steps_mean": 31.233333333333334,
+        "avg_steps_std": 1.9910912697424108,
+        "success_mean": 8.333333333333334,
+        "success_rate_mean": 0.2777777777777778,
+        "success_rate_std": 0.07698003589195009,
+        "success_std": 2.309401076758503
+      },
+      "success_mean_delta_new_minus_old": 0.6666666666666661
+    },
+    "react_hard_neg_cr_tr": {
+      "avg_reward_mean_delta_new_minus_old": 0.0451111111111111,
+      "new": {
+        "avg_reward_mean": 0.3048888888888889,
+        "avg_reward_std": 0.07680880543656823,
+        "avg_steps_mean": 34.13333333333333,
+        "avg_steps_std": 1.64755711416765,
+        "success_mean": 11,
+        "success_rate_mean": 0.36666666666666664,
+        "success_rate_std": 0.0,
+        "success_std": 0.0
+      },
+      "old": {
+        "avg_reward_mean": 0.2597777777777778,
+        "avg_reward_std": 0.1494851658687738,
+        "avg_steps_mean": 33.077777777777776,
+        "avg_steps_std": 0.365655170486765,
+        "success_mean": 8.666666666666666,
+        "success_rate_mean": 0.28888888888888886,
+        "success_rate_std": 0.06938886664887108,
+        "success_std": 2.0816659994661326
+      },
+      "success_mean_delta_new_minus_old": 2.333333333333334
+    },
+    "react_tr": {
+      "avg_reward_mean_delta_new_minus_old": 0.05233333333333334,
+      "new": {
+        "avg_reward_mean": 0.30833333333333335,
+        "avg_reward_std": 0.12243955424798167,
+        "avg_steps_mean": 33.78888888888889,
+        "avg_steps_std": 0.36868133384526863,
+        "success_mean": 9.666666666666666,
+        "success_rate_mean": 0.3222222222222222,
+        "success_rate_std": 0.05091750772173154,
+        "success_std": 1.5275252316519468
+      },
+      "old": {
+        "avg_reward_mean": 0.256,
+        "avg_reward_std": 0.08603552237948645,
+        "avg_steps_mean": 34.18888888888889,
+        "avg_steps_std": 2.12663880162866,
+        "success_mean": 8,
+        "success_rate_mean": 0.26666666666666666,
+        "success_rate_std": 0.033333333333333326,
+        "success_std": 1.0
+      },
+      "success_mean_delta_new_minus_old": 1.666666666666666
+    }
+  },
+  "paired_deltas_vs_react": {
+    "react_cr": {
+      "0": {
+        "avg_reward_delta": -0.17433333333333334,
+        "success_delta": -4
+      },
+      "1": {
+        "avg_reward_delta": -0.04933333333333331,
+        "success_delta": -1
+      },
+      "2": {
+        "avg_reward_delta": -0.046666666666666634,
+        "success_delta": -1
+      },
+      "aggregate": {
+        "avg_reward_delta_mean": -0.0901111111111111,
+        "avg_reward_delta_std": 0.07295076980275683,
+        "success_delta_mean": -2,
+        "success_delta_std": 1.7320508075688772
+      }
+    },
+    "react_cr_tr": {
+      "0": {
+        "avg_reward_delta": -0.10366666666666668,
+        "success_delta": -3
+      },
+      "1": {
+        "avg_reward_delta": -0.01633333333333331,
+        "success_delta": -2
+      },
+      "2": {
+        "avg_reward_delta": 0.031333333333333324,
+        "success_delta": 2
+      },
+      "aggregate": {
+        "avg_reward_delta_mean": -0.029555555555555557,
+        "avg_reward_delta_std": 0.06846437300063714,
+        "success_delta_mean": -1,
+        "success_delta_std": 2.6457513110645907
+      }
+    },
+    "react_hard_neg_cr_tr": {
+      "0": {
+        "avg_reward_delta": 0.03766666666666668,
+        "success_delta": 0
+      },
+      "1": {
+        "avg_reward_delta": -0.06699999999999998,
+        "success_delta": 1
+      },
+      "2": {
+        "avg_reward_delta": 0.0546666666666667,
+        "success_delta": 2
+      },
+      "aggregate": {
+        "avg_reward_delta_mean": 0.008444444444444468,
+        "avg_reward_delta_std": 0.06588738990237926,
+        "success_delta_mean": 1,
+        "success_delta_std": 1.0
+      }
+    },
+    "react_tr": {
+      "0": {
+        "avg_reward_delta": 0.14066666666666666,
+        "success_delta": 0
+      },
+      "1": {
+        "avg_reward_delta": 0.03866666666666668,
+        "success_delta": 0
+      },
+      "2": {
+        "avg_reward_delta": -0.14366666666666666,
+        "success_delta": -1
+      },
+      "aggregate": {
+        "avg_reward_delta_mean": 0.011888888888888893,
+        "avg_reward_delta_std": 0.1440456460575888,
+        "success_delta_mean": -0.3333333333333333,
+        "success_delta_std": 0.5773502691896258
+      }
+    }
+  },
   "paths": {
-    "candidate_eval_dir": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate",
-    "candidate_kb_dir": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var",
     "candidate_kb_path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/kb/scienceworld_train_reflexion_trials7_va80_30cat_3var/knowledge_base.json",
-    "old_1var_eval_dir": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini",
+    "gate_b_eval_root": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/phase4_1/eval/scienceworld_trials7_gemini_3var_gate",
+    "old_1var_stage_c_eval_root": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/final_runs/eval/scienceworld_trials7_gemini",
     "report_path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/experiment_reports/final/phase4_1_scienceworld_density_report.md",
     "summary_path": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate/experiment_reports/final/phase4_1_scienceworld_density_summary.json"
   },
-  "prepare_count": {
-    "bad_category_variation_sets": {},
-    "category_count": 30,
-    "selected_train_tasks": 90
+  "retrieval_audit": {
+    "react_cr": {
+      "0": {
+        "actual_selected_count_distribution": {
+          "1": 1,
+          "2": 5,
+          "3": 2,
+          "4": 4,
+          "5": 18
+        },
+        "json_record_count": 30,
+        "jsonl_record_count": 30,
+        "max_retrieved_pool_size": 39,
+        "min_retrieved_pool_size": 1,
+        "valid_level_counts": {
+          "VALID_NEXT_TRIAL": 323
+        }
+      },
+      "1": {
+        "actual_selected_count_distribution": {
+          "1": 1,
+          "2": 5,
+          "3": 2,
+          "4": 4,
+          "5": 18
+        },
+        "json_record_count": 30,
+        "jsonl_record_count": 30,
+        "max_retrieved_pool_size": 39,
+        "min_retrieved_pool_size": 1,
+        "valid_level_counts": {
+          "VALID_NEXT_TRIAL": 323
+        }
+      },
+      "2": {
+        "actual_selected_count_distribution": {
+          "1": 1,
+          "2": 5,
+          "3": 2,
+          "4": 4,
+          "5": 18
+        },
+        "json_record_count": 30,
+        "jsonl_record_count": 30,
+        "max_retrieved_pool_size": 39,
+        "min_retrieved_pool_size": 1,
+        "valid_level_counts": {
+          "VALID_NEXT_TRIAL": 323
+        }
+      }
+    },
+    "react_cr_tr": {
+      "0": {
+        "actual_selected_count_distribution": {
+          "1": 1,
+          "2": 5,
+          "3": 2,
+          "4": 4,
+          "5": 18
+        },
+        "json_record_count": 30,
+        "jsonl_record_count": 30,
+        "max_retrieved_pool_size": 39,
+        "min_retrieved_pool_size": 1,
+        "valid_level_counts": {
+          "VALID_NEXT_TRIAL": 323
+        }
+      },
+      "1": {
+        "actual_selected_count_distribution": {
+          "1": 1,
+          "2": 5,
+          "3": 2,
+          "4": 4,
+          "5": 18
+        },
+        "json_record_count": 30,
+        "jsonl_record_count": 30,
+        "max_retrieved_pool_size": 39,
+        "min_retrieved_pool_size": 1,
+        "valid_level_counts": {
+          "VALID_NEXT_TRIAL": 323
+        }
+      },
+      "2": {
+        "actual_selected_count_distribution": {
+          "1": 1,
+          "2": 5,
+          "3": 2,
+          "4": 4,
+          "5": 18
+        },
+        "json_record_count": 30,
+        "jsonl_record_count": 30,
+        "max_retrieved_pool_size": 39,
+        "min_retrieved_pool_size": 1,
+        "valid_level_counts": {
+          "VALID_NEXT_TRIAL": 323
+        }
+      }
+    },
+    "react_hard_neg_cr_tr": {
+      "0": {
+        "actual_selected_count_distribution": {
+          "3": 1,
+          "5": 29
+        },
+        "json_record_count": 30,
+        "jsonl_record_count": 30,
+        "max_retrieved_pool_size": 38,
+        "min_retrieved_pool_size": 3,
+        "valid_level_counts": {
+          "VALID_NEXT_TRIAL": 307
+        }
+      },
+      "1": {
+        "actual_selected_count_distribution": {
+          "3": 1,
+          "5": 29
+        },
+        "json_record_count": 30,
+        "jsonl_record_count": 30,
+        "max_retrieved_pool_size": 38,
+        "min_retrieved_pool_size": 3,
+        "valid_level_counts": {
+          "VALID_NEXT_TRIAL": 307
+        }
+      },
+      "2": {
+        "actual_selected_count_distribution": {
+          "3": 1,
+          "5": 29
+        },
+        "json_record_count": 30,
+        "jsonl_record_count": 30,
+        "max_retrieved_pool_size": 38,
+        "min_retrieved_pool_size": 3,
+        "valid_level_counts": {
+          "VALID_NEXT_TRIAL": 307
+        }
+      }
+    }
   },
   "worktree": "/Users/rishisim/Documents/research/ltm-scienceworld-density-gate"
 }

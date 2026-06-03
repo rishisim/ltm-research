@@ -1,0 +1,272 @@
+[
+  {
+    "task_id": "scienceworld_boil_var_21",
+    "task_name": "boil",
+    "variation_idx": 21,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.75,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_change-the-state-of-matter-of_var_21",
+    "task_name": "change-the-state-of-matter-of",
+    "variation_idx": 21,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.69,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_chemistry-mix_var_24",
+    "task_name": "chemistry-mix",
+    "variation_idx": 24,
+    "trial_num": 1,
+    "step_num": 27,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "scienceworld_chemistry-mix-paint-secondary-color_var_27",
+    "task_name": "chemistry-mix-paint-secondary-color",
+    "variation_idx": 27,
+    "trial_num": 1,
+    "step_num": 38,
+    "reward": -1.0,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_chemistry-mix-paint-tertiary-color_var_27",
+    "task_name": "chemistry-mix-paint-tertiary-color",
+    "variation_idx": 27,
+    "trial_num": 1,
+    "step_num": 7,
+    "reward": -1.0,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_find-animal_var_225",
+    "task_name": "find-animal",
+    "variation_idx": 225,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.75,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_find-living-thing_var_225",
+    "task_name": "find-living-thing",
+    "variation_idx": 225,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.25,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_find-non-living-thing_var_225",
+    "task_name": "find-non-living-thing",
+    "variation_idx": 225,
+    "trial_num": 1,
+    "step_num": 23,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "scienceworld_find-plant_var_225",
+    "task_name": "find-plant",
+    "variation_idx": 225,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.83,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_freeze_var_21",
+    "task_name": "freeze",
+    "variation_idx": 21,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.48,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_grow-fruit_var_93",
+    "task_name": "grow-fruit",
+    "variation_idx": 93,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.18,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_grow-plant_var_93",
+    "task_name": "grow-plant",
+    "variation_idx": 93,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.12,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_identify-life-stages-1_var_9",
+    "task_name": "identify-life-stages-1",
+    "variation_idx": 9,
+    "trial_num": 1,
+    "step_num": 36,
+    "reward": -1.0,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_identify-life-stages-2_var_6",
+    "task_name": "identify-life-stages-2",
+    "variation_idx": 6,
+    "trial_num": 1,
+    "step_num": 34,
+    "reward": 0.16,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_inclined-plane-determine-angle_var_126",
+    "task_name": "inclined-plane-determine-angle",
+    "variation_idx": 126,
+    "trial_num": 1,
+    "step_num": 22,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "scienceworld_inclined-plane-friction-named-surfaces_var_1038",
+    "task_name": "inclined-plane-friction-named-surfaces",
+    "variation_idx": 1038,
+    "trial_num": 1,
+    "step_num": 21,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "scienceworld_inclined-plane-friction-unnamed-surfaces_var_120",
+    "task_name": "inclined-plane-friction-unnamed-surfaces",
+    "variation_idx": 120,
+    "trial_num": 1,
+    "step_num": 20,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "scienceworld_lifespan-longest-lived_var_93",
+    "task_name": "lifespan-longest-lived",
+    "variation_idx": 93,
+    "trial_num": 1,
+    "step_num": 19,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "scienceworld_lifespan-longest-lived-then-shortest-lived_var_93",
+    "task_name": "lifespan-longest-lived-then-shortest-lived",
+    "variation_idx": 93,
+    "trial_num": 1,
+    "step_num": 16,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "scienceworld_lifespan-shortest-lived_var_93",
+    "task_name": "lifespan-shortest-lived",
+    "variation_idx": 93,
+    "trial_num": 1,
+    "step_num": 10,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "scienceworld_measure-melting-point-known-substance_var_327",
+    "task_name": "measure-melting-point-known-substance",
+    "variation_idx": 327,
+    "trial_num": 1,
+    "step_num": 8,
+    "reward": -1.0,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_measure-melting-point-unknown-substance_var_225",
+    "task_name": "measure-melting-point-unknown-substance",
+    "variation_idx": 225,
+    "trial_num": 1,
+    "step_num": 14,
+    "reward": -1.0,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_melt_var_21",
+    "task_name": "melt",
+    "variation_idx": 21,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.7,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_mendelian-genetics-known-plant_var_90",
+    "task_name": "mendelian-genetics-known-plant",
+    "variation_idx": 90,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.17,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_mendelian-genetics-unknown-plant_var_360",
+    "task_name": "mendelian-genetics-unknown-plant",
+    "variation_idx": 360,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.2,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_power-component_var_15",
+    "task_name": "power-component",
+    "variation_idx": 15,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.77,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_power-component-renewable-vs-nonrenewable-energy_var_15",
+    "task_name": "power-component-renewable-vs-nonrenewable-energy",
+    "variation_idx": 15,
+    "trial_num": 1,
+    "step_num": 49,
+    "reward": 0.53,
+    "success": false
+  },
+  {
+    "task_id": "scienceworld_test-conductivity_var_675",
+    "task_name": "test-conductivity",
+    "variation_idx": 675,
+    "trial_num": 1,
+    "step_num": 15,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "scienceworld_test-conductivity-of-unknown-substances_var_450",
+    "task_name": "test-conductivity-of-unknown-substances",
+    "variation_idx": 450,
+    "trial_num": 1,
+    "step_num": 24,
+    "reward": 1.0,
+    "success": true
+  },
+  {
+    "task_id": "scienceworld_use-thermometer_var_405",
+    "task_name": "use-thermometer",
+    "variation_idx": 405,
+    "trial_num": 1,
+    "step_num": 44,
+    "reward": 1.0,
+    "success": true
+  }
+]
