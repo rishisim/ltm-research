@@ -2,6 +2,7 @@
 \centering
 \caption{Paired task-level deltas against ReAct on the final held-out Stage C runs. Values are mean $\pm$ std over seeds.}
 \label{tab:final-paired-deltas}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{llrrrrr}
 \toprule
 Environment & Framework & Common tasks & $\Delta$ success (pp) & $\Delta$ score & Improved & Regressed \\
@@ -22,4 +23,5 @@ ScienceWorld & ReAct + CR + TR & 30 $\pm$ 0 & -2.2 $\pm$ 6.9 & -0.002 $\pm$ 0.14
 ScienceWorld & Hard-neg CR + TR & 30 $\pm$ 0 & -1.1 $\pm$ 15.4 & 0.046 $\pm$ 0.354 & 4.3 $\pm$ 1.5 & 4.7 $\pm$ 3.2 \\
 \bottomrule
 \end{tabular}
+}
 \end{table*}

@@ -1,23 +1,27 @@
 \section{Introduction}
 
-LLM-based agents are increasingly augmented with episodic memory: systems that store past experiences and retrieve them to guide future decisions.
-Recent work has demonstrated impressive gains from such augmentation (Voyager~\citep{wang2023voyager}, GITM~\citep{zhu2023gitm}, MemoryBank~\citep{zhong2024memorybank}, and Generative Agents~\citep{park2023generative}) under the implicit assumption that storing and retrieving past experience will improve performance.
-But does it always?
+LLM-based agents are increasingly augmented with memory systems that store prior experience and retrieve it during future tasks.
+This design is appealing: if an agent has already corrected a failure once, the correction should be reusable later.
+Yet this premise hides a central question: \emph{when does validated memory actually transfer?}
 
-We investigate this question through a controlled comparative study across two interactive environments: ALFWorld~\citep{shridhar2021alfworld}, a structured household task environment with compositional goals and a fixed action grammar, and WebShop~\citep{yao2022webshop}, an open-ended e-commerce environment with free-form navigation.
-In our experiments, the answer depended critically on environment properties.
-On ALFWorld, our memory system improves over the ReAct~\citep{yao2023react} baseline by up to $+19.4$pp on unseen tasks, nearly matching Reflexion~\citep{shinn2023reflexion} ($+21.6$pp) at roughly one-third the step cost.
-On WebShop, the \emph{same} memory system \emph{degrades} performance by up to $30.5$pp.
-Strikingly, a hard-negative control that retrieves maximally \emph{irrelevant} experiences ($-12.5$pp) outperforms the properly configured system ($-30.5$pp), revealing that semantically similar but non-transferable memories are more harmful than obviously irrelevant ones in this setting.
-This ${\sim}47$pp swing, consistent across development and held-out splits, is the central empirical finding of this paper.
+We study this question using a single memory framework across three final audited settings: ALFWorld~\citep{shridhar2021alfworld}, SQL query generation, and ScienceWorld~\citep{wang2022scienceworld}.
+The framework extracts issue--learning pairs from successful Reflexion~\citep{shinn2023reflexion} training trajectories, retains validation metadata, and injects those memories at inference time through Context Retrieval (CR), Tool Retrieval (TR), or both.
+All final evaluations use the same base ReAct~\citep{yao2023react} agent, Gemini 2.5 Flash, train-only knowledge bases, and hard-negative retrieval controls.
 
-Our analysis attributes this divergence to three environment properties: \emph{task compositionality} (shared sub-goals vs.\ unique tasks), \emph{action space regularity} (fixed grammar vs.\ free-form), and \emph{learning transfer radius} (one learning benefiting many tasks vs.\ near-zero reuse). In the two environments we study, when all three favored transfer, memory yielded substantial gains; when they did not, retrieved experiences actively misled the agent. Our results suggest that high-similarity retrieval alone does not guarantee performance gains, as retrieved trajectories may lack transferability to the current task — though the generality of this pattern awaits validation in further settings.
-This points to a potentially important distinction between retrieval relevance and actionable utility, one that deserves greater attention in future work on memory-augmented agents.
-Accordingly, the novelty of this work is primarily empirical and diagnostic: rather than proposing a fundamentally new memory architecture, we use a controlled episodic-memory setup to study when retrieval transfer helps and when it fails.
+The results are conditional rather than universal.
+ALFWorld is the clean positive case: CR+TR improves success from $67.9\%$ to $82.8\%$ on 134 held-out validation-unseen tasks, a $+14.9$pp gain.
+The hard-negative control falls to $55.2\%$, which supports the interpretation that relevant retrieved memory is doing useful work rather than merely adding more prompt text.
+SQL is a narrow-transfer diagnostic: CR+TR reaches $92.0\%$ success versus $91.5\%$ for ReAct, while CR alone and hard-negative retrieval both hurt.
+ScienceWorld is a diagnostic negative case: ReAct remains best in the final audit at $30.0\%$ success, CR+TR averages $27.8\%$, and hard-negative CR+TR matches or exceeds CR+TR on the headline success metric.
+
+These outcomes motivate a transfer-radius view of memory-augmented agents.
+Validated memories help when environments contain reusable procedures and when retrieval relevance aligns with those reusable structures.
+They are weak or harmful when retrieved memories are too narrow, when task structure changes faster than the memory can generalize, or when increased memory density does not improve retrieval alignment.
+A post-hoc but pre-registered ScienceWorld density gate strengthens this interpretation: expanding the ScienceWorld training knowledge base to three variations per category improved some raw numbers, but still did not promote ScienceWorld because CR+TR underperformed same-run ReAct on mean success and reward, while hard-negative retrieval matched or beat CR+TR on success.
 
 In summary, our contributions are:
 \begin{enumerate}
-    \item A \textbf{controlled empirical study} showing opposite effects of the same memory system: $+19.4$pp on ALFWorld vs.\ $-30.5$pp on WebShop, with hard-negative ablations revealing that ``relevant'' but non-transferable memories cause more harm than irrelevant ones.
-    \item \textbf{A diagnostic framework for retrieval transfer}, based on three environment properties: task compositionality, action space regularity, and learning transfer radius, that characterize when episodic memory is likely to help or hurt LLM agents.
-    \item A \textbf{memory-centric agent framework} with outcome-validated episodic memory and two retrieval mechanisms (proactive CR and on-demand TR), evaluated across two diverse environments.
+    \item A \textbf{final audited evaluation} of validated episodic memory across ALFWorld, SQL, and ScienceWorld using train-only trials7 knowledge bases, held-out evaluation, and hard-negative controls.
+    \item \textbf{Evidence for conditional transfer}: a strong ALFWorld gain ($+14.9$pp), a narrow SQL gain ($+0.5$pp), and a ScienceWorld non-promotion where memory density alone is insufficient.
+    \item A \textbf{diagnostic framing} based on task compositionality, action-space regularity, and learning transfer radius, explaining when CR and TR should be expected to help, fail to add, or mislead.
 \end{enumerate}

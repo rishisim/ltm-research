@@ -75,34 +75,33 @@ Each entry in the knowledge base is a structured record containing the following
 \subsection{Dataset Statistics}
 
 \paragraph{ALFWorld.}
-The full ALFWorld dataset~\citep{shridhar2021alfworld} comprises 3{,}827 games split into a training set (3{,}553 games), a validation-seen set (140 games), and a validation-unseen set (134 games). For knowledge base construction, we use \emph{alfworld-mini}, a curated subset of 120 training games (20 per task type $\times$ 6 task types). We run Reflexion on this subset and extract approximately 400 issue--learning entries from the resulting trajectories using the pipeline described in Section~\ref{sec:kb-construction}. The validation splits are identical to those of the full ALFWorld dataset, ensuring direct comparability with prior work. No training games appear in the validation sets.
+The full ALFWorld dataset~\citep{shridhar2021alfworld} comprises 3{,}827 games split into a training set (3{,}553 games), a validation-seen set (140 games), and a validation-unseen set (134 games). The final evaluation uses the 134-task validation-unseen split. For knowledge base construction, we use a curated training subset with no validation overlap. The final audited KB contains 373 memories, including 101 \textsc{Valid\_Next\_Trial} entries.
 
-\paragraph{WebShop.}
-We partition the WebShop environment~\citep{yao2022webshop} into a development split (200 tasks) and a held-out test split (200 tasks). The knowledge base is extracted from Reflexion training trajectories on a separate set of training tasks with no overlap with either evaluation split, yielding approximately 677 issue--learning entries.
+\paragraph{SQL.}
+The final SQL evaluation uses 200 held-out test tasks. The train-only sanitized KB covers 516 training tasks and contains 415 memories, including 92 \textsc{Valid\_Next\_Trial} entries. Protocol memories with dev/test leakage risk are quarantined before final evaluation.
+
+\paragraph{ScienceWorld.}
+The final ScienceWorld evaluation uses 30 held-out test categories from ScienceWorld~\citep{wang2022scienceworld}. The final train-only KB covers all 30 categories with one train variation per category and contains 129 memories, including 34 \textsc{Valid\_Next\_Trial} entries. A separate Phase 4.1 diagnostic gate later tested a denser three-variation/category KB; it did not promote ScienceWorld to a headline positive result.
 
 \subsection{Framework Variants}
 
-We evaluate six framework variants in each environment:
+We evaluate five inference-time framework variants in each final environment:
 \begin{enumerate}
     \item \textbf{ReAct}: the base agent with no memory~\citep{yao2023react}, serving as the primary baseline.
-    \item \textbf{ReAct + Reflexion}: the iterative self-correction baseline~\citep{shinn2023reflexion}, allowed up to 7 trials per task.
     \item \textbf{ReAct + CR}: base agent augmented with Context Retrieval only.
     \item \textbf{ReAct + TR}: base agent augmented with Tool Retrieval only.
     \item \textbf{ReAct + CR + TR}: base agent augmented with both retrieval mechanisms.
     \item \textbf{ReAct + hard-neg CR + TR}: ablation control that retrieves maximally \emph{irrelevant} entries via inverted retrieval (Section~\ref{sec:hard-neg}).
 \end{enumerate}
-All memory-augmented variants (CR, TR, CR+TR) execute a single trial per task, whereas Reflexion may execute up to 7 trials.
+All final inference variants execute a single trial per held-out task. Reflexion is used to build the training KBs with up to 7 trials per training task, but it is not a headline final inference variant in Table~\ref{tab:final-main-results}.
 
 \subsection{Evaluation Metrics}
 
 \paragraph{Accuracy (success rate).}
 The fraction of tasks completed successfully, computed as a binary outcome per task.
 
-\paragraph{Average Steps per Trial.}
-The mean number of thought--action--observation steps per individual trial attempt. For Reflexion, this reflects the average length of a single trial, irrespective of retry count.
-
 \paragraph{Average Steps per Task.}
-The mean total steps per task across all trials. For single-trial methods, this equals Steps/Trial. For Reflexion, this accumulates steps across all retry trials (up to 7), capturing the full computational cost.
+The mean total thought--action--observation steps per held-out task. Because all final inference variants are single-trial, this is the trajectory-cost proxy used in Figure~\ref{fig:final-reward-vs-cost}.
 
 \paragraph{Gain from ReAct.}
 The percentage-point difference between a variant's accuracy and the ReAct baseline accuracy on the same split.
@@ -137,6 +136,7 @@ $\omega_{\text{cand}}$ & 0.6 & \textsc{Candidate} \\
 \midrule
 \multicolumn{3}{l}{\emph{Agent Configuration}} \\
 Max steps/task & 49 & Episode length limit \\
+Max valid actions & 80 & ScienceWorld action cap \\
 Temperature & 0.0 & Deterministic decoding \\
 Max output tokens & 2{,}048 & LLM generation limit \\
 Max Reflexion trials & 7 & Retry budget \\
@@ -153,4 +153,18 @@ All agent reasoning uses Gemini 2.5 Flash routed through the OpenRouter API. We 
 
 Retrieval embeddings use \texttt{gemini-embedding-001} via the Google GenAI SDK directly, with a batch size of 100 texts per API call. Embeddings are cached to disk alongside the knowledge base file; the cache includes a hash of the source file and the embedding model name for automatic invalidation on changes.
 
-Each task trial is limited to 49 thought--action--observation steps across all agent variants. For Reflexion, this limit applies per trial, with up to 7 trials per task.
+Each final held-out task trial is limited to 49 thought--action--observation steps across all agent variants. ScienceWorld additionally uses \texttt{max\_valid\_actions=80}. Reflexion training trajectories allow up to 7 trials per task for KB construction.
+
+\section{Diagnostic Gates Not Promoted to Headline Results}
+\label{app:diagnostic-gates}
+
+\paragraph{ScienceWorld density gate.}
+The Phase 4.1 gate rebuilt the ScienceWorld KB with three train variations per category and reran all 30 held-out test categories across seeds 0, 1, and 2.
+The gate completed, but did not promote ScienceWorld: CR+TR underperformed same-run ReAct on mean success and mean reward, and hard-negative CR+TR matched or beat CR+TR on success in every seed.
+This supports the paper's conservative interpretation that density alone is insufficient.
+
+\paragraph{TextWorld pilot.}
+The Phase 4.2 TextWorld pilot was pre-registered as an exploratory environment-selection gate, not as a final paper result.
+It used 12 generated held-out `.ulx` games. ReAct solved $10/12$, CR+TR solved $11/12$, and hard-negative CR+TR solved $10/12$.
+The gate failed because the ReAct baseline was near ceiling and CR+TR did not beat ReAct or hard-negative retrieval by the pre-registered two-task margin.
+We therefore do not include TextWorld as a headline result.

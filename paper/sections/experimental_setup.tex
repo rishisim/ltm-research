@@ -2,12 +2,26 @@
 \label{sec:experimental-setup}
 
 All agent reasoning uses Gemini 2.5 Flash, and all retrieval embeddings use Google's \texttt{gemini-embedding-001}, held constant across experiments.
+The final Stage C audit passed with 0 errors and 0 warnings.
 
 \paragraph{Tasks and splits.}
-For ALFWorld, the knowledge base is constructed from \emph{alfworld-mini}, a curated subset of 120 training games (20 per task type). We evaluate on the standard validation-seen (140 tasks) and validation-unseen (134 tasks) splits. For WebShop, we evaluate on development (200 tasks) and held-out test (200 tasks) splits, with the knowledge base extracted from separate training tasks. Full dataset details are in Appendix~\ref{app:experimental-details}.
+ALFWorld evaluation uses the standard validation-unseen split with 134 held-out tasks.
+SQL evaluation uses 200 held-out test tasks.
+ScienceWorld evaluation uses 30 held-out test categories.
+All final runs use train-only knowledge bases built from Reflexion trajectories with a maximum of seven trials.
+The final KB inventory is shown in Table~\ref{tab:final-kb-inventory}: ALFWorld has 373 memories, SQL has 415 sanitized memories, and ScienceWorld has 129 memories covering all 30 categories with one train variation per category.
 
 \paragraph{Framework variants.}
-We evaluate six variants per environment: ReAct (baseline), ReAct + Reflexion (up to 7 trials), ReAct + CR, ReAct + TR, ReAct + CR + TR, and a hard-negative ablation control. All memory variants execute a single trial per task.
+We evaluate five inference-time variants per environment: ReAct, ReAct + CR, ReAct + TR, ReAct + CR + TR, and hard-negative CR + TR.
+All variants execute a single held-out trial per task.
+The hard-negative variant preserves memory injection while selecting low-relevance memories, making it a control for prompt length and generic extra context.
 
 \paragraph{Metrics.}
-We report accuracy (binary success rate), average steps per trial and per task (capturing Reflexion's cumulative retry cost), and gain from the ReAct baseline in percentage points. Full metric definitions are in Appendix~\ref{app:experimental-details}. All hyperparameters and implementation details are in Appendix~\ref{app:hyperparameters} and~\ref{app:implementation-details}.
+We report success rate, score, gain from ReAct in percentage points, paired task-level deltas, retrieval counts, help-call counts, and average steps per task.
+For ALFWorld, the final ReAct rows did not emit reward, so success rate is used as the score in the aggregate table.
+For SQL and ScienceWorld, score is average reward.
+Provider dollar cost is not available in the final raw logs; the reward-vs-cost figure therefore uses average steps per task as a trajectory-cost proxy.
+
+\paragraph{Audited artifacts.}
+The final quantitative claims are anchored to the audited \texttt{final\_runs/eval/} roots for ALFWorld, SQL, and ScienceWorld, plus their corresponding train-only KB roots under \texttt{final\_runs/kb/}.
+The generated final tables and figures are included directly from the \texttt{paper/tables/final\_*} and \texttt{paper/figures/final\_*} artifacts.

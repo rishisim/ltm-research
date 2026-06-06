@@ -1,7 +1,7 @@
 \section{Methodology}
 \label{sec:methodology}
 
-We evaluate a unified memory-centric framework across two interactive environments with contrasting structural properties.
+We evaluate a unified validated-memory framework across three final audited settings with different transfer structure.
 
 % ----------------------------------------------------------------------------
 \subsection{Environments}
@@ -10,8 +10,14 @@ We evaluate a unified memory-centric framework across two interactive environmen
 \paragraph{ALFWorld.}
 ALFWorld~\cite{shridhar2021alfworld} provides a text-based interface to the ALFRED embodied household benchmark. Agents issue actions from a fixed grammar of ${\sim}$15 verb templates (e.g., \texttt{go to}, \texttt{take}, \texttt{open}, \texttt{heat}). Six task types share a compositional goal structure: \textsc{Search} $\rightarrow$ \textsc{Acquire} $\rightarrow$ \textsc{Transform} $\rightarrow$ \textsc{Place}. The small object vocabulary (${\sim}$50 types) and shared sub-goal phases yield high structural overlap between tasks.
 
-\paragraph{WebShop.}
-WebShop~\cite{yao2022webshop} is an e-commerce navigation environment where agents find and purchase products matching natural-language specifications via \texttt{search[query]} and \texttt{click[element]} actions. Each task targets a unique product, resulting in minimal structural overlap and an effectively infinite action space.
+\paragraph{SQL.}
+The SQL setting asks agents to produce executable queries for held-out database tasks.
+It has a regular symbolic action language and many reusable syntactic patterns, but individual memories often have narrow transfer radius: a useful query correction can depend on local schema names, joins, or predicate choices that do not recur broadly.
+
+\paragraph{ScienceWorld.}
+ScienceWorld~\cite{wang2022scienceworld} contains science-themed interactive tasks spanning 30 categories.
+It exposes reusable procedural motifs, but the final KB contains only one train variation per category and the retrieval/validation signal is noisy relative to the diversity of held-out tasks.
+We therefore treat it as a diagnostic boundary case rather than as a positive transfer result.
 
 % ----------------------------------------------------------------------------
 \subsection{Base Agent: ReAct}
@@ -23,7 +29,7 @@ All agents build on ReAct~\cite{yao2023react}, interleaving reasoning traces wit
 \subsection{Memory Systems}
 \label{sec:memory-systems}
 
-Our framework augments ReAct with a persistent knowledge base and two retrieval mechanisms: proactive \emph{Context Retrieval} (CR) at task start and on-demand \emph{Tool Retrieval} (TR) during execution. We emphasize that Context Retrieval (CR) and Tool Retrieval (TR) address complementary aspects of transfer: CR improves state understanding through contextual grounding, while TR enables action-level reuse. Their combination is designed to balance interpretability and execution efficiency.
+Our framework augments ReAct with a persistent knowledge base and two retrieval mechanisms: proactive \emph{Context Retrieval} (CR) at task start and on-demand \emph{Tool Retrieval} (TR) during execution. We emphasize that Context Retrieval (CR) and Tool Retrieval (TR) address complementary aspects of transfer: CR supplies task-level guidance before acting, while TR enables action- or issue-level reuse when the agent asks for help. Their combination is designed to expose whether validated memories are useful before and during execution.
 
 \begin{figure*}[t]
 \centering
@@ -48,7 +54,7 @@ Our framework augments ReAct with a persistent knowledge base and two retrieval 
 \subsubsection{Knowledge Base Construction}
 \label{sec:kb-construction}
 
-The knowledge base is constructed offline from training trajectories using LLM-based extraction. For each task, we extract \emph{issue--learning pairs}: structured records associating a mistake with its successful correction. Each entry includes task metadata, the issue--learning texts, a validation level reflecting downstream outcome (\textsc{Valid\_Next\_Trial}, \textsc{Valid\_Same\_Trial}, or \textsc{Candidate}), and provenance information. We assign scalar validation weights $\omega$ to each level: $\omega_{\text{next}} = 1.0$, $\omega_{\text{same}} = 0.9$, $\omega_{\text{cand}} = 0.6$, used by both retrieval mechanisms to prioritize high-confidence learnings. Full schema details are in Appendix~\ref{app:kb-schema}.
+The knowledge base is constructed offline from training trajectories using LLM-based extraction. For each task, we extract \emph{issue--learning pairs}: structured records associating a mistake with its successful correction. Each entry includes task metadata, the issue--learning texts, a validation level reflecting downstream outcome (\textsc{Valid\_Next\_Trial}, \textsc{Valid\_Same\_Trial}, or \textsc{Candidate}), and provenance information. Final retrieval uses \textsc{Valid\_Next\_Trial} entries. We assign scalar validation weights $\omega$ to each level: $\omega_{\text{next}} = 1.0$, $\omega_{\text{same}} = 0.9$, $\omega_{\text{cand}} = 0.6$, used by both retrieval mechanisms to prioritize high-confidence learnings in the general algorithm. Full schema details are in Appendix~\ref{app:kb-schema}.
 
 % ---- 3.3.2 ----
 \subsubsection{Context Retrieval (CR)}
@@ -86,7 +92,7 @@ The top-$k$ ($k{=}3$) results are returned as issue--solution pairs. The full pr
 To verify that gains stem from retrieval \emph{relevance} rather than additional prompt context, we introduce a hard negative control that inverts the selection criterion: CR retrieves the \emph{least} similar tasks and TR selects from the bottom of each retrieval strategy, producing prompts with the same number of learnings but from maximally irrelevant tasks.
 
 % ----------------------------------------------------------------------------
-\subsection{Reflexion Baseline}
+\subsection{Reflexion for KB Construction}
 \label{sec:reflexion}
 
-We compare against Reflexion~\cite{shinn2023reflexion}, an iterative self-correction framework allowing up to 7 trials per task. Unlike our \emph{cross-task} memory (learnings from other tasks), Reflexion is \emph{intra-task} (retrying the same task with accumulated self-critiques), at substantially higher computational cost.
+We use Reflexion~\cite{shinn2023reflexion}, an iterative self-correction framework, to generate training trajectories for the trials7 knowledge bases. Unlike inference-time CR and TR, Reflexion is intra-task: it retries the same task with accumulated self-critiques. Our final held-out comparisons evaluate single-trial ReAct variants with and without retrieved cross-task memory.

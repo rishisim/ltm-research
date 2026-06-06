@@ -55,18 +55,19 @@ Guanzhi Wang, Yuqi Xie, Yunfan Jiang, Ajay Mandlekar, Chaowei Xiao, Yuke Zhu,
 \newblock Voyager: An open-ended embodied agent with large language models.
 \newblock \emph{arXiv preprint arXiv:2305.16291}.
 
+\bibitem[{Wang et~al.(2022)Wang, Jansen, C{\^o}t{\'e}, and
+  Ammanabrolu}]{wang2022scienceworld}
+Ruoyao Wang, Peter Jansen, Marc-Alexandre C{\^o}t{\'e}, and Prithviraj
+  Ammanabrolu. 2022.
+\newblock {ScienceWorld}: Is your agent smarter than a 5th grader?
+\newblock In \emph{Proceedings of the 2022 Conference on Empirical Methods in
+  Natural Language Processing (EMNLP)}.
+
 \bibitem[{Xu et~al.(2025)Xu, Liang, Mei, Gao, Tan, and Zhang}]{xu2025amem}
 Wujiang Xu, Zujie Liang, Kai Mei, Hang Gao, Juntao Tan, and Yongfeng Zhang.
   2025.
 \newblock {A-MEM}: Agentic memory for {LLM} agents.
 \newblock \emph{arXiv preprint arXiv:2502.12110}.
-
-\bibitem[{Yao et~al.(2022)Yao, Chen, Yang, and Narasimhan}]{yao2022webshop}
-Shunyu Yao, Howard Chen, John Yang, and Karthik Narasimhan. 2022.
-\newblock {WebShop}: Towards scalable real-world web interaction with grounded
-  language agents.
-\newblock In \emph{Advances in Neural Information Processing Systems
-  (NeurIPS)}.
 
 \bibitem[{Yao et~al.(2023)Yao, Zhao, Yu, Du, Shafran, Narasimhan, and
   Cao}]{yao2023react}

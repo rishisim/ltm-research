@@ -1,8 +1,18 @@
 \section{Limitations}
 \label{sec:limitations}
 
-% \paragraph{Single base LLM.} All experiments use Gemini 2.5 Flash. Different LLMs may exhibit different sensitivities to retrieved context; the interaction between memory augmentation and base model capability remains open.
+All final evaluations use one base LLM, Gemini 2.5 Flash.
+Different models may be more or less sensitive to retrieved memories, especially in narrow-transfer settings such as SQL or in procedural domains such as ScienceWorld.
 
-% \paragraph{Two environments.} Our framework is derived from two environments. Validation on additional domains (e.g., ScienceWorld~\citep{wang2022scienceworld}, Minecraft~\citep{fan2022minedojo}, MiniWoB++~\citep{liu2018reinforcement}) would strengthen confidence in its generality.
+The final evidence is intentionally restricted to audited runs.
+ALFWorld, SQL, and ScienceWorld are the only headline environments in the final tables.
+Older exploratory runs are preserved for provenance but are not used as final evidence here.
+This makes the claims cleaner, but it also means the transfer-radius framework should be treated as a diagnostic hypothesis requiring broader validation.
 
-We evaluate only one base LLM and two environments. All memory variants use single-trajectory evaluation, and we do not include repeated-run confidence estimates. These constraints limit how far the proposed diagnostic framework can be generalized: the three environment properties (task compositionality, action space regularity, and learning transfer radius) are derived from and validated on only two data points, so they should be treated as preliminary hypotheses rather than established predictors. Future work should test additional models, domains, and multi-run evaluation protocols to assess whether these properties hold as reliable indicators of memory benefit more broadly.
+The knowledge bases are train-only, but they differ in density and provenance.
+The ALFWorld trials7 KB has no evaluation overlap after quarantine, but the exact legacy 120-game train manifest is absent and the audit observes 115 unique train trajectory task IDs.
+The ScienceWorld final KB covers all 30 categories with only one train variation per category; the later 3-var density gate did not promote ScienceWorld, but a future method with better validation or retrieval alignment could change that result.
+
+Finally, we do not report provider dollar cost because it is unavailable in the final raw logs.
+Cost figures use average steps per task as a trajectory-cost proxy.
+We also lack a final retrieval-budget ablation, so this paper does not determine whether different CR/TR budgets would improve the mixed or negative cases.
